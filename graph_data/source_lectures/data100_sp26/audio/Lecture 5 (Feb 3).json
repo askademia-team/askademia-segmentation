@@ -1,0 +1,2795 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1770161650",
+  "display_name": "Lecture 5 (Feb 3)",
+  "count": 398,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 358,
+      "type": "audio",
+      "text": "There's not much time for today."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 409,
+      "type": "audio",
+      "text": "All right, everyone."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 417,
+      "type": "audio",
+      "text": "Welcome back. So today we're going to put all that handed stuff that we've been learning into practice with some exploratory exploratory data analysis or EDA."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 425,
+      "type": "audio",
+      "text": "Some announcements before we start. The homework is not due in September. Lab 2A is actually due tonight."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 431,
+      "type": "audio",
+      "text": "Homework to A is you on Friday at 11:59 PM."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 450,
+      "type": "audio",
+      "text": "Josh's office hours for this week only will be moved to Friday from 1:30 to 3:30. Again, that's just for this week only. And as a reminder, my office hours are on Monday from 11:50. Josh's officers are usually on Wednesday afternoons, this week only Friday afternoon."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 473,
+      "type": "audio",
+      "text": "We will have catch up sessions. So this is a great chance if you're feeling like oh, you're falling behind, you want to catch up on what's been going on, definitely recommend checking out the catch up sessions there every Friday from 3:00 to 4:00 PM in Evans B6. Anyone is welcome. If you're feeling like you know you're, you just want to catch up on the material, whether you're falling behind, whether you're feeling you're doing OK, you just want a little extra help, you're welcome to join."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 501,
+      "type": "audio",
+      "text": "Tutoring signups are now open. There is a QR code you can use. You can enroll using the sections tool. Definitely encourage you to sign up if you haven't already. There are two options you can do for tutoring. 1 is regular where attendance is required every week. If you do not show up or if it's you know you don't you have multiple unexcused absences then you might be dropped."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 505,
+      "type": "audio",
+      "text": "The other kind is drop in name. Drop in is maybe like a little misleading, but basically it's."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 525,
+      "type": "audio",
+      "text": "We every week we put out sign up for open seats and those seats reset. So you basically sign up the week of show up, you know, get some support in small group tutoring and actual tutoring sessions begin week 3, which is this week. We are already in the third week of classes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 531,
+      "type": "audio",
+      "text": "OK. So again, we'll leave that up there for another couple seconds, going once, going twice. And again, you know, you can find the link on Ed and the slides and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 537,
+      "type": "audio",
+      "text": "Definitely recommend signing up as long as we still have availability."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 553,
+      "type": "audio",
+      "text": "OK, so I want to recap what we did last time. I know at the very end we were going a little fast, so I want to make sure we get back and cover what we talked about at the very end and see how what we did we're doing is actually a form of exploratory data analysis."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 572,
+      "type": "audio",
+      "text": "So we talked about group by last time and the way it works is you say your data frame group by and then you give it a column that you want to group on, right? And what this does is it says it makes 1 little like mini data frame, 1 sub frame for every unique value in that column."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 575,
+      "type": "audio",
+      "text": "And then you give it a bunch of columns that you want to do some computation on within each group."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 594,
+      "type": "audio",
+      "text": "Right. Maybe it's just one, maybe it's multiple, but you give it some columns and then you give it an aggregation function, which is basically telling it what do you want to do for each of those columns within each group, right? And that calculation is done within each group separately."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 599,
+      "type": "audio",
+      "text": "So as an example, if they have a data frame of people's grades at the end of the semester and."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 622,
+      "type": "audio",
+      "text": "I run student grades group I section and then say bracket, bracket, midterm one final dot AG mean. So what does this do? It says, OK, we're going to have one group for every section of students. And then I'm only going to look at the midterm and final columns. And within those columns I'm going to call dot AG mean."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 635,
+      "type": "audio",
+      "text": "So basically this is just computing the average midterm score and final score within each section. So the result looks something like this. For section 101, the average midterm one score was 48%, average final is 55 and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 641,
+      "type": "audio",
+      "text": "So this is grouped by. Very useful when trying to answer questions about data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 653,
+      "type": "audio",
+      "text": "So we ended last time talking about this idea of wanting to find the best election for each party, right? For every party, what election was like the best that they ever did, where best is defined by the highest percentage of votes?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 674,
+      "type": "audio",
+      "text": "There are other ways we could have defined best, right? Maybe best means most Electoral College votes. But here we happen to define it this way. So this is the way we're going to answer the question. Keep in mind that a lot of times when you're asking questions about your data set, there are multiple ways to define these things, and defining them different ways will give you potentially different answers."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 691,
+      "type": "audio",
+      "text": "So let's suppose we run elections group by party dot Max, and we saw that this did not work right. It told us that Woodrow Wilson won in 2024 with 61% of the vote, which we know is not true. Why does this fail? Because it finds the Max separately for every single column."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 719,
+      "type": "audio",
+      "text": "So what we did instead was we took advantage of the fact that group by within each of those little mini data frames, within each of those little subframes, it maintains the order from the original data frame, right? So if your original data frame has like a particular column in alphabetical order, then each of the subframes is going to have that column in alphabetical order. If your data frame is sorted by something from high to low, then each of the subframes are also going to be sorted by that variable title."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 723,
+      "type": "audio",
+      "text": "So we start by sorting by percent."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 735,
+      "type": "audio",
+      "text": "So the elections sort value is percent and descending order and that gives us the data frame that looks like this right? Where basically we have every row from highest percent to lowest percent."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 741,
+      "type": "audio",
+      "text": "And then we take that and we group by party and then take the first item."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 747,
+      "type": "audio",
+      "text": "What does that mean? Basically, we're saying we take this data frame group by party. So for every party we have one group."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 768,
+      "type": "audio",
+      "text": "And for every party, we have one group, and within each of those groups, we're going to take the first value. What does it mean to be taking the first value? Well, it just means that we're looking at the top value. What is the top value? It's the one with the highest percent."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 779,
+      "type": "audio",
+      "text": "So as a quick example, right, this is our original data frame. You know, it has all these different columns in order by year when we sort values and you know we get from highest percent down to lowest percent."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 799,
+      "type": "audio",
+      "text": "And then when we group by party, the order is preserved. So the Democrat little Democratic Party is little like subframe has high to low, the Republican subframe has high to low, the Libertarian Party has high to low, and so on. And then we just need to pull out the first item on each one."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 804,
+      "type": "audio",
+      "text": "How do we get the first row in a data frame? We use dot head."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 817,
+      "type": "audio",
+      "text": "So we say group by party dot head of one. This is a different kind of grouping than like Max or min or sum or mean, but it's really just doing something in a group. It's taking the first item in the group."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 825,
+      "type": "audio",
+      "text": "And our sort over here guarantees that that first item is going to be the one with the highest percent within the group."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 829,
+      "type": "audio",
+      "text": "OK, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 854,
+      "type": "audio",
+      "text": "Up until now, we've spent a lot of time on the nuts and bolts of pandas, right? Understanding all the different pandas functions, how they work, what we can do with them. Now we're ready to start putting that into practice. So we're going to start doing some exploratory data analysis. And we've been doing this a little bit of this as we've gone, right? We've answered questions like, you know, talking about gender neutrality, looking at elections, which party wins the most, and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 856,
+      "type": "audio",
+      "text": "So we're going to start answering more of those questions. We're going to bring in another."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 862,
+      "type": "audio",
+      "text": "That play around with that today and then on Thursday we're going to talk about text processing."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 866,
+      "type": "audio",
+      "text": "So let's move to today's demo."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 869,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 879,
+      "type": "audio",
+      "text": "Today we're going to be working with some data on flu, but before we do that, I want to go back to what we did with gender neutrality in baby names."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 906,
+      "type": "audio",
+      "text": "So quick reminder, we defined this metric of gender neutrality. How does it work? Well, we just looked at this, a function that looked like this, right? We calculated the percent of people with that name in a particular year that were boys or girls. And then we basically took that percentage and applied a function that looked like this. If it's a half, then it's one. If it's, you know, all, all boys or all girls, then it's 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 921,
+      "type": "audio",
+      "text": "It's not the only function we could have used, right? We could use a function like this. We can use a function like this. There's a lot of different possibilities. So it's important to keep in mind that, again, this is a choice that we made. That choice might affect the results."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 931,
+      "type": "audio",
+      "text": "We're going to make another choice in a little bit that we'll see how it's pretty significant effects on the results. OK, so this is another way of defining that function. Notice it looks slightly different from what we did last time, but it computes the same thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 938,
+      "type": "audio",
+      "text": "So we said for the year 2006, we pull out."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 966,
+      "type": "audio",
+      "text": "The rows were years 2006. Using this bracket indexing, we group by name, pull out the count column and apply our custom aggregation function. So we're not doing the mean, the min Max, we're doing our function, our function which says, you know, calculate the proportion and then apply this sort of like half is good, you know, 01 bad or big small."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 977,
+      "type": "audio",
+      "text": "And if we do this, then we see the results look something like this, right? So the top names are like Jalen, Carrie, Blair, all of which gender neutrality of 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 987,
+      "type": "audio",
+      "text": "And some of these you might find a little unsatisfying. Right? To have a name with a gender neutrality of one. Wow. That means that like, it's an even split between boys and girls."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1004,
+      "type": "audio",
+      "text": "And a lot of these names don't sound like names that, you know, you've encountered people with that often, right? And in particular, a lot of these are rare names, But if we go down, we start to see names like Robin and Riley that are more common."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1016,
+      "type": "audio",
+      "text": "So maybe it would be nice if we could somehow say, give me the most gender neutral names that are also common in some way, right? Names that have more than a certain number of babies born that are given that name."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1018,
+      "type": "audio",
+      "text": "So that's what we're going to do next."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1023,
+      "type": "audio",
+      "text": "So this is nice and all, but this is only for 26."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1048,
+      "type": "audio",
+      "text": "We also want to understand what's been happening over time, right? We know that, you know, as society's understanding of gender has changed in the last few years as more and more people with gender neutral names, was that true before, right? A lot of times history repeats itself. Things that are common now might have actually been common and fallen out of favor. So was it common before, like maybe even 100 years ago to see people with."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1052,
+      "type": "audio",
+      "text": "You know, give the same name to boys and girls. But let's find out."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1056,
+      "type": "audio",
+      "text": "But if we want to find out, we have to look beyond just 2006."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1062,
+      "type": "audio",
+      "text": "So what we're going to do is we're going to group by two columns. We're going to group by both name."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1067,
+      "type": "audio",
+      "text": "Let me make this a little bigger. Can folks in the back read this OK?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1081,
+      "type": "audio",
+      "text": "Give me a thumbs up in the back. Yes. OK, cool. If at every point you can't read it in the back, just please raise your hand, give me a shout and I can always make it bigger. OK, so I'm going to now group by two columns, name and year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1104,
+      "type": "audio",
+      "text": "And I'm going to then pull out the count. So what is moving by two columns? Do it basically just says instead of like doing it for every name or for every year, it's do it for every combination of name and year, right? For every name, year pair. In other words, for all of the Rileys in 2006, all the Rileys in 2005, all the Rileys in 2004 and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1110,
+      "type": "audio",
+      "text": "Have a unique little like mini data frame, a little mini subframe."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1122,
+      "type": "audio",
+      "text": "Then for each of those groups, we're going to pull out the count and we're going to add on gender neutrality. Same thing we did before for the names for 2006 only, except now we're doing it for every name for every year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1128,
+      "type": "audio",
+      "text": "We call dot reset index. Why? Well if we run this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1157,
+      "type": "audio",
+      "text": "We get something that looks, we notice that it takes a little while, right? This takes a little longer than things because there's a lot of different things and this function isn't necessarily super efficient. The built in functions are going to be a lot faster. So we get this data frame where the index now has like multiple parts to it. Sometimes this is useful. A lot of times when I have a data frame that looks like this, the first thing I do is I really just want these as columns. And so I'm going to call that reset index."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1175,
+      "type": "audio",
+      "text": "And that's going to give me a data frame with the same variables, the same column labels, but now as each as its own column, right? So this says, for example, Zyra in 2011 had a gender neutrality of 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1181,
+      "type": "audio",
+      "text": "Again, it was kind of annoying to have this name count, so we did a little rename and we get this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1199,
+      "type": "audio",
+      "text": "So now what we're going to get is a data frame with for every name, for every year, how gender neutral was that name within that year? In other words, within the boys and girls born in that year, what was the ratio of, you know, boys to girls with that name and so on?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1212,
+      "type": "audio",
+      "text": "So if a name happened to be like, given to more boys and girls many years ago, but now is only given to people of one gender or vice versa of one sex, then maybe it's not. It's not going to show up. It's going to show up differently in those two years."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1220,
+      "type": "audio",
+      "text": "So great, now we have this. We see that most of these are 0 because it's very common for names, you know only one or the other."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1226,
+      "type": "audio",
+      "text": "So now we can do something like find the most neutral name for every year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1231,
+      "type": "audio",
+      "text": "Right. What is the most gender neutral name within every year?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1242,
+      "type": "audio",
+      "text": "Well, if you think about it, this is a pretty similar kind of question to what we just asked about the political parties, right? What is the best election within each party?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1245,
+      "type": "audio",
+      "text": "What is the most gender neutral name within each year?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1274,
+      "type": "audio",
+      "text": "So it's important to be able to see these kinds of patterns, right? To recognize, aha, hey, here's this problem that looks like a problem I've solved before, so I can use the same approach. Yeah, the column names are going to be different. Maybe the details are going to look a little different. Maybe the aggregation is going to be slightly different. But the idea is exactly the same, right? So we don't want to do group by gender neutrality and do math because we know that's not going to work, just like it didn't work with the political parties."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1276,
+      "type": "audio",
+      "text": "But we can do the same thing. We can sort."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1279,
+      "type": "audio",
+      "text": "And then we can group by year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1287,
+      "type": "audio",
+      "text": "Why is this good? Because then within each year, the first row is going to be the row with the highest gender neutrality, right? The most gender neutral name for that year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1297,
+      "type": "audio",
+      "text": "And then we just pull that first one out with that head, and then I'm going to sort the values by year just so it looks convenient to read."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1300,
+      "type": "audio",
+      "text": "All right, so now I can see that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1317,
+      "type": "audio",
+      "text": "You know, we have these names that back in 1910 were actually, you know, somewhat fairly high gender neutrality. But you know, this doesn't sound like it was that common of a name. And if we look at the."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1327,
+      "type": "audio",
+      "text": "The last few years we can see that a lot of these names are not necessarily very common."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1354,
+      "type": "audio",
+      "text": "So this has answered our question, but again, the answer isn't very satisfying, right? It's not like getting at what we want to know because it's giving us names that are super rare. This is a common thing you'll end up with, right? You'll have a question, you'll try to answer it and you'll be like, ah, that actually wasn't exactly the question I wanted to know. I don't want to know what is the most gender neutral name for every year. I want to know what is the most, what is the most gender neutral common name for every year, right? I don't want to look at rare names."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1356,
+      "type": "audio",
+      "text": "All right, so how do I find common names?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1363,
+      "type": "audio",
+      "text": "Well, I need to take these name your pairs and look at how many babies got that name in every year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1366,
+      "type": "audio",
+      "text": "In other words, I need to bring back the counts."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1380,
+      "type": "audio",
+      "text": "But this data frame doesn't have the counts anymore, right? I calculated gender neutrality so I don't have the counts. So how do I take this data frame with name, year, gender neutrality and combine it with the count of every name?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1384,
+      "type": "audio",
+      "text": "Well, this is where I need to do a merge."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1399,
+      "type": "audio",
+      "text": "Right, I need to do a join to combine these two tables and this is something you'll see every so often where you know you do some group by operation, you do some manipulation, and then you join that back onto the original table, some calculation, you join it back and you keep adding on columns that way."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1403,
+      "type": "audio",
+      "text": "So what does that look like?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1431,
+      "type": "audio",
+      "text": "Well, we're going to start by calculating the total count for every name in every year across babies of both sexes. So, you know, Adan was given to seven babies in 2008. Don't know how many of them are boys and girls. But again, we're just looking at how common is a name in total. So this gives us the sort of commonness of names for every year. And now we have, if I zoom out a little."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1433,
+      "type": "audio",
+      "text": "Let's look at."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1439,
+      "type": "audio",
+      "text": "Most neutral."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1458,
+      "type": "audio",
+      "text": "So now I have these two data frames, right? I have this name, year, gender neutrality, name, year count, and now I want to join them, right? Basically I want to say for every name, for every year, I want to know the gender neutrality of that name in that year and the count of that name of that year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1464,
+      "type": "audio",
+      "text": "So we saw last time that we can join tables just like you did in data 8."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1477,
+      "type": "audio",
+      "text": "Except this join is a little more complicated because I don't just want to like, you know, say, give me the same year. I want to join on both name and year, right? For every name, for every year, I want to get the gender neutrality and the count."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1486,
+      "type": "audio",
+      "text": "So what I need to do is use PD dot merge which is our function for doing joins."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1494,
+      "type": "audio",
+      "text": "And what does it look like? We give it two data frames, right, the left and the right."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1508,
+      "type": "audio",
+      "text": "And it's going to join them together. How is it going to join them? It's going to look at these columns and the left data frame. It's going to look at the name and year and the right data frame. It's going to look at the name and year. In this case, they have the same names."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1519,
+      "type": "audio",
+      "text": "So in many cases they'll have different ones, as we'll see a little later. And then it's going to say for every unique value of those two, create a row, give me the values from each of those two data frames."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1530,
+      "type": "audio",
+      "text": "And this is a particular kind of join. There are a few different kinds we'll talk about later in the semester, but for now you can just think of it as a join or a merge."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1539,
+      "type": "audio",
+      "text": "So if I run this then now I finally have for every name within every year I have the count and the gender neutrality."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1542,
+      "type": "audio",
+      "text": "And now I can do."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1545,
+      "type": "audio",
+      "text": "Something like say what I just said what I did before."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1547,
+      "type": "audio",
+      "text": "I can take this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1551,
+      "type": "audio",
+      "text": "If I look at this code here, I'm going to copy that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1553,
+      "type": "audio",
+      "text": "Down here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1561,
+      "type": "audio",
+      "text": "And I'm going to paste it, except instead of using my original one, I'm going to use this new."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1563,
+      "type": "audio",
+      "text": "One with the counts in it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1574,
+      "type": "audio",
+      "text": "And I'm going to do everything else the same, except I'm going to add a filter up front right? I'm going to only keep the rows with common names."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1593,
+      "type": "audio",
+      "text": "Oh, this is where I need to make a decision. How do I define what the commonness of a name right. We saw in this data set that the minimum number of people who have a name for it to be in this data set is five. So you know, doing it greater than 5 isn't really that useful."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1599,
+      "type": "audio",
+      "text": "So maybe we should say look for names that are used given to more than 500 babies in a year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1603,
+      "type": "audio",
+      "text": "So this is a somewhat arbitrary decision that I have just made."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1616,
+      "type": "audio",
+      "text": "Reporting out results, I would probably need to say this is common based on a definition of common of 500 babies or more and I can run this which calculates."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1633,
+      "type": "audio",
+      "text": "What I want and now I can see that in 1912 there are no common names that are gender neutral, right? The the name with the highest gender neutrality in 1912 is Mary, which has a gender neutrality of 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1641,
+      "type": "audio",
+      "text": "Interestingly, in 1915 there were a small number of boys that were given the name Mary. Right? Looks like it has non 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1651,
+      "type": "audio",
+      "text": "So I look at this and you know, OK, this is maybe interesting, but now I want, I can't, you know, get a sense of all these numbers in my head. So I want to make a visualization."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1653,
+      "type": "audio",
+      "text": "So if I."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1655,
+      "type": "audio",
+      "text": "Do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1664,
+      "type": "audio",
+      "text": "Then this is a way of visualizing over time what is the gender neutrality of the most gender neutral name in that year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1674,
+      "type": "audio",
+      "text": "And we see something really interesting, right In the 1910's, the 20's, the 30s, not very common to give gender neutral names. And then just after 1940 it jumps."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1695,
+      "type": "audio",
+      "text": "Right. There's a huge jump here and it kind of goes up and down and up and down, but it's a lot more common, or at least the most there. Is there at least some gender neutral names? Maybe they're more common, not more common, maybe they're less common. This doesn't answer that, but this does tell us that there are gender neutral names that are very evenly, that are close to evenly split."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1702,
+      "type": "audio",
+      "text": "But again, this is based on a threshold of 500. What if we did it with, I don't know, say 100 instead?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1706,
+      "type": "audio",
+      "text": "So if I."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1708,
+      "type": "audio",
+      "text": "Do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1731,
+      "type": "audio",
+      "text": "We can see that this is the one with 500, this is the one with 100, right? We can see a broadly similar pattern, right? That overall, you know, this lower here, it jumps up and you know, there's some pattern, but the specifics look different here. If we're allowing less common names, then the gender neutrality of those less common names is higher here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1739,
+      "type": "audio",
+      "text": "Interestingly here there's a big dip that happens in like the mid twenty 10s that you don't see if you allow for."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1769,
+      "type": "audio",
+      "text": "Less common names. OK, so this is an example of how we would use group by and merge to help us answer questions about a data set, right? Those questions often require making somewhat subjective or arbitrary decisions. It's not completely arbitrary, right? 500 seems maybe reasonable. We can inspect the data frame, we can look at a histogram of the counts to see how reasonable it is. There are ways we can justify it, but at the end of the day, we do have to make some decision in order to visualize this kind of result."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1775,
+      "type": "audio",
+      "text": "And then we can kind of look at what happens in 1940. We can see that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1784,
+      "type": "audio",
+      "text": "You know, before then these aren't very common and then suddenly we start to see names be used for people of both babies of both sexes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1798,
+      "type": "audio",
+      "text": "All right, so that is one example of how we might do some exploratory data analysis, how we might answer some interesting and meaningful questions about a data set using the tools that we have developed."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1808,
+      "type": "audio",
+      "text": "So all right, now that we have the tools, let's say we get a new data set. What do we need to do, right? What are the questions that we need to answer?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1817,
+      "type": "audio",
+      "text": "The process of taking a new data set and kind of looking at it and kind of like poking at it and figuring out what's going on is called exploratory data analysis, or EDA."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1837,
+      "type": "audio",
+      "text": "If you look at, you know, visualization of like, what do data scientists do based on surveys, a huge number of them say they spend a lot of their time doing exploratory data analysis, right? It's a very, very common operation. It's what you'll often spend the most time doing is poking around playing with your data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1846,
+      "type": "audio",
+      "text": "But really, I think it's not quite right. Going out, getting more data, realizing you're confused about some columns, going and answering that confusion, and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1867,
+      "type": "audio",
+      "text": "So when you get a new data set, what do you need to do? So these are four kind of properties of the data set that it's really important to understand and like have an understanding in your mind before you start really like doing all kinds of complex analysis, the kinds of tools that we'll be giving you a little later in the class."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1875,
+      "type": "audio",
+      "text": "To start, let's think about what is the structure of the data. Well, the structure is the shape of a data file."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1886,
+      "type": "audio",
+      "text": "So we often work with what's called rectangular data, right? Rectangular data is nice and clean because, you know, we have like clean rows and columns, and we have for every row we have. For every column we have a data point. Or maybe it's missing."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1895,
+      "type": "audio",
+      "text": "There's two types of rectangular data. There's tables and matrices. So far we've been working with tables. For most of this class we're going to work with tables."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1908,
+      "type": "audio",
+      "text": "There are also matrices, right? If you have taken or are taking linear algebra, you know you'll be learning all about matrices or have learned all about them and matrix is A2 dimensional. You know, data data just like a table."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1935,
+      "type": "audio",
+      "text": "But a matrix, all of the data points are all numbers, and they're all the same type, right? In a table, every column can be have a different type and so on. And matrices are manipulated with linear algebra, You know, we do matrix multiplication. So there's a little less flexible. They're more powerful for what they're good at, but they're less flexible, less general. Unlike tables, we're going to spend most of their time in this class of tables in Python or R they're data frames."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1950,
+      "type": "audio",
+      "text": "So when we have these columns, they're variables of different types. We've kind of seen some of those types already, right? Integers, floats, strings, and so on. So."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1954,
+      "type": "audio",
+      "text": "Let's talk about what different kinds of variables we might get in a data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1980,
+      "type": "audio",
+      "text": "Broadly, there's two categories of variables. There are qualitative variables, which are things like that are categorical and they're quantitative. So quantitative variables is basically anything numeric, right? Anything you can quantify, add, subtract, look at differences between things like that, then it's numeric, right? If you can do that, then it's quantitative. Otherwise it's qualitative."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1992,
+      "type": "audio",
+      "text": "So quantitative again is like measurable numeric things like prices, right. Prices you can add. Look at the difference between you can average temperature, age, same thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 1994,
+      "type": "audio",
+      "text": "And."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2011,
+      "type": "audio",
+      "text": "Qualitative can fall into one of two categories. Qualitative variables can be either ordered, in which case they're ordinal, or they can be unordered, in which case they're nominal. So ordered categories, for example, is what grade level is a student in."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2024,
+      "type": "audio",
+      "text": "Right. If I have a bunch of second graders and a bunch of 4th graders, you know, second graders and 3rd graders, I'm not going to compute the average grade level of my student, right? It doesn't make sense to say the average grade level of these students is 2.3."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2027,
+      "type": "audio",
+      "text": "No fishing is like 2 point third grade."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2053,
+      "type": "audio",
+      "text": "But I have a sense that third grade is higher than second grade. So this ordering introduces if there's an ordering, then we call them ordinal, otherwise we call it nominal. This is these are things that are unordered. For example, what brand is your phone right? Is it Apple? Is it Samsung, Nokia, Google, so on Or ID numbers can be nominal as well."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2059,
+      "type": "audio",
+      "text": "So let's quickly do a couple of examples. CO2 level, right? If I look at CO2 level, what kind of variable is this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2060,
+      "type": "audio",
+      "text": "Someone just shout it out."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2062,
+      "type": "audio",
+      "text": "Quantitative."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2065,
+      "type": "audio",
+      "text": "Income bracket low, medium or high."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2078,
+      "type": "audio",
+      "text": "So I heard a mumble, but yes or it sounded like ordinal to me, right? This is qualitative ordinal. Why? Because we have an ordering from low, medium, high."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2079,
+      "type": "audio",
+      "text": "Race or ethnicity?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2086,
+      "type": "audio",
+      "text": "A qualitative nominal right because there's no ordering across them political party."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2111,
+      "type": "audio",
+      "text": "Also nominal. But I could also define political parties on like a spectrum from left to right. Right? I could say this party is further to the left, this party is further to the right. So maybe I can order them that way. Maybe I can even make the ordering 2 dimensional. So maybe political party could be qualitative ordinal as well depending on how I'm defining it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2115,
+      "type": "audio",
+      "text": "So some of these answers, as you'll see, sometimes will be. It depends."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2117,
+      "type": "audio",
+      "text": "What about year?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2141,
+      "type": "audio",
+      "text": "So here I would say it depends also, right? Sometimes you can say, yeah, year is qualitative ordinal because you know you're not going to subtract, but you do want to do things sometimes, like look at the difference between years, right? How many years in between these two? So in some cases, year might be quantitative. What about GPA?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2171,
+      "type": "audio",
+      "text": "I heard it depends, yes, you're getting the hang of this, right? Because sometimes you might want to say like what what GPA can you get in a class? Well, there's only specific values, right? You can get a 43.73.332.7 and so on in any individual class. But then your overall GPA can take on values in between. So if you've taken, if you've taken a lot of classes, but you might also be interested in GPA just as like broad categories, right? In that case, it might be it better to use the qualitative ordinal."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2171,
+      "type": "audio",
+      "text": "Representation."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2173,
+      "type": "audio",
+      "text": "What about postal code?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2179,
+      "type": "audio",
+      "text": "So that's a great question. Let's do a slide."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2196,
+      "type": "audio",
+      "text": "So what type of variable is our a zip code, Zip code, postal code. You know like 94705 or you know 02139 or whatever. Take a second turn the person next to you and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2288,
+      "type": "audio",
+      "text": "All right, So what do what? What are zip codes?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2307,
+      "type": "audio",
+      "text": "So fun fact, zip codes are not actually randomly assigned. There is a structure, a rhyme or reason to them. You know, zip code starting with 9 tend to be, you know, West Coast, Alaska, Hawaii. Here are different values of zip code."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2308,
+      "type": "audio",
+      "text": "Hide this guy. Umm."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2336,
+      "type": "audio",
+      "text": "So ZIP codes aren't randomly assigned. And if we think about it, well, we can't really do like math on ZIP codes, right? It doesn't make sense to do like what's the average of 94725 and ZIP code 93102, right? Because the numbers don't make sense as numbers, right? They're just sort of labels. And so because of that, they are really more."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2338,
+      "type": "audio",
+      "text": "Qualitative and not quantitative."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2344,
+      "type": "audio",
+      "text": "If we were to store them as integers, well, what could go wrong?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2349,
+      "type": "audio",
+      "text": "Well, what if we? You know, we say it's categorical, but we like use an integer to store it anyway."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2370,
+      "type": "audio",
+      "text": "What could, what might happen? Well, if we look up here, think about the Northeast, looking at the hint, we see a bunch of these that start with 0. If we store them as integers, a zip code like you know, 02147 is going to be stored as just 2147. We're going to drop the leading zero. We're not going to see it as a 5 digit number."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2380,
+      "type": "audio",
+      "text": "So a lot of times when you have qualitative variables, it's generally best practice to store them as strings, even if they happen to look like numbers."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2387,
+      "type": "audio",
+      "text": "ID numbers maybe a notable exception, but generally you want to store qualitative variables as strings."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2413,
+      "type": "audio",
+      "text": "OK, so we talked a little bit about structure. We'll come back to structure and different kinds of data a little more, but I want to talk about something important, which is granularity, which is to say how fine or coarse is a particular piece of data within your data set. Quick aside, you know, the word data is technically a plural word. The singular of data is."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2417,
+      "type": "audio",
+      "text": "Datum or datum. So if you use the word data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2430,
+      "type": "audio",
+      "text": "Technically, you really should like pluralize it, but in practice people usually don't care, right? You will hear people say data is, data are, so you will hear me say data is and both data is and data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2434,
+      "type": "audio",
+      "text": "Yeah, it's technically incorrect, but in practice it's really fine."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2443,
+      "type": "audio",
+      "text": "So granularity is basically referring to how fine or coarse is each particular data. What does that mean?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2459,
+      "type": "audio",
+      "text": "Basically, what that means is for every row, what is every row represent, right? We might have a data set where every row is an individual person, right? And for that person, we have a bunch of information about them. Or we may have a that's sort of fine."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2466,
+      "type": "audio",
+      "text": "On the other end of the spectrum, we may have a data set that's more coarse, where every row is a group of people."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2477,
+      "type": "audio",
+      "text": "You know, maybe every row is 1 state, maybe every row is 1 country, right? That has a bunch of different people and we have aggregate information about that group."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2483,
+      "type": "audio",
+      "text": "So if we have data about sort of single person, single purchase, then that's more fine grained."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2497,
+      "type": "audio",
+      "text": "Some data sets happen to include summaries or roll-ups. So for example, you may have like a row for every person and then a summary row included. So if you're calculating average, you need to make sure to remove that row from your analysis first."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2508,
+      "type": "audio",
+      "text": "And when you get data that is coarse, it's important to keep in mind how were the records aggregated right if you have data a data representing an entire state."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2539,
+      "type": "audio",
+      "text": "How did you compute the average value for every for every state? Did you see someone actually go out and survey every individual person in the state and aggregate their responses? Was it based on a sample? Was it based on something else? So when you get data that are coarse, it's important to keep in mind how that data was aggregated. It's also important to take whatever conclusions you draw from that data set and limit them to the coarseness of your data set, right If you find there's a correlation in income between an income and voting."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2559,
+      "type": "audio",
+      "text": "Between states, then you say at the state level, the income is correlated with voting patterns in this way. That does not necessarily mean that individuals might also have the same correlation, right? You probably saw the ecological fallacy in data eight. You don't want to draw conclusions about individuals based on data about groups."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2572,
+      "type": "audio",
+      "text": "OK, so let's do an example. So think about that elections data set we've been working with for the last couple lectures. So what is each row represent?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2592,
+      "type": "audio",
+      "text": "And or in other words, what is the granularity of this data set? In this class, we'll use the word granularity to refer to like what is each row represent? Not everyone will use it that way, but everyone will always care about what does each row represent? Answering that question. All right, take a second turn to the person next to you and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2693,
+      "type": "audio",
+      "text": "Alright, So what is the granularity of this data set? What is each row represent?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2710,
+      "type": "audio",
+      "text": "Well, maybe we'll look at it and be like, oh, there's a column with candidate each, each row is 1 candidate. But we already know from, you know, the last couple weeks that that's not quite right, right? So it's important to keep in mind that, oh, you see someone, something like candidate. So maybe it's candidate or maybe it's year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2733,
+      "type": "audio",
+      "text": "We have to think and understand what is in the data. And sometimes this involves, you know, poking around and looking at it. Sometimes it involves going and looking up where you got the data from, reading up on it and understanding it better. But it's always important to be able to answer these kinds of questions at the beginning of your data exploration process. Otherwise you may end up coming up down with wrong conclusions downstream."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2739,
+      "type": "audio",
+      "text": "So I see a bunch of people candidate, a fair number of like candidate in a year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2763,
+      "type": "audio",
+      "text": "So each row represents a unique combination of candidate and year, right? So it's not just, you know, for example, we have multiple rows for Abraham Lincoln. And so this row, row #23 is not the Abraham Lincoln row because there's two of them, right? There's 23 Abraham Lincoln row and 27 Abe Lincoln row."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2775,
+      "type": "audio",
+      "text": "But this is the row for Abraham Lincoln in 1860. This is the row for Abraham Lincoln 1864, right? That is a full description of what's going on in this row, and similarly a full description of what's going on here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2779,
+      "type": "audio",
+      "text": "Notice that in order to say this, we have to make a couple assumptions."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2801,
+      "type": "audio",
+      "text": "First off, we have to assume there's only 1 presidential election in every any particular year, which as far as you know, the history of the United States goes, there has only been 1 presidential election in any year there's been one. And we also have to assume that any candidate can only run on with one party."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2815,
+      "type": "audio",
+      "text": "So there's some local elections where a candidate can run under multiple parties, under multiple tickets. At the presidential level, each candidate runs for one party. And so this data set has, you know, one row for every candidate, year and candidate and what party that candidate ran under."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2823,
+      "type": "audio",
+      "text": "So it's important to keep in mind these assumptions when you're answering the question of what is the granularity of a particular data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2855,
+      "type": "audio",
+      "text": "OK, so that's granularity. Let's also talk about temporality. A lot of data sets that you'll work with involve time in some way or another, right? You have time. Maybe you'll have time as a column. Maybe you'll have some multiple columns that reflect time. So how do we represent like dates and times in our data set, right? So let's suppose I have a data set that has, you know, a column with like a date, date, time variable, for example. Maybe you know a data set that says."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2858,
+      "type": "audio",
+      "text": "Like January 1st, 2025, 3:30 PM."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2868,
+      "type": "audio",
+      "text": "What type of variable is this? Is it quantitative, qualitative, ordinal, qualitative, nominal, or is it something else? Take a second turn to the person next to you and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2960,
+      "type": "audio",
+      "text": "All right, so spoiler alert, this is maybe another one of those, maybe it kind of depends questions. But in order to really answer it, let's start thinking about what do we want to do with date time columns and how might we store them?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2973,
+      "type": "audio",
+      "text": "So the question of how will we store, how will we represent a date, time, you know, in the computer is going to be a helpful one to help us understand what is actually going on behind the scenes, What kind of data are we working with here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 2999,
+      "type": "audio",
+      "text": "So as people, right, when I write down a date and a time, I write it down like this, right, right. January 1st, 2025, maybe we read it in a different order. In Europe, we write it in different order. Sometimes people write the year first, but you know, I write something down. I have a convention and then I write down the time, you know, with AM or PM. Maybe I also write like daylight savings. Maybe I also write the time zone. But you know, at the core of it, this is what I write."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3019,
+      "type": "audio",
+      "text": "So maybe I can store this as a categorical variable, right? Sure. Looks like a string to me, right? Trivial sword is a string. And you know, for efficiency sake, maybe I'll just get rid of the slashes and spaces and colons and stuff and just store it as like 01/01/2025 at, you know, oh, 3:30 PM."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3049,
+      "type": "audio",
+      "text": "P Right. So this is maybe one way of storing it, but this has some problems, right? What are the kinds of things we want to do when we have date time variables? Well, we want to be able to know if one thing after another, right? If I'm making a graph of data over time, I want the earlier stuff to come on the left side of my graph and the later stuff to come on the right side of my graph, right? I need to be able to do comparisons between date times."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3055,
+      "type": "audio",
+      "text": "So that means at the very least, they must be qualitative ordinal, right? They cannot be, you know, unordered."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3061,
+      "type": "audio",
+      "text": "Can't be the qualitative nominal, so at the very least we have to be able to do comparisons."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3093,
+      "type": "audio",
+      "text": "But we can also kind of do math between date times, right? We can think about a date time and say, if I ask you how many minutes are between right now and the start of the Data 100 final exam, you can go in calculator, right? Yeah, you'd probably have to look it up. And you know, maybe it would be a slightly stressful calculation when you realize it's how soon it is, or maybe it's a relief because of how far it is. But you can calculate that exactly, right? You can have a numeric answer to how far away is the final."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3095,
+      "type": "audio",
+      "text": "Them from right now."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3104,
+      "type": "audio",
+      "text": "So maybe it makes more sense to store it as a numeric variable, but how do I take that and turn it into something numeric?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3118,
+      "type": "audio",
+      "text": "Well, it's again, as I said, it's difficult to make these comparisons. Another problem is that it's kind of a waste of space, right? There's like a lot of different variables in here. Most of the time they're going to be, you know, zeros Maybe I don't always need a four digit year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3124,
+      "type": "audio",
+      "text": "So we want to store them as numerical values, but how?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3134,
+      "type": "audio",
+      "text": "The standard in computing is to use something called Unix time or POSIX time, which is basically just the number of seconds since January 1st, 1970."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3140,
+      "type": "audio",
+      "text": "Why January 1st, 1970? Because that's how someone defined it when they came up with this idea."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3149,
+      "type": "audio",
+      "text": "It's not like a particularly meaningful time, it's just this is the standard and it's January 1st, 1970 in UTC time zone."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3168,
+      "type": "audio",
+      "text": "So as an example of February 4th, 2025 at 5:00 PM corresponds to 1,738,674,000. You know, February 4th 1950 corresponds to -628 million and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3172,
+      "type": "audio",
+      "text": "Right. So negative values represent times before 1970, positive after."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3202,
+      "type": "audio",
+      "text": "Is this the only way that we could do this? No. But is it a perfectly reasonable one that it is a good standard and a convention? Yes. So This is why most times are stored in this way. And this is kind of the standard. And this is nice because it makes it really easy to do comparisons, right? I can say this time is after this time because this number is bigger than this number. I can calculate what is the difference, right? If I ask you to say like, you know, if someone asks me and comes up and says, you know how many seconds?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3220,
+      "type": "audio",
+      "text": "Between now and the data 100 final be kind of an involved calculation, right? I have to look at, OK, how many days are in each month, how many minutes are in each day, what time is it now? So it's a pretty involved calculation if I want to think about these strings."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3239,
+      "type": "audio",
+      "text": "But if I represent the moment the final exam starts in this way, and I represent now in this way, it's really simple, right? To calculate the number of hours, right? I just take these the difference and divide by 64 minutes or 3600 for hours, right? Or that times 24 for days, and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3248,
+      "type": "audio",
+      "text": "So this is a great way of storing numbers that is a numeric representation of them under the hood, and this is generally how date times are stored."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3252,
+      "type": "audio",
+      "text": "So it's easy to make count comparisons and things like that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3264,
+      "type": "audio",
+      "text": "So before we get into our demo example, let's take a quick two-minute stretch break so everyone can stretch out get some air before we jump into our main demo of today."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3355,
+      "type": "audio",
+      "text": "Everyone hope everyone has gotten stretched out, gotten a breath of taking a breath of air. Let's go ahead and look into the flu."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3358,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3367,
+      "type": "audio",
+      "text": "Everyone probably heard that this year has been a particularly bad year for the flu, right? It's a bunch of news articles about like, oh, the flu is, you know, bad this year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3388,
+      "type": "audio",
+      "text": "Vaccination rates have been relatively low this year, right, because this is the first year that the CDC has changed their guidance to not recommend vaccines for flu, vaccines for children. It's now a conversation that has to happen before someone can get a vaccine. So there are big changes and we've."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3407,
+      "type": "audio",
+      "text": "Had a worse than usual flu season. And some of this is because of the actual property of the flu itself, right? The flu virus has mutated in a way that sort of makes it different from what the vaccine captures. So how much of it comes from, you know, people not being less vaccinated? How much of it comes from the change in the the virus itself?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3435,
+      "type": "audio",
+      "text": "These are questions that we can maybe get partial answers to with data, right? The data that we're going to work with will not give us the whole story, will not tell us the entire answers, but they will give us important parts of it. So we're going to be working with datasets, a data set from the CDC, as long as they still happen to collect data, which who knows how long that'll happen for. But the data we're going to work with is divided into regions."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3440,
+      "type": "audio",
+      "text": "So the Department of Health and Human Services has defined these ten different regions."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3459,
+      "type": "audio",
+      "text": "Why are the regions defined this way? Because somebody at the HHS said I want to define regions where it's easy enough to like have a field office in the center and people to be able to like go out and do things. And so that's why the regions are defined this way, right? Region 9 is like the California, Nevada."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3470,
+      "type": "audio",
+      "text": "Arizona and maybe it doesn't make sense for like Arizona and New Mexico to be in different regions, but this is how the data that we're going to be working with is, right. So this data center is called flu view it's from."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3480,
+      "type": "audio",
+      "text": "The influenza division of the CDC, again, as I mentioned, you know this data set, these data are still being collected, but cuts have eliminated, you know, many government."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3487,
+      "type": "audio",
+      "text": "Health. Public health tracking data sets. Who knows how long this one's going to be around? So let's work with it while we still can."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3489,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3495,
+      "type": "audio",
+      "text": "We're going to be working with this data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3523,
+      "type": "audio",
+      "text": "And in particular, this data set lives inside this data flu folder. And we see we have a few different datasets here. So I went to the CDC website and I downloaded this data set and it came with three of these CSVS. And we're going to be looking at this one ili net dot CSV, right? And last week I already kind of like poked in week before I poked at one of these CSVS and looked at it. So let's do that again. So I'll double click on it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3529,
+      "type": "audio",
+      "text": "What is this data? Well, this looks kind of weird. I only see one column."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3549,
+      "type": "audio",
+      "text": "But it should be a CSVI thought. Like CSV datasets always have multiple columns. So there's this like first column which is percentage of visits and then this column has a bunch of commas in it. Something doesn't seem right. So let's look at the actual raw data and not the sort of nice view that Jupiter Lab gives us. So I'm going to right click and do open with editor."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3556,
+      "type": "audio",
+      "text": "And this shows me the text of the file so I can see that the first line."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3558,
+      "type": "audio",
+      "text": "This is pretty small, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3569,
+      "type": "audio",
+      "text": "The first line is just a header, right? It's a description of the overall data set. It's not a proper CSV header row that tells me all the names of the columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3571,
+      "type": "audio",
+      "text": "That starts the 2nd row."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3578,
+      "type": "audio",
+      "text": "So when I load the data set, I want to somehow be able to tell pandas hey like ignore the first row and just start from the 2nd row."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3582,
+      "type": "audio",
+      "text": "So there is some."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3597,
+      "type": "audio",
+      "text": "Code in here that actually looks at the file itself. We're going to skip over that for now. I encourage you to play around with it. You know, you can load the file using open, see what's in it, it prints new lines and so on, but we're going to start."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3619,
+      "type": "audio",
+      "text": "By trying to load it into pandas and again we get a similar problem where something looks weird. Everything is bold and here it says it's only got 1 column. Again, same problem because it thinks that first row is the header row, there's no commas so there are no extra columns in that first row and so it's hey your whole data set only one column."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3625,
+      "type": "audio",
+      "text": "So what I really want is to tell pandas hey ignore that first trip."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3626,
+      "type": "audio",
+      "text": "So what I can then do is use."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3631,
+      "type": "audio",
+      "text": "The argument to read CSV header equals 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3641,
+      "type": "audio",
+      "text": "What if header equals one mean it says you know the first line is row zero, the second line is line 1. So the header is actually in line 1, not in line 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3648,
+      "type": "audio",
+      "text": "In this case it will ignore line zero that first line and give me the data as I want."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3672,
+      "type": "audio",
+      "text": "Great. So what is this data set look like? I have, you know region type which for every row is HHS regions. I have the region year week and then I have these counts for different age groups of ILI. What does ILI stand for? ILI means influenza like illness. It's a category that the CDC uses to track flu every year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3686,
+      "type": "audio",
+      "text": "Why does it use ILI? Because this data set is based on people being admitted to the hospital with a fever and, you know, one or more of several flu associated symptoms, sore throat, stuff like that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3697,
+      "type": "audio",
+      "text": "So if we have these columns right, this is basically telling us for every age group, how many of these ILI cases did we have at hospitals?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3718,
+      "type": "audio",
+      "text": "Does this capture every single case of the flu? No. But again, they have a fair number of providers within each region, and so they're able to get data from a bunch of them. So this is not a comprehensive data set, but it's hopefully a representative one that they're able to use to estimate how bad the flu is in a particular year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3722,
+      "type": "audio",
+      "text": "So you have these regions."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3726,
+      "type": "audio",
+      "text": "So what is the granularity of this data set?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3743,
+      "type": "audio",
+      "text": "Well, here we have. Do we have one row per region? No, because there's multiple rows for every region, right? If I look at the entire data set, we can see we have 5380 rows and you know, there's like 10. There's eleven different years, so or 12 years."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3763,
+      "type": "audio",
+      "text": "What I really have is one row per region per year and week combination, right? So in region 1 I have data for every like week within every year from 2015 up through 2026."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3774,
+      "type": "audio",
+      "text": "Up through basically today and or last week and then you know same for region 2 and so on, right? So I have one row for every combination of region, week and year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3779,
+      "type": "audio",
+      "text": "Right. For every region then for every year and every week within that year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3782,
+      "type": "audio",
+      "text": "That is the granularity of this data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3807,
+      "type": "audio",
+      "text": "So if I want to like, you know, answer some questions here, what kind of visualization should I be using, right? Because again, I can't look at this giant table of numbers and make any sense of it, right? I'm looking at this and I don't really know what's going on. Also, there's so many like groups within the data set that I don't really want to look at like averages or, you know, medians or things like that because that'll obscure all this variation."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3812,
+      "type": "audio",
+      "text": "So what kind of visualization should I use to help me answer this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3817,
+      "type": "audio",
+      "text": "A histogram, Bar chart, line graph. Someone shut it up. Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3819,
+      "type": "audio",
+      "text": "Scatterplot."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3847,
+      "type": "audio",
+      "text": "Well, maybe I could use a scatter plot, right? Kind of compare some how things are associated. But at the core of it, remember the granularity of this data set is time, right? It's like space and time, right? I have locations and I have time, right? And so if I have time, then often the natural visualization is a line graph, right? Because I can say I have X axis is time Y axis plot, some stuff going on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3864,
+      "type": "audio",
+      "text": "But the problem is I don't really have one variable I can use as my X axis, so I need to start by wrangling and manipulating the data to get what I want. So I need to have some way of converting 2015 and 40 into a precise date."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3879,
+      "type": "audio",
+      "text": "So pandas gives us something called a date time object which is a another data type within pandas, right? We've seen ints and floats and strings which are like object arrays. So pandas also has date time objects."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3890,
+      "type": "audio",
+      "text": "So what we really want is to somehow convert this like 2015 week 40 into a date time representing the say like the beginning of that week."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3916,
+      "type": "audio",
+      "text": "So how do we do that? Well, I actually don't know. I have done this for long enough that like I kind of know that there's like this method like to date time, it's like you have to format something or other. This is a great example of the kind of thing that you will need to look up, right? You'll have questions like this. This is a great example of something that, you know, punch into Google, go ask an LLM look this up. So I did that and."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3919,
+      "type": "audio",
+      "text": "I got this function."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3937,
+      "type": "audio",
+      "text": "Right. So not to spend too long on this, but essentially what we're doing is we're taking the year and the week kind of like pushing them together and making a row that looks like 20/24/30 and then a zero at the end."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3945,
+      "type": "audio",
+      "text": "And then we're reading that with the format that says every row looks like year percent Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3967,
+      "type": "audio",
+      "text": "Week number percent capital W and day within that week 0, which is Monday little W then no need to understand exactly what this is doing. This is something you will see though it's it's important to like understand, hey, pandas has this thing with like formats and like I can do percent something and it does some parsing of numbers into years. So."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3971,
+      "type": "audio",
+      "text": "But from this and I get back."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3973,
+      "type": "audio",
+      "text": "So this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3973,
+      "type": "audio",
+      "text": "A column that says the start of the week."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 3995,
+      "type": "audio",
+      "text": "Row, which is 2018. The 38th week in 2018 starts on November or September 23rd, right? This one, the 21st week starts on June 2nd. This is 47, right? We know 47 is close to 52 end of the year, and yes, it is November 24th."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4010,
+      "type": "audio",
+      "text": "All right, so this is how we process our data, and this is something that you'll often need to do. You'll need to like wrangle your data, you know, figure out what's going on, find, oh, hey, that first row doesn't work. Hey, I need to like, you know, convert these into different columns and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4014,
+      "type": "audio",
+      "text": "So this date time column if I look at it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4039,
+      "type": "audio",
+      "text": "We can see that it is a you know has all these values and the data type is date time 64 NS And just like how with a string column I could use like dot STR dot stuff, with the date time column I can use dot DT dot stuff."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4043,
+      "type": "audio",
+      "text": "So if I were to look at."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4050,
+      "type": "audio",
+      "text": "Ili week start dot DT dot year. This pulls out the year of every day time."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4054,
+      "type": "audio",
+      "text": "Right if I want to know the month."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4061,
+      "type": "audio",
+      "text": "This pulls out the month of every day time. If I want to know the day, it pulls out the day of everyday time."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4080,
+      "type": "audio",
+      "text": "If I want to know the day of week, then for every day if everyone is the same one, because again I just have, this is like the start of every week right? So this dot TDT gives me a bunch of date time specific stuff in the same way that dot STR gives me a bunch of string specific stuff."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4093,
+      "type": "audio",
+      "text": "So pandas have columns, Series have dot D type just like arrays and we can see that the data type is less than M8 bracket NS."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4104,
+      "type": "audio",
+      "text": "So the lesson M8 just means the numpy type date times 64. The NS means that this represents the number of nanoseconds since January 1st, 1970."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4127,
+      "type": "audio",
+      "text": "Again, not something you need to know, just a fun fact. OK, so now that we have this, let's generate some visualizations. And I don't want you to like think, worry too much about how we're writing the code to generate the visualizations because we'll talk more about that next week. And general, it's not as important to like know how to write the code as to clearly specify what you want in a visualization in the first place."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4132,
+      "type": "audio",
+      "text": "So I want a visualization where I have for every region. What does the trend look like overtime?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4149,
+      "type": "audio",
+      "text": "So again, you know, I saw on the news like I was visiting my grandma who watches the news every night. And, you know, there was a bunch of news about how there's a lot more pediatric cases of flu this year. So I want to know among age 0 to 4."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4152,
+      "type": "audio",
+      "text": "How common is the flu?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4154,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4161,
+      "type": "audio",
+      "text": "I have this data set I plot. My X column is the date time, Y is age and what do we see here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4170,
+      "type": "audio",
+      "text": "We could pause and just think for like a few seconds. What kind of stuff do you see happening in this graph?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4178,
+      "type": "audio",
+      "text": "Well, I see a bunch of different things, right? One, I see that the numbers seem to be going up."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4201,
+      "type": "audio",
+      "text": "Two, I see that in 2020, in most of the regions and even here relatively, there was way less flu, which kind of makes sense, right? Everybody's inside, you know, people weren't going out as much. People were like wearing masks and, you know, not doing things that spread disease as much. And then I also see that in the last few years, the numbers look higher than they were before."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4222,
+      "type": "audio",
+      "text": "I can also see other things like, hey, this here, there's this sort of like double peak pattern that happens in a lot of years, maybe not every year. This is a common thing that flu public health officials notice that there's often a double peak. So this is the kinds of things you can see in a visualization that it's pretty much impossible to read off the raw table."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4228,
+      "type": "audio",
+      "text": "So we can also look at the."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4255,
+      "type": "audio",
+      "text": "Percent weighted ILI. So this column again, when you have all these different columns, it's important to know exactly what they mean, right? Sometimes it means going and looking it up. So I looked it up and percent weighted ILI is the population adjusted percent of hospital visits that are related to flu like illnesses. So again, we can see a similar pattern, but we see that you know."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4257,
+      "type": "audio",
+      "text": "The that peak that we saw in the last few years."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4263,
+      "type": "audio",
+      "text": "Not quite as big. We also see that this year does look quite a bit worse than the last few years."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4295,
+      "type": "audio",
+      "text": "So what does this tell us, right? How do we understand this, where this is coming from? Well, this requires us again to go and ask questions about the data. So if we look at the source information, it tells us that the IT says the number and percent of patients can vary by region and season due to different provider type mixes. Children have it more often than adults. Regions with more pediatric centres will have higher pediatric levels."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4307,
+      "type": "audio",
+      "text": "It's not appropriate to compare the magnitude due to ILI between regions and seasons. Another thing over here on the data set says since 2021 to 22, that is from then onwards."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4314,
+      "type": "audio",
+      "text": "The case definition no longer includes quote without a known cause other than influence."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4319,
+      "type": "audio",
+      "text": "In other words, pre 2021 in order to be counted in this data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4338,
+      "type": "audio",
+      "text": "The illness that you had had to have, it couldn't have a cause that was not the flu, right? So if you came in and you had these symptoms, but it was like you had been diagnosed with strep or you'd been diagnosed with some RSV, you wouldn't end up in this data set. But post 2122, you do."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4352,
+      "type": "audio",
+      "text": "So that might explain part of why we see a jump right? There are more illnesses being categorized into this data set. In other words, the data set has more stuff in it, right? There are more people being counted in the data set from 2021 onwards."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4362,
+      "type": "audio",
+      "text": "So a lot of times answering questions that come up like, hey, why is this like so much bigger in post 2021 than before?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4388,
+      "type": "audio",
+      "text": "We can't answer those questions just from the data alone. We have to like step outside and do some understanding of like domain knowledge, talk to domain experts, do some research to really be able to answer those questions. So EDA is a combination of figuring out how do I want to look at the data? What questions do I want to ask? What do I want to look at? How do I wrangle the the right columns in the right places? It's a combination of that and then going out and asking questions in the real world and getting them answered."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4402,
+      "type": "audio",
+      "text": "OK. So I also mentioned that we may want to look at vaccine information, right? We may want to say, hey, like is there a correlation between, you know, flu cases and vaccination rates?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4410,
+      "type": "audio",
+      "text": "So in order to do that, we're going to have to bring in another data set, right? We're going to have to bring in some."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4417,
+      "type": "audio",
+      "text": "Vaccine data, right, Data on how many people are vaccinated, how often people are vaccinated and so."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4425,
+      "type": "audio",
+      "text": "When this happened, this is something we have to do a lot. In order to do this, we generally have to join those two different datasets."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4429,
+      "type": "audio",
+      "text": "So I went ahead and processed the the vaccine data and."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4447,
+      "type": "audio",
+      "text": "Basically what I have here is vaccination rates. So for every So how does the flu vaccine work? Right? So if you think about vaccines for like tetanus or you know, measles, you get 1 vaccine when you're little and you're done."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4461,
+      "type": "audio",
+      "text": "But the flu vaccine, you get a different one every year. So if you want to look at vaccination rates, you can't just say, oh, like, you know, this many people percent got it and I'm done. It's every year you have to reset right? When the new vaccine comes out, you have to reset."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4466,
+      "type": "audio",
+      "text": "So that means that flu vaccination data can be kind of complicated to work with."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4468,
+      "type": "audio",
+      "text": "So here's what it looks like."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4472,
+      "type": "audio",
+      "text": "For every region, for every month."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4482,
+      "type": "audio",
+      "text": "So already we see what might be an issue, right? The earlier data set the granularity is region and weak within a year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4494,
+      "type": "audio",
+      "text": "Here the granularity is region and month within a year. So there's a mismatch in granularity between my 2 datasets. I'm going to have to do some work to get them to match up."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4502,
+      "type": "audio",
+      "text": "OK, so but leaving that aside, how do I understand this data set? So in July the vaccination rate is 0?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4516,
+      "type": "audio",
+      "text": "Because they're basically their year starts in July and then it goes up and up and up and up, right? Every month more and more people get vaccinated. This is the vaccination for children basically under six months to 18 years only."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4525,
+      "type": "audio",
+      "text": "And you can see that by the end of the flu season, the vaccination rate is 44% and then it resets to 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4540,
+      "type": "audio",
+      "text": "So maybe we have to like do something within a particular year or something, but maybe for now let's just like join up the months with the years and try to see how we can get them to work."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-331-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4551,
+      "type": "audio",
+      "text": "So how do we join? Well again our datasets are different granularity, so we need to find some way of taking the weak level information and converting that to the month."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-332-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4556,
+      "type": "audio",
+      "text": "Again, this is another operation that I don't know how to do off the top of my head."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-333-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4561,
+      "type": "audio",
+      "text": "So I went out, I googled it, you know, I asked an LLM and I got an answer."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-334-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4565,
+      "type": "audio",
+      "text": "So if we think about our two datasets right, this one has month, this one has week."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-335-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4586,
+      "type": "audio",
+      "text": "So they told me that I can do this. What does this do? This says dot DT right? I'm using the date time accessor attribute and I say to period M probably something related to like the month and then that within that I like get the time of."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-336-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4589,
+      "type": "audio",
+      "text": "The the month as a date time."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-337-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4591,
+      "type": "audio",
+      "text": "So if I do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-338-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4601,
+      "type": "audio",
+      "text": "Then I get a column that says month that for every week now it tells me what the corresponding."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-339-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4605,
+      "type": "audio",
+      "text": "Week for every week it tells me what the month is, right? So here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-340-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4610,
+      "type": "audio",
+      "text": "You know this looks like this and I can do this dot sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-341-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4625,
+      "type": "audio",
+      "text": "And you can see that, you know, for every date time here I have the month, the the 1st of the month. Why do I need the 1st of the month? Because that's how I'm going to join it with the vaccination data, right? Where everything here is the 1st of the month."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-342-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4628,
+      "type": "audio",
+      "text": "OK, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-343-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4638,
+      "type": "audio",
+      "text": "How do I join these datasets again? I use dot merge right? So before I was using PD dot merge. You can also use the data frames dot merge method."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-344-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4645,
+      "type": "audio",
+      "text": "And I say ili dot merge vax. So here ili is the left, vax is the right."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-345-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4651,
+      "type": "audio",
+      "text": "And again, I'm going to join. What am I going to join on? Well, I need to join on 2 columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-346-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4673,
+      "type": "audio",
+      "text": "Why? Because I can't just join on the the month, because then I'll have like multiple different rows for regions, right? I really want for every region for every month, right? Because that's the granularity of my data set, right? The granularity of the vaccination data set is for every region for every month."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-347-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4691,
+      "type": "audio",
+      "text": "The granularity of the flu count data set is for every region for every week, which we've kind of like kludged into for every region for every month, right? So I have two data sets that are granularity, region and month, and so when I join them, I need to join on both region and month."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-348-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4693,
+      "type": "audio",
+      "text": "So I do that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-349-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4717,
+      "type": "audio",
+      "text": "Right. And here I have to tell it that the left data frame that those columns are called month and region in caps. And on the right data frame, they're called month, under score DT and HHS region, right? So when you give it multiple columns, they kind of correspond, right? These two correspond, The second ones correspond. If you do it on more than you know, the third ones correspond and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-350-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4722,
+      "type": "audio",
+      "text": "So now I have a data frame of."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-351-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4723,
+      "type": "audio",
+      "text": "Both cases."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-352-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4725,
+      "type": "audio",
+      "text": "And vaccination rates."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-353-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4746,
+      "type": "audio",
+      "text": "Right. So this is a lot of columns. So a lot of times at this point, it would be a good time to maybe say I don't need all these columns, right? So often what we do at the beginning is to say like maybe this region type, it's always HHS regions. This is not useful, right? So maybe we can drop that column the."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-354-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4761,
+      "type": "audio",
+      "text": "Maybe this like age 25 to 64 data, it's always missing and also we don't really need it because we have 25 to 49 and we have 50 to 64, which if we wanted we could just add them to get this right. So maybe I get rid of this column."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-355-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4790,
+      "type": "audio",
+      "text": "So these are the kinds of things that make your life easier. But whenever you drop a column, keep in mind that you dropped it, right? I've often had a situation where I like drop a bunch of columns doing some analysis and they're like the end. I'm like, man, I really wish I had this other data set, this other piece of information. And then, you know, I step away and then I come back the next day and I'm like, oh, wait a second, I had that. I just dropped it at the beginning. So always keep in mind when you drop columns that you drop them so that, you know, you don't lose data that you might want."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-356-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4796,
+      "type": "audio",
+      "text": "All right, so now that we want to know what we want to know, OK, we have this data set of."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-357-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4818,
+      "type": "audio",
+      "text": "Flu counts and vaccination, and how might we look at them? So really, I think there's two different ways. And we'll get to this more when we talk about visualization next week. Maybe we can look at a paired line graph right, of each one and see if there are trends. Or we can look at a scatter plot. And we'll spend a little more time on this data set next week because you'll see that the answer is about to be a little unsatisfying."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-358-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4820,
+      "type": "audio",
+      "text": "But let's suppose I look at a scatter plot."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-359-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4827,
+      "type": "audio",
+      "text": "So on the X axis I'm looking at the total or. Sorry I shouldn't access this, I should look for."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-360-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4829,
+      "type": "audio",
+      "text": "The percentage?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-361-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4838,
+      "type": "audio",
+      "text": "So on the X axis I have."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-362-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4850,
+      "type": "audio",
+      "text": "The, you know, percentage of hospital visits that are related to the flu. And on the Y axis I have the vaccination rate and the points are colored based on which region they're from."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-363-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4858,
+      "type": "audio",
+      "text": "So what does each point on this graph represent? Again, we'll talk a little bit more about these visualizations next week, but remember each point."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-364-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4865,
+      "type": "audio",
+      "text": "Represents one row in my data set. What are the rows in my data set? They are region, month pairs, right? So each?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-365-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4877,
+      "type": "audio",
+      "text": "Point represents one month within a region. The regions are in. We see what they are based on the color and we can see that you know regions with more."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-366-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4879,
+      "type": "audio",
+      "text": "Like this blue region 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-367-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4890,
+      "type": "audio",
+      "text": "You know, seems to have higher vaccination rates and maybe like some months with lower cases, some months with higher cases. But broadly, I don't necessarily see a pattern."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-368-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4915,
+      "type": "audio",
+      "text": "Which kind of makes sense, right? It's like we're kind of comparing apples and oranges here. What can we do to get a better comparison to help us answer this question better of what's the connection between vaccination rates and flu counts? So that's the question we'll come back to next week. But this is an example of how we take a data set, we get it, we start working with it and answer some questions. But again."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-369-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4916,
+      "type": "audio",
+      "text": "What are the limitations of that?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-370-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4923,
+      "type": "audio",
+      "text": "So let's quickly talk about file formats and then talk about faithfulness."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-371-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4953,
+      "type": "audio",
+      "text": "So with file formats there are different kind of representations of data. We will be working mostly in this class with CSV. The most common data source you know records is new lines for every row, commas for columns. There's also tab separated values where instead of commas between data fields we have tabs. Kind of nice because you know you rarely have tabs in your your text, but you might often have commas."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-372-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4955,
+      "type": "audio",
+      "text": "So with read CSV you just tell it that you know there's tabs."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-373-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4964,
+      "type": "audio",
+      "text": "There's also something called JavaScript Object notation or Jason so if we poke around with this Congress data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-374-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4969,
+      "type": "audio",
+      "text": "We can."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-375-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4982,
+      "type": "audio",
+      "text": "So what is a Jason object? Well, this is a data set of members of Congress from California. So if I open it with the editor."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-376-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 4984,
+      "type": "audio",
+      "text": "I can see it looks like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-377-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5003,
+      "type": "audio",
+      "text": "Basically looks like a Python dictionary, right? I have curly brace and then I have keys and values and then I can have lists, right? So my key is members and the value is a list of all the members. Each member is another dictionary with information about that particular member."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-378-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5027,
+      "type": "audio",
+      "text": "So I can have a nice view here of members, right? And members is a list of 54 items. The first one is someone named Derek Tran, who is a Democrat from California. We can see the URL of where it came from. The next one is Dave Min and so on, right? So these are all, this is just a convenient representation of that Jason, that sort of dictionary looking file structure."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-379-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5030,
+      "type": "audio",
+      "text": "And I can load this in Python by using."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-380-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5031,
+      "type": "audio",
+      "text": "There's a few different ways."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-381-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5035,
+      "type": "audio",
+      "text": "I can."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-382-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5037,
+      "type": "audio",
+      "text": "Maybe just skip through?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-383-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5048,
+      "type": "audio",
+      "text": "This so I can load it using the Jason library in Python And I say Jason dot load of something that I get out of open."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-384-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5052,
+      "type": "audio",
+      "text": "So let's look at."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-385-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5054,
+      "type": "audio",
+      "text": "If I try to just print this out."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-386-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5065,
+      "type": "audio",
+      "text": "Oh, that's like a lot of stuff printed out, right? But it looks just like what was in the file, right? It's like a dictionary with key members and so on. So what's in members, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-387-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5072,
+      "type": "audio",
+      "text": "Well, again I can get the first one again is Derek Tran. So it looks something like this and."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-388-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5085,
+      "type": "audio",
+      "text": "We can pull out the keys and play around with the dictionary if we try to read the Jason file. Unfortunately pandas complaints because this is not rectangular data, right? We have these other keys in there, it doesn't work."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-389-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5098,
+      "type": "audio",
+      "text": "So what we need to do instead is make a data frame out of this object, and then pandas knows you know, we're basically passing in a dictionary where every."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-390-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5107,
+      "type": "audio",
+      "text": "Row is members. It's a list with a bunch of rows, right? So you pass on a list of rows. Pandas makes a data frame for you."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-391-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5134,
+      "type": "audio",
+      "text": "OK, so this is how you load Jason data. Let's briefly talk about faithfulness. So when you get a data set, it is important to ask questions like how well does the data I'm working with actually reflect what is going on in the real world. We already talked about this a little with the flu data set, right where it's like, yeah, these are counts of, you know, people being hospitalized and how many of them have flu like illnesses."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-392-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5137,
+      "type": "audio",
+      "text": "But that might not be the actual reflect the actual."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-393-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5141,
+      "type": "audio",
+      "text": "Number of flu cases, right? There may be discrepancies between them."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-394-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5160,
+      "type": "audio",
+      "text": "Is it also important to think and take a step back from just like the technical questions and ask are there biases, right? Was my data collected in a way that maybe is biased or is there response bias, non response bias or there, you know, people who might not be represented, people who might be over underrepresented."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-395-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5170,
+      "type": "audio",
+      "text": "Would the data look different if it were collected by someone else? Right. The flu data are collected by the CDC that are they're trying to be comprehensive."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-396-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5190,
+      "type": "audio",
+      "text": "This vaccination data is again collected by the CDC. There is a different vaccination data set collected by the FDA that is a little more comprehensive where they look at more vaccinations in more detail, right? So different organizations might collect the same data with different goals, which make the data look different, so the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-397-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5210,
+      "type": "audio",
+      "text": "Information. You can have two datasets that look different and tell different stories because of who collects them and what their priorities are. I can talk about why the data are grouped at slice and limitations in data gathering process, right? Next time we'll talk a little bit about missing data and what you can do when you see missing data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770161650-transcription-398-c0-e0",
+      "lecture_id": "ds100-sp26-1770161650",
+      "timestamp": 5212,
+      "type": "audio",
+      "text": "I will see you all on Thursday."
+    }
+  ]
+}

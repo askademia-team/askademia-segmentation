@@ -1,0 +1,77 @@
+[
+  {
+    "merged_from": "node_10",
+    "merged_into": "node_8",
+    "reason": "llm_group(sim=0.468): These nodes all discuss key properties of data analysis, specifically focusing on structure, granularity, temporality, and faithfulness in exploratory data analysis (EDA). They are conceptually related and can be merged as they build upon the same foundational ideas."
+  },
+  {
+    "merged_from": "node_20",
+    "merged_into": "node_19",
+    "reason": "llm_group(sim=0.482): Both nodes focus on text data cleaning techniques in exploratory data analysis (EDA), specifically using pandas and regex, making them suitable for merging."
+  },
+  {
+    "merged_from": "node_24",
+    "merged_into": "node_23",
+    "reason": "similarity=0.434"
+  },
+  {
+    "merged_from": "node_28",
+    "merged_into": "node_27",
+    "reason": "similarity=0.467"
+  },
+  {
+    "merged_from": "node_29",
+    "merged_into": "node_27",
+    "reason": "similarity=0.481"
+  },
+  {
+    "merged_from": "node_42",
+    "merged_into": "node_41",
+    "reason": "similarity=0.418"
+  },
+  {
+    "merged_from": "node_50",
+    "merged_into": "node_49",
+    "reason": "similarity=0.500"
+  },
+  {
+    "merged_from": "node_52",
+    "merged_into": "node_51",
+    "reason": "similarity=0.407"
+  },
+  {
+    "merged_from": "node_54",
+    "merged_into": "node_53",
+    "reason": "llm_group(sim=0.333): These nodes introduce the basics of regular expressions, covering their functionality, applications, and fundamental concepts."
+  },
+  {
+    "merged_from": "node_68",
+    "merged_into": "node_67",
+    "reason": "llm_group(sim=0.373): Both nodes focus on constructing regex patterns specifically for identifying repeated vowels in strings, maintaining strong concept continuity."
+  },
+  {
+    "merged_from": "node_75",
+    "merged_into": "node_73",
+    "reason": "llm_group(sim=0.373): All three nodes explain the concept of greediness in regex, discussing greedy quantifiers and their implications, making them suitable for merging."
+  },
+  {
+    "merged_from": "node_81",
+    "merged_into": "node_80",
+    "reason": "llm_group(sim=0.393): Both nodes explain the significance of start and end symbols in regex, with node_81 elaborating on the concepts introduced in node_80."
+  },
+  {
+    "merged_from": "node_82",
+    "merged_into": "node_80",
+    "reason": "similarity=0.439"
+  },
+  {
+    "merged_from": "node_91",
+    "merged_into": "node_90",
+    "reason": "llm_group(sim=0.387): Both nodes explore advanced functionalities of regex and its applications, making them conceptually aligned."
+  },
+  {
+    "merged_from": "node_94",
+    "merged_into": "node_93",
+    "reason": "similarity=0.435"
+  }
+]

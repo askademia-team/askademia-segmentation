@@ -1,0 +1,3173 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1770939207",
+  "display_name": "Lecture 8 (Feb 12)",
+  "count": 452,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 349,
+      "type": "audio",
+      "text": "Glad it's going to be."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 357,
+      "type": "audio",
+      "text": "Right."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 358,
+      "type": "audio",
+      "text": "Sunshine."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 369,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 389,
+      "type": "audio",
+      "text": "It's going to be."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 392,
+      "type": "audio",
+      "text": "Right."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 464,
+      "type": "audio",
+      "text": "All right, everyone, welcome to our second lecture on visualization. Today we're going to kind of take a little bit of a step back, continue our discussion of visualization, and then talk about some like theory and big ideas behind how to make good visualizations, What makes a good visualization, what makes a not for good visualization. And at the end, we'll spend some time just like looking at examples and kind of critiquing them."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 492,
+      "type": "audio",
+      "text": "All right, announcements. So homework 2B is due tomorrow. Again, remember there's that open-ended component. We'll have a little more to say about that next week. If you have any feedback, thoughts, comments on it, feel free to leave them for us over there. Lab 3 is due on Tuesday. Discussion section swaps will be locked tomorrow. So this is the last week to freely swap into any discussion that you want. So definitely recommend taking a look at the discussion attendance policy in the syllabus and then making a decision that's right for you."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 512,
+      "type": "audio",
+      "text": "Homework one and Lab one grades have been released. Please take a look at the Ed post about the regrade policy. The TLDR is that we do have a regrade deadline. After that we do not accept regrades. So make sure you take a look at the post. Look at the policy again. We are not able to look at any regrades after that deadline."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 515,
+      "type": "audio",
+      "text": "All right, so with that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 528,
+      "type": "audio",
+      "text": "Let's jump right in. So remember that we've spent the last couple weeks learning about how we unpack what's going on in our data, right? We have some data set. We, you know, have something going on, some interesting."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 553,
+      "type": "audio",
+      "text": "Data set we've gotten, we want to answer some questions. So we learned how to work with it with Pandas, we learned how to do exploratory data analysis, EDA and this week we're focusing on visualization. And the next week we're going to have switch gears entirely and Josh is going to start talking about data acquisition and prediction and inference. So kind of switching topics a little bit next week."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 555,
+      "type": "audio",
+      "text": "So visualization."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 583,
+      "type": "audio",
+      "text": "So today we're going to talk about understanding visualizing multiple variables. So we're going to focus primarily on relationships between quantitative variables, like two different numeric quantitative variables, but we'll also spend a little bit of time introducing qualitative variables in there as well. And then we'll talk a little bit about visualization theory, which is really just a fancy way of saying it's an opportunity to talk about big picture principles that should guide how you make visualizations."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 590,
+      "type": "audio",
+      "text": "All right, so quantitative variables. So last time we spent a lot of time thinking about."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 620,
+      "type": "audio",
+      "text": "Single, don't need this little blurb. Last time we spent a lot of time thinking about distributions of a single variable, right? If that variable is discrete. We talked about bar charts as a way of visualizing the distribution. We talked about a distribution is we talked about histograms and box plots and maybe violent plots for visualizing continuous distributions. So today we're going to talk about what happens if you have more than one. So this diagram, which I very briefly flashed up at the end of last time is a great."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 630,
+      "type": "audio",
+      "text": "Flow chart for thinking how do you visualize a set or variable or set of variables that you have right if you have a single variable?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 634,
+      "type": "audio",
+      "text": "Right on the left over here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 641,
+      "type": "audio",
+      "text": "Then if it's categorical, then a bar chart is usually the way to go."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 658,
+      "type": "audio",
+      "text": "Don't know why that's lagging a little. If you have a numeric variable, then a histogram is usually the way to go. You can also use a box plot. Notice that violin plot is not even on here. As I mentioned, we tend not to like them, partially because they have some of the same issues as Kdes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 680,
+      "type": "audio",
+      "text": "If you want a relation visualization between multiple variables, if you have two variables, then if one of them is time we can use a line plot like we saw with that flu data last week, and if neither one is time, we can use a scatter plot. And if one is time ish, sometimes it's OK to use a line plot, sometimes not."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 684,
+      "type": "audio",
+      "text": "It kind of depends, and if we want more than two variables, we'll get to that closer to the end of class."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 701,
+      "type": "audio",
+      "text": "OK, so this diagram is from this brand new textbook called Vertical Data Scientist, written right here at Berkeley. Highly recommended. It's free, it's online, it's like super accessible. Lots of good like tips and tricks and best practices for how you make good visualizations."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 711,
+      "type": "audio",
+      "text": "OK, so let's talk about scatter plots. So scatter plot is a great way of looking at a relationship between a pair of quantitative variables SO2 at a time."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 735,
+      "type": "audio",
+      "text": "Right. And it's really good for helping you choose an appropriate statistical model, right? Because again, the human eye is really good at pattern recognition. And we can look at those visualizations and see, hey, look, I think there's a linear pattern, maybe a nonlinear pattern or something more complex, right? Maybe as one variable increases, the other starts to become more variable, more spread out like in the bottom left here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 742,
+      "type": "audio",
+      "text": "Or maybe you even have something like V shaped, where it's like linear here, linear there, but like different lines."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 752,
+      "type": "audio",
+      "text": "So a scatterplot is a great place to start when you're thinking about how are you going to model the relationship between multiple numerical variables."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 759,
+      "type": "audio",
+      "text": "So you know, linear models really only make sense when you have a linear relationship. You have a nonlinear relationship."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 767,
+      "type": "audio",
+      "text": "Sometimes you can do some transformations and get something linear. We'll talk a little bit about that today, but sometimes you need to use more sophisticated models."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 769,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 775,
+      "type": "audio",
+      "text": "How do we make them again? Remember last time we said that there's two ways of doing visualizations that we're going to be talking about. There's PLT dot scatter."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 783,
+      "type": "audio",
+      "text": "And there's the matplotlib version. And then there's the seaborn version, SNS dot scatterplot."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 813,
+      "type": "audio",
+      "text": "And we tend to prefer the seaborn versions, but the matplotlib versions are sort of the elementary building blocks and often are more powerful and flexible, right? Seaborne is more convenient. It's at a higher level of abstraction, but that level of abstraction means that you can't necessarily do all this stuff you can do with map polynomial. So highly recommend today taking a look at the demo notebook I'm not going to be going over all the graphs we're using in the slides are generated from there. But it also has some good examples of when you kind of."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 818,
+      "type": "audio",
+      "text": "You want to use matplotlib over seaborne when it makes more sense."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 827,
+      "type": "audio",
+      "text": "OK, so scatter plot. So they have a scatter plot with 10 visible points, right? There's like 10 little dots on my scatter plot."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 833,
+      "type": "audio",
+      "text": "How many data points are in the data set that were used to make that scatterplot?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 843,
+      "type": "audio",
+      "text": "Could it be, does it have to be exactly 10? Could it be 10 or fewer? Or could it be 10 or more? All right, take a SEC. Turn the person next to you a minute. Really take a minute. Turn to the person next to you and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 861,
+      "type": "audio",
+      "text": "All right, I want to hear more people discussing."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 915,
+      "type": "audio",
+      "text": "So if we have a scatter plot with 10 points, how many points have to be in the data set?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 925,
+      "type": "audio",
+      "text": "Well, it could be 10 obviously, right? Like 10 has to be a possible answer. Is it possible that there are fewer than 10?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 942,
+      "type": "audio",
+      "text": "Well, no, right? If there's only 9 points, right? If there's only 9 rows in my data set, then there must only be 9 or fewer plots, right? There's no way to have 10 dots in my scatter if I only have nine data points. What if I have 11?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 948,
+      "type": "audio",
+      "text": "Well, if I have 11 and two of them happen to be in the same place, then those can look like just one."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 963,
+      "type": "audio",
+      "text": "So if we have 10 data points, the most extreme example, that all have exactly the same X&Y values, then those will appear as a single point, right? They're all just kind of like stacked one on top of the other."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 969,
+      "type": "audio",
+      "text": "So this problem where data points can stack on top of each other is called over plotting."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 999,
+      "type": "audio",
+      "text": "And it happens a lot if you have even like a moderately large data set and you try to look at a scatter plot, it is really common to have some amount of over plotting right where your points and your scatter plot are going to overlap with each other. And it gets kind of hard to know, are there like a lot of points here or is it just like a few stacked on top of each other? So how do you deal with this? There's three solutions. The 1st is you can make the points smaller. So seaborne has a size parameter that you can pass size."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1001,
+      "type": "audio",
+      "text": "Tools."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1005,
+      "type": "audio",
+      "text": "Size of your circles and it'll make it smaller or larger."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1015,
+      "type": "audio",
+      "text": "The way that I would recommend is this second option, which is to increase the transparency of your points."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1038,
+      "type": "audio",
+      "text": "What this does is it makes some of them kind of translucent. So if you have multiple stacked on top of each other, they become darker, and if you have just individual ones, they become less stark. So for example, this version on the right has points with increased transparency. You can see they're a little dimmer than their counterparts in the other ones, but in the places where they overlap."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1040,
+      "type": "audio",
+      "text": "Say like over here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1061,
+      "type": "audio",
+      "text": "You can see that when they overlap, they get darker. So this is a really useful thing to have when you have multiple points close to each other. You can see, aha, look, it looks really dark here. That cues me in that there are more points. It's a good way to use your natural pattern recognition skills to recognize when there are more points."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1085,
+      "type": "audio",
+      "text": "You know, food jitter, add a little bit of noise to plots. I personally am not a fan of this, but it is a commonly done thing. You will see people doing it. It's good to know how to do it. There's a slide that talks about it in the backup. Today's lecture is going to have a bunch of skip slides. Most of the content is like good to know. I would recommend taking a look at them. There's a bunch of extra examples on there, but again, I want to focus on the most important stuff while we're here in classroom."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1117,
+      "type": "audio",
+      "text": "Scatter pots. So seaborne gives you a bunch of ways of making scatter plots that have some extra bells and whistles on them. One is LM plot which makes a scatter plot but also has a line, a linear regression line. Do you remember from data 8 right. Linear regression is like a way of making a line that will predict Y from X and it gives you some shading. You can think of the shading kind of like a confidence interval for the prediction at each point. And if you remember your confidence intervals from beta 8."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1123,
+      "type": "audio",
+      "text": "To learn more about that, recommend taking Data 102. There's also joint plot which makes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1124,
+      "type": "audio",
+      "text": "A."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1136,
+      "type": "audio",
+      "text": "Scatter plot with histograms on the sites, right? So we have a histogram of the X values here and a sideways histogram of the Y values over here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1145,
+      "type": "audio",
+      "text": "It was useful to see not just what the the scatter looks like, but also the individual histograms. Sometimes it's really helpful, especially if you have a lot of points set up."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1175,
+      "type": "audio",
+      "text": "If you have too many points, sometimes it's helpful to do what's called a hex plot. This is useful if you have like tons of points and even if you use transparency or make them really small, they still stack up too much. So a hex plot is a really good way of dealing with data like that. Basically, you can think of it like a 3D histogram that you're looking at from above. There are these like hexagonal columns in this in Scotland. There's also some in Iceland where you have these little like columns forming and you can kind of."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1199,
+      "type": "audio",
+      "text": "Think of this histogram like that, like you're looking at a top down view where the darker ones are taller and the lighter ones are shorter. So here we have a ton of data, data points where those two black hexagons are, and fewer data points in the other slots, right? If I toggle back to the previous slide, you can see that that same location where the dark hexagons were is where we have more of the data points."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1227,
+      "type": "audio",
+      "text": "It's a useful way of visualizing things. Good to know. There are also two-dimensional versions of KDE plots. As I mentioned last time, not a fan of KDE plots because they can introduce misleading information, right? If I see this, I don't know if I actually have data points in this region or if the KDE is just making it up right? If I toggle back right, I can see that oh, maybe there aren't data points there, it's just kind of smoothing it up."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1230,
+      "type": "audio",
+      "text": "There's."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1256,
+      "type": "audio",
+      "text": "Hit epot. One quick reminder I mentioned last time, you want to style your seaborn plots at the top of your notebook. You want to include seaborn set team, right? You want to tell it what style to use, what palette to use. Today we're using palette equals color blind, which is a set of colors that is friendly and easy to perceive by people who have various forms of color blindness. So to talk about a little bit a little later."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1270,
+      "type": "audio",
+      "text": "Usually deep is the default. Colorblind is usually what I like to use again so that my plots are accessible to people who might have red, green, color blindness or other common forms."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1296,
+      "type": "audio",
+      "text": "All right, so let's look at an example. So here is a scatter plot from some election data where we're looking at candidates from primary elections. And for each candidate, we know whether they won or lost, right? Whether they lost the primary or they advanced to the general election. And on the Y axis, we have the partisan lean, right? I forget which one is negative, which one is positive. But like, are they more conservative? Are they more liberal?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1299,
+      "type": "audio",
+      "text": "So take a second and."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1310,
+      "type": "audio",
+      "text": "Discuss with the person next to you. How might you improve the scatterplot? What are some issues with it? How might you do a better job of visualizing this data? All right, take a minute. Discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1375,
+      "type": "audio",
+      "text": "All right. Does anyone have suggestions? And keep in mind that yes, this is kind of a trick question, yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1413,
+      "type": "audio",
+      "text": "Ah, the question was if we are interested in knowing, does you know, having partisan lean one way or the other make you more successful, then maybe you can like look at the percent who lost divided by the percent who advanced for a particular level of partisan lean, right? But the keyword I heard there was histogram."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1428,
+      "type": "audio",
+      "text": "Why? Because the variable on the X axis here is not numeric, right? We're not scatter plots. Therefore comparing 2 numerical variables, we should not be using a histogram or a scatter plot in the setting."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1434,
+      "type": "audio",
+      "text": "So if this primary status is a categorical variable and partisan lean is numeric."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1446,
+      "type": "audio",
+      "text": "Then really what we want to do is we want to look at histograms of the partisan lean for each of advanced and lost separately, right. So what might that look like? Well, it might look like."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1452,
+      "type": "audio",
+      "text": "For advanced we might say that you know it looks like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1454,
+      "type": "audio",
+      "text": "And then for lost."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1458,
+      "type": "audio",
+      "text": "It might look something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1488,
+      "type": "audio",
+      "text": "Right. And I'm making this up because why am I making this up? Because there is severe over plotting here. I cannot actually tell if there are any meaningful differences in these distributions, right? So like major, major overpotting, I don't know how many points there are. I can see that the points are all kind of stacked on top of each other, but I can't tell how many there are, right? So in this case, maybe it's like easier to like look at it and be, oh, maybe it shouldn't be a scatterplot."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1500,
+      "type": "audio",
+      "text": "But it's really important when even if you've gone spent a while looking at a visualization, to be able to step back and think, is this really the best way for me to look at this data?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1523,
+      "type": "audio",
+      "text": "In this case, the answer is probably not right. We should be using maybe a stacked histogram. We could also use a box plot, right? Each of these set of dots would probably be better represented by a box plot of the partisan lean, showing the distribution of partisan lean for advanced and the distribution for lost."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1525,
+      "type": "audio",
+      "text": "All right. And that would look something like."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1527,
+      "type": "audio",
+      "text": "You know a big box plot here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1530,
+      "type": "audio",
+      "text": "Right where maybe we have."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1532,
+      "type": "audio",
+      "text": "Something like this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1538,
+      "type": "audio",
+      "text": "And then these are, you know, outliers and maybe we have a box plot over here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1548,
+      "type": "audio",
+      "text": "That looks something like this. And again, I am making up this box slot because I don't know what the actual distribution is because I can't tell because it's overplaying, yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1580,
+      "type": "audio",
+      "text": "The question was, why not use something like a violin plot? As I mentioned last time, violin plots use a kernel density estimate to show you the distribution, which can sometimes obscure what's going on relative to a histogram. So I tend to prefer histograms just because you can see exactly how much data you have here. There's so many data points because there are a lot of primary elections that they're probably going to look pretty similar and effectively be like."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1582,
+      "type": "audio",
+      "text": "Overlaid histogram will look pretty similar, give you similar information to a violent plot."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1586,
+      "type": "audio",
+      "text": "I just am personally not a fan of violent plots. Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1595,
+      "type": "audio",
+      "text": "Yes, but again, perfectly good instinct to use something like a violin plot. Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1603,
+      "type": "audio",
+      "text": "All right."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1607,
+      "type": "audio",
+      "text": "We're going to do a few more. Let's see, should we do this now?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1615,
+      "type": "audio",
+      "text": "Do you want to take our stretch? Let's take our stretch break a little later. Still pretty early, but I will remember, I promise."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1640,
+      "type": "audio",
+      "text": "OK. So let's talk about transformations. And once we do transformations, then we'll take our stretch break. So what happens when we have variables that are all like squished up? And this happens a lot, maybe like 70 plus percent of data sets that I have worked with have looked something like this, right? So we're looking at this World Bank data set again, right? So we have one data point per country."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1646,
+      "type": "audio",
+      "text": "And here I'm looking on the X axis at population density, right? Population per square mile basically."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1657,
+      "type": "audio",
+      "text": "How many people are there are divided by how much space there is. So higher numbers mean more people tacked into tight space. And on the Y axis is gross national income."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1678,
+      "type": "audio",
+      "text": "So all right, we have this data set, and here I've used transparency because I have a ton of points all bunched up here at the bottom, left, right, lots and lots of points all bunched up over here. And So what am I going to do if I want to know what's going on? Well, most of the action is happening down there."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1688,
+      "type": "audio",
+      "text": "Yeah, sure. The axes need to go all the way out to like a density of 8000 people per square kilometer and, you know, gross national income of $80,000."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1695,
+      "type": "audio",
+      "text": "But most of the action is happening between zero and even like 500 density and zero and $20,000."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1702,
+      "type": "audio",
+      "text": "So I could like zoom in on that little quadrant. I could just say, let me."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1718,
+      "type": "audio",
+      "text": "Do a zoom in on this and make a plot there. I could do that, but a lot of times when you do that, you end up with the same problem, right? You zoom in and then you have to like zoom in more. And each time you zoom you kind of lose some of the points. So you kind of like lose seeing all your data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1730,
+      "type": "audio",
+      "text": "So a better way of dealing with this is to transform or modify our data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1743,
+      "type": "audio",
+      "text": "What we really want is some kind of transformation that will help stretch things out, right? Our data points are all like scrunched up in small values and then there's like a few outliers. So we have a severe right skew, right long tail going out to the right on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1747,
+      "type": "audio",
+      "text": "On the X axis and a long tail going up on the Y axis."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1756,
+      "type": "audio",
+      "text": "So when we have severely right skewed data like this, a great way to deal with it is to use a log transform."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1787,
+      "type": "audio",
+      "text": "So what we really want is some way of changing this data so that it looks linear. So here's a different example on the same World Bank data set on the X axis over here, I have the percent of 15 year olds who have the lowest level of math proficiency on standard tests, right? Basically, you give a bunch of 15 year olds math standardized math tests and you say what percentage of them are at the lowest level of proficiency. Basically, you know, not up to par on their."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1798,
+      "type": "audio",
+      "text": "Well, and the Y axis, I have gross national income per capita, same variable I had before. And we can see that there's kind of this relationship that looks something like."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1803,
+      "type": "audio",
+      "text": "This right, it's not there's not really a linear relationship, right? It's sort of this like."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1821,
+      "type": "audio",
+      "text": "Sort of as the As for small values, they're really spread out, but for larger values, the gross national income is smaller. It kind of makes sense, right? Like countries with more educated people, right? Better math achievement in younger, younger folks tend to have higher growth national income."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1833,
+      "type": "audio",
+      "text": "So what we would like is to have some representation where some way to transform to like stretch out the data. So here if we took the Y axis and like stretched it out."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1839,
+      "type": "audio",
+      "text": "Right where we took these values over here and kind of like stretched them and took."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1846,
+      "type": "audio",
+      "text": "These values and kind of like switch them, right? But there's all this stuff happening here. Can we stretch this out?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1852,
+      "type": "audio",
+      "text": "If we did, we might end up with something like what we have on the right, where now we see a vaguely linearish relationship."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1864,
+      "type": "audio",
+      "text": "And we like linear relationships because they're simple, right? Linear relationships are simple. They are parsimonious. Parsimonious just means you know the simplest possible explanation for the data we have."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1869,
+      "type": "audio",
+      "text": "And they're easy to like, communicate and understand. We'll learn a lot more about them next week."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1874,
+      "type": "audio",
+      "text": "So how do we get this kind of stretching effect?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1890,
+      "type": "audio",
+      "text": "So what is making this plot nonlinear? It's this long tail on the X&Y directions, right? So these Y values are kind of unconstrained. We have these outliers. What are we going to do?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1902,
+      "type": "audio",
+      "text": "So one thing that I want to point out is that thinking about X&Y separately is a really useful skill. When you look at this histogram or the scatter plot, you want to think about the two variables kind of separately, independently."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1915,
+      "type": "audio",
+      "text": "So how are we going to squish the Y values down right? Take these variables at the bottom, maybe like, see what's going on. Take the values at the top, squish them."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1937,
+      "type": "audio",
+      "text": "So if we take the log of a large number, right? If we take the log of a small number, what happens doesn't change that much, right? Think about log base 10, because it's easy to like reason about if I have the log base 10 of log of 10, it's one, right? So it decreases by sum. If I have the log of 100, it goes down to 10. It's a lot bigger decrease if they have a log of a billion."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1954,
+      "type": "audio",
+      "text": "Well, there's this nine, right? So a billion gets like smushed down by a ton, whereas values in the smaller area don't really get changed that much, right? So I'm smooshing values at the end and kind of like pulling values in the bottom out relatively."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1966,
+      "type": "audio",
+      "text": "So in practice, log transformations are really good for unconstrained large numerical values, things like incomes, things like populations."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1985,
+      "type": "audio",
+      "text": "There are some good reason mathematical reasons behind this that are a little beyond the scope of this class. But generally anytime you have something that might be the product of a large number of different factors, a log transformation might be a good idea. Right? Because you remember log of like ABA times B * C becomes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1986,
+      "type": "audio",
+      "text": "Log of A plus log of B plus log of C."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1994,
+      "type": "audio",
+      "text": "So all right, what happens if we take the log of gross national income and plot that on the Y axis instead?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 1996,
+      "type": "audio",
+      "text": "Then we get something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2008,
+      "type": "audio",
+      "text": "So here I've taken gross national income and just taken the log right. And when I say log in this class, we're going to refer to the natural log, right, with the base of E."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2010,
+      "type": "audio",
+      "text": "The base of the natural logarithm."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2015,
+      "type": "audio",
+      "text": "In practice you could do a different base, but you know it's just a scaling factor."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2026,
+      "type": "audio",
+      "text": "So now what we can see is that the Y values now look really nice, right? They're not scrunched up anymore. They're like kind of evenly spread out over this like range from 6:00 to 11:00."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2028,
+      "type": "audio",
+      "text": "But the X values are still really scrunched up."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2032,
+      "type": "audio",
+      "text": "All right, so next step, let's apply log transformation to the X's as well."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2044,
+      "type": "audio",
+      "text": "Right, so the first step is just what we did already, where we applied the log transform to the YS and now if we apply the log transform to the XS, we get this graph here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2052,
+      "type": "audio",
+      "text": "And now we can see the relationship between these two variables a lot more clearly."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2065,
+      "type": "audio",
+      "text": "Namely, we can see there's not a very strong relationship between them, which kind of makes sense, right? If you think about population density, you think about gross national income, maybe there isn't necessarily a relationship."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2076,
+      "type": "audio",
+      "text": "So this is how we can now see that this is just kind of a cloud of points we can understand. You know, they're kind of like all over. There isn't really a strong relationship one way or the other question."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2084,
+      "type": "audio",
+      "text": "Question was what is the base of this log? Can anyone answer that based on what I just described?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2084,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2087,
+      "type": "audio",
+      "text": "Not ten."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2103,
+      "type": "audio",
+      "text": "E right Just mentioned a minute ago that the base is the base of the natural logarithm. E which is the base of the natural logarithm has lots of nice properties in calculus. Recommend taking a refresher on your calculus if you don't remember based on natural log E."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2107,
+      "type": "audio",
+      "text": "OK, so this is the."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2128,
+      "type": "audio",
+      "text": "Log transformation. It is one of the most common transformations you will use on your data sets, right? It takes your data and does a nice job of taking like the large values, squishing them down, showing you what's going on in the small values really well. And now we can see this nice even distribution across different log values."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2133,
+      "type": "audio",
+      "text": "But you might be wondering."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2149,
+      "type": "audio",
+      "text": "I don't like this because now I'm instead of dealing with like, you know, population density, I'm dealing with log of population density. What do I do with that, right? How do I interpret that? I can no longer say oh, like this, these countries have a log population density around 4."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2150,
+      "type": "audio",
+      "text": "What does that mean?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2161,
+      "type": "audio",
+      "text": "Right. If I knew that this was like a population density of 500, then I can tell you that, oh, that's like 500 people for every square kilometer."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2174,
+      "type": "audio",
+      "text": "Log population density a little harder to interpret, so wouldn't it be nice if we could determine relationships in this like log space and then translate those back into relationships between our original variables?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2189,
+      "type": "audio",
+      "text": "So in order to do that, let's look at another example where we do have a little more clear of a linear relationship. So I'm going to go back to that example of 15 year old math proficiency on the X axis and gross national income per capita on the Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2192,
+      "type": "audio",
+      "text": "And."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2211,
+      "type": "audio",
+      "text": "So we can see that there is a negative correlation, right? There isn't some kind of negative relationship between them. But again, as we saw over here, it's not really linear, right? There's sort of this stretched out values in the small part. So if we take the log on the Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2220,
+      "type": "audio",
+      "text": "Right, so here we log, log, transform the Y data, then we get something that looks a little more linear."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2224,
+      "type": "audio",
+      "text": "Right. This is nice because now."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2233,
+      "type": "audio",
+      "text": "You know, this looks a little more linear. Maybe it's not like perfectly linear. I see like a bunch of points bunching up over here, kind of above the line."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2247,
+      "type": "audio",
+      "text": "Maybe a line is not a perfect fit, but a line is a pretty decent fit here. I would never want to use a line linear model on the left, but I could make a decent argument for using one on the right."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2253,
+      "type": "audio",
+      "text": "So what does that mean to have like a linear regret relationship doing linear regression when we have log transformed data?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2270,
+      "type": "audio",
+      "text": "Right, because one of the things we like about linear regression is it's really easy to interpret. It's really easy to understand what's going on. I can say, oh, if X increases by 1, then and my relationship is Y equals MX plus B. If X increases by 1, Y increases by M."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2275,
+      "type": "audio",
+      "text": "What? That kind of goes out the window when I have a log transfer. So what do I do?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2285,
+      "type": "audio",
+      "text": "Well, if I think about it, if I say log of Y is equal to MX plus B, right? Which is essentially what I'm doing when I'm doing a log transform and then doing a linear model."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2295,
+      "type": "audio",
+      "text": "Well, I can just take the inverse of the logarithm on both sides, right? And again, because this is a log base E natural log."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2309,
+      "type": "audio",
+      "text": "Right. So you know, sometimes people, usually people write natural log. You'll often see as you kind of do more math that people and people write log. They usually mean natural log, right? It's just kind of."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2315,
+      "type": "audio",
+      "text": "What people do because natural log is the most convenient, mathematically convenient base to use."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2321,
+      "type": "audio",
+      "text": "So this is natural log of Y. What is the inverse of the natural log?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2322,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2338,
+      "type": "audio",
+      "text": "E raised to the power of right. I take the exponential on both sides and so if I do that then I get Y on the left and east to the MX plus B on the right, right or properties of exponentials E to the MX times E to the B."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2347,
+      "type": "audio",
+      "text": "So that means that I can take this linear relationship that I have in the log transformed space."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2348,
+      "type": "audio",
+      "text": "Right."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2350,
+      "type": "audio",
+      "text": "And that becomes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2353,
+      "type": "audio",
+      "text": "An exponential relationship over here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2359,
+      "type": "audio",
+      "text": "So my linear model looks exponential."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2391,
+      "type": "audio",
+      "text": "So this is still, you know, I can still do all kinds of things I want with this. And when we use linear regression, right? If I go and you know, take this data set, apply a log transform and then I give it to my friend and say, hey, do linear regression. I don't have to tell my friend that I the data was like a log transform or something, right? My friend can just go and do all the linear regression model fitting and give me back my results. And then I can do this formula, right? My friend gives me the M&B and I can use this formula to."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2393,
+      "type": "audio",
+      "text": "Reason about the relationship between them."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2418,
+      "type": "audio",
+      "text": "Right. So log transform, very, very useful thing to do. When you have data that is skewed to the right, it typically makes takes something that looks kind of like, you know, wacky and crazy and like, Oh my God, there's so many points out there and makes it look kind of nice and clean, right? If we go back to the previous example, we started with data that looked like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2422,
+      "type": "audio",
+      "text": "Where I'm like I'm, I look at this and I'm like, I can't tell anything about what's going on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2437,
+      "type": "audio",
+      "text": "But if I look at these points on the right, I'm like, yeah, there's a clear cloud of points here. There isn't necessarily a already, you know, correlation or relationship between them. They seem pretty uncorrelated in a way that I cannot tell from the original points."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2443,
+      "type": "audio",
+      "text": "Right, so long transform. Great way of exposing those relationships in your data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2449,
+      "type": "audio",
+      "text": "So what we really did was to fit a curved line with a linear model."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2455,
+      "type": "audio",
+      "text": "We use linear regression, the same linear regression that you did in data 8, right? Just like Y equals NX plus B."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2456,
+      "type": "audio",
+      "text": "And we managed to fit a curve."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2470,
+      "type": "audio",
+      "text": "So we took the model, we linearized this nonlinear data set by doing a log transform. We fit a linear model, and then we kind of did a transform back to the original scale, the raw scale, and we ended up with a curved model."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2472,
+      "type": "audio",
+      "text": "I don't see the movie wanted."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2493,
+      "type": "audio",
+      "text": "It's a great movie from like 20 years ago where James Mcavoy's character basically learns that he has the ability to like curve bullets, which is not a real thing. There's a great Mythbusters video that debunks it, but basically linear models are super powerful in part because we can use them to model nonlinear relationships."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2503,
+      "type": "audio",
+      "text": "Per bullet."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2506,
+      "type": "audio",
+      "text": "Around in Atlanta Hills Head."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2522,
+      "type": "audio",
+      "text": "There's a great Mythbusters video, I won't go through it, it's a little long but highly recommend checking it out. They show that basically the short version is this is not possible in the real world, but you know the movies fun anyway. Human speed."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2535,
+      "type": "audio",
+      "text": "OK, so but we, we as data scientists, we can effectively curve models, right? We can take linear models and we can curve them by doing this nonlinear transformation before and after."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2544,
+      "type": "audio",
+      "text": "OK, so now let's do our two-minute stretch break. So take a SEC, get some fresh air, take a deep breath."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2545,
+      "type": "audio",
+      "text": "Set your arms out."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2551,
+      "type": "audio",
+      "text": "And we'll come back in 2 minutes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2693,
+      "type": "audio",
+      "text": "Alright, so let's come back."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2723,
+      "type": "audio",
+      "text": "Before we jump back into the material, I want to share a little story that happened to me today. So as I mentioned at the start of the semester, you know, obviously I teach here. I also work in industry in data science and machine learning. And I had a really interesting meeting this morning that I wanted to share with all of you. So we were working with a client that, you know, sells a product and they were interested in trying to understand, OK, I have the sales for my product, right? Like every month, you know, the sales goes up. Every day I sell more and more and I have some."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2725,
+      "type": "audio",
+      "text": "Target of sales that I want to meet."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2727,
+      "type": "audio",
+      "text": "And."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2757,
+      "type": "audio",
+      "text": "What happens if my sales are not doing as well as my target, right? I want to know if I'm not meeting my targets, are there times in the past that I can look to to figure out, hey, look at this historical period that was like really similar to what's happening now. Look at what I did then and see if I can try to recommend doing the same thing now, right? Pretty simple idea, but there's a lot of complexity there, right? You have to understand, like, what does it mean for now to be similar?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2759,
+      "type": "audio",
+      "text": "To a period in the past."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2769,
+      "type": "audio",
+      "text": "Similar by what measure, right. Similar in terms of how the sales numbers look, similar in terms of how what the business schools are. There's a lot of different definitions of similarity."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2796,
+      "type": "audio",
+      "text": "And so a colleague of mine and I had a meeting with a data scientist from this company we were working with who was trying to solve this problem. And we met with the the data scientist and, you know, they said, oh, look, I, you know, I have this idea. They put, they showed us the slide deck of here's this proposed idea. You know, I have these five steps. They showed us their notebook with a bunch of code. And they were like, Oh yeah, I trained a long short term memory neural network."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2800,
+      "type": "audio",
+      "text": "To make an auto encoder that will like encode my time series."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2802,
+      "type": "audio",
+      "text": "And predict and find times in the past."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2817,
+      "type": "audio",
+      "text": "And my colleague and I kind of like fat and we're talking and listening. And after about 20 minutes, we asked, OK, where you know how? How did you come up with the approach? What was your process of getting here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2825,
+      "type": "audio",
+      "text": "And in particular, we wanted to know how does this compare to doing something much, much, much much simpler?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2833,
+      "type": "audio",
+      "text": "Why? Because in a month we have to meet with a senior vice president, right? This is a fairly large company and that person is going to want to know."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2842,
+      "type": "audio",
+      "text": "Can I trust this approach? Can I trust what you're doing to actually make sense? Right if you're using some complex model that I don't know how and when it fails?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2860,
+      "type": "audio",
+      "text": "They might not trust it. So it is important to have models that are trustworthy. So we said, OK, how does this compare to doing something really simple just like looking at the mean squared error between like the sales numbers now and the sales numbers in every time period?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2878,
+      "type": "audio",
+      "text": "And the data scientists couldn't answer those questions. And so we spent a while asking, you know, OK, and other basic questions, how do you define similarity, right? Is the way that you're defining similarity relevant for the use case? Have you validated it with the people who care about these results?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2881,
+      "type": "audio",
+      "text": "Again, this person had not done that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2882,
+      "type": "audio",
+      "text": "We kept going and after a while."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2892,
+      "type": "audio",
+      "text": "My colleague and I kind of suspected that this data scientist had just generated everything using an LLM. In other words, they hadn't done any of their own."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2896,
+      "type": "audio",
+      "text": "You know, affecting out the model, figuring things out. They had just plugged it into an LLM."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2898,
+      "type": "audio",
+      "text": "And gotten the first thing out."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2915,
+      "type": "audio",
+      "text": "And at the end of the call, we asked like, you know, how did you come up with this? And it turns out the data scientists said, yes, I used, I don't remember the ChatGPT or Gemini plugged this in. And, you know, it told me to do this. And that's what I did."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2932,
+      "type": "audio",
+      "text": "So let this be a lesson that blindly taking your problem, plugging it into a large language model and doing what it says is not going to give you the right result. It's not going to give you the best thing to do, because doing that requires critical thinking."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2963,
+      "type": "audio",
+      "text": "I suspect if this data scientists had continued to go down this approach, the meeting with the vice president, senior VP in a month probably would not have gone very well, right? We offered a lot of suggestions. I'm meeting with them again next week and hopefully things will look a lot better and we'll have some kind of a little ladder of approaches from simple to complex with pros and cons. But doing the critical thinking of understanding what is the problem you're trying to solve? How are you trying to solve it? Why are you solving?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2968,
+      "type": "audio",
+      "text": "It that way, these are things that you cannot outsource to a large language model."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2982,
+      "type": "audio",
+      "text": "Understanding OK like I have these, I want to make I have these variables I want to make this plot great use case for you know Google search large language model. But the critical thinking is something that you cannot replace."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 2998,
+      "type": "audio",
+      "text": "And if this had been an interview, in fact, I was talking to my colleague after and we said we're going to make this an interview question. And if we interview somebody and they propose doing something like this, they would not pass the interview, right? So it's important to have that critical thinking that you only build up."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3009,
+      "type": "audio",
+      "text": "From solving problems, not from just asking large language. OK, that's my little story. Time for the day. With that, let's get back to."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3012,
+      "type": "audio",
+      "text": "Some visualization theory."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3039,
+      "type": "audio",
+      "text": "So visualizations are primarily for communicating to other people, right? I said last time, and I want to emphasize again, when you make a visualization, it's really, really important that you think about what you are trying to communicate with it, right? Think about what you want your viewer to take away from it. Why are you making this visualization? And then."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3043,
+      "type": "audio",
+      "text": "Do the work yourself of going from the data to the understanding."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3064,
+      "type": "audio",
+      "text": "And think about how you can get your viewer like 9095% of the way there by creating a visualization that does 9095% of the work right. Your viewers are lazy. They are do not want to think. And so you have to do the hard work of making a visualization that will help them see what you're trying to communicate with as little thinking as possible."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3087,
+      "type": "audio",
+      "text": "So this is data from people on the Titanic, right? And I can look at this and say, huh, looks like, you know, age on the X axis and fair on the Y axis. Looks like younger and older people generally kind of spent the same amount of money. Yeah, there's this couple people who, you know, got like the really nice VIP tickets. But, you know, broadly people spent more money."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3102,
+      "type": "audio",
+      "text": "But there's a lot of points at the bottom right. There's some over plotting going on here. Probably would have been better to use an overlaid histogram or maybe even do a joint plot. Right? Seaborn joint plot that would have shown me a histogram of the X values so I could confirm this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3108,
+      "type": "audio",
+      "text": "Visualizations are more expressive than summary statistics."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3119,
+      "type": "audio",
+      "text": "So there's this famous data set in statistics called Anscombe's Quartet. It's these ten data points, the little orange points in four different configurations."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3125,
+      "type": "audio",
+      "text": "All four of these have exactly the same mean of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3127,
+      "type": "audio",
+      "text": "Mean of."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3132,
+      "type": "audio",
+      "text": "And standard deviation of standard deviation of Y and the exact same correlation coefficient."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3143,
+      "type": "audio",
+      "text": "So if I were to tell you the mean of X, the mean of Y, the correlation coefficient standard deviations, that is not enough to describe what's going on, because you can construct many data sets with the same pattern."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3152,
+      "type": "audio",
+      "text": "In fact, there was a recent paper that constructed 13 datasets that all look wildly different, including one that looks like a literal freaking dinosaur."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3158,
+      "type": "audio",
+      "text": "That all have exactly the same X mean, Y mean, X stand and Y standard deviation and same correlation."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3162,
+      "type": "audio",
+      "text": "And there's a fun little."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3165,
+      "type": "audio",
+      "text": "GIF of this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3184,
+      "type": "audio",
+      "text": "Well, there's a gift from the backup slide of showing the little points transition. But basically, using summary statistics alone is not enough to describe what is going on in your data set. There is no substitute for visualizing, looking at, and understanding your data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3186,
+      "type": "audio",
+      "text": "No amount of summary statistics can replace that for you."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3214,
+      "type": "audio",
+      "text": "OK, so how do we think about making good visualizations? The first big idea is thinking about information channels, right? When you make a visualization, you are communicating multiple channels of information, right? On that, that political scatter plot example that we critiqued earlier, right? I was communicating 2 channels. One is whether a candidate won or lost and another was which side of the political spectrum that were they on their partisan lean?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3224,
+      "type": "audio",
+      "text": "So we think about this idea of like tidy data, which is basically a term that means I have one row for every data point."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3226,
+      "type": "audio",
+      "text": "Kind of like what we've been thinking about, but."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3232,
+      "type": "audio",
+      "text": "Generally the way this works is you can think about if you want to show 1 variable in a visualization."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3249,
+      "type": "audio",
+      "text": "You can use something called a rug plot. This isn't widely used, but it's kind of like nice to think about theoretically where we take each data point, we encode it into some kind of mark or like marker on my plot, and then I have some encoding."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3266,
+      "type": "audio",
+      "text": "Right. That represents it maybe how like thick, how long, how you know what color that point is. And then I get a visualization, right? So I have these ages and each one corresponds to 1 little like line, right? And so this is called a rug plot."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3270,
+      "type": "audio",
+      "text": "Cannot the best way to visualize 1D data right? We saw a histogram might be better."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3283,
+      "type": "audio",
+      "text": "But if you want to visualize 2 dimensions, well, OK, let's say we have age and fare. Then each row, each point has two channels of information, has age and has fair."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3300,
+      "type": "audio",
+      "text": "We're going to use a circle for each one, and we're going to encode its location, right? XY position, and that's going to represent that point, right? So this 20 two, 7.25, that point kind of sits somewhere in this cloud and so on and so on for all these points."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3315,
+      "type": "audio",
+      "text": "So this is kind of a useful way of thinking about your visualizations when you're making plots in Seabourn. One row per point in your visualization, right? Every point my visualization corresponds to one row in my table."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3327,
+      "type": "audio",
+      "text": "If I want to make a visualization that doesn't look like that, then they need to do some work and processing on my data frame before I need to do the visualization."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3337,
+      "type": "audio",
+      "text": "How do we do that work in processing? That's all the stuff we've learned the last couple weeks, right? But when if you do that, then you can make your pot where each point corresponds to one row."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3343,
+      "type": "audio",
+      "text": "I'm repeating this over and over because it's important, right? You want to think about making visualizations where each row corresponds to one point on your graph."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3354,
+      "type": "audio",
+      "text": "So what if you want to show more than two, right? OK, one we can use a rug plot. Kind of a silly thing to do 2 we can use a scatter plot."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3360,
+      "type": "audio",
+      "text": "But what if we want to do more than three? So let's suppose I have a visualization that looks like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3373,
+      "type": "audio",
+      "text": "I have a bunch of these points. You can see they're all kinds of different color sizes. How many variables are there here? How many channels of information do we have?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3382,
+      "type": "audio",
+      "text": "So take a minute, turn to the person next to you and discuss how many channels of information there are in this particular visualization."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3386,
+      "type": "audio",
+      "text": "And why?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3428,
+      "type": "audio",
+      "text": "Umm."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3450,
+      "type": "audio",
+      "text": "All right, so how many channels do we have here? Well, in every scatter plot, there's always like X&Y, right? So we know it has to be at least two, right? That's why these answers start at 2:00. But if we think about it, every point on this graph has more than just an X&Y to it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3456,
+      "type": "audio",
+      "text": "Right, every point on this graph has its X, its Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3461,
+      "type": "audio",
+      "text": "What color it is and also how big it is, right it's area."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3467,
+      "type": "audio",
+      "text": "So that means that I have 4 different channels represented by each point."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3473,
+      "type": "audio",
+      "text": "Now, in practice, if I ever saw a visualization like this, I would be immediately unhappy because."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3474,
+      "type": "audio",
+      "text": "There's no X label."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3478,
+      "type": "audio",
+      "text": "There's no Y label."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3485,
+      "type": "audio",
+      "text": "Right. And there's no legend that tells me what these colors or sizes mean."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3511,
+      "type": "audio",
+      "text": "Right. And usually that's a good way to cue your reader into what's going on, right? And really, there's more than just 4, right? You can use different shapes, right? I could communicate 5 channels by making each of these points a different shape, right? Some of them squares, some of them XS. You know, if I have lines, I can use dotted, dot, dotted, dashed lines, I can use different shading. There's a lot of possibilities."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3516,
+      "type": "audio",
+      "text": "But once you get to like more than three channels, you need to think carefully about whether your visualization is still clear."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3524,
+      "type": "audio",
+      "text": "Right again here a big part of the problem is there's no labels for anything. But even if there were."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3528,
+      "type": "audio",
+      "text": "It's kind of hard to like answer the question of let's compare these two points."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3532,
+      "type": "audio",
+      "text": "Which one is bigger?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3540,
+      "type": "audio",
+      "text": "Oh, I'm like going to walk up real close and I can tell you the one on the bottom is a little bigger than the one on the top. How much bigger?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3557,
+      "type": "audio",
+      "text": "In contrast, if I want to know, let's compare these two points in terms of their Y values. I can give you a very precise answer, right? I can tell you one of them is at like .41, the other is at .11, right? So there's a .3 difference in Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3561,
+      "type": "audio",
+      "text": "Really easy to tell, so some channels give the user more information than others."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3568,
+      "type": "audio",
+      "text": "So not all channels are created equal, and more channels sometimes more opportunities for confusion."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3572,
+      "type": "audio",
+      "text": "All right, so Speaking of confusion."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3583,
+      "type": "audio",
+      "text": "Oh well, we have a quick rule of thumb as I mentioned before. I'm going to say it one more time. Number of rows in your data frame equals number of data points in your visualization."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3587,
+      "type": "audio",
+      "text": "The number of columns is equal to the number of information channels."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3600,
+      "type": "audio",
+      "text": "So if you have a data set with 100 columns, it's really hard to make a visualization that captures all of them. But if you want to communicate like 5 of them, those five columns are going to be the five channels in your visualization."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3608,
+      "type": "audio",
+      "text": "OK, so Speaking of visualizations, why is this showing the percentages?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3610,
+      "type": "audio",
+      "text": "Well, OK, fine."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3613,
+      "type": "audio",
+      "text": "How do I?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3619,
+      "type": "audio",
+      "text": "Right, well, let's just do."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3621,
+      "type": "audio",
+      "text": "This."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3625,
+      "type": "audio",
+      "text": "All right, let's see. I'll do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3628,
+      "type": "audio",
+      "text": "Slido."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3634,
+      "type": "audio",
+      "text": "All right, take a picture of the slide and then I'm going to move to the next slide. Take a picture going once."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3636,
+      "type": "audio",
+      "text": "Going twice."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3642,
+      "type": "audio",
+      "text": "All right, just so that folks can't see the answer."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3652,
+      "type": "audio",
+      "text": "So I have this visualization of three points here right with a legend over here. So which data frame do these points correspond to?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3669,
+      "type": "audio",
+      "text": "So, fun fact, I don't know the answer. I randomized these and just like quickly made the slide. So I don't actually know the answer. So we're going to all figure it out together in a minute. All right, turn to the person next to you and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3763,
+      "type": "audio",
+      "text": "All right, so I made this example to be maximally confusing, right? This is intentionally kind of diabolical where like all the numbers are like 3-3 point 1:00 and 4:00. So this is meant to be kind of as tricky as possible, but let's figure out how we do it again. How do we read this each point?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3785,
+      "type": "audio",
+      "text": "Right, corresponds to one row and each channel corresponds to one column, right? So what are the channels I have here? XY color and size. And because this part is nice and has a legend, I can tell you that the colors are blooming version, blue is color is version and size is rated."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3790,
+      "type": "audio",
+      "text": "So this first point over here, let's use a color that is not."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3792,
+      "type": "audio",
+      "text": "One of these."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3796,
+      "type": "audio",
+      "text": "So this point over here has."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3803,
+      "type": "audio",
+      "text": "Cost of three has a weight of 3."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3812,
+      "type": "audio",
+      "text": "Have a version of 3.1 and have a rating of four, right? Because it's large."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3814,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3822,
+      "type": "audio",
+      "text": "This second point over here has a cost of 3.1."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3829,
+      "type": "audio",
+      "text": "And apologies for my handwriting, my iPad being a little laggy today. A weight of."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3834,
+      "type": "audio",
+      "text": "For a version of."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3847,
+      "type": "audio",
+      "text": "Four and a rating of four, right? So let's start thinking about these results. Well, first, I can immediately eliminate this one."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3855,
+      "type": "audio",
+      "text": "Why? Because this has ratings that are numeric, right? This says ratings can be 3.1, so this is immediately impossible."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3858,
+      "type": "audio",
+      "text": "All right, now if I think about."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3868,
+      "type": "audio",
+      "text": "This one here right B here my versions are floating point numbers."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3872,
+      "type": "audio",
+      "text": "Right, my versions are 3.14 point 04.0."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3877,
+      "type": "audio",
+      "text": "But here my versions look like they are strings."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3880,
+      "type": "audio",
+      "text": "Right, my versions are 3.1 or 4."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3884,
+      "type": "audio",
+      "text": "So I can also eliminate."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3889,
+      "type": "audio",
+      "text": "B. All right, What about A?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3902,
+      "type": "audio",
+      "text": "Well, does a have? Let's see. It has points with the costs of 3/4 and 3.1, right? So I have a cost of three. A cost of four is cost of 3.1. Yes, versions are 3.1."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3904,
+      "type": "audio",
+      "text": "Which is blue."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3914,
+      "type": "audio",
+      "text": "44 Orange Orange so far so good. Weights of 3.03 point 14."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3916,
+      "type": "audio",
+      "text": "Right, which is Y values of three."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3920,
+      "type": "audio",
+      "text": "03.1."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3922,
+      "type": "audio",
+      "text": "4 right so."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3935,
+      "type": "audio",
+      "text": "This one with the cost of four has 3.1. This one with the cost of 3.1 has a weight of four and ratings are 434, which is big, small big."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3942,
+      "type": "audio",
+      "text": "So this is the one I want and C is also incorrect there."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3951,
+      "type": "audio",
+      "text": "So why is this one correct? Because I can match each of the points, right? I can say this point here. This row corresponds to this point."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3960,
+      "type": "audio",
+      "text": "This row corresponds to this point. This row corresponds to this point."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3968,
+      "type": "audio",
+      "text": "So when I can match every single row in my data frame to every single point on my graph, then I can know they represent the same thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3971,
+      "type": "audio",
+      "text": "OK. Questions on this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3990,
+      "type": "audio",
+      "text": "Again, just emphasize Again, every single row in your data frame represents one point on your visualization. You may think I'm repeating myself, but this is something that students in previous semesters have struggled with. By understanding this connection between the visualization and the data frame, you need in order to put it in."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 3998,
+      "type": "audio",
+      "text": "All right, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4006,
+      "type": "audio",
+      "text": "Now talk a little bit about X&Y SO."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4019,
+      "type": "audio",
+      "text": "I said earlier that you know today and last time, the most important thing you want to do when you're constructing visualization is understand what do you want your viewer to take away from it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4024,
+      "type": "audio",
+      "text": "Now sometimes, depending on who you are, what you want your viewer to take away."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4028,
+      "type": "audio",
+      "text": "Might be different from the actual truth that's represented by the data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4041,
+      "type": "audio",
+      "text": "In a situation like that, then if you were unscrupulous, then you can lie by constructing A visualization that misrepresents your data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4051,
+      "type": "audio",
+      "text": "So let's look at 2 examples from the White House social media, one from back in 2020 and one from a couple weeks ago that show examples of what this looks like."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4067,
+      "type": "audio",
+      "text": "So this is from the early days of the pandemic, right around the time the vaccine first started to roll out. And they were looking, they were trying to show, look, we have data on, you know, weekly how many people are dying of COVID-19."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4072,
+      "type": "audio",
+      "text": "And they wanted to show the numbers look really small."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4077,
+      "type": "audio",
+      "text": "But if we look at this, what does this graph tell me? This graph tells me that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4095,
+      "type": "audio",
+      "text": "On every day, the seven day death rate. In other words, how many people are dying over the past seven days? Looks like it's 2.6, right? So 2600 people have died in the last week."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4102,
+      "type": "audio",
+      "text": "And you know, here it's all the way down to 2300, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4108,
+      "type": "audio",
+      "text": "But again, this visualization makes those numbers look small by stretching out the Y axis."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4114,
+      "type": "audio",
+      "text": "Why in this visualization is the largest value 3.7 K?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-331-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4116,
+      "type": "audio",
+      "text": "What does that 3.7 K mean?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-332-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4121,
+      "type": "audio",
+      "text": "Why was that chosen as the upper limit for the Y axis?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-333-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4137,
+      "type": "audio",
+      "text": "Is that some reference value? That is like the standard number of people that die in the winter from flu, right? Is there some reason, some justification for it? If not, then this is a deceptive choice for how to structure AY axis."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-334-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4148,
+      "type": "audio",
+      "text": "So you can lie or deceive. Let's leave the word deceive with a visualization by stretching out your axes too much. You can also deceive by doing the opposite by stretching them too thin."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-335-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4152,
+      "type": "audio",
+      "text": "So here's a visualization from a couple weeks ago."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-336-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4161,
+      "type": "audio",
+      "text": "Showing US steel production increases, right? And so this red bar represents 2024 in total. Green bar represents 2025 total."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-337-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4165,
+      "type": "audio",
+      "text": "You're like wow, the red bar is half the size of the green."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-338-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4169,
+      "type": "audio",
+      "text": "Does that mean that steel production doubled?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-339-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4173,
+      "type": "audio",
+      "text": "From 2024 to 2025. Wow, that would be incredible if it did."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-340-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4188,
+      "type": "audio",
+      "text": "But in fact it did not. So in here, in fairly small font, which I'm not sure that you can read if you're sitting in the back, is the number from 2024 is 80.8. The number from 2025 is like 81.8."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-341-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4198,
+      "type": "audio",
+      "text": "So this is an increase of 1 megaton out of 80, right? So a 188 or like 1 to 2% increase?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-342-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4202,
+      "type": "audio",
+      "text": "Again, is that meaningful?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-343-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4215,
+      "type": "audio",
+      "text": "I don't think so. I don't know, maybe it is right, maybe that the numbers for 2024 through, you know, 2000 have all been below 80.8 and it's incredible that we cross the threshold."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-344-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4232,
+      "type": "audio",
+      "text": "But if that's what you want to communicate, then you should use a time series, and you should show a line graph that shows that look, before it was below this number and now it's increased, right? Because then that communicates to your viewer that yes, this increase is significant."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-345-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4242,
+      "type": "audio",
+      "text": "However, I suspected if you had actually constructed that, you know the numbers would be jumping up and down every year and this change is well within the noise of typical variation from year to year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-346-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4253,
+      "type": "audio",
+      "text": "So you can use scrunched up or stretched out axes to deceive either way. So how do you set the access labels?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-347-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4263,
+      "type": "audio",
+      "text": "So consider using historical context and if you do a weird axis, if you your axis doesn't include zero then call it out."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-348-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4272,
+      "type": "audio",
+      "text": "Right mentioned in your caption, use a little like jagged line on your axes to make it clear that you are not trying to deceive the reader the viewer, but that you're trying to show something relevant."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-349-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4279,
+      "type": "audio",
+      "text": "Generally you want to choose access limits to fill the visualization."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-350-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4299,
+      "type": "audio",
+      "text": "You don't have to show all the data at once, right? Sometimes you can look at like 1 visualization and then maybe this like pattern at the beginning is more interesting, so you can make a second like inset. You can create multiple plots that show multiple regions. You don't have to show everything in one visualization."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-351-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4315,
+      "type": "audio",
+      "text": "Do following best practices like this will help your reader trust you that what you're doing makes sense, right? And again, if you want to show that a particular change is big or small, then let the data do the talking and show how that change stacks up to the historical context."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-352-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4321,
+      "type": "audio",
+      "text": "So important to keep in mind your X&Y labels color."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-353-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4326,
+      "type": "audio",
+      "text": "So generally try to avoid combinations of red and green."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-354-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4336,
+      "type": "audio",
+      "text": "8% of men and half a percent of women have red green color blindness and cannot see the number in this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-356-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4347,
+      "type": "audio",
+      "text": "To see this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-355-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4347,
+      "type": "audio",
+      "text": "Visualization here, right? So I suspect there's probably at least one person in the audience who is not able to."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-357-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4364,
+      "type": "audio",
+      "text": "Right, but here I'm I've outlined the number 7 and four. This is common. So when you make a visualization that uses only a red line and a green line, you are excluding like 8 1/2% of the population from being able to understand your graph."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-358-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4379,
+      "type": "audio",
+      "text": "There are other kinds of color blindness, so it's actually more than 8 1/2 percent. One easy way to do this. Again, This is why you know, I like using seaborn. I talked about the palette argument to seaborne set style. You can just use the color blind palette."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-359-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4393,
+      "type": "audio",
+      "text": "And it has shown they have already chosen colors for you that are easily distinguishable by people with different forms of color blindness and easy way to make your plots accessible without doing a ton of extra work."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-360-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4402,
+      "type": "audio",
+      "text": "There's also this great color Oracle app. You can like upload images. You can also like look around and see what the world would look like to people with various forms of color blindness. That's definitely recommend looking into it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-361-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4408,
+      "type": "audio",
+      "text": "So color is important, but important to keep in mind that not everyone can see it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-362-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4410,
+      "type": "audio",
+      "text": "What about markings?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-363-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4418,
+      "type": "audio",
+      "text": "So human perception of like Marx, right? Like lines, areas, things like that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-364-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4432,
+      "type": "audio",
+      "text": "There's a wide variety in how well we can perceive it, right? Remember that example with those four channels and I showed you like it's really hard to tell the difference in the areas between those two circles, but like we could really easily tell the distance between them."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-365-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4435,
+      "type": "audio",
+      "text": "Well, let's do an example."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-366-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4451,
+      "type": "audio",
+      "text": "So how much longer is the long bar usually with Slido's? I want you to like think about it and do it. This slide, I want you to like be as fast as possible. So get your phone out, get ready to take a picture. How much longer is a long bar than the short 14X5X6X7 X 8X or 9X? All right, Slido, let's let's go quick, quick."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-367-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4455,
+      "type": "audio",
+      "text": "No, no discussing. No discussing. Answer 1st and then discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-368-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4462,
+      "type": "audio",
+      "text": "Again, this is the opposite of what I usually want from a Slido. This is just the gut sense."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-369-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4466,
+      "type": "audio",
+      "text": "All right, going once, going twice."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-370-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4480,
+      "type": "audio",
+      "text": "All right. So the vast majority of people said six and seven. That is pretty much correct. The long bar is 7 times longer than the short. 1-6 is pretty close, close enough."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-371-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4494,
+      "type": "audio",
+      "text": "Right, because humans, the human brain, the human eye is really good at perceiving differences in length, right? It was pretty easy for most of you to get that to within like one effect, you know, 6X versus 7X is not that big of a difference."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-372-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4498,
+      "type": "audio",
+      "text": "OK, what about areas? How much bigger is the big circle than the small one?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-373-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4505,
+      "type": "audio",
+      "text": "All right again. Fast, fast. No, no discussion. Just take a picture. Got an answer?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-374-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4507,
+      "type": "audio",
+      "text": "Going once."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-375-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4510,
+      "type": "audio",
+      "text": "Going twice."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-376-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4515,
+      "type": "audio",
+      "text": "Going through quickly and quickly. Answer quickly."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-377-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4517,
+      "type": "audio",
+      "text": "Only discuss after you've answered."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-378-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4519,
+      "type": "audio",
+      "text": "All right, and."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-379-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4525,
+      "type": "audio",
+      "text": "Oh, everyone did way worse on this one."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-380-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4547,
+      "type": "audio",
+      "text": "I would have done way worse on this one if I were sitting where you are. Why? Because people, and you know, this is even after I kind of was like hinting at it and giving like little spoilers. Because people are really bad at judging differences in area. The human eye, the human brain is just not as good at judging differences in area as we are at judging differences in length."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-381-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4556,
+      "type": "audio",
+      "text": "So that means if your visualization relies on somebody understanding the difference in area between like this and this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-382-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4559,
+      "type": "audio",
+      "text": "Then you might run into trouble."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-383-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4578,
+      "type": "audio",
+      "text": "So avoid using area as an indicator of like important subtle differences right in that like diabolical little Slido We did a couple of minutes ago. Notice that my size, I only had two sizes, big and small. And it was really easy to tell them apart because 1 was like pretty big and 1 was like really tiny."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-384-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4584,
+      "type": "audio",
+      "text": "OK, so the big one is 7 times larger than the small one."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-385-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4592,
+      "type": "audio",
+      "text": "Again, people are humans. The human eye, the human brain, not good at judging differences in area."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-386-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4600,
+      "type": "audio",
+      "text": "Lengths are easy, areas not so much. Angles also not so much. This is why."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-387-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4605,
+      "type": "audio",
+      "text": "Everyone always says pie charts are bad and you shouldn't use them."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-388-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4616,
+      "type": "audio",
+      "text": "It's not just because we don't like pie. I mean, pie is delicious, but pie charts are bad because they rely on users being able to distinguish areas right in order to tell the difference between."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-389-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4630,
+      "type": "audio",
+      "text": "This and this, I have to think about what is the area of this? What is the area of this? Or maybe like what is this angle? How does this compare to this angle? Again, not something that people are very good at distinguishing."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-390-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4641,
+      "type": "audio",
+      "text": "And really bad visualization is the 3D pie chart. Please please please never ever make one of these."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-391-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4659,
+      "type": "audio",
+      "text": "This is from Steve Jobs iPhone talk back in 2008. And again I said every visualization you have to determine what message you want to send. If you want to send the message that Apple has the best smartphone on the, you know, the most market share in smartphones."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-392-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4668,
+      "type": "audio",
+      "text": "And you want to make a visualization that sends that message, then yeah, maybe a 3D pie chart is a good choice, right? Because it sure looks to me like that green is a lot bigger than that purple."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-393-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4674,
+      "type": "audio",
+      "text": "But the green represents 19.5% and the purple represents 21.2."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-394-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4678,
+      "type": "audio",
+      "text": "So again, not a good visualization for truthfulness."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-395-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4688,
+      "type": "audio",
+      "text": "But maybe a good visualization again if you were trying to convince somebody of something and being unscrupulous or untruthful."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-396-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4695,
+      "type": "audio",
+      "text": "So use your powers for good, not for evil."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-397-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4697,
+      "type": "audio",
+      "text": "When you go out and make your visualizations."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-398-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4719,
+      "type": "audio",
+      "text": "Another sort of good idea is to avoid kind of playing with the baseline. Humans are good at judging lengths, but they're good at judging them when they're kind of next to each other. If I try to figure out, hey, are these like top the stacked bar chart? Are these top points kind of like all the same? Well, in this one, the top blue points are actually, yes, they are all the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-399-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4735,
+      "type": "audio",
+      "text": "Here's a bar chart that represents age demographics in different countries. If I want to compare the difference between 15 to 64 year olds, the orange in Germany versus Mexico."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-400-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4752,
+      "type": "audio",
+      "text": "I I can't really tell which one is bigger, right? Like if I look at this and I look at this, the other about the same size, if they started in the same place, I could easily tell yes they are the same, 1 is a little bigger, 1 is a little smaller. But as it is, it's really hard for me to do that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-401-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4760,
+      "type": "audio",
+      "text": "So generally try to use stacked or try to use side-by-side bar charts, right? Group them instead of stacking them."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-402-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4765,
+      "type": "audio",
+      "text": "This is often called conditioning using groups."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-403-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4771,
+      "type": "audio",
+      "text": "So here's a great example of a side by side grouped set of bar charts. So here are."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-404-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4792,
+      "type": "audio",
+      "text": "Median earnings for workers over 25 for men and for women. And so this makes it really easy to compare by education levels, right? I can see that having a BA versus having, you know, more than a BA increases things from like 1200 to maybe like a little less than 1400."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-405-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4800,
+      "type": "audio",
+      "text": "But it's harder to do a comparison across gender, right? It's from men to women. I have to, like, look farther across the graph to see the differences."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-406-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4817,
+      "type": "audio",
+      "text": "So it depends on whoop. I'm running a little low on battery. Hopefully I'll make it through. Fingers crossed. I do have my iPad so we'll be OK. So what comparisons can we make? We can easily compare across education levels, but not so much across gender."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-407-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4819,
+      "type": "audio",
+      "text": "So what if we wanted to do both?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-408-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4832,
+      "type": "audio",
+      "text": "Well, what we could do is construct a different visualization, maybe a line graph, right? Remember I said line graphs are for when your X variable is time. Here education is like kind of sort of time ish."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-409-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4833,
+      "type": "audio",
+      "text": "Is this OK?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-410-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4851,
+      "type": "audio",
+      "text": "Probably in some cases not so much, so be careful when you're using non time variables with your X axis. But this makes it easy both to look at comparisons across education levels but also between genders, right? I can easily look and see aha this difference."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-411-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4861,
+      "type": "audio",
+      "text": "Is much bigger than this difference, right? In other words, the gender wage gap gets worse as education levels get higher."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-412-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4879,
+      "type": "audio",
+      "text": "Right. This is something I can determine based on 2014 data that I can make the statement that the gender wage gap gets worse at higher levels of education because this visualization makes it easy for me to see that. It makes it easy for me to see that the, you know, gender wage gap is smaller here and bigger here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-413-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4884,
+      "type": "audio",
+      "text": "Context so."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-414-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4903,
+      "type": "audio",
+      "text": "Making a publication that you're going to share out and communicate with people takes work, right? Remember last time I said like, you know, if I'm writing a paper or a report, my graphs, my visualizations take like 15 to 20 lines of code because I'm thinking really carefully about how to do them well."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-415-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4922,
+      "type": "audio",
+      "text": "So here is a version of a plot of number of women enrolled in different majors. This is a perfectly decent plot, right? When you are working in your notebook. This is a pretty good way to like make a visualization. It shows you things that uses color."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-416-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4930,
+      "type": "audio",
+      "text": "There's a legend, right? The axes are labeled. Well, the X axis is labeled, but the Y axis is not. So maybe we could fix that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-417-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4936,
+      "type": "audio",
+      "text": "But this is not ideal for communicating to other people."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-418-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4943,
+      "type": "audio",
+      "text": "One again, remember I said you want to do most of the work for your viewer."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-419-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4953,
+      "type": "audio",
+      "text": "So this is the version of that graph that was actually communicated out by the National Center for Education Statistics who gather the data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-420-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4955,
+      "type": "audio",
+      "text": "Right, their title."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-421-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4981,
+      "type": "audio",
+      "text": "Notice that their title tells you what the take away is, right? So when you were making a graph for a publication or for a report, you want your title to have the take away in it, right? Or somebody can read the title and understand what you're trying to communicate. The gender gap is transitory even for extreme cases. The lines, instead of having to like look at this one and then like go up to the legend, the lines are labeled directly on them."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-422-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4986,
+      "type": "audio",
+      "text": "And notice that here they're starting to break some rules. Rules are made to be broken."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-423-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4991,
+      "type": "audio",
+      "text": "Right if my X label is time is this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-424-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 4994,
+      "type": "audio",
+      "text": "I can pretty obviously tell that this is year."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-425-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5010,
+      "type": "audio",
+      "text": "Right. So maybe it's OK to break the rule of always label your axes because, you know, it's easy to understand what it is. In this class, we will expect you to always, always, always label your axes. But when you go to the real world, consider that maybe sometimes it makes sense to break the rule."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-426-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5014,
+      "type": "audio",
+      "text": "But only break the rule if you think about why it is a good reason to do so."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-427-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5029,
+      "type": "audio",
+      "text": "This is a great example of like exploratory versus explanatory data science. Right version on the left, perfectly good for exploring your data. The version on the right, what you want to use when you're explaining your findings to someone else."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-428-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5053,
+      "type": "audio",
+      "text": "Generally what you need, you need to have a message, right? What do you want your viewer to take away? You have a good title, access labels, markers for important things, legends. Here we don't need a separate legend because the legend is on the lines and you want to caption, right? Your caption should tell the viewer what to think, what to take away from the visualization."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-429-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5064,
+      "type": "audio",
+      "text": "And again, in this class we are going to be strict about requiring these from you. Yes, rules are made to be broken, but in this class we want you to follow the rules so you can learn when to break them in the future."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-430-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5068,
+      "type": "audio",
+      "text": "OK, let's do like one or two little practice examples."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-431-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5090,
+      "type": "audio",
+      "text": "At the very end here. So here is a visualization of comparing political candidates who are or are not supported by their parties, right? So somebody can like run in the Republican Party, and the Republican Party can be like, oh, I don't like that person. I don't want them to run, but they can still get signatures and they can run, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-432-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5095,
+      "type": "audio",
+      "text": "So whether somebody has support of their party or not is shown in this graph."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-433-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5097,
+      "type": "audio",
+      "text": "And, you know, we're comparing Republicans and Democrats."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-434-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5100,
+      "type": "audio",
+      "text": "What are some issues with this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-435-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5102,
+      "type": "audio",
+      "text": "Just raise hands, yes?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-436-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5108,
+      "type": "audio",
+      "text": "Yeah, the two graphs have different dimensions, right? Like if I'm looking at."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-437-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5118,
+      "type": "audio",
+      "text": "This the X axis here goes up to 80. The X axis here goes up to 70. I probably should be looking at these on the same visualization."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-438-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5127,
+      "type": "audio",
+      "text": "The other thing is the coloring situation. What's going on with like the yeses being this like shade of Gray that blends in with the background?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-439-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5156,
+      "type": "audio",
+      "text": "Right. I'm standing up here and I have to like, walk up. Oh, yeah, OK, This advanced one goes up to 40, right? So again, colors. You want to use colors that are clear. Using red and blue is great to represent Republicans and Democrats. That is a good choice of color. But for party support, yes or no, maybe you should use like red and like light red or a pink and blue and light blue, right, So that it's easy to tell them instead of using."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-440-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5165,
+      "type": "audio",
+      "text": "Gray. Also, the choice of Gray for yes seems backwards, right? The darker color should probably be for yes, lighter color for no."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-441-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5169,
+      "type": "audio",
+      "text": "What about this histogram?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-442-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5182,
+      "type": "audio",
+      "text": "This says mother single year of age. So MAGER on the X axis, density on the Y. All right, so one thing they did right is use density on the Y. But why are there gaps?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-443-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5194,
+      "type": "audio",
+      "text": "Does this data set have like people of certain ages and then like know people of others in between? Is there like a weird gap here? Can someone tell me why this histogram has like these weird gaps?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-444-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5199,
+      "type": "audio",
+      "text": "Well, if we think about it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-445-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5203,
+      "type": "audio",
+      "text": "This gap from 30 to 35."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-446-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5207,
+      "type": "audio",
+      "text": "There are more than five spaces for bins in here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-447-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5216,
+      "type": "audio",
+      "text": "Right. In other words, the ages are integers, but there is a like 32.1 to 32.9 bin that has nobody in it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-448-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5235,
+      "type": "audio",
+      "text": "So when you make your histogram, you don't want to have these sort of gaps in your bins that present the illusion of gaps in your data set, right? So think about what you want your bins to be in this case. If I were doing this, I would just set the bins manually to be integers, right? 30 zero through 50."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-449-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5256,
+      "type": "audio",
+      "text": "OK, there's a bunch more. I recommend taking a look at them, but we are at time, so that's all for visualization. We will kind of switch gears next week and Josh will start talking about sampling. So I will see you all in either in my office hours or if not then in a couple months when I'm lecturing back lecturing."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-450-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5272,
+      "type": "audio",
+      "text": "Thank you."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-451-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5286,
+      "type": "audio",
+      "text": "One SEC sorry."
+    },
+    {
+      "id": "audio-ds100-sp26-1770939207-transcription-452-c0-e0",
+      "lecture_id": "ds100-sp26-1770939207",
+      "timestamp": 5293,
+      "type": "audio",
+      "text": "Sorry, just give me a second here."
+    }
+  ]
+}

@@ -1,0 +1,2991 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1769556600",
+  "display_name": "Lecture 3 (Jan 27)",
+  "count": 426,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 671,
+      "type": "audio",
+      "text": "All right. And on the recording, if I'm muted or anything, just give me a shout. All right, so we can go ahead and get started for today. So today we're going to continue our discussion of Pandas, right? We're trying to figure out this process of, OK, we get data, we want to do some kind of exploration, we want to answer some questions with it. But in order to do that, we have to understand what are the basic tools that Pandas gives us to work with our data sets."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 682,
+      "type": "audio",
+      "text": "So announcements before we start assignments Lab 1 is due tonight, so remember that this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 705,
+      "type": "audio",
+      "text": "All right, I think this is going. If I'm having issues with the zoom, just give me a shout."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 731,
+      "type": "audio",
+      "text": "All right, so Lab 1 is due tonight. So remember, you cannot use slip days for labs, only for homeworks. Homework 1 is due on Friday. So these, again, these assignments are mostly focused on prereqs. If you feel like you're not sure, you're a little shaky on things, that's OK. You know, stay in the class, but come get help, right? We're going to have tutoring sessions. I encourage you to sign up for a tutoring session."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 734,
+      "type": "audio",
+      "text": "You know, get some one on or small group tutoring, get some help, get some support."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 764,
+      "type": "audio",
+      "text": "Something new we're trying in this class pretty recently. Discussions in office hours will start this week. And one quick clarification on the mega sections. They run a little differently in this class than they do from Data 8. So it is a lecture style discussion. It does cover the same material as the other discussions. So if you're looking for like the small group discussion, you know with the TA, then the regular discussions are more like that. The mega discussion is a lecture style version of."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 766,
+      "type": "audio",
+      "text": "Same content."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 778,
+      "type": "audio",
+      "text": "If you were assigned to the mega section, you have to go to the mega section for attendance credit. If you're assigned to one of the non mega sections, you can substitute the mega section, just not the other way around."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 791,
+      "type": "audio",
+      "text": "And if you are not in, if you chose the non graded discussion option, you can always come to the mega section. If you know any particular week, you're like, you know, I just want to see what's going on. You're welcome to stop in."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 812,
+      "type": "audio",
+      "text": "Instructor office hours. So my office hours start next week on Mondays from 11:50, but I'll have makeup office hours this week only from Thursday 2:00 to 3:30 in Evans 455. So come by, come chat next this Thursday, next Monday, again, as I mentioned last week."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 839,
+      "type": "audio",
+      "text": "We like getting to know you. We like seeing you in officers. Students always come to us at the end of the semester and say, oh, you know, could I have a letter of recommendation? But we can't write letters for students we don't know, right? So if you want to get to know us, it's a great opportunity in a small group setting. Come if you have questions, come if you want to listen. Generally, if you have like specific debugging questions on like homeworks and assignments, those are maybe better for TA office hours, more conceptual stuff, just questions. You want to know what's going on."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 843,
+      "type": "audio",
+      "text": "You want to talk about anything data science related? Come find us in our."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 846,
+      "type": "audio",
+      "text": "Officers Josh's officers will be on Wednesdays."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 850,
+      "type": "audio",
+      "text": "From 1:30 to 3:30 in 422 Evans."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 858,
+      "type": "audio",
+      "text": "If you have DSP accommodations, please make sure those are submitted via the DSP portal so that we can take them into account."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 881,
+      "type": "audio",
+      "text": "All right, so let's do a quick recap of last time. So we learned three ways of extracting data from data frames, right? Using the dot loc brackets, dot ilok brackets, and then just plain brackets. How do these work? So when we use dot loc, we give it a bunch of row labels and column labels."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 909,
+      "type": "audio",
+      "text": "Each of these, you know the row labels, column labels can either be a single label if you want like just one column or just one row, right? And here we have to pass in the label, right? So if it's a column, we have to give the name of the column. If you want a specific row, we have to give the value of the index corresponding to that row. We can pass in single label, you can pass a list of labels, you can pass in a slice, or you can pass in a boolean mask."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 912,
+      "type": "audio",
+      "text": "And again, we saw that some of them are more commonly used in rows and some are more."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 929,
+      "type": "audio",
+      "text": "Common in columns, right? It's typical. If you're using a single label or a list, usually that's what you do for columns. If you're using a slice or a mask, usually that's what you do for rows. But look, it's flexible, right? You can do the same thing for rows and columns. It has kind of predictable behavior."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 942,
+      "type": "audio",
+      "text": "I look is very similar except the I stands for integers. So instead of passing labels you pass in numbers starting at 0, right? First row is 0, then 1-2 and so on. 1st column is 1/2 and so on and."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 948,
+      "type": "audio",
+      "text": "It gives you back the corresponding rows and columns based on the numbers that you pass in."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 969,
+      "type": "audio",
+      "text": "And when we index with brackets that is right without loc or without iloc, then we only pass in one argument like a single argument. And then depending on what that argument is, Pandas will decide, hey, OK, you passed in this kind of argument, I'm going to treat it as a row label or you passed in that a kind of argument, I'm going to treat it as a column label."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 987,
+      "type": "audio",
+      "text": "Specifically, if you give just a single label or a list of labels, pandas is like, oh OK you mean rows or sorry, you mean columns, right? Because you said, oh OK, I want a single label, then that's probably a column label, list of label. You probably wanted specific columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 994,
+      "type": "audio",
+      "text": "So indexing with just brackets, if you pass in single thing or a list then you get back columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1011,
+      "type": "audio",
+      "text": "If you pass in a slice or a boolean mask, then you get back rows, right? Selected rows and all the columns. Similarly with the column labels you know it gives you the columns that you wanted and then all of the rows."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1019,
+      "type": "audio",
+      "text": "For Lok and ilok, if you want like all the rows or all the columns and you only want to select one, then you put a colon for whatever you want all of."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1023,
+      "type": "audio",
+      "text": "OK, questions on how this works."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1032,
+      "type": "audio",
+      "text": "All right, let's do a practice exercise."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1042,
+      "type": "audio",
+      "text": "So we have the weird data frame which we worked with last time but the picture is not showing up. Basically we have."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1051,
+      "type": "audio",
+      "text": "Columns A&B and rows zero and one and there's like red fish."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1055,
+      "type": "audio",
+      "text": "I don't think I draw on here."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1064,
+      "type": "audio",
+      "text": "Not my lucky day, all right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1084,
+      "type": "audio",
+      "text": "All right, so basically you know it's it's 2 two row, two column data frame. We have A&B as the column labels zero and one as the real labels. And it's like 1 fish, 2 fish, red fish, blue fish."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1088,
+      "type": "audio",
+      "text": "So blue fish is like in the bottom right and we want to pull that up."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1092,
+      "type": "audio",
+      "text": "And for some reason the Slido isn't working. So let's go here."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1099,
+      "type": "audio",
+      "text": "All right, so take a second and turn to the person next to you and discuss how you would do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1227,
+      "type": "audio",
+      "text": "All right. And again, just to see the data frame, it's looks like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1245,
+      "type": "audio",
+      "text": "All right, so if you haven't already, grab a picture of the QR code and we'll go ahead and see how this works. So the first option is weird bracket one, then bracket B."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1248,
+      "type": "audio",
+      "text": "So before we."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1278,
+      "type": "audio",
+      "text": "Again, run it. It's often helpful to think what do we think this is going to do, right? Because reading code is, well, like 4 years ago I would have said reading code is as valuable a skill as writing code. Today, I would say reading code is even more important of a skill than writing code, right? In the era of like LLM generated code, it is really important to be able to read code, understand what's going on and make sure is that doing what I think it does? Is that doing what it's supposed to do."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1288,
+      "type": "audio",
+      "text": "So being able to read and understand something is super important. OK, So what is weird bracket one? Well if you do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1292,
+      "type": "audio",
+      "text": "We get a key error. Why? Because."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1296,
+      "type": "audio",
+      "text": "We have the."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1305,
+      "type": "audio",
+      "text": "This single item is treated as a column label and so we don't we got an error right And then this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1313,
+      "type": "audio",
+      "text": "Doesn't lend us anything. Similarly, what about the second option? Weird bracket B then one?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1315,
+      "type": "audio",
+      "text": "Weird."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1323,
+      "type": "audio",
+      "text": "Of B of one. Well, what is weird of B? It's."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1330,
+      "type": "audio",
+      "text": "To shrink this so it's not getting in our way, we're to be again, we pass in a single item, it's treated as a column label."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1333,
+      "type": "audio",
+      "text": "All right, so this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1347,
+      "type": "audio",
+      "text": "Will be the series corresponding to that column. And if we say bracket one, then we have a series we're indexing, we use the index and then we get out bluefish. Great, that's what we wanted."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1350,
+      "type": "audio",
+      "text": "What about the others? Weird 1B."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1359,
+      "type": "audio",
+      "text": "Well, what is this going to do when we use brackets?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1361,
+      "type": "audio",
+      "text": "And we pass in something, we have to pass in single label."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1368,
+      "type": "audio",
+      "text": "List of labels to be treated as columns or we have to pass in a slice or a mask."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1392,
+      "type": "audio",
+      "text": "But this is none of those, right? This is kind of this weird. We're passing in multiple things and this is basically we only passed in like a comma. So it's going to get very confused and say this tuple, which is what it interprets this thing as, isn't there, right? We pass in something, it's not quite there. So this doesn't work."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1399,
+      "type": "audio",
+      "text": "What about weird of double brackets one beat, which is usually what we mean when we say something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1401,
+      "type": "audio",
+      "text": "Well, this also doesn't work."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1422,
+      "type": "audio",
+      "text": "Why doesn't this work either? Well, because again, we're passing in a list of labels, and when we pass in a list of labels to bracket indexing, then Panda says, hey, you're passing in a list of column labels, so I'm going to look for the column labeled one, the number one, not the string 1, and a column labeled B."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1428,
+      "type": "audio",
+      "text": "Well, B is here, but there's no column named 1, so it gives me an error."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1432,
+      "type": "audio",
+      "text": "All right, so that's this Slido."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1451,
+      "type": "audio",
+      "text": "We also learned about boolean math, right? When we index, we can use a mask. What is a boolean mask? It's just like a fancy way of saying a series that has a bunch of trues and falses in it, right? And those truths and falses are used to tell us which rows we want to take and which rows we don't want."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1483,
+      "type": "audio",
+      "text": "So both LOC and plain old bracket indexing accept boolean series. You can also pass in like arrays, boolean arrays and lists. They'll also work. It's pretty uncommon, but every now and then you might see it rows corresponding to true get extracted and pulled out, and we don't extract rows corresponding to false. And we can combine multiple conditions using and and bar for OR. Remember to be careful with parentheses. So for example, what is this thing here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1490,
+      "type": "audio",
+      "text": "Do well here I have this outer set of parens. Here is doing a bunch of stuff with the year."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1498,
+      "type": "audio",
+      "text": "What does this do? Well, this says year is greater than 2000 or year is less than 1861."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1512,
+      "type": "audio",
+      "text": "So this green condition is pulling out all the roads that are either before 1861 like pre civil war or after 2000 like post this Millennium."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1520,
+      "type": "audio",
+      "text": "And then that that set of years and result equals win."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1527,
+      "type": "audio",
+      "text": "So essentially we're looking for either like pre 1861 plus close 2000 winners, people who won their election."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1532,
+      "type": "audio",
+      "text": "With and with a popular vote share."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1533,
+      "type": "audio",
+      "text": "Out of at least 55%."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1543,
+      "type": "audio",
+      "text": "So in English we would like read this code and say basically we're looking for anybody who like won by a huge margin either like pre 1861 or post 2000."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1554,
+      "type": "audio",
+      "text": "Right. So it's important to like be able to read this and then translate it into English to like, say, this is what we want and to translate back and forth, right? We have an English description. We want to translate that into code."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1573,
+      "type": "audio",
+      "text": "So if we run this, it turns out there's only one result, Andrew Jackson from 1828. Because after 2000, nobody ever wins by this much. And fun fact, Andrew Jackson is regarded by many historians as potentially one of the worst presidents in U.S. history, but still won by that much."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1582,
+      "type": "audio",
+      "text": "So again, each of these is a series full of trues and falses, length of the rows and we combine them using truths and falses."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1592,
+      "type": "audio",
+      "text": "So which of the following panda statement is going to give a data frame of the first three baby names from California in 2006?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1594,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1602,
+      "type": "audio",
+      "text": "This is not the right picture."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1617,
+      "type": "audio",
+      "text": "So how do I?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1622,
+      "type": "audio",
+      "text": "All right. Well, we will see the results in real time."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1634,
+      "type": "audio",
+      "text": "But you can see the results on your slide. This is not what we're looking for, right? We're looking for the first three names in Osyncs and specifically working for the first three names of boys."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1638,
+      "type": "audio",
+      "text": "Does the question include that it's boys in the Slido?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1646,
+      "type": "audio",
+      "text": "No, OK. We are looking for the first three boys and we are looking using these masks."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1653,
+      "type": "audio",
+      "text": "All right, so pretend these are our four options."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1656,
+      "type": "audio",
+      "text": "We are."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1663,
+      "type": "audio",
+      "text": "Looking for the first three baby names of boys and we have these two masks and we're looking. These are the four options."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1672,
+      "type": "audio",
+      "text": "Which I think should be the same options as in the Slido, but I have them up here. All right, take a second turn to your neighbor. Discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1779,
+      "type": "audio",
+      "text": "Alright, so let's see how this is going to work. So we have these two masks and right away we can see that there's a very obvious difference between them, right? One uses and 1 uses or."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1781,
+      "type": "audio",
+      "text": "So here."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1793,
+      "type": "audio",
+      "text": "We're looking for the boys in 2006, right? If we use the version with or the second one mask two, what are we going to get? We're going to get all the rows where."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1802,
+      "type": "audio",
+      "text": "This condition is true, right? All the rows from 2006, boys and girls alike, and all the rows where sex equals M?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1832,
+      "type": "audio",
+      "text": "So this is a new data set we're working with today. It has one row for every name and every year, right? And how common is that name? So we're looking at this data set we have like in 1910, the name Mary was given to baby girls 295 times, right? So you have sex assigned, sex at birth year, what year the name was from name the actual name and count the."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1837,
+      "type": "audio",
+      "text": "Number of times in that year that that name was given to a baby of that sense."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1844,
+      "type": "audio",
+      "text": "So if we have that, then how do we?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1854,
+      "type": "audio",
+      "text": "Pull this out. Well, we want to know we want boys in 2006. So if we do this then it's like we had all the 2006 rows or."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1861,
+      "type": "audio",
+      "text": "Any row where sex equals M, right? In other words, we get all the boys and all the 2006 rows."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1865,
+      "type": "audio",
+      "text": "So that's not what we want. Whereas if we use the and."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1869,
+      "type": "audio",
+      "text": "Then we get the rows that are from 2006."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1880,
+      "type": "audio",
+      "text": "And refuse the logical and then that says it needs to be you know from 06 and it also has to have the sex column equal to M So if we run this then."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1884,
+      "type": "audio",
+      "text": "This doesn't work. Why doesn't this work? Because I didn't define it. So if I scroll back up."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1916,
+      "type": "audio",
+      "text": "So this is the code we're using to load the data set. You don't really need to understand exactly how this works. One thing you'll often have to do in practice is look at code where you don't really know the libraries, you don't necessarily know what it's doing. But it's often helpful to be able to just kind of like skim it and see vaguely what's going on. There's some URL from ssa.gov, something baby names, names by state. And then there's something about like URL open. We're probably going and downloading."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1940,
+      "type": "audio",
+      "text": "We're doing some writing, we're doing some reading, and then there's something state.ca dot TXT and then we're kind of like opening and over here we're using PD dot read CSV, right? So this is kind of the kind of thing you should be able to do even if you don't know any of these functions or anything that's going on here, just like skimming it and getting a vague sense of what is going on."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1951,
+      "type": "audio",
+      "text": "If you actually need to know it, then it's worth like looking up the documentation for these libraries. But again, for today you don't need to know how this works, we're just going to be using the data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1955,
+      "type": "audio",
+      "text": "So this is our data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1961,
+      "type": "audio",
+      "text": "Right, we have for every year, for every name, how many?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1963,
+      "type": "audio",
+      "text": "Girls were given that name. How many boys were given that name?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1968,
+      "type": "audio",
+      "text": "So if I scroll back down to the end where the slidos are."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1972,
+      "type": "audio",
+      "text": "And I can run these and get my masks."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1976,
+      "type": "audio",
+      "text": "And I run the first one and I get nothing."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 1982,
+      "type": "audio",
+      "text": "That's weird. Why would I get nothing? Well, let's try to understand what this does."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2010,
+      "type": "audio",
+      "text": "So when we pull out baby names Lok mask 1. So what is this is saying is gives me all the rows where we have you know both of these conditions satisfied all the rows for boys in 06 and these columns. So if we run this then we get all the rows from 2006 and basically that says for every for every boy name in O6 what was the name and how many babies got that name?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2020,
+      "type": "audio",
+      "text": "Now if we say Lok of Colon 3, what does that do? Well, remember that Lok gives us labels."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2029,
+      "type": "audio",
+      "text": "So one thing to note here is that when I do this, my index values here start way way higher up."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2035,
+      "type": "audio",
+      "text": "Why? Because this is the index of that value in the original data frame."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2060,
+      "type": "audio",
+      "text": "Right, if I print out baby names, the original data frame, it starts at 0 and you know goes up to 407,427. But when I did this filtering, this process of pulling out some rows, then that means that those rows are only the ones corresponding to these values. So if I take this and I try to access the ones from zero to three."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2066,
+      "type": "audio",
+      "text": "Panda says hey, there are no rows in the state of frame with index values between zero and three."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2069,
+      "type": "audio",
+      "text": "Right. So I'm not going to give you anything."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2071,
+      "type": "audio",
+      "text": "Which is why we get nothing back."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2079,
+      "type": "audio",
+      "text": "All right, what about the second one? Well, this one we're using mask 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2083,
+      "type": "audio",
+      "text": "And we're getting the same columns, so let's start by just pulling."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2085,
+      "type": "audio",
+      "text": "Out this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2089,
+      "type": "audio",
+      "text": "This gives us the data frame where we have everyone from."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2091,
+      "type": "audio",
+      "text": "Either 06."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2095,
+      "type": "audio",
+      "text": "Or is male right So if we look at."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2106,
+      "type": "audio",
+      "text": "If we were to replace this with colon and pull out all the columns, we can see that you know some of these rows are from 2006, but some of them are from other years too."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2110,
+      "type": "audio",
+      "text": "So if we do that."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2131,
+      "type": "audio",
+      "text": "Then you know, we get this and if we use this, this kind of extraction with just plain old brackets, right, like context dependent extraction, it's basically going to say, hey, you gave me a slice. So if you give me a slice, I am just going to treat that as integer values for my lab index. So that's going to give me the first 3."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2138,
+      "type": "audio",
+      "text": "Values in this data frame, which is Emily, Isabella and Ashley from 2006."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2142,
+      "type": "audio",
+      "text": "All right, not what we want. Why not? Because we use the OR."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2169,
+      "type": "audio",
+      "text": "What about this? Well, this does basically the same thing because we're using head of three to get us the first 3 rows, right? This is the same. And here we're using HEAD to get the first 3 rows. What about this last one? So this last one is repeatedly using this bracket indexing, right? We're first using it here with a list, which means this gives us a list of columns, right? We can break this down and go step by step."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2171,
+      "type": "audio",
+      "text": "If we start with just this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2178,
+      "type": "audio",
+      "text": "Then that gives us these three columns for everything and then if we say."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2201,
+      "type": "audio",
+      "text": "Bracket mask one, then pandas is like, hey, you gave me a mask. Those are row labels. I'm going to pull out all the rows that satisfy that mask, which is all of the boys from 06. And then if I say colon 3, then again it says, hey, that's the slice. You're giving me row integers, so I'm going to pull out the first 3."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2205,
+      "type": "audio",
+      "text": "OK. Questions on that?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2230,
+      "type": "audio",
+      "text": "And just different ways of constructing masks of combining these different kinds of indexing. In practice, it's usually best to like in any given like line or bit of code to just use like one kind of indexing. Usually you don't want to mix and match in like, you know, a small amount of code, but in practice you'll see code that does it. It's important to know how it works."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2252,
+      "type": "audio",
+      "text": "All right, let's go back to the slides. So sometimes we may want to construct a mask using more than just, you know, equals greater than, less than. And so pandas gives us a bunch of useful functions for constructing boolean masks. So for example, let's suppose we have. We have this list of four names."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2280,
+      "type": "audio",
+      "text": "One thing we could do is we could say name equals equals Bella or name equals equals Alex or name equals equals Nargis or name equals equals Lisa, right? We have names of four different paths at 100 instructors up here. But that gets kind of long, right? Makes your code kind of like long and drag out. So it's helpful to be able to just say, hey, I have a list. I want to know, find me all the items."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2282,
+      "type": "audio",
+      "text": "That are in that list right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2297,
+      "type": "audio",
+      "text": "And you can use other Python data structures here too. But this is where this is a really useful thing where we can say dot is in and it'll give me all the rows where the value for name is in that list."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2298,
+      "type": "audio",
+      "text": "So this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2308,
+      "type": "audio",
+      "text": "Mask in here is basically going to be false, false, false, false, false, false for the vast majority of the rows, but it's going to be true whenever the name is one of these four values."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2318,
+      "type": "audio",
+      "text": "And so this, because we're using this bracket to pull out a mask, will give us all the rows corresponding to these four names."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2324,
+      "type": "audio",
+      "text": "OK, so we also have starts with and."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2327,
+      "type": "audio",
+      "text": "I go back up to the."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2345,
+      "type": "audio",
+      "text": "We're doing today, right? If we do this, then this pulls out all the rows where we have any of these four names, right? And now we have 317 rows. Why? Because we have multiple years in which these names are present."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2370,
+      "type": "audio",
+      "text": "And we can use. Suppose we want names that start with the letter N, right? Saying that, I want a name that starts with the letter N It's kind of like asking a string related question about the string in the name column, right? Name columns full of strings and I want like. Specifically I want to know give me the ones where that string has an N at the beginning."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2387,
+      "type": "audio",
+      "text": "And so if you remember your Python string, strings have a method called starts with that you can use to pull out that right. Strings have a lot of other useful methods, right? Like contains and substrings and so on. And so if you have a pandas Series, a column that's full of strings."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2400,
+      "type": "audio",
+      "text": "A string series, right? Then you want to pull out. You want to do string operations on it. Then you can use those methods by saying the column dot STR and then dot the string method."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2419,
+      "type": "audio",
+      "text": "So I can say name dot STR dot starts with N We'll be doing a lot more with the dot STR, kind of like sub methods when we come back talk about like things like regular expressions and text processing in a couple weeks. But it's useful to know that this exists."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2429,
+      "type": "audio",
+      "text": "Do you have to have this memorized? No. This will be on your reference sheet. This is something that it's useful to know that you can do stuff like this and then look it up when you actually need to do it."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2434,
+      "type": "audio",
+      "text": "So if I run this, this gives me all the names that start with N."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2440,
+      "type": "audio",
+      "text": "Right. And you know I can do this for any letter and it will give me that."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2444,
+      "type": "audio",
+      "text": "OK. So now that we've kind of like played around with this data set a little bit."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2450,
+      "type": "audio",
+      "text": "What kind of questions might you want to answer using this table?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2454,
+      "type": "audio",
+      "text": "So again, the Slido is."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2457,
+      "type": "audio",
+      "text": "Working, but we can go."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2467,
+      "type": "audio",
+      "text": "I don't know why this is not."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2470,
+      "type": "audio",
+      "text": "Working here, but give me a moment."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2474,
+      "type": "audio",
+      "text": "To fix this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2507,
+      "type": "audio",
+      "text": "All right."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2511,
+      "type": "audio",
+      "text": "Night do that."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2541,
+      "type": "audio",
+      "text": "What question would you want to answer with this? Right. And again, please get creative. Start thinking about the kind of the questions you asked for the table of, you know, presidential elections. Get creative, you know, start thinking creatively. Get out there. Think like what are what's something that you like really unusual, something you've always kind of like wondered if you have this data, what might you be able to do with it? All right, if you haven't already, turn to the person next to you and."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2543,
+      "type": "audio",
+      "text": "Discuss a little what ideas you have."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2638,
+      "type": "audio",
+      "text": "All right, so does someone want to share what you and the person you were chatting with came up with? Any interesting idea?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2639,
+      "type": "audio",
+      "text": "For a quiet question you might want to ask."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2643,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2664,
+      "type": "audio",
+      "text": "How do they vary across states? Great question. For this data set, we only have the California data, right? We could have gotten other states as well, but for now we're only looking at California. So let's suppose it's a good question and a question we could answer if we had a larger data set. But what other questions might you want to answer? Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2679,
+      "type": "audio",
+      "text": "Yeah, which name has the highest count ever, right. What is the most common name? Maybe across like all the different years, maybe like within any year. Like what is the most common name?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2679,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2682,
+      "type": "audio",
+      "text": "Umm, yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2683,
+      "type": "audio",
+      "text": "Yes, Huh."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2692,
+      "type": "audio",
+      "text": "Ah, what is the most common name per decade? That's another good one, right? Like, what do they change? Are they the same?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2696,
+      "type": "audio",
+      "text": "Other questions, yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2697,
+      "type": "audio",
+      "text": "Yeah, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2700,
+      "type": "audio",
+      "text": "Are in the brown shirt, brown footer, Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2725,
+      "type": "audio",
+      "text": "What names were given for females and males? Another interesting related question is what names are given to both, right? What are common names that might be given to both boys and girls, which we'll spend a little time on today and more time on next time? Yes, in in the green St."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2754,
+      "type": "audio",
+      "text": "Ah, that's an interesting one. How long do names trend for right? Like if a name gets popular, how long does it like last? Does the popularity last? And then if the trend subsides, how long does it take before the trend starts to pick up again?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2759,
+      "type": "audio",
+      "text": "These are all great examples of the kinds of questions that you could ask."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2782,
+      "type": "audio",
+      "text": "One question that you know you probably also have is how does your name fit in here? And again, as always, you can follow along with the demos, you know in real time or you're welcome to look at them after as well. Just remember that you know, if you're using your laptop, it's easy to get distracted. So try to keep your keep keep your focus on what you're trying to do."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2796,
+      "type": "audio",
+      "text": "So you're always welcome to look at your name, see how your name fits in. You know, by now you have some ways of doing that. We'll spend a little more time, you know, giving us more skills to work with this data frame over the next couple, over this time and next time."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2799,
+      "type": "audio",
+      "text": "OK. These are all excellent questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2803,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2824,
+      "type": "audio",
+      "text": "Some another question that I had were like some names are more common than others, but how common are like the most common names, right, are like names, you know, like I definitely met, you know, certain people's names, you know, like I've met a lot of like Daniels, right, or some some names are more common than others."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2828,
+      "type": "audio",
+      "text": "So I want to know like across time."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2839,
+      "type": "audio",
+      "text": "Are the like, more common names, you know, like really dominant? Or is it like, yeah, there's like a most common name, but it's not that high of a percentage. How does that change over time?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2841,
+      "type": "audio",
+      "text": "So I made two graphs here."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2847,
+      "type": "audio",
+      "text": "I graphed in on here the number of babies with a year's most common name."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2853,
+      "type": "audio",
+      "text": "So what does this graph tells me? This graph tells me for example in 1940 the most common name was used 3000 times."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2858,
+      "type": "audio",
+      "text": "Right. And it's important to keep in mind that overtime, the population is growing."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2885,
+      "type": "audio",
+      "text": "But there's an interesting pattern here where the most common name you know is maybe not that common in the 20s and 30s, but starting in the 40s and going through maybe like the 80's, the most common names are really common, Maybe like less so in the 70s. But then after the 90, from the 90s onwards, the most common name is not that common anymore."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2893,
+      "type": "audio",
+      "text": "And we can kind of see this here where on the Y axis instead of the number and look at the percent out of the total number of babies born."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2899,
+      "type": "audio",
+      "text": "And here we can see it's basically like diving, right? So in like 1943% of babies born."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2909,
+      "type": "audio",
+      "text": "Had that year's most common name, right? That means three out of every 100 babies had the same name, and it was like the trending name for that year."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2939,
+      "type": "audio",
+      "text": "In 2000, on the other hand, less than 1% of babies had the year 2000 is the most common name. So that's kind of interesting, right? Like there's maybe more variation. Of course, this doesn't tell the whole story because, you know, we're only looking at the one most common name. So maybe if we were to look at like the few most common names, how do we define few, right? How do we define this concept of, you know how?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2941,
+      "type": "audio",
+      "text": "Common are like the trendy names."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2962,
+      "type": "audio",
+      "text": "Well, we can already start to see that there's subjectivity involved. So in answering a lot of the kinds of questions that we have, we're going to have to bring in some kind of opinions or we have to define some kind of like measures or ideas in order to quantify the questions we want to answer, right? It's not just easy to say, oh, yeah, like, here's the answer, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2974,
+      "type": "audio",
+      "text": "So again, I'm spending a lot of time on this because it's really important to think about How do you get curious about a data set, and how do you translate that curiosity into answering actual questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 2983,
+      "type": "audio",
+      "text": "So last time we looked at the election data, I don't know why it's starting super faded, but."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3000,
+      "type": "audio",
+      "text": "You know, we I asked the same question for that data set and the results were pretty interesting, The two most common answers. I have a representative sample here. My favorite answer on the screen here is which party is the winningest. That was actually one of the most common questions. Which party wins the most often?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3019,
+      "type": "audio",
+      "text": "Very interesting question. Another one that was very popular was kind of relating the popular vote versus win loss, right? How common is it for a party to like win the election but lose the popular vote as has happened relatively recently in the last 20 years?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3035,
+      "type": "audio",
+      "text": "Another from other interesting themes. People were asking about winning streaks and losing streaks. How often do candidates change parties? How do third parties, like, grow and ebb over time? Are there candidates who run multiple times? How often do they run? How successful are they?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3061,
+      "type": "audio",
+      "text": "And then there are a few responses that I thought were very interesting because they required additional information. And this is also something you're going to run into a lot, right? You're going to have questions about a data set that you might not be able to answer with just the data you have. So someone, you know, mentioned voting rights, right? They're obviously a big connection between election outcomes and who has access to vote."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3067,
+      "type": "audio",
+      "text": "Someone asked about, you know, is there a relationship between how a candidate's level of education and how successful they are?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3084,
+      "type": "audio",
+      "text": "So that's not in this data set, right? We only have like the candidate name and the year and how much they've got and whether they won. But that data is out there somewhere, right, of every presidential candidate, how educated they were, like how what level of education they got to so we could connect that in in theory."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3092,
+      "type": "audio",
+      "text": "People were asking about how parties develop and separate and so on, so that would also require us to bring in historical context."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3103,
+      "type": "audio",
+      "text": "So a lot of questions we will be interested in will have to bring in outside information. We'll talk a little bit about how you combine datasets."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3106,
+      "type": "audio",
+      "text": "Next I may be on."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3113,
+      "type": "audio",
+      "text": "Thursday, but probably more on Tuesday. But again, these are the kinds of things that you want to be thinking about when you start working with data."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3143,
+      "type": "audio",
+      "text": "OK, with that, let's get to the Pandas content for today. So we're going to be talking about 3 main things for most of today. The 1st is inspecting a data frame, right? You get some data you want to like answer a bunch of questions. Like, you know, a lot of the questions we got were, you know, what are some common, what were common names or, you know, trends and things like that. A lot of those questions we can answer with just like basic inspection, right? Looking at for a particular."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3167,
+      "type": "audio",
+      "text": "What's common for a particular name? How does it change over time? Things like that. So we'll look at some methods for that. Then we'll talk about how do you modify a data frame, adding, removing columns, changing columns. And last but not least, we'll talk about sorting, right? Whenever we want to talk about, you know, most common, least common, we probably have to think about, you know, we want to sort, we want to rank."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3182,
+      "type": "audio",
+      "text": "So let's start by inspecting a data frame. One of the really funny questions I saw on the responses from last time was how are you doing? And I like to think of what we're about to do is like the equivalent of asking a data frame, how are you doing?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3184,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3188,
+      "type": "audio",
+      "text": "Let's go back to this baby names data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3201,
+      "type": "audio",
+      "text": "So all of the numpy functions that you know and love that you learn back in Data 8 to work on arrays can also be used on series. So for example."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3207,
+      "type": "audio",
+      "text": "I can pull out the counts of."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3208,
+      "type": "audio",
+      "text": "The."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3218,
+      "type": "audio",
+      "text": "For every year, how many babies were named Yash in that year? And you know, I get the series back and I can say."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3224,
+      "type": "audio",
+      "text": "The average number of babies."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3225,
+      "type": "audio",
+      "text": "With that name."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3228,
+      "type": "audio",
+      "text": "I can say dot mean."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3235,
+      "type": "audio",
+      "text": "That gives me the average."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3245,
+      "type": "audio",
+      "text": "So can someone tell me is this the average for every year in my data set? The number of babies named yash in that year of all my data?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3247,
+      "type": "audio",
+      "text": "Yes or no?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3250,
+      "type": "audio",
+      "text": "No, why not?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3264,
+      "type": "audio",
+      "text": "Yeah, it doesn't include rows where there were too few babies named Yash, right? Remember that we only have rows in our data frame."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3270,
+      "type": "audio",
+      "text": "Where the count is at least 5."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3293,
+      "type": "audio",
+      "text": "Right. So this is not include rare names. And so because it doesn't include rare names, there's a bunch of years where, you know a name might not be present. That doesn't mean there were zero people born, but it does mean that there are fewer than five in California. So this is really the average within years where there were more than five babies named Yash that were born."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3295,
+      "type": "audio",
+      "text": "Similarly, we can look at the Max."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3303,
+      "type": "audio",
+      "text": "Max is 29. Does this represent the true actual Max or is there something missing?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3308,
+      "type": "audio",
+      "text": "Anyone want to guess?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3312,
+      "type": "audio",
+      "text": "Maybe just like, nod or shake your head."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3342,
+      "type": "audio",
+      "text": "I'm seeing a lot of nods. Yes, This is the actual Max, right? The data that's missing are like the five and unders. None of those matter for the Max, right? So this Max is in fact, correct, right? We know that the most number of babies named Yash born in a year was 29. So we can use these array operations. And as we use them, it's important to keep in mind the connection between the questions we're asking and like what's going on in the real world that the data is reflecting. OK, so we have these. We can do this. You know, you must mean you can ask Max."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3347,
+      "type": "audio",
+      "text": "Men you can do any array operations that you want."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3379,
+      "type": "audio",
+      "text": "You also have access to a huge range of built in methods in pandas. We are not going to be able to cover every single one of the methods in Pandas. If you ask me to list all of them, I would probably get through maybe like 10% off the top of my head or less. There's a ton of different things you can do. It's not really important that you memorize all of them, but it is important that you have a sense of the capabilities for the most common ones and that you know generally how they work and how to use."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3390,
+      "type": "audio",
+      "text": "So the equivalent of like the how are you for a data frame is just like looking at it, right? So we can look at baby names, right? Yeah, we can look at this and you know, we saw."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3394,
+      "type": "audio",
+      "text": "Sometimes we can use HEAD to get the first few SO."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3408,
+      "type": "audio",
+      "text": "If you want the index we can say my data frame index and that gives us the index and you know this is kind of a boring 1. So if we do set index of year."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3417,
+      "type": "audio",
+      "text": "And then after the index of that, then you know that gives us the index, right? If I were to do this, it would look like this and."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3423,
+      "type": "audio",
+      "text": "This index would look like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3427,
+      "type": "audio",
+      "text": "So I can ask for that index. I can also ask for dot columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3446,
+      "type": "audio",
+      "text": "Right, if I ask for columns, it gives me a list of all the columns. Pretty straightforward for small data frames. I have worked with data frames where you have 100 columns, right? It's often useful to like see all of them and maybe even manipulate them programmatically."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3450,
+      "type": "audio",
+      "text": "We can get the shape of a data frame."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3478,
+      "type": "audio",
+      "text": "So this gives me a 2 item tuple where the first item is the number of rows and the second item is the number of columns, right? So this is a 407,428 row data frame with five columns. I can also ask for the same way I can with an array. I can ask for that size which is basically these two multiplied together, right? Number of rows times number of columns, total number of things in the data frame."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3480,
+      "type": "audio",
+      "text": "I can also use the Python method Len."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3488,
+      "type": "audio",
+      "text": "Which will give me the number of rows. These are all ways of getting similar information."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3493,
+      "type": "audio",
+      "text": "We can also use a method called describe right? If I want to know."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3524,
+      "type": "audio",
+      "text": "You know what is what do the counts look like, right? Are the counts like what are they? What's the average count? What's the like min. So we can use the describe method of a data frame and that will give me for every column except not every column I lost some for some of the columns, we'll talk about which ones. It gives me count total number of things in them. It gives me the mean what's the average gives me standard deviation min."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3528,
+      "type": "audio",
+      "text": "25th, 50th and 75th percentiles and the Max."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3543,
+      "type": "audio",
+      "text": "Right, so year men is 1910, Max is 2022, and count Max is 8260, right? Means there's one year where 882 hundred kids got exactly the same name."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3549,
+      "type": "audio",
+      "text": "And the min is five. This doesn't mean that the actual min number of babies born with five, it means that that's just how our data set works."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3570,
+      "type": "audio",
+      "text": "So this is a good way of describing the numeric problems, right? If we go back up to the baby names data frame, you know we see that there's a bunch of non numeric columns. They are not listed here. I can also use dot describe on a series so I can say baby names."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3572,
+      "type": "audio",
+      "text": "Year Describe."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3577,
+      "type": "audio",
+      "text": "That'll give me the same thing for a series."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3583,
+      "type": "audio",
+      "text": "And I can also use dot describe on a non numeric series."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3594,
+      "type": "audio",
+      "text": "And so for example, if I look at assigned sex at birth, then this tells me you know what the count is just like before, but it also gives me how many unique values they are and the most common one."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3618,
+      "type": "audio",
+      "text": "And what the frequency of that most common 1 is. So this is a useful method for looking at things, but it's not really the be all end all right. Like a lot of people will write their own custom version of describe. Like I have a code that I've written that, you know, I run it on any new data frame I get and it prints out like this information, a bunch of other things, some basic visualizations and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3621,
+      "type": "audio",
+      "text": "The kind of things that you want to know when you start looking at datasets."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3639,
+      "type": "audio",
+      "text": "So last time we talked about head and tail and how they're kind of useful for looking at things, but sometimes they can give you a misleading picture because it's like just the beginning or just the end. So it might be nice to look at random elements of a data frame. So I can do a random elements by calling baby name dot sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3644,
+      "type": "audio",
+      "text": "And this, if I give it no arguments, gives me one random row."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3652,
+      "type": "audio",
+      "text": "Great. So you know I can get one random row OK, but I can also get a any number of random rows."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3675,
+      "type": "audio",
+      "text": "And this gives me 10 rows at random. And this is usually more useful when you like, want to check, do a standing check on a data frame because you can get a bunch of random rows and kind of like see what's going on. You make sure like, yeah, there's a bunch of different years represented, a bunch of different names counts represented and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3704,
+      "type": "audio",
+      "text": "You can also pass in a percentage of the number of rows you want. Not necessarily something we'll do a lot in this class, but good to know. Sample is very flexible. You can also sample width and without replacement. By default, we sample without replacement. What does that mean? Again? That means that replacement just means when we sample a row, can we sample it again more than once, right? If you think about like pulling, you know, toys out of a bag, can you pull the same toy out more than once? Right? Do you?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3706,
+      "type": "audio",
+      "text": "Place it before you sample the next one."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3711,
+      "type": "audio",
+      "text": "So we can do replace equals true and that'll give me a sample with replacement."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3721,
+      "type": "audio",
+      "text": "Course, with the data frame this big, you know, just a sample of 10, we're not likely to get the same thing multiple times, but you could in theory, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3727,
+      "type": "audio",
+      "text": "If I do this, if I run this sample a bunch of different times, you can see I keep getting different rows."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3742,
+      "type": "audio",
+      "text": "And if I take the 1st 10 rows right, I'm indexing with the slice, so that gives me the 1st 10 rows and then I sample four of them with with replacement."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3757,
+      "type": "audio",
+      "text": "Then we can see that I'm likely to get the same row more than once, right? I can run this a few different times. This time, you know, it was all different here. I actually got 7 seven and one one. So I can get the same room more than once when I sample with replacement."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3774,
+      "type": "audio",
+      "text": "And a lot of times it's useful to do more than one of these things at the same time, right? Maybe I want to find like people, you know, born in 2000 who and I want a random sample of them. And I only want certain columns, so I could say."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3777,
+      "type": "audio",
+      "text": "You know this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3780,
+      "type": "audio",
+      "text": "Dot sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3806,
+      "type": "audio",
+      "text": "I could do this, right? Baby names in 2000 dot sample of this dot iloc of this dot dot dot. But if I keep doing this, it's going to like scroll off the side, right? And it's going to be really hard to read. I have to scroll sideways. So a lot of times to make our code easier to read and we're chaining, we put a parentheses at the beginning and then if there's a parenter on it, Python knows when you go to the next line, you just puts them all together."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3809,
+      "type": "audio",
+      "text": "So this is a convenient and common pattern for how we."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3811,
+      "type": "audio",
+      "text": "Will pull something out like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3816,
+      "type": "audio",
+      "text": "We can also look at."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3832,
+      "type": "audio",
+      "text": "Which ones are which values are more or less common, right? We may be interested in hey, like you know, what is the number of total different like names in a data set. So maybe I can say baby names."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3837,
+      "type": "audio",
+      "text": "Name and I can use the value count function."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3864,
+      "type": "audio",
+      "text": "So what does this tell me? This tells me that there is 223 rows where the name was equal to gene, 221 where name was equal to Francis, and so on and so on, right? So this tells me like, what are the most common, least common values in my data frame? And then, you know, these ones are relatively rare, right? They only have these names only occur once, right? And a lot of these are like maybe newer or more unusual names."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3866,
+      "type": "audio",
+      "text": "That have not occurred in a lot of the rooms."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3874,
+      "type": "audio",
+      "text": "We can also look at an array of all the unique values. So if I say."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3878,
+      "type": "audio",
+      "text": "If I get a particular series I can say unique."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3882,
+      "type": "audio",
+      "text": "Oops, there's no column called out series. What am I doing there?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3889,
+      "type": "audio",
+      "text": "So I say."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3898,
+      "type": "audio",
+      "text": "Here name and this gives me all the unique names, right? And as a simpler example I can look at assigned sex at birth and this gives me just F&M."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3910,
+      "type": "audio",
+      "text": "OK, so these are the examples of the kinds of methods that we can use. This is not exhaustive, but it's the kind of thing that you'll want to use when playing around with the data frame."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3934,
+      "type": "audio",
+      "text": "So we talked about index columns and shape, right? You can use dot index, right to pull out the index dot columns to get the columns dot shape. And again, remember this little panda icon is assigned to you that this thing is on your reference sheet, right? You don't have to memorize it. You'll be able to get it on an exam. And in practice, when you use it in the real world, it's the kind of thing that you usually want to look up."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3946,
+      "type": "audio",
+      "text": "We have that shape and size right? Shape gives us number of rows and number of columns. That size gives us the product of those two total number of items right? Like in the whole table."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3950,
+      "type": "audio",
+      "text": "We can use numpy functions."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3963,
+      "type": "audio",
+      "text": "Right when we do this, this gives us a data frame with all of a series, and when we have a series we can apply numpy functions like Max and min and median and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3971,
+      "type": "audio",
+      "text": "One thing about this mean that I want to mention is that you know it prints out that the mean is like 17.1428 blah blah blah."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 3994,
+      "type": "audio",
+      "text": "When you see this many decimal places, just a reminder that you should not necessarily report your answer with that many decibels, right? If you say you know the mean is 17.14285, that's not really meaningful past like the 1st decimal place. It's important to know to have a practical sense of what this actually means, right? If I have this many data points."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4000,
+      "type": "audio",
+      "text": "And I'm reporting the mean. I would probably just say the mean is like 17, maybe 17.1."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4006,
+      "type": "audio",
+      "text": "Right. 17 years or maybe or 17 people, 17.1 ish people."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4013,
+      "type": "audio",
+      "text": "Similarly, we can do Max and all these different functions. These are also."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4030,
+      "type": "audio",
+      "text": "And there's a ton of others, Size, shape, describe. We talked about these, but there's a whole lot. I strongly recommend checking out the documentation, not necessarily to like, understand and memorize everything, but just to get a sense of how much stuff there is in it."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4059,
+      "type": "audio",
+      "text": "We have the describe method which for all the numeric columns gives me a summary. I can also run describe on a series which will give me. If it's numeric it will give me these. If it's non numeric it'll give me like the top most common thing and the frequency of it. We can use value counts as a series. Notice that the value the series in value counts is always sorted. It gives you the most common value at the top and the least common value at the bottom."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4074,
+      "type": "audio",
+      "text": "We can use that sample so sample does a random sample. By default it samples without replacement, meaning that you know each row can only be sampled once. If we use replace equals true then it samples with replacement."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4090,
+      "type": "audio",
+      "text": "Generally, the top of a data frame is not usually representative as we talked about last time. So I usually like using dot sample when I'm kind of like, you know, does this make sense when I'm just looking at looking at it to make sure to get a sendation?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4103,
+      "type": "audio",
+      "text": "And again, we can chain methods together. It's, you know, convention to put parentheses around them and then just have each thing you're doing starting with the dot on the next line."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4108,
+      "type": "audio",
+      "text": "And then there's dot unique so."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4111,
+      "type": "audio",
+      "text": "Let me pause for questions on these methods before we go to the Slido."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4115,
+      "type": "audio",
+      "text": "Questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4120,
+      "type": "audio",
+      "text": "Made a fake one or two if there any."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4126,
+      "type": "audio",
+      "text": "So far so good. OK, so a lot of this stuff is pretty straightforward."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4126,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4156,
+      "type": "audio",
+      "text": "Remember that like name of value counts right where I said gene happens, gene Jean happens like 223 times. Which of the following are valid interpretations of this output? In other words, if you're like taking this output and like explaining to someone what it means, which of these are correct interpretations? And if none of these three are correct, then there's a none of the none of the above option. But if you pick none of the above, make sure you explain how you would change."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4161,
+      "type": "audio",
+      "text": "One or more of these to be correct. What would you add? What would you take away? How would you modify it?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4166,
+      "type": "audio",
+      "text": "All right, take a second turn to the person next to you and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4325,
+      "type": "audio",
+      "text": "All right, so when answering questions like this, it is really important to have a mix of both. Like hold on a SEC, let me take my hands off the keyboard and just stop and like think about it for a minute."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4355,
+      "type": "audio",
+      "text": "It's important to have a mix of that and let me like dig in and kind of like investigate and see what's going on. Both of them are useful and if you just do one or just do the other, your analysis and thinking and like iteration will not be as good as if you do a mix of both. Now, how to figure out when you do this and when you do that, that's kind of a skill that comes with practice. But let's think about this for just a moment and then we'll go into the demo notebook and kind of play around with this to help us answer this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4362,
+      "type": "audio",
+      "text": "So does this mean that gene is the most common name, right? Because it's like 223. It's like bigger than any other name."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4382,
+      "type": "audio",
+      "text": "But that 223 doesn't mean that the name gene only showed up 223 times, right? We already saw some names happen, like in just one year alone, more than 8000 times. So there's no way that that 223 can represent it being the most common name."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4388,
+      "type": "audio",
+      "text": "And if we think about it, each row represents one name in one year."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4394,
+      "type": "audio",
+      "text": "Right. So if we see Gene a lot, then it's like, well, maybe that name is happening in a lot of years."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4410,
+      "type": "audio",
+      "text": "So that brings us to the second item, which is in 223 of the years in the data set, there was at least one child named Gene. You know, really I should have said at least 5 because, you know, the minimum here is cut off is five. But even if we said at least one or at least 5."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4422,
+      "type": "audio",
+      "text": "This would also be wrong. Why? Because this 223 should be a tell to us that something is going wrong because our data set only goes from 1910 to 2022."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4428,
+      "type": "audio",
+      "text": "Right, there's only 110 years, hundred 10112 years in our data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4437,
+      "type": "audio",
+      "text": "So there's only 112 years. There's no way that we can have 223 years of this name happening."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4443,
+      "type": "audio",
+      "text": "So why is the number of rows more than the number of years?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4448,
+      "type": "audio",
+      "text": "Well, that kind of brings us to this third option, which is that gene is the most gender neutral name in the data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4453,
+      "type": "audio",
+      "text": "What does it mean for something to be the most gender neutral?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4485,
+      "type": "audio",
+      "text": "That's a pretty subjective way of describing it, right? It means we have to say, what does it mean for something a name to be more gender neutral than another name? We'll spend some time on Thursday kind of like coming up with a definition or two for what more or less gender gender neutral for a name means. But even here we can see that this does not tell us that no matter how we define it right, from this information alone, from that 223, that doesn't mean it's."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4493,
+      "type": "audio",
+      "text": "Most gender neutral name. It just means that there are a lot of rows where it was used for at least five boys and at least 5 girls."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4499,
+      "type": "audio",
+      "text": "So let's do a little digging in our data set to kind of understand this a little better."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4503,
+      "type": "audio",
+      "text": "So I'm going to scroll back down to the Slido section."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4506,
+      "type": "audio",
+      "text": "And."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4514,
+      "type": "audio",
+      "text": "Baby names."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4523,
+      "type": "audio",
+      "text": "And specifically I'm going to look at all the rows where name is G, right? Because that's the most common one."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4535,
+      "type": "audio",
+      "text": "And what we can see is that there's a lot of rows where it was given to a decent number of girls, and there's a lot of rows where it was given to a decent number of boys."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4541,
+      "type": "audio",
+      "text": "Right. So what we're what we see is that in particular we can do."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4546,
+      "type": "audio",
+      "text": "Something like this where we say baby names equals gene and."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4585,
+      "type": "audio",
+      "text": "Right. And now we can see that for boys, this name there were like, it's not that common, right? It's like in in the 1910s, it's not that common in the, you know, even recently it's not that common, but it's consistent. It shows up every year. And if we were to do the same thing for girls, we would see it's like a lot more common for girls over here. But it's relatively uncommon for both here."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-331-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4594,
+      "type": "audio",
+      "text": "So this gives us a sense that this name is coming up again and again and again, but maybe it's not that common. Maybe it's more or less common."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-332-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4611,
+      "type": "audio",
+      "text": "Really what we should be doing now is generating A visualization. We'll talk more about visualizations next week, but it might be nice to like look at a line graph, right, of what these look like. So what we'll want to do is say."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-333-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4615,
+      "type": "audio",
+      "text": "This and."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-334-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4616,
+      "type": "audio",
+      "text": "We can say."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-335-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4620,
+      "type": "audio",
+      "text": "Gene boys equals."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-336-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4632,
+      "type": "audio",
+      "text": "Look at the."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-337-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4649,
+      "type": "audio",
+      "text": "We can get the boys right, We can pull out the girls again by using indexing to create a mask of where sex is equal to F, right? And then we can say, let's plot."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-338-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4653,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-339-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4659,
+      "type": "audio",
+      "text": "Talk a little bit more about how these methods works next time, but you don't need to know the details for the what I'm."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-340-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4662,
+      "type": "audio",
+      "text": "Doing for now, but."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-341-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4664,
+      "type": "audio",
+      "text": "We can plot."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-342-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4666,
+      "type": "audio",
+      "text": "We give it the X which is."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-343-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4670,
+      "type": "audio",
+      "text": "A year."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-344-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4674,
+      "type": "audio",
+      "text": "Count."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-345-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4678,
+      "type": "audio",
+      "text": "And we can see that for boys it looks something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-346-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4682,
+      "type": "audio",
+      "text": "And for girls?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-347-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4686,
+      "type": "audio",
+      "text": "It looks something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-348-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4689,
+      "type": "audio",
+      "text": "So I'm going to zoom out."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-349-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4699,
+      "type": "audio",
+      "text": "And we can see that, you know, it's a lot more common for girls than boys, which kind of throws our like its most gender neutral thing right out the window."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-350-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4728,
+      "type": "audio",
+      "text": "But it is pretty consistently used for boys, right? So really the correct interpretation here is it's the most common in that value counts output because it is the name that shows up repeatedly, most often for at least some small number of boys and at least some small number of girls every year in this data set or almost every year in the data set. So it's like one of the most common names used for kids of both."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-351-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4732,
+      "type": "audio",
+      "text": "Boys and girls in this data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-352-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4739,
+      "type": "audio",
+      "text": "OK, again, important skill to be able to like translate the output into real world thinking."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-353-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4749,
+      "type": "audio",
+      "text": "All right, we're actually a little short on time, so we'll skip a search rate per day. Let's talk about how we add, remove and modify clones so."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-354-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4756,
+      "type": "audio",
+      "text": "If we want to modify a data frame, I'm going to go back up to the code. Scroll, scroll, scroll."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-355-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4760,
+      "type": "audio",
+      "text": "And."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-356-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4763,
+      "type": "audio",
+      "text": "We can."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-357-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4766,
+      "type": "audio",
+      "text": "Let's go back to."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-358-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4777,
+      "type": "audio",
+      "text": "Here so if we want to add a new column to a data frame, then we start by creating a series that represents that new column."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-359-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4778,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-360-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4781,
+      "type": "audio",
+      "text": "I have created this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-361-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4787,
+      "type": "audio",
+      "text": "This here. Oops."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-362-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4808,
+      "type": "audio",
+      "text": "So I've created this baby named lengths column which I've used the dot STR thing again because remember strings have a length method right? So I can ask for the Len of strings and so if I do dot STR dot Len that gives me how long is each name."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-363-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4816,
+      "type": "audio",
+      "text": "Right, it's a series where for every name year I know how long is the name for that year and I want to add this into my data frame."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-364-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4825,
+      "type": "audio",
+      "text": "To do that I just say baby names of name length equals baby name lengths."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-365-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4844,
+      "type": "audio",
+      "text": "And now I can print this out and now voila, I have a new column. So to add a new column to my data frame I just say, you know bracket indexing of this equals that. I can also use dot loc but you know usually this is more common."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-366-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4857,
+      "type": "audio",
+      "text": "We can modify columns using also using the same kind of thing so baby names of name length equals baby names."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-367-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4863,
+      "type": "audio",
+      "text": "Let's say we want to, for some reason, do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-368-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4888,
+      "type": "audio",
+      "text": "Then we can see from before we have like 4578 here. Now we have 346, right? This is really like name length -1 so we can modify, we can do operations and then put that back in as a new column again. You can also use dot loc here for modifications. We can rename columns so we can say baby names dot rename."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-369-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4896,
+      "type": "audio",
+      "text": "And columns equals."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-370-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4903,
+      "type": "audio",
+      "text": "And I might get this wrong. So the way you pass this in is you give it a dictionary where."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-371-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4926,
+      "type": "audio",
+      "text": "You give it the old name of the column here and the new name as the value, right? Old names are keys, new names are values. The only reason I remember this is because I looked it up like right before I started lecturing. I've been using pandas for like 10 years and I still forget the order of this all the time. Totally normal. Always good to be able to look it up."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-372-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4934,
+      "type": "audio",
+      "text": "Right, so we have our renaming where we give it old name, the new name, what it should be."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-373-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4939,
+      "type": "audio",
+      "text": "Now I did this and what happens if I do baby names?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-374-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4945,
+      "type": "audio",
+      "text": "Hey look the name that length column is not renamed."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-375-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4956,
+      "type": "audio",
+      "text": "Why? What's going on here? Well, when I do not rename and most like data frame modification operations, when I run them, they create a new data frame with that change."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-376-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4966,
+      "type": "audio",
+      "text": "Right. So like what pandas is printing out here is a new data frame that's been created as the result of this rename operation."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-377-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4974,
+      "type": "audio",
+      "text": "The original baby names data frame stays exactly the same and I'm just making a new one over here."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-378-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4980,
+      "type": "audio",
+      "text": "So if I say baby names then you can see it's still the old one with the old version of this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-379-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 4995,
+      "type": "audio",
+      "text": "If I wanted this to stick, if I wanted this to persist, then what I should be doing is say baby names equals this right? That way I take that new data frame and assign it back to baby names."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-380-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5003,
+      "type": "audio",
+      "text": "And and I can also use drop to drop calls, right? And if I were to."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-381-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5005,
+      "type": "audio",
+      "text": "Do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-382-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5014,
+      "type": "audio",
+      "text": "Right and the way drop works is I give it the column I want to get rid of and I also have to say access equals column."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-383-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5031,
+      "type": "audio",
+      "text": "Why? Because by default drop pandas assumes you're dropping rows. So you have to tell it do you want to drop rows or do you want to drop columns? And if you don't tell it, it says by default it's rows and so I have to tell it axis equals columns in order to drop columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-384-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5035,
+      "type": "audio",
+      "text": "So here now I have dropped that column but again just like before."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-385-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5042,
+      "type": "audio",
+      "text": "It doesn't modify the data frame. If I want the change to persist then I need to say this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-386-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5049,
+      "type": "audio",
+      "text": "So these are like common ways of adding modifying columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-387-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5052,
+      "type": "audio",
+      "text": "Um, to."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-388-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5054,
+      "type": "audio",
+      "text": "Recap."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-389-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5065,
+      "type": "audio",
+      "text": "Right, we can add a column, we create a series, right? In this case it's a series with the length of each name, and then we assign that series to a new column."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-390-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5096,
+      "type": "audio",
+      "text": "And then this is what our data frame looks like. And then we can modify that column by saying this, right, baby names equals baby names, length, name lengths -1 and then that results in this modification, right? Where these all get decremented by 1. You can also use that look if you happen to be modifying only like certain rows of a data frame, you have to use dot loc. More advanced, kind of beyond the scope of this class. Just something good to keep in mind if you start seeing warnings when you're modifying, maybe it's a sign."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-391-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5096,
+      "type": "audio",
+      "text": "That you need to use that look."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-392-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5121,
+      "type": "audio",
+      "text": "You can also rename columns. There's rename you give columns equals a dictionary with like the old version and the new version. There's also like 5 other different ways to do renaming. The renaming documentation is super long describing all of them. I always forget what this is. I have to look it up every time. I don't do it that often, but when I do I have to look it up."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-393-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5131,
+      "type": "audio",
+      "text": "So again this changes it and then dot drop drops. By default it drops rows and so we have to use access equals columns to get rid of certain columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-394-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5142,
+      "type": "audio",
+      "text": "And again this drop method, sometimes you'll see people use axis equals 0 or 10 refers to rows, 1 refers to columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-395-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5171,
+      "type": "audio",
+      "text": "And then we reassigned because by default, when you do these things, pandas creates a copy and when we create a copy, we have to reassign it back if we want it to persist. Many of these methods also have an argument called in place where you can say in place equals true and it will modify the data frame. In practice, people don't use it very often. This is kind of the common way that you'll see people do this. Sometimes if people are working with like massive data frames, it's like billions of rows. Sometimes they'll do that, but even."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-396-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5175,
+      "type": "audio",
+      "text": "Can usually use the library that like handles that under the hood."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-397-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5180,
+      "type": "audio",
+      "text": "Let's skip the slide over now."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-398-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5211,
+      "type": "audio",
+      "text": "And talk about sorting and we'll come back to it next time. So last but not least, I want to talk about sort values. So, you know, often we want to find like what is the most common or the least common. So there is a Pandas data frame method called sort values. And the way it works is you tell it what column you want to sort and then it sorts it. So for example, if I were to say baby names dot sort values by equals count, ascending equals false, then I say OK then."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-399-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5237,
+      "type": "audio",
+      "text": "Values by their counts, and it sorts them in descending order, right? Ascending equals true means like small to big. Ascending equals false means big to small. Notice that the index changes order 2 right when I sort the index changes. So we've seen a couple cases where the index changes right? When we filter, the index gets modified, it's different, and when we sort the index is modified, it's different."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-400-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5243,
+      "type": "audio",
+      "text": "So this is something important we're going to have to keep in mind once we start meeting our indexes a little late."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-401-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5258,
+      "type": "audio",
+      "text": "You can also sort a series, right? You press for a series, you just say send, you know, just dot sort values, it sorts them. You can sort a series of strings, it'll sort it, you know, A-Z. You can sort a series of numbers, it will sort it big to small."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-402-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5259,
+      "type": "audio",
+      "text": "What does that look like in?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-403-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5263,
+      "type": "audio",
+      "text": "Code. Well, we can say baby names."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-404-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5269,
+      "type": "audio",
+      "text": "Dot sort values name."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-405-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5276,
+      "type": "audio",
+      "text": "And we can see that, you know, it sorts by name, we can sort by count."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-406-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5282,
+      "type": "audio",
+      "text": "And we can see at the end we have all the rows corresponding to Michael."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-407-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5301,
+      "type": "audio",
+      "text": "There's some stuff about custom sorting which we'll briefly talk about at the start of next time. But what if we want to use this to find common names in certain years? So for example, let's suppose I think about the year 2006. I'm guessing at least one person here is born."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-408-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5303,
+      "type": "audio",
+      "text": "Around or near 2006 so I have this."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-409-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5308,
+      "type": "audio",
+      "text": "What I've done here is I've had names 06 which is a data frame of."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-410-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5322,
+      "type": "audio",
+      "text": "Names of 6, all the names from 2006 and then I've separated out the separated them out by assigned sets and."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-411-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5347,
+      "type": "audio",
+      "text": "If I want to look at what are the most common names for boys and girls respectively, then I can do this. So what have I done? I've done a filtering operation first by year, and then I've done two more filtering operations. I've taken that filtered by year and then filter for sex equals M, filter for sex equals F, right, boys, girls, and then for each one I can sort values."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-412-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5351,
+      "type": "audio",
+      "text": "Sort by count and pull out the last 8."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-413-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5354,
+      "type": "audio",
+      "text": "What is that doing? That's pulling out the most common?"
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-414-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5371,
+      "type": "audio",
+      "text": "We do still have another couple minutes. So please, you know, please ask that you not pack up until the end of class. OK, so we if we do this, then we can see that the most common names in O 6, the most common name for boys was Daniel, followed by Anthony, Angel, Jacob and David."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-415-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5379,
+      "type": "audio",
+      "text": "And similarly for girls, we can see that the most common names are Emily, Isabella, Ashley and Mia."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-416-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5402,
+      "type": "audio",
+      "text": "I was born in the 80s. So you know, someone asked like what are the most common names by decade? So let's try to do the same thing for decades, right? If I look at baby names from year, that is in range 19801990, right? This is going to create a mask. Give me all the rows where a year is between 1980 and 1989."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-417-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5406,
+      "type": "audio",
+      "text": "And then I can pull out the boys and the girls using the same process."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-418-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5410,
+      "type": "audio",
+      "text": "And if I pull try to display them."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-419-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5414,
+      "type": "audio",
+      "text": "Then hold on, I get something kind of."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-420-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5427,
+      "type": "audio",
+      "text": "Not what I expected, right? When I did it this way, I got all the different names for 06 great. And you know, for girls and for boys. But now I'm just getting like Jennifer, Jennifer, Jennifer, Jessica, Jessica, Jessica."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-421-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5445,
+      "type": "audio",
+      "text": "Why? Because I have rows for every year and So what I'm finding here is that in 1987 there were 6846 Cos, in 1989 there were this many Jessica's and so on. So by doing this I'm finding the most common names for multiple different years."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-422-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5454,
+      "type": "audio",
+      "text": "So really I want some way of like being able to group them by the decade and not have them be separated out by year."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-423-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5458,
+      "type": "audio",
+      "text": "And that's what we're going to get into next time when we start talking about grouping."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-424-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5467,
+      "type": "audio",
+      "text": "And so grouping is really going to give us the tools to answer most of the questions that you're asking for this particular data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-425-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5470,
+      "type": "audio",
+      "text": "All right, I will see you all on Thursday."
+    },
+    {
+      "id": "audio-ds100-sp26-1769556600-transcription-426-c0-e0",
+      "lecture_id": "ds100-sp26-1769556600",
+      "timestamp": 5500,
+      "type": "audio",
+      "text": "How'd it go? It wasn't great, I guess. OK, well, something to check. So these two questions, do you want to include that in the asynchronous pool or you want to recycle it to the next lecture? I will."
+    }
+  ]
+}

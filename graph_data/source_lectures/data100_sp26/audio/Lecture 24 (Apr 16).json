@@ -1,0 +1,2760 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1776379081",
+  "display_name": "Lecture 24 (Apr 16)",
+  "count": 393,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 174,
+      "type": "audio",
+      "text": "Alright, welcome everyone to our second lecture on logistic regression. So today we're going to kind of recap and kind of put together all the pieces that we built up last time and then move into talking about how do you evaluate logistic regression models. So some announcements before we start homework 7 is you tomorrow, Lab 10s you next Tuesday. My office hours are here right after class today."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 187,
+      "type": "audio",
+      "text": "And then they'll be on Monday from 11:50 for the next couple of weeks. Next week on Monday, they will be on Zoom, there'll be a link on Ed. And the week after that, they'll be in Evans 4/22."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 207,
+      "type": "audio",
+      "text": "Joshua's this week will be Friday 3:00 to 4:00 and next two weeks they will be here right after class. If you have not already, please, please, please fill out the Midterm 3 availability form. We need all your information so that we can schedule things because Midterm 3 is coming up very soon in just two weeks from today."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 225,
+      "type": "audio",
+      "text": "OK, so we've been talking about logistic regression which is a model to predict binary outcomes, 01 outcomes. And the way it works is we use a sigmoid which is this S shaped curve."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 242,
+      "type": "audio",
+      "text": "To predict probabilities right, we predict probabilities numbers that are between zero and one. And how do we do it? We make our predictions using this formula. The probability that Y is 1 given X, right? Remember that it's like given X, meaning that our probability depends on the value of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 248,
+      "type": "audio",
+      "text": "Our probability is sigmoid of Theta 0 plus Theta 1X."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 251,
+      "type": "audio",
+      "text": "What does that sigmoid look like?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 283,
+      "type": "audio",
+      "text": "Well, it looks like this function 1 / 1 plus east to the minus X. Is this the only function shape function we could have used? No. There are others, but this one is kind of convenient in a number of ways. It lets us interpret things like the log odds, and it has some nice properties that are quite useful. So this is how we make predictions with logistic regression. So if you want to think about it from like, how does it work? We start by taking our features, our predictors, our XS."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 313,
+      "type": "audio",
+      "text": "Right. Then these are all the different words for the same things. And we take our coefficients, our thetas, the parameters of our model, and we start by taking the inner product, doing the same, you know, X transpose Theta that we've been doing for months now, the same thing we did in linear regression. And that gives us a value that is between negative Infinity to Infinity, right? We don't know that it's necessarily going to like be between zero and one. And we saw last time that this can be interpreted as the log odds and I'll talk in a."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 318,
+      "type": "audio",
+      "text": "About what that means, but really you should think of the output of this as something that's like between negative Infinity to Infinity."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 329,
+      "type": "audio",
+      "text": "Positive big values make us think that oh, it's more likely probability one, and negative small values make us think oh it's like more likely probability 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 348,
+      "type": "audio",
+      "text": "This is our."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 348,
+      "type": "audio",
+      "text": "So that's the output of this like linear part of logistic regression. And then we use the sigmoid which does the mapping for us, right? It maps values that are like between negative Infinity to Infinity and maps them into zero to 1 right using this S shaped curve."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 352,
+      "type": "audio",
+      "text": "Sigmoid function."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 363,
+      "type": "audio",
+      "text": "Where you know very very large negative values get mapped close to 0, big positive values get mapped close to 1, things in between get mapped somewhere in between."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 392,
+      "type": "audio",
+      "text": "That gives us predicted probabilities, right? Because they're between zero and one. And so that's where we get a graph that looks like this, right? So the original like linear output of the linear part gives us something that looks like that, right? That the values could be between, you know, this graph, they're like -5 to 5. In practice, they can be, you know, very large to any value, whereas once we apply the sigmoid, we get values that are always going to be between zero and one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 396,
+      "type": "audio",
+      "text": "Right. And so we're interpreting them as probabilities."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 419,
+      "type": "audio",
+      "text": "Then once we have our probabilities, we have to do the final step, which is to apply a decision rule, right? Which is basically just going to be a threshold. We're going to decide some number, and if our probabilities are bigger than that number, we say one. If they're smaller than that number, we say 0. How do we decide that number? That's what we're going to talk about in the second-half of class today."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 425,
+      "type": "audio",
+      "text": "So this is the like high level overview of how."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 438,
+      "type": "audio",
+      "text": "Logistic regression works, and we saw at the end of last class that we can also interpret things. The interpretation isn't as easy as linear regression, but we can still do it right. We can still say things like."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 439,
+      "type": "audio",
+      "text": "Well, this first part everything."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 443,
+      "type": "audio",
+      "text": "To the left of the green dotted line."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 455,
+      "type": "audio",
+      "text": "All of this is linear, right? Everything back there is linear. So if we can apply the interpretations we use in linear regression, they're valid up until we apply this nonlinearity."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 473,
+      "type": "audio",
+      "text": "So we saw that this output of that first step has an interpretation as the log odds. Again, I'll talk in a moment about what that means, but our coefficient interpretation basically says, well, if Theta 3 increases by or if X3 increases by 7."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 479,
+      "type": "audio",
+      "text": "Then our log odds should increase by 7 times the coefficient Theta 3."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 489,
+      "type": "audio",
+      "text": "Right. If any predictor increases by 1, then the log odds increases by whatever coefficient is on that feature."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 504,
+      "type": "audio",
+      "text": "So what's up with this log odds thing? Well, remember we did a little bit of algebra, right? We solved for the Z in that Sigma of Z, right? Like we said, it was like Theta 0 plus Theta 1X. And in doing that solving, we basically are inverting this function."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 512,
+      "type": "audio",
+      "text": "Right. We're saying like, what is the, you know, we're solving for that as a function of everything else, right? And we're effectively inverting that function."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 537,
+      "type": "audio",
+      "text": "So that means that when we have a probability and we want to calculate the log odds, we just take log of P / 1 -, P and we did that exercise where we said, oh, if the predicted probability is five, then the log odds is we start with the odds which is really the like probability of 1 divided by probability of 0, which is half divided by half which is 1. And then we take the log of that to get 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 549,
+      "type": "audio",
+      "text": "If our predicted probability was .75, then our log odds would be log of .75 / .25 or log of three."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 568,
+      "type": "audio",
+      "text": "Right. We can always calculate the log odd from the probability and vice versa, right? If we have the log odds, how do we calculate a probability? We just apply the sigmoid function, right? So these two functions kind of give us the path to go back and forth between log odds, land and probability of land."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 589,
+      "type": "audio",
+      "text": "In practice, probabilities are a lot easier to interpret, right? If I tell you, hey, I think the probability is this, you're like, OK, yeah. And if I tell you the log odds is this, hopefully now you're like, yeah, I guess I kind of understand what that means, but it's still not as intuitive as probabilities, right? That's why we like probabilities to be the outputs of our logistic regression models."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 616,
+      "type": "audio",
+      "text": "OK, so that's the logistic regression in a nutshell. And we ended last time talking about how do we compute the coefficients, right? Most of the last lecture I just kept like giving you, oh, for this model, suppose Theta is this supposed Theta is that. But really we have to know how to calculate them in linear regression and OLS land. The way we calculated them was we said, OK, we're going to use L2 loss and then we do gradient descent or normal equations."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 622,
+      "type": "audio",
+      "text": "So the nice thing is, it's going to be almost exactly the same. We can use gradient descent."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 633,
+      "type": "audio",
+      "text": "But we can't use L2 loss right? We saw last time that L2 loss has a couple of problems. One, it's not convex and two, the biggest it can possibly be is 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 640,
+      "type": "audio",
+      "text": "Right. So it's always going to be between zero and one, which means like a prediction of."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 664,
+      "type": "audio",
+      "text": "You know, suppose the true Y is 0, then make predicting a probability of nine, well your loss is just going to be 9 ^2, not that bad versus you know if you predict one, your loss is going to be .01, right? So like the the highest your loss can be is not very big. And so we said we want to use this function called cross entropy as our loss instead."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 670,
+      "type": "audio",
+      "text": "What does it look like? Well, the answer is it depends on the value of Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 681,
+      "type": "audio",
+      "text": "Right, the way cross entropy works is if Y is 0 or sorry if Y is 1 then the cross entropy loss looks like this this graph on the bottom left."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 696,
+      "type": "audio",
+      "text": "So let's think about this graph for a SEC, right? What does this tell us? This tells us on the X axis is our predicted probability, and on the Y axis is the loss that we get. So if Y is 1 and our predicted probability is 1, then our loss is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 727,
+      "type": "audio",
+      "text": "That makes sense, right? Like if the true value is 1 and we predict probability of 1, then we should have no loss. If the loss, if the predicted probability is five, then our loss is like, I don't know, a little less than 1/2 maybe, right? And so we just kind of like keeps going up. But then as we start predicting values close to 0, those values are very wrong, right? Because if the true probability is 1, then predicting a small probability is really bad and we shouldn't do it."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 728,
+      "type": "audio",
+      "text": "And."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 734,
+      "type": "audio",
+      "text": "That's why the loss starts to increase really, really, really, really fast."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 751,
+      "type": "audio",
+      "text": "So this is how the cross entropy loss works. Making a correct prediction correct in the sense that predicted probability is at or near the true value gets us a low loss. But making an incorrect prediction, that is the probability is way off close to the opposite, gives us a very high loss."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 771,
+      "type": "audio",
+      "text": "What if I is zero? Well, if I is 0, we really just have to like flip the whole story, right? And how do we flip a function, right? If we just say well we take, we negate the X variable, right? So we take instead of P, we take 1 -, P negative P and then shift by 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 777,
+      "type": "audio",
+      "text": "And so then we get something like this where again this is for y = 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 781,
+      "type": "audio",
+      "text": "If y = 0, our loss for predicting 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 788,
+      "type": "audio",
+      "text": "Again, zero loss, right? We did a good job. We got a good prediction, but if our predicted probability is large."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 820,
+      "type": "audio",
+      "text": "When Y is 0, right, the true value is 0. The game was lost, right? The team actually lost the game. But we predict a high probability of winning and that's a bad prediction. And so we should have a lot of loss. So that's how the binary cross entropy loss function works. Cross entropy. This this version is sometimes called binary cross entropy. And the way we write it is using this little mathematical trick where we multiply by Y and multiply by 1 -, y. So basically."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 826,
+      "type": "audio",
+      "text": "Either like 0 or 1, so one or the other of these terms just goes to 0 because we multiply by zero."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 830,
+      "type": "audio",
+      "text": "OK, questions on the cross entropy loss function? Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 867,
+      "type": "audio",
+      "text": "Ah, the question is like, what if you, you know, don't want a threshold at .5? What if you want, you know, some other threshold? Well, the good news is that we can do that after the fact, right? We even though like if you look at, if you look at this function, it really only starts like increasing really fast over here, right And so."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 875,
+      "type": "audio",
+      "text": "Yeah, we'll so hold that question. We'll talk about how we answer it later. Yeah. But the loss function, we just kind of use this same loss function anyway."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 878,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 894,
+      "type": "audio",
+      "text": "All right, one other interesting property of this is that the X axis is the predicted probability."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 903,
+      "type": "audio",
+      "text": "Where in logistic regression, where do our predicted probabilities come from? They come from the sigmoid function, right? If I go back to the previous slide."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 909,
+      "type": "audio",
+      "text": "Right, we have the sigmoid function, you know 1 + 1 / 1 plus E to the minus Z."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 913,
+      "type": "audio",
+      "text": "And if I draw that sigmoid, it's going to look something like."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 917,
+      "type": "audio",
+      "text": "This."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 929,
+      "type": "audio",
+      "text": "Right as X goes out to negative Infinity, it asymptotically approaches 0, and as X gets very large positive Infinity it gets asymptotically close to 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 933,
+      "type": "audio",
+      "text": "But one thing that's interesting is that it will never actually be zero or one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 961,
+      "type": "audio",
+      "text": "Right. In other words, we can never actually make a prediction of 01. Yeah, we can get really close, and probably close enough that if we're all practical intents and purposes, it might as well be. But mathematically, we can never make a prediction of 0 or one. It will always be something really, really, really, really, really close to 1, or really, really, really, really, really close to 0. So that means that the value that minimizes the cross entropy loss."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 965,
+      "type": "audio",
+      "text": "Is never actually predictable, right? We can never make a prediction."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 974,
+      "type": "audio",
+      "text": "That will give us a loss of 0. We can always just get closer and closer and closer and closer, but not quite, and we'll see how that might be a problem in some scenarios in a couple minutes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 986,
+      "type": "audio",
+      "text": "OK, so that's the cross entropy loss. So when we want to find the values of thetas, we have to minimize the average loss where the average is taken over all of our data points."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 990,
+      "type": "audio",
+      "text": "So how does that work? Well, we define the."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1013,
+      "type": "audio",
+      "text": "Empirical risk, which is just a fancy way of saying we calculate the loss on each one of our data points and we take the average, right? Again, empirical risk means compute the loss on your data and average it over all the data points. All right, so then what is the loss? Well, the loss is this function here that we just spent a bunch of time on the last slide."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1016,
+      "type": "audio",
+      "text": "And so we're really just plugging that in over here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1021,
+      "type": "audio",
+      "text": "Right, all we're doing is plugging in the loss function."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1028,
+      "type": "audio",
+      "text": "Right, this Yi log π comes from that first term and 1 minus Yi log 1 - π comes from that second term."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1042,
+      "type": "audio",
+      "text": "Again, what are the YS and PS here? The YS are our true actual values from our training data set, and the PS are our predicted probabilities that come out of logistic regression."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1047,
+      "type": "audio",
+      "text": "So we have the second equation that tells us how we get PS."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1055,
+      "type": "audio",
+      "text": "We get these probabilities by applying the sigmoid function to X transpose Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1066,
+      "type": "audio",
+      "text": "So we can substitute that in here right? Where the every π just becomes sigmoid of XI transpose Theta and similarly over here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1080,
+      "type": "audio",
+      "text": "And so now this expression is starting to look a little more complicated. But you know, all the pieces are pretty simple. It just is. And if we were to expand those sigmoids, it would start to look even gnarlier."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1111,
+      "type": "audio",
+      "text": "But the good news is for gradient descent, we can just calculate the gradient, right? We can have a computer numerically calculate the gradient even if we don't necessarily need to do it ourselves. So the bad news with logistic regression is there's no closed form solution. In OLS, we had this really nice property where we could get those normal equations and say that the optimal solution is always X transpose X inverse times X transpose times Y. There's no such thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1119,
+      "type": "audio",
+      "text": "In logistic regression, there is no closed form solution. In other words, no way to get an algebraic answer to the minimum of this."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1126,
+      "type": "audio",
+      "text": "But we can still minimize it, right? We learned about gradient descent as a way of minimizing functions, and so we can minimize this."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1140,
+      "type": "audio",
+      "text": "So this argument here, remember that's just a way of saying find the value of Theta that makes the stuff in the brackets as small as possible. What is the stuff in the brackets? It's the average loss averaged over my data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1156,
+      "type": "audio",
+      "text": "So again, it looks complicated, but we understand all of the ingredients. We don't necessarily have to like be able to do all the algebra manipulating this because we understand the ingredients and we can have a computer do all the hard work of the actual numeric differentiation."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1163,
+      "type": "audio",
+      "text": "OK. Questions on how we computed the empirical risk over here? Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1187,
+      "type": "audio",
+      "text": "The question was why do we use gradient descent if there's no closed form solution? So closed form solution is just a way of saying there's no like way to write out the answer as an algebraic expression. There is still one unique solution because this loss function is convex."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1205,
+      "type": "audio",
+      "text": "Right. The details of that are a little beyond the scope of this class, but this loss function is still convex. And so this function, this giant function of Theta and this blue box, this is a convex function, meaning there is one unique value of Theta that minimizes it. Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1209,
+      "type": "audio",
+      "text": "In most settings. In some settings there's not. We'll talk about those in a moment. Question."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1222,
+      "type": "audio",
+      "text": "Yeah, the question was what does this one minus Yi mean? Well, remember that Yi's are our true values, right? And our true values are always going to be 0 or one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1244,
+      "type": "audio",
+      "text": "Right. And so if Yi is 1, then 1 minus Yi is 0 and if Yi is 0, then it's just one. So this is again this like Yi and 1 minus Yi thing is really just a like algebraic trick to help us turn that piecewise like if this then that into one convenient expression with the sum, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1253,
+      "type": "audio",
+      "text": "Good question. And it's a trick you'll see a lot as you go on to do more optimization, more probability. It's something that people do very often."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1255,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1274,
+      "type": "audio",
+      "text": "All right, so that's logistic regression, right? That's how we set up the model. And we can, you know, use gradient descent to solve for the optimal values of Theta. So then we get coefficients, right? And then we get coefficients and we can make predictions."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1294,
+      "type": "audio",
+      "text": "So can you add regularization to this? Well, yeah, sure. Right. This is a function of Theta. We can totally drop in a term at the end. That's like plus Lambda times sum of Theta I squared, right? I guess we use Theta J."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1309,
+      "type": "audio",
+      "text": "You can totally add in your regularization or absolute value of Theta. Very easy to do. In fact logistic regression plus like L1 regularization. Common way to, you know, fit a simple model, find feature importances and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1317,
+      "type": "audio",
+      "text": "OK, so on to the two. Well, the one small topic and the one big topic for today, linear separability."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1332,
+      "type": "audio",
+      "text": "So remember that we said with logistic regression, we apply a decision rule, right? Today is going to be all about OK, once we get those probabilities, how, why, what does it mean to turn those into decisions and how do we think about those decisions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1357,
+      "type": "audio",
+      "text": "So a decision rule tells us how to take these probabilities and turn them into 01 decisions. And the way we're going to do it is by applying A threshold, right? Sort of most straightforward thing you can do, we say if our probabilities are greater than some amount, some, we pick a threshold, maybe 0.5, maybe 0.7, maybe 0.1. And if it's greater than that amount, we say 1, and if it's less than that amount, we say 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1364,
+      "type": "audio",
+      "text": "Common choice of threshold is 5.5 is not always the best possible threshold you can use."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1374,
+      "type": "audio",
+      "text": "So a decision boundary, and we kind of like saw one of these that we drew last time is a way of splitting the data into predicted classes. So if you only have one feature."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1403,
+      "type": "audio",
+      "text": "We only have one feature. It's kind of silly to use logistic regression because you know, you're really just like, there's one feature and you just pick the value, but you still can. And the decision boundary in one dimension is a single point, right? If the field goal percentage difference between the two teams is less than 0, we predict a loss. If the field goal percent difference is greater than 0, we predict a win."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1408,
+      "type": "audio",
+      "text": "Right. So there's a single point, a single value of your X that you're going to use."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1422,
+      "type": "audio",
+      "text": "But if you have multiple features, then your decision boundary becomes a line, right? And we saw that last time by kind of like doing a little bit of algebra and saying that, well, in practice this looks like."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1449,
+      "type": "audio",
+      "text": "You know, goldish times negative, some something times assist greater than or equal to some amount is my decision boundary right. So any game where the, you know, whatever linear function of goal differences or field goal percent difference in assist is on this side of the boundary we predict one and anything works on that side of the boundary, we predict 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1460,
+      "type": "audio",
+      "text": "So logistic regression produces linear decision boundaries, right? Assuming we don't transform our features. And So what that means is."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1461,
+      "type": "audio",
+      "text": "That."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1486,
+      "type": "audio",
+      "text": "We have some line that establishes a decision. So in this graph, the colors represent our predicted class, right? So blue is we predict 0, orange is we predict one because they are on different sides of this decision boundary. And you can see that because logistic regression is pretty reasonable and you know, the teams win and lose half their games, you see that, you know the points are roughly divided."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1497,
+      "type": "audio",
+      "text": "But what about the actual values, right? What about the actual values for those games? In other words, did the teams actually win those games, or did they actually lose them so we can visualize that too."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1501,
+      "type": "audio",
+      "text": "All right, so now we have the same decision boundary."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1511,
+      "type": "audio",
+      "text": "And again, same X axis difference in field goal percentages and same Y axis number of assists. And we want to predict whether or not the teams run the game."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1529,
+      "type": "audio",
+      "text": "So we can see that on that side of the line above it, it's mostly orange, right? In other words, it's mostly winds. And on the other side of the line it's mostly Blues, mostly losses, which is good, right? Like our predictions is doing the right thing, ish. But it's not perfect, right? There's some cases it gets wrong."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1542,
+      "type": "audio",
+      "text": "And you can imagine that any other line that we would want to use as a decision boundary is going to do worse. In other words, logistic regression is going to give us the best possible linear decision boundary."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1553,
+      "type": "audio",
+      "text": "So, OK, we have this decision boundary, but how might we, in what kind of situations might we make perfect predictions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1581,
+      "type": "audio",
+      "text": "So in this is a requires me to define something called a linear separability. Basically just a fancy way of saying is there some hyperplane? In 1D it's like a point in 2D it's a line, in 3D it's a plane and so on that is there a point in one to a line and two and so on that separates the two classes? In other words, can I draw some line where all of the true ones and all of the true on one side and all the true zeros are on the other?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1590,
+      "type": "audio",
+      "text": "So let's say I have a data set, a 1D data set like this. Is this linearly separable? Well, yes, right, if I choose."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1603,
+      "type": "audio",
+      "text": "My threshold to be -0.1 then I can achieve perfect classification accuracy, right? There is something that perfectly separates the the the zeros and the ones."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1607,
+      "type": "audio",
+      "text": "I have some kids visiting."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1610,
+      "type": "audio",
+      "text": "So this data set is linearly separable."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1618,
+      "type": "audio",
+      "text": "On the other hand, this other data set is not linearly separable. Why? Because no matter where I choose."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1622,
+      "type": "audio",
+      "text": "My boundary, any point I choose."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1631,
+      "type": "audio",
+      "text": "I'm always going to have some wrong predictions if I say all the points on this side get, you know, 0, all the points on that side get one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1634,
+      "type": "audio",
+      "text": "So this data set is not linearly separable."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1662,
+      "type": "audio",
+      "text": "Similarly, we can do a similar process in 2D. Can we draw a line? Are these points separable? So, and this is like a famous data set with a bunch of flowers, we're like classifying them into species based on, you know, the like length of the petals and width of the petals and so on. So this first data set is linearly separable because we can draw a line between them. In fact, we can draw lots of different possible lines right between these."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1664,
+      "type": "audio",
+      "text": "The cytosis and the versicolors."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1667,
+      "type": "audio",
+      "text": "So all of the zeros are on one side, all the ones on the other."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1670,
+      "type": "audio",
+      "text": "But this other data set using the."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1699,
+      "type": "audio",
+      "text": "Same pedal length and pedal width to classify between Versicolor and Raginica gives us a nonlinearly separable data set. Why? Because no line I draw through these points is going to get me all the oranges on one side and all the greens on the other no matter what, right? There's it's literally impossible to draw any line that would do that. So this data set is called not linearly separable."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1709,
+      "type": "audio",
+      "text": "In practice, most datasets you work with will look like this, not linearly separable, and most of the time you know you will have some errors in your predictions."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1717,
+      "type": "audio",
+      "text": "So when the data is the nearly separable, unfortunately you run into a problem where the parameters diverge to Infinity."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1720,
+      "type": "audio",
+      "text": "Why? Well, if we think about it."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1728,
+      "type": "audio",
+      "text": "Here's that sigmoid again, right in Desmos. And what happened if I increase Theta?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1743,
+      "type": "audio",
+      "text": "Right. If I start increasing Theta, then it gets steeper and steeper, right? That like middle part of the F gets steeper and steeper and steeper. And as I approach, you know, like really, really, really big values, it basically just becomes like a line."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1751,
+      "type": "audio",
+      "text": "Right, so small values give me this nice little S but the steep, you know, the bigger I increase it, the steeper and steeper I get."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1753,
+      "type": "audio",
+      "text": "So why does that matter here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1757,
+      "type": "audio",
+      "text": "So suppose we have."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1765,
+      "type": "audio",
+      "text": "These two points right one blue at -1 a class 01, orange class, one at 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1776,
+      "type": "audio",
+      "text": "So again, how do we achieve the best loss? We achieve the best loss when the predicted probabilities are as close as possible to zero and one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1781,
+      "type": "audio",
+      "text": "So let's draw a couple sigmoids and think about the loss we get from each one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1790,
+      "type": "audio",
+      "text": "So this one's not super steep, but you know it would like keep going out."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1796,
+      "type": "audio",
+      "text": "But let's think about the green one, which is much, much, much much steeper."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1805,
+      "type": "audio",
+      "text": "And again, forgive my kind of janky drawing, but you know, imagine this is actually a smooth shaped curve."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1811,
+      "type": "audio",
+      "text": "Let's think about this like red the like smoother one and the green the steeper 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1813,
+      "type": "audio",
+      "text": "And let me make the."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1819,
+      "type": "audio",
+      "text": "Actually, let me."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1824,
+      "type": "audio",
+      "text": "Make the green 1A little thicker just so it's easier to tell them apart."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1846,
+      "type": "audio",
+      "text": "So thinking about this red point, well, the red is going to have lower loss or higher loss than the green because if we look over here, our predicted probability is closer for the green one, right? And if we keep increasing Theta, the bigger it gets, the steeper that."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1851,
+      "type": "audio",
+      "text": "Sigmoid gets and the lower the loss gets."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1867,
+      "type": "audio",
+      "text": "In fact, if we plot the loss as a function of Theta, it looks something like this right? Where negative values, you know, are bad because the sigmoid has slipped. But for positive values we have this very shallow slope going out to Infinity."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1876,
+      "type": "audio",
+      "text": "In other words, our process is going to diverge and we're going to basically find larger and larger and larger values of Theta one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1878,
+      "type": "audio",
+      "text": "So in practice, if your data points are linearly separable."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1882,
+      "type": "audio",
+      "text": "Logistic regression just by itself will not work."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1888,
+      "type": "audio",
+      "text": "Well, that's a shame. Like it's kind of silly to have a model that doesn't work on like perfectly separable data."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1900,
+      "type": "audio",
+      "text": "But it turns out there's a very easy solution. The easy solution is regularization, right? Same thing. Anytime we want to deal with weights not getting too big, we just use regularization."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1903,
+      "type": "audio",
+      "text": "Right. And so all we have to do is add in."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1923,
+      "type": "audio",
+      "text": "A term that penalizes the weights being large. And so then we go from this, which is what we saw before, to something like this, right, where large values of Theta, you know, we start to see a penalty. And so we have a nice smooth optimal answer."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1924,
+      "type": "audio",
+      "text": "OK, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1944,
+      "type": "audio",
+      "text": "In scikit learn, logistic regression defaults using regularization. To avoid this problem, it defaults to using L2 and has this parameter C So C basically is the inverse of Lambda. So bigger values of C mean less regularization, smaller values of C mean more regularization."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1953,
+      "type": "audio",
+      "text": "So here's 2 examples. If C is 10, then you're like regularizing a lot because C is relatively small. Then you have this kind of gradual."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1970,
+      "type": "audio",
+      "text": "Sigmoid, right? Kind of like that red curve I drew earlier. Whereas if C is 1000, then you get something that is not quite as regularized and looks, you know, like this standard Sigma. So regularization, good thing to do in logistic regression in case you run into something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1980,
+      "type": "audio",
+      "text": "OK. So with that, let's move on to the main topic for today, which is performance metrics. We're going to talk about how do we evaluate logistic regression."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1982,
+      "type": "audio",
+      "text": "And."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 1997,
+      "type": "audio",
+      "text": "In, again, just to like give you a road map in linear regression, you know, we had our model, we had our loss function, we fit the model and we evaluated it by talking about like R-squared, by talking about the residuals and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2004,
+      "type": "audio",
+      "text": "In classification world with logistic regression, which remember is not, is a classification model, not a regression model."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2031,
+      "type": "audio",
+      "text": "With logistic regression, we define the model, right? We spent all this time setting up this sigmoid and you know, do the linear thing, apply the sigmoid, get the probabilities, and we needed a new loss function, the cross entropy loss, which we defined. And we can fit the model in exactly the same way using scikit learn, which handles all of the hard work of gradient descent for us. Now we have to figure out how to evaluate our model."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2031,
+      "type": "audio",
+      "text": "Why is this different?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2051,
+      "type": "audio",
+      "text": "So let's suppose you work at a real estate startup, right? And you go and you know you're in charge of predicting home prices. Then you go and tell the CEO, hey, guess what? Our linear regression model for predicting home prices is great. The average difference between predicted and actual home prices typically about $10,000."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2063,
+      "type": "audio",
+      "text": "Well, what does that mean? The average difference between predicted and home prices? How do you translate that into math? Well, that is really the RMSE, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2073,
+      "type": "audio",
+      "text": "So what you're basically saying is you train the model on RMSE and then you can report RMSE to the CEO, right? You report that and she's like, Oh yeah, OK, that makes sense. I get it. I kind of understand."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2094,
+      "type": "audio",
+      "text": "Then you go and make another model to predict. We have a logistic regression model for predicting whether or not a user is going to click on a housing ad, right? You run a bunch of ads and you say you want to predict whether users are going to click on them. And you're like, OK, great, we have this ad. And this ad is fantastic. It's so good, in fact, that it's average cross entropy loss is 103."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2098,
+      "type": "audio",
+      "text": "And then she looks at you like, What does that mean?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2128,
+      "type": "audio",
+      "text": "And my bet is you would not be able to answer that question, right? There's no easy interpretation for it because I wouldn't be able to answer that question. Yeah, I can answer it mathematically, but cross entropy loss is not easily interpretable to a layperson. It's not a useful measure of how this model does in the real world. Yeah, it has nice mathematical properties. It works well in practice. It's a good loss function, but it is not easily interpretable."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2130,
+      "type": "audio",
+      "text": "So what do we do instead?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2133,
+      "type": "audio",
+      "text": "Well, if we think about it."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2137,
+      "type": "audio",
+      "text": "We want to do classification, so we should report metrics that are relevant to classification."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2154,
+      "type": "audio",
+      "text": "What's the simplest thing we can do right? If I ask you like, oh, I'm trying to like predict zeros and ones, what's the simplest thing you can do? Probably just report the accuracy, right? How often do you get it right versus divided by how many points there are in total?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2163,
+      "type": "audio",
+      "text": "So let's say that I have a hundred data points. 75% of them I predict the right answer. Some accuracy is 75% point 75."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2167,
+      "type": "audio",
+      "text": "So where might accuracy lead us astray?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2190,
+      "type": "audio",
+      "text": "So let's suppose we're trying to predict whether emails are spam or not spam. So not spam, we call ham. So we have a data set of 100 emails. You're actually going to start working on this on Project B starting tomorrow. So you have 100 emails, five of them are spam and 95 for them, 95 of them are ham, right? Pretty realistic, right? Like most of the e-mail you get hopefully is not spam and but some small percentages."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2205,
+      "type": "audio",
+      "text": "So your friend says, OK, I am going to classify every single e-mail as ham, right? I'm just going to say any e-mail I get, my classifier says always ham, never spam, right? I'm always going to predict that this e-mail is like legit."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2214,
+      "type": "audio",
+      "text": "So this function, this classify function that your friend uses always returns 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2223,
+      "type": "audio",
+      "text": "Kind of a dumb thing to do, but it's like one of the dumbest things you could do. Maybe one of the two dumbest things you could do. But if we think about it."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2227,
+      "type": "audio",
+      "text": "What is the accuracy of your friend's classifier?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2237,
+      "type": "audio",
+      "text": "So take a moment and turn to the person next to you and discuss what the accuracy would be. And I have the definition of accuracy here and we'll go kind of quick on this one. So discuss and answer quickly."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2256,
+      "type": "audio",
+      "text": "All right, I want to hear people discussing."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2262,
+      "type": "audio",
+      "text": "Even if you're discussing like, Oh yeah, it's obviously this or I have no idea what's going on."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2342,
+      "type": "audio",
+      "text": "So what is the accuracy of this classifier? So your friend is going to classify every e-mail as him. So what does that mean? That means for the."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2356,
+      "type": "audio",
+      "text": "Five spam emails, your friend is going to get him wrong because it's going to be like spam. Your friend is going to be Nope, Nope, Nope, ham five times. And then for the 95 ham emails, your friend is going to get them all right."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2362,
+      "type": "audio",
+      "text": "Right, every single one of those your friend is going to be correct. So that means 95 of them are correct and only 5 are wrong."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2375,
+      "type": "audio",
+      "text": "In other words, the accuracy of this ridiculously not good classifier is 95 right 95%. It's really high accuracy, but we detected none of the spam."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2389,
+      "type": "audio",
+      "text": "Now, I said it's one of the two dumbest things you could do. Suppose you have another friend who says I'm just going to classify every e-mail as spam no matter what. Like it's spam spam, all spam. You know, like straight out of a Monty Python skit."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2393,
+      "type": "audio",
+      "text": "Well, you're that friends accuracy is going to be 5%."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2402,
+      "type": "audio",
+      "text": "But that friend detected all the fam now they detected it at like an unreasonably high cost, whereas this other friend detected no spam."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2434,
+      "type": "audio",
+      "text": "So we kind of have the sense that accuracy is not really a good measure of how well these different ways of making classifications perform. In other words, accuracy is often problematic in this way, specifically when you have a big class imbalance. What does a class imbalance mean? Well, we only have 5 spams ones and we have 95 hands zeros, right? So we have 5 to 95."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2439,
+      "type": "audio",
+      "text": "Very strong imbalance between the two classes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2441,
+      "type": "audio",
+      "text": "So how can we do better?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2448,
+      "type": "audio",
+      "text": "Well, in order to do better, we have to think about what are the different kinds of classifications I can make. What can happen when I make a classification?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2454,
+      "type": "audio",
+      "text": "Well, for every classification I make, there's some actual true value of Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2458,
+      "type": "audio",
+      "text": "And then there's some prediction I make Y hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2483,
+      "type": "audio",
+      "text": "Right. And that prediction is going to be binary, right? We're talking about what happens in the world after I've turned my probabilities into 0 ones, right? I've used some threshold and I have my predictions and I have the true values and each of them is binary, right? So really, if I think about it, you know, predictions can be 01, actual values can be 01, which gives me a two by two table."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2489,
+      "type": "audio",
+      "text": "Now if my prediction is 0 and my actual value is 0, then that's good, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2500,
+      "type": "audio",
+      "text": "So over here, great, I was correct. Similarly if my prediction is 1 and the actual value is one, I'm correct. And so these we call true negative and true positive."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2508,
+      "type": "audio",
+      "text": "So the word true here represents that hey, this prediction was correct."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2517,
+      "type": "audio",
+      "text": "Then what about that second word in there? Negative or positive? The second word refers to whether our prediction was a one or zero."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2523,
+      "type": "audio",
+      "text": "So in other words, all of the negative."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2529,
+      "type": "audio",
+      "text": "Are 0 or one or zeros and all the positives are ones."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2556,
+      "type": "audio",
+      "text": "So these, you know, little ones with the happy faces are correct and the ones over here are false. So this is a false positive because we got it wrong, right? We predicted A1 but it was actually 0. Similarly, this one is a false negative because we also got it wrong. The actual value, the row, the one with the one and the predicted value was a 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2586,
+      "type": "audio",
+      "text": "So these 4 words, true positive, true negative, false positive, false negative are how we define what can happen in each of these four different cases. And this is something that you do want to just like memorize. And you know, with practice, it'll come pretty naturally. Like what is true positive, false positive? Again, just remember that positive means prediction one, negative means prediction zero, and true false refer to the prediction correctness."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2589,
+      "type": "audio",
+      "text": "Right. So was it correct or not correct?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2591,
+      "type": "audio",
+      "text": "OK, questions on these 4 definitions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2604,
+      "type": "audio",
+      "text": "Notice that which is which depends on how we define zero and one, right? In the spam ham example, we usually define like spam is 1 and ham is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2620,
+      "type": "audio",
+      "text": "So you know, in that case a false positive would mean we predicted spam on a ham e-mail and a false negative would mean we predicted ham like legit on a spam junk e-mail."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2636,
+      "type": "audio",
+      "text": "But if we were to somehow, for some reason, flip what zero and one meant, then the definitions would flip as well. So it's important to keep in mind that what these mean depend on the the context, the problem you're working in, and how you choose to define zeros and limbs."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2650,
+      "type": "audio",
+      "text": "All right, so now that we have these, we can really think about something called a confusion matrix, which is basically a two by two grid where in each entry we have the count of how many of that kind of prediction we made."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2652,
+      "type": "audio",
+      "text": "So in other words."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2663,
+      "type": "audio",
+      "text": "This 511 over here says that out of the 511 of the games in our 20/17/2018 data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2682,
+      "type": "audio",
+      "text": "The the team lost and we predicted that the team was going to lose based on, you know, the field goal percentage difference and I think exists this 114 says, well, there are 114 times where the team lost, but we predicted that they were going to win."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2687,
+      "type": "audio",
+      "text": "Right. So we made a false positive. False because we were wrong. Positive because we predicted a win."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2704,
+      "type": "audio",
+      "text": "Similarly, there are 139 false negatives, 139 times where false meaning we got it wrong, and negative meaning we predicted a zero, we predicted a loss. So 139 times where we predicted the team was going to lose but they actually won."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2709,
+      "type": "audio",
+      "text": "And last but not least, there's 466 true positives."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2712,
+      "type": "audio",
+      "text": "So 466 times where the team won."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2717,
+      "type": "audio",
+      "text": "The team was the winner and we predicted that they were going to win."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2733,
+      "type": "audio",
+      "text": "Now in practice, you know you could calculate this in your data set by like looping over the thing conditions and stuff. Scikit learn has a function that does it for you. Highly recommend just using that. Notice that you always should give the true values 1st and the predictions second."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2736,
+      "type": "audio",
+      "text": "OK, questions on the confusion matrix. Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2759,
+      "type": "audio",
+      "text": "The question was, what if you have more than two classes? So the nice thing is that the idea of a confusion matrix generalizes, right? Because you can just have all the, you know, classes on your rows and columns. But these words, true negative, false positive and so on, are only for binary decisions. Yeah. So these words are only defined in the context of binary decision."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2769,
+      "type": "audio",
+      "text": "In this class, that's all we'll be focusing on because you can get, we'll get a lot of the big ideas there, and a lot of real world problems end up being binary decisions."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2781,
+      "type": "audio",
+      "text": "I feel like out of the prediction problems, classification problems I've worked on maybe like 80% were binary and 20% were multi class. So it happens, but binary decisions are actually very common."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2784,
+      "type": "audio",
+      "text": "OK, other questions. Confusion matrix."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2792,
+      "type": "audio",
+      "text": "Kind of ironically named. It's like one of the least confusing topics I think in in today's lecture."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2798,
+      "type": "audio",
+      "text": "OK, so let's think about these."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2827,
+      "type": "audio",
+      "text": "Values. So these values in the confusion matrix come from setting the threshold to 0.5, right? Because I don't I can't say like what my predicted things are zero and one unless I use a threshold, right? So a confusion matrix is only defined for a particular threshold. This one happens to be a threshold of .5, but I could have used a different one, right? I could have said maybe it's .3 or .9 or .6."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2830,
+      "type": "audio",
+      "text": "There's lots of different possible thresholds I could have used."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2834,
+      "type": "audio",
+      "text": "And so each one is going to give me a different confusion matrix."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2853,
+      "type": "audio",
+      "text": "So again, important to keep in mind your counts of true negative, true positive, false negative, false positive will change based on your threshold and therefore your confusion matrix will change. And anything you calculate, like most of the rest of the stuff going to talk about in class today, will also change depending on your threshold. Okay."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2863,
+      "type": "audio",
+      "text": "So suppose I increase the probability threshold in logistic regression, right? I increase it from some value to some other value. The second value is always bigger."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2874,
+      "type": "audio",
+      "text": "But I don't change the fitted model and I don't change the test data, right? So like the probabilities that I'm working with are the same, the true values are the same, all I'm changing is the threshold."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2878,
+      "type": "audio",
+      "text": "What can happen to the count of true positives?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2888,
+      "type": "audio",
+      "text": "Is it possible for it to increase? Is it possible for it to stay the same? Is it possible for it to decrease? And is there more than one answer? All right, take a minute and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2899,
+      "type": "audio",
+      "text": "And as a hint, it's usually easier to answer questions like this about thresholds by thinking about like a mini example. I always have a really hard time answering them in the abstract."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2901,
+      "type": "audio",
+      "text": "All right, take a minute. Discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 2988,
+      "type": "audio",
+      "text": "So as I mentioned, it's easier to think about this stuff with an example than in the abstract."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3005,
+      "type": "audio",
+      "text": "So let's suppose we have three data points, just like a simple little toy data set, and I'm going to increase the probability threshold again. Remember, what is the probability threshold? It's like the number where we say if it's probably predicted is above that amount, we declare one. If it's below that amount, we declare 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3024,
+      "type": "audio",
+      "text": "So simple data set. Three points. The first point we predicted .21, the second point we predicted 0.63, and the last point we predicted is 0.85. The true values, which again we only get to see right for our training set, usually are 01 and 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3026,
+      "type": "audio",
+      "text": "So what happens if we use a threshold of 0.3?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3030,
+      "type": "audio",
+      "text": "Well, if we use the threshold of 0.3."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3042,
+      "type": "audio",
+      "text": "Then for this point, what happens here? Well, this point is a. If the threshold is .3, then anything."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3047,
+      "type": "audio",
+      "text": "Below gets classified as a zero, anything above gets classified as a one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3050,
+      "type": "audio",
+      "text": "So we declare."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3053,
+      "type": "audio",
+      "text": "So, predictions."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3059,
+      "type": "audio",
+      "text": "We declare our prediction is 0. Our prediction is one. Our prediction is 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3061,
+      "type": "audio",
+      "text": "What about the true positives?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3075,
+      "type": "audio",
+      "text": "Well, let's look at this one. This is a case where our prediction is 0 and the actual class was a zero. That's a negative because we predicted a zero, and it's true because we were correct."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3090,
+      "type": "audio",
+      "text": "So let's call this like type. What type of prediction is it? So this is a true negative. What about this one? Well, this one is also a true prediction because it's correct, and it's a positive because we predict one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3104,
+      "type": "audio",
+      "text": "Right. And same for this one. It's a true positive. OK, what about if we predict a? What if we use a threshold of 0.6? Well, a threshold of 0.6."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3106,
+      "type": "audio",
+      "text": "Corresponds to."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3117,
+      "type": "audio",
+      "text": "So 0.6 again, we make the same predictions. Why? Because this is our dividing line, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3127,
+      "type": "audio",
+      "text": "So we make all the same predictions because our threshold happened to be in between two points, the change in threshold so this point is still below. So we still."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3136,
+      "type": "audio",
+      "text": "Make a prediction of 0, make a prediction of one, make a prediction of 1. And that means that our classifications are all the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3144,
+      "type": "audio",
+      "text": "So for this increase we increase from 0.3 to 0.6 and they stayed the same. Number of true positives went from 2:00 to 2:00."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3147,
+      "type": "audio",
+      "text": "That means it's possible for it to stay the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3152,
+      "type": "audio",
+      "text": "Now what if we increase it even more? Suppose we set it 2.8."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3154,
+      "type": "audio",
+      "text": "Well, if we set it to .8."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3166,
+      "type": "audio",
+      "text": "Then what happens? Well, our predictions are still 0 for this one, but now because .63 is below our threshold, we declare A0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3170,
+      "type": "audio",
+      "text": "And then .85 is above our threshold, so we declare A1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3177,
+      "type": "audio",
+      "text": "So this point is still a true negative. The second point though, well, the true value."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3179,
+      "type": "audio",
+      "text": "Is A1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3190,
+      "type": "audio",
+      "text": "But our prediction was a 0, right? So we were wrong. So it's false. And our prediction was a 0, so it's a negative. It's a false negative."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3193,
+      "type": "audio",
+      "text": "So this is a true positive."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3197,
+      "type": "audio",
+      "text": "So now we increase our threshold and our number of true positives went down."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3199,
+      "type": "audio",
+      "text": "So in other words."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3231,
+      "type": "audio",
+      "text": "Just if we increase the threshold, then that means it becomes harder and harder to make a positive prediction, right? We require more and more evidence instead of just being like, Oh yeah, like a 20, you know, 30%, yeah, sure, that's fine. We go from like, no, it has to be at least 60%. No, it has to be at least 80%. You have to be very sure. So it becomes harder and harder to make a positive prediction. So that means that the overall number of positives will have to stay the same or decrease. And so that means that the number of true positives and also."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3235,
+      "type": "audio",
+      "text": "Number false positives will have to go down or stay the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3241,
+      "type": "audio",
+      "text": "So it is never possible to increase the number of true positives when you increase the threshold."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3252,
+      "type": "audio",
+      "text": "So we can see that there's this way in which changing the threshold effects our relative amount of true positives and false positives, right? We see that higher thresholds mean more negatives."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3254,
+      "type": "audio",
+      "text": "More predictions of 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3262,
+      "type": "audio",
+      "text": "Right. Because we're like, yeah, we need a like a lot of evidence before we can make a prediction of 1. So you get more negatives and fewer positives."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3268,
+      "type": "audio",
+      "text": "So that means that somehow there's a way in which changing the threshold effects how well we do."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3278,
+      "type": "audio",
+      "text": "So after the break, we're going to talk about quantifying that through several error metrics. Let's take a 2 minute fresh break. I'll walk around to folks have questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3416,
+      "type": "audio",
+      "text": "All right, so now that we have seen a, that accuracy is not always good enough, and B, that changing the threshold somehow has this effect of like more negative, fewer positives, we're going to talk about some error metrics that can help us break down what's going in our data better and our results better than just accuracy. So this little diagram here is like a confusion matrix if you're trying to predict whether something's a Unicorn, right? So that top true positive."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3448,
+      "type": "audio",
+      "text": "Is a Unicorn that you've predicted. If a unicorn's wearing a hat, you might make it wrong, right? So it's a negative prediction. Notice that this confusion matrix is flipped. So in this class, we'll always do confusion matrix, confusion matrices with the actual values on the rows and the true and the predictions on the columns. But this is not a general convention. So like 80% of the time I see people doing that, and then sometimes people will do it flipped. So there's no like, hard and fast."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3455,
+      "type": "audio",
+      "text": "Rule. It's just something we will always do in this class. But keep that in mind when you go look at confusion matrices in the real world. Sometimes people do them on the columns, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3472,
+      "type": "audio",
+      "text": "So I'm going to define four important error metrics, and you don't have to like understand all of them right now. We're going to break them down in detail, but in all of them, I'm going to define some numerator and some denominator. In particular, I have the numerator in blue and the denominator in gold."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3489,
+      "type": "audio",
+      "text": "So really what I'm doing is I have 4 different error metrics, each of which have a different denominator. In other words, they look at a different piece of the confusion matrix and say how well are we doing within that piece of the confusion matrix?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3504,
+      "type": "audio",
+      "text": "So understanding error metrics and binary classification really comes down to making sure you understand what is the denominator in your metric and is it a metric of like how well are we doing or is it a metric of how badly are we doing?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3524,
+      "type": "audio",
+      "text": "So we'll start with accuracy, right, which we've already kind of seen. And how is accuracy defined? Well, our denominator is all of the points, right? True positive, false positives, true negatives, false negatives alike, that's N the total number of points. And our numerator is just how many true positives and true negatives did we get. In other words, how many points did we get correct?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3539,
+      "type": "audio",
+      "text": "Right, pretty straightforward. In the e-mail example, this corresponds to what percentage, what fraction of the emails did I classify correctly, regardless of whether they were spam or not? Just like out of the total emails, how many did I get right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3545,
+      "type": "audio",
+      "text": "And we haven't seen this. We've kind of been playing around with this before, so it's pretty intuitive."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3558,
+      "type": "audio",
+      "text": "What if we don't care necessarily? We don't want to look just at the entire confusion matrix, but we don't look at all of our data points. What if we want to slice things by the rows in this class? Again, rows correspond to the actual value."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3562,
+      "type": "audio",
+      "text": "What if I care only about what happens when the actual value is 0?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3574,
+      "type": "audio",
+      "text": "In the e-mail classification example, that corresponds to only the ham emails, right? Among the ham emails, I want to know how well do I do?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3583,
+      "type": "audio",
+      "text": "That's called the true negative rate, right? It's a measure of how well am I doing in the case where the actual value is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3595,
+      "type": "audio",
+      "text": "Right. Let's say you take you're thinking about like COVID testing or flu testing. In that case, this would correspond to how well am I doing when the test or when the patient does not actually have the disease?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3599,
+      "type": "audio",
+      "text": "Right. How well am I doing on healthy patients?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3614,
+      "type": "audio",
+      "text": "So it's how well are we doing when the actual value is 0? This is the true negative rate. It's the true negative divided by true negative plus false positive denominator. Again, is just all the cases where the actual value is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3624,
+      "type": "audio",
+      "text": "So we can think of this as like in the East e-mail example, what percentage of the hand emails were not flagged as spam were correctly left alone."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3628,
+      "type": "audio",
+      "text": "This sometimes is also called specificity."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3634,
+      "type": "audio",
+      "text": "And on the flip side, right, true negative rate, it measures how well we're doing."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3644,
+      "type": "audio",
+      "text": "False positive rate is really just the opposite of that. How badly are we doing in that case right among the ham emails? How often do we get it wrong?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3654,
+      "type": "audio",
+      "text": "So this is really one minus the true negative rate, right? Because it's they're just basically 1 is how well are we doing? The other is how badly are we doing? It's binary. So it's only one or the other."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3661,
+      "type": "audio",
+      "text": "We can also look at the bottom row, the row where actual value is 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3670,
+      "type": "audio",
+      "text": "In this case, we define the true positive rate, also known as the recall, as the number of true positives. How many times we got it right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3699,
+      "type": "audio",
+      "text": "Right, How many times we actually predicted A1 like we predicted 1 divided by how many times it was actually 1 total, right? Even the ones we got wrong. In the e-mail example, that corresponds to again, this row is spam emails, right? The actual value is one. This row corresponds to spam. In the basketball example, this would be the row corresponding to games that were actually won. Among games that we actually won, how often did we predict?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3701,
+      "type": "audio",
+      "text": "That we were going to win."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3725,
+      "type": "audio",
+      "text": "So it's true positives divided by true positives plus false negatives. This is also called sensitivity. There's like a bunch of different terms for these. We're going to focus on just like true positive rate, recall, true negative rate, but there's a bunch of different names. And again, just like with the other one, we can flip this. Instead of saying how well are we doing, we can ask how badly did we do? What is our error rate?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3740,
+      "type": "audio",
+      "text": "For the actual ones, what is our error rate among actual spam emails? What is our error rate among games that we that the team is actually winning? What is our error rate among patients who actually have the disease question."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3748,
+      "type": "audio",
+      "text": "Why is the?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3751,
+      "type": "audio",
+      "text": "This should be false negative. Thank you for catching that."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3754,
+      "type": "audio",
+      "text": "This should be false negatives."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3758,
+      "type": "audio",
+      "text": "Thank you. Yeah, good catch."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3762,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3765,
+      "type": "audio",
+      "text": "Make sure I got the rest of those right."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3771,
+      "type": "audio",
+      "text": "Yes, I yes, I did. OK, great. Thanks for the catch."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3773,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3796,
+      "type": "audio",
+      "text": "All right, so these are four different measures, metrics that are all based on the denominator being one of the rows of the confusion matrix that are all based on the denominator being an actual value, right? Whether the game was actually one, whether the patient actually had the disease, whether the."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3800,
+      "type": "audio",
+      "text": "You know e-mail was actually ham or spam."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3804,
+      "type": "audio",
+      "text": "Now on the flip side, we can also think about the denominator being one of the columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3813,
+      "type": "audio",
+      "text": "And there's a little mnemonic for these, might be useful. We're not going to like spend too much time on them in this class, but it's a mnemonic there. Question."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3820,
+      "type": "audio",
+      "text": "Ah, yes, thank you."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3823,
+      "type": "audio",
+      "text": "Actual ones."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3829,
+      "type": "audio",
+      "text": "I'll make sure to fix the slides later. Yes, thank you for catching that."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3834,
+      "type": "audio",
+      "text": "Right, because it's actual ones, because we are looking at these. Thank you."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3842,
+      "type": "audio",
+      "text": "Did I? 0 zeros, 1 ones. OK, two -2 positive, false positive, false negative. Yeah, OK, great."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3855,
+      "type": "audio",
+      "text": "So instead of looking at things by the rows, we can also look at things by the columns, right where our denominator is going to be out of all the times we made a prediction of a certain value."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3883,
+      "type": "audio",
+      "text": "In this class, we're just going to focus on one of the columns, the case where the prediction is 1, there is an equivalent thing defined for the other column, but you know, not relevant for the. We're not going to talk about it in this class. So this is going to be the precision. The precision is the number of true positives divided by the number of predicted ones. In other words, out of the times we made a prediction of one, how often do we get it right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3897,
+      "type": "audio",
+      "text": "Right. So this says out of the times that we predicted spam, how often were those predictions right? So notice that this denominator changing right from a row to a column means it's sort of a fundamentally, intuitively different concept."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3903,
+      "type": "audio",
+      "text": "Right. It's like out of the games that we predicted the team was gonna win, how many did the team actually win?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3917,
+      "type": "audio",
+      "text": "So to sum up, we have these four different error metrics that are really just about kind of manipulating which row or column of the confusion matrix are we going to use as our denominator."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3933,
+      "type": "audio",
+      "text": "And again, the ones that we're talking about in this class are always sort of the metrics of how well are we doing. But there's also the like 1 minus the talk about how badly we're doing, like the false positive rate, the false negative rate. And for the precision, there's something called the false discovery rate."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3936,
+      "type": "audio",
+      "text": "That's like 1 minus that."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3942,
+      "type": "audio",
+      "text": "OK, so why do we need all these? Like what's the point of defining so many different error metrics?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3972,
+      "type": "audio",
+      "text": "Well, I want to talk about an example based on a project I worked on, gosh, like about six years ago now. And you can imagine what might have been happening six years ago that they were interested in this project. So a wearables company, you know, like, think about like a smart watch or, you know, some other device that you're like wearing that collects data. They wanted to use logistic regression to look at features from the wearable, like someone's heart rate, their breathing, all this other stuff to predict whether or not they were sick."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3975,
+      "type": "audio",
+      "text": "Right to identify is someone sick or not based on the data from the wearable."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3991,
+      "type": "audio",
+      "text": "So let's define some of the terms that we've just been looking at in the context of this example. So the precision is out of the times that the model predicts that someone is sick, how often is it correct, right. How often is that person actually sick out of the times the model makes a prediction?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 3994,
+      "type": "audio",
+      "text": "The recall is out of the sick people."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4003,
+      "type": "audio",
+      "text": "Right out of the people who are sick. Right, Because recall is based on out of the actual value being one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-331-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4007,
+      "type": "audio",
+      "text": "So notice that here I've implicitly defined that."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-332-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4011,
+      "type": "audio",
+      "text": "Thick is 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-333-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4013,
+      "type": "audio",
+      "text": "And healthy is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-334-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4021,
+      "type": "audio",
+      "text": "So recall says out of the time for the people who are sick, how often does the model make the right prediction?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-335-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4034,
+      "type": "audio",
+      "text": "And the true negative rate is out of the healthy people. How often does the model make the right prediction? In other words, if you're wearing it and you're healthy, how often does the model predict that, yeah, you're actually fine, you're totally fine, you're not sick."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-336-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4044,
+      "type": "audio",
+      "text": "So which of these should we care about, right? And so this was something that we started the project by doing by asking which one of these do we care about?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-337-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4057,
+      "type": "audio",
+      "text": "In some sense you might say all of them because they're all kind of important to get right. But if you have to trade them off right, if you have to pick one to be more important, well, even then the answer is it depends on the perspective."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-338-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4075,
+      "type": "audio",
+      "text": "If I'm the company that makes the wearable and I'm developing the model, then maybe recall is the most important because I want to make sure that, you know, I can say OK when someone is sick. I really want to make sure I correctly classify them as sick and detect that they have some kind of illness."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-339-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4084,
+      "type": "audio",
+      "text": "But if I'm like a person who's actually using the device right, I have my little wearable on and I say, oh, look, my, it says, hey, you might be getting sick."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-340-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4098,
+      "type": "audio",
+      "text": "Well, what I want to know is out of the times that it tells people, hey, you might be getting sick, how often is that right? Can I trust this prediction? And if I want to know that, that's really a precision question."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-341-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4103,
+      "type": "audio",
+      "text": "So in different contexts, different metrics might be more or less important."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-342-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4133,
+      "type": "audio",
+      "text": "And I want you to think, you know, maybe as a homework question, does this answer depend on anything else? And one thing, if you take go on to take data 102, you'll spend a lot more time thinking about questions like this in the context of binary classification. Okay, enough of me yapping at you. Let's do an example. So suppose Netflix uses logistic regression to predict whether or not some user is going to like various shows or not. And if they predict that someone will like it, they'll recommend that show to you. You know how like you see like, oh, recommended for you by Netflix."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-343-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4154,
+      "type": "audio",
+      "text": "So I have 4 different like or four different descriptions of things that you or Netflix might care about. Which one of these is precision? And then I also want you to like match the others to like true positive rate, true negative rate, accuracy, the other metrics we learned. All right, take a minute and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-344-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4199,
+      "type": "audio",
+      "text": "I hear people discussing this one is meant to not be super easy, so please turn to the person next to you and you know, tell them what you think."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-345-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4315,
+      "type": "audio",
+      "text": "All right, so let's go through and actually do this. So again, the first thing you want to do when answering these kinds of questions is to make sure you understand what does it mean for the prediction and the actual value to be one. In this example, recommend a show corresponds to making a prediction of 1 predicting. I think this user is going to like this show."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-346-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4333,
+      "type": "audio",
+      "text": "If the user actually likes it, that is an actual one, right? So it's important to like, have an intuitive grounding. And what are the rows and columns of your confusion matrix mean in the context of the problem that you're actually solving? OK, so oops, why do we have all this zoom?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-347-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4344,
+      "type": "audio",
+      "text": "Cruft here. OK, great. So I've reproduced these here. My apologies for not putting them on the Slido, but we have these 4 definitions of these terms and."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-348-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4375,
+      "type": "audio",
+      "text": "So the first one out of all the shows that a user might like, right? So what is the denominator here? The denominator is all of the actual ones, right? Whether the user really likes the show or not. So here the denominator is A1 and the numerator is correctly recommending it, right? So this is the number of true positives divided by the actual ones. So this is the recall or true positive rate. What about the second one out of all the predictions that Netflix?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-349-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4385,
+      "type": "audio",
+      "text": "Makes. How often are they correct? Well, this one is just accuracy, right? It's pretty straightforward. Out of the total number of predictions, how many are correct? Which is accuracy?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-350-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4391,
+      "type": "audio",
+      "text": "Out of the times that Netflix recommends shows, how often are the users going to like them?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-351-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4399,
+      "type": "audio",
+      "text": "Right, so this is like out of the times that Netflix like, well when what does Netflix recommending something mean? It means they make a prediction of 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-352-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4401,
+      "type": "audio",
+      "text": "So the users are going to like those."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-353-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4430,
+      "type": "audio",
+      "text": "When it's a true positive. And so this is true positive divided by predicted ones, which gives us the precision, right? Again, I'm really just translating this using this key, right? Using what I understand about the problem and translating these into, oh, this is like the number of true positives divided by the predicted number of ones. That's precision. And this last one out of all the shows that a user dislikes how many are not recommended. So again."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-354-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4441,
+      "type": "audio",
+      "text": "Out of all the shows that a user dislikes that corresponds to the actual value being 0, right? So my denominator is actual value is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-355-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4447,
+      "type": "audio",
+      "text": "Which is like actual zeros and my numerator is. How many did I correctly not recommend?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-356-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4454,
+      "type": "audio",
+      "text": "So this is the number of true negatives. That's just the true negative rate, also known as the specificity."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-357-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4461,
+      "type": "audio",
+      "text": "OK, so that's an example of how we would define these different terms. So now let's do an example of."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-358-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4483,
+      "type": "audio",
+      "text": "Well, taking a step back from like, the vocab and the jargon of precision, recall the stuff. Suppose you work at Netflix, right? You be hired an internship at Netflix, and you know, someone comes to you and says, like, here are the four different things you know that we can do. Which one should you, as somebody who works at Netflix, care about the most?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-359-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4495,
+      "type": "audio",
+      "text": "Take a minute and discuss. This is an opinion question. There isn't necessarily a right answer. I think some answers are better than others, but again, this is an opinion question so I want to hear a lot of discussion."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-360-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4499,
+      "type": "audio",
+      "text": "The same choices in the last question."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-361-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4516,
+      "type": "audio",
+      "text": "All right, I want to hear people discussing."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-362-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4520,
+      "type": "audio",
+      "text": "This is an opinion you should be arguing or vehemently agreeing."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-363-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4580,
+      "type": "audio",
+      "text": "All right, so which one of these should Netflix care about?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-364-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4595,
+      "type": "audio",
+      "text": "Looks like everyone most people said out of the times that Netflix recommends shows. How often will the users like the recommendations? I think I would agree with that answer. The second best answer I think."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-365-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4614,
+      "type": "audio",
+      "text": "I my opinion is probably the third one, but again, there are reasonable arguments to be made for each one. So just like walk through them really quickly. Out of all the shows that the user might like, remember this is our recall. Well, maybe. But if you think about the denominator, Netflix has like 5000 something shows. I looked it up earlier today."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-366-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4632,
+      "type": "audio",
+      "text": "Out of thinking about that as your denominator, that's a huge denominator. There's a lot of them that the user might never even see, might not be interested in. You might not have the chance to recommend it just because you have limited screen space. So maybe, but maybe not as relevant. This last one out of all the shows that a user dislikes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-367-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4647,
+      "type": "audio",
+      "text": "Again, most of the content on Netflix, there's 5000 shows. Most people are probably not going to like most of this stuff, so this denominator is huge. There's a lot of shows that the user could dislike, so probably not super relevant."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-368-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4653,
+      "type": "audio",
+      "text": "What about this one out of all of the accuracy again Netflix has?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-369-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4682,
+      "type": "audio",
+      "text": "A lot carries a lot more about predicted ones than predicted zeros, right? They don't necessarily care about all of the shows that, you know, we don't like, right? So there's probably a big class imbalance here. So accuracy might not be as relevant. But this one, the precision is the most useful metric to Netflix, I would argue. And it sounds like most folks agreed with me. Why? Because if we make good recommendations that'll keep users watching the content, they'll come back for more. They'll keep relying on our recommend."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-370-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4711,
+      "type": "audio",
+      "text": "And if they make bad recommendations, like Netflix keeps recommending me like serial killer content when I've literally never watched any of it, then I think like, I don't like really like what Netflix is offering. It's getting expensive. Maybe I'm going to cancel. Right. So they care a lot about measuring the quality of their recommendations, which directly translates into caring a lot about precision more so than they care about Regal."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-371-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4740,
+      "type": "audio",
+      "text": "OK, back to the Sam and spam. So here's some examples of calculating these metrics. You know, again, we talk about these two friends, one who says always ham, one says always spam, and we can calculate the metrics for all of them. We'll skip over this and really skip to the trade off, right? We saw that increasing the threshold sort of has this increase in the number of negatives decrease the number of positives. So there's this inherent trade off, this conflict between."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-372-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4753,
+      "type": "audio",
+      "text": "Negative rate, true positive rate, recall right One of them penalizes false positives more. False positives have bigger denominator gets smaller. This gets whereas recall penalizes false negatives."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-373-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4764,
+      "type": "audio",
+      "text": "So there's a trade off. These two are inversely related and there's a similar relationship. Usually precision and recall, but not always are inversely related as well."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-374-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4793,
+      "type": "audio",
+      "text": "So these often have different costs. If we think about, you know, the Netflix example right there, it's probably worse to maybe it's worse to like recommend a show a user doesn't like than to skip a show user does. Or maybe 1 is worse than the other, right? These are things you can debate, but there's some you should adjust your cost for credit card fraud, for example, right? If I go and make a transaction and they get flagged as being fraudulent, I'm like, ah, I'm annoyed. I got to go into the app and say like."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-375-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4807,
+      "type": "audio",
+      "text": "Yes, it was me. But if somebody goes and buys like a big, you know, a new a car with my credit card, that's really bad, right? So that kind of error is worse than the other kind."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-376-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4834,
+      "type": "audio",
+      "text": "So what we do then is we need to think about how do we choose the right threshold. The way we usually do this is we start by calculating the probabilities on our validation set and then once we have all those probabilities, we just do a loop over threshold of 0.01, threshold of 0.02 and so on. Or maybe even more fine grained, but we define all possible thresholds."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-377-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4838,
+      "type": "audio",
+      "text": "And then we say for each one, let's calculate these metrics."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-378-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4859,
+      "type": "audio",
+      "text": "And then decide on that based on which threshold gives me the best metrics. Again, best here depends on the problem you're solving, right? In the Netflix example, we probably want to optimize for high precision. In the credit card example, we probably want to optimize for low false negatives, and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-379-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4867,
+      "type": "audio",
+      "text": "So different levels of threshold will give us different values. Highest accuracy not always achieved at 5:00."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-380-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4876,
+      "type": "audio",
+      "text": "But what we really can do when we sweep these thresholds is we can define well what is the true positive rate and true negative rate for each value, right? So over here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-381-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4878,
+      "type": "audio",
+      "text": "For example, I can say that."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-382-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4880,
+      "type": "audio",
+      "text": "The uh."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-383-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4892,
+      "type": "audio",
+      "text": "For a threshold of 0.4, my true positive rate is .9 and my true negative rate is .6."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-384-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4900,
+      "type": "audio",
+      "text": "Right. And similarly, for every possible threshold I can think about what those two are, I can quantify what the tradeoff is."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-385-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4913,
+      "type": "audio",
+      "text": "Right. And again, because through negative rate is 1 minus false positive rate, these are two different ways of looking at the same thing. So this brings us to something called an Roc curve, which is really just a way of visualizing that trade off."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-386-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4928,
+      "type": "audio",
+      "text": "So this curve tells us for each point on it represents a different threshold and the X value is the false positive rate, right? Really we can think of the X value, the false positive rate of saying how well are we doing?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-387-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4930,
+      "type": "audio",
+      "text": "When the actual value is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-388-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4942,
+      "type": "audio",
+      "text": "Right, so if the actual value is 0, then you know the false positive rate tells us how well we're doing. the Y axis is the true positive rate, which is how well we're doing when the actual value is 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-389-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4967,
+      "type": "audio",
+      "text": "And so you can imagine that the best we can possibly do is doing, getting all of it right when the actual value is one that's like the top. And when the actual value is 0, getting none of them wrong, right? That's all the way to the left, right? So the best we can possibly do is at the top left. Anything in between is."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-390-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 4990,
+      "type": "audio",
+      "text": "So this is what we get if we just do pure chance, there's some more information in the skipped slides and we can do the same thing, we'll skip a Slido. We can do the same thing for precision recall to get a precision recall curve, right? So here every point represents a different threshold and we can say, OK, what is the precision for that threshold and what is the recall for that threshold?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-391-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 5007,
+      "type": "audio",
+      "text": "We can also define the F1 score. Again, we'll get more. You'll get more practices on the homework, the details here not as important. The most important thing is understanding what precision, recall, all of that mean in the context of the problem you're working on."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-392-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 5016,
+      "type": "audio",
+      "text": "All right, yeah, we'll skip over the sliders."
+    },
+    {
+      "id": "audio-ds100-sp26-1776379081-transcription-393-c0-e0",
+      "lecture_id": "ds100-sp26-1776379081",
+      "timestamp": 5017,
+      "type": "audio",
+      "text": "That's all for today and I will see you. Well, yes, that's it because Josh will be next lecturing next week."
+    }
+  ]
+}

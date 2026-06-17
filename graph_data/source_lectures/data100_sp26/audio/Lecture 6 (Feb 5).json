@@ -1,0 +1,2956 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1770334367",
+  "display_name": "Lecture 6 (Feb 5)",
+  "count": 421,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 478,
+      "type": "audio",
+      "text": "All right, everyone, welcome back."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 484,
+      "type": "audio",
+      "text": "To data 100 today we're going to continue our."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 513,
+      "type": "audio",
+      "text": "Journey of how we work with and explore data, and we're going to focus today on text, right? A lot of times we get data that is unstructured text. It's just like, you know, notes, it's records, it's log files, it's any kind of text data that we have to figure out how to like do something meaningful with and process in some interesting and useful way. So we're going to get some tools for how to do that and the main one we're going to work with today is something called regular expressions."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 543,
+      "type": "audio",
+      "text": "So the announcements before we start. Homework 2A is due on Friday at 11:59 PM. Hopefully you've had a chance to start. If you haven't, highly recommend starting soon. We got plenty of office hours if you get stuck. If you need help, small group tutoring signups are open. Tutoring sections begin this week. If you want one-on-one or one on two help. There are a few sections left that just have a small number of sign ups. Again, take a look at the QR code. There's two options."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 554,
+      "type": "audio",
+      "text": "Regular where you know attendance is required weekly and you're dropped if you have multiple unexcused absences. There's also like drop in where basically we have weekly signups that open every week."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 579,
+      "type": "audio",
+      "text": "You sign up for a one off slot for that week and then they reset every week. We also have catch up sessions every Friday from 3:00 to 4:00 at Evans B6. If you feel like you're not quite caught up or you have some confusions on the material or you just want a chance to get a little extra practice, highly recommend checking out the catch up sessions. They're a great opportunity to, you know, fill in on the material that we've been covering this week."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 585,
+      "type": "audio",
+      "text": "One other thing is for discussion sections, please please please watch the discussion mini lecture."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 604,
+      "type": "audio",
+      "text": "Before you come to section. So that way we get to make the most of the time we have in section with your TA where you can actually work through problems instead of them talking at you. So I highly recommend or you really should watch the recorded mini lecture before section starts."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 627,
+      "type": "audio",
+      "text": "And again this week only changed to Josh's office hours. They are Friday from 12:00 to 2:00 PM. And also this week they are on Zoom. And again, that's this week only. Starting next week they'll be back to Wednesday. And as always, but next week, my officers will be on Monday mornings. And you can always check when are office hours where office hours. You can always check the course calendar on the course website."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 634,
+      "type": "audio",
+      "text": "All right, so where are we right again we saw this dated life cycle diagram."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 636,
+      "type": "audio",
+      "text": "Where?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 646,
+      "type": "audio",
+      "text": "Why is this not working OK?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 663,
+      "type": "audio",
+      "text": "So we have this data life, this sort of like life cycle diagram, this like data science workflow diagram, the version that we have for this class. And again, we're spending most of our time in this sort of bottom right corner of understanding how we explore and work with our data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 688,
+      "type": "audio",
+      "text": "So up until now, we've been talking about kind of data processing. Last time we spent a bunch of time on wrangling data. How do you, you know, get the data? How do you process it to get the information you want? Today we're going to talk about text data and learn a tool called regular expressions. And then next time we're going to talk about visualization, right? We've seen some visualization so far and we've seen that they've been super helpful to us in understanding what's going on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 693,
+      "type": "audio",
+      "text": "But we haven't talked about how do you actually generate and make those visualizations right? How do you write the code that makes?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 707,
+      "type": "audio",
+      "text": "The line plot that has, you know, each state as a different color or each region as a different color, how do you make those kind of plots? So we'll talk about that and also how do you decide what plot you use for what scenario?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 739,
+      "type": "audio",
+      "text": "So quick recap from last time. We talked about these sort of interesting properties of a data set that you want to consider when you're doing your exploratory data analysis. There's structure, right? Like what formatted the data? Is it rectangular? What data types are the different columns, right? We talked about numerical data, quantitative, ordinal and nominal data, and we talked about different file formats. Most of the semester we're going to be working with CSV data, but you will have to work with other file formats. So it's important to keep in mind."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 744,
+      "type": "audio",
+      "text": "What they look like and that pandas has tools for dealing with it as long as it's rectangular data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 764,
+      "type": "audio",
+      "text": "We talked about granularity, which is a super important concept of what does each row represent, right? Usually this is like one of the first things you want to do with your data set is understand what does each row represent? Is each row a person? Is each row a person for a year? Is each row a state for a week? What is the granularity of your data?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 785,
+      "type": "audio",
+      "text": "We talked about temporality, how the data is situated in time. We learned about Pandas date time data types, and we started talking about faithfulness, right? Which is what is the connection between the data I have and the actual reality that that data is trying to reflect, right? And we saw that there are some questions when it comes to faithfulness."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 813,
+      "type": "audio",
+      "text": "That we can't answer with just technical tools alone, right? Like are there biases? Are there issues in the underlying data set? What's going on there? But there are some questions that we do have technical tools at our disposal, right? And so these questions of, you know, like, what are the, what is the context of the data? What are the technical decisions we make are deeply intertwined. And it's not just, oh, you do all the ethical, you know, context stuff and you do the technical stuff. You have to think about both together."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 823,
+      "type": "audio",
+      "text": "So as an example of some just sort of nuts and bolts issues with data, let's take a look at this data set right here. Right I have a bunch of."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 834,
+      "type": "audio",
+      "text": "Rows and you know, maybe we get this data set. We're not sure exactly what it is. What are some issues with this data that we see?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 836,
+      "type": "audio",
+      "text": "Let me just take a second."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 838,
+      "type": "audio",
+      "text": "Look at it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 848,
+      "type": "audio",
+      "text": "Hopefully you see at least one. There's actually a lot, but just to highlight a few, right, We have sort of category, state, location, device purchased and we have an ID."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 851,
+      "type": "audio",
+      "text": "So just to highlight a few errors, First off we have this duplicated row."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 863,
+      "type": "audio",
+      "text": "Let's see, how do I know this row is duplicated? Because the ID column is the same for both, right? Ideally, if we have an ID, it should probably be unique."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 870,
+      "type": "audio",
+      "text": "We have state and location that both seem to have the same information, so we don't need both of them."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 876,
+      "type": "audio",
+      "text": "Probably look through and see if they're equal for all the rows, and if not, what's going on there."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 884,
+      "type": "audio",
+      "text": "We have some states that are XY. There's no state that has code XY. This is an error in the data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 887,
+      "type": "audio",
+      "text": "We have this device column that's always one."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 897,
+      "type": "audio",
+      "text": "Well, it's always one for the 1st 8 rows. But is it always one for all the rows? Is this column meaningful? Is it interesting? What does it actually mean?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 920,
+      "type": "audio",
+      "text": "We have this purchased has a missing entry. Some of these have a one, some of them have a 0. Which kind of makes sense, right? It was purchased, It was or it was not. What does it mean for that to be missing? Do we not know whether it was purchased? Was it purchased and returned? Was there some other issue with it? Why is this data missing? We have a -1 in the purchase column."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 933,
+      "type": "audio",
+      "text": "Again, what does that mean, right? If something was purchased, yes or no, one or zero kind of makes sense. Does -1 mean it was like purchased and returned? Does it mean it was just a return? Does it mean something else entirely?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 949,
+      "type": "audio",
+      "text": "These are often questions that you have to go back and look from where you got the data from, right? Last time when we were talking about the flu data, I sort of answered a lot of those questions for us because I had spent a bunch of time reading the CDC website and understanding what all the different columns meant."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 960,
+      "type": "audio",
+      "text": "But when you go get data, when you get it from someone you know you're working with, you have to have a conversation with them. When you get it from somewhere online, you have to make sure you keep in mind where you got it from and be able to read up on the source."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 979,
+      "type": "audio",
+      "text": "And last but not least, there's this sort of category. Shoe, socks, Pants is misspelled here. If we try to do a group by, we might get one column for PNTS that just has a single row, and then a bunch of columns for pants, right? So we need to somehow normalize and fix this before we continue."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 985,
+      "type": "audio",
+      "text": "So faithfulness is really about answering the question of do I trust this data?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1010,
+      "type": "audio",
+      "text": "Right. If we have data that where rows are completely duplicated, then usually that's a good case for dropping the data, right? If I have entire rows that are completely duplicated, then yeah, I can probably just drop one. If I have rows that are duplicated where 1 is different from the other, maybe 2 rows with the same ID and one's different, then again, I have to go back and investigate why that's happening."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1032,
+      "type": "audio",
+      "text": "Sometimes we have labeling and spare spelling errors. Usually this is something where you want to apply corrections and fix the data. Only ignore if you absolutely have to, right? It's not ideal in that data set with pants, right? If we just drop everything that's a one off, we might lose the data about the pants, right? Not ID."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1043,
+      "type": "audio",
+      "text": "When you have missing data, which is something that is going to come up all the time because almost every data set you work with will have missing data, you have to think about why the data is missing."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1049,
+      "type": "audio",
+      "text": "Why is this element missing? And that will affect what decision you make on how to deal with that missing data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1051,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1081,
+      "type": "audio",
+      "text": "Missing data can show up in a lot of different ways and can show up as a Nan which is not a number. It can show up as an NA in pandas. It can be a zero in a column that should be numeric. There are some cases where you may have a zero that actually means both 0 sometimes, and sometimes that 0 means missing. Josh was talking about a project that he worked on that actually had this happen. There's a link here to the to the paper he wrote where sometimes zero meant missing."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1083,
+      "type": "audio",
+      "text": "And sometimes 0 actually just meant 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1093,
+      "type": "audio",
+      "text": "So at that point, you can't really trust when it says zero that it actually means zero. You have to take into consideration what that means."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1098,
+      "type": "audio",
+      "text": "Missing data. This is something that always comes up, so how should you approach it?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1128,
+      "type": "audio",
+      "text": "Well, there's a few different things you can do. The first is to keep it as just NA or Nan or missing. This is usually a good default thing to do to keep that in your data. You know, if it's like a qualitative column, then maybe just create an entire category that's just missing, right? If it's like shirt, shoes, pants, and then there's a bunch of them that are NA, just like create a separate category that's like missing and analyze that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1129,
+      "type": "audio",
+      "text": "In in combination with the others."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1143,
+      "type": "audio",
+      "text": "Another approach, which is usually not a good idea, sometimes it is but usually not, is to drop records with missing values. That is, anytime you have a missing entry in any of the columns, just eliminate that row."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1147,
+      "type": "audio",
+      "text": "Why is this bad? Because it introduces bias into your data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1167,
+      "type": "audio",
+      "text": "If you have missing data, say let's say you have a temperature data set and your temperature probe just sort of like went online for a minute at random, then it's probably OK to drop that because the missing data happens at random, right? Every so often it'll miss a point, but you know, if you have continuous data and it misses a couple seconds, probably not the end of the world."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1179,
+      "type": "audio",
+      "text": "If you have data set on police officers with traffic stops and you have a particular officer who, let's say, happens to never record their own outcomes of the traffic stops that they make."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1209,
+      "type": "audio",
+      "text": "That could introduce a bias, right? Because if that officer is choosing not to take records of what happens with their traffic stops, then there might be correlations with other things that that officer is doing. So anytime you have missing data, you want to think carefully about what it means, what it and how it fits in with your data and not just drop it. There's also techniques called imputation or interpolation, where basically it's let's fill in that missing data with other values."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1217,
+      "type": "audio",
+      "text": "The more advanced and sophisticated techniques are kind of beyond the scope of the class. The simplest thing you can do here though."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1234,
+      "type": "audio",
+      "text": "Is to take a column where, you know, let's say you have a column and some entries in that column are missing. The simplest thing you can do is just say, hey, take those missing values and replace them with the mean or the median of that entire column."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1262,
+      "type": "audio",
+      "text": "Again, this has issues. In some cases it maybe it makes sense because you say like, yeah, I don't know it, so maybe it's safe to assume it's the average. Whether or not this is a good idea, again depends on the context. So how you deal with missing data, there's no one-size-fits-all answer. The answer is always, it depends. And you have to think about what that data means in the context of your data set, in the context of the problem you're trying to solve, the question you're trying to answer."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1262,
+      "type": "audio",
+      "text": "OK, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1289,
+      "type": "audio",
+      "text": "With that, let's move on to the main topic for today, which is text processing. So one common thing that's going to come up is needing to clean text data. Text data that you get is almost always messy. It's almost always not quite formatted the way you want, or there's a bunch more information than you need and you want to extract only certain things. So we're going to talk about the STR accessor that gives us that little."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1293,
+      "type": "audio",
+      "text": "Module with string operations and then we're going to send most of two dimed most of."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1306,
+      "type": "audio",
+      "text": "Today talking about regular expressions or regex to identify patterns and strengths right? So when you hear regex or regex or regular expression you want to think patterns."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1334,
+      "type": "audio",
+      "text": "So why do we want to work with text? Well, because it has useful and interesting stuff. So let's look at some examples. What do we want to do with it? Well, the one thing that we often want to do is something called canonicalization. It's really just a fancy way of saying we want to convert data into a standard or form or a canonical form, right? Canonical is just a fancy way of saying I want like a standard, sort of."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1336,
+      "type": "audio",
+      "text": "You know way of representing this data."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1346,
+      "type": "audio",
+      "text": "Suppose for example, I have these two tables that have counties, right? And so this data set has information on every county what state it's from."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1349,
+      "type": "audio",
+      "text": "This data set has the county and the population."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1355,
+      "type": "audio",
+      "text": "And let's say I want to take this data and aggregate it and compute the total population in each state."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1360,
+      "type": "audio",
+      "text": "Well, if I want to do that then I need to link these population numbers to the states."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1364,
+      "type": "audio",
+      "text": "So I need to join these two tables together."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1379,
+      "type": "audio",
+      "text": "The problem is, if I just joined them on the county column as it is, I'm going to get nothing, right? Why? Because this one says Dwight County. This one just says DeWitt, right? This doesn't have county at the end."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1389,
+      "type": "audio",
+      "text": "The capitalization is different between the two of them. This one uses and this one uses an ampersand. There's all kinds of issues between these two, right? There's missing periods."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1397,
+      "type": "audio",
+      "text": "So what we really want is some way of representing this where we have a standard form."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1400,
+      "type": "audio",
+      "text": "So how might you?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1406,
+      "type": "audio",
+      "text": "Deal with this data right? How might you deal with the fact that these two representations are different?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1431,
+      "type": "audio",
+      "text": "Well, what are the problems? The problems are inconsistent spacing. The the problems are county, parish at the end. The problems are these symbols, right? Ampersands and periods that we need to replace. There's a lot of different problems, but we could solve all of those and convert them into a standard representation, right? Maybe we just say, let's use all lowercase letters, remove the spaces, remove the symbols and represent them this way."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1435,
+      "type": "audio",
+      "text": "So if we could do that, then we can join the columns properly and we'll see an example of that in a moment."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1441,
+      "type": "audio",
+      "text": "So another thing that we want to do is extract information."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1443,
+      "type": "audio",
+      "text": "So for example, let's suppose we have log files."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1469,
+      "type": "audio",
+      "text": "Where that looks something like this, right? We have some website or some web server and we have a bunch of information about people accessing it and we want to know dates and times, right? Let's suppose I'm interested in understanding how often is the Data 100 website accessed? Is it commonly accessed right before an exam? And maybe this effects when course staff should be making updates ahead of common times that people access it?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1473,
+      "type": "audio",
+      "text": "Well, if I have a bunch of logs that look like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1503,
+      "type": "audio",
+      "text": "Right where this is the line. What I really want is I want to take this line which is just a bunch of text and pull out the date. Well that date lives inside these brackets. So I want to have some way of extracting the stuff that lives in brackets from this string. Right where I want to say I want to take this and get this right. Whereas day, month, year equals 26 Jan 2014 and the time hour, minute, seconds is 104758."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1509,
+      "type": "audio",
+      "text": "And if I'm being really picky, I can also say the time zone is GMT -8, which I think is like mountain time."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1512,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1540,
+      "type": "audio",
+      "text": "How do we do this? Well, some of this we can do with pandas STR methods, right? We talked about this a little bit a couple weeks ago, but if you remember, in Python, when you have a string, there's a bunch of methods you can use to do stuff with that string. For example, let's say you can convert it from uppercase to lowercase using, you know, S dot lower, S dot upper, right? If S is my string, I can do replacement S dot replace."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1541,
+      "type": "audio",
+      "text": "Right. And I say I want to replace this with that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1549,
+      "type": "audio",
+      "text": "We can do split right? Where I can say OK, take this character, give me everything before, give me everything after."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1560,
+      "type": "audio",
+      "text": "We can do a substring, we can slice to get, you know, this particular part of it. We can do membership, we can do length. But The thing is, all of these work for one string at a time."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1591,
+      "type": "audio",
+      "text": "And with pandas data frames, we don't really want to like loop over every single string and do the string operations one by one, right? In general, anytime we have to like loop over something, it's going to be slow. We always want to use the vectorized version of our operations which operate on the entire series at once, right? And generally, you almost always, whenever you can, want to do the whole operation on the whole series at once instead of going 1 by 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1593,
+      "type": "audio",
+      "text": "So pandas has these methods that are vectorized for us."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1601,
+      "type": "audio",
+      "text": "And we get them by looking at the dot STR method, right? So I say."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1606,
+      "type": "audio",
+      "text": "My series and I can say dot STR and then I can say dot whatever operation I want to do."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1620,
+      "type": "audio",
+      "text": "And this applies that function to every element in the series. And we've seen this before, right? If this is our county string, then we can call count this dot STR dot lower and that converts it to lowercase."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1639,
+      "type": "audio",
+      "text": "So that STR is the accessor for this string module in pennis right? You say dot STR and it gives us access to all the string functions and just like in the for date times we had the dot DT accessor which gives us the date time access to the date time methods. You can do this for strings."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1648,
+      "type": "audio",
+      "text": "So here is a list of some examples. I'm not going to go over these, we just saw these, but it's important to keep in mind that you can always look these up."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1654,
+      "type": "audio",
+      "text": "So let's do a little example of how we would work with this data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1658,
+      "type": "audio",
+      "text": "So let's suppose I have."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1675,
+      "type": "audio",
+      "text": "This data. So I read CSV, the county and state data, I read the county and population data, and again for data frames if I use print they come out looking kind of ugly so I can use display to have them print nicely. So I display the States and I display the populations and they look like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1682,
+      "type": "audio",
+      "text": "So now I want to join these two, but again if I just do a naive merge."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1690,
+      "type": "audio",
+      "text": "Results not so good. So what I need to do then is I write this function called canonicalized county."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1701,
+      "type": "audio",
+      "text": "Which is basically saying take the county column right? Take a series with county data and convert it to a standard form. Canonicalize it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1727,
+      "type": "audio",
+      "text": "How do I canonicalize it? Well, first I convert everything to lowercase, right? So remember that when I have all these things on separate lines, I'm chaining these methods together, right? I'm doing 1 after the other. So I start by taking my series, convert it to lowercase, then replace any spaces with blanks, right? So basically remove all spaces, replace any ampersands with the word and."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1733,
+      "type": "audio",
+      "text": "Replace any periods with empty string, remove any periods, remove the word county and remove the word perish."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1742,
+      "type": "audio",
+      "text": "And for these, remember I'm using lower case because by now I've already converted the string to lower case. All right, so this is a function."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1758,
+      "type": "audio",
+      "text": "And if I apply it to each of these columns, then I can see that I get the same results for each of these two different data frames, right? They look the same once I apply these operations. And So what I can do is I can define."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1763,
+      "type": "audio",
+      "text": "New column for each of these with the canonical county."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1765,
+      "type": "audio",
+      "text": "Right and now I can join on this column."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1791,
+      "type": "audio",
+      "text": "So I can call state merge populations and because the column name is the same in both of them, I don't really need to bother saying left on equals, right on equals if the name is the same, I can just say on equals right. So this is a special case of the merge function where if both the column names are the same in the left and the right, then I just say on equals and this gives me what I want."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1796,
+      "type": "audio",
+      "text": "So notice what happens here is that I have these under score X, under score Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1806,
+      "type": "audio",
+      "text": "How come? Well, because Panda sees hey and the left data frame you have a county, a column named county, and the right data frame you have a column named county."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1824,
+      "type": "audio",
+      "text": "I don't want to have two columns with the same name, so I'm going to preface the one from the left with under score X, and I'm going to preface the OR suffix, and I'm going to suffix the one with the right with under score Y, right? So this is the version from populations, and this county X is the version from states."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1832,
+      "type": "audio",
+      "text": "All right. Questions on how we canonicalize the county column? Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1869,
+      "type": "audio",
+      "text": "The question is what do you do with fringe cases and not handling this? Like what if you have a county that doesn't end in county or parish? You can either sort of tackle those fringe cases one by one or you can take sort of reference them against the standard database or you can even say, let me list out a whole bunch of possible words that it could end with and remove all of them. Yeah, the answer is it really depends on your data set. There isn't really A1 size fits all answer. It's a great question though. That kind of thing comes up."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1872,
+      "type": "audio",
+      "text": "The time, other questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1880,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1882,
+      "type": "audio",
+      "text": "Uh-huh."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1908,
+      "type": "audio",
+      "text": "The question is, why is doing it using the STR operations faster? Like what's the difference that makes it so much more efficient? The answer isn't how pandas implements it under the hood. It uses some C code to do with things much faster than you would in a Python loop, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1915,
+      "type": "audio",
+      "text": "Yeah, it's like it's not necessarily all simultaneous, it's just like runs using more efficient code."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1923,
+      "type": "audio",
+      "text": "There are extensions to pandas that can do things in parallel or simultaneous, but they're a little beyond the scope of this class."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1934,
+      "type": "audio",
+      "text": "OK, so this is an example of canonicalizing. Let's now look at this log file example. So."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1955,
+      "type": "audio",
+      "text": "Remember that we have this file, right? With a bunch of logs, one line per access, right? This person got this data and maybe we don't care about all this stuff again. We just want to know when are people accessing the website, right? We want to pull out the stuff in brackets, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1959,
+      "type": "audio",
+      "text": "That's."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1983,
+      "type": "audio",
+      "text": "So how might we go about doing this? Well, I one thing I can see is that hey, I can just look and go, you know, 1234 and count how far into the string this is and slice it right. So again, how did I open this? I used open and read lines and got the data. So I have."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 1984,
+      "type": "audio",
+      "text": "Log lines 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2000,
+      "type": "audio",
+      "text": "Which is the first line of my file as a string and notice it ends with this back slash N character which is again in Python how we represent a new line right? Every line ends with the new line which tells you know the computer go to the next line."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2010,
+      "type": "audio",
+      "text": "So I can really just say log line to 0 and I can slice it 20 to 31, right? And I could do trial and error, I could count and say, hey, great, I got the date here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2012,
+      "type": "audio",
+      "text": "What happens if I do the same thing on the next line?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2016,
+      "type": "audio",
+      "text": "Well, if I do that on the next line I get."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2017,
+      "type": "audio",
+      "text": "Something different."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2026,
+      "type": "audio",
+      "text": "Why? Because this line has a shorter IP address at the start and line, and position 20 means something different here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2036,
+      "type": "audio",
+      "text": "Also, this date is only one character instead of two because it's single digit instead of double digit. This is not going to work right. We can't just like look at the same place in the string every time."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2041,
+      "type": "audio",
+      "text": "We do know that there is a pattern, right? The pattern is there's always a bracket."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2062,
+      "type": "audio",
+      "text": "And then there's a bunch of slashes, right? So why don't we use that pattern to extract the information? So the way we're going to do it now is not necessarily like the way you should do it. The way you should do it is using regular expressions, which we'll talk about later in lecture. But again, this is just to give you a sense of how you could using the STR methods."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2067,
+      "type": "audio",
+      "text": "So let's suppose we."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2076,
+      "type": "audio",
+      "text": "So we'll pull this first line into its own variable so we can play around with it. And I'm going to call split of brackets. So if I say first."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2078,
+      "type": "audio",
+      "text": "Dot split."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2090,
+      "type": "audio",
+      "text": "Bracket, open bracket. Then I get a list which is the stuff that I don't care about at the beginning, and then the stuff I want with some extra junk at the end."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2097,
+      "type": "audio",
+      "text": "Right, so then what I need to do is I need to take that extra, I need to get the second item of the list and then I need to split it again on the closed bracket."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2106,
+      "type": "audio",
+      "text": "Right. And so that's what this is, right? It's basically first split on open bracket, pull out the second item, then split on closed bracket, pull out the first item."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2127,
+      "type": "audio",
+      "text": "And then great, I have the date time and now I could go and pull out the day, month by splitting on slash and you know, extracting things one by one. And then I could pull out the year, hour and minute by splitting on the colon and pulling out, you know, the different times. And then I can pull out the time zone and so on and so on. And if I do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2129,
+      "type": "audio",
+      "text": "Then I get the entire."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2133,
+      "type": "audio",
+      "text": "Data and the way I want it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2165,
+      "type": "audio",
+      "text": "So this is kind of annoying to have to like do all of this, you know, splitting and processing just to pull something out. So maybe there's a better way and it turns out there is and it's called regular expressions. So again, this is just one possible solution. One way of doing this right is to do this sort of dot split and then we split up first split on the brackets, then split on the slashes and split on the colon and so on. But we will now look at a better way of."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2166,
+      "type": "audio",
+      "text": "Extracting this kind of information."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2167,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2190,
+      "type": "audio",
+      "text": "This feels like kind of a hack, right? We're like doing this, all these splits. So what we really want is to somehow say there is a pattern to all these lines. The pattern is there's some stuff I don't care about at the beginning and the end, and then there's brackets, right? And then inside the brackets there's like, you know, the."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2200,
+      "type": "audio",
+      "text": "Day, then a slash, then the month slash the year and so I know that that's the pattern and so I can encode that pattern."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2202,
+      "type": "audio",
+      "text": "Pattern into something called a regular expression."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2215,
+      "type": "audio",
+      "text": "So code that uses replace split is also not very robust, right? So for example, let's suppose I wanted to extract any instance of the word moon from this string."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2228,
+      "type": "audio",
+      "text": "Right so I have the string moon, moon moon Mon moon and you know this is a reference to this 2013 meme of moon moon. How many people like remember this meme or know of it?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2234,
+      "type": "audio",
+      "text": "Yeah, it's a little dated. It was pretty great at the time, but it's like super dated."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2254,
+      "type": "audio",
+      "text": "But basically, let's suppose we have this string, and we want to pull out all these different moon strings and ignore everything else. There's no way to use split and replace to get that information right? But there is a pattern, right? I can describe the pattern to you as something starting with M, ending with N, and having a bunch of OS in the middle."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2264,
+      "type": "audio",
+      "text": "So anytime you can describe something with a pattern, you can almost always use a regular expression to do it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2281,
+      "type": "audio",
+      "text": "So regular expressions are in the RE library in Python, you know, you import RE, you know, just like you import pandas. And you can also access them in the string module for any series. And we can simplify the code using a regular expression."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2297,
+      "type": "audio",
+      "text": "And again, right now, I don't want you to worry about the details. I want you to just squint and see the big picture here. What's the big picture? The big picture is that we're defining a pattern. What does that pattern look like? It says start with a bracket, pull stuff that is in brackets."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2301,
+      "type": "audio",
+      "text": "And then we have some digits."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2305,
+      "type": "audio",
+      "text": "Splash some letters."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2316,
+      "type": "audio",
+      "text": "Slash some more digits, right? Just like we have some digits slash letters slash more digits and then we have a colon."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2323,
+      "type": "audio",
+      "text": "And then we have a three sequences of digits, all separated by colons."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2350,
+      "type": "audio",
+      "text": "Right. So this pattern is our way of expressing that to Python. And by the end of class today, you'll be able to understand like, what all this mumbo jumbo in there actually means. But hopefully you can kind of squint and see that. Yeah, if I take for granted that all this means what I claimed it meant, then yes, this is the pattern that represents that. And this is exactly how regular expressions work."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2380,
+      "type": "audio",
+      "text": "So a helpful mindset for today is to think about regular expressions kind of like word puzzles, right? If you like doing like Wordles or you know, sudokus or any other kind of thing, regular expressions are basically just another way kind of word puzzle. I love doing wordles. I do them every morning. We're going to there's a little like link to a regex fun game later in class today that I played a bunch over the weekend. Would recommend if you like."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2393,
+      "type": "audio",
+      "text": "OK, so what's the point of this regular expression thing anyway? Why are we bothering to learn it? In many cases what we want to do is identify or filter certain rows right? Want to find rows that match a pattern and ignore rows that don't."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2410,
+      "type": "audio",
+      "text": "In other cases, what we want to do is extract data out of strings. We want to take some data that lives in a string and extract certain bits of information. And we've already seen an example of this extraction with that date thing, right? Where we have these log files with all this stuff and want to extract the dates."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2412,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2440,
+      "type": "audio",
+      "text": "What's an example? Let's suppose we have sales data that looks like this, right? Maybe it's recorded from multiple different systems. Maybe those systems change over time. But they always look something like this, right? Where I have some date and then some stuff and, you know, then some amount. But then I have some other rows that have irrelevant junk, right? Like system note. And maybe I only want to know."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2459,
+      "type": "audio",
+      "text": "The rows that have transactions right? I want to ignore all the other rows right? I want to ignore this manager override manager. Note and notice also that the dates have slightly different formats, right? From 2023 to 2024 the date format changed from using dashes to using slashes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2470,
+      "type": "audio",
+      "text": "So. But it's still a date, right? It's still kind of looks the same. So we do see a pattern that we could use to pull out only the rows I've highlighted in yellow and ignore the ones I've highlighted in pink."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2501,
+      "type": "audio",
+      "text": "And they usually have a dollar."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2501,
+      "type": "audio",
+      "text": "For the extraction piece, again, we saw an example with those dates. Another example is, let's say we have a data set of political contributions, right then from a candidate's files. Maybe they're generated in a messy way from multiple systems and they look like this. This is the kind of thing that happens a lot. The data that you will see in the real world often looks messy. There's often inconsistencies, but a lot of times there's patterns that you can pick up on, right? And So what are the patterns around these highlighted amounts? Well, they're always numbers."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2518,
+      "type": "audio",
+      "text": "Sign at the front. Sometimes there's a K, but there might even be an M at the end. But we can always find these dollar amounts and extract them from these lines if we can determine the right pattern."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2525,
+      "type": "audio",
+      "text": "And so anytime that you have a data set like this, a problem like this where you can define a clear pattern."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2536,
+      "type": "audio",
+      "text": "You can use a regular expression to do it. So these operations of filtering and extraction using patterns are super common in real world text processing and so that is why we're giving you the tools of regular expressions."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2550,
+      "type": "audio",
+      "text": "OK. So for the rest of the day, we're going to basically introduce a bunch of different like regular expression concepts, a few at a time, and do some practice on some sliders of kind of working with those concepts we just learned."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2559,
+      "type": "audio",
+      "text": "All right, So what is a regular expression? It's basically a sequence of characters that specifies a search pattern."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2563,
+      "type": "audio",
+      "text": "So as an example we have this one here that looks like."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2578,
+      "type": "audio",
+      "text": "Zero to 9 three times, right? So this again, don't worry about exactly why this means that, but you can kind of see that this is saying any of the digits from zero to 9."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2584,
+      "type": "audio",
+      "text": "Have to happen three times, then any of the digits."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2592,
+      "type": "audio",
+      "text": "Zero to 9 two times and then any of the digits zero to 9 four times."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2600,
+      "type": "audio",
+      "text": "That defines a Social Security number, right? I have digit 3 digits, dash 2 digits, dash 4 digits. That's an SSN."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2612,
+      "type": "audio",
+      "text": "Right, so this is a regular expression that represents a Social Security number. So regular expressions are patterns that Python, or any programming language really can match to strings."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2630,
+      "type": "audio",
+      "text": "So regular expression is like the full name. Do you actually do you say regex or regex? There's a debate, there's a link to a Stack Exchange discussion of it. I personally say regex even though it's like regular expression. It's kind of like GIF, GIF, but you know, you'll hear people say different things."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2634,
+      "type": "audio",
+      "text": "OK, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2636,
+      "type": "audio",
+      "text": "What are our goals?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2662,
+      "type": "audio",
+      "text": "You should not try to memorize all of these different things over time. If you use regex a lot, you will probably memorize some of them. I have been using regex on and off for many years. I have not memorized all of them, right? Like even some of the stuff we're going to talk about in lecture today I have not fully memorized. I looked up in preparation for this lecture, right? So you don't have to memorize it. What you do have to be able to do is be able to construct them."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2666,
+      "type": "audio",
+      "text": "When you have a reference open and available to look at."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2685,
+      "type": "audio",
+      "text": "So in this class, you'll have a reference sheet that tells you the main things you need to do. And in practice, in the real world, you'll always be able to go and look up a reference that has all the, you know, regex components. I really like this website, regex101.com. We're going to use it in a bunch of demos today. Basically, you can."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2693,
+      "type": "audio",
+      "text": "Write a regex and it'll show you whether it matches some text that you can define. So we'll see that in a little when we get to demo."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2721,
+      "type": "audio",
+      "text": "OK, So what are the basics of regex? So there's four kind of like basic core components, ingredients for regular expressions. The first is concatenation. So concatenation is basically look for consecutive characters. So the simplest kind of regex is just like a bunch of characters and it matches those characters, right? So if my pattern is Baab."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2723,
+      "type": "audio",
+      "text": "Then that will match a string that looks like baab."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2736,
+      "type": "audio",
+      "text": "Right, Very straightforward, right? If my pattern is just some characters one after the other, it will match those same characters one after the other, kind of like trivial regular expression."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2740,
+      "type": "audio",
+      "text": "We can also do an or."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2746,
+      "type": "audio",
+      "text": "So vertical bar just vertical bar pipe just like with logic means or."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2751,
+      "type": "audio",
+      "text": "So if I have a regular expression, that's B A/B or BA A/B."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2753,
+      "type": "audio",
+      "text": "This smell matched the strings."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2756,
+      "type": "audio",
+      "text": "Bab or baab?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2772,
+      "type": "audio",
+      "text": "So this will not match. BAA A/B will not match anything else, but it will match either of these two. Notice that the OR sort of binds loosely in the sense that it's all of the stuff before or all of the stuff after."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2780,
+      "type": "audio",
+      "text": "Another core operation is the star or asterisk, which means zero or more."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2786,
+      "type": "audio",
+      "text": "So if I define the regular expression AB star A."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2798,
+      "type": "audio",
+      "text": "Then this will match anything with a zero or more BS and then a. So this matches a A, it matches ABA, it matches ABBA, ABBA and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2806,
+      "type": "audio",
+      "text": "The other basic operation is parentheses, which is a way of saying here's a group in a regular expression."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2810,
+      "type": "audio",
+      "text": "So here I can do something like."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2816,
+      "type": "audio",
+      "text": "Group AB, meaning the combination of A and B together."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2820,
+      "type": "audio",
+      "text": "Zero or more times and then an A."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2821,
+      "type": "audio",
+      "text": "This will match."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2830,
+      "type": "audio",
+      "text": "A because there's an AB0 times the four and then an A it'll match ABA, ABA and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2834,
+      "type": "audio",
+      "text": "You can also use groups to do or."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2839,
+      "type": "audio",
+      "text": "So this A and then a group with either A or B and then a AB."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2841,
+      "type": "audio",
+      "text": "So this will match a."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2853,
+      "type": "audio",
+      "text": "A A AB, It'll also match AB AAB, right? It'll match either one of these two and only either one of these two."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2873,
+      "type": "audio",
+      "text": "So these characters, this pipe bar, the star and parentheses are meta characters. They are special characters in regular expressions, and anytime you use them in one, it always, always means this special operation."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2883,
+      "type": "audio",
+      "text": "So always, not really always there are ways to. Like, say I want a string with an actual parenthesis in it. We'll get to that a little later. But these are meta characters. They're special. They have special meanings."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2887,
+      "type": "audio",
+      "text": "So let's get some practice."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2915,
+      "type": "audio",
+      "text": "So how do we match? We want to make a regular expression that matches anything that looks like moon, moon, moon and so on and so on. Basically anything with an even number of OS. So we don't want to match MN, right, because there's zero, but and we don't want to watch MOON because there's three. So write a regular expression using these tools we just learned."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2916,
+      "type": "audio",
+      "text": "That matches."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2919,
+      "type": "audio",
+      "text": "Moon with an even number of OS in between them and N."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 2923,
+      "type": "audio",
+      "text": "Right. Turn to the person next to you and discuss how you do it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3043,
+      "type": "audio",
+      "text": "All right, so regular expressions are all about pattern matching, right? So we have here 4 different patterns and we want to see which one will match the spec that I have up there."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3047,
+      "type": "audio",
+      "text": "So let's go to regex 101 and try it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3050,
+      "type": "audio",
+      "text": "So it's really small."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3077,
+      "type": "audio",
+      "text": "So here's regex 101 COM When you're using this on the left. Again, regex is something that's supported by many different programming languages. When we do SQL a little later in the semester, we're going to talk about regex there too. When you are using the site, you should probably go on the left and check Python, just because every language has like slight variations and looks slightly different. So definitely recommend checking Python first before you."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3082,
+      "type": "audio",
+      "text": "Start OK, so how would we define a regular expression? This is where the regex goes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3090,
+      "type": "audio",
+      "text": "And here is a test string and it will highlight matches. So what is my string going to look like? Well."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3095,
+      "type": "audio",
+      "text": "MN."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3095,
+      "type": "audio",
+      "text": "Let's suppose I say."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3101,
+      "type": "audio",
+      "text": "Right, this will match only MN, not really what I want."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3112,
+      "type": "audio",
+      "text": "So what about Moon? Again that matches this exactly, but really what I want is M with some number of OS in the middle."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3116,
+      "type": "audio",
+      "text": "Right, so if I do MO star N then."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3129,
+      "type": "audio",
+      "text": "This O star says 0 or more OS in between the M and the North, so it matches all of them, including the ones that should and the ones it shouldn't."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3135,
+      "type": "audio",
+      "text": "So I really don't want just any number of OS, I want an even number of OS."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3141,
+      "type": "audio",
+      "text": "So if I want an even number of OS then I should just have two OS repeated a bunch of times. So if I do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3163,
+      "type": "audio",
+      "text": "Then it's better I don't match these that I shouldn't match, I match all the ones I should. But now I still match MN because this says 0 or more times and so if there is 0 instances of that group, right? Remember that parentheses make a little group with the two OS. If there is zero that group, then it still matches."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3171,
+      "type": "audio",
+      "text": "So what I should do then is I should just say there's MOO and then any number of additional pairs of OS after."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3175,
+      "type": "audio",
+      "text": "And this will match the thing I want and nothing else."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3179,
+      "type": "audio",
+      "text": "OK, questions on this example."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3188,
+      "type": "audio",
+      "text": "So when you have a problem where you need to write a regular expression."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3207,
+      "type": "audio",
+      "text": "It is really helpful to like define something like this, right? Define some things that it should match, define some things that it shouldn't, and build it iteratively and incrementally. It's really hard to just like write a regular expression on paper. It's much easier to like build 1 like this interactively, where you have some like positive and negative examples."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3209,
+      "type": "audio",
+      "text": "OK, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3211,
+      "type": "audio",
+      "text": "Let's learn some more tools."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3226,
+      "type": "audio",
+      "text": "So I'm going to do 6 more and again, just like the ones before, these are on the reference sheet. You do not need to memorize them. You should have a sense of how they work, but you don't have to memorize the details."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3238,
+      "type": "audio",
+      "text": "OK, next is dot which is a wild card character. It says look for any character other than a new line."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3249,
+      "type": "audio",
+      "text": "Right, so new line doesn't count, but like any character within a line counts. So dot U dot U dot U dot matches anything where there are a bunch of views and then some stuff in between."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3272,
+      "type": "audio",
+      "text": "There's brackets, square brackets, which are how we define a character class, right? Let's say I want to match a string that's not just A or B, but it's like A or B or C or D or E or F It's kind of annoying to have to write out like all the letters of the alphabet separated by bars."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3290,
+      "type": "audio",
+      "text": "So we can define the character class using brackets that says this can be anyone of the letters A-Z capital or the letters A-Z small lower case. So this will match little big A, little A, big B, little B and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3294,
+      "type": "audio",
+      "text": "Talk a little bit more about what are the options you can use there in effect."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3298,
+      "type": "audio",
+      "text": "There is a plus operator which is similar to star, but it means one or more."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3303,
+      "type": "audio",
+      "text": "Remember, star means zero or more, plus means one or more."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3316,
+      "type": "audio",
+      "text": "So AB plus will match AB, it will match ABB and so on and so on. But it will not match just a plain old A, right? We have to have at least one for the plus."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3324,
+      "type": "audio",
+      "text": "There's question mark which is 0 or 1. So I like to think of a question mark as asking is it there?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3334,
+      "type": "audio",
+      "text": "Right. So this is asking AB question mark, it says is there a B, right? Because if there isn't AB it'll match and if there is 1B it'll match."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3340,
+      "type": "audio",
+      "text": "So question mark means 01."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3351,
+      "type": "audio",
+      "text": "And then let's say we want something repeated, right? But not just like an arbitrary number of times like we can do with the star and the plus, but a specific number of times."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3359,
+      "type": "audio",
+      "text": "So if I use AB bracket curly brace 2, this says B has to happen exactly 2 times."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3363,
+      "type": "audio",
+      "text": "So this will match ABB and nothing else."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3391,
+      "type": "audio",
+      "text": "If maybe I don't want like exact, but I want something in between, I want something in a range, right? So I can say curly brace, lower, comma, upper, and it'll give me anything in between that number of times inclusive of both endpoints, right? So this matches zero to 2. And just like with Python slicing, I can skip the beginning or the end and it goes, you know, down to 0 or up to Infinity."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3395,
+      "type": "audio",
+      "text": "So star is equivalent to curly brace 0 comma because if I skip the upper bound."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3410,
+      "type": "audio",
+      "text": "Then it just says it's Infinity plus is like curly brace one comma nothing which is like 1 up to Infinity and question mark is like 0 or one or equivalently nothing comma one."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3427,
+      "type": "audio",
+      "text": "There are often more than one way to form a regular expression. Usually there's not just one solution, but you know it's often cleaner and neater to just write question mark instead of curly race 0 comma one."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3442,
+      "type": "audio",
+      "text": "So using what we learned here, can we go back and like simplify that regular expression we just did for the last slide? Well, yes, we can, right? We learned this plus which is like a one or more operation. So if I go back to the regex 101."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3446,
+      "type": "audio",
+      "text": "And here instead of."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3459,
+      "type": "audio",
+      "text": "00 and then oh star, I can simplify this, make it shorter by saying oh oh plus right there has to be at least one initial oh oh before you go on to adding on additional pairs."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3471,
+      "type": "audio",
+      "text": "Right, so this is a different way of doing the same thing. This way is a little shorter, right? Little cleaner, a little easier to read. If I happen to change the letters, I have to change a little less here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3474,
+      "type": "audio",
+      "text": "OK, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3490,
+      "type": "audio",
+      "text": "Character classes, right? So I said that, you know, there's like A-Z, right? But what are the other options? Well, there's A-Z capital, right, which matches any uppercase letter. There's A-Z lower, which matches any lowercase letter."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3503,
+      "type": "audio",
+      "text": "There's zero to 9, right? Which matches any digit from zero to 9. And then we can combine these, right? If I say bracket capital A-Z, little A-Z, zero to 9, then that matches any letter or any digit."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3514,
+      "type": "audio",
+      "text": "So these three are common enough that there's actually shortcuts for them. So regex has built in back slash West."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3520,
+      "type": "audio",
+      "text": "Backfash W basically means any letter or digit."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3522,
+      "type": "audio",
+      "text": "Back slash D."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3524,
+      "type": "audio",
+      "text": "D for digit means zero to 9."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3531,
+      "type": "audio",
+      "text": "And there's back slash S, which means white space, spaces, tabs and newlines."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3535,
+      "type": "audio",
+      "text": "So these are sort of shortcuts for their corresponding character classes."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3543,
+      "type": "audio",
+      "text": "You can also negate character classes. How does that work? This will match anything except for what follows."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3556,
+      "type": "audio",
+      "text": "So if we do the bracket and then power or caret sign A-Z then this says this will match any character that is not an uppercase letter."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3565,
+      "type": "audio",
+      "text": "So it will match lowercase letters, it will match digits, it will match spaces, it will match emojis, it will match anything except an uppercase letter."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3581,
+      "type": "audio",
+      "text": "And we can do shortcuts that are basically the capitalized version of disease or anything except the thing, right? So back slash capital W means anything except a letter number."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3592,
+      "type": "audio",
+      "text": "Back slash D or capital D means anything except a digit and so on for capital back slash capital S anything except a space."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3594,
+      "type": "audio",
+      "text": "OK, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3602,
+      "type": "audio",
+      "text": "How do we match lower case alphabetic strings that have a repeated vowel?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3622,
+      "type": "audio",
+      "text": "So take a second and figure out a regular expression that matches this lower case alphabetic strings with only with at least one repeated vowel in them. So like bizarre counts because there's a AA beetroot, you know, EE double O radii and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3624,
+      "type": "audio",
+      "text": "All right, take a second turn to the person next to you and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3642,
+      "type": "audio",
+      "text": "All right, discuss. Let's."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3644,
+      "type": "audio",
+      "text": "I want to hear more."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3647,
+      "type": "audio",
+      "text": "Chatting with your neighbors about the question."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3776,
+      "type": "audio",
+      "text": "All right, so how would we go about making a regular expression to do this right? Lowercase alphabetic strings with a repeated vowel?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3806,
+      "type": "audio",
+      "text": "So again, let's go to regex101.com and again, we've constructed these positive negative examples for you. It's a useful skill to think about how you would construct them yourself for a problem we worked on. Usually the positive examples you can copy paste from whatever you're trying to extract, but it's often helpful to make negative ones to make sure you don't catch extra stuff. OK, so we want to catch repeated valve, right? If you want to catch anything that's like a A or EE or I, double I."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3808,
+      "type": "audio",
+      "text": "O or W."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3814,
+      "type": "audio",
+      "text": "Great, so this now matches."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3823,
+      "type": "audio",
+      "text": "These double vowels, but it doesn't match the whole word right? We want to match the entire word with that repeated vowel in it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3844,
+      "type": "audio",
+      "text": "So how do we go about matching the entire word? Well, we have to make sure that we only match alphabetic characters before and after. So you have to have lowercase letters at the end and we have to capture all capture all the lowercase letters at the beginning."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3850,
+      "type": "audio",
+      "text": "Great. And using this now we match the lowercase words with this invent."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3861,
+      "type": "audio",
+      "text": "So let's just like, think about these other choices real quick, right? What happens if we had done this one instead, right? AEIOU twice? Well, the problem with this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3864,
+      "type": "audio",
+      "text": "If I."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3867,
+      "type": "audio",
+      "text": "Were to replace this with Aiou."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3885,
+      "type": "audio",
+      "text": "Two times is that it matches any vowel and then any other vowel, right? This says anything from this character class that is any one of these guys, right? Right. Remember character classes is like A or E or I or O or U."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3895,
+      "type": "audio",
+      "text": "Anyone of these and then another anyone of these. So if you want both of them to be the same, you have to do a A or EE or I, I or UU."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3903,
+      "type": "audio",
+      "text": "OK, so that's another example of how we would use more of these different things."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3925,
+      "type": "audio",
+      "text": "So these parentheses, these groups are useful for sort of defining things. They're called capturing groups. And we'll see a little more about like how they're extracted and used a little later. But let's go on to, well, let's take a one minute stretch break. We're a little short on time, but we have enough time for a break. So get up, take a stretch."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3926,
+      "type": "audio",
+      "text": "Take a deep breath."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3930,
+      "type": "audio",
+      "text": "I'm going to stretch up here as well."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 3933,
+      "type": "audio",
+      "text": "Good opportunity to get some fresh air."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4012,
+      "type": "audio",
+      "text": "All right, just a little fun as we wrap up our stretch break. There's this great site, regex crossword.com, where you can get some practice with regular expressions and a fun little like game crossword type game. Definitely recommended. I learned about this from Josh and like stayed up late on Sunday night just playing a bunch of them. If you also, if you want to like extract e-mail addresses with regular expressions, here is the regular expression you need to do it. It's like super long. I'm like standing up here and I can actually read it."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4037,
+      "type": "audio",
+      "text": "Looking at my computer screen, I can't. There's a link to the Stack Overflow discussion. The e-mail spec is actually super complex. OK, enough of that. Let's get back to more regular expressions. So I want to talk about greediness. So in regular expressions, the multipliers, sometimes the quantifiers star and plus, right, which are like at least one or zero or more."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4039,
+      "type": "audio",
+      "text": "They are greedy."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4047,
+      "type": "audio",
+      "text": "In regex, they are greedy. What does that mean? That means that they look for the longest possible match in a string."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4058,
+      "type": "audio",
+      "text": "So for example, let's suppose I have this string that looks like regex, that looks like division, then dot star, then division, so the star."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4078,
+      "type": "audio",
+      "text": "Regex interprets this as being greedy. If you think of regex like Scrooge Mcduck, right? So the way it matches it is it's like, OK, I see this division. Aha great. OK I found your pattern now I'm going to keep going and see if I can find the whole thing. dot star. That means dot is any character star is 0 or more times."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4085,
+      "type": "audio",
+      "text": "So the regex is going to say let me get as many of these as I possibly can."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4092,
+      "type": "audio",
+      "text": "Right. So character, character, it's going to keep taking as many as it possibly can."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4096,
+      "type": "audio",
+      "text": "All the way until it sees a."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4101,
+      "type": "audio",
+      "text": "Closing division right, which is like with the backfoot and then it finds this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4122,
+      "type": "audio",
+      "text": "Right. So here it grabs as much as it possibly can, right? It's like greedy as it's walking through the string trying to like match. So this regular expression will match the entire string once. What it will not do is it will not match this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4124,
+      "type": "audio",
+      "text": "And this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4132,
+      "type": "audio",
+      "text": "Because it's greedy, right? Because it's going to be hard to grab as much as possible. There are some cases where you don't want to be greedy."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4135,
+      "type": "audio",
+      "text": "So again, how does this greediness work well."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4150,
+      "type": "audio",
+      "text": "If we think about in English what this regular expression says is it says look for the exact string, angle, bracket, Div, close angle bracket and then grab every character except new line dot."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4158,
+      "type": "audio",
+      "text": "Until the final instance of the string, you know less than slash Div greater than."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4166,
+      "type": "audio",
+      "text": "So it's going to grab the entire thing, right? Look for division, then grab as much as you possibly can."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4171,
+      "type": "audio",
+      "text": "Until you see the string division the last possible time."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4175,
+      "type": "audio",
+      "text": "To try to take as much of the string as you can, right? So be greedy."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4197,
+      "type": "audio",
+      "text": "But in some cases you might not want to be greedy, right? So how do you tell regex to like stop giving Scrooge Mcduck? Well the way you do it is by using the non greedy versions of star. Or if using plus, the non greedy version of plus. What is a non greedy version? The non greedy version is star question mark."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4205,
+      "type": "audio",
+      "text": "And if you're thinking, hey wait a second, I thought question mark meant something. Yes it does, but it also means this. So if question mark comes right after a *."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4212,
+      "type": "audio",
+      "text": "Then it means use the non greedy version of."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4213,
+      "type": "audio",
+      "text": "The Star."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4222,
+      "type": "audio",
+      "text": "Or not."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4222,
+      "type": "audio",
+      "text": "So question mark means two different things depending on is it immediately after a star or plus."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4231,
+      "type": "audio",
+      "text": "If it is then it means make that star plus a non greedy and if it's not then it means your typical zero or one."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4248,
+      "type": "audio",
+      "text": "OK, you have cases where you want to like do non greedy operations. Just good to know. Again, do you have to memorize this? No, but it's good to know this exists. You will run into this at some point and it's good to know, oh I need to look up how to do the non greedy version."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4253,
+      "type": "audio",
+      "text": "All right, let's do one final set of regular expression building blocks."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4267,
+      "type": "audio",
+      "text": "So sometimes you want like a plus, right? Like let's say I'm trying to have a regex that captures arithmetic expressions. I actually want my pluses, right? I don't want my plus to be interpreted as a special character. I want to catch the plus and the string."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4285,
+      "type": "audio",
+      "text": "So regular expression has a way to do that. We use backslashes. So if I say back slash, then it tells the regular expression whatever the next character is. Read that literally. Even if it's a meta character, even if it's a special character, just do the plus, don't do like the special thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4290,
+      "type": "audio",
+      "text": "So a back slash plus B matches A+B."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4301,
+      "type": "audio",
+      "text": "So this tells regular expression read this as A + B instead of like plus being some special you know more than one or more."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-331-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4322,
+      "type": "audio",
+      "text": "There's also to match the beginning or end of a string, so caret or power right. The sign matches the beginning of a string, so carrot ABC matches ABC 123, but it does not match 123 ABC right because the beginning of the string is not right before the A for this one."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-332-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4328,
+      "type": "audio",
+      "text": "So again, this is another symbol that has a different meaning depending on where it is."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-333-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4356,
+      "type": "audio",
+      "text": "We saw that the this symbol means not when it's inside brackets and it means the start of the string when it's outside brackets. So important difference to keep in mind. Question mark and carrot or power sign mean different things depending on where they are. This is the beginning of the string. What about end of the string? We can match dollar sign for the end of the string. So ABC dollar will match."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-334-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4358,
+      "type": "audio",
+      "text": "123 ABC because."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-335-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4384,
+      "type": "audio",
+      "text": "The C is the end, right? So C dollar the N is the ending is right after the C, but it does not match this one because there's more stuff after the CI Always forget the which one is like the beginning? Which one is the end? There's a helpful mnemonic from this textbook, Learning regular expressions or data science. And R presidents often like end up rich, right? So presidents like start with power."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-336-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4390,
+      "type": "audio",
+      "text": "This power symbol and end with money, right? It's like start with power and with money, maybe helpful mnemonic."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-337-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4396,
+      "type": "audio",
+      "text": "OK, so now let's use these last couple tools to do one more slido."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-338-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4405,
+      "type": "audio",
+      "text": "So now I'm going to give you a regular expression which is kind of like long and complicated, and I want to ask you which one of these strings is it going to match?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-339-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4409,
+      "type": "audio",
+      "text": "Right, so here's my regular expression."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-340-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4413,
+      "type": "audio",
+      "text": "Starting here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-341-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4415,
+      "type": "audio",
+      "text": "Whoops, that's not what I wanted to do."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-342-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4422,
+      "type": "audio",
+      "text": "I guess I can't draw on the slide."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-343-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4424,
+      "type": "audio",
+      "text": "All right, well."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-344-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4432,
+      "type": "audio",
+      "text": "I can't draw on the slide. This right here is a lowercase L This is not a."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-345-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4441,
+      "type": "audio",
+      "text": "Again, all right, this right here is a lowercase L. It is not a pipe. It's a lowercase letter L All right, take a second and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-346-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4578,
+      "type": "audio",
+      "text": "All right, so how do we go about parsing this regular expression? So instead of typing this in, I'm going to just go through and walk through this as if I were doing it and just like show you how I parse this regular expression in real time. OK, so first thing I notice is that it starts with a caret. So that means it is going to match. It starts with a caret and ends with a dollar sign. So it is going to have to match entire strings, right? It's not going to match."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-347-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4583,
+      "type": "audio",
+      "text": "Parts or substrings. It has to match the whole thing, so it has to start with W plus."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-348-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4606,
+      "type": "audio",
+      "text": "So anything that has a W at the beginning, one or more times will match. Alright, so this one is good. All the WS up to here, this one, Nope, doesn't start with a W. This one WW up to here, this one a single W Yep, this one www.all right, so I've eliminated 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-349-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4609,
+      "type": "audio",
+      "text": "And then next we have the."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-350-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4621,
+      "type": "audio",
+      "text": "Backflash dot. What does that mean? back slash again is the escape character, right? We call back slash the escape character, meaning take the next whatever comes next and treat it literally."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-351-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4636,
+      "type": "audio",
+      "text": "Not a special character, just treat it like the actual period. So I want to find periods all right here, good, here, good, here, good here good. OK, so far all of them are still in."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-352-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4642,
+      "type": "audio",
+      "text": "And next I want to find B and then E1."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-353-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4645,
+      "type": "audio",
+      "text": "East 01 times."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-354-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4653,
+      "type": "audio",
+      "text": "So here B&E great. Here B, there's no east, but that's OK because E 01 times because it's a question mark."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-355-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4657,
+      "type": "audio",
+      "text": "Here, B&E. Here B&E."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-356-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4660,
+      "type": "audio",
+      "text": "Next we have."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-357-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4666,
+      "type": "audio",
+      "text": "R which all of them match the R Kind of boring."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-358-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4672,
+      "type": "audio",
+      "text": "And now we have this group. So this group."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-359-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4676,
+      "type": "audio",
+      "text": "Is either OCO or KE."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-360-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4687,
+      "type": "audio",
+      "text": "So this one KE, we're good. This one Oco, we're good. This one Oco, we're good. This one KE, we're good."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-361-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4689,
+      "type": "audio",
+      "text": "All right, next we have."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-362-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4691,
+      "type": "audio",
+      "text": "The letter."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-363-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4694,
+      "type": "audio",
+      "text": "One or more times."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-364-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4698,
+      "type": "audio",
+      "text": "All right, over here we have L1."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-365-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4706,
+      "type": "audio",
+      "text": "Here we have two L's with our little misspelled broccoli, Here we have 1L, and here we have 1L."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-366-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4711,
+      "type": "audio",
+      "text": "All right, next we have dot *."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-367-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4725,
+      "type": "audio",
+      "text": "So when we see a dot star, we have to look at what's after it to see how it's going to match. So it's going to grab as many non new lines as it can until whatever's next. Well, what's next? What's next is a back slash dot."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-368-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4732,
+      "type": "audio",
+      "text": "So grab as much as you can until the last dot."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-369-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4738,
+      "type": "audio",
+      "text": "All right, so in this one that just means grab the EY."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-370-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4745,
+      "type": "audio",
+      "text": "And this one, that means just grab the eye. This one grabbed EY. Grab the EY."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-371-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4749,
+      "type": "audio",
+      "text": "So, so far all of these are still in still contenders and then."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-372-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4751,
+      "type": "audio",
+      "text": "We're going to look."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-373-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4755,
+      "type": "audio",
+      "text": "The dot is in all of them, right? So."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-374-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4757,
+      "type": "audio",
+      "text": "I have that and all of them."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-375-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4774,
+      "type": "audio",
+      "text": "And then I want to grab either Edu or COM. Well, all of them have an Edu or a COM. So that's so far so good. And then now I want to find the end of the string."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-376-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4783,
+      "type": "audio",
+      "text": "So here it ends right after Edu. Great this one matches. Also ends after com. Great this one ends after Edu. Great this one does not end after Edu."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-377-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4787,
+      "type": "audio",
+      "text": "Right, there's more stuff, so this one does not match."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-378-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4792,
+      "type": "audio",
+      "text": "So that's why these three are correct and the other two are not."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-379-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4813,
+      "type": "audio",
+      "text": "Right. So this is how we read a regular expression, right? We go through each thing and think about what it means in regular expression land, which again, you have to look up most of the time, right? I just know it because I've just been standing here for an hour talking about it. But it's OK to have to look these up, understand what they mean, and figure out how they work."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-380-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4816,
+      "type": "audio",
+      "text": "OK, questions on this example."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-381-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4829,
+      "type": "audio",
+      "text": "This is tricky. Don't don't like feel bad if you didn't get it. This is meant to be a hard question to sort of like push the limits of what you know about regular expressions using the tools we've built so far."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-382-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4833,
+      "type": "audio",
+      "text": "Alright."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-383-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4857,
+      "type": "audio",
+      "text": "So the tools we've given you, the building blocks, this is not the entirety of what there is regular expressions. There's a lot more beyond what we covered in this in this lecture. In general, you shouldn't have to like memorize all of it, but you can always go and look it up, right? It's always worth Googling how do I do this or that in a regular expression and then bring that into your regex."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-384-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4863,
+      "type": "audio",
+      "text": "You can also do a lot more in Python with like matching, splitting, search and replace."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-385-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4867,
+      "type": "audio",
+      "text": "You can play around with different groups, there's a lot more."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-386-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4872,
+      "type": "audio",
+      "text": "That you can do."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-387-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4883,
+      "type": "audio",
+      "text": "So in fact even in Google Slides, if I do a find right, if I hit command F and do a find."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-388-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4910,
+      "type": "audio",
+      "text": "Then I pull up the little find bar, right? And if I click the little dot dot dot, it shows me, hey, I can find and I can actually use regular expressions. So they're not just for Python. You can even use regular expressions in like searching in Google Sites. You can use them in a lot of places. It's a really awesome feeling when you have like a bunch of code or like a whole notebook and you do a big find and replace using regular expression."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-389-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4912,
+      "type": "audio",
+      "text": "Very satisfying, so definitely a really powerful tool."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-390-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4916,
+      "type": "audio",
+      "text": "To know how to use."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-391-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4924,
+      "type": "audio",
+      "text": "OK, so let's now end by talking about how we actually use regular expressions in Python."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-392-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4933,
+      "type": "audio",
+      "text": "So before we start and actually do that, we have to talk about something called raw strings. It's kind of an annoying detail, but it's important."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-393-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4942,
+      "type": "audio",
+      "text": "So when we define patterns regular expressions in Python, we always start by putting an R before our strings."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-394-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4959,
+      "type": "audio",
+      "text": "Why? Because remember I told you, in regular expressions, backslashes mean treat the next character as just the character. Don't treat it as special, you know, even if it's a dot, just treat it as a literal period, not as like the special, you know, any character character."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-395-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4991,
+      "type": "audio",
+      "text": "The problem is that Python also uses backslashes as escapes, right? And we already kind of saw that when we saw like the new line at the end of the character at the end of the string, right? Python uses back slash N to do that. So if you type a Python string with backslashes in it, Python is going to read those backslashes and be like, hey, you're telling me Python stuff, not regular expression stuff. So if you want a regular expression string to be used in Python."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-396-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4994,
+      "type": "audio",
+      "text": "You have to put R at the beginning so Python doesn't read the back slash."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-397-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 4999,
+      "type": "audio",
+      "text": "So what's an example of that? So suppose you have the regular expression AB *."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-398-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5012,
+      "type": "audio",
+      "text": "No, back slash isn't here. Doesn't matter if you use a rostring or a regular string. But let's say you have this regular expression again, quick refresher, what does this mean? This means any."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-399-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5020,
+      "type": "audio",
+      "text": "Digit or number character or letter or number character one or more times and then any white space one or more times."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-400-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5035,
+      "type": "audio",
+      "text": "And so this is how we would write it if we have an R at the start. But again, if we want to write this as a standard string, we would need extra backslashes to tell Python, hey this back slash. Don't like treat it as something in Python. Just you know, this is part of my string."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-401-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5065,
+      "type": "audio",
+      "text": "So again, always put Rs to begin your strings. If we have time at the end, we'll do a little demo. If not, you can always check it out on the notebook on how sometimes you need 4 backslashes. There's also this article on like the back slash plague and how it can get annoying to have to do this. OK, with that enough, let's talk about how we actually do this in Python. So again, I told you there's this re module in Python. So if you want to find all the matches to a pattern, a regular expression in some text."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-402-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5069,
+      "type": "audio",
+      "text": "Then you say re find all and you give it the pattern and the text."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-403-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5071,
+      "type": "audio",
+      "text": "So how does this work?"
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-404-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5078,
+      "type": "audio",
+      "text": "You say give it some text, right? Here's my string and then I give it my pattern."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-405-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5108,
+      "type": "audio",
+      "text": "And I say, find all pattern text. And again, this pattern looks like the one that we were playing around with at the beginning, right? But now we have the tools to know what this means, right? Zero to 9 means any digit at three times, exactly 3 times, Dash a digit exactly 2 times, dash a digit exactly 4 times. So this is a regular expression pattern. So this will match in this string. It'll say, OK, I see this happening twice, right? I see it happening here. And I see it happening here."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-406-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5112,
+      "type": "audio",
+      "text": "So this gives me a list of all of those matches."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-407-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5122,
+      "type": "audio",
+      "text": "For a match in regular expression world just means any substring that corresponds to my regular expression."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-408-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5140,
+      "type": "audio",
+      "text": "In pandas I can use the dot STR dot find all method right? Which that STR has not only the normal Python string stuff, it also has a lot of the methods from the RE module. So if I have a data frame that looks like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-409-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5144,
+      "type": "audio",
+      "text": "Right then and I do not find all."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-410-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5150,
+      "type": "audio",
+      "text": "Then I get this back right. This will give me my."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-411-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5157,
+      "type": "audio",
+      "text": "It'll do the same that thing for every row. So for this one it'll give me just the one item as a list."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-412-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5160,
+      "type": "audio",
+      "text": "Notice this gives me a series of lists, not a series of strings."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-413-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5169,
+      "type": "audio",
+      "text": "This one gives me the empty list, this one gives me a two element list and this one gives me a one element list with that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-414-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5193,
+      "type": "audio",
+      "text": "Parentheses we said sort of are like this is a group. We can have them mean something called capture groups. So there's some functions that only extract text matched by groups. So for example, if I do this, which is like a regular expression for time right digit digit colon digit digit colon digit digit, I can use these."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-415-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5203,
+      "type": "audio",
+      "text": "If I do find all, it'll capture each of these different groups in parentheses as a tuple, right? So this will be 830 and 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-416-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5233,
+      "type": "audio",
+      "text": "There are ways to like have it not do that little beyond the scope of the class. How do we do that? Well, we call dot extract and that will give me all instances of this. This is not the find all result. This is the raw data frame. So if we have this data frame and we call dot extract, then this will pull out the pieces, right? So this is useful if we want to pull out pieces out of a larger pattern that we match, right? Let's say that those logs we match like the brackets and the time we don't."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-417-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5248,
+      "type": "audio",
+      "text": "To extract the brackets, we just want to extract the time we can extract this way. So this will pull them out as columns. You can rename the columns, there's an example in the notebook. Similarly in Extract All you can do that."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-418-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5250,
+      "type": "audio",
+      "text": "Yeah, this is not the final result."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-419-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5259,
+      "type": "audio",
+      "text": "There's substitution you can do find and replace. This will replace any instances of a pattern with a replacement string."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-420-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5269,
+      "type": "audio",
+      "text": "So here if we have this string, you know, stuff, and we have a pattern, it'll replace any instances of that pattern with the text."
+    },
+    {
+      "id": "audio-ds100-sp26-1770334367-transcription-421-c0-e0",
+      "lecture_id": "ds100-sp26-1770334367",
+      "timestamp": 5287,
+      "type": "audio",
+      "text": "All right, we'll talk a little bit about some limitations of them at the beginning of next class, where we'll also start talking about visualizations. Have a good weekend. Don't forget Homework 2 is due on Friday. 2A Josh's officers are on Friday. My officers are on Monday. See you on Tuesday."
+    }
+  ]
+}

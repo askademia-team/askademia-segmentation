@@ -1,0 +1,2256 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1771371437",
+  "display_name": "Lecture 9 (Feb 17)",
+  "count": 321,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 32,
+      "type": "audio",
+      "text": "Thank you."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 210,
+      "type": "audio",
+      "text": "Hello data 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 240,
+      "type": "audio",
+      "text": "I was getting lecture withdrawals. That's the longest I've gone without lecturing in a while. I had a guest lecture for somebody else this morning too, so I'm getting lots of lecturing in today. But let's go ahead and get started. I really, really love this lecture. We got a very fun case study for today with a very cool payoff at the very end of lecture. So please stick around to the end to see something pretty interesting. Feedback on open-ended questions. I've heard less chatter about the open-ended questions this semester than in the past semester."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 270,
+      "type": "audio",
+      "text": "We always love to hear your thoughts. Curious what you think about them. Those were introduced in the last semester as a way to give you a little bit more real world data science experience and start getting used to tackling these sort of open-ended, thornier questions. And it can feel kind of uncomfortable and weird because it might be the first time you've done anything like this. But that's good. I want you to feel that way. OK, Lab 3 tonight, homework three, do Friday. Homework 3 is on the longer side, kind of an interesting one where you're looking at New York Times articles."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 272,
+      "type": "audio",
+      "text": "Grades are out for 2A."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 302,
+      "type": "audio",
+      "text": "Homework and lab regrade request policy. Take a look at Ed. This is the most important thing today. Starting with the next lecture in Data 100, things start to get more mathematically rigorous and the calculus comes into play. The linear algebra starts to come into play. This tends to be where people have the most trouble in Data 100. So please, if you find yourself falling behind or struggling, that's expected. This is not easy material. Sign up for a tutoring session. Come to my office hours. Come to Ramesh's office hours."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 331,
+      "type": "audio",
+      "text": "Come to regular office hours and we will help you out. Many thousands of students before you have gone through this just fine. Just remember to reach out for help early. Don't wait until you need catch up on 10 lectures. OK, the first midterm, by the way, we'll cover up to today's lecture. So this is the last bit of material on the 1st midterm. OK, road map. We're going to talk all about sampling today. And there's some news about sampling real news right now that's that's kind of relevant to today's lecture, kind of funny. So we'll start with this."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 359,
+      "type": "audio",
+      "text": "Of censuses and surveys. So what is a census? So there is something called the census, but what is just a census? A census is when you can completely count every single individual in a population. This is really hard. Every single individual is included. What is a population? A population is every single individual that you are interested in studying. Every single one."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 362,
+      "type": "audio",
+      "text": "In some cases, you might not even conceptualize a population as a finite."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 384,
+      "type": "audio",
+      "text": "Number of people. Often we think of the population as a data generating process in statistics that can generate an infinite number of observations. The population is this really big thing, OK, Example populations, people who are all living in a particular country, all the bacteria in your gut if you're trying to study them, all the trees of a certain species and so on, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 416,
+      "type": "audio",
+      "text": "So what is the census? The census is the US decennial census. This is actually mandated by the Constitution. This isn't something that came later. The Constitution literally says we have to do this every 10 years. It's an incredible undertaking. Last one was in 2020, a whole bunch of problems because of COVID. Next one won't be until 2030. And so this attempts to count every single person in the United States. It absolutely does not capture every single person. It's basically impossible to do that, but the government tries really hard."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 432,
+      "type": "audio",
+      "text": "Figure out every single person who lives, they will hire people to go door to door to make sure that you're counted even if you don't reply to your mail. And the census ends up giving us some really interesting data. And in future data science projects, you'll be playing around with this data all the time. So it's good to get used to the census website, I think in homework."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 461,
+      "type": "audio",
+      "text": "Five, I'll have you go on the census website and play around a little bit. That'll be new, so take a look at this. So this is census data on the left from 2010 to 2020. We're looking at a bunch of counties in the United States. Blue on this plot is a decline. Red is intense growth. What do we see over this decade? The 20 tens, We see a lot of growth in Texas. You may have heard that they get more representatives than they did before. Florida exhibited huge growth."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 463,
+      "type": "audio",
+      "text": "And even if you look at the Bay Area, the Bay Area even in the 20."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 468,
+      "type": "audio",
+      "text": "10s did have slight growth. It was still somewhat positive."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 497,
+      "type": "audio",
+      "text": "In this time, but then you look, how about 2020 to 2023 and you can see some other very interesting patterns. So still there's this big exodus of people along the, oh, we don't want that Mississippi River Delta. Did you see the message from my grandma along the Mississippi River Delta? We can see that exodus is still happening, but we see some interesting patterns too. So you might have heard of all these people from the Bay Area moving to Idaho. Look how blue Idaho is on the right. The color scale is reversed. Tons of people going to Idaho."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 499,
+      "type": "audio",
+      "text": "In the last couple of years."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 529,
+      "type": "audio",
+      "text": "It's cheaper, a lot of space. And then you can also see this exodus of people from the Bay Area. You can see it's a little more red now here. And that's when the population of the Bay Area started tipping down around COVID. So you can see these just, you know, super interesting patterns even just from the raw population data. You start matching this up with other datasets and you can do all kinds of cool things. Now notice on the right, this is not the census, this is something else. It's called the ACS, the American Community Survey. So I don't know about you, but I don't want to wait 10 years for my population estimates."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 560,
+      "type": "audio",
+      "text": "And So what is the Census Bureau, do they conduct what's called the ACS on 1/3 and five year intervals where they try to estimate how many people are in the country. It's not a full census. It's not nearly as extensive of a process. They sample, they reach out to people and they estimate how many people are in the United States. So if you ever need extra granular estimates of population, maybe that are more recent, you can use ACS data. These are just terms I want you to be familiar with because you probably will be using this data at some point either during."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 561,
+      "type": "audio",
+      "text": "College or afterwards?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 592,
+      "type": "audio",
+      "text": "OK, So what is a survey? What is a survey? So a census is when you survey the whole population. A survey is just a set of questions or measurements that you might ask somebody. Undergrads love to write their surveys. We'll talk a little bit about that in a bit. It's a useful lecture to learn how to write better surveys as an undergrad. On the right, we can see an actual census form from 2020. It's a literal form you have to fill out. You don't have to, you know, you're contacted to try to fill out and people actually go door to door trying to get you to fill this out. It's an absurd undertaking. If you look at the left here, here's."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 615,
+      "type": "audio",
+      "text": "A lot of federal employment over the last, you know, 100 ish years and you can see federal employment went way up during World War 2. And then there are these like weird spikes every 10 years. They're huge spikes. I mean, the census increases the number of federal employees like crazy in the United States. I really want to emphasize how difficult it is to conduct a census. Tons and tons of federal employees are needed."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 643,
+      "type": "audio",
+      "text": "OK, what is sampling? So the census is ideal, right? Ideally we want to go around and actually look at every single person in a particular population, but it's really hard to joke. And So what do we have to do instead? We have to often, almost always settle for what's called a sample. A sample, some subset of a population. All I set a sample. I didn't say it was random yet. A sample is just a subset of a population. There's different kinds of samples. Good term for you to be familiar with inference."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 644,
+      "type": "audio",
+      "text": "You all took data 8."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 677,
+      "type": "audio",
+      "text": "Inferential thinking. That's referring to the word inference. What is inference? Inference of the process of drawing a conclusion about a population based on a sample. Let's look at a picture of this on the left. We can imagine this is a population. It's a pretty small population if each one of those smiley faces represents one individual. But you can imagine the population being a really large group of individuals. The process of sampling is extracting individuals from that population into."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 686,
+      "type": "audio",
+      "text": "Sample in the process of inference is trying to say something meaningful about the population without total access to it. Using just a sample, how can we infer?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 718,
+      "type": "audio",
+      "text": "Information about the population. Really important key term to know inference. As a data scientist, that term will get thrown around. You should know what that means. And like I mentioned, we often think of a population as having infinite size. We can't actually count all of the individuals in a population, and we'll see later in the Class 2. Sometimes we think of it not as an actual group of individuals, but instead as a process, like a machine that generates individuals. And we can generate as many as we want, but more when we get to inference later in the class."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 724,
+      "type": "audio",
+      "text": "So, fun part? Let's talk about a case study of sampling."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 726,
+      "type": "audio",
+      "text": "Two people."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 728,
+      "type": "audio",
+      "text": "On the left, Who's on the left? You can yell it out."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 730,
+      "type": "audio",
+      "text": "Great. Who's on the right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 733,
+      "type": "audio",
+      "text": "In what year?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 737,
+      "type": "audio",
+      "text": "I guess I gave it 36. Does anyone know who was? I don't either. It was a guy named Alf Landon."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 762,
+      "type": "audio",
+      "text": "Alf Landon obviously wasn't. I mean, maybe he was successful in his time, but we don't remember who he is. We remember Roosevelt though. So in 1936 there was an election. This wasn't the first time Roosevelt ran. He also ran in 1932. It's always a good trick question. Who was president when the Great Depression started? Not FDR. Hoover was president. Roosevelt got elected in 19321936 comes around. It's another election between Roosevelt and Landon."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 764,
+      "type": "audio",
+      "text": "And so."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 768,
+      "type": "audio",
+      "text": "Just like we do now, everybody wants to know who's going to win the election."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 796,
+      "type": "audio",
+      "text": "Right. We didn't have quite prediction markets then at the scale we have now an online gambling trying to predict who's going to be president. But people want to know. So there are these election polls that were conducted to try to predict the outcome and people went pretty crazy with these election polls. So let me show you Literary Digest is a magazine that no longer exists, but was very, very popular because it predicted a lot of elections correctly around this time and so in 1936."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 799,
+      "type": "audio",
+      "text": "They had successfully predicted a bunch of outcomes 5 elections before 1936."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 829,
+      "type": "audio",
+      "text": "They've done a great job. And So what do they do in 1936, Right. They're on their sort of high horse here. They've done great. They send a survey to 10 million people in the United States. They don't get to send an e-mail. Think about how hard it is in 1936 to individually put together letters to 10 million people just to figure out the results of a poll that goes in a magazine. This is an absurd undertaking that you should try to appreciate as you think about the history here. And so where do they get these 10 million people from? Well, they look at phone books."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 839,
+      "type": "audio",
+      "text": "They look at all of the subscribers to their magazine. They contact all of them. They look at automobile registrations, Everybody who owns a car, they can call them up and ask them."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 864,
+      "type": "audio",
+      "text": "Just really think about this labor. It's an absurd undertaking. And So what do they do? So they, they send out 10 million of these letters and they actually have a pretty crazy response rate. They get 2.4 million letters back, 24% response rate. Not incentivized. People don't get anything for this. People were much friendlier in 1936, right? And what do they get? They, they, they, their sample says that."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 877,
+      "type": "audio",
+      "text": "43% of the people who responded, not of all 10 million, but of the people who responded, 43% plan to vote for Roosevelt, which points to a pretty big landslide for Mr. Alf Landon."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 906,
+      "type": "audio",
+      "text": "We know that didn't happen, but this giant sample, this crazy undertaking leads us to think 43% of people are going to vote for Roosevelt in the actual election. Roosevelt won in a landslide, 61%, one of the largest election landslides in history, almost 20 percentage points off. Notice all voters, 45,000,000 voters in the country. They contacted 10 million people. It's absurd. When we think about polls now, it's usually 250 registered voters or 500 or 1000. They sent it to 10 million. So what happened? Talk with your."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 910,
+      "type": "audio",
+      "text": "Why did this happen? Speculation is good here. If you got questions, raise your hand, I'll come around."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 922,
+      "type": "audio",
+      "text": "And I always like to say there's no need to whisper. I like, I like a loud Wheeler Hall."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 947,
+      "type": "audio",
+      "text": "Another thing I want to remind people too because I like to remind over the whole semester."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 978,
+      "type": "audio",
+      "text": "The skill of being able to talk about data science doesn't suddenly show up when you do a bunch of homework silently by yourself. It's a practice skill. So you can either spend the three seconds talking to your neighbor now and getting used to it, or you can try to cram before your interviews later when it won't stick as well. I promise even if it's uncomfortable, I don't like talking to new people either in a lecture hall talk. I promise it will serve you well. Just like how I say come to lecture. I prefer to watch lecture recordings too. I have a horrible time trying to pay attention lecture but it's a skill."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 994,
+      "type": "audio",
+      "text": "Being able to sit here and learn how to actually pay attention in person because your life doesn't run on asynchronous recordings at 2 times speed as much as you want to. OK, I struggled a lot when I came out of college into my first job because I couldn't pay attention in meetings. Everything was too slow and I couldn't rewind."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 997,
+      "type": "audio",
+      "text": "OK, let's see what people think."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1012,
+      "type": "audio",
+      "text": "Bias people, Sample sampling bias, Response bias. Anything fun? Nothing fun. This is good. Some sort of bias? Some sort of sampling bias? Something wrong with the sample? So what do we think?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1014,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1032,
+      "type": "audio",
+      "text": "Keep in mind, who did they contact? They contacted a bunch of phone books, they contacted a bunch of Literary Digest subscribers. They contacted a bunch of people who had automobile registration. So there's 2 problems here, not just one. There's 2 problems here. One, it was not representative of the population."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1046,
+      "type": "audio",
+      "text": "To subscribe to a magazine, you need money. To subscribe to Literary Digest, you're probably a little more educated than the average person in the United States at the time. To have a car, you need to have money. You need to live in a place where having a car makes sense."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1049,
+      "type": "audio",
+      "text": "The people who were sampled tended to be more affluent and were more likely to vote Republican."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1072,
+      "type": "audio",
+      "text": "So that's part of the reason why. But as it turns out, the bigger reason why this happened, that was not the bigger reason why this happened. The primary reason this was so off was because of something called non response bias. Non response bias, you know, it says only, I put only in quotes here because it's pretty crazy that 2.4 million people responded."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1077,
+      "type": "audio",
+      "text": "But the other 7.6 million people, we don't know how they would have filled out the survey."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1091,
+      "type": "audio",
+      "text": "Right. Who has time to respond to a survey? Maybe you have more money, maybe you don't have a job, your stay at home parent, something like this. You know, we don't know how these other people would have responded. And that actually turned out to be the bigger reason why this happened, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1121,
+      "type": "audio",
+      "text": "George Gallup, A, a name you might have heard in the news, like literally in the last couple days. I don't know if people saw in the last day, a couple days, Gallup polling founded by George Gallup, is no longer going to be tracking polling for presidential election. It's kind of funny. This was just in the news in the last couple days, Big news. But George Gallup, a rising statistician, also made some predictions. In 1936. He took a smaller sample size of 50,000, which is still quite large. And it actually didn't have to be that big, but he took a smaller sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1127,
+      "type": "audio",
+      "text": "Size of 50,000 individuals that was more representative. His estimate was 56%."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1156,
+      "type": "audio",
+      "text": "Much closer still underestimated the scope of this win, but did much better than the Literary Digest poll. And so what's the sort of level 1 lesson here? A huge sample size. If you just keep increasing your sample size, it doesn't fix everything. In general, it's good to have a bigger sample size, but you shouldn't just default to that answer when someone says, how can we do this survey better if there's something systematically wrong with the way you're surveying?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1160,
+      "type": "audio",
+      "text": "More of it does not improve the problem, you just have more of the problem."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1175,
+      "type": "audio",
+      "text": "Right. A bigger sample size does not fix a bad sampling method. Bigger sample size is good, and a lot of students often say we need a bigger sample size. In general. That's the case, but it's not the only problem. However, in the end of this lecture I will show you."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1177,
+      "type": "audio",
+      "text": "How the Literary Digest could have."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1186,
+      "type": "audio",
+      "text": "Use their survey results to get a pretty darn good response using methods that were available to them at the time and they were aware of."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1200,
+      "type": "audio",
+      "text": "OK, I will show you how to recover from a bad sample like this or a non representative sample because ultimately this is like one of the lessons you want to take away but you want to nuance it a little bit. The best way to get a random or the representative sample is by randomizing."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1202,
+      "type": "audio",
+      "text": "If we can randomize."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1234,
+      "type": "audio",
+      "text": "We're much more likely to get a representative sample, and that's often where the story ends in an introductory statistics class. But in reality, when you're actually on the job, when you're actually collecting information, your sample is probably not going to be random. Random samples are really, really hard to collect. And randomizing can sometimes be an unethical thing, right? Can I randomize people to smoke or not to smoke for a lifetime, right? It's like, not ethical, right? Can I randomly select a bunch of people and like, give them cigarettes and randomly?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1255,
+      "type": "audio",
+      "text": "That can't, like, force these things. Randomization is often very difficult. And so you can't just say when you collect a sample that isn't random. Well, I can't do anything. It's not random. We need to have methods for actually fixing things. And I'm gonna give you a little bit of a taste of how to do that in today's lecture. OK, let's talk about some different sampling errors before we move on. Any questions for the big crowd before we keep going here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1257,
+      "type": "audio",
+      "text": "I'll pause for a moment."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1259,
+      "type": "audio",
+      "text": "Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1266,
+      "type": "audio",
+      "text": "What kind of non response bias they have I."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1283,
+      "type": "audio",
+      "text": "For the purpose of this lecture, just think of it as general non response bias. I recommend reading into it a little bit more deeply. I'm not an expert on this entire case, but it just people didn't respond who could have responded and they may have answered differently than other folks other questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1285,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1289,
+      "type": "audio",
+      "text": "OK, let's keep going."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1320,
+      "type": "audio",
+      "text": "All right, sampling errors. So what are some errors that we can have in sampling? So one of the errors we can have is called chance error. More formally this is called variance or variation in our sample. So random samples can end up looking like your population, they can end up totally not looking like your population. They can over represent people, they can underrepresent people. It's just a property of randomness. So chance error is this idea that our random sample can vary from what would be represent."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1352,
+      "type": "audio",
+      "text": "In either direction, either being overrepresented over representing some groups or underrepresented some groups. So what's one way to tackle specifically chance error? One way to tackle chance error is to increase your size of your sample. This is the most common way to reduce chance error. Let me give you a little bit of visual intuition here. Let's say we have a population here on the left. It's a mixed population of yellow and orange people here. So if I take a random sample of size 5, there's a decent shot I only sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1365,
+      "type": "audio",
+      "text": "Yellow folks, and I might look at this and say, well, my entire population must only be yellow folks, but there's all these orange folks in the population that I didn't sample. My sample size was small. If I take a larger sample, I'm not guaranteed."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1371,
+      "type": "audio",
+      "text": "To get a better sample, but it's more likely that my larger sample will be representative."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1386,
+      "type": "audio",
+      "text": "Larger sample is more likely to be representative of the population. How could you derive this intuition on the fly? What if I keep increasing my sample size until it's the same as the population size? Then my sample is exactly the same as my population."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1396,
+      "type": "audio",
+      "text": "Right. Larger sample, more likely to be representative. Another way to reduce chance error is to stratify your sample. We'll talk about that in a little bit."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1416,
+      "type": "audio",
+      "text": "What's Chance Error responsible for the problems with the Literary Digest poll? Give this one a go. Talk with your neighbor. Was Chance Error responsible? And when I say partially responsible here, I mean like, you know, 5%, ten percent, 15%, some substantive number. Go ahead, talk. If you got questions, raise your hand."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1495,
+      "type": "audio",
+      "text": "All right, go ahead, toss it and answer. Toss in an answer here. Was chance error responsible for the problems of the Literary Digest poll? Yes, fully responsible."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1526,
+      "type": "audio",
+      "text": "Somewhat responsible, Not at all responsible. Let's think through this a little bit. The chance error in the Literary Digest poll. So what is chance error? Remind yourself that chance error is when your sample differs from the population due to randomness. What is the population? In the case of the Literary Digest poll, they're trying to sample from all voters, right? Something nebulous. All voters, all likely voters. We're trying to get a sense of who's actually going to go vote in the 1936 election."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1532,
+      "type": "audio",
+      "text": "Their sample is a huge sample of likely voters."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1551,
+      "type": "audio",
+      "text": "But it doesn't look very representative. We saw it wasn't super representative. So the question is, is this a chance error problem if the literary digest poll were to repeat its pull? This is how you think about chance error. Think about repeating the poll. If the literary digest poll repeats its sample of 10 million in a different universe, does it do better?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1557,
+      "type": "audio",
+      "text": "No, it doesn't do any better. Same problems with the poll."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1582,
+      "type": "audio",
+      "text": "They're sampling plenty of people. 10 million out of 45,000,000. Plenty of folks, 2.4 million out of 45 million. Even those are the only ones who respond. Plenty of people. Chance error has nothing to do with the problems in the Literary Digest poll. They sampled plenty of people. The issues with the Literary Digest poll were not randomness. There was something systematically wrong with the way that people were surveyed."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1593,
+      "type": "audio",
+      "text": "And so how do we describe systematic errors in surveying? It's not chance error, it's something else. Chance error is an error that could go in either way. A systematic error is consistently in One Direction."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1604,
+      "type": "audio",
+      "text": "So bias. What is bias? Bias is a systematic error. God, my pencil is working. Sorry, a systematic error in One Direction."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1632,
+      "type": "audio",
+      "text": "In One Direction, what's the solution to bias? There's lots of different types of biases and lots of different ways to address each of those sources of biases. We can talk about a couple of those today. We will talk about a couple of those today. Just keep in mind there are other types of biases that we're not talking about today that can creep into your surveys. A lot of you will be writing surveys as part of your future jobs, and a lot of people write this off is like, oh, making surveys is easy. The modeling is what's really hard and what's important."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1634,
+      "type": "audio",
+      "text": "If you collect bad data, none of your models matter."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1637,
+      "type": "audio",
+      "text": "OK, it's a useful lecture."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1667,
+      "type": "audio",
+      "text": "So what are some common biases that you should have in mind? The first one, selection bias, Selection bias or sampling bias. This is when you systematically exclude or favor particular groups in the sample. This kind of sounds like Literary Digest systematically over representing more affluent, more Republican voters in your sample. So Literary Digest poll excluded people who were not in phone books. You didn't show up in a phone book. You wouldn't be sampled by the literary."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1678,
+      "type": "audio",
+      "text": "Digest How can we visualize this? You might imagine we have all voters. This is our population, everybody in this box. None of this is drawn to scale, but it's just one way to think about it."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1686,
+      "type": "audio",
+      "text": "We have this thing called the sampling frame. These are people who could hypothetically be sampled."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1715,
+      "type": "audio",
+      "text": "Maybe everybody who's contacted, that's our sampling frame. Useful term to know we have the population, we have the sampling frame, Everyone who could hypothetically be sampled, and then we have our actual sample of individuals and we can see that the overlap of the sampling frame in the population isn't great. There was no way for a lot of these not affluent, not Republican voters to be sampled in another sampling universe. There was a systematic error."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1717,
+      "type": "audio",
+      "text": "OK, so bad overlap of the sampling frame."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1719,
+      "type": "audio",
+      "text": "And the population?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1725,
+      "type": "audio",
+      "text": "How do you avoid selection bias randomly sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1741,
+      "type": "audio",
+      "text": "That's always good. And you can improve overlap of the sampling frame in the population. Try to actually contact everybody who's in the population. Don't systematically exclude anyone and make sure to randomly sample. Make sure to randomly sample. OK, so for example, Gallup sampling frame."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1757,
+      "type": "audio",
+      "text": "Better overlap with the population. Again, none of this is drawn to scale. It's just sort of a visual metaphor. Here in Gallup, sample looked a little bit better. Not perfect, but substantially better than the Literary Digest poll. So that's selection bias, also known as sampling bias."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1761,
+      "type": "audio",
+      "text": "Other biases. So the next bias I want to talk about."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1791,
+      "type": "audio",
+      "text": "I'm going to refer to in Data 100, This is new as of this semester. I'm going to call this reporting bias. It's most often called like if you go on Wikipedia, response bias, and that's what it's called in a lot of the past Data 100 materials. But you'll see in a minute why this term responds bias is kind of confusing. I don't want the term itself to be the reason you get tripped up. We're going to call this reporting bias, but just know on the back end you might hear this called response bias. Technically, measurement bias is a form of."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1795,
+      "type": "audio",
+      "text": "Bias, but they're often treated synonymously."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1800,
+      "type": "audio",
+      "text": "What is reporting bias? This is when what you're trying to measure."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1827,
+      "type": "audio",
+      "text": "Differs from what's being actually measured. The desired thing you're trying to measure in your population is differ than different than what's actually being measured. Let me give you a more obvious example. I asked somebody on the street, will you vote for Roosevelt or Landon? I'll give you a dollar if you say Roosevelt, right? We can like laugh at this example because it's very obvious that you're not going to get a representative sample. People are just going to lie to get their dollar. Dollar was a lot of money in 1936. That's a lot of hot dogs, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1831,
+      "type": "audio",
+      "text": "I remember my grandpa saying like hot dogs for $0.05 around there sounds sounds like a great time."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1858,
+      "type": "audio",
+      "text": "Subtle example. So do you agree that you will vote for Roosevelt? More subtle? That sounds better. But even that suffers from response bias. As humans we tend to like to be agreeable. Agreement bias? Acquiescence bias? You can take a look at that link if you're interested. There's lots of Wikipedia pages written about all these different kinds of biases. Do you agree that you will vote for Roosevelt? Is still kind of a biased way to ask this question."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1879,
+      "type": "audio",
+      "text": "How do you avoid reporting bias? It's almost impossible to fix reporting bias unless you're told in a question that it's given that people always answer truthfully and are being asked exactly what you want. It's pretty much impossible to fully avoid it, but improving your questions is the best way. It's often good to have someone who's more experienced in writing surveys review your survey."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1907,
+      "type": "audio",
+      "text": "Having somebody more experienced review your survey is very, very, very useful because we assume that we write great surveys, but undergrad surveys are horrendous. Mine were horrendous too, really bad. But it's it's something you want to improve. Non response bias. We already talked about this. This is when survey respondents differ from people who don't get back to you. So in the Literary Digest poll, only 24% of people actually got back to the Literary Digest. Those 76% who didn't respond."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1910,
+      "type": "audio",
+      "text": "Were systematically different than the 24% who did."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1940,
+      "type": "audio",
+      "text": "Respond sometimes you don't have to worry about this, and you can make the argument that people who responded were very similar to those who didn't respond using some outside results, something like this. But in general, if people aren't responding to your survey, non response bias is creeping in. How do you avoid non response bias? Again, it's not a statistical answer to this question. We just need to get more people to respond. So what can you do? Well, you can reduce the number and length of your questions. I don't know about you, but undergrad surveys that I get have way too many questions and have way too long."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1965,
+      "type": "audio",
+      "text": "Questions and with answers that are conflicting with one another, right? You gotta improve your make it a little bit more pleasant to fill out your survey, Incentivize completion. This is a little bit tricky. You don't want to incentivize people too much cuz that might induce response bias. But if you tell people when you complete the survey you're gonna be entered into a raffle, they might be more likely to fill it out, right? Again, not a statistical solution to this problem. It's a behavioral solution to this problem."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 1998,
+      "type": "audio",
+      "text": "And I know I keep repeating this, but you know, students love writing surveys. They absolutely suffer from all of this. What you really want to learn, this is like kind of a quiet lesson in data science, is this idea of really building empathy. We talk about it in visualization, and you'll see it more in the visualization homework. But you have to think like somebody who's lazy. Nobody cares as much about your survey as you. And you have to learn to step into the mind of somebody reading your survey who has limited time and doesn't really care, but maybe has a little bit of attention to fill out your work."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2015,
+      "type": "audio",
+      "text": "Or a little bit of time to read your plot. This is a skill that takes a long time to develop. You really want to think carefully about this idea of not just you understanding your work, but thinking about somebody else trying to understand your work. It's a very difficult problem, one of the biggest things that people struggle with when they go into the working world after undergrad."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2046,
+      "type": "audio",
+      "text": "OK, so some types of sampling. Types of sampling. First one is called a probability sample. We have a couple sliders to talk about. So what is a probability sample? A probability sample is when we can assign a probability to every possible combination of people being sampled. We can assign a distinct probability. So for example, let's say I have three Tas. I have a lot more than that, but let's say I have 3 Alan, Ben and Celine, AB and C, and I want to sample two of them."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2055,
+      "type": "audio",
+      "text": "To form a committee in my small court course teaching staff. OK, let's say Alan is always picked. Alan does great work. The probability of selecting Alan is 100%."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2060,
+      "type": "audio",
+      "text": "Alan will always be selected. We're going to flip a coin to pick Benner Celine for the second slide."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2069,
+      "type": "audio",
+      "text": "Just going to randomize it. They've been doing about equivalent work. I'll let it be up to random chance. So if I'm sampling 2 individuals."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2099,
+      "type": "audio",
+      "text": "I need to think about every possible combination of individuals I could sample. Well, I could pick Alan and Ben. I'm always going to pick Alan. The probability of picking Ben is 50%. Probability of picking both of them is 50%. A&C is 50%. It's impossible for me to just pick Ben and Celine. I can assign a distinct probability to each of the three possible samples. This is a probability sample. It's the only requirement. Only requirement that you can assign a probability to each possible sample that could be drawn."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2113,
+      "type": "audio",
+      "text": "A simple random sample, different kind of sampling here, often abbreviated SRS. You should be familiar with that term SRS and just know what somebody is talking about. When you think of an SRS, I want you to think of this picture."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2144,
+      "type": "audio",
+      "text": "An SRS is a names and a hat sample. So we got a big raffle and we're going to pick out a couple different names. We don't put the names back. Pick out a name, pick out another name, pick out another name. So a sample is drawn uniformly at random. Uniformly means everyone has exactly the same chance of being drawn. And we don't put names back in the hat. It's often called a names in a hat sample. And so not only does every individual have the same chance of being selected, every."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2150,
+      "type": "audio",
+      "text": "Some set of N individuals has the same chance of being selected."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2160,
+      "type": "audio",
+      "text": "So if I'm drawing a sample size of 10 and I want to know what's the probability that I pick individuals one and two in that sample of size 10, that needs to be the same as the probability of picking 6:00 and 8:00."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2178,
+      "type": "audio",
+      "text": "In that sample, every sample of size 2 has the same chance, every sample of size 3 of being selected every group. So every individual has the same chance. Every pair has the same chance as every other pair. Every triplet has the same chance as every other triplet. And you don't have to think too hard about how to guarantee this."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2190,
+      "type": "audio",
+      "text": "I like to just think about that picture and that usually clears things up. As long as you have something that resembles the picture on the right. A well mixed. This is often a requirement. A well mixed."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2197,
+      "type": "audio",
+      "text": "Thing of tickets and you're picking them out randomly, that's an SRS and when you do that."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2206,
+      "type": "audio",
+      "text": "These requirements on the left are satisfied, but I want to have you think a little bit more deeply through these requirements. I'm going to give you an example sampling scheme and then we'll do our break."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2218,
+      "type": "audio",
+      "text": "Let's say we have 1200 people on a class roster. Typical size of DATA 100 were a little small this semester at about 1000, but let's say we have 1200 people in data 100. We're going to be using this example for the rest of today."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2223,
+      "type": "audio",
+      "text": "Here's what we're going to do. I'm going to put them all in a random order in a line."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2253,
+      "type": "audio",
+      "text": "In my computer, OK, and I'm gonna pick one of the 1st 10 people in the line at random, and then after that I'm gonna pick every 10th person after that until I get to the very end of the list. So let's say I randomly chose student number 3 and that list of 10. I'm gonna choose 13, I'm gonna choose 23, I'm gonna choose 33, and so on. Here's a picture for you. We have a bunch of people in data 100 and fun costumes here. You're the 1st 10 people. I'm gonna randomly select a person and I pick the third."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2254,
+      "type": "audio",
+      "text": "Person."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2256,
+      "type": "audio",
+      "text": "Then I'm going to pick the."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2263,
+      "type": "audio",
+      "text": "10th person after I'm going to count 10 spots, I'm going to count 10 spots and I'm going to keep doing that until I get to the end."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2287,
+      "type": "audio",
+      "text": "So this is the sampling scheme I'm setting up for you. This is the sampling scheme. I have three questions for you to answer. We're going to do them sequentially on Slido. Is this a probability sample? Does each student in the class have the same probability of being selected? And is this a simple random sample? So let's start with the first one. Is this a probability sample? Talk with your neighbor."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2316,
+      "type": "audio",
+      "text": "And if you got questions, raise your hand, I can come around."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2435,
+      "type": "audio",
+      "text": "Ability sample. Yes, it is. There are 10 possible samples that we could collect, dictated by which person is picked in those first ten. Once we pick somebody in that first 10, the rest of the sample is deterministic. We always skip ahead 10 and pick every person that comes every 10, right? There's 10 possible samples."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2442,
+      "type": "audio",
+      "text": "Each one is equally likely. Each one has probability one out of 10. There's no other samples that we could collect."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2451,
+      "type": "audio",
+      "text": "OK, this is a probability sample. Next question, does each student have the same probability of being selected? Does each student in data one have 100 have the same probability of being selected?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2455,
+      "type": "audio",
+      "text": "And again, if you have questions, raise your hand. I will come to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2505,
+      "type": "audio",
+      "text": "We'll do this one a little bit faster. Does each student have the same probability of being selected in the class?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2514,
+      "type": "audio",
+      "text": "Yes, each student in Data 100 has a one in 10 chance of being selected. Everybody has an equal chance of being selected."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2542,
+      "type": "audio",
+      "text": "Right, Each of the fruitful in the 1st 10 have a one in 10 chance of being selected. Everything is deterministic. After that, everybody will end up in exactly 1 sample. There's no overlapping samples here. Each one is equally likely. Every student has a one in 10 probability of being selected. So then the question is, is this now a simple random sample? Is this a simple random sample? Talk with your neighbor for a minute on this one."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2588,
+      "type": "audio",
+      "text": "OK, is this now a simple random sample? What were the requirements of a simple random sample? We had to put everyone's name in a hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2590,
+      "type": "audio",
+      "text": "And draw names out."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2618,
+      "type": "audio",
+      "text": "One at a time, right? We don't put them back. So the question is, is this equivalent to the names in a hat sample? It's not. Why is it not? Remember that the requirements of a simple random sample are not just that every student has an equally likely chance of being selected. Every subset of individuals needs to have the same chance of being selected as well. What's the probability of including the first two people in the line in a sample?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2621,
+      "type": "audio",
+      "text": "What's the probability of getting first person on the left, second person on the?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2623,
+      "type": "audio",
+      "text": "Left in the same sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2625,
+      "type": "audio",
+      "text": "Can't happen."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2647,
+      "type": "audio",
+      "text": "Can happen, right? What's the probability of getting the dancing guy circled and this guy circled right here? One in 10. OK, not a simple random sample. So keep in mind, equal probability of being selected does not guarantee that something is a simple random sample. You have to think a little bit harder. Let's do our break. Got questions coming up or raise your hand."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2651,
+      "type": "audio",
+      "text": "To see."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2657,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2668,
+      "type": "audio",
+      "text": "As we follow him."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2685,
+      "type": "audio",
+      "text": "To be pretty nice."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2764,
+      "type": "audio",
+      "text": "I'll explain three nights today."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2810,
+      "type": "audio",
+      "text": "So I did forget to announce one thing at the beginning of lecture. My office hours are usually on Wednesdays. So my current office hours before, wow, that is really bad. Today, my current office hours were from 1:30 to 3:30 on Wednesdays. I'm now going to shorten that to 1:30 to 2:30. But on Thursday we reserved Wheeler for another hour after we finish up. So I'm just going to continue talking to you all if you want."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2839,
+      "type": "audio",
+      "text": "Stay in Wheeler on Thursdays after lecture. I will be in here from 5:00 to 6:00 PM. Come hang out. We can do all kinds of review. It'll be nice. OK, that's just one thing I forgot to announce. OK, so let's get to some more interesting parts of sampling. Not that the beginning isn't interesting, but we have to start with the fundamentals. Like I said, we're building up to somewhere very cool. At the end of this lecture, I promise you something that you don't usually see until Graduate School, but I'm going to show you today."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2840,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2845,
+      "type": "audio",
+      "text": "Let's think about our population of students in data 100 in our example so."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2857,
+      "type": "audio",
+      "text": "Let's say out of those 1200 people, and these are roughly the numbers, there's a hundred graduate students and 1100 undergraduate students."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2880,
+      "type": "audio",
+      "text": "And did I set up this question? Yeah. Let's say that I want to interview a representative sample of 12 students who were enrolled in DATA 100. My goal is to get 12 students, and I want to talk to all them. That's what I have time for, OK. And what I do is I'm going to sample one grad student from the 100 grad students, and I'm going to sample 11 undergrad students from the 1100 undergrad students, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2897,
+      "type": "audio",
+      "text": "This is the same thing as what's on there. So I'm going to sample one grad student from the 100. I'm going to sample 11 undergrads from the 1100. These are both simple random samples individually. In each one of these groups, it's a separate simple random sample of size 1 and a simple random sample of size 11."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2910,
+      "type": "audio",
+      "text": "So quick Slido here. Does every student in the class have the same probability of being selected for an interview? Here, think about this, we'll move through these a little bit faster. Does every student have the same probability of being selected?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2918,
+      "type": "audio",
+      "text": "Feel free, if you want, you can talk with your neighbor or you can do this alone, up to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2928,
+      "type": "audio",
+      "text": "Every student have the same chance of being selected."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2932,
+      "type": "audio",
+      "text": "Anybody special on data 100?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2941,
+      "type": "audio",
+      "text": "So we have 100 graduate students. We're selecting 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2947,
+      "type": "audio",
+      "text": "We have 1100 undergraduate students. We're selecting 11."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2962,
+      "type": "audio",
+      "text": "11 / 1100 is 1 / 100, so yes, everybody has exactly the same chance of being selected. Every student is chosen with the probability of 1 / 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2975,
+      "type": "audio",
+      "text": "Is there any benefit to doing things this way as opposed to the names in a hat sample? Why don't you try this for a second? Is there any benefit to doing things this way? You can talk with your neighbor about this if you'd like."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2986,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 2988,
+      "type": "audio",
+      "text": "Sure."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3019,
+      "type": "audio",
+      "text": "11 students every time, because otherwise if you're placing that, you're gonna have like 10 / 1009. So, so remember that a simple random sample, we don't put anybody back. In a simple random sample, everybody is equally likely to be selected, even if you don't put the numbers back. We don't work out the exact math that you're thinking about, but by definition, in a simple random sample, we do it without replacement."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3027,
+      "type": "audio",
+      "text": "OK, let's see. Is there any benefit? Let's see what people have written up here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3035,
+      "type": "audio",
+      "text": "Representative. Yeah, good, good. So and I like yes, yeah, good."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3058,
+      "type": "audio",
+      "text": "Representative Yeah, exactly. So the idea here is there's something kind of nice about doing this. We're going to guarantee representation from the graduate students, and we're going to guarantee representation from the undergrads. We're not going to sample too many graduate students and we're not going to sample too many undergraduate students. And in a sense, we've reduced chance error."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3087,
+      "type": "audio",
+      "text": "We've tried to make our actual sample look more like the population. It looks a little bit more representative. We're not going to have over representation in terms of undergrad or grad student status. So this is another way to reduce chance error. Increasing your sample size is a little bit more of a powerful method to do this unless you have super, super, super tiny groups in your population, but don't worry too much about that. But this is another way you can reduce chance error. The two you should know for data 100, increasing your sample size."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3089,
+      "type": "audio",
+      "text": "Or stratifying."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3099,
+      "type": "audio",
+      "text": "So this is called stratified random sampling. This is another kind of sampling. What do we call these groups? We call these groups strata. That's the plural."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3100,
+      "type": "audio",
+      "text": "Latin."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3102,
+      "type": "audio",
+      "text": "The singular is stratum."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3113,
+      "type": "audio",
+      "text": "You will not be marked incorrectly if you refer to it as strata 1 and strata 2, but these are technically individual stratum right? Stratum 1, stratum 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3143,
+      "type": "audio",
+      "text": "We sample one from stratum one. We sample 11 from stratum 2. It's an SRS. We're assuming that our sampling frame is exactly the population perfect overlap. We're giving everybody a chance. So what is the definition of stratified random sampling? We divide our sample into non overlapping strata. They can't overlap with one another. And it doesn't just have to be 1 dimensional like this. You can split it into a 2 dimensional grid where you have people who are undergrads and grad students and are, you know, live on campus."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3164,
+      "type": "audio",
+      "text": "And don't live on campus, right? Something like this. You can have as many combinations as you want. These can be multidimensional strata, but you're gonna split them so that these are non overlapping strata, and then you're gonna conduct an SRS on each one of those strata that's proportional in size to the number of individuals in that stratum."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3190,
+      "type": "audio",
+      "text": "OK, exactly the same thing as we've written up here. That's stratified random sampling. Nothing too crazy here. Reduces chance error, more likely to get a representative sample. It's generally a good idea when you have small groups in your population that you want to make sure that you hear from. If the groups in your population are pretty big, If you're like half undergrads and half grad students, stratified random sampling, it's not bad to do, it's just extra work that you probably don't need."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3193,
+      "type": "audio",
+      "text": "Stratified random sampling really shines when you have these small groups in your population."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3205,
+      "type": "audio",
+      "text": "That you want to make sure you hear from. It's kind of a way to get guaranteed representation even from small groups. So I said this earlier. Now I keep saying there's going to be payoff. I know it's coming. So sometimes it's not easier possible to randomize."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3237,
+      "type": "audio",
+      "text": "And we have to just collect a survey and and see who responds and try to make do and try to say something about the world and still sell our product, right? Or, you know, enact our intervention. What can we do with a non representative sample? Can we still use it? Can we still salvage it? And this is the piece that you don't usually see in an introductory stats class. But I just want to show you because this is something that's used all the time in the real world because random samples are so hard. So non random samples are very common. We often call these convenient samples. What is the precise?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3254,
+      "type": "audio",
+      "text": "Definition of a convenient sample. It's a sample that's convenient for you to collect. It's an easy way to collect people. I grabbed the 1st 10 people who come into lecture right. Not representative, but I now have something that is a sample. Lots of different ways to collect a convenient sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3269,
+      "type": "audio",
+      "text": "Customer surveys. Very common way to do convenient sampling. Not everyone's going to respond to you. Election polling. We saw this example earlier. Not everybody gets back to you. Clinical trials. Patients have to voluntarily join a trial. We can't force people to take particular medicines or not."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3275,
+      "type": "audio",
+      "text": "Right, people have to be voluntary in their decision to join so."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3305,
+      "type": "audio",
+      "text": "Let me give you an example now with the data 100 enrollment. So let's say that we know that the data 100 enrollment looks like the top. We don't know anything else about the individuals, but we do know the population sizes of each of those different groups. What allows us to often know the population sizes of different groups? What thing allows us to often know population sizes of groups? And like the larger United States population, what gives?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3306,
+      "type": "audio",
+      "text": "That information."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3338,
+      "type": "audio",
+      "text": "The census, so this is one of the ways the census comes in handy is to do the method we're going to talk about here. The census is very useful for what we're about to talk about. Let's say there's twenty data 100 students just in a room. OK, I know they're in that room. For some reason I go to that room. This is a non representative sample of data 100 students. As it turns out, we have 10 grad students and 10 undergrad students. Either a bunch of very immature grad students are very mature undergraduate students, right? It's half and half."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3340,
+      "type": "audio",
+      "text": "Half and half."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3364,
+      "type": "audio",
+      "text": "Let's say 9 out of the 10 graduate students are enjoying Data 100 this week. 5 out of the 10 undergrads are enjoying Data 100 this week. When I ask them, are you enjoying Data 100, right? There's probably some response bias there because I'm the one being asked or asking them, right? But let's say they they answer truthfully. So just based on these results, based on what I'm showing you on the screen right now, what's your best guess of the percentage of all Data 100 students who are enjoying Data 100 this week?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3365,
+      "type": "audio",
+      "text": "Give it a go."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3367,
+      "type": "audio",
+      "text": "Talk to your neighbor if you like."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3373,
+      "type": "audio",
+      "text": "What's your best guess? If you got questions, raise your hand, I will come to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3389,
+      "type": "audio",
+      "text": "And as usual, feel free to talk with your neighbor, but quiet usually means people are thinking, which is good too. Yeah, question for the whole group are just hearing."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3448,
+      "type": "audio",
+      "text": "What do we think? Where's the 70% coming from? 5 out of the 10 undergrad students are enjoying. That's 50%. Nine out of 10 of the grad students are enjoying. That's 90%. There's 10 of each. What's the middle of 509070? Right? The question is."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3465,
+      "type": "audio",
+      "text": "Is our best guess for the entire population 70% is that let's say TA did this and they're reporting this information to me. Should the TA tell me that their best guess of the proportion of people enjoying data 100 this week is 70% or should they say it's something higher or lower? Let's talk about this so."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3490,
+      "type": "audio",
+      "text": "There's a lot more undergrads in DATA 100 than graduate students, right? In fact, grad students have to enroll in DATA 200. So technically this is an impossible situation. But we're calling them all in the same class here. So there's a lot more undergrads in DATA 100, but I have an equal number of undergrads and grad students in the room."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3494,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3498,
+      "type": "audio",
+      "text": "I should probably care a little bit more about what the undergrads are saying in this room."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3530,
+      "type": "audio",
+      "text": "I should probably overweight the responses from the undergrads under some assumptions that I'll talk about in a minute, but I should probably carry a little bit more about what they're saying as opposed to the grad students because there's a lot fewer grad students in the class. So we don't want to guess 70% here. We probably want to guess something a little bit closer to 50% or a lot of bit closer to 50%. We'll see in a minute. That's the sort of basic idea of what we're getting at here. We want to reweight our responses. We don't want to use what's just called a naive."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3540,
+      "type": "audio",
+      "text": "Here we don't want to just give an average of what we have access to, kind of what Literary Digest did. We can reweight our responses based on our knowledge of the population."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3550,
+      "type": "audio",
+      "text": "So like I said, overweight the opinions of the 10 undergrads. Probably a good idea based on our knowledge of the size of the population."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3569,
+      "type": "audio",
+      "text": "Now, to trust that we're actually doing the right thing, we have to make a huge assumption here. And what is our huge assumption? We need to make the huge assumption that these 10 undergrads are representative of all 1100 undergrads. And we need to make an assumption that these 10 grad students are representative of these 100 graduate students."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3592,
+      "type": "audio",
+      "text": "We're usually making an assumption like that, but in this particular case, this seems to be pretty important. If I'm going to overweight the opinions of those 5 out of 10 undergrads, I would like to hope that those are pretty representative opinions. Otherwise, I'm going to be magnifying some errors that I don't want, right? I don't want magnifying these biases. OK, so this is a giant assumption."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3622,
+      "type": "audio",
+      "text": "Often serves us well in practice in a lot of different situations. But just keep in mind there's a giant hidden assumption behind this idea that we're building up to of reweighting our sample. So what can we do? Because my pen is giving me trouble, I'm not going to write out the math here. I'm going to annotate the math here. But all I'm doing here is a weighted average. Instead of just directly averaging 5 / 10 and 9 out of 10, adding them and dividing by two, I'm doing something slightly different, but it's really not that complicated, I'm going to say."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3623,
+      "type": "audio",
+      "text": "Give."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3631,
+      "type": "audio",
+      "text": "The five out of 10 from the undergrads give that 50% response a weight of 11 / 12."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3644,
+      "type": "audio",
+      "text": "Give that a weight of 11 / 1211 hundred undergrad students over the entire population, and then reweight the 9 out of 10 from the grad students using 100 / 1200."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3671,
+      "type": "audio",
+      "text": "Give that a weight of 1 / 12. This is called reweighting our responses. The naive estimate just throws .5 in both of those places. It just follows what's in the actual sample. 10 undergrads, 10 grad students. Naive estimates, same size of each group multiplied by .5. But we're using extra information about the population to try to improve our estimate. And indeed, when we do this, our estimate gets pulled a lot closer to 50%, as we might expect."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3677,
+      "type": "audio",
+      "text": "Questions about this idea we're looking at here before we start applying it on a larger scale?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3682,
+      "type": "audio",
+      "text": "We're going to apply this to the Literary Digest data in a very, very creative way."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3684,
+      "type": "audio",
+      "text": "Very cool example."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3690,
+      "type": "audio",
+      "text": "This idea makes sense. Hopefully this seems pretty logical."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3716,
+      "type": "audio",
+      "text": "When it gets introduced this way, I've found that post stratification, which is what this method is called, makes a lot of sense. Once you start expanding post stratification, like I'm going to show you in a minute, it will seem to get more complicated. But under the hood, all we're doing is weighted averages. That's it. But instead of doing it with two terms, we might be doing it with hundreds of terms or thousands of terms. But ultimately this method is just reweighting responses."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3718,
+      "type": "audio",
+      "text": "In different groups. So let's go see this in action."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3725,
+      "type": "audio",
+      "text": "So yeah, post stratification is what this is called after we sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3729,
+      "type": "audio",
+      "text": "Stratified random sampling is a sampling method."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3743,
+      "type": "audio",
+      "text": "Stratified random sampling is a sampling method post stratification, not a brand of cereal. Post stratification is going the other direction, it's taking an existing sample that we've collected."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3750,
+      "type": "audio",
+      "text": "And trying to say something meaningful about the population using our knowledge."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3758,
+      "type": "audio",
+      "text": "Of the population cell sizes, these are what these are going to be called in stratified random sampling. They're called strata."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3788,
+      "type": "audio",
+      "text": "In post-stratification, we call these cell sizes. We'll see in a minute population cells like little cell blocks. OK, so let's just like see this again, just sort of written out here. What is the process of post stratification? We divide our sample and population into what are called distinct cells. We call these sample cells or population cells according to some characteristics. So you might think demographics, you might do something like race or gender or age group or income or something, right? Different demographics."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3811,
+      "type": "audio",
+      "text": "In this case, what are our demographics? The only demographic we care about here is grad student versus undergrad student, and we split both our population and sample. Based on that demographic, we calculate the outcome in each sample cell. So what is the outcome in each sample cell? In this case, it's the proportion of individuals in that sample cell that are enjoying data 100 this week."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3826,
+      "type": "audio",
+      "text": "And then all we do is aggregate over those outcomes using the population cell sizes. So we know that one out of 12 people are grad students, so we're going to give a one out of 12 weight."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3842,
+      "type": "audio",
+      "text": "To what the grad students say in the sample, we know that 11 out of 12 individuals in our population are undergrads. We're going to give an 11 out of 12 weight to what the undergrad said. That's post stratification 2 giant assumptions #1."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3855,
+      "type": "audio",
+      "text": "Somebody asked about this on the break. What if we don't know the population cell sizes? Sucks you can't do post stratification right? The whole idea is we need to know this split of people in the population."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3872,
+      "type": "audio",
+      "text": "In order to do post stratification, we can't do this method if we don't know the population cell sizes or we can't estimate them in some way. So one assumption is that the population cell sizes exist and they're accurate, and it's one reason why the census is so useful."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3874,
+      "type": "audio",
+      "text": "Second thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3882,
+      "type": "audio",
+      "text": "I mentioned this earlier, the sample cells are representative of the population cells when we inflate this 5 out of 10."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3906,
+      "type": "audio",
+      "text": "We are assuming that that 5 out of 10 is representative of those 1100 undergraduate students. If they're not, we're in trouble. OK, so big assumptions, but they tend to do pretty decently in practice, as we'll see in a minute. OK, so that's post stratification. So let's now I'm going to take you all the way back to the Literary Digest puller. Last 18 minutes here. How do we fix the Literary Digest pull? So we're looking at a plot here for each state."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3913,
+      "type": "audio",
+      "text": "In the country in 1936 on the X axis. So we're looking at the actual percentage of individuals."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3916,
+      "type": "audio",
+      "text": "Who voted for Roosevelt?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3923,
+      "type": "audio",
+      "text": "On the Y axis, we're looking at the proportion of the Literary Digest poll for that state."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3926,
+      "type": "audio",
+      "text": "That voted for Roosevelt. So let me give you an example here. Here's Vermont."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3933,
+      "type": "audio",
+      "text": "In Vermont, the actual vote for Roosevelt was something like 43%."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3937,
+      "type": "audio",
+      "text": "And in the Literary Digest poll, the predicted."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3945,
+      "type": "audio",
+      "text": "Percentage of people who were going to vote for Roosevelt in Vermont was much lower, something closer to like 25%."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3954,
+      "type": "audio",
+      "text": "Points that are in blue in the bottom left quadrant in the top right quadrant are correct predictions in the sense that."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3962,
+      "type": "audio",
+      "text": "If they actually got less than 50% of the vote in that state and we predicted that they got less than 50% of the vote in that state, good prediction."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3970,
+      "type": "audio",
+      "text": "If we predicted that they got more than 50% of the vote and they actually got more than 50% of the vote, good prediction. The red are the errors, and we can see there are a lot of errors here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3987,
+      "type": "audio",
+      "text": "So then the question is, what if the Literary Digest using the simple tool I just showed you that was available to them at the time this wasn't developed later? Use this to improve their pull and you can go read the literature. Literary Digest has a response to why they didn't do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 3993,
+      "type": "audio",
+      "text": "Anyway, you can go read that if you'd like. They didn't do it. And what they published, Would the prediction have changed? Let's see. So."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4006,
+      "type": "audio",
+      "text": "Again, like I said, we're just increasing the number of cells. We're not changing the method at all. In 1936, we have that poll that the Literary Digest collected. It's a sample of individuals."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4016,
+      "type": "audio",
+      "text": "We have a bunch of states on the left, however many states there were at the time, right, And we have Roosevelt, the Democratic candidate, and Landon, the Republican candidate, and we have the counts of votes."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4029,
+      "type": "audio",
+      "text": "In each of the sample cells, the number of votes. In each of the sample cells, the number of predicted votes, right? The sample counts of votes. What does the population look like? We have no idea."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4039,
+      "type": "audio",
+      "text": "In 1936, when we're polling, we have no idea who's going to win. We don't know how many people actually voted for Roosevelt or Landon."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4065,
+      "type": "audio",
+      "text": "In each of those states, we have no idea how many likely voters there were, right? We don't know who's actually going to go vote, so we don't have the population cell sizes. So naively you might look at this and say, well, we can't do post stratification. But Literary Digest actually collected some pretty interesting information that we could use to do post stratification in the demo for today, which I'm not going to go over now. If you want to see this actually worked out in code, you can take a look at the lecture demo, but."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4072,
+      "type": "audio",
+      "text": "Here's the post stratification lesson we saw before, applied now."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4101,
+      "type": "audio",
+      "text": "To the Literary Digest case, I've shown you sort of visually that this isn't gonna work. Let me say it one more time. We divided our sample and population into cells. You can see we have tables here according to some characteristic. What's our demographic here? Democratic voters, Republican voters? That's one demographic. Which state you live in? That's the other demographic, right? Two way table here. We're gonna calculate the outcome in each sample cell. It doesn't have to be a proportion like we saw before. In this case, we're just trying to count the number of people who voted."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4122,
+      "type": "audio",
+      "text": "This particular example, so we have an outcome in each sample cell, so the number of intended votes, and then we're going to aggregate over all of those sample cells waiting by the size of the population cells. But the problem is we don't know how many total likely voters there are in each of these states ahead of time. We don't know who's actually going to go vote."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4148,
+      "type": "audio",
+      "text": "Right, This sort of problem happened in 2016 and in 2024 when election predictions were just way off, right? We have other problems with prediction polls. People do this kind of thing, and it still doesn't fix everything. People, we don't know who's going to show up to vote. So then what can we do, right? Like from the perspective of the Literary Digest, we don't know the population cell sizes, but can we get close? And here's the magic for today. Let's see. So here's the actual information that the Literary Digest published."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4152,
+      "type": "audio",
+      "text": "Again, you have to think about the kind of Labor that goes into putting together data tables pre computers."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4172,
+      "type": "audio",
+      "text": "It's amazing what people sat down and did. We all have it so much easier now to do all of this stuff, you know, computationally work that we can do in a minute. Might have taken someone weeks, right? So let me break down this table for you a little bit. Just look at the top row. So don't get don't get overwhelmed. In the top row, we have Alabama."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4183,
+      "type": "audio",
+      "text": "We have a column here you don't have to worry about. It's the number of electoral votes, Number of electoral votes. Don't worry about that. If you're not familiar with the American election system, here's the important thing you want to pay attention to here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4207,
+      "type": "audio",
+      "text": "So what we have is the count of individuals in Alabama who said that they would vote for Landon in the Literary Digest poll. Similarly, we have the number of people in Alabama who said that they would vote for Roosevelt in the Literary Digest poll. And then we also have the socialist candidate Lemke. But we're not going to worry about Lemke. We're going to pretend that Lemke doesn't exist in this example."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4215,
+      "type": "audio",
+      "text": "OK, let's just pretend it's Roosevelt and Landon. Everything still works out just fine, but we're going to forget about Lemke here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4216,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4230,
+      "type": "audio",
+      "text": "I've already told you about those counts. What about all these other counts? This is what's really interesting here. So not only did the Literary Digest poll ask people who are you going to vote for, they asked who did you vote for?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4232,
+      "type": "audio",
+      "text": "Who did you vote for in 1932?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4251,
+      "type": "audio",
+      "text": "Who did you vote for in 1932? And so all of those people who said they were going to vote for Landon, we also know, did you vote Republican in 1932? Did you vote Democratic? Did you vote socialist or any of these other parties? Again, we're just going to ignore those other parties for now and just think about things in terms of Republicans and Democrats."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4260,
+      "type": "audio",
+      "text": "And so we have some extra information here. We know for these individuals who they actually voted for in 1932."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4264,
+      "type": "audio",
+      "text": "From the perspective of Literary Digest in 1936."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4270,
+      "type": "audio",
+      "text": "Do they know the population cell sizes for 1932? Can they look at historical data about who actually voted?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4271,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4279,
+      "type": "audio",
+      "text": "They can go back and go look at the 1932 election results, the actual election results they can think about."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4304,
+      "type": "audio",
+      "text": "How people reported their votes in 1936 and reweight things. Let me show you how this is going to be done. Again, it's a relatively straightforward idea, just sort of scaled up. So what we're going to do, we're going to calculate those same weights that we keep talking about. What are the weights that we're going to re weight all of those counts by using the 1932 reported votes and the 1932 election results."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4333,
+      "type": "audio",
+      "text": "We're going to grab those weights and we're going to apply them to 1936 under the assumption that the same kind of issues with sampling happened in 1932, in 1936. So again, a big assumption that 1932 looks like 1936, but we're getting somewhere here. So let me show you this visually. Believe this all cleared up. So these are the reported 1932 votes based on the people who responded to the 1936 poll."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4339,
+      "type": "audio",
+      "text": "So among the people who responded to the 1936 poll in Alabama?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4348,
+      "type": "audio",
+      "text": "About 10,000 of them said they voted Democrat. About 1600 of them said they voted Republican. I'll fix my pencil for next time."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4359,
+      "type": "audio",
+      "text": "Those are the sample cells. Here are the population cells. We know the actual number of votes for Democrats and Republicans in 1932 in each of those cells."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4361,
+      "type": "audio",
+      "text": "So what can we do?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4365,
+      "type": "audio",
+      "text": "We can grab all of our weights. Let's look at Wyoming. If you look at Wyoming."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4371,
+      "type": "audio",
+      "text": "1600 people in the 1936 Literary Digest poll."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4375,
+      "type": "audio",
+      "text": "Said they voted Democrat in 1932."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4382,
+      "type": "audio",
+      "text": "How many people actually voted Democrat in 1932 in Wyoming 54,000?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4386,
+      "type": "audio",
+      "text": "That's a 33 times higher number."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4394,
+      "type": "audio",
+      "text": "What is it for Republicans in Wyoming? It's 19 times higher. What does this tell us?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4403,
+      "type": "audio",
+      "text": "In a perfect world where we could sample everybody and ask every single person, what value should those weights be? If we could have perfectly asked everybody, what value should the weights be?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4407,
+      "type": "audio",
+      "text": "All those weights should just be 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4426,
+      "type": "audio",
+      "text": "We should just know exactly, based on our poll, who voted Democratic or Republican. We would just have all that information. We don't have that information. We instead have a sample. But think about what's going on in this sample. In order to inflate the number of reported Republican votes, we have to multiply by 19."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4430,
+      "type": "audio",
+      "text": "In order to inflate the number of Democratic votes, we have to inflate by 33."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4439,
+      "type": "audio",
+      "text": "This tells us that Democrats are underrepresented in the poll. We need a larger weight."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4452,
+      "type": "audio",
+      "text": "To make sure that we account for all of the Democratic votes, we need a smaller weight for the Republicans. I'm going to pause here for questions. Pause here for questions on this setup."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4462,
+      "type": "audio",
+      "text": "Make sure that this idea makes sense to you, that Democrats are underrepresented relative to Republicans based on these two numbers that we're seeing here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4467,
+      "type": "audio",
+      "text": "We want to make sure that this is clear questions on this. Happy to explain it again right in front."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4499,
+      "type": "audio",
+      "text": "Great question. The question was do we consider weights separately for each state or do we just look at one state and apply it to everybody? We're going to separately compute these weights for each state. In Wyoming, Democrats were underrepresented relative to Republicans. But I'm pretty sure in the demo, if you go look, there's some random states where Democrats are over represented, over represented relative to Republicans. I think there might be a couple what I remember."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4511,
+      "type": "audio",
+      "text": "But we're separately calculating these weights for each state, so all we know about from these weights is the Wyoming bias. We tended to sample more Republicans in Wyoming."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4522,
+      "type": "audio",
+      "text": "Than Democrats. And because of that, we don't need to inflate the Republican vote totals by as much as we do for Democrats. Other questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4524,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4534,
+      "type": "audio",
+      "text": "Again, this is the same thing as what we were doing before. Before it was 11 out of 12 and one out of 12. Right now it's 19 and 33. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4568,
+      "type": "audio",
+      "text": "Good. So this is a good question. Are we allowed to use these weights from election cycle to election cycle? You can do whatever you want, right? But there's an additional assumption here that election cycles can be different. We're making the assumption if we use these weights for 1936, we're making the assumption that the sampling biases in 1932 look like the sampling biases in 1936. And presumably if Literary Digest is acting in the same way and they had correctly predicted, you know, the last five elections, so they maybe aren't changing things much, this might be kind of a reasonable."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4574,
+      "type": "audio",
+      "text": "Idea that the way that they're sampling is just as screwed up as it was in 1932. It's not guaranteed. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4594,
+      "type": "audio",
+      "text": "Not necessarily an assumption here, because we actually ask people in the Literary Digest poll in 1936 who they're going to vote for. All we want to know about here is representation."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4616,
+      "type": "audio",
+      "text": "Right, the number of people who are actually responding. So just to make sure we can get to the end here, let's now go apply this. Let's go apply this. So here's the original plot on the left that I showed you with the unweighted results on the Y axis, actual results on the X axis. That diagonal line is the line of parity, PARITY. That implies that our prediction is the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4628,
+      "type": "audio",
+      "text": "As the actual outcome. So if points are along that line, that means we're hunky Dory. That means, like you predicted, the same as the outcome. So getting closer to that line is good if we perform this reweighting."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4645,
+      "type": "audio",
+      "text": "It's not perfect, but we get a lot closer to the line, a lot fewer red points on the right, and the red points are a lot closer to that line. So we're still making a lot of errors. We're still consistently under predicting. We're still consistently under predicting, right, relative to the actual outcome, but we've moved closer to that line."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4651,
+      "type": "audio",
+      "text": "And if we aggregate up and actually go compute the percentage."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4661,
+      "type": "audio",
+      "text": "You end up with there's my slide. Did my slide go away? Oh, maybe a slide got skipped. Anyway, you end up predicting that Roosevelt wins by a small margin."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4691,
+      "type": "audio",
+      "text": "You end up that he ends up winning by a small margin. It's 50, a little bit over 50%. So we would have had the correct prediction using those Literary Digest results. Now, your response to me is probably like, OK, that's great, that's kind of cool. It's 1936, I don't really care. How does this apply to now? Is this something that's still useful? So now here's the final sort of interesting payoff here. Let's talk about Xbox. So Xbox polling in 2012. This is an interesting study conducted in part by my PhD advisor back in the day about now 15 years ago."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4698,
+      "type": "audio",
+      "text": "But still relevant to now. So what they did is they ran these polls on Xbox."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4707,
+      "type": "audio",
+      "text": "And they asked people playing Xbox. Are people playing Xbox representative of all voters in the country, especially in 2012? Probably not, right? But they asked them, who are you going to vote for?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4719,
+      "type": "audio",
+      "text": "They asked them who are you going to vote for? And just to give you a sense of how non representative these groups are, the open circles on the right indicate the actual electorate."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4733,
+      "type": "audio",
+      "text": "And then the closed circuit circles represent Xbox. So you can see if we're just looking at male and female sex here, we can see that at this time, you know, 90% of individuals playing Xbox identify as male."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4738,
+      "type": "audio",
+      "text": "Compared to like 10% identifying as female. But in the actual electorate things don't look like that."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4750,
+      "type": "audio",
+      "text": "Things don't actually look like that. How do we actually know what the electorate looks like? Again, We can estimate it with the census, right? You can see that age groups are all messed up. Education is pretty messed up."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4772,
+      "type": "audio",
+      "text": "Party affiliation is pretty messed up. This is not a representative sample of voters, but using post stratification and a little bit of extra magic called multi level regression MRP, you can read about this. It's kind of interesting, but really just using these core ideas of post stratification and adjusting for all of these different demographics, we end up with this plot."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4787,
+      "type": "audio",
+      "text": "Let me walk you through this plot, and then we'll wrap up the X axis here. This is the 2012 election between Obama and Romney. So if you go read the history books, it's the history Internet debate, one Obama did really, really, really poorly."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4793,
+      "type": "audio",
+      "text": "Was like notoriously a pretty horrendous debate performance and reported support for Obama tanked."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4825,
+      "type": "audio",
+      "text": "OK, in regular polls and also on this Xbox poll, you can see a huge swing in the number of people saying they wanted to vote for Obama. Obama really got his act together in debate too and did a lot better and did great in debate 3 as well. Pulled things together and ended up winning the election. Not by the same margin as 2008, but still a solid margin. But we can see, look how noisy this raw Xbox poll is and it's still wrong. Ultimately, it's almost always below 50% predicting that people aren't going to vote for Obama."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4829,
+      "type": "audio",
+      "text": "Now the middle line pollster.com. pollster.com was a big pollster at the time."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4847,
+      "type": "audio",
+      "text": "And what was their running prediction of who was going to win the election? They weren't as noisy as the Xbox poll, right? They were doing some kind of correction on their end. And you can see this dashed line is the final result of the election. You can see Pollster was pretty close to that correct final result, but they were still pretty far down."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4868,
+      "type": "audio",
+      "text": "But what this paper showed that was really cool was using post stratification. Look how close the post stratified estimate is to the actual outcome. And remember that that post stratified estimate is based right on this Xbox poll, using this really nasty poll, really non representative pull, but using some smart reweighting like we've talked about."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4880,
+      "type": "audio",
+      "text": "They really improve the result. Now, this doesn't guarantee that post stratification fixes all of your problems, or that it works in all cases. I just want to show you that you're not stuck in the mud if you don't have a representative sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4882,
+      "type": "audio",
+      "text": "And very often you're not going to have a representative sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4886,
+      "type": "audio",
+      "text": "OK. All right. I'll give you a minute back. Thanks, everybody."
+    },
+    {
+      "id": "audio-ds100-sp26-1771371437-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1771371437",
+      "timestamp": 4935,
+      "type": "audio",
+      "text": "Hi, how are you?"
+    }
+  ]
+}

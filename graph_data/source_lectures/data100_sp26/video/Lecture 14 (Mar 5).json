@@ -1,0 +1,100 @@
+{
+  "index": "ds100-sp26",
+  "type": "video",
+  "lecture_id": "ds100-sp26-1772753618",
+  "display_name": "Lecture 14 (Mar 5)",
+  "count": 13,
+  "entries": [
+    {
+      "id": "video-ds100-sp26-1772753618-frame-120-c0-e0",
+      "lecture_id": "ds100-sp26-1772753618",
+      "timestamp": 3,
+      "type": "video",
+      "text": "Berkeley\nUNIVERSITY OF CALIFORNIA\nPowered by Zoom\nInstructor\n"
+    },
+    {
+      "id": "video-ds100-sp26-1772753618-frame-480-c0-e0",
+      "lecture_id": "ds100-sp26-1772753618",
+      "timestamp": 13,
+      "type": "video",
+      "text": "Instructor\nBerkeley\nUNIVERSITY OF CALIFORNIA\nPowered by Zoom\n"
+    },
+    {
+      "id": "video-ds100-sp26-1772753618-frame-600-c0-e0",
+      "lecture_id": "ds100-sp26-1772753618",
+      "timestamp": 18,
+      "type": "video",
+      "text": "! Reminder to start the Zoom recording!\nK\nInstructor\nCOME GET A WORKSHEET! PDF on Ed for iPad people\nLECTURE 14\nGradient Descent II\nAn optimization method to numerically minimize loss functions.\nData 100/Data 200, Spring 2026 @ UC Berkeley\nJosh Grossman, Ramesh Sridharan\nContent credit: Acknowledgments\nPowered by Zoom\n2\n"
+    },
+    {
+      "id": "video-ds100-sp26-1772753618-frame-1080-c0-e0",
+      "lecture_id": "ds100-sp26-1772753618",
+      "timestamp": 34,
+      "type": "video",
+      "text": "A Reminder to start the Zoom recording!\nK\nInstructor\nCOME GET A WORKSHEET! PDF on Ed for iPad people\nLECTURE 14\nGradient Descent II\nAn optimization method to numerically minimize loss functions.\nData 100/Data 200, Spring 2026 @ UC Berkeley\nJosh Grossman, Ramesh Sridharan\nContent credit: Acknowledgments\nSomehow.\nPowered by Zoom\n2\n"
+    },
+    {
+      "id": "video-ds100-sp26-1772753618-frame-1320-c0-e0",
+      "lecture_id": "ds100-sp26-1772753618",
+      "timestamp": 41,
+      "type": "video",
+      "text": "! Reminder to start the Zoom recording!\n06 - UC BurkFey\nInstructor\nCOME GET A WORKSHEET! PDF on Ed for iPad people\nLECTURE 14\nGradient Descent II\nAn optimization method to numerically minimize loss functions.\nData 100/Data 200, Spring 2026 @ UC Berkeley\nJosh Grossman, Ramesh Sridharan\nContent credit: Acknowledgments\nPowered by Zoom\n2\n"
+    },
+    {
+      "id": "video-ds100-sp26-1772753618-frame-1920-c0-e0",
+      "lecture_id": "ds100-sp26-1772753618",
+      "timestamp": 63,
+      "type": "video",
+      "text": "[D100 SP26] Lac 14 - Gradier X\n+\n>>\nC\ndocs.google.com/presentation/d/12t3i-yXDMqA73EheSu40QEz2Ov1lfdVsDSSmpTDjnHQ/edit?\nTo exit full screen, press and hold\nesc\n0\n[D100 SP26] Lec 14 - Gradient Descent || ₺ @ @\nFile Edit View Insert Format Slide Arrange Tools @ Slido Extensions Poll Everywhere Help\nJ\nA\nSlidesi\nMenus\n+ @ be @ 7 @ Fit\nBackground\nLayout\nTheme\nTransition\nInstructor\n3\n4\n5\n6\n7\n7\nA Reminder to start the Zoom recording!\nJoin at alido.com\n2\n2226720\nCOME GET A WORKSHEET! PDF on Ed for iPad people\n3\n-\nLECTURE 14\nGradient Descent II\n5\nAn optimization method to numerically minimize loss functions.\nDrack#: Dmcome\n#1 & 1D Madel\nO\n6\nData 100/Data 200, Spring 2026 @ UC Berkeley\nJosh Grossman, Ramesh Sridharan\nContent credit: Acknowledgments\n2\n8\n-\nBeautify this slide X\nPowered by Zoom\nClick to add speaker notes\n"
+    },
+    {
+      "id": "video-ds100-sp26-1772753618-frame-2040-c0-e0",
+      "lecture_id": "ds100-sp26-1772753618",
+      "timestamp": 66,
+      "type": "video",
+      "text": "[D100 SP26] Lec 14 - Gradier X\n+\n>\nC\ndocs.google.com/presentation/d/12t3i-yXDMqA73EheSu40QEz2Ov1lfdVsDSSmpTDjnHQ/edit?slide=id.g1140e73d20a_1_0#slide=id.g1140e73d20a_1_0\n[D100 SP26] Lec 14 - Gradient Descent II # [] (5 Saving ...\nR\nFile Edit View Insert Format Slide Arrange Tools @ Slido Extensions Poll Everywhere Help\nJ\nA\nSlidesh\nMenus\n+ 0 6 2 6 7 @ Fit\n· · TT 9 \\ \\ = = = = = + 0\nFormat options\nAnimate\nInstructor\n4\n5\n6\n7\nJoin at alldo.com\nA Reminder to start the Zoom recording!\n2226720\n2\nCOME GET A WORKSHEET! PDF on Ed for iPad people\n-----\nLECTURE 14\nGradient Descent II\n5\nAn optimization method to numerically minimize loss functions.\nDradkw: Descom\n#1 & 1D Model\nO\n6\nData 100/Data 200, Spring 2026 @ UC Berkeley\nJosh Grossman, Ramesh Sridharan\nContent credit: Acknowledgments\n2\n®000\n8\nBeautify this slide X\nPowered by Zoom\nClick to add speaker notes\n"
+    },
+    {
+      "id": "video-ds100-sp26-1772753618-frame-2160-c0-e0",
+      "lecture_id": "ds100-sp26-1772753618",
+      "timestamp": 70,
+      "type": "video",
+      "text": "[D100 SP26] Lec 14 - Gradier X\n+\n>\nC\ndocs.google.com/presentation/d/12t3i-yXDMqA73EheSu40QEz2Ov1lfdVsDSSmpTDjnHQ/edit?slide=id.g1140e73d20a_1_0#slide=id.g1140e73d20a_1_0\n[D100 SP26] Lec 14 - Gradient Descent Il # [] () Saving ...\nR\nFile Edit View Insert Format Slide Arrange Tools @ Slido Extensions Poll Everywhere Help\nA\nR\nT\nSlidesh\nMenus\nFormat options\nAnimate\nInstructor\n3\n4\n5\n6\n7\nJoin at alido.com\nA Reminder to start the Zoom recording!\n2\n2226720\nCOME GET A WORKSHEET! PDF on Ed for iPad people\nLECTURE 14\nGradient Descent II\n5\nAn optimization method to numerically minimize loss functions.\nDrackw: Desce\n#1 & 1D Model\nO\n6\n----\nData 100/Data 200, Spring 2026 @ UC Berkeley\nJosh Grossman, Ramesh Sridharan\n-\nContent credit: Acknowledgments\n2\nBeautify this slide X\n===\nPowered by Zoom\nClick to add speaker notes\n"
+    },
+    {
+      "id": "video-ds100-sp26-1772753618-frame-2280-c0-e0",
+      "lecture_id": "ds100-sp26-1772753618",
+      "timestamp": 74,
+      "type": "video",
+      "text": "[D100 SP26] Lec 14 - Gradier X\n+\nC\ndocs.google.com/presentation/d/12t3i-yXDMqA73EheSu40QEz2Ov1lfdVsDSSmpTDjnHQ/edit?slide=id.g1140e73d20a_1_#slide=id.g1140e73d20a_1_0\n[D100 SP26] Lec 14 - Gradient Descent Il # [] (5 Saving ...\nJ\nA\nR\n+1\nSlidesh\nFile Edit View Insert Format Slide Arrange Tools @ Slido Extensions Poll Everywhere Help\nMenus\nRoboto -\n16\n+ BIV\nA\nFormat optio\nInstructor\n5\n3\n2\nTITI\nJoin at aldo.com\nA Reminder to start the Zoom recording!\n2226720\n2\nnumbers Descend\nCOME GET A WORKSHEET! PDF on Ed for iPad people\nLECTURE 14\nGradient Descent II\n5\nAn optimization method to numerically minimize loss functions.\nDrackw: Descent\nworksheets\nO\n6\nData 100/Data 200, Spring 2026 @ UC Berkeley\nJosh Grossman, Ramesh Sridharan\nContent credit: Acknowledgments\n2\nBeautify this slide X\nPowered by Zoom\nClick to add speaker notes\n"
+    },
+    {
+      "id": "video-ds100-sp26-1772753618-frame-2400-c0-e0",
+      "lecture_id": "ds100-sp26-1772753618",
+      "timestamp": 78,
+      "type": "video",
+      "text": "A Reminder to start the Zoom recordinel\ndocs.google.com - To exit full screen, press\nesc\nInstructor\nCOME GET A WORKSHEET! PDF on Ed for iPad people\nLECTURE 14\nGradient Descent II\nAn optimization method to numerically minimize loss functions.\nworksheets\nData 100/Data 200, Spring 2026 @ UC Berkeley\nJosh Grossman, Ramesh Sridharan\nKer\nContent credit: Acknowledgments\nPowered by Zoom\n2\n"
+    },
+    {
+      "id": "video-ds100-sp26-1772753618-frame-2520-c0-e0",
+      "lecture_id": "ds100-sp26-1772753618",
+      "timestamp": 80,
+      "type": "video",
+      "text": "A Reminder to start the Zoom recording!\nTh & UC Berkevy\nInstructor\nCOME GET A WORKSHEET! PDF on Ed for iPad people\nLECTURE 14\nGradient Descent II\nAn optimization method to numerically minimize loss functions.\nworksheets\nData 100/Data 200, Spring 2026 @ UC Berkeley\nJosh Grossman, Ramesh Sridharan\nKer\nContent credit: Acknowledgments\nPowered by Zoom\n2\n"
+    },
+    {
+      "id": "video-ds100-sp26-1772753618-frame-3480-c0-e0",
+      "lecture_id": "ds100-sp26-1772753618",
+      "timestamp": 114,
+      "type": "video",
+      "text": "Chrome\nFile\nEdit\nView\nHistory\nBookmarks Profiles Tab Window\nHelp\nO\nScreen Mirroring\nMirror or Extend to\nExtron HDMI\nCurrently Mirroring\nInstructor\nCOME GET A WORKSHEET! PDF on Ed for iPad people\n-----\nGradient Descent II\nChange\nStop Mirroring\nJoshua's A16 iPad\nLECTURE 14\nrti-zr-0150-wheeler@berkeley.edu\nGradient Descent II\nDisplay Settings ...\nAn optimization method to numerically minimize loss functions.\nworksheets\nData 100/Data 200, Spring 2026 @ UC Berkeley\nJosh Grossman, Ramesh Sridharan\nser\nContent credit: Acknowledgments\nPowered by Zoom\n2\n"
+    },
+    {
+      "id": "video-ds100-sp26-1772753618-frame-3600-c0-e0",
+      "lecture_id": "ds100-sp26-1772753618",
+      "timestamp": 118,
+      "type": "video",
+      "text": "worksheets\n026 @ UC Berkeley\nIharan\nents\n2\nBerkeley\nUNIVERSITY OF ONMPORNIA\nPowered by Zoom\nInstructor\n"
+    }
+  ]
+}

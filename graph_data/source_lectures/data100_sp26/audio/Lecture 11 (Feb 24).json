@@ -1,0 +1,2704 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1771976020",
+  "display_name": "Lecture 11 (Feb 24)",
+  "count": 385,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 346,
+      "type": "audio",
+      "text": "Say goodbye."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 350,
+      "type": "audio",
+      "text": "Do your kids have?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 450,
+      "type": "audio",
+      "text": "Hi everybody, welcome to lecture 11. Let's get started. Announcements. My office hours during the period I'm lecturing up to like lecture 20 ish, not as many people as I'd like are showing up to Wednesday 1:30 to 2:30, so I'm just going to move everything to right after lecture to make it very easy to attend office hours. Thursdays will stay in this room. Tuesdays you'll walk with me to Evans 421, so I'll have those as my office hours for the foreseeable future. When I'm not lecturing anymore towards the end of the class I'll switch them again."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 454,
+      "type": "audio",
+      "text": "This is exactly the same thing I just said. Midterm 1 is coming up."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 458,
+      "type": "audio",
+      "text": "Two weeks, midterm, one of three, and then your final exam."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 484,
+      "type": "audio",
+      "text": "This is going to be held at the computer based testing facility on campus. You have lots of practice computer based exams to work with, or at least you will. We have the last semesters exams implemented, the summer exams implemented, I think also spring 2025 implemented. Questions just have a little bit less background needed. You don't have to read a bunch for these questions. They're shorter, they're more SAT style. We'll talk more about that."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 515,
+      "type": "audio",
+      "text": "In the midterm logistics post now what you need to do now to prepare yourself for all the midterms is the CBTF orientation quiz and this is a quiz you can take either in person or on your laptop at home. I recommend taking it in person at the CBTF because completing this orientation quiz is a signal from you that you know all of the logistics of the computer based exams and so if anything goes wrong that's in your hands it's on you, not on us so please make sure to complete the orientation quiz the."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 543,
+      "type": "audio",
+      "text": "6 posts for these. Orientation quiz was released. Sign up for a slot again. I recommend taking it in person if you have to. You can take it at home. Make sure to take it and then also catch up session. Don't forget about catch up session materials starting to get more mathematically intense as you saw in the last lecture. You'll see again today. Catch up sessions are every Friday from 3:00 to 4:00 PM in Evans B6. Is that correct, Neil? We should check that. That might be from last semester and I just double check. I don't know if it's been moved."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 546,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 571,
+      "type": "audio",
+      "text": "So where are we today? So we're going to talk more about modeling today. Our next lecture will be about multiple regression. Our next two lectures will be about multiple regression. Today we're going to do a little bit more of what we were doing last time with loss functions and this idea of trying to find the set of parameters that minimizes some loss function. We're trying to find the minimum of a bowl, and we're doing that with calculus. We're going to do calculus again today. We're going to learn other ways of doing it."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 572,
+      "type": "audio",
+      "text": "In future lectures."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 601,
+      "type": "audio",
+      "text": "So before we get started, I just want to make sure we're on the same page with the terminology that we've covered so far in the class. I'm going to throw a bunch of terms up on the board, all of which you should be familiar with. There's even terms that aren't up here that you should be familiar with both. Good idea for Data 100. Good idea for your other courses. Good idea for real, you know, being a real data scientist because people are going to use all these terms. Feature covariate, independent variable, explanatory variable, predictor, inputs, regressors, output outcome, response dependent variable prediction, predicted response, estimated value weights, parameters, coefficients."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 627,
+      "type": "audio",
+      "text": "Estimators and optimal parameters, these are all terms that you should understand coming out of data 100 and you don't have to do this actively necessarily with flash cards. You'll sort of figure this out by osmosis, but it's sort of some practice here. Let's do a slido here. We're gonna have you match up each of these symbols, these thetas, these YS, They have sats. Sometimes they don't have hats. This X match these up with the correct."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 638,
+      "type": "audio",
+      "text": "Slido should show up. Seems like something's going on with Slido if you scan the above. Is the Slido open? Neil? No, Slido is not open. OK, we should look into that."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 642,
+      "type": "audio",
+      "text": "Maybe just take a minute think about this."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 657,
+      "type": "audio",
+      "text": "You want to start it manually? Let's see if that works. Tell me when it's ready. Good. Let's see. Still no good. OK, that's fine. Go ahead. We're just going to do this old fashioned way. Go ahead and think about this on your own. You can also chat with your neighbor. Think about how these pair up. Give this a go."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 706,
+      "type": "audio",
+      "text": "Like the the poll is open on Slido, we are getting responses. So give that a scan, try to enter the poll, see what happens. I'm just not able to show it up front. That was my fault. Sorry about that."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 728,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 731,
+      "type": "audio",
+      "text": "Hopefully had a chance to think about some of these."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 757,
+      "type": "audio",
+      "text": "So let's go ahead and talk about each of these here. So feature covariate independent variable inputs, these are the things that we are training on the features that we're putting into our model. This is the X, this is the X. Last time we talked about inputting just One X, but I alluded to this idea that we're not limited to just one feature. We can have many features. The output, the outcome, the response or outcomes are wise."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 765,
+      "type": "audio",
+      "text": "Anytime we put a hat on top of something, it implies that it's estimated or predicted. Y hat is our predicted outcome."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 791,
+      "type": "audio",
+      "text": "Predicted response top right the parameters of our model. Our model has some formulation, so simple linear regression says fit a line. What line should we fit? I don't know, but if you say simple linear regression, it's fit A2 dimensional line like this. What determines the shape of that line are the parameters of your model. That's your thetas, the actual parameter that you end up choosing based on your data set, the fitted."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 795,
+      "type": "audio",
+      "text": "Value of the parameter is Theta hat, Theta hat OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 799,
+      "type": "audio",
+      "text": "We're going to be seeing these terms a lot in Data 100. You want to get familiar with them."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 820,
+      "type": "audio",
+      "text": "All right, let's dive into what we were talking about last time. So last time we talked about this four step modeling process that will review in just a second here. And last time we did it with simple linear regression, SLR, simple linear regression and mean squared error. Today we're going to do it another two ways and there's future lectures. We're going to be doing it more ways. Today we're going to be talking about something called the constant model."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 841,
+      "type": "audio",
+      "text": "And we're going to fit it with two different loss functions, mean squared error, which you're familiar with, and mean absolute error. Today we're going to be taking the derivative of an absolute value. So hold on to your chairs. OK, so constant model and mean squared error. Let's take a look at a picture here. X axis, we have XY axis, we have Y values. Let's say we have four data points."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 862,
+      "type": "audio",
+      "text": "If I want to fit a model to these data points that can mean anything, it can mean a polynomial touching all of those data points, right? If I, say, fit a simple linear regression to those points, it probably looks something like this. It's a line that has some slope that matches the points. There are two parameters in that model, Theta naughty, the intercept term Theta one."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 863,
+      "type": "audio",
+      "text": "The slope term."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 893,
+      "type": "audio",
+      "text": "In this case, we have a specific line we're looking at, so those should probably have hats. Don't worry about that too much. How did we find that line? How do you tell a machine to find that line? Well, you might imagine drawing these vertical lines going from each point to the line. We call these errors or residuals. We have positive residuals, we have negative residuals. We're not minimizing the sum of residuals because those positives and negatives would cancel each other out. We're minimizing the sum of the squared residuals. If we square those residuals, they all become."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 919,
+      "type": "audio",
+      "text": "Positive. So any error, positive or negative, is an error. And you can actually visualize the squared errors by literally drawing a square. And the goal of simple linear regression is to choose the line that makes those boxes as small as possible, right? We're trying to minimize the mean squared error. That's the same thing as saying we're minimizing the sum of squared errors. The one over N 1 / 4 in this case is just a constant, so it doesn't affect our minimizing parameters."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 922,
+      "type": "audio",
+      "text": "We're trying to make that expression as small as possible."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 939,
+      "type": "audio",
+      "text": "Now we can fit different models to these four points. The model we're going to talk about today is called a constant model. What is a constant model? It's a model that just predicts the same thing no matter what the input is. I don't care what X is, I'm always going to predict exactly the same thing. It's a flat line."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 952,
+      "type": "audio",
+      "text": "Just a flatline Y hat is equal to Theta. Naughty. A single term, an intercept term. That's why you'll sometimes hear this called an intercept only model. How do we find the best Theta? We're choosing some Theta on a plot."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 983,
+      "type": "audio",
+      "text": "We're trying to minimize the sum of squares errors. Same exact thing. Make those boxes as small as possible. Make the total area of those boxes as small as possible. We can look at these two pictures and there's actually something really interesting here. You may have heard of something called R-squared in a previous class. What is r ^2? R ^2 is simply the change in the area of those boxes. Add up the area. Add up the area. What's the delta between those two? Divide by the constant model area. There's our squared. For you. What is our squared? R-squared is simply saying how much better is your linear?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1012,
+      "type": "audio",
+      "text": "Model compared to a constant model, where better means how closely do you fit those points where closely is defined as squared error. OK, Why is it called R-squared? It turns out that for simple linear regression, the correlation squared is the same thing as R-squared. We'll talk more about R-squared in a later lecture, but I just want to show you that a lot of these terms you may have seen before, they're very intuitive, right? Everything we've sort of seen here is very easy to draw out. That's all R-squared is. But we're going to play around with this constant model on the right today."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1022,
+      "type": "audio",
+      "text": "So here's that four step modeling process that we've been talking about in the class choosing a model. We last time we chose simple linear regression. This time we're going to choose a constant model. Quick step here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1052,
+      "type": "audio",
+      "text": "Second step, we choose some loss function. Last time we chose mean squared error. Today we're going to choose mean squared error again. We're also going to choose mean absolute error and try that out. We fit the model. We figure out a way to minimize our average loss over all of our data points. And then finally, we see how well our model actually does in practice. But let's go with Step 2 here. What's our loss function? So first, let me introduce you to the constant model. So the constant model isn't a very like good model per se. It has its uses. There's a reason we're teaching it."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1081,
+      "type": "audio",
+      "text": "To you. But in practice, you're probably not using a constant model, you know, as like a cutting edge way to predict something at a company. So let's say you work at a boba shop and you're trying to predict how many drinks are going to be sold each day. You want to make sure you only buy enough boba so you don't have to throw boba out. You look at 5 randomly previously previous days. You know, you get 20 drinks on one day, 33 drinks on another day. OK, you have other information like the weather on those days or whether it was a weekend, right? But you're just going to choose to ignore all of it. Is that a good idea?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1112,
+      "type": "audio",
+      "text": "I don't know. We have to go, you know, we have to go look at this data and see if all of that other information actually mattered. But let's just say we go with this idea of a constant model, and we're always just going to predict exactly the same number, OK. This is called a constant model, and a constant model has its place. Do we use the constant model just like this? In reality, not very often, but the constant model shows up in all different kinds of places. You saw just now in R-squared, our idea is comparing to a constant model. How much better is our linear model than a constant model when we do multiple regression later on?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1115,
+      "type": "audio",
+      "text": "Using multiple intercepts, something we'll talk about."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1120,
+      "type": "audio",
+      "text": "Thinking about that multiple intercept model is like thinking about multiple constant models, so this is still relevant."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1145,
+      "type": "audio",
+      "text": "A constant model always predicts the same numbers, ignores any relationships. OK, this is a simplifying assumption about the world. Again, all models are wrong, some are useful. Today. This model is useful to show some cool mathematical properties and like simple linear regression. This is what's called a parametric model. Because this model has parameters, how many parameters does it have? One has a single parameter, the intercept."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1163,
+      "type": "audio",
+      "text": "OK. And based on our data, we might fit a particular value of that intercept. The model formulation itself doesn't specify what the value of Theta naughty should be. That's just constraining the possible lines we could fit to our data. It has to be a flat line has to exist somewhere. When we actually fit the model, we're going to pick which one of those intercepts it's actually going to be."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1171,
+      "type": "audio",
+      "text": "All right, so parameter vector. It's not a vector in this case, it's one-dimensional. It's just a scalar, there's no input needed."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1197,
+      "type": "audio",
+      "text": "But just like before, we can think about like which one of these Theta not values minimizes average loss, our average loss over the whole data. And we talked about several different ideas of of loss. Last time we talked about absolute error, L1 loss, we talked about L2 error, squared loss. But we said there's other possible losses out there. You could have loss to the 4th power. You could use cross entropy loss, something we're going to see later in the class. But let's say we go with mean squared error."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1221,
+      "type": "audio",
+      "text": "OK. What are we doing? We're trying to identify the value of Theta naughty that makes this expression as small as possible. More terminology for you that didn't show up on that other slide. Four ways to say the same thing in this context, what's the average loss on our data? What's the empirical risk of our data? What's the objective function we're trying to minimize? And in this specific case, what's the mean squared error?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1232,
+      "type": "audio",
+      "text": "There's where the R comes from. Empirical risk. What are we doing? We're averaging the squared loss across all of our data points. The difference between our actual outcomes and our predicted outcomes squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1238,
+      "type": "audio",
+      "text": "How do we choose a way to predict that makes that expression as small as possible?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1255,
+      "type": "audio",
+      "text": "We're going to use calculus to minimize that expression. Well, looking at that expression, we have Yi that's fixed. Our data set is fixed, it's passed to the model. We don't choose YISYIS are given to us, we choose our Yi hats. How do we want to make a prediction for the ith observation?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1261,
+      "type": "audio",
+      "text": "OK, and So what is Yi hat? What is Yi hat? Yi hat is simply the."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1273,
+      "type": "audio",
+      "text": "They did not the intercept. What do we predict for each data point? It's not different for any of the data points. So notice it doesn't have an I subscript. It's just Theta naughty no matter what the input is. Predict Theta naughty."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1290,
+      "type": "audio",
+      "text": "Let's see."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1290,
+      "type": "audio",
+      "text": "How could we figure that out?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1290,
+      "type": "audio",
+      "text": "Matter what it is, predict 5. No matter what it is, predict 10. There's always going to predict the same thing for all of your data points. And the question here is what value of Theta naughty makes this expression as small as possible? How could we figure that out?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1293,
+      "type": "audio",
+      "text": "So what I'm going to show you is that using calculus."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1298,
+      "type": "audio",
+      "text": "The value of Theta naughty that makes this expression as small as possible as the mean."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1307,
+      "type": "audio",
+      "text": "As it turns out, the mean makes this expression as small as possible, but if you don't believe me, let me show it to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1309,
+      "type": "audio",
+      "text": "So let's do some calculus. I'm going to give you all a minute."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1321,
+      "type": "audio",
+      "text": "Remembering what we talked about in the last lecture about taking derivatives, last time we were taking partial derivatives. In this case we're just taking single variable derivatives. Remember that Yi is fixed, N is a constant."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1339,
+      "type": "audio",
+      "text": "What's the only thing we're choosing here? What's the variable in this expression? The variable is Theta naughty. How do you take the derivative of that expression? Why don't you all take a minute? You can either work on this alone, or you can talk with your neighbor. Try to take the derivative of this expression. You don't have to finish the problem. Try to take a derivative. OK, go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1341,
+      "type": "audio",
+      "text": "If you got questions, raise your hand, I'll come to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1378,
+      "type": "audio",
+      "text": "I recommend taking out a piece of paper and writing this down. Doing derivatives in your head not a very useful exercise."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1414,
+      "type": "audio",
+      "text": "All right, single variable calculus here, just with variables that maybe look a little bit different than what you were using in single variable calculus. So first step."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1419,
+      "type": "audio",
+      "text": "Anytime we take the derivative of something multiplied by a constant, that constant can come right on out."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1430,
+      "type": "audio",
+      "text": "The derivative of a sum is the same thing as the sum of derivatives sum of derivatives, so that derivative operation can come right inside the summation."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1433,
+      "type": "audio",
+      "text": "OK, so we have 1 / n."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1435,
+      "type": "audio",
+      "text": "Sum of I = 1 to N."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1436,
+      "type": "audio",
+      "text": "Derivative."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1441,
+      "type": "audio",
+      "text": "Yi minus Theta naughty squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1443,
+      "type": "audio",
+      "text": "Chain rule."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1445,
+      "type": "audio",
+      "text": "Bring the two down."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1463,
+      "type": "audio",
+      "text": "Sometimes you'll see a summation with just an eye below it. That means some overall values of I very often will replace I equals one to north. You might see me and Ramesh using both of these, so I'm just going to write it with the sum of I here. Nothing's changed. With the summation, we bring the two out front."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1473,
+      "type": "audio",
+      "text": "But then we have to think about the chain rule. What's the derivative of the inside here? The derivative with respect to Theta naughty? What's attached to Theta naughty?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1479,
+      "type": "audio",
+      "text": "A -1 is attached to Theta. Naughty Yi is just a constant, so we multiply by -1."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1485,
+      "type": "audio",
+      "text": "That's it. That's the whole derivative. We can bring the constants out if we want."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1489,
+      "type": "audio",
+      "text": "-2 / n sum over all I."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1491,
+      "type": "audio",
+      "text": "Of Yi minus Theta naughty."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1492,
+      "type": "audio",
+      "text": "There's our derivative."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1502,
+      "type": "audio",
+      "text": "OK, so we've set our derivative or we've computed our first derivative. We know that at the minimum of a loss function, the minimum of a loss function. Here's our loss function."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1518,
+      "type": "audio",
+      "text": "Here's our loss function. It's a parabola X axis. Here is Theta naughty. We're trying to find the Theta naughty that makes this expression as small as possible, right? We have the Theta naughty axis and then we have the loss axis."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1540,
+      "type": "audio",
+      "text": "We're trying to find the Theta naughty that minimizes this expression. We know that the first derivative at that minimum is 0. We technically would want to check that the second derivative is positive as well. But anytime we're using mean squared error, this is guaranteed. So you don't have to worry about that. But let's now set this equal to 0. So one thing you'll often see when you're doing these derivations is as soon as you set this expression equal to 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1544,
+      "type": "audio",
+      "text": "You change the Theta naughty into a Theta naughty hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1565,
+      "type": "audio",
+      "text": "The first expression is just a generalized definition of the first derivative. Once we set it equal to 0, we're actually identifying a single value of Theta naughty. That makes this expression as small as possible. So we're now choosing a value. We're trying to find the optimal Theta naughty hat. What's so nice about these constants?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1568,
+      "type": "audio",
+      "text": "We can divide both sides by a constant, they just go away."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1572,
+      "type": "audio",
+      "text": "0 divided by the constant is just nothing."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1576,
+      "type": "audio",
+      "text": "OK, we can split up our sum."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1578,
+      "type": "audio",
+      "text": "Distribute our sum."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1587,
+      "type": "audio",
+      "text": "This is missing a knot. This is missing a knot. We can move our sums to both sides."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1594,
+      "type": "audio",
+      "text": "And what do we do from here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1600,
+      "type": "audio",
+      "text": "OK, what do we do from here? Well, if we just sum up N Theta knots, we're going to get N."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1604,
+      "type": "audio",
+      "text": "They did not."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1608,
+      "type": "audio",
+      "text": "At on the left side. What can we do? So this is a common trick you'll see."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1621,
+      "type": "audio",
+      "text": "That looks a lot like the expression for the mean of Y, but I can't just multiply by one over north. I can only multiply each side by 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1625,
+      "type": "audio",
+      "text": "So anytime you see just a sum of some variable."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1627,
+      "type": "audio",
+      "text": "Like this single variable."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1636,
+      "type": "audio",
+      "text": "Indexed the same as the index on the summation. This is the same thing as N times the average of that variable north."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1638,
+      "type": "audio",
+      "text": "Why bar?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1661,
+      "type": "audio",
+      "text": "And it's canceled. What are we left with? Our optimal Theta, not hat is the average of the wise questions about this derivation. We've just shown that the average of our outcomes is the value of the intercept. That makes the sum of those squared errors as small as possible if we're constrained to a flat line questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1663,
+      "type": "audio",
+      "text": "Right there."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1667,
+      "type": "audio",
+      "text": "Last sentence? I don't remember what the last sentence was. Do you remember what it was about?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1675,
+      "type": "audio",
+      "text": "The results, OK, So what we're showing here is that the value of Theta naughty."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1678,
+      "type": "audio",
+      "text": "That minimizes the loss."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1683,
+      "type": "audio",
+      "text": "Is the average of the Y values and whatever data set that we're fitting to."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1688,
+      "type": "audio",
+      "text": "Good. Yes, thank you for asking. What else? What else?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1692,
+      "type": "audio",
+      "text": "I love good questions and all questions are good. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1699,
+      "type": "audio",
+      "text": "Can you explain why it becomes Theta not hat? Do you mean from Theta naughty or?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1701,
+      "type": "audio",
+      "text": "Yeah, so why we made this jump?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1703,
+      "type": "audio",
+      "text": "Yeah, so the idea."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1724,
+      "type": "audio",
+      "text": "Is that we're just solving this is just right up here. Is a function for the loss. What is the value of the loss for any given Theta naughty input? It's just describing the shape of a curve. Similarly, a first derivative is just describing what's the slope of the tangent line across the entire curve once we set that equal to 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1728,
+      "type": "audio",
+      "text": "We're now solving for a specific value of Theta, not."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1740,
+      "type": "audio",
+      "text": "Along that curve, and so we're now estimating a single value. We're not just sort of using X generally, right? If there was an X hat, this is kind of the idea, but it's Theta, not hat. Makes sense right behind."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1742,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1749,
+      "type": "audio",
+      "text": "Yeah, Yeah, yeah. So why did we suddenly bring this in? No, it's a great question, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1750,
+      "type": "audio",
+      "text": "Keep in mind that."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1752,
+      "type": "audio",
+      "text": "First of all."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1763,
+      "type": "audio",
+      "text": "Do you agree that this is equal to the average of Y? Do you agree that if I sum up all my values of Y and divide by the number of values that's equal to Y bar?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1769,
+      "type": "audio",
+      "text": "If I multiply both sides of this expression by N, do you agree?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1771,
+      "type": "audio",
+      "text": "That the."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1775,
+      "type": "audio",
+      "text": "Of the Yi, is this now equal to n * y bar?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1795,
+      "type": "audio",
+      "text": "So this is just a useful thing to know for these derivations that will come up a lot. You're not always going to get a nice average. You're not always going to be handed 1 / n times sum of Yi. You might just be handed sum of Yi. And when you see that, you often just simplify that into n * y bar. Make sense? What else right there?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1805,
+      "type": "audio",
+      "text": "How do you get rid of the -2 / n? Well, is NA constant when we hand in our data set has a fixed number of data points, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1814,
+      "type": "audio",
+      "text": "What's 0 / 10? What's 0 / 20 right? What's 0 divided by any number except 0?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1822,
+      "type": "audio",
+      "text": "Still, 0 constants don't matter here. This is one of the reasons why minimizing the sum of squared errors is equivalent to minimizing the mean squared error."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1824,
+      "type": "audio",
+      "text": "OK, what else right there?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1834,
+      "type": "audio",
+      "text": "OK, how did you get rid of the sum on the right side by the thetas? This is a summation indexed by I."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1842,
+      "type": "audio",
+      "text": "Right. Do you see an eye anywhere on that expression for Theta? No. So what does this mean? We're adding up Theta not end times and Theta not have?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1846,
+      "type": "audio",
+      "text": "Yeah. What else? These are great. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1855,
+      "type": "audio",
+      "text": "Exactly. I was just trying to show you like algebraically why this works out. I probably should have done this first and then come back up."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1857,
+      "type": "audio",
+      "text": "To me, what's next?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1865,
+      "type": "audio",
+      "text": "Those are all great, great questions. Great, great, great questions. OK, this is this is hard the first time you see it, but once you get the hang of this."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1891,
+      "type": "audio",
+      "text": "Gets much smoother, but you've just been taught calculus a certain way because it wasn't in the context of Sats and data science. Now you're learning it in the context of stats and data science and ML. Just a new way of looking at notation. You've done this question in some ways in a, you know, a similar question just using different notation and single variable calculus. OK, that's just the work we just did. I won't go through it. You can look at that offline. OK, So what did we just show? We just showed that for the constant model fit with mean squared error, the average of the Y is."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1920,
+      "type": "audio",
+      "text": "Is what minimizes the average loss. So if we want to fit this model to some data set, we're going to end up with a constant model that just predicts the average. The average is the best possible predictor if we used squared loss as our loss function. Now, how well does this model perform in practice? So there's a corresponding demo for this lecture with some code. I'm going to skip the demo for today just to focus on the intuition here, but you're welcome to take a look at the lecture demo if you'd like. So let's just compare these two things. So a constant model."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1947,
+      "type": "audio",
+      "text": "If we're trying to predict the length or the age of a dugon based on its length, this is like a real thing that wildlife biologists have to do. They can't ask the Duke on how dugong, how old are you? They can't necessarily, you know, you know, tranquilize it and go, like, figure out how old it is. You know, there's no rings on a dugong, right? So often what you have to do is like, look at them from afar and you can estimate the length or the age of animals based on how big they are. So in a constant model, we just predict all the dugongs are exactly the same length."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1951,
+      "type": "audio",
+      "text": "In a simple linear regression or they're all the same age."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1966,
+      "type": "audio",
+      "text": "In a simple linear regression, we might use the length of the dugong to help us predict its age. OK difference between simple linear regression and the constant model. Constant model. All that matters are your outcomes. All you need are the whys to fit a constant model. For a simple linear regression you also need the XS."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 1970,
+      "type": "audio",
+      "text": "OK, the lost surface. I drew a picture of this before for a constant model."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2002,
+      "type": "audio",
+      "text": "What is our average loss look like if we were to plot this? Yi is just a constant, N is just a constant. This is just a X ^2 function that's been transformed a little bit, right? We're just transforming an X ^2 function here. So it's just going to look like a parabola. And there is a single Theta naughty that minimizes the mean squared error we saw last time with simple linear regression. The loss surface is 3D, so our loss surface in data 100 is always one dimension higher than the number of parameters."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2029,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2029,
+      "type": "audio",
+      "text": "If we have A1 parameter model and we have one objective function, we have a 2 dimensional loss surface. If we have two parameters intercept and a slope, and we have one objective function, we have a three-dimensional loss surface. And in both of these cases we're identifying the point on that loss surface that gives us a Y value that's as small as possible. We're going to play more around with that picture in gradient descent lecture."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2037,
+      "type": "audio",
+      "text": "I guess all my sliders aren't working today. Go ahead and scan. Can you open this one up? Sorry about the."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2043,
+      "type": "audio",
+      "text": "Sliders today let me pick a different slide scan that open up the Slido. It should be ready in just a second."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2044,
+      "type": "audio",
+      "text": "Wonder what happened today?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2047,
+      "type": "audio",
+      "text": "Not working still."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2055,
+      "type": "audio",
+      "text": "You're good. Sorry. Put Neil on the spot. Here, I'll let you think about it while we're waiting to scan."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2057,
+      "type": "audio",
+      "text": "Feel free to talk with your neighbors."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2064,
+      "type": "audio",
+      "text": "Oh, I know what happened."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2072,
+      "type": "audio",
+      "text": "Yours will look slightly different. It'll say evaluate the statement. The first sentence will be in quotes, the second one won't."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2076,
+      "type": "audio",
+      "text": "Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2113,
+      "type": "audio",
+      "text": "Constant model, yeah, Yeah. So I mentioned this before, that the constant model is sort of a teaching instrument, a pedagogical instrument. There's places where we might just want to predict the same thing for everybody, but the constant model is important in the context of other models. So when we talk about R-squared, we're comparing to a constant model is our baseline. This is our baseline way of predicting how well do we do compared to just predicting the average when we get to multiple linear regression models that include more coefficients when we fit what's called a multiple intercepts model."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2114,
+      "type": "audio",
+      "text": "It's like multiple constant models."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2125,
+      "type": "audio",
+      "text": "It's like addition compared to integration, right? It's like it's a core component of a lot of these more complex objects, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2127,
+      "type": "audio",
+      "text": "Keep thinking this out."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2131,
+      "type": "audio",
+      "text": "Yeah, Neil, it might just it might be an issue."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2162,
+      "type": "audio",
+      "text": "All righty, let's talk about this one."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2175,
+      "type": "audio",
+      "text": "So the constant model is just a special case of simple linear regression. At the end of the day, it's just a special case. Simple linear regression is some straight line fit to your data. Constant model is just constrained so that it's a flat line."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2206,
+      "type": "audio",
+      "text": "So that'll tell you something about how well SLR will fit versus a constant model on the training data set. If you're stepping ahead and thinking about how this model would actually do in practice, you're getting ahead of data 100, which is fine. We'll talk about this later in the class. But all we're thinking about right now is how well does a model do on the same data on which it's trained. That might seem like cheating to fit a model on some data set and then evaluate how well it does on that same data. And I would be agreeing with you, but we're starting here in a future."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2216,
+      "type": "audio",
+      "text": "We'll talk about how well does your model generalize to brand new data. So an SLR model will always have the same or lower mean squared error. Basically, it's always lower."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2248,
+      "type": "audio",
+      "text": "It's like a very weird case for it to have exactly the same error because we're in a continuous space in some tiny little infinitesimally small slope. It's still probably better than 0 in a weird case. So the constant model is just a special case where Theta one is 0. If a flat line, let's say, is the best fit to a set of points, we have some set of points, and the line that minimizes the sum of squared errors turns out to just be a flat line, and I try to fit SLR. SLR will spit out the constant model just like how the constant model will spit out the constant."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2250,
+      "type": "audio",
+      "text": "So it's always going to do just as well or better."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2258,
+      "type": "audio",
+      "text": "What does better mean? Better means lower loss. Losses bad. We don't want loss. Lower loss means a model fits more closely."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2290,
+      "type": "audio",
+      "text": "OK, again, there's no guarantees about what's going to happen on a new sample, but on the sample that we trained our model, you will always do better with SLR. You might be asking, well, why don't we just add more variables and keep doing better and better and better? We'll talk about that later in the class. OK, so let me just show you what the dugong model here. So in the constant model, what does that look like visualized? A constant model is just a flat line. I've been showing you this with my arm. Now you can see it on the slides. We're always just predicting the same age no matter what the length of the dugong is."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2298,
+      "type": "audio",
+      "text": "The root mean squared error is 7.72. Why did we take the square root of mean squared error? It's so that it's on the same units as our outcome."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2328,
+      "type": "audio",
+      "text": "Model."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2328,
+      "type": "audio",
+      "text": "The typical error between a prediction and an outcome is about 7.72 years. I specifically said typical and not average because this doesn't mean absolute error, but it's something close. Notice that when we fit a line to those sets of points, we can see that the line is a little bit closer to the points. The root mean squared error is lower. It fits better than that constant model. So in this case the R-squared would be something bigger than 0. We're doing better than the."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2348,
+      "type": "audio",
+      "text": "OK, interpretation of root mean squared error constant. Model has a higher root mean squared error. Error is bad. Higher error means model fits worse. Loss is bad, Higher loss means model fits worse. You'll get used to all this language, it just takes a little while."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2351,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2353,
+      "type": "audio",
+      "text": "Fresh break, see you in 2 minutes."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2373,
+      "type": "audio",
+      "text": "Oh yeah, this is like some of the best educational content you've ever seen in your life. Legitimately. We're going to be talking more about linear algebra next lecture we're bringing in the linear algebra. Highly recommend you watch at least some of these videos before Thursday if you're rusty on linear algebra. Coming from someone who is rusty on their linear algebra. When I took the equivalent of data 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2375,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2549,
+      "type": "audio",
+      "text": "OK, Slido is working now, but I think this poll should stay open if I change slides. If not, I'll let you just fill it out asynchronously. But let's now move forward."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2555,
+      "type": "audio",
+      "text": "And take some derivatives of absolute values and break the world. OK, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2563,
+      "type": "audio",
+      "text": "We're now going to fit the same model, but instead of using mean squared error, we're going to use the mean absolute error."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2593,
+      "type": "audio",
+      "text": "Instead of mean squared error, all we're going to change is we're going to say let's go find the value of the intercept that makes the sum of the absolute errors as small as possible. We're no longer working with the sum of squared errors. We're no longer worried about the area of those boxes I showed you at the beginning. We're now just adding up the absolute value of the residuals and trying to make that as small as possible. The question is, what value of Theta naughty makes that expression as small as possible? Is it the mean is?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2597,
+      "type": "audio",
+      "text": "That something else? Is it impossible to find? Let's find out."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2599,
+      "type": "audio",
+      "text": "Let's find out."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2628,
+      "type": "audio",
+      "text": "So first, we're going to show some pictures. So here's the loss on a single data point, just Y I -, y I hat. Let's just remember what is our prediction in the constant model? Our prediction in the constant model is simply one value, our intercept Theta naughty. It's not indexed by I. It's the same prediction for every single one of our data points. We're trying to find the value of Theta naughty that makes this expression as small as possible. And we're going to do it with calculus in just a SEC. But let's build a little bit of intuition here first."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2630,
+      "type": "audio",
+      "text": "So just to quickly go back to that Boba data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2660,
+      "type": "audio",
+      "text": "All we have here are five data points. The average of those data points is 25. So presumably if I fit this model using mean squared error, I would end up with an optimal Theta naughty of 25. Let's see what happens here. So what is the loss on a single data point? Remember, loss is just one data point. Average loss is across our entire data set. What is the loss on one observation? The loss on the first observation?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2668,
+      "type": "audio",
+      "text": "Which is 20. That's our Y one. What is Y1 hat our prediction for the first observation is just Theta naughty."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2683,
+      "type": "audio",
+      "text": "How do we write L1 loss? It's simply 20 minus Theta 9. What does that a plot of? That's just a little bit of a transformed absolute value curve, right? This is the plot of loss on a single data point."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2700,
+      "type": "audio",
+      "text": "What value if Theta naughty makes this loss as small as possible? Well, if I make it 20, I get no error. If the actual value is 20 and I predict 20, there's no error, so my loss is the smallest. As I make Theta naughty get bigger, the loss grows linearly in each direction."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2708,
+      "type": "audio",
+      "text": "Now, we don't care about loss on just a single data point. We care about loss across our entire data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2709,
+      "type": "audio",
+      "text": "So I could just write out."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2729,
+      "type": "audio",
+      "text": "By hand, the loss on this entire data set, the empirical risk across all of my data, not just the loss on one data point, but the empirical risk across all of my data is the loss on data .1, the loss on data .2, all the way up to data .5 / 5. That's a function."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2730,
+      "type": "audio",
+      "text": "That's a function we can plot."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2743,
+      "type": "audio",
+      "text": "OK, notice it looks like a bunch of these VS added up in a funny way. Kind of akin to kernel density estimation, right? Unrelated, but kind of the same idea of adding up VS And notice the smallest point at that."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2753,
+      "type": "audio",
+      "text": "V all these VS added up is not the average of 25, it's something else. It's 22. So let's go figure out what's so special about 22."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2754,
+      "type": "audio",
+      "text": "So calculus."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2762,
+      "type": "audio",
+      "text": "Our goal? We're going to take the derivative of the empirical risk. Put a hat on there."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2764,
+      "type": "audio",
+      "text": "Using absolute loss."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2766,
+      "type": "audio",
+      "text": "So let's do it."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2770,
+      "type": "audio",
+      "text": "How do we take the derivative of an absolute value well?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2777,
+      "type": "audio",
+      "text": "What do we learn in single variable calculus? Oh, we can't do it. Let's do something else. But let's attack this head on now. How do we think about?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2785,
+      "type": "audio",
+      "text": "The plot of Yi minus Theta, not the Y axis here is loss."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2790,
+      "type": "audio",
+      "text": "The X axis is the input to loss. What do we choose?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2797,
+      "type": "audio",
+      "text": "When we're trying to identify the lowest loss, what do we have a choice of? Can we choose what Yi is? Yi is a data point."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2813,
+      "type": "audio",
+      "text": "Yi is a data point that's fixed. That's given the X axis. Here is Theta naughty. We're trying to choose the value of Theta naughty. That makes that expression for loss as small as possible. Remember that Yi is just a constant."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2825,
+      "type": "audio",
+      "text": "The absolute value of just Theta naughty by itself would be AV right in the middle, just like the absolute value of X, right? So what have we done? We've transformed it."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2826,
+      "type": "audio",
+      "text": "We flip it over the."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2837,
+      "type": "audio",
+      "text": "Y axis that doesn't do anything, right? And then we translate and then we translate. So what is this plot going to look like? We have a V."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2840,
+      "type": "audio",
+      "text": "Centered at."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2849,
+      "type": "audio",
+      "text": "By I we have AV centered at Yi."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2850,
+      "type": "audio",
+      "text": "On the Y here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2855,
+      "type": "audio",
+      "text": "We also have Yi."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2857,
+      "type": "audio",
+      "text": "And we just have AV."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2863,
+      "type": "audio",
+      "text": "How do we take the derivative of this function? Well, let me help you out a little bit if I were to just extend this line."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2866,
+      "type": "audio",
+      "text": "Try to extend this line down."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2868,
+      "type": "audio",
+      "text": "That intersects the Y axis at."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2870,
+      "type": "audio",
+      "text": "Negative Yi."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2874,
+      "type": "audio",
+      "text": "OK, if I were to extend this other line on the left."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2881,
+      "type": "audio",
+      "text": "We would just have a line that we're used to, so to the left of Yi."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2884,
+      "type": "audio",
+      "text": "To the left of Yi."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2889,
+      "type": "audio",
+      "text": "What does this plot look like? It's a downward sloping line."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2891,
+      "type": "audio",
+      "text": "With a Y intercept of Yi."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2899,
+      "type": "audio",
+      "text": "Right Y equals MX plus B. This thing has a slope of one, actually a -1."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2902,
+      "type": "audio",
+      "text": "Negative Theta naughty plus what's our Y intercept?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2907,
+      "type": "audio",
+      "text": "By I so the left line here looks like Yi."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2912,
+      "type": "audio",
+      "text": "Minus Theta naughty. What about the line on the right? Well, the line on the right is positively sloping."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2916,
+      "type": "audio",
+      "text": "With a slope of 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2920,
+      "type": "audio",
+      "text": "What's our Y intercept Negative Yi?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2923,
+      "type": "audio",
+      "text": "So we have two lines here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2931,
+      "type": "audio",
+      "text": "We have."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2939,
+      "type": "audio",
+      "text": "Negative Theta naughty plus Yi on the left. Once Theta naughty reaches the value of Yi, it switches to a different line. So what can we do? We can compute A piecewise derivative. Let's take the derivative of this line."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2942,
+      "type": "audio",
+      "text": "And the derivative of that line."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2946,
+      "type": "audio",
+      "text": "What's the slope of the line on the left?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2948,
+      "type": "audio",
+      "text": "-1."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2951,
+      "type": "audio",
+      "text": "What's the slope of the line on the right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2957,
+      "type": "audio",
+      "text": "What is the derivative on the left of Yi?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2959,
+      "type": "audio",
+      "text": "-1 What's the derivative on the right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2961,
+      "type": "audio",
+      "text": "+1."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2978,
+      "type": "audio",
+      "text": "So we have a piecewise derivative. A piecewise derivative if our choice of Theta not is less than Yi. Notice I don't include the less than or equal to here. I'll explain that in a second. If our choice of Theta not is less than Yi."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2983,
+      "type": "audio",
+      "text": "Our derivative has the value -1."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2993,
+      "type": "audio",
+      "text": "On the other side of Theta naughty, the derivative has the value one. What about when Theta naughty is equal to Yi? Our derivative is."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2995,
+      "type": "audio",
+      "text": "Undefined."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 2999,
+      "type": "audio",
+      "text": "Turns out because there's a kink, right? We have a corner we can't take."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3029,
+      "type": "audio",
+      "text": "A derivative at a corner. Because this derivative is only defined, not defined at an infinitesimally small point at exactly when Theta naughty is equal to Yi, we really don't have to worry about it doesn't affect our derivation. There's also methods for when you're computing the minimum of functions where you can sort of play with these points where the what's called the gradient, in this case the slope, is undefined. It turns out the equal case doesn't matter here. We only need to worry about the case where Theta naughty is less than Yi and where it's greater than Yi."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3031,
+      "type": "audio",
+      "text": "And So what did we just show?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3037,
+      "type": "audio",
+      "text": "We just showed that the derivative of our average loss is simply."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3043,
+      "type": "audio",
+      "text": "The number of data points that are greater than some value of Theta not."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3050,
+      "type": "audio",
+      "text": "Times -1 plus the number of data points that are less than our chosen Theta. Naughty."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3065,
+      "type": "audio",
+      "text": "Alt divided by the number of data points. So instead of ending up with an answer for what Theta naughty is, instead of ending up with an answer for Theta naughty when, we set this derivative equal to 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3075,
+      "type": "audio",
+      "text": "Instead of ending up with something that says Theta naughty hat is equal to some value, we end up with something weird. We end up with a condition."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3086,
+      "type": "audio",
+      "text": "We end up with a condition for Theta naughty hat some condition that has to be satisfied Choose Theta naughty such that the number of values."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3106,
+      "type": "audio",
+      "text": "Or yeah, choose Theta naughty such that the number of values of Yi."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3106,
+      "type": "audio",
+      "text": "Below Theta naughty."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3107,
+      "type": "audio",
+      "text": "Are the same as the number of values of Yi above Theta naughty hat? What statistic is the point where the number of values below that point is the same as the number of values above that point?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3111,
+      "type": "audio",
+      "text": "That's the median. So the median."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3125,
+      "type": "audio",
+      "text": "Is what minimizes the mean absolute error, and this shows up in lots of other cool places as well. This isn't the only place where minimizing the sum of absolute error gives you something related to the median."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3132,
+      "type": "audio",
+      "text": "And not the mean, OK, again, this isn't a derivation that we'd ask you to do on an exam now past exam."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3134,
+      "type": "audio",
+      "text": "It was on there. That was a tough year."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3149,
+      "type": "audio",
+      "text": "But you should understand that derivation. You should understand that derivation and what we did. So for example, in our Boba T data set, remember that 22 is what minimized the average loss, 22 is the median."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3157,
+      "type": "audio",
+      "text": "Of that data, set the point where the number of Yi's above is the same as the number of Yi's below."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3165,
+      "type": "audio",
+      "text": "OK, very cool result. All right, so we figured out that Theta naughty hat is minimized by the median."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3170,
+      "type": "audio",
+      "text": "And why don't I pause for a minute here for questions? We're doing good on time."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3172,
+      "type": "audio",
+      "text": "Questions about this derivation?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3176,
+      "type": "audio",
+      "text": "In the back."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3206,
+      "type": "audio",
+      "text": "Oh, once we get to regression, ask me that question again. The the the idea is that we don't really talk about this in data 100, but regression is estimating A conditional average conditional on what the value of your XS are. If you fit something using mean absolute error instead of mean squared error, the same model, you end up estimating conditional medians in your data set. And so sometimes you'll see that when you don't want outliers to affect your analysis as much, and then your interpretation changes."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3210,
+      "type": "audio",
+      "text": "That's as much as I'll say about that. Yeah, go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3214,
+      "type": "audio",
+      "text": "That's the next slide."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3217,
+      "type": "audio",
+      "text": "What else? Good, what else?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3218,
+      "type": "audio",
+      "text": "Love when that happens."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3221,
+      "type": "audio",
+      "text": "School result I didn't learn about this till grad school."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3243,
+      "type": "audio",
+      "text": "And I never actually got shown this derivation. I just got told this fact. Walking through this derivation. Literally the first time I had to do it was teaching data 100. OK, so let's evaluate model performance. Mean squared error on the left, mean absolute error on the right. What did we do? We minimized both with calculus and we showed that the mean squared error is minimized."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3259,
+      "type": "audio",
+      "text": "With a value of Theta naughty that's the same as the average of our data sets. Average of our data set for for the constant model for the mean absolute error. The choice of Theta naughty that minimizes the average loss is the median of our data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3289,
+      "type": "audio",
+      "text": "Smooth, easy to minimize. This is a nice function. Asking a computer to minimize a smooth function is quite easy using numerical methods, which we'll talk about next week when we get to gradient descent. But these piecewise kink functions are a little bit trickier to minimize, and until the advent of computers, it was much harder to minimize these functions. That's why we often see lots of historical models using squared loss functions, and that sort of continued to today. But we can also think about absolute error and what happens."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3314,
+      "type": "audio",
+      "text": "OK, even number of data points. Thank you. So suppose we add a 6th observation to our bubble teas data set. Remember that the value that minimizes the average loss when we fit the model using L1 loss is not technically the median, but the condition just said we need to have the same number of data points above and below."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3327,
+      "type": "audio",
+      "text": "Our chosen value of Theta naughty. So when we fit using mean squared error, we get a single unique value of Theta naughty hat. This is a good fact to know when you use mean squared error."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3346,
+      "type": "audio",
+      "text": "You're going to get one solution, at least in the case of the constant model. OK, when we get to regression, we'll talk about when that can break. For now, one unique solution. But what happens if we have an even number of data points? Well, our median, we've learned."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3356,
+      "type": "audio",
+      "text": "Is just the average of the two middle points, right? That's what we get told. If you have an even number of data points, the median is just the average of those two data points. But remember the condition."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3368,
+      "type": "audio",
+      "text": "That minimizes the mean. Absolute error is not just picking the average of those two data points. It's any number in between those two middle numbers. Any number."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3390,
+      "type": "audio",
+      "text": "Will have the same minimizing average loss or minimizing? Yeah, minimizing average loss. We're going to have exactly the same minimizing average loss. So you might ask, how do you pick? Usually we pick the one in the middle. But if you have an even number of data points, there is not a unique value of Theta not hat that gives us the minimum average loss across our data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3400,
+      "type": "audio",
+      "text": "Like I said, we typically choose the average when this happens, but it's a good fact to know that mean absolute error does not guarantee a unique solution."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3405,
+      "type": "audio",
+      "text": "OK. And that can lead to interesting issues when you're trying to fit a model."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3430,
+      "type": "audio",
+      "text": "OK, sensitivity to outliers. So we learn early on that the mean is more sensitive to outliers than the median. If I throw Bill Gates in a village, the average income of that village, even if everybody in that village except Bill Gates has moderate income, the average income we know is going to be gigantic because Bill Gates has all this money. But if we ask for the median income in that village."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3435,
+      "type": "audio",
+      "text": "It's still a moderate value. Bill Gates doesn't affect the median all that much. It's the same idea."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3445,
+      "type": "audio",
+      "text": "Here if I throw a really giant value into my boba tea data set, notice that the minimizing Theta value, minimizing Theta naughty value gets huge."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3458,
+      "type": "audio",
+      "text": "It gets huge. The mean squared error is very sensitive to outliers. Mean squared error is very sensitive to outliers, but the mean absolute error does not have the same sensitivity to outliers."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3477,
+      "type": "audio",
+      "text": "We get a number that's almost identical to what we had before. So when we use the mean absolute error, it's more robust to outliers. How do you know which one to choose? You need to think about in the context of whatever you're trying to model. Do I really want to penalize giant errors or not? Do I not really care if I make one giant error?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3479,
+      "type": "audio",
+      "text": "OK, Flighto."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3489,
+      "type": "audio",
+      "text": "Which of the following loss functions are minimized when we set Theta naughty equal to Y bar? Sorry for the nasty font here. Go ahead, give this a go."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3493,
+      "type": "audio",
+      "text": "Feel free to talk with your neighbor. If you got questions raise your hand, I will come to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3616,
+      "type": "audio",
+      "text": "OK, so I gave one of these answers already before. The constant doesn't affect our minimizing value of Theta. So which of the following Greek organizations for the constant model are minimized when Theta naughty is equal to Y bar? So SAE?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3625,
+      "type": "audio",
+      "text": "Mean squared error, SSE mean absolute error. Nobody get the joke so so remember that."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3627,
+      "type": "audio",
+      "text": "The mean?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3633,
+      "type": "audio",
+      "text": "Is going to minimize our loss for the mean squared error. We saw this already."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3637,
+      "type": "audio",
+      "text": "Y bar minimizes the mean squared error."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3644,
+      "type": "audio",
+      "text": "The sum of squared error is the same thing as the mean squared error, but we take away 1 / n."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3654,
+      "type": "audio",
+      "text": "Doesn't impact the minimizing Theta. Constants don't impact the minimizing Theta. If we have a loss function and we add or subtract values to it, the minimizing X is exactly the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3663,
+      "type": "audio",
+      "text": "But the mean absolute error. Remember the median of Y is what minimizes the mean absolute error. OK, and same idea."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3669,
+      "type": "audio",
+      "text": "For the sum of absolute errors, the median also minimizes that expression."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3682,
+      "type": "audio",
+      "text": "OK. All right. So transformations of linear models, we'll talk about this and then if we have time, we'll talk about some notation for multiple linear regression, but it's not too big of a deal if we get to that last section."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3690,
+      "type": "audio",
+      "text": "All right, back to dugongs. Remember in Data 8 we learned that the residual plot of a well fitting regression model shows no pattern."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3722,
+      "type": "audio",
+      "text": "We don't want our residuals to have a pattern that's indicative of a bad linear fit. Our data set is probably not linear if we see a pattern in the residuals. So let me give you some pictures here. So we have a data set length and age that's clearly sloping upwards. There's some curvature here. I can fit a linear model to it, and the linear model itself is not going to tell me anything about linearity. One thing that I'll often repeat is like, models are dumb."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3730,
+      "type": "audio",
+      "text": "Models do exactly what you tell them to do. You are the smart data scientist. You are using these models to do your bidding. Don't expect the models to do the work for you."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3734,
+      "type": "audio",
+      "text": "So we can fit a model to these data points."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3740,
+      "type": "audio",
+      "text": "But you'll notice that the residuals look kind of nasty. We get this bad residual plot."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3745,
+      "type": "audio",
+      "text": "Where there's some nonlinearities, there's kind of AU shape here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3762,
+      "type": "audio",
+      "text": "Right. They don't look randomly scattered. The errors look larger on the right side. Lots of bad things going on here. And we can see on the left that that line does not fit those points very well. And the residual plot shows it. So the scatter plots nonlinear, the residual plots going to show a pattern that's indicative of a bad fit."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3791,
+      "type": "audio",
+      "text": "So how do we improve the fit? Well, we learn this from Ramesh and the visualization lecture that we can try to linearize our data set. How can we linearize our data set? Well, we can use a transformation. So let's try this on for size age. If we look at this plot, it's unconstrained. We're getting really large values, right? This is what shows up more often than it shows off very often because we have very often positive values in data science, everything is 0 or bigger. We have unconstrained age. How do we?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3803,
+      "type": "audio",
+      "text": "Unconstrained age or actually constrain age? How do we bring it back down? We can use a log transformation to constrain age. Notice that length is going up against a wall."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3833,
+      "type": "audio",
+      "text": "It's capped off, right? We can push it out. We have to use a stretching function. Maybe we can use a squaring transformation to try to stretch it out. So let's see what the implications of these are on now a simple linear regression model. So I'm showing here the same data we just plotted with no transformation. We sometimes will call this the raw data being plotted or putting something on the natural scale, not the natural log scale. We're just putting it on this original scale."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3838,
+      "type": "audio",
+      "text": "Of the data and then now we're going to transform the data, so I'm going to take each individual data point."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3870,
+      "type": "audio",
+      "text": "I'm going to plot those same data points. I'm going to use the same X values, but instead of using age for the Y, I'm going to use the log of age. Notice that the plot looks a lot more linear. The transformation worked in this specific case. Let's do the same thing. Instead of plotting length on the X axis, I'm going to plot the squared length values, and I'm going to keep the Y the same. And we get a plot that looks almost exactly the same. You can see that length definitely has been squared in both of these cases, the values of."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3871,
+      "type": "audio",
+      "text": "Are larger."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3886,
+      "type": "audio",
+      "text": "But it's hard to see any improvement in linearity. There's a very subtle improvement that I'll show you in a couple of slides. I really want you to pay attention to the middle plot in these next couple slides. But the right one is also kind of interesting. But the scoring transformation didn't help us out as much here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3888,
+      "type": "audio",
+      "text": "OK, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3890,
+      "type": "audio",
+      "text": "In simple linear regression."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3895,
+      "type": "audio",
+      "text": "Our outcomes are always linear in the provided feature. What do I mean by that?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3898,
+      "type": "audio",
+      "text": "Models are dumb."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3901,
+      "type": "audio",
+      "text": "They don't know that you're regressing age on length."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3906,
+      "type": "audio",
+      "text": "What does the model thinking? The model is thinking. Here's a column of numbers."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3909,
+      "type": "audio",
+      "text": "And here's another column of numbers."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3920,
+      "type": "audio",
+      "text": "That's all the model knows. It doesn't know anything about the underlying data points. So when I fit this regression, the model just sees a column of numbers that we know, the smart data scientist. We know our length and age."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3926,
+      "type": "audio",
+      "text": "I can fit a simple linear regression right to that middle set of data."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3946,
+      "type": "audio",
+      "text": "I'm allowed to fit a linear regression. What does the model see? The model sees a column of numbers and the model sees another column of numbers. It's a different column of numbers than in the first model, but it is just a column of numbers. Assuming nobody has an age of 0, then we have a problem. But it's just a column of numbers. We can still fit a linear regression, that's just fine."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3948,
+      "type": "audio",
+      "text": "Same thing on the right."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3950,
+      "type": "audio",
+      "text": "Just a column, the numbers."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3956,
+      "type": "audio",
+      "text": "We have a bunch of links that have been squared and we have a bunch of ages."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3969,
+      "type": "audio",
+      "text": "Whenever we fit a linear regression model, the outcome the output the left side of our regression is always linear. In the provided features you choose what features to provide."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3976,
+      "type": "audio",
+      "text": "Your models just looking at that as a column of numbers. It doesn't know anything about length or age here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3982,
+      "type": "audio",
+      "text": "So again, SLR doesn't know that the output is logged age or the input is squared length. They're just vectors of values."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 3988,
+      "type": "audio",
+      "text": "And like I said, the outcome is always modeled as linear in the provided feature now."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4001,
+      "type": "audio",
+      "text": "Even though we can fit this model in a linear way, I don't think of the world in terms of log ages, and I don't think of the world in terms of length squared. I think of the world in terms of length and age."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4005,
+      "type": "audio",
+      "text": "And so once I fit my model in length, log age, space."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4015,
+      "type": "audio",
+      "text": "I can transform my simple linear regression back to the natural scale and fun stuff can happen. So let me show you."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4016,
+      "type": "audio",
+      "text": "So here's what I'm going to do now."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4033,
+      "type": "audio",
+      "text": "I'll show you the residual plots and then I'll do something else. So let's look at the residual plots just to confirm that this is a better fit. Original residual plot. Not good. Great. This is a fantastic residual apply. The residual values do look randomly scattered about the line. This looks like a good linear fit."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4047,
+      "type": "audio",
+      "text": "The residual plot on the right, still not great, looks almost identical to the residual plot on the left. But just to prove that something happened, notice these two data points moved slightly closer to the horizontal."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4056,
+      "type": "audio",
+      "text": "So we got a little bit of a better fit, but really not very good. We lose so much interpretability to gain that tiny little bit of linearity, but the log did very well."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4062,
+      "type": "audio",
+      "text": "OK, so I'm going to plot now length against log age."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-331-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4064,
+      "type": "audio",
+      "text": "And what I'm going to do?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-332-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4086,
+      "type": "audio",
+      "text": "Is once I fit this model, I'm going to generate predictions. So notice this first X value, there's a prediction right on the line here, here, here, right? These are all the predictions corresponding to those X values and so on along those lines, along that line. So we have a bunch of values of XI and Yi hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-333-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4091,
+      "type": "audio",
+      "text": "Keeping in mind that Yi hat here is the log of age."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-334-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4096,
+      "type": "audio",
+      "text": "Now I know that it's the log of age, so why don't I just go exponentiate all of those predictions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-335-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4104,
+      "type": "audio",
+      "text": "If I exponentiate all of my predictions and then I plot those same points on the natural scale, so this is the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-336-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4123,
+      "type": "audio",
+      "text": "Set of points as we had in the beginning. But all I've done now is taken my predictions and I've exponentiated all those predictions. So I've exponentiated the right side here. So I now have age as a function of length."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-337-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4127,
+      "type": "audio",
+      "text": "When I do this I get a curve."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-338-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4130,
+      "type": "audio",
+      "text": "We've curved the bullet right. We fit a linear model."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-339-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4136,
+      "type": "audio",
+      "text": "And then by transforming that linear model back into the natural scale, we've gotten back a non linear model."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-340-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4149,
+      "type": "audio",
+      "text": "So remember that in the original regression that we fit with log age on the Y axis and length on the X axis, log age is linear in length."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-341-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4152,
+      "type": "audio",
+      "text": "Log ages linear in length."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-342-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4169,
+      "type": "audio",
+      "text": "Age is a not linear in length because we didn't fit the model with age as our Y value, we fit the model with log age as our Y value, and then we transformed the predictions back to the natural scale. Pause here for a moment. Questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-343-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4172,
+      "type": "audio",
+      "text": "Questions about curving the bullet here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-344-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4178,
+      "type": "audio",
+      "text": "Notice our thetas are just getting exponentiated too. Leave them exactly the same in the model on the right."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-345-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4179,
+      "type": "audio",
+      "text": "What do we got?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-346-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4184,
+      "type": "audio",
+      "text": "So you'll see this often."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-347-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4201,
+      "type": "audio",
+      "text": "You'll see that outcomes are often logged, and you fit a model in this log space, and then you transform your predictions back to get a curved model on the natural scale. You also interpret your coefficients a little bit differently. That's something we'll talk about in a future lecture."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-348-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4211,
+      "type": "audio",
+      "text": "OK, we can do the same thing with length squared. Notice what I'm doing here is I'm plotting age as a function of length squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-349-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4214,
+      "type": "audio",
+      "text": "I could have also just plotted."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-350-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4217,
+      "type": "audio",
+      "text": "Age as a function of length."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-351-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4221,
+      "type": "audio",
+      "text": "So instead of putting length squared on the X axis, I'm just going to put length on the X axis."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-352-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4226,
+      "type": "audio",
+      "text": "I do get a curve on the right side."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-353-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4228,
+      "type": "audio",
+      "text": "That red line, bless you, is still curved."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-354-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4234,
+      "type": "audio",
+      "text": "That red line is still curved. Notice that black line is straight."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-355-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4251,
+      "type": "audio",
+      "text": "There is some slight curvature that we get from adding this squared term, but it's not very good. You might be wondering then, why do we ever square coefficients? We've done it the incorrect way here. Typically, when you fit what's called a quadratic model, you include a."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-356-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4275,
+      "type": "audio",
+      "text": "Linear term and X in addition to an X ^2 for X position. For pedagogical reasons, I'm just showing it with length squared so we can stay in simple linear regression land. But technically you would want to fit a multiple regression with a linear term. We'll talk about that in the next lecture. Again, unlike simple linear regression, we know that the input is length squared so we can back transform to C nonlinearities."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-357-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4277,
+      "type": "audio",
+      "text": "Alright."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-358-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4285,
+      "type": "audio",
+      "text": "Which of the following are valid simple linear regression models? Give this a go. Feel free to talk with your neighbor."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-359-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4297,
+      "type": "audio",
+      "text": "No need to whisper."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-360-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4298,
+      "type": "audio",
+      "text": "Feel free."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-361-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4361,
+      "type": "audio",
+      "text": "OK, which of the following are valid simple linear regression models? What are the requirements of a simple linear regression model? We need one input that's numeric, and we need one output that's numeric, and we just fit a line that has a slope and an intercept."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-362-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4367,
+      "type": "audio",
+      "text": "Doesn't matter what those variables are, I just need a vector of numbers and a vector of numbers."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-363-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4378,
+      "type": "audio",
+      "text": "Wealth age, log age, age squared. Unless there's any weirdness with taking the log of a negative age or the log of negative wealth, all of these are simple linear regression models."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-364-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4386,
+      "type": "audio",
+      "text": "They're all simple linear regression models. They all have one numeric input and one numeric output. Remember, the models are dumb. You are smart."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-365-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4402,
+      "type": "audio",
+      "text": "The model is just looking at this as a column of numbers. You are the one who needs to think about how to back transform and whether the transformation makes sense in the 1st place. All of these are valid simple linear regression models. Now notice we didn't touch the thetas."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-366-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4421,
+      "type": "audio",
+      "text": "I didn't write Theta squared anywhere. We're going to learn about this more in the next lecture. But when we fit a linear model, those thetas need to stay exactly the same way. We can't fit Theta two over Theta 3 or Theta 1 ^2 or anything like this. We care about our model still being linear in Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-367-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4425,
+      "type": "audio",
+      "text": "OK. But we can do whatever we want to the features, we can do whatever we want to the outcome."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-368-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4443,
+      "type": "audio",
+      "text": "All right, a little bit of notation for multiple linear regression before we wrap up today, just to give you a taste of what's coming in the next lecture. So I've hinted at this a couple Times Now. Simple linear regression has one input and one output. What if I want to take advantage of more than one input, more than one input?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-369-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4466,
+      "type": "audio",
+      "text": "So in real prediction scenarios, often we don't just use one input to make predictions. We want to take into account lots of different things out in the world. So let's say we were interested in predicting now a cat's age as a linear model of two different features, not just the cat's length, but also the cats width. Here's Professor Neruzzi who teaches data 100 a lot. That's her cat. That's my cat. So we have the intercept term here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-370-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4472,
+      "type": "audio",
+      "text": "We have a parameter for length and we have a parameter for weight."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-371-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4474,
+      "type": "audio",
+      "text": "So we have some."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-372-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4495,
+      "type": "audio",
+      "text": "Set of values that were allowing our prediction to vary by according to whatever the cat's length is and whatever the cat's weight is. It's still a linear model. It's still a linear model, but it has more than one input. It has two. Could we have more than two? Sure. We could have more than two."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-373-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4504,
+      "type": "audio",
+      "text": "All right, So what is a multiple regression model? A multiple regression model looks a lot like SLR. A multiple regression model has a single output."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-374-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4512,
+      "type": "audio",
+      "text": "Yhat our prediction? Our prediction is constructed as an intercept term or what's often called a bias term."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-375-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4540,
+      "type": "audio",
+      "text": "We're going to see in the next lecture that we often pretend that there's really another X value here, but it's always one. There's always just a constant value of 1 for that X value. That'll be convenient next time, but it's often just written as Theta naughty. And then we have some set of features. How many features do we have? We often use P to denote the number of features in our model. We have one through P as our features."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-376-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4542,
+      "type": "audio",
+      "text": "And then we have an intercept term that we call Theta naughty and instead of just having one."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-377-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4574,
+      "type": "audio",
+      "text": "One parameter in the case of a constant model or A2 parameter vector in the case of SLR. We have a parameter vector that will often just write as Theta, or you'll see with a line over it, or you'll see it in fancy script. Lots of different ways to see it, but it's just a vector of all of your different parameters. Beta 1, excuse me, Theta naughty through Theta P. Each one of these can be fit for your particular model. OK, this is what's called a linear combination of Theta JS. Now why am I not saying Theta?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-378-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4579,
+      "type": "audio",
+      "text": "Eyes. Typically we use eyes to denote the index."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-379-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4580,
+      "type": "audio",
+      "text": "For our observations."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-380-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4588,
+      "type": "audio",
+      "text": "I equals 1 denotes observation 1, I equals 2 denotes observation 2. This is our data, our number of rows."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-381-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4601,
+      "type": "audio",
+      "text": "JA typically denotes our column indices, or in this case our indices of our Theta vectors. So Theta J refers to a general parameter."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-382-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4607,
+      "type": "audio",
+      "text": "Theta where J equals 1 corresponds to our Theta 1 parameter."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-383-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4614,
+      "type": "audio",
+      "text": "And So what do we say here? We say that Y hat is linear in Theta. We'll define that more rigorously in the next lecture."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-384-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4641,
+      "type": "audio",
+      "text": "And So what do we do? What's like the, the sort of process here? We have some set of features, some set of features combined with some set of parameters gives us our individual predictions. So we have a bunch of features, bunch of parameters dot product, we get a prediction for one of our data points. OK, more on OS in the next lecture. I'll give you 9 minutes back. Thanks everybody."
+    },
+    {
+      "id": "audio-ds100-sp26-1771976020-transcription-385-c0-e0",
+      "lecture_id": "ds100-sp26-1771976020",
+      "timestamp": 4672,
+      "type": "audio",
+      "text": "Hello."
+    }
+  ]
+}

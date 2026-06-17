@@ -1,0 +1,2319 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1775601139",
+  "display_name": "Lecture 21 (Apr 7)",
+  "count": 330,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1696,
+      "type": "audio",
+      "text": "And for most of the day, we're just going to be writing a SQL query. So we'll start our cell with percent percent SQL, and then you write it in the rest of the cell and notice that the syntax highlighting works nicely so that it looks like you know it. It understands SQL instead of trying to treat it like Python."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1709,
+      "type": "audio",
+      "text": "OK, what if I don't like these names right? Like what if I don't like the fact that this is I want this to be called like cuteness or I want this to be more detailed than just like 2 letters."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1716,
+      "type": "audio",
+      "text": "So we can use as to rename our columns. So I can select cute and then I can tell it."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1719,
+      "type": "audio",
+      "text": "Rename this to be cuteness."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1725,
+      "type": "audio",
+      "text": "Similarly, I can say take the year column and rename it to be."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1727,
+      "type": "audio",
+      "text": "Birth year."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1750,
+      "type": "audio",
+      "text": "So I can have spaces in my column names, but if I do, I need to use double quotes around them. Unlike Python, SQL is picky. Single quotes and double quotes mean two different things. Talk about single quotes in a moment. They're basically strings. Double quotes are only four column names, and usually in practice we only use them when the column names have spaces in them."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1754,
+      "type": "audio",
+      "text": "So what happens if I do this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1760,
+      "type": "audio",
+      "text": "So now I get the same data that I got before, but now with the columns renamed to be Cuteness and Berthier."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1772,
+      "type": "audio",
+      "text": "So generally it's best practice to like use as here so it's clear that you're renaming the columns. But Sequel does still work even if you don't so."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1803,
+      "type": "audio",
+      "text": "If you say cuteness year, birth year, it also works in practice. I have had entire like half days wasted on bugs caused by, well, one person wrote this code, you know, thinking that oh, I don't need the As. And someone else thought, oh, like this person forgot a comma. Let me add an extra comma. So generally, you should always put the as. It's best practice, but you might see people do this. It's really the same thing. It's just like a good convention to help make your code a little more clear."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1812,
+      "type": "audio",
+      "text": "OK, so we can also do things like pick out unique or distinct values. So if I say select."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1814,
+      "type": "audio",
+      "text": "Distinct."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1819,
+      "type": "audio",
+      "text": "Gear. So let's remind ourselves what the dragon table looks like."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1822,
+      "type": "audio",
+      "text": "Something like this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1840,
+      "type": "audio",
+      "text": "And I can say select distinct year from Dragon and I'm going to zoom out a little so you can see both. And it gives me all the unique years from the column, right? It's really just a way of, you know, give me all the unique ways of doing things, very similar to the pandas dot unique function."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1856,
+      "type": "audio",
+      "text": "I again you should be noticing similarities here right where you know this is picking out certain columns. This is the same as accessing things with loc or iloc or just with the brackets. Similarly select distinct here like using dot unique in pandas."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1864,
+      "type": "audio",
+      "text": "We can also filter, right? Let's suppose we only want to find the cute Dragons and want to ignore the ones that are not so cute."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1866,
+      "type": "audio",
+      "text": "So I'm going to select."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1872,
+      "type": "audio",
+      "text": "Star maybe just name year cute."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1874,
+      "type": "audio",
+      "text": "From Dragon."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1882,
+      "type": "audio",
+      "text": "And SQL is case sensitive, so I need to make sure to have the right casing for my table names and my column names."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1884,
+      "type": "audio",
+      "text": "And I can use where to do a filter."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1889,
+      "type": "audio",
+      "text": "So I just have to say where cute greater than 0?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1894,
+      "type": "audio",
+      "text": "And this will only give me the rows."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1900,
+      "type": "audio",
+      "text": "Corresponding to Dragons that have a cute value that is greater than 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1909,
+      "type": "audio",
+      "text": "So I can use this to do any kind of filter maybe I wanted to say, you know, oh, I want cute ones, but maybe it's like cute or relatively recent."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1912,
+      "type": "audio",
+      "text": "So I can say this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1920,
+      "type": "audio",
+      "text": "Or year greater than 2013."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1928,
+      "type": "audio",
+      "text": "Right. So again, this is very similar to in pandas, how we'd like do this condition, this mask or that mask in sequel, we just have to write this or that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1936,
+      "type": "audio",
+      "text": "And now this gives me Dragons that are either cute or more recent."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1940,
+      "type": "audio",
+      "text": "We can also do."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1942,
+      "type": "audio",
+      "text": "Things like."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1950,
+      "type": "audio",
+      "text": "We want maybe we want specific names of Dragons we can do name in."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1954,
+      "type": "audio",
+      "text": "And Faye. Maybe I'm only want."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1974,
+      "type": "audio",
+      "text": "And I can give this. So I give it a list of names, right? With parentheses. And now here notice I'm using single quotes because I want strings, right? I don't want to just get. I don't want to treat these as column names. I want these to be strings. And so I'm using single quotes."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1982,
+      "type": "audio",
+      "text": "90% of the time when you're doing quotes in SQL, you'll be writing single quotes. It's rare that you'll be using double quotes. It really is just for column names that have spaces in them."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1988,
+      "type": "audio",
+      "text": "So I run this and it gives me those specific Dragons."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 1994,
+      "type": "audio",
+      "text": "Right. So in is again equivalent to the pandas function dot is in."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2002,
+      "type": "audio",
+      "text": "And it gives me the specific subset."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2003,
+      "type": "audio",
+      "text": "OK. Questions on any of these filters with where, Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2023,
+      "type": "audio",
+      "text": "Ah, the question was what is the like indenting rule? Do you have to like indent it a specific way like you do in Python? No. So Sequel does not care about indentation right? I can write this and I could do."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2025,
+      "type": "audio",
+      "text": "Something like this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2033,
+      "type": "audio",
+      "text": "So this is not a good idea, but I could do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2036,
+      "type": "audio",
+      "text": "And it would work just fine."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2051,
+      "type": "audio",
+      "text": "But this is terrible. Why is this terrible? Because it's really hard to read and understand, right? I have like this line is part of this from and part of this where, and then this line is all over the place. So generally as a convention."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2071,
+      "type": "audio",
+      "text": "It's nice to have like your select on one line, you're from on one line and you're where on another line. Or if you want to like if you have something more complicated like you know you're saying name as dragon name, then you know it's getting longer, then you put that on one line and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2076,
+      "type": "audio",
+      "text": "And similarly where you can say this and if you want to make this more complicated."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2082,
+      "type": "audio",
+      "text": "I can say year less than 2000."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2103,
+      "type": "audio",
+      "text": "Right. So this way it looks still looks readable. Again, SQL doesn't enforce that you indent properly. It's just good to indent your code nicely so that somebody else can read it later. But also you like 2 weeks from now when you go back to look at your code and think what does that do you want to be able to read it? So it's generally a good practice to indent it. Yeah, great question. Other questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2105,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2110,
+      "type": "audio",
+      "text": "The question was, does it have to be capitalized?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2115,
+      "type": "audio",
+      "text": "This is a really good question. You don't actually have to capitalize it, so I can take this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2118,
+      "type": "audio",
+      "text": "Right. And Oh no, this didn't work."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2123,
+      "type": "audio",
+      "text": "Why does this not work? Or because there's no column named here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2125,
+      "type": "audio",
+      "text": "So I can take this and."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2147,
+      "type": "audio",
+      "text": "I can do these in lowercase and it still works, so you don't have to capitalize it, but it's generally it's good practice to capitalize so that people can see the sequel functions. You're using the keywords like select from where or capitalize. They stand out and then everything that's lowercase is like specific to your data."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2160,
+      "type": "audio",
+      "text": "So it's like a convention. So indentation, capitalization are just conventions. You don't necessarily have to. Now the column names on the other hand are case sensitive, right? So if I do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2164,
+      "type": "audio",
+      "text": "Oh well, I guess duck DB is not case sensitive. Some flavors of SQL are case sensitive. I guess stuck to B is not."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2167,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2178,
+      "type": "audio",
+      "text": "All right, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2180,
+      "type": "audio",
+      "text": "Again."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2190,
+      "type": "audio",
+      "text": "Don't do this. And also in Python we do comments with a pound sign or a hash sign. In SQL you do comments with two dashes at the beginning of a line."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2198,
+      "type": "audio",
+      "text": "So this dash dash tells SQL hey that line is a comment, the same way the hash sign does in Python."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2204,
+      "type": "audio",
+      "text": "All right, we can also say that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2209,
+      "type": "audio",
+      "text": "Suppose as a reminder of the table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2220,
+      "type": "audio",
+      "text": "Our table looks something like this. Let's suppose that we only want Dragons who are not missing cute values."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2232,
+      "type": "audio",
+      "text": "Notice that we have, you know, in this queue column, some of these values are numbers. And for smog, we have a missing cuteness, right? There's no, there's no value here. It's a None."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2235,
+      "type": "audio",
+      "text": "So what if we only want Dragons who are not missing them?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2237,
+      "type": "audio",
+      "text": "So if I do."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2243,
+      "type": "audio",
+      "text": "Name you're cute from dragon. Where cute?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2246,
+      "type": "audio",
+      "text": "Is not null."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2254,
+      "type": "audio",
+      "text": "Well, that didn't work. That gave me no results."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2268,
+      "type": "audio",
+      "text": "Why? Because in SQL, just like in pandas, any comparison to NULL or None is always going to return false. In fact, NULL equals NULL is false, just like NULL not equal NULL is false."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2270,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2276,
+      "type": "audio",
+      "text": "If I want to do this, I have to say is not null."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2284,
+      "type": "audio",
+      "text": "Just like in Python you know you say like is not none or like PD dot not NA. So this will give us the filter that we want."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2296,
+      "type": "audio",
+      "text": "So this is how we interact with like missing values which are called null in SQL. You always have to use IS NULL or is NOT NULL. You can never, you should never do equality comparisons to NULL."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2309,
+      "type": "audio",
+      "text": "OK, so that's where when we want to filter our data again, just like you know in in pandas we use like masks and like Lok or whatever to filter certain things in SQL we use where."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2321,
+      "type": "audio",
+      "text": "We can also order by right. Again in pandas we use sort values right to like sort our data frames. In sequel we can order data using order by."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2334,
+      "type": "audio",
+      "text": "One important thing about SQL 1A big difference between SQL and pandas is that in general, when you write a query, the results are not guaranteed to be in any order. So if you're on the same query different times."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2343,
+      "type": "audio",
+      "text": "It's entirely possible, depending on what flavor of sequel, depending on what happened in the table, that your results may be in a different order each time."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2351,
+      "type": "audio",
+      "text": "So SQL makes no guarantees about the order. So if you want to make sure that your table is in a certain order, you always have to use ORDER BY."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2356,
+      "type": "audio",
+      "text": "So let's suppose we want to sort the dragon from the cutest to the least cute."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2360,
+      "type": "audio",
+      "text": "So we're going to select name here. Cute."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2362,
+      "type": "audio",
+      "text": "Or maybe just name and cute."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2366,
+      "type": "audio",
+      "text": "From Dragon."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2368,
+      "type": "audio",
+      "text": "And we're going to say order by."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2378,
+      "type": "audio",
+      "text": "Cute and I want from cutest to least cute right? So this is like I want to sort in descending order right? In pandas we would say like ascending equals false."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2380,
+      "type": "audio",
+      "text": "Here we have to say cute desk for descending."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2395,
+      "type": "audio",
+      "text": "So now we can see this gives me the cutest dragon whose puff at the top all the way down to Drogon who is the least cute. And notice that this null value fits all the way at the bottom."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2399,
+      "type": "audio",
+      "text": "If I had done the same query but in ascending order."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2406,
+      "type": "audio",
+      "text": "Right, I say ascending using ASC for short for ascending."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2408,
+      "type": "audio",
+      "text": "Then my result."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2420,
+      "type": "audio",
+      "text": "Would go from -100 to 100 and then I would still have the null values at the end right? So anytime you sort the nulls always go and get dumped at the very end."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2423,
+      "type": "audio",
+      "text": "Questions on sorting."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2426,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2444,
+      "type": "audio",
+      "text": "Ah perfect. I almost like a planted question. Can you sort by multiple columns at once? Yes you can. So if you want to sort by multiple columns, you say you order by whatever column you want to sort by first and then."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2445,
+      "type": "audio",
+      "text": "What?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2448,
+      "type": "audio",
+      "text": "Oh no, what happened? Oh again, year."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2464,
+      "type": "audio",
+      "text": "So name and let's also include year in our results so we can see what's going on. So now we've sorted by year, right. So we go year from low to high and any cases where there's a tie in year, then we are sorting by cute in ascending order."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2478,
+      "type": "audio",
+      "text": "Right, and if I do this, then you know this sorts by year again, default is ascending and then this sorts by within year. Cute in descending order, right -80 going to -100."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2506,
+      "type": "audio",
+      "text": "If you want like 1 ascending, 1 descending, yes, you can. Right, I can do year then. That's actually what this is doing, right? This is year in ascending order queued in descending order. I could flip it, right? I could say year in descending order, queued in ascending order. And then I get the the newest ones first going back to the old ones. And when there's a tie, this is an ascending order."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2513,
+      "type": "audio",
+      "text": "Yeah, you can mix and match, which again, you just have to put the ascending descending next to the column that you're doing it on."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2518,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2526,
+      "type": "audio",
+      "text": "I'm sorting."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2528,
+      "type": "audio",
+      "text": "All right, so that is."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2537,
+      "type": "audio",
+      "text": "The basic SQL queries."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2544,
+      "type": "audio",
+      "text": "So again, to quickly recap right, the simplest query we can run is SELECT *."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2548,
+      "type": "audio",
+      "text": "From."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2560,
+      "type": "audio",
+      "text": "Select star from dragon right? We give it the table name. Select the columns. We can pick out specific columns if we want them. Every query always has to have select and from."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2577,
+      "type": "audio",
+      "text": "The other stuff you know is optional depending on what you want to do. In like 99% of queries I write, there's always a WHERE, but you know there's always a select, always a friend because you know select. We need to know which columns you want, even if it's just start. And there has to be a FROM because it's like which table are you pulling the data from?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2599,
+      "type": "audio",
+      "text": "In all the examples so far, we've just been working with the dragon table. But a lot of times in your data set you might have multiple tables, right? We saw this in pandas, right? You can have multiple tables, right? Like load from different CSVS and pandas. You can combine those tables, which we'll talk about in the next lecture, the equivalent in SQL, but we always need to know which table we're getting stuff from."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2628,
+      "type": "audio",
+      "text": "So if we yeah, ask for a short for all columns, we can pick out certain columns, right? It they come back in the order that we give them. But the rows are not guaranteed to be in any particular order. In this case, they happen to be in this order just because this is how you know this particular database with Duck DB worked. But in general, you should never assume anything about the order of your rows unless you use an ORDER BY."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2634,
+      "type": "audio",
+      "text": "If you want to rename a column, we use as cute as cuteness."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2652,
+      "type": "audio",
+      "text": "This is sometimes called an alias, right? Cuteness is an alias for the cute column, so and similarly birth is an alias for the year. If you want to use something a column name that has a space in it, you put double quotes around it."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2680,
+      "type": "audio",
+      "text": "And then as I mentioned, indentation does not matter. SQL does not care how you indent it. But humans reading your code, which includes you, you know, especially you 2 weeks from now after you've forgotten exactly what you did, we'll appreciate it if you write if your code is easy to read versus this kind of like mess over here, right? So generally try to like indent your code nicely. Some people do like select and then the thing here and then like indent it."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2684,
+      "type": "audio",
+      "text": "At the same level as long as you have a convention."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2688,
+      "type": "audio",
+      "text": "And you're relatively consistent and it's easy to read. Go for it."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2690,
+      "type": "audio",
+      "text": "Quest."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2708,
+      "type": "audio",
+      "text": "Ah, question was did the commands have to be uppercase? And again, we, we went over that a minute ago. These don't have to be uppercase. It's generally best convention that they are right. You don't have to have them uppercase, but it's a good convention. Yeah, follow up."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2726,
+      "type": "audio",
+      "text": "Ah, great question. That means I can't name my column from or as or something like that. Yeah, generally you shouldn't name. I mean, it's kind of weird to do that anyway. I believe if you'd want to name your column set, you'd have to put double quotes around them."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2732,
+      "type": "audio",
+      "text": "Right. So that's the point of double quotes, is to say this is a column name regardless of whatever else is going on. Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2734,
+      "type": "audio",
+      "text": "Question."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2738,
+      "type": "audio",
+      "text": "Uh-huh."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2750,
+      "type": "audio",
+      "text": "The question was, if I renamed cute to cuteness and I wanted to like refer to it in a where statement, which one would I use? So that's a good question, let's try it."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2754,
+      "type": "audio",
+      "text": "So let's suppose I."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2756,
+      "type": "audio",
+      "text": "Oh, let there be light."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2760,
+      "type": "audio",
+      "text": "I don't know."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2762,
+      "type": "audio",
+      "text": "Can folks still see the screen OK?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2774,
+      "type": "audio",
+      "text": "OK, cool. If not let me know and I'll try to fiddle with the lights, but otherwise I'm just going to leave it as is. OK so we have this which is our."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2782,
+      "type": "audio",
+      "text": "As right and let's suppose now I want to do where cuteness greater than 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2784,
+      "type": "audio",
+      "text": "So I can do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2786,
+      "type": "audio",
+      "text": "I can also do."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2790,
+      "type": "audio",
+      "text": "This right? So either way works just fine, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2800,
+      "type": "audio",
+      "text": "In practice, it's nice to like, do it all one way or all the other. Don't like mix and match right? Like some of your wear conditions or the alias some of the originals. Try to be consistent."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2804,
+      "type": "audio",
+      "text": "Whoops."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2824,
+      "type": "audio",
+      "text": "OK, so generally use new lines when white space wisely and try to be careful about capitalizing the keywords again. It'll make your SQL code a little more readable and easier to understand for any humans, which includes but is not limited to you 2 weeks later after you write it."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2832,
+      "type": "audio",
+      "text": "We saw a distinct which only gives you unique values for a particular column."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2846,
+      "type": "audio",
+      "text": "So this only gives us the unique years, which means that, you know, we have two Dragons boats from Game of Thrones who both make their first appearance at the end of season 1 and 2011, and when we do a select distinct, we only get one of them."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2868,
+      "type": "audio",
+      "text": "We can use where right we specify a condition. Right? Conditions look like kind of how you expect them to, right? If it's numeric, you say greater than 0. You can also do string comparisons using greater than it does the thing you expect it to do, which is like alphabet alphabetically later."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2887,
+      "type": "audio",
+      "text": "So Q greater than 0 again filters out these because they have cute values that are not greater than 0, and that includes nulls, right? Remember, any comparison involving a null is always going to be false unless you use IS null or is not NULL."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2898,
+      "type": "audio",
+      "text": "We can use or to combine an and to combine multiple conditions. You can use in name in to get specific values."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2915,
+      "type": "audio",
+      "text": "And as I mentioned with strings you always want to use single quotes for strings and double quotes for columns. So this single quote hello world single quote is a string HELLOWRORLD."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2938,
+      "type": "audio",
+      "text": "Double quotes around it means this is a column name. So double quotes should only ever be used for column names, right? And usually you only need them if your column names are weird in some way. Weird as in they have, you know, a space in them, or they happen to like have the same name as a standard SQL function. In that case you want to use double quotes around it."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2967,
+      "type": "audio",
+      "text": "So for example, if I have this query select you know birth weight from patient where first name equals Ramesh. Usually you don't see tables that often with like spaces in the names, but I've worked with a few here and there so it's good to know. This will give me all the the rows of the patient table where first name is resh and it will give you only the birth weight for this right? So if I'm in this table it'll tell you I'm like 7 lbs and whatever number of Oz when I was born."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2981,
+      "type": "audio",
+      "text": "If you want to use nulls as I mentioned right, you can't use any of the standard operators. They will always return false. So you only want to use is null and is not null."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 2990,
+      "type": "audio",
+      "text": "And yeah, even LIKE NULL equals null actually return false. You only only want to use nulls with IS null and is not null."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3004,
+      "type": "audio",
+      "text": "OK, let's do a little Fido to check. So we have this query select name year from dragon where year less than 2000 and cute is not null."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3010,
+      "type": "audio",
+      "text": "So I've reproduced the original table up here. Move this so you can see it."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3019,
+      "type": "audio",
+      "text": "So take a minute and turn to the person next to you and discuss which one of these three options is going to be the result. Or is it going to be like an error or something else?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3024,
+      "type": "audio",
+      "text": "All right, take a minute, turn the person next to you and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3036,
+      "type": "audio",
+      "text": "All right, I want to hear people discussing."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3041,
+      "type": "audio",
+      "text": "Even if you're discussing like wow this is so easy why is he even asking us this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3045,
+      "type": "audio",
+      "text": "Or this is like so hard I don't get it still discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3124,
+      "type": "audio",
+      "text": "All right, And for some reason there's an error on the Slido itself, so I apologize. These are the the tables that we should be comparing."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3134,
+      "type": "audio",
+      "text": "Yeah, not sure why the Slido didn't update, but these are the tables again. The condition is a year less than 2000. Queued is not null, the one of the slightest slightly different."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3161,
+      "type": "audio",
+      "text": "All right, so let's go ahead and look through this. So what does this condition mean, right? We say a year less than 2000 and Q does not NULL. We are looking for rows that satisfy both of those conditions, right? So we're only looking for the old Dragons, that's what."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3161,
+      "type": "audio",
+      "text": "Year."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3176,
+      "type": "audio",
+      "text": "Less than 2000 means right? So this condition tells us we want the old Dragons, and among the old Dragons, they only want the ones that have a cute value."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3183,
+      "type": "audio",
+      "text": "So this one is disqualified, this is disqualified, this one, and these are all disqualified."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3193,
+      "type": "audio",
+      "text": "And we want ones where cued is not null. So that means that smog is also disqualified because smog has no value for acuteness."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3206,
+      "type": "audio",
+      "text": "Right. So that means that all we're left with is puffs, which is why A is the correct answer, right? We're looking for this and that. And so Puff is the only one who satisfies all the conditions."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3208,
+      "type": "audio",
+      "text": "Yes, question."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3232,
+      "type": "audio",
+      "text": "Yeah, the one on the slide was slightly different. The Slido didn't update for some reason. Sorry about that. Yeah, the version on the Slido, I think the correct answer is actually C because yeah, the both of the both of the Game of Thrones Dragons have cuteness values. Yeah, but for this one, the correct value would correct it's to say."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3257,
+      "type": "audio",
+      "text": "OK, so we talked about order by which we can use to sort rows, right? We have to say which column we're ordering, we're sorting by and then we say descending or ascending By default. If you don't give anything, it'll sort that in ascending order. And you can do multiples using, you know, the first one comma, the next one, and you can do, you know, as many as you want."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3264,
+      "type": "audio",
+      "text": "For each one, you have to specify whether it's ascending or descending, and again, each one will default to ascending if you don't give anything."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3270,
+      "type": "audio",
+      "text": "Yeah, we have time. Let's do."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3283,
+      "type": "audio",
+      "text": "One little example here. So let's suppose we let's introduce 2 new keywords, limit and offset. And this time instead of me telling you what they do, I want you to take a guess."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3288,
+      "type": "audio",
+      "text": "So I have two queries here 1 is select star from dragon limit 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3294,
+      "type": "audio",
+      "text": "And I have one that selects R from dragon limit 2 offset 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3298,
+      "type": "audio",
+      "text": "So what do you think the limit and offset keywords do?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3306,
+      "type": "audio",
+      "text": "And this update properly? Yes, this one did operate properly. OK, great. So take a minute and."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3311,
+      "type": "audio",
+      "text": "See does basically which query corresponds to which result."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3318,
+      "type": "audio",
+      "text": "Take a minute and discuss thinking about what you think limit and offset actually mean."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3337,
+      "type": "audio",
+      "text": "I want to hear people discussing."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3394,
+      "type": "audio",
+      "text": "Alright, so which query matches which table? Well, what does LIMIT sounds like it does well. LIMIT 2 sounds like it limits the results to two."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3410,
+      "type": "audio",
+      "text": "And we see that both of these results have exactly 2 rows in the return table. So we can probably kind of guess that LIMIT just says only return the number of rows that I give it. So LIMIT 5 will say only give me 5 the 1st 5 rows."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3416,
+      "type": "audio",
+      "text": "Offset well if we compare these two results A&B."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3425,
+      "type": "audio",
+      "text": "Well, A and A is like the first two rows of the table, B is like the second row and the third row, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3431,
+      "type": "audio",
+      "text": "So the difference between them is just like they're one is offset by one from the other."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3442,
+      "type": "audio",
+      "text": "And so we can probably imagine that like the second query that says offset one probably means just start one down."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3444,
+      "type": "audio",
+      "text": "And that's exactly what offset does."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3452,
+      "type": "audio",
+      "text": "So select star from Dragon Limit 2, we'll give you this. It'll only give you this just like that head."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3453,
+      "type": "audio",
+      "text": "And offset."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3464,
+      "type": "audio",
+      "text": "Basically says skip the first N rows right? So I said I said like offset 3 that says ignore the first 3 rows and then give me only two."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3468,
+      "type": "audio",
+      "text": "This is how limit and offset work."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3479,
+      "type": "audio",
+      "text": "And in general, unless you use ORDER BY, there is no guaranteed order of rows as I mentioned. So usually when you use LIMIT you also end up using ORDER BY."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3485,
+      "type": "audio",
+      "text": "Right. You all say like order by something, limit 5 to say like, oh, you know, just get me the five lowest or the five highest."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3507,
+      "type": "audio",
+      "text": "So again, as I mentioned all the queries, you know, you always have to have select, you always have to have from. Then you can do where order by limit and offset. In general, it's good practice to like separate your code line by line so that it's more readable. And again, it's good to use caps for these so people so it jumps out at you to know where you are."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3513,
+      "type": "audio",
+      "text": "Let's skip sampling and we'll come back to it. And let's take a 2 minute break."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3519,
+      "type": "audio",
+      "text": "So everybody get up, take some time to stretch. I'll walk around if folks have questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3526,
+      "type": "audio",
+      "text": "And you can enjoy these little sequel jokes."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3681,
+      "type": "audio",
+      "text": "All right, we had two really good questions during the break that I want to answer before we jump to the next part. The 1st is looking at this query I did over here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3684,
+      "type": "audio",
+      "text": "Where? Sorry for the crazy scroll."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3688,
+      "type": "audio",
+      "text": "So if I look at this where?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3693,
+      "type": "audio",
+      "text": "Oh, OK, so let's suppose I do."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3696,
+      "type": "audio",
+      "text": "So suppose I write this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3709,
+      "type": "audio",
+      "text": "So look what happened here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3711,
+      "type": "audio",
+      "text": "I forgot a comma."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3722,
+      "type": "audio",
+      "text": "So here what did I do wrong? Why did I get this error? It's because I forgot a comma here. So SQL complaints syntax error near year because I forgot."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3734,
+      "type": "audio",
+      "text": "All right, So what happened here? So here I select name as dragon name and year. So I've picked out the name and the year columns and then I Scroll down."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3738,
+      "type": "audio",
+      "text": "But in my where clause I'm looking at cute but I didn't select cute."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3768,
+      "type": "audio",
+      "text": "So this is an important difference between SQL and Python. SQL is what's called a declarative programming language where it doesn't just like go through your statements in order. You just kind of like tell it what you want and it takes care of handling how best to do it behind the scenes. We haven't talked at all about how a sequel does any of this or you know, how it chooses to do your operation. That's that's all stuff like behind the scenes. Take CS186 to maybe learn a little bit more about that, but that's an important."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3782,
+      "type": "audio",
+      "text": "So SQL is called again called a declarative language. You just tell it what you want, right where acute greater than 0 and it just knows how to do that right even though you only select these columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3804,
+      "type": "audio",
+      "text": "So a lot of times when I'm reading a SQL statement, I don't necessarily read it from top to bottom. A lot of times I'll start with the from so I know which table I'm looking at, then I go to the select, then I go to like the where, right? So depending on if there's more clauses, you know, I have my own kind of like sense of how I understand them, which you will build as you read more SQL queries."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3833,
+      "type": "audio",
+      "text": "The other great question that came up during the break was what's the use case for offset? A lot of times you might have a data set where, you know, let's say you sort by price high to low and you say you look at the data and you're like, Oh my gosh, this the, the first like 50 points are all outliers. I don't care about any of these rows, 50 rows of outliers. And so you can say, you know, give me starting at 51, give me like the top 50 from there."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3845,
+      "type": "audio",
+      "text": "Right. So it's basically a way to like filter out stuff that might be outlined. That's just one use case. There's several. I don't use limit or offset that often, but when I do, it ends up being kind of handy for stuff like that, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3861,
+      "type": "audio",
+      "text": "So hopefully you all enjoyed these again, like two different ways of pronouncing it. This is probably like a better joke in the fall semester because we're closer to Christmas. But you know, select star from contacts where behavior is equals nice."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3871,
+      "type": "audio",
+      "text": "This one is like what we're about to do, right? Get ready to write more SQL, you know, we do our little stretches and then we get our caps lock button ready because there's so many capital letters."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3876,
+      "type": "audio",
+      "text": "OK, so how do we actually write SQL in practice? Right? I've kind of a question."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3895,
+      "type": "audio",
+      "text": "Ah another great question is like when I do comparisons with equals like single equals, double equals. So again if we look at what I did."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3898,
+      "type": "audio",
+      "text": "Right. Let's let's say that I."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3901,
+      "type": "audio",
+      "text": "Want to do umm?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3905,
+      "type": "audio",
+      "text": "We're cute. Let's say equals 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3908,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3910,
+      "type": "audio",
+      "text": "And let's just do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3916,
+      "type": "audio",
+      "text": "So in SQL, when we do comparisons, we use a single equals because there is no assignment operator."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3938,
+      "type": "audio",
+      "text": "SQL doesn't really have a concept of like assigned variables. It really is a declarative language. You just tell it what you want and it does it. You don't really define variables. If you want to do stuff with like, well, I want an intermediate table. We'll talk more about that on Thursday. But generally there's no variable assignment, so single equals is always for comparison. Yeah, great question."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3966,
+      "type": "audio",
+      "text": "OK, so you know, I kind of like lost over how we suddenly like got our notebook to understand SQL in practice, the way you want to use it in your notebooks is you want to start by adding this load XQL. You have to make sure you have the right like packages and stuff installed. We take care of that on Datacub before you. And in Ipython or Jupiter, any line that begins with a percent or double percent is called like magic, like Ipython magic or Jupiter magic. So this is a."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3986,
+      "type": "audio",
+      "text": "Kind of magic that tells it to load the SQL extension and if you want to write one line of SQL then you say percent SQL and it interprets the rest of that line. So this says connect to the data over here and give it the alias duck."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 3991,
+      "type": "audio",
+      "text": "So if I look at the database right, remember back when we were in pandas?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4002,
+      "type": "audio",
+      "text": "We could look at our data right? And I have a CSV file here and we can like click it and open it. What happens if I open up this database file?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4017,
+      "type": "audio",
+      "text": "File loader. Why? Because it's not represented as text. It's a binary file that's optimized to store the data as efficiently as possible. So our database files we need to connect. The only way to connect to them is using something like SQL."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4032,
+      "type": "audio",
+      "text": "So this tells the notebook to use Duckdb to connect to the database and then we can run queries by putting a percent percent SQL at the top. Again, this double percent tells it take the whole cell and interpret that as simple code."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4049,
+      "type": "audio",
+      "text": "You know, in this class, we'll always work with like database databases that are like a single file, which you may think is kind of silly because if it's like, oh, if it's a file, can't we just use CSVS? In theory, yeah. But again, we want you to get the skills so that when you go out and work with real databases."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4071,
+      "type": "audio",
+      "text": "You know how to deal with it, right? And for real databases you might connect with doing something like this right? Where you have this kind of like instead of HTTP you specify the type of database, you give it like a username and password at domain and then tell it where the database is. This is the kind of thing that you might do in the real world and you don't have to understand the details, just something to keep in the back of your mind."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4102,
+      "type": "audio",
+      "text": "So you know the way we write queries, right? We can say SQL select star from dragon and it gives us this. And because of some magic in our Jupyter notebook and you know this library that kind of blends everything together for us, the retained returned data looks similar to a pandas data frame. And in fact, you can actually get it to return as a pandas data frame if you use this auto pandas magic, which again encourage you to take a look at the notebook after class."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4105,
+      "type": "audio",
+      "text": "And it kind of like walks you through the process."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4114,
+      "type": "audio",
+      "text": "OK, so I want to wrap up today talking about tables and schemas or schemata. I think is technically the plural."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4128,
+      "type": "audio",
+      "text": "So in SQL land we call our tables sometimes relations right? So this is the like the simplified A shortened version of the dragon table. We can also call this a relation."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4153,
+      "type": "audio",
+      "text": "This is the name of the table or the name of the relation. We have different columns. Sometimes we call our columns attributes or fields when we have different rows, right? People also call rows records or tuples, or they pronounce it tuples. So each row you'll sometimes be heard referred to as a record or a tuple. It's basically just the same ideas with just different words for them."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4159,
+      "type": "audio",
+      "text": "Notice that I have these little like colored notes under the column names."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4179,
+      "type": "audio",
+      "text": "So this tells me information about each column. So SQL has information about each column, right? Some of this information is pretty straightforward. Name is like text, Year is an int. But we can also have constraints. And what's up with this PK and FK? We'll talk about that in a SEC."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4202,
+      "type": "audio",
+      "text": "So every column has three important properties, has a name, has a data type, and it has optionally constraints, right? Constraints can be anything as simple as you know, has to be greater than 1900, or can never be null, Or they can be more interesting, like primary keys and foreign keys, which we'll talk about in a SEC."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4225,
+      "type": "audio",
+      "text": "So pandas, right, Series have names and types, but they don't have constraints. There's no way to tell a pandas data frame, hey, everything in this, you know, table, all this, this column always has to be greater than 0. You can like check is it 0? And then do that. But you don't have any way of constraining people and preventing people from inserting rows that meet that criteria."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4227,
+      "type": "audio",
+      "text": "The schema."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4242,
+      "type": "audio",
+      "text": "Is a word for the logical structure of the table, right? So whenever somebody creates a new table, they define the schema. So when you hear people say the schema, it really is just the list of columns and the information about them."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4248,
+      "type": "audio",
+      "text": "So for example this dragon table. Here is the SQL code that was used to create it."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4271,
+      "type": "audio",
+      "text": "You don't really have to understand exactly the details in the syntax of this. I learned SQL in like 2013. I don't think I ever like had to write code to like create tables until maybe like 2020, and even then it's like less than 5% of the SQL I write is creating tables. So you don't necessarily have to know how to write this, but it you should be able to understand what's going on here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4274,
+      "type": "audio",
+      "text": "So this says create a table dragon."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4281,
+      "type": "audio",
+      "text": "There's these columns name varchar which is SQL language which is SQL speak for a string."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4294,
+      "type": "audio",
+      "text": "Sometimes strings in SQL have like limited fixed lengths. VARCHAR just says variable number of characters and this name is called a primary key which we'll get to in a set."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4324,
+      "type": "audio",
+      "text": "There's the year column, which is an integer and we have a check, right? A check tells SQL, Hey, anything in this column had better be greater than or equal to 1900. In other words, we're not allowed to have Dragons that are older than 1900, right? So like if you want to bring the dragon from like Saint George and the dragon not allowed in this table cute, which is an integer setting ID, which is an integer again, that's the table that we that column we didn't kind of like talk about. And then I have this thing that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4326,
+      "type": "audio",
+      "text": "Grayed out because we'll get to it in a moment."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4331,
+      "type": "audio",
+      "text": "Questions on the basics of like names, types and constraints."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4338,
+      "type": "audio",
+      "text": "Yes. What is the primary key? We'll get to that in the next slide."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4351,
+      "type": "audio",
+      "text": "The question was, when you create a table, do you have to define this for each of the columns? Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4366,
+      "type": "audio",
+      "text": "A lot of times the datasets that you will work with, somebody has already created it for you and so you'll be reading rather than writing this kind of information. But whoever is creating the table has to go through and do this for every single column in every single table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4384,
+      "type": "audio",
+      "text": "Question is, what's the difference between table and a database? A database you can think of as a collection of tables, right? So the database is like the whole group of all of the tables. Each individual table is part of the database."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4406,
+      "type": "audio",
+      "text": "The table lives in the database, and then you query things that give you back, like tables, right? There's like the dragon table, which lives in the database, and then there's those like, you know, dozen different like tables that we queried by asking for various things about the dragon table. Yeah, good question."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4408,
+      "type": "audio",
+      "text": "All right, these are all great questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4420,
+      "type": "audio",
+      "text": "So you know you might have different tables, each one has something that looks something like this, right? A CREATE TABLE statement associated with it. And you know for every column we have the name of the column and and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4447,
+      "type": "audio",
+      "text": "Examples of types. We have ants, floats, varchar, sometimes called text, there's something called blobs, binary, large objects, there's date times. Different kind flavours of sequel have different types. So you know when you go from like one type of sequel to another, the name of a type might change, the exact details of the type that's supported might change."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4452,
+      "type": "audio",
+      "text": "Always important to like, double check and make sure that you know what you know."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4454,
+      "type": "audio",
+      "text": "How you translate it from one flavor to another?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4458,
+      "type": "audio",
+      "text": "Talked about constraints, right? There's like a check."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4460,
+      "type": "audio",
+      "text": "Right where?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4490,
+      "type": "audio",
+      "text": "We have this check that says that the year has to be greater than or equal to 1900. And we have something called a primary key. So the primary key of a table is basically telling us that this key, this column is used to uniquely identify rows in that table, right? The primary key, right? We have to think back when we learned about tables in pandas. We talked about like the granularity of a table, right? What is each row represent?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4495,
+      "type": "audio",
+      "text": "The primary key is kind of related to that idea. It says it's every, uh."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4503,
+      "type": "audio",
+      "text": "Item in that primary key column is a unique identifier for its row."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4522,
+      "type": "audio",
+      "text": "Right, so if I'm saying that the name is a primary key, I'm saying that every dragon is uniquely identified by its name. In other words, I'm not allowed to have two Dragons with the same name, right? And if I know a Dragons name, I can always guarantee that I can look it up just by its name."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4540,
+      "type": "audio",
+      "text": "There's also foreign keys, which we'll talk about in effect. And then there's things like not NULL. So this says that, you know, we can't really, you're not allowed to have NULL in this column. You can specify defaults. This is very common with like date time columns, right? There's like a created."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4548,
+      "type": "audio",
+      "text": "Date time the default. You can set that. The default is like now, right? That way you don't have to like create it, it automatically sets it to now."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4568,
+      "type": "audio",
+      "text": "These are good things to look up, right? Let's say you go and look at a table and you're like, oh, there's a ton of date times from like February 2023. What's going on? Why did that happen? Well, you might realize, oh look, it has a default of now, or it has a default of February 2023. A bunch of rows were created then, or a bunch of rows were created with no date given."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4574,
+      "type": "audio",
+      "text": "So again, let's talk a little bit more about primary keys."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4581,
+      "type": "audio",
+      "text": "Though in the dragon table the name is a primary key, so no two Dragons are allowed to have the same name."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4610,
+      "type": "audio",
+      "text": "Now you might be thinking like, wait, that doesn't that's not necessarily ideal. I might have two different Dragons who happen to have the same name, which is often why our primary keys and tables tend to be ID numbers. Not always, there's plenty of tables that use like strings or names as I DS, but a lot of times it's nice to have ID numbers because you know, you can have two Dragons both named Bob, but you know, there's like Bob from."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4611,
+      "type": "audio",
+      "text": "This book and Bob from Like that movie?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4614,
+      "type": "audio",
+      "text": "And they're different Bobs, so they have different ID numbers."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4634,
+      "type": "audio",
+      "text": "But again, primary key is a unique identifier for every row. Very important concept in SQL tables. Often you'll hear people talk about like oh, the primary key for this, the primary key for that. It is a way of identifying a row uniquely. So if I know the primary key of a row, I know that it is unique."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4643,
+      "type": "audio",
+      "text": "So what if I take this table and I want to add more information from it, right? And we've been looking at staring at all these Dragons, but like, where are these Dragons come from?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4648,
+      "type": "audio",
+      "text": "So like maybe I want to add extra information. I want to say that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4649,
+      "type": "audio",
+      "text": "Maybe."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4653,
+      "type": "audio",
+      "text": "Oh, come on."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4662,
+      "type": "audio",
+      "text": "Let's try to do that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4666,
+      "type": "audio",
+      "text": "Right. Let's suppose."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4671,
+      "type": "audio",
+      "text": "Why does my pen stop working right as I need it?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4673,
+      "type": "audio",
+      "text": "All right, well, let's."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4674,
+      "type": "audio",
+      "text": "Let's see."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4677,
+      "type": "audio",
+      "text": "One last shot."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4685,
+      "type": "audio",
+      "text": "There we go. OK, let's suppose I want to know where each dragon is from. So Toothless is a dragon from. Anybody know where Toothless is from?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4705,
+      "type": "audio",
+      "text": "Yeah, how to train your dragon right from so like, let's say we want to know the place from and how to train your dragon. The village of Burke, Drogon and Rhaegal are from Game of Thrones, right? And they were born in at least in 2011. They're on the continent of Essos."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4715,
+      "type": "audio",
+      "text": "And Dragon 2 is not actually a dragon, it's a spaceship that is currently docked at the International Space Station."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4722,
+      "type": "audio",
+      "text": "Right. And I want to add more information and now I want to say, well, not only do I want to know this, I want to know like what media are they from?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4725,
+      "type": "audio",
+      "text": "Right, so this is from how to."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4734,
+      "type": "audio",
+      "text": "Train your dragon. This is from Game of Thrones, Game of Thrones and this is from like real life."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4744,
+      "type": "audio",
+      "text": "All right, so I can add more and more columns which I might want to do right? I might want to like know all this stuff."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4771,
+      "type": "audio",
+      "text": "But at some point we start duplicating a lot of information, right? Notice that if I want to add the third dragon from Game of Thrones, I forgot what it's called to this, then I'm going to have even more duplicated information. And now each row in this table is not just a dragon. It's like a dragon and where it's from and what like what media it's from, and is that like a book or a movie? So I can go on and on and on."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4789,
+      "type": "audio",
+      "text": "But a general design principle when making SQL tables or making tables in a database is try not to like make your data too bloated, right? Don't add a bunch of rows like this with duplicated information."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4807,
+      "type": "audio",
+      "text": "So how might we do this instead, Right. Yeah, we have redundant information. We have this sort of like bloating of columns where, you know, there's a lot of different stuff happening. The solution is going to be we're going to split the data into multiple tables."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4812,
+      "type": "audio",
+      "text": "And we're going to use stuff like something like PD dot merge, which we'll learn about next time, the equivalent to combine them."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4817,
+      "type": "audio",
+      "text": "Right, so now we have 1 table of Dragons."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4827,
+      "type": "audio",
+      "text": "And another table with settings right? Like the locational locations, whether fictional or real, where those Dragons come from."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4845,
+      "type": "audio",
+      "text": "Right, so we might have one row for Burke from How to Train Your Dragon, one row, you know, for Essos from Game of Thrones, one row for the International Space Station, and one row for the Lonely Mountain from The Hobbit. Then as we add more Dragons, even if they're from the same place, we can just refer to them."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4850,
+      "type": "audio",
+      "text": "So how do I link these two tables together?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4856,
+      "type": "audio",
+      "text": "Well, really what I want is I want to say that like Toothless is from here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4863,
+      "type": "audio",
+      "text": "Drogon and Rhaegal are from here, and Dragon 2 is from here. And you know, smog."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4868,
+      "type": "audio",
+      "text": "Is from here and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4878,
+      "type": "audio",
+      "text": "Right, so how do I actually do this? Well one nice thing about this setting column is it has a primary key."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4885,
+      "type": "audio",
+      "text": "Right, so I can uniquely refer to every setting using its ID number."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4888,
+      "type": "audio",
+      "text": "Which is nice because I can then add that ID number."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4896,
+      "type": "audio",
+      "text": "As a column in Dragon, call it setting ID and this is exactly what a foreign key is."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4902,
+      "type": "audio",
+      "text": "It's a way of having a reference to data in another table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4906,
+      "type": "audio",
+      "text": "Right feel like I have toothless is from a setting ID 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4914,
+      "type": "audio",
+      "text": "Which is just this. Drogon and Rhaegal are from setting ID one, Dragon 2 is from setting ID 2 and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4924,
+      "type": "audio",
+      "text": "So this is what foreign keys in databases are for. It's basically just a way of saying here's how the dragon table relates to the setting table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4931,
+      "type": "audio",
+      "text": "Every dragon comes from a setting and we have a whole table full of settings that has all the information about them."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4955,
+      "type": "audio",
+      "text": "So you might be wondering like, OK, how do you know when to like, keep adding more columns or make a new table? So there are different design principles, different use cases have, there's like all kinds of constraints and performance issues and stuff. One common pattern is using something called fat tables and dimension tables in something called a star scheme."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4971,
+      "type": "audio",
+      "text": "And the details of vocab a little you don't necessarily have to know all about, but the key idea is we have one table for all of our Dragons, right, that are like just stuff about the Dragons, one table for all of our settings. It's just stuff about the settings. And then we have foreign keys that connect them."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4983,
+      "type": "audio",
+      "text": "And then let's suppose you want to say, well, maybe Drogon appears also in Westeros, which is a different setting also from Game of Thrones."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4987,
+      "type": "audio",
+      "text": "Right, then I can have another table that says maybe all the appearances of Drogon."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 4998,
+      "type": "audio",
+      "text": "To have the you know what, what dragon appeared, where it appeared and when it appeared, right? And so maybe one dragon can appear in different settings."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5008,
+      "type": "audio",
+      "text": "Or if somebody writes like fanfic of one of these settings, then you know, maybe the dragon appears in the original story and it appears in the fanfic and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5012,
+      "type": "audio",
+      "text": "Let's do yeah, let's do the the one Slido."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5020,
+      "type": "audio",
+      "text": "So which of the following statements are true about primary and foreign keys? Take a minute and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5055,
+      "type": "audio",
+      "text": "All right, I want to hear people discussing, but now you've had time to read over all of them. Discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5109,
+      "type": "audio",
+      "text": "So which of these are true? Well, let's go through them 1 by 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5124,
+      "type": "audio",
+      "text": "So a foreign key must reference a primary key in another table. This one is true. This is how foreign keys work, right? They tell us. What setting does this dragon appear in, right? What product is this sale for?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5128,
+      "type": "audio",
+      "text": "Right what? Who is the author of this book?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5136,
+      "type": "audio",
+      "text": "Right, if you have a book table, maybe you have an author key that has an ID of the author, right? It's a reference to the primary key of another table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5163,
+      "type": "audio",
+      "text": "A table can have multiple foreign keys, right? A book. A table about books might have one for the author, right? That tells you about the author table, one for the publisher that tells you it's a foreign key into the publisher table, and so on and so on. So you can tables can have more than one foreign keys. Multiple records can share the same foreign key, right? We saw an example of that with the two different Dragons from games with Game of Thrones."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5178,
+      "type": "audio",
+      "text": "But multiple records in a table cannot share a primary key. The whole point of a primary key is that it is unique. So every row, every record has to have its own primary key."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5195,
+      "type": "audio",
+      "text": "Primary keys can never contain null values, so every row always has to have a non null primary key, right? We talked about how nulls behave weirdly, so it doesn't really make sense to have null as a unique identifier for a record."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5210,
+      "type": "audio",
+      "text": "And last but not least, every table does not need to have a foreign key, right? Even in our little example, we saw that the setting table didn't have any foreign keys in it, right? There are no references that settings were about. Some tables do and some tables don't."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5239,
+      "type": "audio",
+      "text": "So how do we actually organize this? So generally one pattern that people use is to store data across what are called fact tables and dimension tables. So dimension tables are like the kinds of things we've seen before, right? Maybe in a, you know, data set about Bulba, a different Bulba products you can order. We have one table about the different stores, one table about the different topics, one table about the different drinks."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5252,
+      "type": "audio",
+      "text": "Right. And then we say, well, we have products, which is a fact table that really is just a bunch of rows where they're all, all three columns are foreign keys."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5282,
+      "type": "audio",
+      "text": "I probably also need a primary key in there, but we say the first product is a black milk tea with lychee Jelly that you can buy at Sweetheart, right? The second product is a mango Olay with lychee with custard that you can buy at Fengsha and so on and so on. So this way of storing things we have this fact table and the dimension tables is often called a star schema and is 1 maybe the most."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5294,
+      "type": "audio",
+      "text": "Popular way to store data, right? And the reason it's called a star schema, it kind of looks like a star, right? There's like the fact table in the center and it points out to all the dimension tables on the sides."
+    },
+    {
+      "id": "audio-ds100-sp26-1775601139-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1775601139",
+      "timestamp": 5316,
+      "type": "audio",
+      "text": "All right, so that's all for today. Next time again we'll have a lecture by our amazing Tasmania, Rohan and Sarah talking about more details of SQL syntax, How do you actually write more complex queries, things like the equivalent of merges, groups and so on. So we'll see you all on Thursday and I'll have officers now here and again I'll have officers on Thursday as well."
+    }
+  ]
+}

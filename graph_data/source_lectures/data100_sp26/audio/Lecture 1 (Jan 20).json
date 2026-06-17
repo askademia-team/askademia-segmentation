@@ -1,0 +1,2046 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-upload-1769106516",
+  "display_name": "Lecture 1 (Jan 20)",
+  "count": 291,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-2-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 22,
+      "type": "audio",
+      "text": "Welcome Data 100 Spring 2026. Nice to see everybody."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-3-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 37,
+      "type": "audio",
+      "text": "We need your responses to the pre semester survey to assign discussion sections. Even if you don't plan on going to a discussion, please fill out this pre semester survey. We collect a lot of information that's very useful for managing the class, so please take a minute to fill that out if you can. It's not due until."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-4-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 52,
+      "type": "audio",
+      "text": "Until Thursday at midnight. You can start during lecture. You can start after lecture. We'll put the link up a couple different times, but let's go ahead and get started."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-5-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 67,
+      "type": "audio",
+      "text": "Slide This connects you to a service called Slido. We use this to answer live questions during lecture. Periodically I or Ramesh will stop during lecture and take questions. But if you have a question that you want to get answered right in the moment, scan that QR code."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-6-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 82,
+      "type": "audio",
+      "text": "And a TA will answer your question live. A big list of these questions and answers will be posted with anonymous names on on Ed after class. But please ask there now. You don't have to attend Data 100 lecture in person, that's not required."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-7-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 97,
+      "type": "audio",
+      "text": "It's one way to get attendance credit and data 100 for lectures. But rather than spending time in this lecture going through all the integrity of policy, take a look at the syllabus to see what the attendance policy is for Data 100 in both lectures and discussions."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-8-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 112,
+      "type": "audio",
+      "text": "A couple of intros to start. Ramesh will be up here in just a SEC. I'm Josh Grossman. I'm an assistant teaching professor in statistics and data science. I've been here for about a year and a half. My undergrad degree was in neurobiology, something I always like to share because I."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-9-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 127,
+      "type": "audio",
+      "text": "Don't do anything related to neurobiology anymore. I never think about neurobiology. I like to say this to students because I think there's a lot of stress right now feeling like you need to get everything correct the first time. My life has turned out totally okay, even though I picked sort of wrong the first time I did my PhD and."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-10-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 142,
+      "type": "audio",
+      "text": "2024 in a field called computational social science, which sort of combines public policy and data science. My research is at the intersection of public policy and data science. I'd done some stuff in criminal justice, some stuff with education. These days I'm spending a lot more time thinking about."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-11-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 157,
+      "type": "audio",
+      "text": "About AI and education and how it relates to the classes I teach. You can check out my website for more info. I teach Data 100. This is my fourth time in a row teaching Data 100. I'll teach it again next spring. I get a little time off. I also teach that 131 A and this new course Data 89."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-12-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 172,
+      "type": "audio",
+      "text": "Is anyone in data 89?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-13-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 187,
+      "type": "audio",
+      "text": "I was part of that and one thing I like to offer students, I'll mention it today. I'll try to mention it at the beginning, some other lectures as well. But if you want to talk one-on-one about grad school, career plans, life in general, I have these coffee checks."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-14-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 202,
+      "type": "audio",
+      "text": "That's every morning. I have 1:00 every morning for the semester. They tend to fill it pretty quickly. The link is on my website if you want to sign up for one. If you're a freshman or sophomore in Data 100, you have to sign up for one March or later, but everybody else can start signing up for one. I think there's one as soon as this Friday, so you're welcome to."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-15-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 217,
+      "type": "audio",
+      "text": "Take a look at the link here or you can take a look at the link on my website. But with that, I'll hand it over to Ramesh. Thanks, Josh. A quick note before I introduce myself. The fire marshals do not let us have anyone in the aisles."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-16-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 232,
+      "type": "audio",
+      "text": "So if you were in the aisles, please come on in. There's plenty of seats. If you have an empty seat next to you, please raise your hand."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-17-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 247,
+      "type": "audio",
+      "text": "All right, so hi everyone. My name is Ramesh. I'm going to be teaching the class along with Josh. A bit about me. So I am a lecturer here at Berkeley. I have taught Data 8 a couple times and most recently I've been teaching Data 102, which is kind of the."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-18-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 262,
+      "type": "audio",
+      "text": "The advanced class mostly graduating folks for what like 5 years now? A long time. So this is my first time teaching Data 100. Really looking forward to it. Really excited. Excited to be here with all of you. I teach part time and then I also work part time."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-19-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 277,
+      "type": "audio",
+      "text": "Industry so I do a lot of AI, data science, machine learning, software development specifically in like healthcare and life sciences so I am pretty fortunate I love teaching I also love you know using this stuff in the real world so."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-20-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 292,
+      "type": "audio",
+      "text": "So I'm really fortunate to have a position where I get to do both. I would love to chat with any of you about industry, about academia, at any point in time. Always happy to answer your questions. Like all of you, I was once a Berkeley student in the."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-21-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 307,
+      "type": "audio",
+      "text": "Distant, distant past, I was an ex major. I went on to do a PhD thinking that I was going to become a professor, that academia was for me. And then I realized at some point, well, not really what I wanted to do. So again, just like Josh said, you do not have to get it."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-22-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 322,
+      "type": "audio",
+      "text": "Right the first time. There's always room to figure things out. Adjust, adapt. If you want to chat with me, I'm also happy to chat. I'll have some one-on-one slots. I'm still ironing out my schedule so I don't have the sign up link yet, but I will post that and I'll let you know sometime next."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-23-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 337,
+      "type": "audio",
+      "text": "Next week in lecture when I do that, all right. And with that."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-24-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 352,
+      "type": "audio",
+      "text": "Well, Josh, Josh, if you really want, you can call us Professor Josh, your professor Ramesh. But if you see us around in public on campus, feel free to say hi, Wave, even if we don't know you yet, we love for all of you to say hello."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-25-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 367,
+      "type": "audio",
+      "text": "If you want to reach out to us, please please please do not use our personal emails. There's 1000 of you and only two of us. So if you want to have a question, please contact data100.instructors@berkeley.edu or make a post on Ed."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-26-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 382,
+      "type": "audio",
+      "text": "That way, you know we're able to get to the question. We also have a couple of our head Gaas who are also monitoring that account."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-27-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 397,
+      "type": "audio",
+      "text": "After like come in, knock on the office door. Really, you can just come to office hours for anything related to the class, to data science. Those will start next week. We'll announce locations and times then. Please, please, please feel free to come by. You don't have to prepare anything."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-28-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 412,
+      "type": "audio",
+      "text": "You could welcome to just come by, talk, chat, ask questions if you want to, just like listen in. You're also welcome to stop by just listening. Totally fine too."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-29-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 427,
+      "type": "audio",
+      "text": "Had this experience in data and data 102 say that oh I regret not coming sooner in the semester at officers. So please feel free to come in, chat with us at our office hours even just starting next week."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-30-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 442,
+      "type": "audio",
+      "text": "I am not able to write letters of recommendation for anybody. I don't know well, because I'll be able to say is, oh, you know, this person took data 100 and they got this grade and that's kind of a weak letter. So if I know you, if I have, you know, interact with you, spend a bunch of time with you, it's a lot easier for me to write a letter."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-31-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 457,
+      "type": "audio",
+      "text": "How great you are in specific ways, XY and Z, and the best way to do that is come to office hours, get to know me, get to know Josh and if that's something you might be interested in."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-32-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 472,
+      "type": "audio",
+      "text": "Today specifically if you have a question after lecture we will be taking it outside Wheeler so you know both of us will be packing up and leaving right after class of the next folks can come in so if you have a question come meet us outside we'll be waving around and can answer your questions there we."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-33-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 487,
+      "type": "audio",
+      "text": "Cannot answer in any enrollment questions. Those are all answered in the FAQ. Anything not in the FAQ is beyond our what we know."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-34-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 502,
+      "type": "audio",
+      "text": "Thank you, Ramesh. Yeah. Again, we can't write letters of record, people we don't know. Well, we want you to come to Office Hours. We want to see you there. I enjoy talking to students. It's one of my favorite parts of the job. So even if you don't have questions, come to Office Hours. It's a really nice community that forms."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-35-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 517,
+      "type": "audio",
+      "text": "In my office, and then usually we grow so big we have to move to a classroom. So please start coming as soon as you can. All right, The data 100 final time has changed from what was posted at the end of last semester. We sent out an announcement about this on January 6."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-36-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 532,
+      "type": "audio",
+      "text": "16th But for those of you who didn't see the announcement or didn't read the e-mail, please, please pay attention to this. The Data 100 final is not on Friday of finals week from 7:00 to 10:00 PM. It's now on Thursday, May 14th in the morning at a more reasonable time."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-37-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 547,
+      "type": "audio",
+      "text": "Time OK, if you were enrolled in a class before January 16th that conflicts with this final, we totally understand and we can accommodate you. No other time conflicts are going to be accommodated. We don't allow lecture time conflicts in data 100. We don't allow."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-38-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 562,
+      "type": "audio",
+      "text": "Allow final time conflicts in data 100. But this is The only exception we are making and it's sort of a one time thing this semester because we had to change the date of the final. You can report this information in the pre semester survey."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-39-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 577,
+      "type": "audio",
+      "text": "Now, one approach to doing these slides in the first day lecture is to give you a bunch of different definitions of data science and sort of take you high level through a couple different projects."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-40-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 592,
+      "type": "audio",
+      "text": "Very powerful case study that shows some example of data science driving positive change in the world. One thing I want to note is this case study discusses racial bias, something that some people in this room might have more experience with than others. This is a challenging topic, but I think it's really important."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-41-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 607,
+      "type": "audio",
+      "text": "Because it shows you the limits of what statistics can say about discrimination and bias and what it can't. So please engage the extent that you're comfortable. This is very recent research published last year, 2025. So there is a troubling headline in the New York Times a couple years."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-42-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 622,
+      "type": "audio",
+      "text": "Years ago, black Americans are much more likely to face tax audits. This was in 2023. Let's unpack this a little bit. The IRS is the Internal Revenue Service. This is the US federal agency responsible for."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-43-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 637,
+      "type": "audio",
+      "text": "For gathering your federal taxes, a tax audit occurs when the IRS thinks that you've reported your income incorrectly or there's something wrong with your tax return. This is a pretty burdensome process, both to the IRS, who has to go chase you down and spend time chasing you down."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-44-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 652,
+      "type": "audio",
+      "text": "And also for you, if you get an audit, you might not have maliciously underreported or overreported your taxes. You get this scary letter in the mail saying that you did something wrong and you could be prosecuted if you don't do anything about it. An audit, it's kind of an emotionally."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-45-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 667,
+      "type": "audio",
+      "text": "Burdensome time discrimination. Discrimination is pretty difficult to define precisely, but you can think of it as some unjustified difference in either how decisions are made or how outcomes appear in the real world across things like race, gender, or age or other."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-46-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 682,
+      "type": "audio",
+      "text": "Other protected characteristics. So here's the mystery that I want to try to address in the next 20 minutes with you all on the tax return form. And I'll show you an example of 1 in just a second. You never report your race. The IRS does not know your race."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-47-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 697,
+      "type": "audio",
+      "text": "Does not come from your tax return. They cannot see it. So how can they discriminate if they don't actually see race? So let's let's go figure out. So a good starting place for this analysis might be to compare 2 statistics. The first one, let's look at black taxpayers."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-48-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 712,
+      "type": "audio",
+      "text": "They report their taxes. What's the likelihood that that taxpayer is audited? For every 100 tax returns that are sent in, how many are audited? Let's do the same thing for non black taxpayers and let's compare X&Y. This is like a nice place."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-49-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 727,
+      "type": "audio",
+      "text": "To start and some things to think about here. So first of all, there's a nice human context part of this and data 100. We're going to try to bring in human context as much as possible. Data science isn't all about computation and just calculations. We need to think about what data actually means in the real world. So you might sort of."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-50-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 742,
+      "type": "audio",
+      "text": "Think to yourself like why does this comparison matter? You know, Should X be equal to Y?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-51-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 757,
+      "type": "audio",
+      "text": "This is literally like 70% of my work is calculations across groups. In this case, we have the simplest possible setting. We have two groups and we're calculating a proportion in each of those groups. But this is a huge part of data science. We're going to spend a lot of time on it. In Data 100, you're going to spend a lot of time on it."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-52-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 772,
+      "type": "audio",
+      "text": "Doing analysis in the future. OK, so here's a tax return that's sort of angled to the side. Here we can see the person's name is reported. You can see their address. You can see their filing status, whether they're single or married. Again, race is not reported anywhere. Ethnicity is not reported."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-53-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 787,
+      "type": "audio",
+      "text": "Anywhere. So we have this information in this case study, we have data from the IRS, but you don't just call up the IRS and say, hey, can I have some anonymized data about tax returns? This is data that's very, very, very hard to get access to. This comes after."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-54-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 802,
+      "type": "audio",
+      "text": "After years and years of negotiation and partnerships and talking to the right people and getting forwarded to the right person, this is a very difficult process. Often the longest part of a data analysis isn't the analysis. The analysis can be very quick. Getting the data is often the hardest part."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-55-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 817,
+      "type": "audio",
+      "text": "Again, huge part of data science is collaboration. This isn't a solo exercise. There's usually someone else or some other team or some group of teams that you're working with. So in addition to all of the information that's on the tax return, we also have access to whether or not that particular task."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-56-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 832,
+      "type": "audio",
+      "text": "Tax return was audited by the US IRS. Whether it was flagged for some kind of error."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-57-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 847,
+      "type": "audio",
+      "text": "So we can't. We ultimately don't know a person's race or ethnicity."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-58-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 862,
+      "type": "audio",
+      "text": "Clients, you often have to make assumptions. You want to be transparent about those assumptions. How do they affect your analysis? How sensitive is your analysis to those assumptions? And so could we make an informed prediction about taxpayer race based on other information in the tax return? Let's see."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-59-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 877,
+      "type": "audio",
+      "text": "Give you a little bit of intuition. So the first thing to note is that the prevalence of things like where people live, their hometown, things like first name, things like last name, the distributions of this information differ across race and ethnicity for lots of different reasons."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-60-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 892,
+      "type": "audio",
+      "text": "Historical reasons, cultural reasons, human context idea here. Why do these differences exist right? Is it bad for these differences to exist? Should we be homogeneous in all ways? Something to think about, but you can see on the left here we have the distribution of population in the city of."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-61-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 907,
+      "type": "audio",
+      "text": "Berkeley from the 2020 census. You can see it differs across race and ethnic groups that are shown here and on the right we can see the most common baby names across these four groups in New York City. If you look at the entire list of baby names, those lists are quite different between each of those groups, so they're."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-62-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 922,
+      "type": "audio",
+      "text": "Differences across demographic groups that we might be able to take advantage of in this prediction. So I'll give you a little bit of intuition here. Let's think about San Francisco, New York City. We've got some nice skylines on the left and right here. So in the 2020 census, 16%."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-63-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 937,
+      "type": "audio",
+      "text": "Of New York City, identified as Asian."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-64-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 952,
+      "type": "audio",
+      "text": "Got one random San Francisco resident and I asked you which one of those two people is more likely to identify as Asian. You would probably tell me that it's more likely that the SF resident identifies as Asian because you have this information about the demographic distribution."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-65-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 967,
+      "type": "audio",
+      "text": "Across these two cities."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-66-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 982,
+      "type": "audio",
+      "text": "Or particular parts of San Francisco, this intuition might not quite hold. So we're going to scale up that intuition. We're going to scale up that intuition such that we can calculate this information. So we're not just going to look at the distribution of names, a rather race across entire cities."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-67-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 997,
+      "type": "audio",
+      "text": "You can actually look at very specific areas called census blocks and we can make statements like this, a person named Robert Johnson from some particular neighborhood in New York City based on our probability calculations like when we did on the previous slide, no machine learning going on here. These are standard probability."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-68-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1012,
+      "type": "audio",
+      "text": "Mobility rules, we can assign some probability that they identify as black. We can say the same thing for Tanisha Tompkins from Neighborhood B in San Francisco and so on for the remaining taxpayers. So now for all of the taxpayers in our analysis instead of knowing."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-69-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1027,
+      "type": "audio",
+      "text": "Whether or not they identify as black, we have some probability that they identify as black based on information about demographic distributions in the United States. OK, how did we get this information? How do we actually get to this point? How do we get those distributions?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-70-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1042,
+      "type": "audio",
+      "text": "We need to join in external datasets. I think they used a mortgage data set to do something with the first names they can use or the last names, The first names they can use, the incidence of baby names using Social Security data, use census data to deal with those census blocks. So huge part of data."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-71-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1057,
+      "type": "audio",
+      "text": "Science is joining in external datasets. We're going to be doing a lot of that in Data 100."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-72-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1072,
+      "type": "audio",
+      "text": "Y axis, we're going to plot the audit rate."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-73-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1087,
+      "type": "audio",
+      "text": "100 are audited. And So what does this look like? So we're going to plot for 20 equally sized groups of taxpayers that are bucketed based on the X axis value here. And what do we see? We see an incredibly stark pattern. We might expect this line to be totally flat."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-74-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1102,
+      "type": "audio",
+      "text": "If I didn't show you that headline from the very beginning, you might imagine, well, audit rate should be pretty similar regardless of the likelihood that somebody identifies as black. But we see this very troubling pattern."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-75-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1117,
+      "type": "audio",
+      "text": "Five times more likely to be audited."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-76-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1132,
+      "type": "audio",
+      "text": "The most important on their tax return, you can just shout it out. OK income, OK income. This is probably the most important thing that you report on your tax return. So maybe instead of a story about race, maybe this is a story about income. Lots of different things differ across."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-77-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1147,
+      "type": "audio",
+      "text": "Demographic groups for lots of different reasons. Once again, let's see if income explains this plot and not race. So let's do exactly that. Visualization, critical form of communication and data science. So let's plot now on the X axis."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-78-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1162,
+      "type": "audio",
+      "text": "Axis, the taxpayers reported income, we're going to cut it off after 160,000 here. Y axis, we're going to plot that same thing, the audit rate. And what we're going to do is separately plot for tax players who we predict."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-79-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1177,
+      "type": "audio",
+      "text": "Are black and taxpayers who we predict are non black. We're going to plot the audit rate as a function of income."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-80-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1192,
+      "type": "audio",
+      "text": "OK. What does it look like? Well, the line up top, the line for black taxpayers appears to be higher across income levels. Across income levels, it looks like audit rates for black taxpayers are higher. So regard."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-81-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1207,
+      "type": "audio",
+      "text": "Regardless of a person's income, it seems like."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-82-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1222,
+      "type": "audio",
+      "text": "For money."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-83-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1237,
+      "type": "audio",
+      "text": "Have heard of using something called linear regression or regression to adjust for a variable. We just did it visually."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-84-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1252,
+      "type": "audio",
+      "text": "But let's take a minute to actually think about this. How can this pattern occur if the IRS doesn't see race? So we're going to have our first pair share discussion here. Why don't we think about this? Talk to your neighbor, ask for their name. What do you think is going on here? What could be responsible for the patterns in this plot? Let's take a minute or two."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-90-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1342,
+      "type": "audio",
+      "text": "Explain how these slido's work. Please scan this QR code in the top left. And this is just a test for the first lecture. We start tracking attendance with the second lecture, but I'm suggest testing this out now. Give that a scan and write a little bit."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-91-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1357,
+      "type": "audio",
+      "text": "But just so we can move on quickly, just write a couple words, submit it, and you'll notice that little ticker in the top right is going to go up. So why don't we wait until that ticker gets up to like 400 and then we'll move on Here, take a minute to write down your thoughts. Hopefully some good conversations are happening. I'm still hearing some, which is fantastic."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-92-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1372,
+      "type": "audio",
+      "text": "Please keep talking. Please keep talking."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-93-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1387,
+      "type": "audio",
+      "text": "All right, let's start seeing what people are saying here. OK? One of the big words here is income. We have income on the plot already. Location. Something going on with location. I saw welfare benefits, but that went away. Interesting."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-94-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1402,
+      "type": "audio",
+      "text": "Something with marital status, something with neighborhoods."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-95-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1417,
+      "type": "audio",
+      "text": "As it turns out, the IRS uses an algorithm to help them flag which tax returns are audited, and I don't immediately show this slide to suggest that algorithms are bad by any means. I think there's a camp that's sort of like rah rah."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-96-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1432,
+      "type": "audio",
+      "text": "Algorithms are bad. Humans should be making every decision. But algorithms can really help us out. They can make things a lot more efficient. For example, all these audits that can be easily flagged that are correct. It's great that we now can take all of that human time and go spend it on more difficult audits where we're trying."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-97-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1447,
+      "type": "audio",
+      "text": "Trying to get more money for more complicated tax returns. The thing is, if you're going to use an algorithm, you have to scrutinize it. Sometimes you can't scrutinize it fully. You have to go see it out in the real world and watch it mess up."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-98-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1462,
+      "type": "audio",
+      "text": "Just absolutely not our sort of approach in this class that models are bad, but you have to scrutinize them. So what was going on with this model that was so bad? So as it turns out, this model."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-99-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1477,
+      "type": "audio",
+      "text": "If you want to train a model to flag tax returns for errors, you probably want to train the model on some set of tax returns along with outcomes of whether or not there was an error. Sounds very, very large."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-100-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1492,
+      "type": "audio",
+      "text": "Logical upfront, but here's the thing. This algorithm was trying to catch just errors in tax returns, but I mentioned something earlier about trying to gather the most money possible. Not every error is equally valuable."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-101-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1507,
+      "type": "audio",
+      "text": "To the IRS, in terms of recovering the most money, it seems like the algorithm was prioritizing errors in claimed tax credits as opposed to trying to recover the most money possible."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-102-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1522,
+      "type": "audio",
+      "text": "And so this is another critical part of data science, thinking about what your metric for success is. What does success actually mean? Success isn't just this thing that you take for granted. You need to define what success means in the context of your problem, because it's going to have down."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-103-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1537,
+      "type": "audio",
+      "text": "Stream effects and so as it turns out, and I'm happy to talk more about this offline and office hours you can ask on Ed, you can take a look at the New York Times article. The research paper is very readable as it turns out, black taxpayers were more likely to file the kinds of returns that were targeted by this algorithm and."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-104-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1552,
+      "type": "audio",
+      "text": "And thus audit rates were higher and they were unjustifiably higher. It didn't make sense that they were higher. Now, the authors didn't just show this and show that there's a problem in do Nothing. They actually showed what's called a counterfactual policy. They showed that if you used."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-105-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1567,
+      "type": "audio",
+      "text": "A different policy that used an algorithm trained on how much money was recovered instead of whether an error was on the tax return at all. You kind of got a free lunch. You could both recover more money, and you could do so with smaller disparities."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-106-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1582,
+      "type": "audio",
+      "text": "And they didn't just end there showing that there's an alternative policy that works. The IRS actually listened. There was a lot of interest from the federal government when this came out across more than just the IRS. And the IRS actually said they were going to change this practice and try to make this."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-107-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1597,
+      "type": "audio",
+      "text": "Go away, improve the issue."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-108-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1612,
+      "type": "audio",
+      "text": "Good counting skills, smart questions, a little bit of probability, you can do a lot of damage."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-109-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1627,
+      "type": "audio",
+      "text": "Things off This is a cool survey from 2016, but most of this is still pretty relevant. It was a survey of data scientists asking them what they do all day, which one of the things they do all day. You can see there's lots of cool things here, teaching and training others, creating visual."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-110-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1642,
+      "type": "audio",
+      "text": "Visualizations. The biggest bubble here is basic exploratory data analysis. But you might look at this and if you've spent time playing with ChatGPT or Gemini, or pick your favorite LLM and you've asked it to do data analysis for you like, it'd be pretty good depending on what you."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-111-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1657,
+      "type": "audio",
+      "text": "You're working on and so I have this question for you all. If an LLM can do a lot of these tests, are they just gonna replace us?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-112-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1672,
+      "type": "audio",
+      "text": "We'll talk a little bit more about this in just a SEC, but talk to your neighbor again. Ask for their name if you forgot it, No worries. What's the role of large language models in the future of data science?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-118-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1762,
+      "type": "audio",
+      "text": "Were cooked, so I didn't. I didn't see that again."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-119-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1777,
+      "type": "audio",
+      "text": "For sure, but we do have hope."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-120-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1792,
+      "type": "audio",
+      "text": "Ask our good questions that we now need to answer. So we have to go plan an analysis, some quantitative analysis that answers those questions. And then step three, we actually have to go run the analysis like go tell a computer to do it or go do something by hand, right. So where do LLM sort of fit into all of."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-121-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1807,
+      "type": "audio",
+      "text": "This large language models, so step three. I'll start with Step 3. LLM's are quite good at running an analysis a lot of the times if you can really carefully describe what you want."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-122-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1822,
+      "type": "audio",
+      "text": "Days can take me 15 minutes. It's pretty wonderful. But that's just step three, OK? You also need to be able to verify that those outputs are correct. That only comes with experience. You can't just ask the LLM to verify its own work. That works sometimes, but not always."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-123-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1837,
+      "type": "audio",
+      "text": "Step 2. Plan analysis that address your questions. Also, large language models can be quite helpful. They can give you some options for approaching a problem. But ultimately this idea of the best analysis isn't an objective question. It's not something with a singular correct answer. It's often subjective."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-124-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1852,
+      "type": "audio",
+      "text": "And again, you need to have experience to be able to choose the best analysis for your situation. So LLMS are kind of helping in the middle, but humans are really stepping in a lot, at least for now. Large language models can't walk through your company and go talk to all these different people and have their."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-125-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1867,
+      "type": "audio",
+      "text": "The right intonation in their voice. And talk to some friend and go out to lunch with this one person who can connect you to this other person who gives you the data."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-126-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1882,
+      "type": "audio",
+      "text": "This idea of critical thinking is really a human task again, at least for now."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-127-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1897,
+      "type": "audio",
+      "text": "Classes, it's exactly the same like we know you know, right? You might be like laughing. I'm getting full credit on the assignments because I'm just submitting my my large language model output, but it's like."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-128-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1912,
+      "type": "audio",
+      "text": "It So if large language models are writing your answers, you're fully outsourcing steps one and two, fully outsourcing steps 1:00 and 2:00, but you are doing step three. That's good, but you're doing Step 3 and you're getting credit for it."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-129-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1927,
+      "type": "audio",
+      "text": "Interviewers know this, companies know this like it's, it's going to bite you later on if you're just doing this. So you can get your sort of stamp your certificate, your degree at the end of Berkeley and then go figure this all out. In the real world, you're really setting yourself up for failure because all of your classmates."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-130-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1942,
+      "type": "audio",
+      "text": "Who are actually doing the work are going to speed right by you in industry. OK, so again, interviewers know this and So what are they going to test? They're going to test steps one and two. And it's very difficult to pick up steps one and two that skill."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-131-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1957,
+      "type": "audio",
+      "text": "Just just keep this in mind, you know, beware, beware. OK, how do you use large language models appropriately in Data 100? We certainly don't want you to just ignore LLMS completely. You can do that if you'd like. You know, there's always a couple students who just do not want to use large language models at all."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-132-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1972,
+      "type": "audio",
+      "text": "And I'm always like a big fan of those students. Please do Data 100 without large language models if you choose to use them. I like to use them in sort of a structured sequential way. Start without using a large language model at all. Then just use it as sort of a fancy Google. Then maybe ask A."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-133-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 1987,
+      "type": "audio",
+      "text": "A little bit of a deeper question. So appropriate ways of using large language models, asking them to explain errors to you, explaining why something is happening, not just fix it. For me inappropriate or just copying questions directly into large language models. In fact, that's."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-134-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2002,
+      "type": "audio",
+      "text": "Against our academic honesty policy. And if we see people doing that, that's an academic dishonesty."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-135-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2017,
+      "type": "audio",
+      "text": "You're going to learn a lot of principles and techniques, but just remember that data science isn't just this exercise of like picking up every possible technique. A lot of people at this sort of stage of their data science career have something I like to call methods anxiety. Or if I don't learn these hundred ways of doing something, I'm not going to be a good data scientist."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-136-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2032,
+      "type": "audio",
+      "text": "That's not the case at all. We're trying to teach you how to pick up the methods you need in the future. OK, The skill of learning a new method is really what we want you to pick up. And so we're going to focus on some core, core methods and learn them really well so that if you need to learn some new method down the road, it's a lot."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-137-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2047,
+      "type": "audio",
+      "text": "Easier. So what are some of the principles and techniques we're going to talk about? We're going to talk about storing data with pandas and Numpy, making playing around with data, relational databases and SQL will come later in the semester. Bigger datasets, exploratory data analysis, things like regular."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-138-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2062,
+      "type": "audio",
+      "text": "Other expressions that are used to parse text visualization. We'll have two lectures on that. You'll be doing it on lots of the homework assignments. We'll show you a couple different tools for doing visualization. I'll jump back in after Ramesh and tell you about sampling in lecture 9, Probability and random variables model."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-139-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2077,
+      "type": "audio",
+      "text": "Design and loss formulation. A super important model. Linear regression. We're going to spend lots of time on feature engineering. How do you change the inputs to your models so that your model functions better? Other things for fitting a model? Gradient descent. We have a big demo that's gonna be right here. Lecture 4."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-140-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2092,
+      "type": "audio",
+      "text": "That's coming. Logistic regression, clustering at the very end, and something called principal component analysis. We'll be using all kinds of industry standard tools in DATA 100, but just remember these are just tools. The best tools can change over time. I know Panda."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-141-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2107,
+      "type": "audio",
+      "text": "Is is moving towards this other thing called polars, This thing polar is starting to come up into play. Pandas is still used very widely. These are just tools. What are we learning how to do in this class? Reason with data. We want to give you the skills to be able to learn new things in the future as needed and think critically as data scientists."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-142-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2122,
+      "type": "audio",
+      "text": "With that, I'm going to hand it over to our head TA's Rohan and Sarah. Looking forward to a great semester with you all."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-144-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2152,
+      "type": "audio",
+      "text": "To follow, but we'll try our best. My name is Rohan. I am going to be one of your HEAD Tasmania this semester. I am a senior Computer Science plus Statistics major here at Berkeley. This is my 6th semester teaching Data 100, which unfortunately does mean I'm getting pretty old."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-145-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2167,
+      "type": "audio",
+      "text": "Hi, I'm our other head TA, Sarah, and I'm also leading our graduate project section of the course. So my grad project, my graduate students in the room and on Zoom. Hello. And I am in."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-146-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2182,
+      "type": "audio",
+      "text": "Weeks 5th year master's student, so also a grad student and this is I believe my 8th semester on core staff so been here a while. Data 100 dinosaurs, what I call myself so it's nice to meet you guys. Awesome."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-147-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2197,
+      "type": "audio",
+      "text": "So before we get into like a little bit of the course logistics, I think it's really important to acknowledge data 100 is a massive, massive lecture, you know, 1000 students. And of course that means we need a really diligent core staff, about 35 students this semester. So I think it's."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-148-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2212,
+      "type": "audio",
+      "text": "You know, good to take a time to acknowledge them before we begin."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-149-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2227,
+      "type": "audio",
+      "text": "Colin, Sarah, Willie, Eli, Kelly, Gisella and Kevin. So RTA is super, super integral to running our course, keeping everything running day-to-day. HTA is really responsible for a very important sector of the class, you know, doing several tasks."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-150-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2242,
+      "type": "audio",
+      "text": "Behind the scenes."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-151-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2257,
+      "type": "audio",
+      "text": "Also have some wonderful UCS ones who you will probably encounter in office hours and maybe in a tutoring section."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-152-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2272,
+      "type": "audio",
+      "text": "But they will also be on Ed, right? So answering your questions both in office hours on Ed, helping us grade assignments and they're really running a lot of the behind the scenes work. So we really appreciate them. So can I get any staff members that came to lecture today to stand up, please and let's thank you."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-153-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2287,
+      "type": "audio",
+      "text": "In advance for all the work that you guys are going to do."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-154-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2302,
+      "type": "audio",
+      "text": "Course logistics here, I think the first thing we can do is talk about prerequisites. So naturally most of you know this already. Data 100 does enforce prerequisites before the semester starts back at enrollment time. So theoretically all of you have already met these requirements, but I think it's really important to just get."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-155-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2317,
+      "type": "audio",
+      "text": "An idea of what kind of prerequisite knowledge you need to know heading into this course."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-156-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2332,
+      "type": "audio",
+      "text": "Easier when we're working with pandas, which is ideally and mainly data frames."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-157-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2347,
+      "type": "audio",
+      "text": "How to use Python And other programming languages?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-158-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2362,
+      "type": "audio",
+      "text": "There's going to be a lot of linear algebra and there's going to be a lot of calculus, so it's really important that by the time we get to that point in the semester, you would have already learned that material in your linear algebra class."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-159-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2377,
+      "type": "audio",
+      "text": "We don't have to take time, you know, reteaching you things that you probably already know at this point. So first things, you know how to use Python, how to use Jupiter notebooks. You know, you've done that in data 8 inference, you know, hypothesis testing, you've done that in data 8:00. And then of course, linear algebra we know."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-160-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2392,
+      "type": "audio",
+      "text": "That, you know, linear algebra, a lot of you are doing you're learning it for the first time as we speak, so we don't expect a lot of you to know it like super, super well. But by the point in the semester where it becomes very critical for data 100, you should be a masters and from there, you know, I kind of."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-161-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2407,
+      "type": "audio",
+      "text": "Of one note to talk about homework one, lab one, those are like our prerequisite assignments. They haven't been released quite yet. They will be released probably tomorrow. But really important to know homework one has a lot of linear algebra on it. So I know a lot of you who are currently taking linear algebra probably."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-162-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2422,
+      "type": "audio",
+      "text": "Haven't learned the material that you need for that homework assignment. You know, that's OK. On Ed, we have a post for linear algebra resources that you can really use. Also, you know, come to office hours, they start next week. Tas are here, tutors are here."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-163-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2437,
+      "type": "audio",
+      "text": "We really want to help you through."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-164-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2452,
+      "type": "audio",
+      "text": "So please, please, please make time to read the syllabus before asking questions on Ed. You can save us time. You can save yourself some time."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-165-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2467,
+      "type": "audio",
+      "text": "And so then now we're going to talk about the course website and platforms for this class or Berkeley usual. We have a million things for you to look at."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-166-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2482,
+      "type": "audio",
+      "text": "This is going to be where all of our lectures, assignments, and discussions are posted here. You can see deadlines here. This should be kind of, you know, a good want first glance at just where are we in the course?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-167-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2497,
+      "type": "audio",
+      "text": "Also going to have Data Hub. This is going to be where you're going to work on your assignments, right? So this is all of your labs, your projects, your homeworks, all going to be on Data Hub, aside from a few written assignments here and there, but mostly it'll all be on Data Hub."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-168-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2512,
+      "type": "audio",
+      "text": "And then Ed STEM, this is going to be where you ask all of your questions about the course, about homework, everything. It's where we can just centralized all of our communications and respond faster to you guys. So any questions about homework course?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-169-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2527,
+      "type": "audio",
+      "text": "Policies, things like that."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-170-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2542,
+      "type": "audio",
+      "text": "We have pensive, right? So this is a platform that we use so that we can use AI assisted grading."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-171-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2557,
+      "type": "audio",
+      "text": "We have a link on our website as well to this."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-172-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2572,
+      "type": "audio",
+      "text": "That's easy to go through after the lecture, so these course notes will be like your textbook for this class."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-173-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2587,
+      "type": "audio",
+      "text": "Any questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-174-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2602,
+      "type": "audio",
+      "text": "In data 8."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-175-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2617,
+      "type": "audio",
+      "text": "It's really important so we can assign those discussion sections. Again, if you do not fill this out, we will not put you in a discussion. So we're trying to give you the choice. Please let us do that. So thank you."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-177-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2647,
+      "type": "audio",
+      "text": "Here's how I like to think about what we could do in DATA 100. So X axis here, Possible formats of DATA 100, Y axis, Student experience. We're at a good little peak. You know, there's been so many instructors before me who've made this class great. I like to think I've done some work to making the class great."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-178-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2662,
+      "type": "audio",
+      "text": "And Ramesh has done some work to make this class great, but I think there's an even greater place we can always be. So I always like to try a couple of new things in Data 100. Keep in mind as we try things out, not everything works perfectly. And when it doesn't, you're never punished. We always make accommodations in the class, so just just keep this in mind."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-179-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2677,
+      "type": "audio",
+      "text": "So some changes this semester. So we did this last semester, worked quite well. We're gonna do it again this semester. Assignments are submitted to PENSIVE, not grade scope. Why do we do this? Pensive allows us to do something called AI assisted grading, and AI isn't completely grading."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-180-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2692,
+      "type": "audio",
+      "text": "Your homework by any means. It's just letting our human graders work a little bit more quickly. The nice thing about this is that all this time is freed up, not just so I can go do research or work on other things. We have all this extra time. So what do we do with it? Starting with last semester, we have a brand new."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-181-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2707,
+      "type": "audio",
+      "text": "Tutoring program and data 100. So instead of RTA spending a lot of time on grading, they're now spending more time working with you all. So group tutoring signups will be out soon. It's one of the wonderful things that comes with AI assisted grading. This we started last semester as well. We'll be doing it this semester."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-182-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2722,
+      "type": "audio",
+      "text": "As well, we have something called an open-ended question on several of the homework assignments. I think at Berkeley you don't get a lot of opportunities to sort of run wild with an idea and and somewhere that doesn't necessarily have a correct or incorrect answer."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-183-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2737,
+      "type": "audio",
+      "text": "These are graded very leniently. The idea is really to give you a chance to be creative and think like a data scientist in a realistic scenario where someone isn't just hiding an answer to a problem set and you need to discover that answer. That's not how it works in industry, right? You're not."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-184-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2752,
+      "type": "audio",
+      "text": "As doing problem sets at work, you're often defining the problem you need to solve in the 1st place, so we want to give you a chance to do that. We have this wonderful tool built by a former DATA 100 TA called Askademia. It's a different way to watch lecture recordings."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-185-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2767,
+      "type": "audio",
+      "text": "There's a big button on the website for ascandemia recordings and then there's also a button for YouTube recordings. What are the big benefits of academia aside from no ads? Academia is a context aware platform. So if you're 14 minutes into a lecture video."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-186-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2782,
+      "type": "audio",
+      "text": "So and there's a little chat window right below that lecture video and you type what did Josh just say? It'll tell you what I just said and it'll explain it for you if you'd like. So it's this really interactive, cool way to watch lectures and again, with no ads too, so nice way to view them."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-187-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2797,
+      "type": "audio",
+      "text": "This semester they're going to be 350 minute midterms, 2 of which will be taking place in the computerized testing facility here on campus with a randomized questions with different slots. For signing up, I recommend taking a look at the FAQ S."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-188-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2812,
+      "type": "audio",
+      "text": "The last one is going to be on paper on the last day of class over three different sessions, so more information on that coming soon. These are shorter midterms than the midterms that were given in Data 100 in previous semesters. Now people are usually very happy about the next bullet and not very happy."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-189-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2827,
+      "type": "audio",
+      "text": "Happy about the previous bullet, the last bullet here. Midterm retakes."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-190-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2842,
+      "type": "audio",
+      "text": "Are so we know that learning doesn't always happen when a midterm happens, right? You can bomb a midterm, you can have a bad day. We understand. You don't have to just learn it on the day of the midterm or else never learn it again. We're giving people the opportunity to retake every single one of the midterm."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-191-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2857,
+      "type": "audio",
+      "text": "Terms for partial score recovery during dead week. OK now."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-192-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2872,
+      "type": "audio",
+      "text": "That got a lot of coverage. And in this study, undergrads were randomly assigned to one of two physics lectures. So it was physics, but similar to learning data science in a lot of ways. One lecture was passive. Somebody just delivered it really, really smoothly."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-193-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2887,
+      "type": "audio",
+      "text": "There is no audience interaction, there is no polling. But it sounded really good. It sounded like a Ted Talk."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-194-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2902,
+      "type": "audio",
+      "text": "Discussions like we've done so far and so my question for you sort of predicting the outcome of this study which one of these two styles did students prefer more when asked and I wouldn't discuss this one I would just go ahead and vote scan and."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-195-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2917,
+      "type": "audio",
+      "text": "Boat and I want to get a lot of votes before I show the results here. Do people think that the passive lecture was preferred or the active lecture was preferred or if it was about the same?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-196-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2932,
+      "type": "audio",
+      "text": "Lots of votes coming in."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-197-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2947,
+      "type": "audio",
+      "text": "Right. Sounds good, right? Passive. It doesn't sound good, right? They're gonna prefer the active lecture, right? But what did students prefer when asked at the end of the semester? Well, they all preferred the passive lecture. I enjoyed this lecture. Passive lecture has a higher bar, I feel like."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-198-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2962,
+      "type": "audio",
+      "text": "I learned a great deal from this lecture. Passive lecture has a higher bar. Instructor was effective at teaching. Passive lecture was a higher bar. I wish all my physics courses were taught this way. Passive lecture was a higher bar than active."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-199-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2977,
+      "type": "audio",
+      "text": "Passive lecture. But then when they actually went and tested those students, they all did better on the active. We noticed that the dark bar on the left side here was higher. These were two highly experienced physics instructors delivering content in exactly the same way, except for the action."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-200-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 2992,
+      "type": "audio",
+      "text": "And passive difference."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-201-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3007,
+      "type": "audio",
+      "text": "Bad at judging how much we've actually learned."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-202-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3022,
+      "type": "audio",
+      "text": "And data 100. My second goal is for it to be enjoyable."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-203-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3037,
+      "type": "audio",
+      "text": "Same thing. This gets replicated all the time. Frequent testing, low stakes testing like the midterms, They're worth less than the old fashioned data. 102 hour midterm. OK, active engagement. We do a lot of this in lecture, we do a lot of this in discussion and a little bit of discomfort."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-204-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3052,
+      "type": "audio",
+      "text": "So if you feel a little uncomfortable with how things are going in Data 100, for example, on that open-ended question, you're worried. I don't really know how to start this. I don't feel like I'm a confident enough data scientist to approach that question. That's exactly how you're supposed to feel. OK, we're going for learning gains here. The second thing."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-205-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3067,
+      "type": "audio",
+      "text": "Is enjoyment, but hopefully you'll learn to enjoy the discomfort a little bit in this class. OK, with that, I'm going to hand things over to Ramesh."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-206-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3082,
+      "type": "audio",
+      "text": "I want to take some time and actually get started with Pandas, which is going to be the first big topic of the class. Well, actually before I do that, let's talk about the data science life cycle. So how many people have seen like a data science life cycle diagram before?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-207-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3097,
+      "type": "audio",
+      "text": "Yeah, like most of you, right? Like a lot of people, everybody does this diagram slightly differently. Like if you do a Google image search, you get a million different versions. Everybody has their little boxes and arrows. And you know, if you take a bunch of different data science classes, you will probably see each class have."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-208-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3112,
+      "type": "audio",
+      "text": "Have its own version of this diagram."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-209-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3127,
+      "type": "audio",
+      "text": "Important things is that we often start with the task of asking a question or getting data or both, right? We have some question about the real world that we're interested in, or we get some interesting data set and we're like, hey, what can we figure out with this data set?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-210-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3142,
+      "type": "audio",
+      "text": "So we start there and then we want to use those to understand the world better. We want to use those to understand the data we have better. So maybe we say, hey, let's like dive into the data, look around, see what's going on, but then maybe that."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-211-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3157,
+      "type": "audio",
+      "text": "Raises more questions. Maybe we need to go and collect more data. Maybe we need to change the question we ask."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-212-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3172,
+      "type": "audio",
+      "text": "This the way it often is on like homeworks that you might see where you get data. You have a question, you get the answer, you're done."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-213-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3187,
+      "type": "audio",
+      "text": "And then you go back and realize, oh wait, maybe I need to ask a different question. Maybe I need more data."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-214-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3202,
+      "type": "audio",
+      "text": "All right, so with that, let's actually get started with pandas."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-215-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3217,
+      "type": "audio",
+      "text": "Like so the most common kind of data, I would say, and the kind of that we're going to be working with the most in this class is tabular data."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-216-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3232,
+      "type": "audio",
+      "text": "8 And a table looks something like this. This for example is a data set about all the elections in the US in the history of the US, and every table has a bunch of rows. Each row contains."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-217-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3247,
+      "type": "audio",
+      "text": "A single observation. In this case, it's a single person running for president in a particular year."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-218-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3262,
+      "type": "audio",
+      "text": "Tells us a different feature or characteristic or attribute about that observation."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-219-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3277,
+      "type": "audio",
+      "text": "The number of votes he got, the result and the percentage of the total vote share that he got."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-220-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3292,
+      "type": "audio",
+      "text": "Have the same person repeated in multiple rows. Right here, each observation is not a single person, it's a single person in a particular year. So often work with datasets that have these kind of complex, interesting properties."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-221-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3307,
+      "type": "audio",
+      "text": "In Data 8 you worked with tables using the Data Science library."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-222-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3322,
+      "type": "audio",
+      "text": "Working with tables it's a little more complicated than data science library, which is why in Data A we start with that one. But this is really the library that you'll be working with. So I want to spend the last few minutes of class today walking through how tables."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-223-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3337,
+      "type": "audio",
+      "text": "And columns and stuff are represented inside of pandas. And then tomorrow or Thursday will actually start diving into a real data set and ask them questions, learning pandas tools to help us answer those questions."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-224-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3352,
+      "type": "audio",
+      "text": "So what is? Why is it called pandas? So panda actually stands for panel data. There's a similar library in R The concept comes from R We have data frames and this is the standard data set."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-225-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3367,
+      "type": "audio",
+      "text": "Science, like the Data 100 logo, contains a panda, a cartoon panda. All of you after the final will be getting stickers with this awesome logo, so you have that to look forward to when the semester ends."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-226-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3382,
+      "type": "audio",
+      "text": "So when we have tables in pandas world, we call them data frames. So a data frame just means a table in pandas."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-227-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3397,
+      "type": "audio",
+      "text": "Table is just a bunch of different rows stacked on top of each other. Or you can think of it as a bunch of columns kind of squished together side by side."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-228-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3412,
+      "type": "audio",
+      "text": "Those columns are going to be called series."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-229-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3427,
+      "type": "audio",
+      "text": "This is going to be represented by a series that looks something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-230-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3442,
+      "type": "audio",
+      "text": "Be able to follow along for today, I'm just going to kind of go over the high level overview. If we were to print out this candidates table, it would look something like this, this data frame. And if we were to print out the series corresponding to this column, it would look."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-231-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3457,
+      "type": "audio",
+      "text": "Something like this?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-232-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3472,
+      "type": "audio",
+      "text": "We have something called an index that has the labels for each one."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-233-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3487,
+      "type": "audio",
+      "text": "More next time. Let's break it down with the simpler series. In particular, this is the code we're going to use to create one."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-234-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3502,
+      "type": "audio",
+      "text": "Importing and using the pandas library, right? Just like you say import numpy as NP, we always say import pandas as PD. You know, you don't use PDS, you don't use PDA. We always use this. It's just the way people do it."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-235-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3517,
+      "type": "audio",
+      "text": "Series we use a constructor function and we give it a list right? And this list has three items, the string welcome, the string 2 and the string data 100."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-236-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3532,
+      "type": "audio",
+      "text": "Out's this is what we'd get."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-237-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3547,
+      "type": "audio",
+      "text": "Each one is a string and Python tells us that the type of that array is object, just like the type of this series is also object. So the values contain the actual content of the series."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-238-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3562,
+      "type": "audio",
+      "text": "Also have a label for each data point in the series. So Welcome has label 02 has label one and data 100 has label 2."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-239-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3577,
+      "type": "audio",
+      "text": "A set of indices."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-240-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3592,
+      "type": "audio",
+      "text": "It gives you 01/2, right? It's more efficient, a more efficient way of representing that same thing. Pandas has something called a range injects. It starts at 0, ends at three, goes to one right, 01/2, and then it stops before 3."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-241-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3607,
+      "type": "audio",
+      "text": "So we have our values, we have our index, and we have the data type of that series."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-242-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3622,
+      "type": "audio",
+      "text": "Here that, you know, we had our values, we had our index, we had the data type, but we also had the name, right? Because this came from a data frame. So we'll talk a little bit more about why this one has a name that one doesn't in a little bit, but just something to keep in the back of the name."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-243-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3637,
+      "type": "audio",
+      "text": "OK, so series have values, they have an index, and those values have a data type."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-244-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3652,
+      "type": "audio",
+      "text": "But you know, the whole numbers starting at zero and zero and two and so on. South we can pass in our own custom index, and again, we'll see some examples of why this might be useful by using a list as the index."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-245-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3667,
+      "type": "audio",
+      "text": "So let's suppose instead I used a constructor at PD dot series again, and now I'm passing in -110 and 2."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-246-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3682,
+      "type": "audio",
+      "text": "Index, which in this case is ABC."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-247-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3697,
+      "type": "audio",
+      "text": "Now my index is ABC."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-248-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3712,
+      "type": "audio",
+      "text": "Both the array that I created has data type initial."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-249-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3727,
+      "type": "audio",
+      "text": "Would say data type with integer float."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-250-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3742,
+      "type": "audio",
+      "text": "And similarly, you know this shows me the actual values of the index."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-251-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3757,
+      "type": "audio",
+      "text": "Columns in our data frames and our data frames represent our tabular data, so often something we'll want to do is to pick things out."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-252-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3772,
+      "type": "audio",
+      "text": "Well, there's three different ways. One, we can either use a single label, we can use a list of labels, or we can use some kind of filtering condition."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-253-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3787,
+      "type": "audio",
+      "text": "With the filtering, but let's start with just like pulling out a single value. So let's suppose I create this series has four negative 2/06 with index ABCD. And this is going to look like this, right? We have our."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-254-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3802,
+      "type": "audio",
+      "text": "Values over here are indexed over here. These data type integer."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-255-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3817,
+      "type": "audio",
+      "text": "And This is why I said our index gives us labels because this a is the label for the data point form."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-256-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3832,
+      "type": "audio",
+      "text": "Is it a string again because the indices the index is a bunch of strings."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-257-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3847,
+      "type": "audio",
+      "text": "So that's how I can pick out a single value from a series."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-258-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3862,
+      "type": "audio",
+      "text": "Double bracket AC you have anything like wait why do I need 2 brackets? Well this first bracket tells me hey pick something out of the series S right? And if I go back before we picked out a single."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-259-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3877,
+      "type": "audio",
+      "text": "Value using the string a but now we want to pick out multiple values. How do we represent multiple values in Python? Usually simplest ways using a list."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-260-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3892,
+      "type": "audio",
+      "text": "Since I'm indexing into's I'm picking stuff out of the series S and this inner one that says hey what am I picking out of S? I'm picking the list A and C."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-261-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3907,
+      "type": "audio",
+      "text": "Might like you might something might go weird. I do this all the time. I will make this make you will probably see me make this mistake as I'm typing in class. But something to keep in mind so that when you see the area, you can be like, Oh yeah, wait, I forgot the extra set of brackets here. OK."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-262-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3922,
+      "type": "audio",
+      "text": "So this is my list of labels and if I do this then I get another series back."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-263-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3937,
+      "type": "audio",
+      "text": "I can get a list. If I pass in a list of labels, then the result is another series. It's just a smaller series, right? Because now I picked out. This is like saying, hey, give me all this items in this series labeled a or."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-264-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3952,
+      "type": "audio",
+      "text": "C and it's. If I go back and look here, well A is 4 and the data point labeled C is 0. So now I get a smaller series with these values."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-265-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3967,
+      "type": "audio",
+      "text": "Pull out a single value from a series is by using a single label or some similar approaches which we'll talk about a little later, but they're essentially boiled down to the same thing of picking out a."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-266-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3982,
+      "type": "audio",
+      "text": "But a lot of times when we pick stuff out, we don't pick stuff out based on saying, give me the points labeled this, this and that, right? In practice, what we want is to ask questions about our data set, right? To go back."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-267-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 3997,
+      "type": "audio",
+      "text": "To the example that Josh was talking about earlier, maybe we're looking at the IRS data and we want to say give me all the people whose income was over $60,000, right? So that means I want to pick out."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-268-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4012,
+      "type": "audio",
+      "text": "Everybody whose income is greater than 60,000."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-269-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4027,
+      "type": "audio",
+      "text": "Theories based on our original right. And just like with the data science library, you can always manipulate your series and do operations on them. We can add, we can subtract when it's numeric, we can do comparisons."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-270-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4042,
+      "type": "audio",
+      "text": "So for example, we're going to start by creating what's called a boolean mask. What does that look like?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-271-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4057,
+      "type": "audio",
+      "text": "That satisfy this condition. So if I type in S greater than 0, I'm going to get this series back right where I have a Well A is 4 so that's positive. Yes, it's greater than 0 B that's -2 Nope."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-272-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4072,
+      "type": "audio",
+      "text": "Zero is not greater than 0, so that's also false. And D compares 6 to 0, that one is true."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-273-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4087,
+      "type": "audio",
+      "text": "And then I'm going to use that boolean mask to pick stuff out of my original Series S."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-274-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4102,
+      "type": "audio",
+      "text": "SAS bracket and what do I put inside? I put inside this boolean mask right here. So I take S greater than 0 which is my boolean mask. I put it inside here and."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-275-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4117,
+      "type": "audio",
+      "text": "That satisfies this right? It says hey this give me all the items that satisfy S greater than 0."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-276-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4132,
+      "type": "audio",
+      "text": "And then we use that to index into the original series using that boolean mask. And then pandas takes care of picking out all the ones that satisfy the condition."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-277-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4147,
+      "type": "audio",
+      "text": "Of series. So now that we have that, how do we actually use a series to construct a table? Right? Like I told you that a series is a single column."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-278-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4162,
+      "type": "audio",
+      "text": "Selection of series that all have the same index, right? This is very important. All of the series in the data frame have to have the same index, otherwise they don't fit together."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-279-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4177,
+      "type": "audio",
+      "text": "Here, right, that's indexed with 012345 and so on all the way up to 186. I have this series candidate."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-280-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4192,
+      "type": "audio",
+      "text": "Other columns from that table, right? I have the number of votes, the wind, the percentage of the thing whether or not they won. If I put all those theories together, then I get the data frame elections."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-281-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4207,
+      "type": "audio",
+      "text": "Up of columns represented as series."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-282-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4222,
+      "type": "audio",
+      "text": "Another annoying thing is that the plural of series is series. So you're going to hear me say series refer to multiple series to refer to single. I'll try to be clear about what I do in each one."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-284-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4252,
+      "type": "audio",
+      "text": "Together series into a data frame, right? How do I actually combine these? That is a great question. We will start by doing that tomorrow or Thursday, yes."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-286-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4282,
+      "type": "audio",
+      "text": "Yes, in some ways they are similar, but we think of them slightly different, right? We'll talk a little bit more about like the connection, how you can actually turn. If you pass in a dictionary into the series constructor, it will make a series with the."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-287-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4297,
+      "type": "audio",
+      "text": "Indexes all the keys. The values are the values of your dictionary."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-288-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4312,
+      "type": "audio",
+      "text": "Remember if I go back."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-289-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4327,
+      "type": "audio",
+      "text": "Use of a series, right? This blue highlighted thing, this is just an array, right? So an array gives you a bunch of things. They all have to be the same type, right? Remember, it's an important property of arrays. So a series basically adds on an index."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-290-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4342,
+      "type": "audio",
+      "text": "X to that."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-291-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4357,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-292-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4372,
+      "type": "audio",
+      "text": "Adding another array. Really what you can think of when I change the index is I'm just like rewriting the values in this gold box, right? I'm taking if I say you know, if I take this series S and I say S dot index equals."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-293-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4387,
+      "type": "audio",
+      "text": "ABC Then what I'm going to end up with is I'm going to say this is not 012 anymore, this is now ABC. That's what happens when I rewrite the next."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-294-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4402,
+      "type": "audio",
+      "text": "CBC instead of the numerical values. That is a good question. ABC is just as an example. We'll see examples in the next couple weeks of why we might want to work with data frames that have indices, indexes other than just numeric ones. Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-295-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4417,
+      "type": "audio",
+      "text": "Question."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-296-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4432,
+      "type": "audio",
+      "text": "Numerical, right, starting at 001234 or whatever, Yes, that's correct. And if we do include it, then we have to include one for every data point, right? If I have a series of, you know -110 two, and I had passed in an index of just a."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-297-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4447,
+      "type": "audio",
+      "text": "Can be then it would say hey error your index is too short for your values."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-298-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4462,
+      "type": "audio",
+      "text": "Non numerical index. Can you still use a number to get the value? Yes, you can, using a something we'll talk about either next time or next week. Yes, you can still access things numerically even if you have another index."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-299-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4477,
+      "type": "audio",
+      "text": "Say that again, sorry."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-300-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4492,
+      "type": "audio",
+      "text": "You want to find the index corresponding to a certain value. Well, how would we do that using the tools we already know? Well, we can just say, let's say that we want to find the index for the value that is 10."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-301-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4507,
+      "type": "audio",
+      "text": "Say wherever it's 10. So we could say s = = 10 to give us a boolean mass that will be, you know, a false, B true, C false. And then we can pull out S of S equals equals."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-302-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4522,
+      "type": "audio",
+      "text": "10 and that will give us the one element series with just B10 and we can pull out that dot index to find this."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-303-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4537,
+      "type": "audio",
+      "text": "Yeah, the question is if the data type isn't like an int or float, is it automatically an object? So object is like what we use for usually strings if you pass in like a mix of strings."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-304-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4552,
+      "type": "audio",
+      "text": "Will I convert them their strings to integers or? Sorry, it will convert your non strings to strings. So object usually refers to what you have when you have strings, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-305-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4567,
+      "type": "audio",
+      "text": "Early and next time we will start with an example. So please make sure you fill out the pre semester survey. We have a slide."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769106516-upload-audio-306-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769106516",
+      "timestamp": 4582,
+      "type": "audio",
+      "text": "Reminder that we're taking questions outside of Wheeler in the front, so we'll meet you out in front if you have questions."
+    }
+  ]
+}

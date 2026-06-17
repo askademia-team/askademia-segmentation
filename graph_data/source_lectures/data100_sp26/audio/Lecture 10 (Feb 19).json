@@ -1,0 +1,2158 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1771543949",
+  "display_name": "Lecture 10 (Feb 19)",
+  "count": 307,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 341,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 499,
+      "type": "audio",
+      "text": "Hi, everybody, Welcome to Lecture 10 of Data 100. We were lucky today. The music ended right as we were starting, so that's always kind of nice. All right, some announcements. Homework 3 is due on Friday."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 513,
+      "type": "audio",
+      "text": "Lab 4 is due on Tuesday of next week. The 1st grade report is out. I'm the wrong person to ask questions about the grade report? If you have questions ask on Ed. But here's some information about it if you look in. I think it's under pensive."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 531,
+      "type": "audio",
+      "text": "You'll have the grade report, you'll see information about your discussion, attendance score, other information here, but if you're not in discussion, make sure to review the slip day and drop policy for homeworks and lab. Now that we're starting to reach later in the semester, people are running out of."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 562,
+      "type": "audio",
+      "text": "Drops. I'm getting a little bit of feedback from the mic. Wonder why? Anyway, make sure to review the slip day policy because if you run out of slip days, it's on you to track them. We're not tracking them for you. If you submit a homework with too many slip days, we'll return all the slip days that you did use and we'll give you a 0 on the homework. So be sure to track. And then labs. Labs only have drops. And then also I now have office hours in this room after lecture on Thursday. So today when lecture is over, I will stay up here for an hour and we can talk. You can get individual help."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 573,
+      "type": "audio",
+      "text": "It's a great chance to just stick around and hang out and get someone on one time or group time. OK, so we're we're in sort of a new unit now. I mentioned last time that we're now going to."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 593,
+      "type": "audio",
+      "text": "Get a little bit more mathematical compared to the previous lectures, and this is typically when people start having some more difficulties with data 100, which is fine, we're here to support you for it, but just keep that in mind and make sure to stay on top of the material. Today we're going to do an introduction to this process of statistical modeling and we're going to remind ourselves about simple linear regression from."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 623,
+      "type": "audio",
+      "text": "Data 8. Then we'll have another lecture on modeling different kinds of models that are out there, different loss formulations. And then we'll get to one of our like, you know, flagship lectures of data 100, multiple linear regression and ordinary least squares. We have some fun demos for that and some demos for the unit after this as well. OK, so road map first, what is a model? What is a model of the world? So in in data 100, we'll think of models this way. It's some representation."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 646,
+      "type": "audio",
+      "text": "Of a system. It's an idealized representation. It's not perfectly reconstructing some system. It's sort of good enough for our purposes. So for example, if you learned in a previous physics class that gravity is 9.8 meters per second squared, that's a model for the world. It's a model for the world. It's not exactly how gravity works, but it's sort of an idealized approximate description."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 670,
+      "type": "audio",
+      "text": "So very famous quote that you'll hear a lot, and it's also a quote that's misused a lot. But George Bach said essentially all models are wrong, but some are useful. And this is something we're going to repeat throughout the class. Every model you work with for the most part, will not perfectly reconstruct your system. They're incorrect, they're wrong. But if you use them in the right context and use them in a smart way, they can be very useful for thinking about the world."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 696,
+      "type": "audio",
+      "text": "And So what are some 3 reasons you might you might build models, and we'll talk about all three of these in Data 100. The first one is inference. There's that word inference again from the last lecture. We talked about inference in the last lecture, meaning saying something meaningful about a population based on some information from a sample. So inference is just this idea of making sense of some phenomenon in the world. How do two things relate to one another? What is the correlation of two things?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 702,
+      "type": "audio",
+      "text": "The idea here is we want interpretable models. We don't want really fancy models that are hard to understand that are black."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 732,
+      "type": "audio",
+      "text": "Box like a large language model where we say we don't really know how it works but it outputs something. We actually want to understand how these kinds of models work. So sometimes when we're modeling, we want interpretable models and we want to try to get the simplest model. A word for this simple and interpretable as simple as possible is a parsimonious model, a model that explains as much as possible with as simple of a structure as possible. Prediction is another reason you might want to construct a model. So on the left inference that's very much like research understands."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 762,
+      "type": "audio",
+      "text": "In the world policy prediction very much like make money company, you also use it in policy in other places. But prediction is is trying to make an accurate prediction about the future. You know, canonically predicting where the stock market will go right? Is an e-mail spam or not something you'll do on project B generating a summary of some 10 page article. We're trying to make a prediction here. The idea is we want accurate predictions. That's the goal, but we don't care how we get there. When we focus on a prediction task, we want our outcomes to be as accurate as possible from our model."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 772,
+      "type": "audio",
+      "text": "But we don't really care where we're coming from. It's OK for our model to be black box. Now, do we always want interpretable models or black?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 785,
+      "type": "audio",
+      "text": "Box models that predict really well, no, sometimes we want a little bit of both. But these two ideas are important to have in your head. This idea of inference and prediction. OK. There's also a third reason you might want to build a model, and that is to assess causality."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 814,
+      "type": "audio",
+      "text": "To assess causality, something we won't dig into a lot in Data 100, but will bring up every so often this sort of fundamental idea. It's like one of the fundamental things we want to do as humans is figure out when I do one thing, what's the next thing that happens? Does smoking cause lung cancer? I don't care if they're correlated. I want to know if someone smokes, do they get lung cancer with a higher likelihood, right. Does a job training program increase employment? Employment, This is a harder thing to do."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 829,
+      "type": "audio",
+      "text": "This is a harder thing to do. Causality is hard to measure, a lot harder to measure than correlations or making accurate predictions. Causality is harder. It's not going to be the focus of Data 100. We'll touch on it a little bit in the future lecture, but there's lots of other classes for you to explore causality."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 861,
+      "type": "audio",
+      "text": "OK, so a little bit of review from Data 8. Let's talk about the regression line and correlation. Keep in mind you're going to see this slide a couple times in the class when we introduce a lot of notation. I always say be kind to yourself because it takes a long time to learn this stuff. It is like learning a new language. But please don't take symbols for granted. In Data 100. If you see a symbol and you don't know what it means, ask. Make sure you understand what's going on. Don't take these symbols for granted. Pattern matching like this to just get through exams is just."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 889,
+      "type": "audio",
+      "text": "For disaster in the long run, I did a lot of this when I was an undergrad and had to relearn a lot of material as a graduate student because I did more pattern matching than just asking questions like what is this and being able to build an actual framework for what's going on. So just keep that in mind, OK? Data, a textbook, the regression line is the unique straight line that minimizes this thing called the mean squared error that we're going to work with a lot in data 100 of estimation among all straight lines. So you saw this example in data 8 on the X axis is the number of literally the character period."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 920,
+      "type": "audio",
+      "text": "Inside of a book, OK, each one of these dots represents a chapter. In the novel Little Women, the Y axis is the total number of characters in that chapter. We can see as the number of periods in a chapter goes up, the number of characters also tends to go up, which sort of checks out. And we can fit a line to this data. How did we get that line? That's a harder question. How do we pick that line versus another line that's slightly different than that line? So there were some terms you learned about. The first one is called R."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 950,
+      "type": "audio",
+      "text": "The correlation of X&Y lower case R, the sample correlation between X&Y. The slope of the regression line you learned was equal to. This correlation to the steepness of that line was dictated by the correlation. The correlation is kind of like a control knob. As two variables correlate more, that line gets steeper and then simply the scaling of that line comes from the standard deviation of Y and the standard deviation of X. What units are you working with?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 955,
+      "type": "audio",
+      "text": "In the Y dimension and in the X dimension. But really, what's controlling this thing is the correlation."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 983,
+      "type": "audio",
+      "text": "Now we're going to write this a little bit different. In data 100 and Data 8, a lot of symbols are very intentionally written not as symbols so that you understand what you're writing down and you're not just writing down symbols. But as we get into higher level math, we can't write every single formula we work with in plain English, so we're going to condense a little. So when we want to get the standard deviation of Y, we're going to refer to that as Sigma Y and data 100, Sigma S for standard deviation and Sigma X."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1012,
+      "type": "audio",
+      "text": "The regression estimate. So the actual estimate along the line was equal to the intercept of your regression line plus the slope of your regression line times whatever X value you're trying to get a prediction at. We're going to write this a little bit differently. We're going to condense this a little bit. We're going to use this letter Y hat. Anything with a hat on it usually means a predicted or estimated quantity Y hat. The predicted outcome is equal to our."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1031,
+      "type": "audio",
+      "text": "Intercept a hat plus B hat times XI. Think you saw this in Data 8. We're going to change this up a little bit in Data 100. We'll see in a minute. We're not going to use a hat and B hat. We're going to use thetas. But that's coming in just a little bit here. And then we have this idea of a residual our errors."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1040,
+      "type": "audio",
+      "text": "A residual. You want to think of an error when you hear the word residual. It's your actual outcomes, the dots actual outcomes minus there."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1058,
+      "type": "audio",
+      "text": "Predicted values, corresponding predicted value for the same X value y -, y hat you want to understand the definition of a residual for this class. And moving into the future, we take the actual value and we subtract away the corresponding prediction. So this is a bit of review, bit of review."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1075,
+      "type": "audio",
+      "text": "Let's keep going here. So let's talk a little bit about this thing called correlation that I just mentioned. So here's some different plots, some scatter plots of two variables, and we're going to think about correlation for these different plots. So what is correlation? Correlation is this value that's between zero and one."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1077,
+      "type": "audio",
+      "text": "So correlation can be anything from."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1109,
+      "type": "audio",
+      "text": "Or excuse me -1 two +1, excuse me -1 two +1. The magnitude is going to be between zero and one. Where a negative correlation implies a decreasing relationship, positive correlation implies an increasing relationship. You can see on the far left here, there really isn't a strong relationship between these variables. You can see maybe there's some slight sloping downwards. So we have a negative correlation, but it's pretty close to 0, pretty weak correlation. We see a strong positive correlation here. So we have a correlation coefficient."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1138,
+      "type": "audio",
+      "text": "That's close to 1 and positive. Same idea here, but negative, maybe a little bit weaker -.72 and on the right here, there is a correlation formula that we can just plug into and get a correlation coefficient back. But correlation only makes sense in the context of a linear trend. We talked earlier in visualization about the importance of linearizing your data. Here's a nice example of it. Correlation is only valid when your data is linear. In this case, again, we can calculate the corre."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1144,
+      "type": "audio",
+      "text": "We can get the number, but it's not valid. It's not valid to report."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1152,
+      "type": "audio",
+      "text": "So what is the correlation? The correlation is the average product of X&Y measured in standard units. I'm going to throw a nasty formula up here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1180,
+      "type": "audio",
+      "text": "Don't worry about it for data 100, but I don't want you to pretend like correlation is just coming out of thin air. It's there's a nice skip slide explaining the intuition behind this formula that I recommend looking at. But the idea is that we're trying to see how much X&Y move together or move opposite to one another. OK, the important idea is knowing what correlation is, being able to write these kinds of numbers down. But keep in mind, correlation isn't just coming out of thin air."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1208,
+      "type": "audio",
+      "text": "Again, take a look at that skip slide. It's got some nice intuition on it. OK, so now I want to get into the DATA 100 material here and talk a little bit about this idea of building a statistical model, because this process is something we're going to use all the way throughout DATA 100. You're going to continue to use throughout future courses like CS 189. Anytime you're building a model, this is the process you're going to be following. So today is all about putting together a framework that you can use for the rest of your life as a data scientist when you're thinking about building models."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1239,
+      "type": "audio",
+      "text": "So what is a model? In data 100, we're going to treat a model as sort of an input output machine. We're trying to describe the relationship between inputs and outputs. So for example, we have some data set. We'll often use an X to denote a column of our data set that has all of our input features. We'll use these subscripts X1X2 to represent the 1st, the 2nd, and so on, all the way to the NTH observation in our data set. Same idea for Y, that's our outcomes. So Y is usually outcomes."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1242,
+      "type": "audio",
+      "text": "X is usually some input. In this case we just have one input."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1251,
+      "type": "audio",
+      "text": "A single observation will often denote with coordinate XI Yi. When we use I here, we're referring to just a generic."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1282,
+      "type": "audio",
+      "text": "Index in our data set, so we might iterate from I equals one to NI is just sort of a generic index. So what does ** has a lot of names depending on the field you work in, economics, policy, machine learning, statistics, just depending on the advisor you're working with, the researcher person you're working with, X might be referred to as lots of different things. And you're going to hear this a lot in my lectures where I'll say there's three different ways to say this exact same thing. You should be familiar."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1304,
+      "type": "audio",
+      "text": "All three ways, when you sort of settle into a data science job, there'll probably be a lingo that you use in that job. But again, you should be familiar with all of these. What are different names for inputted variables in our models? We can call it the independent variable, the variable we can manipulate and input to our model a feature of our model, an attribute of an observation. All of these are fair game."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1335,
+      "type": "audio",
+      "text": "The why can be called something like the dependent variable, the output, the outcome, the response, the target variable. Lots of different names meaning exactly the same thing. And you want to be familiar with all of these. We'll try to stick to a pretty common vernacular in data 100, but just keep in mind these words are out there. Now, prediction. If we use X to predict Y, how do we denote predictions? Again, we might just use AY hat by itself to represent a vector of predictions, just like how Y here is a vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1356,
+      "type": "audio",
+      "text": "X is a vector of individual observations. Sometimes you'll see a little arrow above it, sometimes you won't. Again, sometimes notation can be inconsistent, and I want you to get used to this idea of notation being sometimes inconsistent. So the Y hat vector contains all of our predictions, Y hat one our prediction for our first observation, Y hat two our second observation, and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1369,
+      "type": "audio",
+      "text": "And then what are some different models we're going to see in this class? So we're going to play around with this more, but here are just a couple. So one you've actually already seen, that's just the simple linear regression model written in a slightly different way."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1398,
+      "type": "audio",
+      "text": "Y hat equals a hat plus B hat times X. We're just writing it a little bit differently now. Y hat I, the prediction for observation I is equal to Theta naughty, our intercept term plus Theta one, our slope term times XI, the ith input feature. We could have other models. We can have a model that doesn't depend on X in any way, something just called a constant model. We'll talk about that in the next lecture. And then we might have a model that's a little bit more complicated."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1416,
+      "type": "audio",
+      "text": "That involves multiple input features. We'll talk about that."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1416,
+      "type": "audio",
+      "text": "That in the multiple regression lecture, but this is where we're going to focus today."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1424,
+      "type": "audio",
+      "text": "This is where we're going to focus today on this simple linear regression model that you've seen in a previous class, at least one previous class, and we're going to build up to it. You were given all these formulas for the regression coefficient, right? The intercept and the slope. But where do those come from? Today's all going to be about how we actually go find those coefficients."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1430,
+      "type": "audio",
+      "text": "These are also known as what are called parametric models. They have parameters."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1461,
+      "type": "audio",
+      "text": "They have parameters. They're also these things called non parametric models. They don't have parameters that you fit. We need to actually go find what's the best value of Theta naughty, what's the best value of Theta one from a data set. These are parameters we need to go identify. But then you think of something like K nearest neighbors that you learned about in data 8. There's no parameter of that model. The data set itself is sort of the parameter, the non parametric model. We're not trying to fit a certain set of parameters. So you'll hear this word a lot, parametric models."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1469,
+      "type": "audio",
+      "text": "That's going to be the main focus of data 100. Later on we're going to learn some non parametric models like K means clustering. OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1501,
+      "type": "audio",
+      "text": "Again, today is all about a framework, lots of notation, lots of words we're going to use throughout the class. So parametric models are described by these things called parameters. Thetas will be parameters in data 100. If you've taken a statistics class, a lot of these thetas will be written as betas instead. The X&Y values in our data, our models that are used to fit our models, these are not parameters. X&Y are not parameters. We often treat our data set that's coming in as fixed or given."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1523,
+      "type": "audio",
+      "text": "Or constant. And based on that fixed-given constant data set, we try to figure out what are the best parameters of our model corresponding to that data set. But X&Y are not parameters. Parameters are like sound settings. You have different songs. Different songs sound better with different settings. Just like how different data sets might have slightly different parameters when you fit the model on them."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1524,
+      "type": "audio",
+      "text": "OK, so Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1525,
+      "type": "audio",
+      "text": "Theta is also a vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1541,
+      "type": "audio",
+      "text": "A vector of model parameters. In the case of simple linear regression, it's a vector of length 2 containing an intercept term Theta naughty and a slope term Theta one. Can we have more thetas? You bet we can. We'll talk about that in the OS lecture."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1558,
+      "type": "audio",
+      "text": "Now, Theta hat. You're going to see us put hats on things. Like I said, when you put a hat on top of something like Y, it denotes something that's estimated or predicted. If I put a hat on top of Theta, it means that it's an estimated Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1586,
+      "type": "audio",
+      "text": "OK, keep in mind to note some estimated or predicted quantity. If I put a hat on top of Theta, it implies that it's going to be estimated based on an actual data set. Estimated based on an actual data set. And our goal is to pick the best estimated parameters. We have lots of different candidate parameters we might pick. Could the value be one? Could it be 1.5? Could it be 2.7? We want to figure out what's the best estimated parameter, and often Theta hat will refer to that best estimated parameter."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1595,
+      "type": "audio",
+      "text": "OK Theta hat estimated parameters. These are our best fit our to our data. So when you don't see hats on top of thetas."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1625,
+      "type": "audio",
+      "text": "And don't worry too much about the details I'm about to say right now, but when you don't have hats on top of top of thetas, it's sort of referring to a generalized idea of a model. I'm going to fit a linear model. This is the setup for that model. Take a look. There's a Theta naughty. There's a Theta one. It's a simple linear regression. When I throw hats on top of those terms, it implies that those terms have been fitted. Those parameters have been fitted to actual data. It's a real number that exists out there. OK, It's a real number that exists out there. Whereas the first one is sort of this."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1640,
+      "type": "audio",
+      "text": "Idealized representation of a model. Again, don't worry too much about that detail for data 100, I just want you to keep that in mind. If you're wondering why does this have a hat and why doesn't this have a hat, the key idea is that the hat denotes that something is being estimated or predicted."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1642,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1668,
+      "type": "audio",
+      "text": "So the modeling process, it's a four step process. We're going to use exactly the same 4 steps in all of data 100. It's a great way for you to think about modeling in the future anytime you need to fit a model. So the first thing we need to do is is choose a model formulation or a model structure. Or sometimes we just say choose some model to fit. Do you want to fit a neural network? Do you want to fit a random forest? Do you want to fit a linear regression? Do you want to fit a constant model?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1698,
+      "type": "audio",
+      "text": "OK, how do we represent the world? What's the best way to represent the world? It might depend on the problem context you're working on. Second thing, we need to define success. Huge part of being a data scientist, and this is one place that it shows up, is we need to define what it means to be successful. If you remember all the way back to lecture one when I talked about that tax auditing example where we showed that errors and attacks return just the binary, yes, no, there's an error led to a different model than if we defined error as."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1729,
+      "type": "audio",
+      "text": "How much money could have we recovered if we had audited that individual? Those are different choices of loss function, different choices of error. So as a data scientist, the thing we often have to say is what does it mean to be successful? I often hear students say this is a good model or a successful model. And then I ask, what do you mean? And they need to tell me, what does success actually mean? Success is just sort of this bland world word. You need to define it. How do we quantify error? Then we need to actually go fit the model. So we've chosen a loss function."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1741,
+      "type": "audio",
+      "text": "A way to represent error. We have lots of different choices of parameters we could use. We wanna choose the parameters that give us the lowest error. We're gonna see this in just a minute, visualized and then four we need to see did our model do a good job?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1749,
+      "type": "audio",
+      "text": "These four steps core to any sort of model fitting process. Choose your model, define what error means."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1753,
+      "type": "audio",
+      "text": "Fit the model and then see if your model fitted well."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1755,
+      "type": "audio",
+      "text": "Rinse and repeat often."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1762,
+      "type": "audio",
+      "text": "OK, probably the most important thing to take out of this lecture is that this idea, because we're going to be using it throughout the class."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1774,
+      "type": "audio",
+      "text": "All right, so let's go through this process step by step. I'll pause for a minute here. Let's do some questions. I'm going to have some slidos in just a minute here, but any questions for the big group while we're talking here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1777,
+      "type": "audio",
+      "text": "Yes, right in front."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1806,
+      "type": "audio",
+      "text": "You're like an air a little like 4 like from like what we might know in day to 8 like how do you think about like a loss function sort of error? Everybody, I got a great question. Can you give an example of a loss function or an error that you might think of? So we're going to talk all about that in the second bullet, but one way of thinking about that is mean squared error or just squared error. Take the actual predicted value of a model."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1809,
+      "type": "audio",
+      "text": "Or the actual value? Yeah, the predicted by a model and then the actual value."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1822,
+      "type": "audio",
+      "text": "Subtract them and square it. That's one way to define error. We could do the absolute value of those two things. Lots of different choices. Great question, but we're going to dig into that a lot in the choose a loss function part. Other questions right in front."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1837,
+      "type": "audio",
+      "text": "How many models are going to cover if they don't want to? That's a great question. How many models are we going to cover in Data 100? So this is a really, really like beautiful question to ask because it gets me to the heart of something I always like to talk to students about."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1851,
+      "type": "audio",
+      "text": "There's something and I don't, I don't think I've mentioned it to this cohort yet, but there's something that's very common among undergraduates learning data science. They get this thing that I like to call methods anxiety. I used to get exactly the same thing where if you feel like you don't understand like 50 core methods of."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1878,
+      "type": "audio",
+      "text": "Being a data scientist, you're not going to be a good data scientist. So I want to learn, you know, all about regression. I want to learn all about random forests. I want to learn all about neural networks. And it's good to be familiar with all of those things. But really what makes a good data scientist is the ability to like, learn a new model and practice for some new domain that you're working in, understand how it works, and be able to implement it. It's much more useful to really deeply understand a core set of models."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1903,
+      "type": "audio",
+      "text": "As opposed to just sort of gently understanding lots and lots of different models that are out there. So the question was, how many different models are we going to learn about in Data 100? It's really ultimately not that many. We're going to learn about this thing called the constant model, which really isn't even used in practice. It's sort of part of other models. I'll talk about it. We'll learn about ordinary least squares, multiple regression, super important, probably the most common model that's used out there in industry. We'll learn about logistic regression."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1908,
+      "type": "audio",
+      "text": "We'll talk a little bit about some clustering models, so non parametric models later on. K means clustering."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1933,
+      "type": "audio",
+      "text": "Hierarchical clustering. And then we'll learn about something called gradient descent, which isn't a model, but it's a generalized way to sort of fit any model you want. But the key thing I want you to get out of that question is don't worry about learning every single model under the sun and data 100. The reason we spend so much time on OS is because a deep understanding of OS multiple regression gets you super far when it comes to learning other models."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1934,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1940,
+      "type": "audio",
+      "text": "OK, let's go."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1973,
+      "type": "audio",
+      "text": "Keep going. All right, so the bulldog to dig into each of these steps. Now, choosing a model, choosing a model. So here's the simple linear regression model model from data. Data 8. Notice there's no hats on the A&B. In this case, we're sort of referring to a generalized simple linear regression model. When we throw hats on top of the A&B, it sort of implies that we've fit a model, actual values that are going to be estimated from data. So SLR or simple linear regression. We'll refer to it as SLR and data 100 from now on. So SLR is a parametric model that has 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1981,
+      "type": "audio",
+      "text": "Parameters the intercepts and the slope term, and they determine the shape of the model. Where does it sit? On the Y axis, right? How steep?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 1983,
+      "type": "audio",
+      "text": "Is that line right? Two parameters?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2009,
+      "type": "audio",
+      "text": "Data 100, we're going to use thetas instead of A&B. We're going to sort of throw A&B out the window. We're going to use thetas and a statistics class. You might see these written as uppercase betas, and data 100 will be thetas. That's the more sort of machine learning approach to this. So Y hat equals Theta naughty, which will always refer to our intercept term in data 100 plus Theta 1 * X Theta one is our first slope feature."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2032,
+      "type": "audio",
+      "text": "So we've chosen a model. I haven't told you why we chose the SLR model, OK. We just have chosen it. Bear with me here, but let's say we've chosen our, our, our model. We've started out, we have a model formulation we want to work with. We're good. We've done step one. Now let's talk about Step 2. How do we quantify error in an SLR model? This is going to get to your question about loss functions."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2036,
+      "type": "audio",
+      "text": "So we're actually going to skip over Step 2 really quick."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2040,
+      "type": "audio",
+      "text": "And talk about fitting the model and we're going to come back to loss functions, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2045,
+      "type": "audio",
+      "text": "In Data 8, you actually figured out how to go find A&B."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2051,
+      "type": "audio",
+      "text": "Using a real data set in DATA 100, we'll call that finding Theta naughty hat and Theta one hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2055,
+      "type": "audio",
+      "text": "I guess we'll see. We come back to it."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2081,
+      "type": "audio",
+      "text": "Never mind. Anyway, we're building up to fitting a model, but we got to get there through loss functions. I don't like this slide. OK, let's go back to loss function. So how do we quantify prediction error? So we're trying to choose which Theta hat is best. And here's our first slido. Our first Slido. So we have that same plot from before. The number of periods in each chapter. Each dot represents a chapter of Little Women. Y axis. Here is the number of characters in that chapter. And I've given you 3 candidate lines."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2095,
+      "type": "audio",
+      "text": "OK, this isn't a trick question. Which one of those three candidate lines fits those points best? This is going to be a Slido. Why don't we go try this out? Which one of those candidate lines looks best to you? Go ahead, try this one out."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2097,
+      "type": "audio",
+      "text": "What fits the data best?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2106,
+      "type": "audio",
+      "text": "And feel free to talk with your neighbor if you'd like, but again, not a trick question here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2114,
+      "type": "audio",
+      "text": "Not trying to trick you here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2115,
+      "type": "audio",
+      "text": "And I don't want to say which one of these fits the best."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2119,
+      "type": "audio",
+      "text": "Universally, just of these three, which one looks best to you?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2144,
+      "type": "audio",
+      "text": "All right, go ahead, toss in an answer. Again, don't worry about being correct here. These aren't graded on correctness, just on completion. But let's see where we're at, OK? So I think like, you know, we have 95% of people who who can see and then we have the 6% who are contrarians, right, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2168,
+      "type": "audio",
+      "text": "It seems like using our like strong visual systems, we can look at this picture, we can see that scatter plot of points, we can see the blue line as close to that scatter plot and and we can see visually that it makes sense that that line fits those points better. But how do you tell a machine that can't see that that line fits better? How do we actually quantify what it means for a line to fit better? So that's what we're going to get at now, So."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2178,
+      "type": "audio",
+      "text": "We need some metric to tell a machine is this a good prediction or is this a bad prediction and this is what a loss function is?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2193,
+      "type": "audio",
+      "text": "It describes the cost of an error from a particular model."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2193,
+      "type": "audio",
+      "text": "So if our prediction is close."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2216,
+      "type": "audio",
+      "text": "To the actual value for the same input. So we have some X value. We have some prediction. We have some actual outcome. If those two things are close. If our prediction is close to our outcome, we have low loss. If it's far from the actual outcome, we have high loss. But we want to be more specific than this. What does it mean to be close? What does it mean to be far? How do we want to weight our errors? Here's a picture for you. We have a particular Y hat. This is a prediction. Along the line, we have some actual Y that represents."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2227,
+      "type": "audio",
+      "text": "Represented by the point here that distance is one way of measuring error. The difference between Y&Y hat we saw that before we called that a residual."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2229,
+      "type": "audio",
+      "text": "Now we're going to use this."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2247,
+      "type": "audio",
+      "text": "Letter L to represent our loss in data 100. What is the loss associated with a particular value Y and a particular value of Y hat? What is our loss function? When we plug in Y and we plug in Y hat, what do we get back? We're going to use an uppercase L to denote a loss function."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2279,
+      "type": "audio",
+      "text": "So there's many different ones that we could choose, but you have to think for a minute like what can success mean in different cases? So in the example that we're looking at on this slide, this is a quantitative output. Presumably this is AY axis that's numeric. But what if our output is qualitative? What if we're predicting yes or no? How do we measure error when we predict yes, but the actual answer is no or vice versa? Or what if we have three different qualitative outputs? We're trying to predict yes, no and maybe."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2309,
+      "type": "audio",
+      "text": "How do we quantify error in that case? What is the difference between a yes and a maybe in a yes versus a no? How do I measure that distance? This is a harder question than it sounds like, right? How much should outliers influence the analysis? Do I care if my model is mostly correct, but there's a one point that's like way above the line that's totally predicted incorrectly. Is that OK for my model, or do I want my model to change based on that outlier? And then finally, are all errors equally costly? This is another thing to think about. We're going to get to this."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2314,
+      "type": "audio",
+      "text": "When we get to classification error metrics, but it's a really important idea."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2317,
+      "type": "audio",
+      "text": "The example I told you where we had the yes, no and whether or not those things were correct."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2340,
+      "type": "audio",
+      "text": "Errors are not always the same. So if I predict no, but the actual answer is yes, that doesn't necessarily have the same cost as predicting yes, but the actual answer is no. The example I give here would we rather tell somebody that they have cancer based on a test and later find out that they don't have cancer, or would we rather tell someone that they don't have cancer?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2371,
+      "type": "audio",
+      "text": "Right. We'd probably rather tell somebody that they do have cancer and realize later on, oh, it's fine, you know, I don't actually have cancer. Because if we tell someone that they don't have cancer, but they actually have cancer, they could be spending all of that time where they think they're totally healthy doing something to treat that cancer. So errors are not necessarily valued the same even when that sort of distance between those errors seems the same. We're going to get into this more when we get to classification error metrics, but we're going to 1st focus on quantitative outputs."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2381,
+      "type": "audio",
+      "text": "Here. So here's another slide for you. So let's say we want to penalize large residuals."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2391,
+      "type": "audio",
+      "text": "When I add up all of the loss from all the different points in my data set and I really want to give a big penalty to large residuals, really big errors, close errors are fine. Which loss function should I use? Feel free to talk with your neighbor about this."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2400,
+      "type": "audio",
+      "text": "And if you got questions, raise your hand and I can come to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2421,
+      "type": "audio",
+      "text": "Which one of these is worse?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2449,
+      "type": "audio",
+      "text": "OK, let's see."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2476,
+      "type": "audio",
+      "text": "So two different kinds of loss, both valid forms of loss. Let's see which one is better for penalizing large errors. So these are the two most common kinds of loss, I would say, at least when it comes to quantitative outputs, numeric outputs like the ones in linear regression, the most common kinds of loss. We have squared loss, the difference between our actual outcome and our predicted outcome squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2480,
+      "type": "audio",
+      "text": "So that's the loss function L of Y&Y hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2497,
+      "type": "audio",
+      "text": "The function L of Y&Y hat is the difference squared and then we have absolute loss. These are also referred to as L2 loss. You can kind of link the two and L2 with the square and L1 loss. We're going to refer to them as L2 loss and L1 loss in Data 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2504,
+      "type": "audio",
+      "text": "And so let's actually sort of work this out a little bit. Let's say why and why had are exactly the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2512,
+      "type": "audio",
+      "text": "If Y&Y hat are exactly the same, then both of these loss values are zero. Y -, Y hat is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2523,
+      "type": "audio",
+      "text": "0 ^2 is the same thing as the absolute value of 0, so we have no loss. But the tricky part here is what happens when Y is far away from Y hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2526,
+      "type": "audio",
+      "text": "If you recall from the plot of X ^2."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2529,
+      "type": "audio",
+      "text": "And the absolute value of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2531,
+      "type": "audio",
+      "text": "What happens?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2535,
+      "type": "audio",
+      "text": "When?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2544,
+      "type": "audio",
+      "text": "We have a large input value. When we have a large input value with X ^2, that input value grows a lot more."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2575,
+      "type": "audio",
+      "text": "When we have a really bad prediction, when we have a big difference between Y&Y hat, we get lots of loss. So squared loss is going to give us models that really penalize large errors. It's going to try to make those large errors as small as possible, even if it has to grow some of the other errors in the model. Absolute loss doesn't have that feature, doesn't have that feature. Those large differences between Y&Y hat aren't extra magnified and so the model isn't going to be as sensitive to."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2603,
+      "type": "audio",
+      "text": "Suppliers. OK, so two different ways to think about loss for the SLR model. We can actually fill in the blanks here. So this is all the same exact formulation. We're just sort of plugging in values. Now we're gonna start growing how many things are in our formulas, but we're just plugging in the same things we've seen before. So squared loss is y -, y hat. What is Y hat in the SLR model? Y hat in the SLR model is the slope term rather the intercept term plus the slope term times X."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2605,
+      "type": "audio",
+      "text": "So we can put this all inside of."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2626,
+      "type": "audio",
+      "text": "LY of Y hat. Same idea for the SLR model. If we were to use absolute loss or L1 loss, we just wrap y -, Y hat in absolute values and plug in Theta naughty plus Theta 1X for Y hat. Again, there's nothing new here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2638,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2638,
+      "type": "audio",
+      "text": "There's nothing new at the bottom here. We're just plugging in those loss formulations directly into the, or rather plugging in the SLR formulation directly into the loss functions up above."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2651,
+      "type": "audio",
+      "text": "So natural question here is like, why don't we just use y -, y hat as our error? Why are we squaring it? Why are we putting the absolute value around it? Why not just use residuals as our error?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2662,
+      "type": "audio",
+      "text": "Kind of a natural way to think about error. When we say air, we're often referring to a residual. Why not use the residual air directly as the loss function? The key idea is that residuals can be both positive and negative."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2691,
+      "type": "audio",
+      "text": "Residuals can be both positive and negative. So if I add a big positive residual to a big negative residual, I get 0. Does a big positive error cancel out a big negative error? No, those are two big errors. I want to make sure both of those are accounted for in loss. So we don't use residuals directly because big negative errors should not cancel out big positive errors. When we're dealing with loss, we never just use the residual directly, otherwise we get issues."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2719,
+      "type": "audio",
+      "text": "Data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2719,
+      "type": "audio",
+      "text": "OK. So I've been sort of saying this quietly, but we've talked about loss on an individual data point y -, y hat squared or the absolute value of y -, y hat. But I've been saying we're, we're going to add up the loss. We have loss on individual data points, but our data set can have hundreds or thousands or millions or billions of data points. So what we really care about is not just loss on individual data points. We're interested in loss over our entire data."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2732,
+      "type": "audio",
+      "text": "So new term here, we're going to call this the average loss, also known as the empirical risk. Average loss or empirical risk, we're going to use an R This is why it's an R empirical risk."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2762,
+      "type": "audio",
+      "text": "R hat of Theta. So we're treating our data set as fixed. So this is just a function of our choice of parameters. Here. R hat of Theta is equal to exactly what we just said above the average loss. This is just an average of the loss of all of our data points. That's it. Nothing fancy here. We're literally just taking an average of the loss on all the individual data points. We add them all up, divide by the number of data points. That's it. That's average loss. OK, keep in mind."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2776,
+      "type": "audio",
+      "text": "Treating the data set as fixed or constant. In this case, we're sort of assuming that we have one data set that we're going to use. And so the only thing that can affect loss, the only thing that can affect loss."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2793,
+      "type": "audio",
+      "text": "Is the parameters. We can adjust our parameters. This is our control knob here. Based on our choice of parameters, the average loss might be larger or smaller and we want loss to be low. Loss is bad, we want loss to be as low as possible."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2820,
+      "type": "audio",
+      "text": "OK, this is exactly the same thing I said before. Why is it a function of Theta? Our choice of Theta is what determines the predictions. We're treating our data set as fixed. So 2 common examples of average loss, exactly the same as what we've seen before. L2 loss and L1 loss means squared error. Take the squared error on every data point. Find the average over all the data points. Take the absolute error of all the data points. Find the average of all of that."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2831,
+      "type": "audio",
+      "text": "We're just putting things together now. The mean absolute error, we're taking the average over the entire data set. Mean squared error, average over the entire data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2831,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2854,
+      "type": "audio",
+      "text": "So we've talked about how we quantify prediction error for SLR. What's used. So SLR has been around a lot longer than computers. As you know, absolute values and mathematics and calculus and derivatives don't agree as well as nice smooth functions like the squared function. So SLR historically has used squared loss."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2880,
+      "type": "audio",
+      "text": "As its loss function, you can fit it with absolute loss. You can indeed fit it with absolute loss, but historically we've used squared loss. And so this combination of using an SLR model with squared loss, like the most canonical example of a model out there, I would say, is called least squares regression. When you hear least squares regression, it's usually referring to exactly what we're doing here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2884,
+      "type": "audio",
+      "text": "SLR simple linear regression with squared loss. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2911,
+      "type": "audio",
+      "text": "We had a good question here. Are there any cases where we would want to use absolute error instead of squared error when we don't want to penalize residuals that are large quite as much? We're going to talk more about that in the next lecture and we'll see it sort of in action, but just as sort of a instructive exercise here, we'll start with squared loss. We're going to play around with derivatives and absolute loss in the next lecture."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 2918,
+      "type": "audio",
+      "text": "OK, I think that takes our break. Let's do a break. If you got questions, raise your hand. I can come to you or or come on up."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3024,
+      "type": "audio",
+      "text": "Sure."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3162,
+      "type": "audio",
+      "text": "All righty, let me. Oops."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3163,
+      "type": "audio",
+      "text": "It's not good."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3170,
+      "type": "audio",
+      "text": "I want to check the zoom video Wheeler."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3176,
+      "type": "audio",
+      "text": "OK, hide for the. OK, All right, let's keep going. All right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3194,
+      "type": "audio",
+      "text": "Not raining today, but my jacket is still going to be wet. All right, let's keep going. So how do we choose the best parameters given our data set? So we've decided to define loss, or I've sort of decided for you that we're going to define loss for least squares regression using."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3220,
+      "type": "audio",
+      "text": "Squared loss, but then how does that loss formulation lead us to a bunch of formulas for the best fitting slope or the best fitting intercept? OK, so let's think about this. So we've worked up to this point where we can express this. Again, we've done lots of just framework up to here. And I apologize how much frameworking we had to just do, but this is like core everything today is going to."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3229,
+      "type": "audio",
+      "text": "Design so much of your future as a data scientist anytime you're building models. But we've built up to being able to understand this expression."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3235,
+      "type": "audio",
+      "text": "R hat Theta. The empirical risk, The average loss of a model, The total error in a model."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3237,
+      "type": "audio",
+      "text": "Is equal to the average of and often this is just."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3254,
+      "type": "audio",
+      "text": "Written as the sum of 2, the North is just a constant. It's not a huge deal, but we see average loss as kind of the same idea as sum of loss. Just keep that in mind. But it's the sum of, in this case, squared loss, the difference between our actual outcome."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3260,
+      "type": "audio",
+      "text": "We're subtracting, it's a difference, and then whatever our predicted outcome is, this is just Y hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3280,
+      "type": "audio",
+      "text": "This is just Y hat and we're squaring it. Nothing fancy here. Squared error averaged over your whole data set. But then how do we turn that expression? Or how do we choose rather value of Theta that makes that expression as small as possible? What does that sound like when I say choose a value of Theta that minimizes some function? That sounds like a first derivative, doesn't it?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3310,
+      "type": "audio",
+      "text": "This is the calculus lecture, OK. We want to choose the Theta naughty and Theta one that minimize that objective function. And there's lots of different ways to think about it. Today we're going to talk about it with calculus in the OLS lecture. We're going to use geometry in linear algebra to think about it, but the generalized form is something called the gradient descent that we're building up to. But first we're going to do it with calculus. We want to choose the value of Theta naughty and Theta one that minimize this thing called an objective function or objective function. What's our goal? What?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3311,
+      "type": "audio",
+      "text": "Trying to minimize."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3339,
+      "type": "audio",
+      "text": "So let's do it, and I hope my pencil works. My pencil's been giving us a little bit of trouble today. So we want to try to find this regression line. We're trying to pick a real regression line for some data set, an actual fixed line with a intercept and with a slope. And the intercept and slope we choose has to minimize this quantity. The mean squared error of our choice of intercept and slope, we want to choose the value of Theta naughty and Theta one that minimize that expression."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3345,
+      "type": "audio",
+      "text": "OK, where we treat XI and Yi all of our data set as a fixed or constant?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3351,
+      "type": "audio",
+      "text": "This is the graph of A2 dimensional parabola."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3371,
+      "type": "audio",
+      "text": "Right, we have a square there. Theta naughty and Theta one are our variables. This is a weird thing to get used to. X&Y are not our variables in that equation. We're treating our data set as fixed or given. XI is like a C, Yi is like an A. It's like these fixture given constants in our expression."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3397,
+      "type": "audio",
+      "text": "The variables in this expression are Theta naughty and Theta one. We're trying to choose the parameters that make our mean squared error as small as possible based on some data set. And so this describes that function, describes what's called a loss surface, a loss surface. And in this case we have a loss surface that's three-dimensional because we have two input features that we can vary."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3424,
+      "type": "audio",
+      "text": "And then typically we have one measure of loss, how high or lower you, right? That's the utility of this function. How good or bad are things in real life, right? When we think about the utility of our life, we don't usually think about the utility of our life as just one-dimensional, right? Things are either good or bad. We usually think, I'm satisfied on this dimension, I'm satisfied on this dimension, I'm not satisfied on this other dimension. When it comes to models, we expressed error satisfaction utility in terms of just one dimension."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3427,
+      "type": "audio",
+      "text": "Our error or output is just one dimension, our parameter space."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3442,
+      "type": "audio",
+      "text": "Is multidimensional. For simple linear regression it's 2 inputs. For multiple linear regression it can be many inputs. OK, in this case it's two inputs. So we get this nice visualization. What does that red dot?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3444,
+      "type": "audio",
+      "text": "That red dot down there?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3448,
+      "type": "audio",
+      "text": "Is the lowest value of the lost surface."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3466,
+      "type": "audio",
+      "text": "The choice of Theta naughty and Theta one that make our mean squared error as small as possible. How do we define that point on a surface? We define that point as the place where the partial derivatives with respect to the inputs are 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3478,
+      "type": "audio",
+      "text": "Those are the equations we need to solve to go find the optimal values of Theta naughty and Theta 1. So we're going to go do that. Questions about this setup to start."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3499,
+      "type": "audio",
+      "text": "Another crazy important slide. Great visualization to have in your head. Even if you have more than two inputs and you can't visualize it. This is usually how you're going to think about mean squared error. When you think about a lost surface, When you're thinking about it, you know, working for some fancy model, you're thinking about the loss surface like this. This is the picture that's usually in your head. Questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3505,
+      "type": "audio",
+      "text": "Right in front."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3512,
+      "type": "audio",
+      "text": "It's like take a value that for XI and I take any value. Good. The question was when we take derivatives, what do we do with XI and Yi? Let me show you."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3515,
+      "type": "audio",
+      "text": "So let's take a derivative."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3541,
+      "type": "audio",
+      "text": "Let's take a derivative, OK? I promise you this looks scarier than it looks. The first time you see this, it's very overwhelming. I actually didn't see something like this until grad school for the first time. I also found it overwhelming. But I'm going to show you this really isn't that bad. If anything, this is a lot easier than things you've taken derivatives of, even on Data 100 homework. OK, so we're taking a partial derivative of mean squared error. So a partial derivative."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3541,
+      "type": "audio",
+      "text": "Of this function."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3551,
+      "type": "audio",
+      "text": "What is a partial derivative mean? We're taking the derivative with respect to Theta naughty. We treat all other variables as constants, and we treat all constants as constants."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3560,
+      "type": "audio",
+      "text": "So what's the first step here? The derivative is the sum of derivatives when we take the derivative of."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3564,
+      "type": "audio",
+      "text": "DDX of F of X + g of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3572,
+      "type": "audio",
+      "text": "Remember that we just bring that derivative operator right inside derivative of F of X plus the."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3579,
+      "type": "audio",
+      "text": "Derivative of G Max. So let's do the same thing if we're taking the derivative of a big summation."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3588,
+      "type": "audio",
+      "text": "We can just pull that derivative right inside of the summation, take the derivative of the individual terms and sum them up. So we're going to say one over north on the outside I equals 1 N."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3591,
+      "type": "audio",
+      "text": "Partial derivative with respect to Theta nought."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3593,
+      "type": "audio",
+      "text": "Of Yi minus Theta naughty."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3597,
+      "type": "audio",
+      "text": "Minus."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3602,
+      "type": "audio",
+      "text": "Theta one XI and the derivations we show you in class are pretty core."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3610,
+      "type": "audio",
+      "text": "They were passed examined quite past exam questions that look just like this slide. So just just keep that in mind. It's good to understand this try to follow along so."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3614,
+      "type": "audio",
+      "text": "We're bringing the derivative right inside now, what do we do?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3625,
+      "type": "audio",
+      "text": "The chain rule, we've got to do the chain rule. So we have some outer function. We have this outer function with the square. We have this inner function with all of these pieces. So we'll start with the outer function and we're going to work our way in."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3629,
+      "type": "audio",
+      "text": "So let's start with the outer function. I'm going to leave the summation the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3641,
+      "type": "audio",
+      "text": "We're going to start with the outer function. The 2 comes out front. We leave everything inside the same. These are just rules of partial derivatives that you all have seen. But then we have to work our way inside."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3648,
+      "type": "audio",
+      "text": "Then we have to work our way inside. How do we do the derivative of the inner piece here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3667,
+      "type": "audio",
+      "text": "So again, you're seeing a lot of symbols in this derivative that you're not used to seeing in derivatives. But just keep in mind this isn't as complicated and complicated of an expression as you might imagine. We're treating XI and Yi as fixed given constant. Our data set is not parameters. We're not fitting the model."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3673,
+      "type": "audio",
+      "text": "Based on different kinds of data sets we might see we're treating our data set as fixed, so we're treating Yi as a constant."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3676,
+      "type": "audio",
+      "text": "We're treating XI as a constant."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3686,
+      "type": "audio",
+      "text": "When we take the partial derivative with respect to Theta naughty, we treat all other variables as constants. So what do we treat Theta one as a constant?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3696,
+      "type": "audio",
+      "text": "We have 3 constants and one variables. This is like taking the derivative of 5 -, X -, 10. You all know how to do that."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3705,
+      "type": "audio",
+      "text": "So let's do it. So we take the derivative. The derivative of Yi is 0. The derivative of Theta naughty with respect to Theta naughty is."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3721,
+      "type": "audio",
+      "text": "-1 just like taking the derivative with respect to X of X. Derivative of X is just one derivative of negative X is just -1, derivative of negative Theta is just -1, and the derivative of another constant here is just 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3725,
+      "type": "audio",
+      "text": "So all we care about is just that -1."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3728,
+      "type": "audio",
+      "text": "That's it."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3732,
+      "type": "audio",
+      "text": "OK, simplify our constants. What do we do? Let's pull out the 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3740,
+      "type": "audio",
+      "text": "Let's pull out the -1 We get -2 / n sum I equals one to North."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3748,
+      "type": "audio",
+      "text": "Yi minus Theta naughty minus Theta one XI that is the derivative with respect to Theta naughty."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3749,
+      "type": "audio",
+      "text": "Of mean squared error."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3752,
+      "type": "audio",
+      "text": "Pausing for questions here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3760,
+      "type": "audio",
+      "text": "This is a core skill from Data 100A Core skill for future machine learning and data science classes. Questions about that derivation?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3777,
+      "type": "audio",
+      "text": "The hardest thing to get used to is treating variables that don't usually look like variables, or that usually treating constants that look like variables as constants. Right. We're used to taking derivatives with respect to X with respect to Y. We don't do that here. We're taking derivatives with respect to Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3780,
+      "type": "audio",
+      "text": "Questions before we do Theta one. Yeah, right in front."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3784,
+      "type": "audio",
+      "text": "I think the final answer that's available because the."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3814,
+      "type": "audio",
+      "text": "All this gives us is the derivative of the mean squared error with respect to Theta. Not remember, we're solving for the point on the loss surface where that first derivative is equal to what? What are we going to set this first derivative equal to 0, right? And technically, we're also going to check that the second derivative is positive. Fortunately for mean squared error, all of our second partial derivatives are always positive. We're not going to worry about them in data 100. What we care about here is just the first derivative. Other questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3817,
+      "type": "audio",
+      "text": "Really important to have this down pass. If you've got questions, ask them."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3819,
+      "type": "audio",
+      "text": "Oh."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3825,
+      "type": "audio",
+      "text": "Oh, oh, OK, that's weird. Let me see. Let me check the share."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3831,
+      "type": "audio",
+      "text": "One SEC everybody, let's share."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3831,
+      "type": "audio",
+      "text": "This."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3835,
+      "type": "audio",
+      "text": "Stop Share."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3837,
+      "type": "audio",
+      "text": "Share."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3846,
+      "type": "audio",
+      "text": "You want to ask them if that fixed it? Great, thank you. I had floating media controls questions, other questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3853,
+      "type": "audio",
+      "text": "Like I said, past exam questions look just like this. That question, yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3854,
+      "type": "audio",
+      "text": "Why don't we?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3863,
+      "type": "audio",
+      "text": "One over NN is a constant. N is the number of data points in our data set. We're treating our data set as constant."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3873,
+      "type": "audio",
+      "text": "One over north is just a constant. Remember if we take like the derivative of 5X or like 5 X squared, we can just pull out that 5 right? We don't care."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3878,
+      "type": "audio",
+      "text": "About the constant piece, makes sense. Good others these are great."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3882,
+      "type": "audio",
+      "text": "Right front."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3884,
+      "type": "audio",
+      "text": "Yeah, sorry."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3886,
+      "type": "audio",
+      "text": "No, no questions are good."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3915,
+      "type": "audio",
+      "text": "You start having more features, right? That means you can start doing that for you features, right? So the question is, when we start getting more features, instead of just XI, maybe we have X1I and X2I and X3I and a bunch of different inputs to our model that we want to take advantage of. Does that mean we're going to have more parameters? Yes, more parameters, Theta one, Theta 2, Theta 3. Does that mean more partial derivatives?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3940,
+      "type": "audio",
+      "text": "Yes, that means more partial derivatives. We don't teach it in data 100. I'm happy to show it in office hours. But when we get to the OLS lecture, we're going to derive the optimal coefficients with linear algebra that I'm going to show you. What I'm not going to show you is how to derive the optimal coefficients using matrix calculus, which sounds much scarier than it is. And it's actually way easier than this derivation to do it all at once as opposed to individually for each parameter."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3944,
+      "type": "audio",
+      "text": "OK, let's keep going just to make sure we hit time here, alright?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3948,
+      "type": "audio",
+      "text": "We have another derivation to do."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3966,
+      "type": "audio",
+      "text": "But I have some other derivation in the way, so I'm going to erase some of this other derivation here. And let's go ahead and do the other side. You know what, you try it. Take a minute, try this. It's not that different. We're just treating Theta one as our variable now as opposed to Theta nine. Try this one on for size. You can talk with your neighbor."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3976,
+      "type": "audio",
+      "text": "It's just this piece need this out really. And I recommend like try writing this down. Don't just look at it."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 3980,
+      "type": "audio",
+      "text": "Got questions? Raise your hand, I will come to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4014,
+      "type": "audio",
+      "text": "Questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4043,
+      "type": "audio",
+      "text": "OK, let's go ahead and try this out. So."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4047,
+      "type": "audio",
+      "text": "Basically the same steps."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4053,
+      "type": "audio",
+      "text": "One change. So we're taking the derivative with respect to Theta, not Theta 1. Excuse me."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4060,
+      "type": "audio",
+      "text": "We're going to bring the derivative operator inside. The derivative of a sum is the sum of the derivatives."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4071,
+      "type": "audio",
+      "text": "We're treating the Yi as a constant, we're treating the Theta naughty as a constant, we're treating the Theta one as our variable of interest, and we're treating XI as a constant."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4074,
+      "type": "audio",
+      "text": "So how are we going to deal with this? Change colors here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4079,
+      "type": "audio",
+      "text": "So we have 1 / n and sum I equals one to N chain rule."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4094,
+      "type": "audio",
+      "text": "That chain rule step is exactly the same, same inner function. The question is how do we do the inside? Well, the derivative with respect to Theta, one of a constant is just 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4097,
+      "type": "audio",
+      "text": "The derivative with respect to a constant is just 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4100,
+      "type": "audio",
+      "text": "The derivative of."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4114,
+      "type": "audio",
+      "text": "Theta one XI times -1 What's attached to the Theta 1? The derivative of 5X is 5, the derivative of negative XI times Theta one."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4118,
+      "type": "audio",
+      "text": "Theta one is our variable of interest here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4127,
+      "type": "audio",
+      "text": "Derivative is just negative Theta 1 instead of -1, right? A -1 was attached to Theta naughty previously."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4133,
+      "type": "audio",
+      "text": "But in this case."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4137,
+      "type": "audio",
+      "text": "We just have an XI and a negative value attached to Theta 1. So we're done. That's it."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4145,
+      "type": "audio",
+      "text": "Derivative of the mean squared error with respect to Theta 1 looks like that all right, let's keep going so."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4150,
+      "type": "audio",
+      "text": "A little prettier for all of you, this is Oh, go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4160,
+      "type": "audio",
+      "text": "What happened here? Oh, sorry. Negative XI. Sorry. I said out loud. It was negative XI. Thank you. Thank you."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4166,
+      "type": "audio",
+      "text": "Thanks. OK, negative, XI. OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4182,
+      "type": "audio",
+      "text": "Cool. So we have exactly the same work as before. Notice on the right, we can just pull out the -1. We can pull out the two. We can't pull out the XI from the sum, it's indexed by the sum. But we can pull out the -1. We can pull out the 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4185,
+      "type": "audio",
+      "text": "And we're left with -2 / n just like before."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4189,
+      "type": "audio",
+      "text": "With the same expression on the right."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4202,
+      "type": "audio",
+      "text": "We have our expressions for the first derivative, so how are we going to use these now? Well, like I said before, we're going to set these equal to 0 and then solve for Theta naughty hat and Theta one hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4206,
+      "type": "audio",
+      "text": "These two expressions are exactly the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4217,
+      "type": "audio",
+      "text": "As writing what's on the right side here, these were the estimating equations we just solved for. This is Yi. This is the same thing as subtracting Yi hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4222,
+      "type": "audio",
+      "text": "This is why I this is the same thing as subtracting Yi hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4234,
+      "type": "audio",
+      "text": "These are exactly the same expressions. We call those the estimating equations. To solve those estimating equations for Theta naughty hat and Theta one hat, it's just algebra."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4263,
+      "type": "audio",
+      "text": "And we could walk through all of the algebra to go solve Theta naughty hat and Theta one hat. I don't think it's super useful during lecture to do that. There's a bunch of skip slides showing you the algebra. But if you walk through the algebra of solving for Theta naughty hat and Theta one hat using these estimating equations, you get the data 8 equations, that's where they come from. That's it. It's just one-dimensional calculus, OK, or single, single derivative calculus, right? So we end up with the."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4264,
+      "type": "audio",
+      "text": "SLR model."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4268,
+      "type": "audio",
+      "text": "And the optimal values of Theta naughty and Theta one hat are exactly what we saw."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4277,
+      "type": "audio",
+      "text": "In data 8, exactly the same thing as what we saw in data 8, the slope term is dictated by the correlation of X&Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4303,
+      "type": "audio",
+      "text": "The intercept term we get using the slope term along with the mean of X&Y. You might have learned before that the average value of X and average value of Y are always on the regression line. The regression line always contains the point of averages. But like I said, you can see the skip slides for all of the algebra. All right, finally, evaluate the model. Let's talk about model evaluation."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4306,
+      "type": "audio",
+      "text": "So we've landed at this place now where we chose our model, the Solr model."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4313,
+      "type": "audio",
+      "text": "We've chosen a loss function, squared loss. We fit the model using calculus."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4344,
+      "type": "audio",
+      "text": "We fit the model using calculus and we got the closed form expressions for the best fitting parameters of our model. There are not always what are called closed form expressions. We're lucky here where we literally have a formula based on the data to get our optimal parameters. This is actually pretty rare with most models. There's not usually a closed form expression for the best fitting coefficients. You have to approximate it numerically. That's where this thing called gradient descent is going to come into."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4370,
+      "type": "audio",
+      "text": "But in the case of SLR, we have these closed form expressions. Now the question is, even though this was the best fitting model to our data according to the math, according to the math that we sort of set up, is this a good model in the real world? The math checks out, but what's actually like the real world fit quality of this model? So what are some ways we can evaluate the fit of a model? Notice the first thing I said is not numbers."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4372,
+      "type": "audio",
+      "text": "People often want to jump to error metric."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4401,
+      "type": "audio",
+      "text": "In numbers and hard quantities and P values. To figure out if the model fit is good, the first thing you should do is visualize. First thing you should do is visualize your data to see if it was a good fit. All of those other numerical quantities, they come in handy in their places. But one thing you want to bias towards, that sort of unnatural for students to bias towards is visualizing everything. Visualizing your model fit and seeing if it's actually a good model. If you look at it with your eyes and see, does this look like a good model?"
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4432,
+      "type": "audio",
+      "text": "Then you can start thinking about performance metrics. But there's a reason visualization is first. Then you can start looking at performance metrics. One of them, the root mean squared error. Why do we take the square root of the mean squared error? So remember the mean squared error was the empirical risk, our average loss. If we find that value of average loss for the best fitting parameters, why do we take the square root of squared loss? Well, keep in mind squared loss has squared units."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4463,
+      "type": "audio",
+      "text": "Squared loss has squared units. So if I have an income predicting model where I have actual income and predicted income and I subtract them, that's on the dollar scale. But if I square that value, I get squared dollars. I don't interpret the world in terms of square dollars. I don't think you do either. So we take this square root. This is why we use root mean squared error, because it's more human interpretable than mean squared error or human interpretable. Same reason we use often standard."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4468,
+      "type": "audio",
+      "text": "Deviation instead of variance. Variance is in squared units. Standard deviation is in the natural units of the data."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4499,
+      "type": "audio",
+      "text": "And then finally, you can look at your residuals. You can visualize your errors. There's different assumptions of different models about what the errors should look like. For a good linear model, there should not be a pattern. You should not see a pattern of your residuals. It should look randomly scattered as a function of X. We're going to try all of this now, so let's go visualize the data. We're going to go look at some performance metrics, and then we'll do a visualization of the residuals. There's a demo corresponding to this section of the slides."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4500,
+      "type": "audio",
+      "text": "The demo essentially just shows the same pictures."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4506,
+      "type": "audio",
+      "text": "I'm going to show in the slides. If you want to see the code that generates these pictures, you can take a look at the demo, but I'll just focus on the slides here."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4513,
+      "type": "audio",
+      "text": "So the original data set. So you saw this already in one of Ramesh's lectures, Anscombe's Quartet."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4524,
+      "type": "audio",
+      "text": "And the reason Anscombe's quartet is so interesting is because all of these data sets have exactly the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4526,
+      "type": "audio",
+      "text": "Values of."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4528,
+      "type": "audio",
+      "text": "These numeric features."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4555,
+      "type": "audio",
+      "text": "The mean of X is the same, the Y mean is the same, the standard deviations are the same, the correlation is the same, the regression line is the same, the root mean squared error is exactly the same. And it's a nice demonstration of the pitfalls of justice using quantitative error metrics to assess your model. If you don't actually visualize your model, you can miss out on all kinds of patterns. So notice, only one of these regression lines is actually a good fit."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4565,
+      "type": "audio",
+      "text": "Right or decent fit in the bottom left you can see something funny is going on. You can see this one large residual is pulling the regression line up."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4573,
+      "type": "audio",
+      "text": "How could I change the regression model so that the lion doesn't get pulled up as much? What would I change? Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4605,
+      "type": "audio",
+      "text": "Sure. So we could use absolute loss instead so that those really large residuals aren't penalized as heavily by the model and so the model won't worry as much about having one large error. In this case we can see one of those points has really high leverage. It's pulling the regression line up. OK. You can see in the top right we have a non linear model. Linear regression doesn't check if your data is linear, it just fits the model. You need to check if your data is linear."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4612,
+      "type": "audio",
+      "text": "And then you can see we have like this to generate case down here on the bottom right. That's just not a good fit. OK, All right then."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4623,
+      "type": "audio",
+      "text": "Visualizing residuals, Visualizing residuals. So what are we looking at here? So each one of these datasets has a certain number of points, right? We have 1234567891011."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4625,
+      "type": "audio",
+      "text": "Data points in Anscombe's Quartet."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4631,
+      "type": "audio",
+      "text": "And so if we have 11 data points, we're going to have 11 residuals."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4659,
+      "type": "audio",
+      "text": "Each residual corresponds to the same X value as the actual data point. So notice I'm drawing the residuals on this plot. It's the difference between the line and the points. And so you can almost kind of turn your head to the side. It's not exactly the same because the residuals will look a little diagonal. But notice that first plot, kind of turn your head to the side and then look at the top left. Here. These are all of those same residuals now just plotted."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4660,
+      "type": "audio",
+      "text": "Horizontally."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4685,
+      "type": "audio",
+      "text": "Where we have the zero line in the middle. That indicates a good value, a good prediction, because there's no residual, there's no residual. Large values on the Y axis imply a large residual. We can see in the top left there isn't a pattern to the residuals. If I were to show you that plot and ask you is there a correlation of those points, you'd say no, not really."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4702,
+      "type": "audio",
+      "text": "Top left, No, not really. No correlation there. But we can see top right, there's a pattern. That's not good. We can see in the bottom right there's a pattern. Not good. Bottom left pattern. How do I rigorously define pattern? Don't worry about it. If you can see some sort of predictable shape, that's a pattern."
+    },
+    {
+      "id": "audio-ds100-sp26-1771543949-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1771543949",
+      "timestamp": 4718,
+      "type": "audio",
+      "text": "That's a pattern. Top left. We want our residuals to be randomly scattered. That usually indicates a solid fit. All right, I'm going to give you 9 minutes back. Like I said, I have office hours in this room from now until 6:00 PM, so stick around if you have questions. See you all today, Thursday. Yeah, see you all next week."
+    }
+  ]
+}

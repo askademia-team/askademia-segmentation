@@ -1,0 +1,1315 @@
+{
+  "accepted": [
+    {
+      "candidate": {
+        "timestamp": 520.0,
+        "shift_score": 0.66,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "The transition from discussing text data to announcements indicates a shift in focus from content delivery to administrative information.",
+        "source_window_id": "w_0"
+      },
+      "node_id": "node_1"
+    },
+    {
+      "candidate": {
+        "timestamp": 554.0,
+        "shift_score": 0.54,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "Transition from discussing tutoring options to explaining attendance policies, indicating a shift in focus but still within the context of course support.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_2"
+    },
+    {
+      "candidate": {
+        "timestamp": 579.0,
+        "shift_score": 0.56,
+        "shift_type": "minor",
+        "confidence": 0.7,
+        "rationale": "Shift from discussing attendance policies to catch-up sessions, which introduces a new type of support for students, indicating a minor transition.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_3"
+    },
+    {
+      "candidate": {
+        "timestamp": 604.0,
+        "shift_score": 0.8525635762083442,
+        "shift_type": "major",
+        "confidence": 0.8,
+        "rationale": "Transitioning from discussion on office hours to the importance of watching mini lectures before sections.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_4"
+    },
+    {
+      "candidate": {
+        "timestamp": 632.0,
+        "shift_score": 1.0,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Significant shift to discussing the data life cycle and workflow, indicating a new topic.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_5"
+    },
+    {
+      "candidate": {
+        "timestamp": 688.0,
+        "shift_score": 0.5780895464944437,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "Transitioning from discussing data processing to introducing text data and regular expressions, indicating a significant shift in topic focus.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_6"
+    },
+    {
+      "candidate": {
+        "timestamp": 724.0,
+        "shift_score": 0.678866785931844,
+        "shift_type": "minor",
+        "confidence": 0.95,
+        "rationale": "A clear transition to discussing key data properties in exploratory data analysis, marking a significant change in focus.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_7"
+    },
+    {
+      "candidate": {
+        "timestamp": 764.0,
+        "shift_score": 0.6221194526831525,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "The discussion shifts from granularity to the concept of what each row represents in the dataset, indicating a significant conceptual transition.",
+        "source_window_id": "w_4"
+      },
+      "node_id": "node_8"
+    },
+    {
+      "candidate": {
+        "timestamp": 796.0,
+        "shift_score": 0.6416226602168102,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "The discussion shifts from the properties of data analysis to potential issues with the dataset, indicating a significant change in focus.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_9"
+    },
+    {
+      "candidate": {
+        "timestamp": 823.0,
+        "shift_score": 0.6572645180606156,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "Introduction of a new dataset example indicating potential issues, marking a shift from discussing general data properties.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_10"
+    },
+    {
+      "candidate": {
+        "timestamp": 865.0,
+        "shift_score": 0.5245814514483544,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "Discussion of a specific issue regarding duplicated rows in the dataset, indicating a shift to more detailed analysis.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_11"
+    },
+    {
+      "candidate": {
+        "timestamp": 920.0,
+        "shift_score": 0.689029505186498,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "The speaker discusses the implications of missing data in the 'purchased' column, indicating a shift in focus to data quality issues.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_12"
+    },
+    {
+      "candidate": {
+        "timestamp": 949.0,
+        "shift_score": 0.548386546005834,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "The speaker transitions from discussing missing data entries to emphasizing the importance of understanding data sources, indicating a shift in focus.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_13"
+    },
+    {
+      "candidate": {
+        "timestamp": 985.0,
+        "shift_score": 0.695063371049981,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "The speaker introduces the concept of 'faithfulness' in data, which represents a significant conceptual shift from previous discussions about dataset issues.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_14"
+    },
+    {
+      "candidate": {
+        "timestamp": 1041.0,
+        "shift_score": 0.7149965839848509,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Transitioning from discussing data duplication to the implications of missing data, indicating a shift in focus.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_15"
+    },
+    {
+      "candidate": {
+        "timestamp": 1097.0,
+        "shift_score": 0.7159430249227657,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Transitioning from discussing the nature of missing data to specific approaches for handling it indicates a significant shift in topic.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_16"
+    },
+    {
+      "candidate": {
+        "timestamp": 1206.0,
+        "shift_score": 0.7169706747626116,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Introduction of imputation/interpolation techniques marks a significant shift in the discussion about handling missing data.",
+        "source_window_id": "w_11"
+      },
+      "node_id": "node_17"
+    },
+    {
+      "candidate": {
+        "timestamp": 1265.0,
+        "shift_score": 0.7180371318181535,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "A significant shift occurs as the instructor introduces a new topic related to cleaning text data, moving away from missing data approaches.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_18"
+    },
+    {
+      "candidate": {
+        "timestamp": 1293.0,
+        "shift_score": 0.7191152984822747,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The transition to discussing text processing and the STR accessor indicates a significant shift from the previous topic of handling missing data.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_19"
+    },
+    {
+      "candidate": {
+        "timestamp": 1320.0,
+        "shift_score": 0.7201877688159771,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Introduction of canonicalization as a key concept in text data manipulation, marking a shift from general text cleaning to a specific technique.",
+        "source_window_id": "w_14"
+      },
+      "node_id": "node_20"
+    },
+    {
+      "candidate": {
+        "timestamp": 1346.0,
+        "shift_score": 0.5404271014671841,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "The instructor introduces the concept of joining tables with mismatched labels, indicating a shift from discussing canonicalization to practical application.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_21"
+    },
+    {
+      "candidate": {
+        "timestamp": 1431.0,
+        "shift_score": 0.7212434144423097,
+        "shift_type": "major",
+        "confidence": 0.85,
+        "rationale": "The instructor summarizes various problems encountered in data representation, indicating a significant shift towards solutions and standardization.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_22"
+    },
+    {
+      "candidate": {
+        "timestamp": 1461.0,
+        "shift_score": 0.7308037392086655,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The content continues discussing canonicalization and introduces the goal of extracting information, indicating a minor shift in focus.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_23"
+    },
+    {
+      "candidate": {
+        "timestamp": 1640.0,
+        "shift_score": 0.5,
+        "shift_type": "minor",
+        "confidence": 0.4,
+        "rationale": "forced_split_max_segment",
+        "source_window_id": "w_19"
+      },
+      "node_id": "node_24"
+    },
+    {
+      "candidate": {
+        "timestamp": 1672.0,
+        "shift_score": 0.735923723746247,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Introduction of merging DataFrames with a focus on canonicalization indicates a shift from basic string operations to more complex data manipulation.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_25"
+    },
+    {
+      "candidate": {
+        "timestamp": 1701.0,
+        "shift_score": 0.7342768645871778,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Introduction of the function 'canonicalize_county' marks a significant shift from discussing data display to data transformation.",
+        "source_window_id": "w_21"
+      },
+      "node_id": "node_26"
+    },
+    {
+      "candidate": {
+        "timestamp": 1727.0,
+        "shift_score": 0.8253269663482226,
+        "shift_type": "major",
+        "confidence": 0.85,
+        "rationale": "The speaker elaborates on the process of canonicalization, indicating a continuation of the topic but with a more detailed focus on implementation.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_27"
+    },
+    {
+      "candidate": {
+        "timestamp": 1753.0,
+        "shift_score": 0.7190171283987555,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Introduction of the concept of applying canonicalization to county string data, indicating a shift from discussing the function to its application.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_28"
+    },
+    {
+      "candidate": {
+        "timestamp": 1791.0,
+        "shift_score": 0.7200365429280488,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The instructor discusses the merging of data frames based on a common column name, indicating a shift from the previous topic of canonicalizing county data.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_29"
+    },
+    {
+      "candidate": {
+        "timestamp": 1824.0,
+        "shift_score": 0.721007696242324,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The speaker introduces a new concept regarding the naming convention for columns in data merging, indicating a shift in focus from canonicalizing county names to discussing how to handle column names in the merge process.",
+        "source_window_id": "w_25"
+      },
+      "node_id": "node_30"
+    },
+    {
+      "candidate": {
+        "timestamp": 1869.0,
+        "shift_score": 0.5336093517492335,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The speaker addresses potential issues with fringe cases in county naming, suggesting a shift towards discussing data quality and handling exceptions in the dataset.",
+        "source_window_id": "w_25"
+      },
+      "node_id": "node_31"
+    },
+    {
+      "candidate": {
+        "timestamp": 1908.0,
+        "shift_score": 0.7226527938470415,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The discussion shifts from the efficiency of using STR operations in pandas to the underlying implementation details, indicating a minor conceptual transition.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_32"
+    },
+    {
+      "candidate": {
+        "timestamp": 1933.0,
+        "shift_score": 0.7174296439066611,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Introduction of a new topic related to extracting data from log files, indicating a shift from previous discussions on canonicalizing county names.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_33"
+    },
+    {
+      "candidate": {
+        "timestamp": 2113.0,
+        "shift_score": 0.5,
+        "shift_type": "minor",
+        "confidence": 0.4,
+        "rationale": "forced_split_max_segment",
+        "source_window_id": "w_28"
+      },
+      "node_id": "node_34"
+    },
+    {
+      "candidate": {
+        "timestamp": 2141.0,
+        "shift_score": 0.7332445089662782,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Introduction of regular expressions as a more efficient method for extracting data, transitioning from the previous method discussed.",
+        "source_window_id": "w_29"
+      },
+      "node_id": "node_35"
+    },
+    {
+      "candidate": {
+        "timestamp": 2166.0,
+        "shift_score": 0.8052235370165841,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Introduction of a new method (regular expressions) to improve the extraction process, indicating a significant shift in approach.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_36"
+    },
+    {
+      "candidate": {
+        "timestamp": 2200.0,
+        "shift_score": 0.5707203828538331,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "Discussion of recognizing patterns in data extraction, which builds on the previous concept but introduces a new aspect of pattern recognition.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_37"
+    },
+    {
+      "candidate": {
+        "timestamp": 2264.0,
+        "shift_score": 0.6710626422977661,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "The introduction of regular expressions as a solution signifies a shift from basic string manipulation techniques to a more advanced method.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_38"
+    },
+    {
+      "candidate": {
+        "timestamp": 2350.0,
+        "shift_score": 1.0,
+        "shift_type": "major",
+        "confidence": 0.95,
+        "rationale": "The explanation of how regular expressions work and their application in Python represents a significant conceptual shift towards understanding regex.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_39"
+    },
+    {
+      "candidate": {
+        "timestamp": 2380.0,
+        "shift_score": 0.7120084819817663,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The instructor introduces a new analogy comparing regular expressions to word puzzles, indicating a slight shift in focus.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_40"
+    },
+    {
+      "candidate": {
+        "timestamp": 2409.0,
+        "shift_score": 0.7087009626551706,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The instructor shifts focus to the practical applications of regular expressions, emphasizing their utility in filtering and extracting data from strings, which is a continuation of the previous discussion but introduces specific examples.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_41"
+    },
+    {
+      "candidate": {
+        "timestamp": 2440.0,
+        "shift_score": 0.8028893314143308,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The instructor introduces a specific example of sales data, marking a minor transition as it shifts from general discussion to a concrete illustration of the concepts.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_42"
+    },
+    {
+      "candidate": {
+        "timestamp": 2501.0,
+        "shift_score": 0.6950562949438321,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "The instructor transitions to discussing the extraction of dollar amounts from messy datasets, indicating a shift in focus from general regex applications to specific examples.",
+        "source_window_id": "w_35"
+      },
+      "node_id": "node_43"
+    },
+    {
+      "candidate": {
+        "timestamp": 2536.0,
+        "shift_score": 0.5016564558325759,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The instructor emphasizes the commonality of filtering and extraction operations in real-world text processing, marking a transition to practical applications of regex.",
+        "source_window_id": "w_35"
+      },
+      "node_id": "node_44"
+    },
+    {
+      "candidate": {
+        "timestamp": 2630.0,
+        "shift_score": 0.6930901350656449,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "The discussion shifts from explaining what regex is to a more personal anecdote about pronunciation, indicating a minor transition in focus.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_45"
+    },
+    {
+      "candidate": {
+        "timestamp": 2700.0,
+        "shift_score": 0.8831804853913738,
+        "shift_type": "major",
+        "confidence": 0.95,
+        "rationale": "The introduction of the four basic operations in regex signifies a major conceptual shift from general discussion to specific foundational concepts.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_46"
+    },
+    {
+      "candidate": {
+        "timestamp": 2740.0,
+        "shift_score": 0.7888682417580712,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The introduction of the 'or' operation in regex indicates a shift to more complex operations within the regex framework.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_47"
+    },
+    {
+      "candidate": {
+        "timestamp": 2780.0,
+        "shift_score": 0.6693102407949645,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "Introduction of the star or asterisk operation, which is a core concept in regex.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_48"
+    },
+    {
+      "candidate": {
+        "timestamp": 2861.0,
+        "shift_score": 0.8472067531904198,
+        "shift_type": "major",
+        "confidence": 0.95,
+        "rationale": "Explanation of metacharacters, which represents a significant conceptual shift in understanding regex.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_49"
+    },
+    {
+      "candidate": {
+        "timestamp": 2887.0,
+        "shift_score": 0.6600935278930006,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "Transition to practice examples using regex concepts introduced earlier.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_50"
+    },
+    {
+      "candidate": {
+        "timestamp": 2915.0,
+        "shift_score": 0.8331153121273406,
+        "shift_type": "major",
+        "confidence": 0.95,
+        "rationale": "Significant shift to a new task of creating regex patterns based on prior discussions.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_51"
+    },
+    {
+      "candidate": {
+        "timestamp": 3043.0,
+        "shift_score": 0.6489721925484306,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "The instructor shifts focus to discussing different regex patterns, indicating a transition from the previous segment about constructing regex.",
+        "source_window_id": "w_42"
+      },
+      "node_id": "node_52"
+    },
+    {
+      "candidate": {
+        "timestamp": 3073.0,
+        "shift_score": 0.6523603557987885,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "The instructor introduces regex101, indicating a shift to practical application of regex concepts.",
+        "source_window_id": "w_43"
+      },
+      "node_id": "node_53"
+    },
+    {
+      "candidate": {
+        "timestamp": 3100.0,
+        "shift_score": 0.4822452887303215,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "The instructor transitions to discussing the regex match for 'mn', indicating a shift in focus to specific examples of regex usage.",
+        "source_window_id": "w_44"
+      },
+      "node_id": "node_54"
+    },
+    {
+      "candidate": {
+        "timestamp": 3129.0,
+        "shift_score": 0.4834424206234326,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "The discussion shifts from matching 'mn' to exploring the concept of matching 'M' with varying numbers of 'O's, indicating a minor conceptual transition.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_55"
+    },
+    {
+      "candidate": {
+        "timestamp": 3207.0,
+        "shift_score": 0.6557461924990925,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The focus shifts to a broader strategy for writing regular expressions, emphasizing iterative and incremental development, indicating a major conceptual transition.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_56"
+    },
+    {
+      "candidate": {
+        "timestamp": 3238.0,
+        "shift_score": 0.5023129316161845,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "Introduction of the dot operator as a wildcard character marks a slight shift in the topic of regex operations.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_57"
+    },
+    {
+      "candidate": {
+        "timestamp": 3272.0,
+        "shift_score": 0.5193851833728017,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "Introduction of character classes with brackets, building on previous regex concepts.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_58"
+    },
+    {
+      "candidate": {
+        "timestamp": 3350.0,
+        "shift_score": 0.678393012911352,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "Transition to discussing specific repetitions in regex with curly braces, marking a significant shift in complexity.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_59"
+    },
+    {
+      "candidate": {
+        "timestamp": 3391.0,
+        "shift_score": 0.5313472508152357,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "The discussion shifts from specific regex operations to a broader concept of ranges in regex, indicating a minor transition.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_60"
+    },
+    {
+      "candidate": {
+        "timestamp": 3427.0,
+        "shift_score": 0.692297872595893,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "The discussion shifts to the flexibility in forming regular expressions, indicating a transition from specific regex operations to a broader concept of regex construction.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_61"
+    },
+    {
+      "candidate": {
+        "timestamp": 3490.0,
+        "shift_score": 0.6880484608651035,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "Introduction of character classes marks a significant shift from previous regex concepts.",
+        "source_window_id": "w_50"
+      },
+      "node_id": "node_62"
+    },
+    {
+      "candidate": {
+        "timestamp": 3520.0,
+        "shift_score": 0.5348344579794257,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "Introduction of shortcuts for character classes indicates a shift in focus from basic character classes to their simplified forms.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_63"
+    },
+    {
+      "candidate": {
+        "timestamp": 3602.0,
+        "shift_score": 0.6902085771306096,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "Transition to matching specific patterns in strings marks a significant shift from discussing character classes to practical applications.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_64"
+    },
+    {
+      "candidate": {
+        "timestamp": 3644.0,
+        "shift_score": 0.5349003610627212,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "The instructor's request for more input from students suggests a transition towards interactive learning.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_65"
+    },
+    {
+      "candidate": {
+        "timestamp": 3776.0,
+        "shift_score": 0.6993703595756426,
+        "shift_type": "minor",
+        "confidence": 0.9,
+        "rationale": "Introduction of a new topic on constructing regular expressions for lowercase alphabetic strings with repeated vowels, indicating a shift from previous discussions.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_66"
+    },
+    {
+      "candidate": {
+        "timestamp": 3806.0,
+        "shift_score": 0.7086482705615245,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The speaker transitions to discussing the construction of regex patterns for repeated vowels, indicating a shift in focus from previous examples.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_67"
+    },
+    {
+      "candidate": {
+        "timestamp": 3844.0,
+        "shift_score": 0.7032274666989444,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The discussion shifts from matching repeated vowels to matching entire words, indicating a minor conceptual transition.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_68"
+    },
+    {
+      "candidate": {
+        "timestamp": 3885.0,
+        "shift_score": 0.5423445898332733,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "The discussion shifts from matching vowels to explaining character classes, indicating a minor conceptual transition.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_69"
+    },
+    {
+      "candidate": {
+        "timestamp": 3925.0,
+        "shift_score": 0.701319001970605,
+        "shift_type": "major",
+        "confidence": 0.85,
+        "rationale": "The transition to discussing capturing groups and taking a break indicates a significant shift in the lecture's direction.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_70"
+    },
+    {
+      "candidate": {
+        "timestamp": 4012.0,
+        "shift_score": 0.5756853591832962,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "The content transitions from a stretch break to discussing a resource for practicing regular expressions, indicating a shift in focus but still related to the previous topic.",
+        "source_window_id": "w_57"
+      },
+      "node_id": "node_71"
+    },
+    {
+      "candidate": {
+        "timestamp": 4037.0,
+        "shift_score": 0.5832208508226879,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "The discussion shifts from introducing a fun site for regex practice to explaining the concept of greediness in regex.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_72"
+    },
+    {
+      "candidate": {
+        "timestamp": 4078.0,
+        "shift_score": 0.7820130867928803,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Introduction of the concept of greediness in regex, building on previous discussions.",
+        "source_window_id": "w_59"
+      },
+      "node_id": "node_73"
+    },
+    {
+      "candidate": {
+        "timestamp": 4121.0,
+        "shift_score": 0.5988921488514843,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "Further explanation of how greediness works in regex, indicating a continuation of the topic.",
+        "source_window_id": "w_59"
+      },
+      "node_id": "node_74"
+    },
+    {
+      "candidate": {
+        "timestamp": 4197.0,
+        "shift_score": 0.7722107781346655,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Introduction of non-greedy versions of regex quantifiers marks a significant shift in the topic from greediness to non-greediness.",
+        "source_window_id": "w_60"
+      },
+      "node_id": "node_75"
+    },
+    {
+      "candidate": {
+        "timestamp": 4222.0,
+        "shift_score": 0.5817765108981023,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "The discussion shifts from explaining non-greedy regex to emphasizing its dual meaning depending on context.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_76"
+    },
+    {
+      "candidate": {
+        "timestamp": 4253.0,
+        "shift_score": 0.4009615644662339,
+        "shift_type": "minor",
+        "confidence": 0.75,
+        "rationale": "The focus transitions to introducing final building blocks of regex, indicating a shift in topic.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_77"
+    },
+    {
+      "candidate": {
+        "timestamp": 4285.0,
+        "shift_score": 0.6262455813947918,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "The discussion shifts to the use of backslashes in regex, which is a new concept building on previous regex knowledge.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_78"
+    },
+    {
+      "candidate": {
+        "timestamp": 4313.0,
+        "shift_score": 0.8113464873023333,
+        "shift_type": "major",
+        "confidence": 0.85,
+        "rationale": "The introduction of the caret symbol and its function marks a significant new topic in regex.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_79"
+    },
+    {
+      "candidate": {
+        "timestamp": 4356.0,
+        "shift_score": 1.0,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Clarification of the differences in meaning of the dollar sign ($) and caret (^) in regex, indicating a deeper understanding of regex syntax.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_80"
+    },
+    {
+      "candidate": {
+        "timestamp": 4382.0,
+        "shift_score": 0.7545330737833604,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The discussion shifts from explaining regex symbols to introducing a mnemonic for remembering their meanings, indicating a slight conceptual transition.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_81"
+    },
+    {
+      "candidate": {
+        "timestamp": 4409.0,
+        "shift_score": 0.7659036324155786,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Introduction of a new regex expression indicates a shift in topic focus.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_82"
+    },
+    {
+      "candidate": {
+        "timestamp": 4441.0,
+        "shift_score": 0.5937939120183882,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "The speaker transitions to discussing the lowercase 'L', which is a continuation of the regex topic but introduces a specific detail.",
+        "source_window_id": "w_66"
+      },
+      "node_id": "node_83"
+    },
+    {
+      "candidate": {
+        "timestamp": 4559.0,
+        "shift_score": 0.43270784630272224,
+        "shift_type": "minor",
+        "confidence": 0.75,
+        "rationale": "The speaker shifts to a more detailed explanation of regex patterns, indicating a minor transition in the depth of the topic.",
+        "source_window_id": "w_66"
+      },
+      "node_id": "node_84"
+    },
+    {
+      "candidate": {
+        "timestamp": 4587.0,
+        "shift_score": 0.5974364555887436,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "The discussion shifts from the previous segment about lowercase letters to parsing a regular expression, indicating a minor transition.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_85"
+    },
+    {
+      "candidate": {
+        "timestamp": 4621.0,
+        "shift_score": 0.7550255892312357,
+        "shift_type": "major",
+        "confidence": 0.85,
+        "rationale": "The introduction of the escape character 'backslash' marks a significant shift in the topic, moving from matching patterns to discussing regex syntax.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_86"
+    },
+    {
+      "candidate": {
+        "timestamp": 4725.0,
+        "shift_score": 0.587214521593686,
+        "shift_type": "minor",
+        "confidence": 0.75,
+        "rationale": "The explanation of dot star introduces a new concept related to regex matching, marking a transition in the discussion.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_87"
+    },
+    {
+      "candidate": {
+        "timestamp": 4813.0,
+        "shift_score": 0.7468088653012349,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The instructor transitions from discussing specific regex examples to a broader explanation of how to understand regular expressions, indicating a shift in focus.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_88"
+    },
+    {
+      "candidate": {
+        "timestamp": 4841.0,
+        "shift_score": 0.5843172948897902,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The instructor introduces additional resources for learning regex, which signifies a minor shift towards practical applications of regex.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_89"
+    },
+    {
+      "candidate": {
+        "timestamp": 4867.0,
+        "shift_score": 0.740758750582752,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The instructor mentions that there is a lot more functionality in regex, indicating a transition to discussing additional features.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_90"
+    },
+    {
+      "candidate": {
+        "timestamp": 4910.0,
+        "shift_score": 0.7316001575744147,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The speaker transitions from discussing the general use of regular expressions to specific applications in various platforms, indicating a significant shift in focus.",
+        "source_window_id": "w_75"
+      },
+      "node_id": "node_91"
+    },
+    {
+      "candidate": {
+        "timestamp": 4942.0,
+        "shift_score": 0.6463036920897555,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "Clarification on the importance of starting regex patterns with 'R' in Python, marking a transition to specific coding practices.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_92"
+    },
+    {
+      "candidate": {
+        "timestamp": 5012.0,
+        "shift_score": 0.7307946649625632,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The instructor transitions from discussing raw strings to explaining the meaning of a specific regular expression, indicating a shift in focus.",
+        "source_window_id": "w_77"
+      },
+      "node_id": "node_93"
+    },
+    {
+      "candidate": {
+        "timestamp": 5065.0,
+        "shift_score": 0.5665821820688733,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The instructor shifts from discussing raw strings to introducing the 're' module in Python, marking a transition to practical application.",
+        "source_window_id": "w_77"
+      },
+      "node_id": "node_94"
+    },
+    {
+      "candidate": {
+        "timestamp": 5173.0,
+        "shift_score": 0.7276132513858312,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Introduction of capture groups in regex, marking a significant shift from previous content focused on basic regex matching.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_95"
+    },
+    {
+      "candidate": {
+        "timestamp": 5252.0,
+        "shift_score": 0.7204169463287425,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "Transition from discussing extraction with capture groups to substitution in regex, indicating a shift in topic.",
+        "source_window_id": "reduce"
+      },
+      "node_id": "node_96"
+    }
+  ],
+  "rejected": [
+    {
+      "candidate": {
+        "timestamp": 543.0,
+        "shift_score": 0.64,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The continuation of announcements, specifically about homework and tutoring, marks a shift from the main lecture content to logistical details.",
+        "source_window_id": "w_0"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 777.0,
+        "shift_score": 0.5050955695018516,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The lecture transitions to discussing faithfulness, which is related but distinct from the previous topic of granularity.",
+        "source_window_id": "w_4"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 816.0,
+        "shift_score": 0.5168945254334569,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The content continues to address potential issues with the dataset but introduces specific examples, marking a slight shift in the discussion.",
+        "source_window_id": "reduce"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 933.0,
+        "shift_score": 0.548997466189076,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The speaker questions the meaning of the '-1' value in the 'purchased' column, suggesting a deeper analysis of data interpretation.",
+        "source_window_id": "reduce"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 1301.0,
+        "shift_score": 0.546618668211428,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The introduction of regex as a tool for text manipulation marks a clear transition from the previous discussions on missing data.",
+        "source_window_id": "reduce"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 1341.0,
+        "shift_score": 0.5434683216539347,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "Discussion of joining tables and the need for standardization in data representation, indicating a transition to practical applications of canonicalization.",
+        "source_window_id": "w_14"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 1681.0,
+        "shift_score": 0.556439424783134,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "Discussion of displaying DataFrames and the need for common formatting suggests a transition to practical application of string methods in data processing.",
+        "source_window_id": "reduce"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 1923.0,
+        "shift_score": 0.5384132952198099,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The mention of extensions to pandas that can perform operations in parallel introduces a new aspect of the topic, marking a minor transition.",
+        "source_window_id": "reduce"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 2153.0,
+        "shift_score": 0.5409027937491595,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The discussion shifts to a demo showcasing a new approach using regular expressions, indicating a significant change in the topic.",
+        "source_window_id": "w_29"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 2392.0,
+        "shift_score": 0.6178778223829889,
+        "shift_type": "minor",
+        "confidence": 0.8,
+        "rationale": "The instructor elaborates on the utility of regular expressions in filtering and extracting data, indicating a shift towards practical examples.",
+        "source_window_id": "reduce"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 3050.0,
+        "shift_score": 0.47324527450115783,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The mention of regex101 suggests a practical application of the concepts discussed, marking a slight shift in context.",
+        "source_window_id": "w_42"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 3272.0,
+        "shift_score": 0.3399112703422469,
+        "shift_type": "none",
+        "confidence": 0.75,
+        "rationale": "Discussion about character classes introduces a new concept in regex, indicating a minor transition.",
+        "source_window_id": "reduce"
+      },
+      "reason": "below_minor_threshold"
+    },
+    {
+      "candidate": {
+        "timestamp": 3442.0,
+        "shift_score": 0.5403508524899524,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The instructor prompts a simplification of a previous regex example, suggesting a transition to applying learned concepts in a practical context.",
+        "source_window_id": "reduce"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 3514.0,
+        "shift_score": 0.5329777322617002,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "Discussion of shortcuts for common character classes indicates a minor shift in focus.",
+        "source_window_id": "w_50"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 3813.0,
+        "shift_score": 0.5509468136560387,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The speaker confirms that the regex now matches certain patterns, indicating a shift towards validating the regex functionality.",
+        "source_window_id": "reduce"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 4047.0,
+        "shift_score": 0.7614947561448946,
+        "shift_type": "major",
+        "confidence": 0.9,
+        "rationale": "The explanation of greediness is elaborated upon, indicating a deeper dive into the concept.",
+        "source_window_id": "reduce"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 4205.0,
+        "shift_score": 0.5881153918273724,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "Clarification on the question mark's dual meaning in regex indicates a minor shift in understanding regex functionality.",
+        "source_window_id": "w_60"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 4390.0,
+        "shift_score": 0.5949554805137633,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The instructor introduces a mnemonic related to regex symbols, marking a transition in the teaching approach.",
+        "source_window_id": "reduce"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 4431.0,
+        "shift_score": 0.9299164634044932,
+        "shift_type": "major",
+        "confidence": 0.95,
+        "rationale": "The active poll introduces a significant change in engagement and content focus.",
+        "source_window_id": "reduce"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 4653.0,
+        "shift_score": 0.26844980618285164,
+        "shift_type": "none",
+        "confidence": 0.8,
+        "rationale": "The discussion shifts from explaining the escape character to finding specific patterns in the text.",
+        "source_window_id": "reduce"
+      },
+      "reason": "below_minor_threshold"
+    },
+    {
+      "candidate": {
+        "timestamp": 4924.0,
+        "shift_score": 0.5667190465955476,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "The speaker begins to narrow down the discussion to the practical use of regular expressions in Python, marking a shift from general discussion to specific implementation.",
+        "source_window_id": "w_75"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 5181.0,
+        "shift_score": 0.562837582668661,
+        "shift_type": "minor",
+        "confidence": 0.85,
+        "rationale": "Continues the discussion on capture groups, building on the previous concept but still within the same overarching topic.",
+        "source_window_id": "reduce"
+      },
+      "reason": "too_short"
+    },
+    {
+      "candidate": {
+        "timestamp": 5274.0,
+        "shift_score": 0.8877652789455699,
+        "shift_type": "major",
+        "confidence": 0.95,
+        "rationale": "Significant shift to discussing the limitations of regular expressions, marking a clear transition in the lecture.",
+        "source_window_id": "reduce"
+      },
+      "reason": "too_short"
+    }
+  ]
+}

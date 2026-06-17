@@ -1,0 +1,1997 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1776983642",
+  "display_name": "Lecture 26 (Apr 23)",
+  "count": 284,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 264,
+      "type": "audio",
+      "text": "Phrase starts with the nerve."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 267,
+      "type": "audio",
+      "text": "The Hebrews is not upgrade."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 271,
+      "type": "audio",
+      "text": "I want to figure this out."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 317,
+      "type": "audio",
+      "text": "It's the world."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 321,
+      "type": "audio",
+      "text": "Something you know, it's 905."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 446,
+      "type": "audio",
+      "text": "It's speaking now as we know it with Get Started."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 484,
+      "type": "audio",
+      "text": "OK, Welcome everybody. Last one, we have a guest lecture next week and then we have the midterm next week and then we have our week and then we have a final. PCA is today. First, let's talk about course evaluations. Just once again. So just a reminder, if you complete the official course eval for Data 100, you'll get a half point of extra credit added to your grade. And this is a collective benefit. If at least 90% of the class submits, everyone will get an extra half point of extra credit added to their final grade."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 488,
+      "type": "audio",
+      "text": "Last semester was the first semester in a while to reach that threshold, so it is is possible."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 513,
+      "type": "audio",
+      "text": "One note is that we also have a Data 100 specific sort of survey evaluation where we collect more interesting data than sort of the standard UC Berkeley evaluation. It has similar questions. So I recommend doing them at the same time. So you might wait to finish the Data 100 course eval. If you already did it, don't worry about it, But if you haven't done it yet, I would wait and do them both at the same time. The Data 100 survey and project V2 is, you know, mandatory. It's part part of B2. It's not."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 543,
+      "type": "audio",
+      "text": "Out yet it might be released a little bit later than when B2 goes out, but it should be out within the next couple days so anyway, to save time, I recommend doing both at the same time yeah we'll send out links this weekend other announcements B1 is due Friday Lab 11 is due Tuesday guest lecture on Tuesday with a very senior data scientist Ben Packer talks about a lot of cool projects he did at Google projects at the place he works now. Recidivism is a very cool nonprofit and he stays afterwards and answers questions from students it's like a really nice."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 551,
+      "type": "audio",
+      "text": "Advising opportunity if you want to hear from someone who's been in this industry for a really long time and has seen lots of cool stuff."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 574,
+      "type": "audio",
+      "text": "But there's no recording or live stream, just cuz he's talking about projects that we don't want to post on the website or anything like this. So if you want to see Ben, if you wanna speak with Ben, gotta come in person. He'll stick around as long as people have questions. There's a midterm 3 review session on Friday and then today during my office hours, right after lecture, from 5:00 to 6:00, we'll do midterm review. I'll just take questions related to anything in the class."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 601,
+      "type": "audio",
+      "text": "So I recommend sticking around if you want to start reviewing 4 Midterm 3 TBD about my office hours and Ramesh's office hours during our week for the final. But at least for midterm 3, this is sort of my my review. OK, so where did we leave off last time? So last time we were talking about this idea of supervised learning versus unsupervised learning. Supervised learning is when we had true outcomes, some sort of truth we were trying to predict."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 605,
+      "type": "audio",
+      "text": "Unsupervised learning was just this idea of trying to find patterns in our data."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 635,
+      "type": "audio",
+      "text": "Itself in our features, in our design matrix, we don't have any YS. We're not trying to predict something that we know is true. We're just trying to uncover patterns in our data. Last time we did clustering. Today we're gonna be doing dimensionality reduction. We're gonna give you a taste of something called principal component analysis. And this really is just like a surface level scratch of principal component analysis. This is a tough topic for pretty much everyone when they learn it the first time and you're usually takes a couple times to really understand it."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 659,
+      "type": "audio",
+      "text": "I think personally, I didn't really even deeply understand PCA. I probably could understand it a lot more from now, but until they started teaching, it is like when things like really started clicking. So this is a tough topic. So if today seems hard, yes, it it's a tough topic. So do as best as you can, try to get the high level ideas. You'll learn more about this in in later courses. All right, So like I said, learning PCA, be kind yourself. This is definitely a tough, tough lecture."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 664,
+      "type": "audio",
+      "text": "OK, so road map. Let's dive into the idea of visualization to start."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 682,
+      "type": "audio",
+      "text": "And remind ourselves what we can visualize on a two-dimensional screen. So we'll start with a Slido. How many dimensions can you visualize on a 2D screen? How many dimensions in your data set can you visualize on a 2D screen? Give this a go. Feel free to talk with your neighbor if you like, but you can vote on this. What do you think?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 684,
+      "type": "audio",
+      "text": "What do you thinking?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 701,
+      "type": "audio",
+      "text": "How many dimensions can you put on a 2D screen? What could be printed on the front page of the New York Times? I guess the New York Times website?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 703,
+      "type": "audio",
+      "text": "New York Times website."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 707,
+      "type": "audio",
+      "text": "Toss in an answer here, let's see what people said."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 711,
+      "type": "audio",
+      "text": "Wait."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 743,
+      "type": "audio",
+      "text": "It's just the only way for this Lido to be able to enter a numeric thing like this, to be able to get a graph like this. So what are we seeing? What are we seeing? So we're seeing that people tend to say it's close to 3 dimensions on a screen. We have seen three-dimensional plots in this class. Lots of folks saying that 2D, it's a 2D screen, so we can visualize 2 dimensions. That's what we can see on a screen. Yeah, I would agree with that. But some people are saying like 4 dimensions. And then there is a group of people who are saying I can go all the way up to 10. So let's see."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 746,
+      "type": "audio",
+      "text": "So if we want one dimension of data, we can use a rug plot if you remember the rug plot."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 771,
+      "type": "audio",
+      "text": "OK. Usually that's like used in conjunction with another plots, how I've seen it. So let's say we have a couple different genes. The rows here represent patients. Columns represent the like degree of gene expression among each of these patients. We just look at the first column. We could plot it on a rug plot. So we can do 1D. We can do 2D with a scatter plot. We've seen that before."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 777,
+      "type": "audio",
+      "text": "You know, we can do 3D. You know, we've told you several times in the class that like 3D plots are fine for sort of your own personal EDA."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 808,
+      "type": "audio",
+      "text": "But usually when you're releasing a paper or a book or something in an article, unless it's an interactive article, it's very, very hard to interpret 3 dimensions on a 2D screen unless you can really move the plot. But you can definitely do it. But what about four dimensions? You know, we're visual creatures, right, Who exist in a three-dimensional world. Like can we see things that are in, you know, higher dimensions? We can't go higher than three physical dimensions like length, width and height. But we have other dimensions to work with. We have, we have other inform."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 819,
+      "type": "audio",
+      "text": "Channels to work with in our visualization. Don't forget we have things like color, we have things like size. We can include additional dimensions of our data."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 848,
+      "type": "audio",
+      "text": "In 3D, in 2D, so technically you can take this to as many dimensions as you want. You can play around with color as a dimension. You can play around with line type as a dimension. You can play around with point type as a dimension, play around with size as a dimension. As long as you have some other feature, some other aesthetic of your plot is sometimes what it's called, you have additional dimensions to work with. So we can see in this case, we're plotting the MPG data set. We have horsepower on one axis, displacement on another axis, weight on another axis, and then we've colored the points."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 875,
+      "type": "audio",
+      "text": "By the value of model year, is this a good plot? I don't really think so, but we've visualized 4 dimensions. So this is the first thing I want you to realize is we can visualize higher dimensional data. And as we're doing exploratory data analysis, we often do this. We often do this and then usually most plots are 2D. And then you use things like color, line, type, shape to communicate additional dimensions. That's the first thing I want to think about here is dimensionality."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 904,
+      "type": "audio",
+      "text": "So let's dig a little bit more into dimensionality. So let's say we have some data set that has N observations and D attributes. You know, we've we've called this P other times in the class. Sometimes you see this as like K. It's just the number of features that we're dealing with in linear algebra. We can think about this a number of different ways. And we saw in the OS lecture, we can think about this as end points and AD dimension space. So like our end data points and A2 dimensional space, like a scatter plot. Or we could think about column vectors. We could think."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 920,
+      "type": "audio",
+      "text": "About our features as columns, we saw this in OLS. So what is the intrinsic dimension of a data set? Dimension has to do with the number of columns in the data set. So looking at this data, let's say we have some 3D data here, right? So there's another axis."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 921,
+      "type": "audio",
+      "text": "Coming out."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 946,
+      "type": "audio",
+      "text": "And you can look at the pattern in this 3D data set, which you can see is kind of hard to show as 3D in 2 dimensions. And you might imagine taking all of those points, putting sort of this plane and this isn't OLS being fit to these points. This is just think of this as like a best fitting plane. And I haven't told you what best fitting means here yet, but you could imagine you have like a sun on each side of these planes that's shining down and it sort of casts a shadow of these points."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 948,
+      "type": "audio",
+      "text": "Directly onto this plane."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 978,
+      "type": "audio",
+      "text": "So we've moved from three-dimensional space down to A2 dimensional space. And you can see like we've retained most of the interesting patterns. We lose something about the data set when we go down to 2 dimensions, but we're still communicating the relative relationship between the orange, blue and green points, right? We've lost this like sort of depth. We've lost the depth where like the green points seem to be going a little down, the blue points seem to be going a little down, the orange points are staying up, but the major patterns are still showing up."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 999,
+      "type": "audio",
+      "text": "So this is the idea that like, you know, we have a three-dimensional data set, but like we can mostly describe the relationships in that data with 2D. What does mostly mean? What's the threshold for that? Don't worry about that for now. The idea here is we're sort of getting to those same patterns. So we might say the intrinsic dimension of this data set is close to 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1029,
+      "type": "audio",
+      "text": "Let's look more specifically at some different tables here. So the dimension of the column space of A, again, dimensions have to do more with columns is the same thing as the rank of the matrix, something we've worked with before. So if we look at the data set on the left here, these are two linearly independent columns. Height and weight aren't usually, you know, perfect Ax plus B relationship with one another. These are linearly independent columns. So we would say this data set is 2 dimensions."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1037,
+      "type": "audio",
+      "text": "Similarly, this data set has three linearly independent columns. We say it's 3 dimensions, rank 2, rank 3."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1049,
+      "type": "audio",
+      "text": "So take a second here. Think about these datasets. Give you 2 new datasets here. What's the column space of each of these datasets? What's the column space? Give this one a go. Feel free to talk with your neighbor."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1063,
+      "type": "audio",
+      "text": "What's the rank of each of these datasets?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1087,
+      "type": "audio",
+      "text": "Remind yourself what rank is."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1090,
+      "type": "audio",
+      "text": "Think about linear independence."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1104,
+      "type": "audio",
+      "text": "Think about OLS. There's nice connections to OLS in this lecture. It's distinct, but there are some really nice mathematical connections, linear algebra connections. We'll be drawing on a lot of that OLS."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1138,
+      "type": "audio",
+      "text": "All right, let's give this a go. So we look at the data set on the left side and we have weight in pounds and we have weight in kilograms. So weight in pounds and kilograms is a deterministic relationship, right? There's like 2.3 lbs, right, for every kilogram. I think. I don't usually think about kilograms. So we can deterministically convert between pounds and kilograms. That's a linear relationship between the two. It's a deterministic relationship. So the rank of this matrix, the rank of this data frame is only one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1146,
+      "type": "audio",
+      "text": "The one-dimensional data set and then on the right we can see we have weight in pounds and weight in kilograms once again."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1174,
+      "type": "audio",
+      "text": "These are linearly dependent columns, so we only need one of them to fully describe the data set. And so we have a three-dimensional data set on the right side. So in some ways you've already thought about this idea of taking a data set that's in some amount of dimensions and then realizing, well, there really can be described in fewer dimensions. PCA will go even farther and say, well, can you mostly describe that data set with even fewer dimensions? Even not exactly describe it, but get even closer, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1176,
+      "type": "audio",
+      "text": "So let's see."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1187,
+      "type": "audio",
+      "text": "So here's the the picture that we saw on the left with weight and pounds and weight in kilograms. But let's say I had a data set where there was just like one point that's red point that was slightly off."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1211,
+      "type": "audio",
+      "text": "OK, suddenly this is no longer linearly dependent. Those two columns weight in pounds and weight in kilograms, right? They should be linearly dependent. But based on how this data set was constructed, no longer would a computer recognize that I can make one column exactly from another column by multiplying by some number. That one point is throwing us off, but it's pretty clear that this is still approximately 1 dimensional."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1221,
+      "type": "audio",
+      "text": "Right. So today is all about finding this method to be able to figure out that this data set on the left is still 1 dimensional question."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1263,
+      "type": "audio",
+      "text": "Linearly dependent, yeah. Yeah. So remember, linear dependence is I can create one column from another by multiplying by a constant and adding any constant I want. So adding a constant would be fine. However, like something that can be kind of confusing is thinking about a data set that has like, let's say length and width and area. Are length, width and area linearly dependent? It seems like they should be, right? Because we know that length times width is area, but length times width is not a linear combination."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1271,
+      "type": "audio",
+      "text": "We can only add the two columns and multiply them by constants. We can't multiply different columns. OK, perimeter would be linearly independent."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1300,
+      "type": "audio",
+      "text": "So dimensionality reduction is an approximation of the original data set. That's what we're going to work with today. And you can do this with a lot of math that we don't have time to cover in a single lecture. So there's a lot in the appendix of this set of slides that you can go check out. Learn a little bit about matrix factorization. Learn a little bit about something called SVD. Learn a little bit about the sort of calculus you can use to derive some of what we're going to talk about today."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1312,
+      "type": "audio",
+      "text": "But we're going to take a little bit of this for granted. I'll show you in a minute what I mean by that and sort of understand the output of this dimensionality reduction. So now let's get into PCA and the visual intuition behind it."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1343,
+      "type": "audio",
+      "text": "So the first thing that's very confusing for people in PCA was confusing for me too. We've spent so much of this class talking about the idea of variance and making it small, right? If something has a small variance where like it's easier to understand, it's not as variable, it's more predictable. And that's true, but we were specifically talking about minimizing variance in our predictions. We want our model to make similar predictions across different random samples of the same data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1372,
+      "type": "audio",
+      "text": "This idea of model variance, so we want to minimize the variance of our predictions. However, however, today we're going to be talking about maximizing variance. And what variants are we maximizing? Well, we're no longer working with Wise. We're no longer worth working with Wise. The idea here is that we're trying to maximize variance in the features. So variance in our features is good, it's desirable. We want a lot of variation in our inputs because when we have a lot of variation in our inputs."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1378,
+      "type": "audio",
+      "text": "We can more likely find patterns that match between our inputs and our outputs."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1409,
+      "type": "audio",
+      "text": "OK, information is contained in variability in the features. If for example, X has no variance and I'm trying to predict Y on the right side here, if there's no variance in ** is completely useless to me to predict Y. But on the left we can see that X does have variance, and that variation is what allows me to pick up on patterns to predict Y OK, so when we talk about maximizing variance today, we're talking about maximizing variance of the features retaining information."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1413,
+      "type": "audio",
+      "text": "Our data set, we're not talking about prediction."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1425,
+      "type": "audio",
+      "text": "All right, let me give you a setup. So this is my attempt to try to teach the intuition of PCA without any linear algebra. After the interlude, we'll do it with some linear algebra, but I want you to imagine a scenario where we have."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1451,
+      "type": "audio",
+      "text": "A bunch of different movie critics, a bunch of different movie critics who rate a bunch of rate one particular movie. We're just rating one movie here and we're going to rate it on two different scales. The scales are going to be how entertaining is the movie and how original is the movie. Now, you might think there's there is some like, you know, somewhat intuitive relationship between these two things. A more original movie."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1481,
+      "type": "audio",
+      "text": "Maybe if you're really into film is going to be more entertaining for you, but you know, that's not necessarily the case. You know, if you watch some really original indie movie that's very low budget, it might not be very entertaining, right? You might not appreciate it that much. So there isn't a perfect relationship between these two things, but maybe we could say there's this like general upward sloping relationship between these two different features. Remember, this is not an outcome on the Y axis. I could switch these two things, it wouldn't matter. I could switch rating one and rating 2. These are just X values, kind of like what we."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1485,
+      "type": "audio",
+      "text": "Talked about last time with clustering, there's no outcomes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1497,
+      "type": "audio",
+      "text": "So is there a way for us to construct a new single rating? So every movie right, every one of these points gets a rating one and gets a rating 2. But is there a way for us to just give a movie 1 rating?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1506,
+      "type": "audio",
+      "text": "One value, right, Zero to Infinity. Some value that communicates a lot of rating one and rating 2. So let me show you this visually."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1538,
+      "type": "audio",
+      "text": "So the first thing I'm going to do is mark the point of averages, something we talked about in OLS. It's just the average of the horizontal dimension, average of the vertical dimension. Lots of PCA has to do with centering around the point of averages, but it's sort of secondary to the intuition I want to show you. So the first thing I'm going to do is draw a straight line across the plot. OK, I'm going to do the same thing I did before and cast shadows. So I'm going to cast a shadow from below for all the points below the line. I'm going to cast a shadow from above for all of the points above the line. And now I have a bunch of."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1541,
+      "type": "audio",
+      "text": "Points along this horizontal line."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1543,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1568,
+      "type": "audio",
+      "text": "We've gone from a bunch of points that are around the line now, just a bunch of points lying in a single dimension. So we've taken 2 dimensional data and we've projected it down to 1 dimension. And I could measure values along that line by measuring distances from that point of average, from that X right in the middle. And I could say, well, the variance of this new measurement, the variance of this new measurement is just the variance of those points centered around."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1572,
+      "type": "audio",
+      "text": "That red X and in this case you can see like."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1576,
+      "type": "audio",
+      "text": "All we've done really is just retained rating one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1587,
+      "type": "audio",
+      "text": "Right. We've just retained rating one and just completely got it rid of rating 2. So one proposal here is like, OK, we need one rating to try to communicate the information from both ratings. Let's just use rating one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1599,
+      "type": "audio",
+      "text": "OK, questions about this idea to start, We're going to keep building on this, but does this idea make sense to start, This is just the variance and rating one. We've completely lost all of the information from rating 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1605,
+      "type": "audio",
+      "text": "OK, so we can do something similar. Why don't we make a vertical line?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1614,
+      "type": "audio",
+      "text": "And projective points inward, exactly the opposite of what we did before we lose all of our information about rating one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1622,
+      "type": "audio",
+      "text": "We've retained all of our information about rating 2, and similarly we can say the variances of those distances from the point of averages is the same thing as the variance of rating 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1643,
+      "type": "audio",
+      "text": "Now my question is, is there a different direction in the data set, a different one of these lines that I could pick that gives me greater variance than just the variance of rating one or just the variance of rating 2? Can I do better still only using one dimension?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1668,
+      "type": "audio",
+      "text": "So here's a nice GIF. This is from Stack Overflow from or Slack stat Overflow from a long time ago, but it's still a great low resolution GIF here. But notice what's going on. So we have a bunch of points that look very similar to the points that we were working with on the previous slide. And what's going on here is the points are staying fixed, but we're thinking about different possible dimensions that we could project those points onto. So when this line goes vertical."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1680,
+      "type": "audio",
+      "text": "That's just like keeping rating 2 on the Y axis. When this line is horizontal, that's just like keeping rating 1. So we just have the variance of rating one there."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1710,
+      "type": "audio",
+      "text": "But how do we spread out these red dots as much as possible? You can see if you look at the red dots along this rotating black line, the red dots are the most spread out along the diagonal. They're most spread out along the diagonal. And you might think, oh, well, that kind of looks like a regression line. It actually turns out that the regression line is, if you were to draw regression line here, the regression line is shallower. It'll still go through the point of averages. I should make sure to draw that. The regression line will go through this, but it's usually shallower. OK, so this is."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1738,
+      "type": "audio",
+      "text": "Not OLS. We are not doing OLS here. Something else is going on. We're trying to spread out those red dots along the black line. Now, equivalent to spreading out the red dots along that black line is the same thing as minimizing the sum of squared. The sounds like something we've seen before, the sum of squared perpendicular distances to the line. So in OLS, what do we do? OLS, we try to find the line that minimizes the sum of squared vertical distances."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1761,
+      "type": "audio",
+      "text": "Because remember, we care about our prediction accuracy on why on the outcome. But in this case, the Y axis isn't special, right? The X&Y axis here are totally interchangeable. These are just features in our data set. And so instead, what we're doing here is we're trying to minimize the sum of squared perpendicular distances."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1765,
+      "type": "audio",
+      "text": "To the line, and it turns out that mathematically spreading out those red points."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1781,
+      "type": "audio",
+      "text": "Along that line is equivalent to trying to minimize the sum of squared red distances. So notice those red lines are sort of smallest when we're right along that diagonal. OK, questions about this so far. Questions about this so far."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1783,
+      "type": "audio",
+      "text": "This is the beginnings of PCA, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1812,
+      "type": "audio",
+      "text": "So great question. The question was, is this the same thing as a line of best fit? So typically when people say line of best fit, they're referring to linear regression or OLS, right? They're referring to the picture on the left, which is distinct from this. However, if you say it's the best fitting line where fit is measured by minimizing the sum of squared perpendicular distances, then it would be fine to say it's the best fitting line for that sort of loss function. But typically when people say that they're referring to ordinary least squares, they're referring to regression, very common."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1821,
+      "type": "audio",
+      "text": "Misunderstanding is to think that the PCA line, what we're going to see here, is the same thing as the regression line other question."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1825,
+      "type": "audio",
+      "text": "That's right."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1829,
+      "type": "audio",
+      "text": "That's right."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1833,
+      "type": "audio",
+      "text": "That's right."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1863,
+      "type": "audio",
+      "text": "OK, so we have another great question. So when we just use the horizontal line, we only get information from rating one. When we use the vertical line, we only get information from rating 2. When we use the diagonal line, we're getting information from rating one and two. And I think a common point of confusion here is like, well then we're not projecting to 1 dimension, right? We're still using two pieces of information. Let me show you a picture in just a second that'll help clear this up. The idea is that we're measuring A1 dimensional distance along the PCA line. It's still A1 dimensional."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1869,
+      "type": "audio",
+      "text": "If I just look at that diagonal line, but let's build this up a little bit. Other questions, Yeah, one more."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1906,
+      "type": "audio",
+      "text": "Sum of squared errors. So the mathematical equivalence between these two things I'll leave for offline. If you want to talk about offline, it's just good to know this fact that these two things are exactly the same. A lot of the math is also in the appendix. I'm happy to talk about an office hours, but just for this lecture, given the limited time we have, I can't get too much into mathematical equivalence here. All I want you to do is know that it exists, which is not something I usually like to say, but for this lecture, I make an exception. OK, so this line going through the data set, which again, this is not the OS line. This is not OLS."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1909,
+      "type": "audio",
+      "text": "This line minimizes the sum of squared perpendicular distances."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1911,
+      "type": "audio",
+      "text": "From each point."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1938,
+      "type": "audio",
+      "text": "To the line, OK, perpendicular distances, not vertical distances. And equivalently, this is the same idea as maximizing the variance of the projected points along the line. So let me just go here. This is the picture I was just trying to draw. You can see we project the points onto this line, the special line, the PCA line, OK. And now if you turn your head 45°, I am technically just measuring distances in one dimension."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1959,
+      "type": "audio",
+      "text": "I'm just saying go left one unit, go right 3 units, go left, 1.2 units along the PCA line in the PC One Direction. That's the idea. With this still being A1 dimensional thing, we're just providing a direction and then just giving one-dimensional directions go left or right along that line."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1989,
+      "type": "audio",
+      "text": "So you'll notice that we can also describe this line, which is called the direction of the first principle component. And the first principle component is the most important principle component. So you can, you know, first principle component, most important, second principle component, second most important. We'll talk more about that in a bit. But this line shows the direction of the first principle component. You really don't want to think about this so much as a line as you do simply a vector. This is just a vector in space that says this direction of the data."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1990,
+      "type": "audio",
+      "text": "Up and to the right."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 1995,
+      "type": "audio",
+      "text": "Right. You know, you could equivalently say down into the left, but that direction of the data."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2026,
+      "type": "audio",
+      "text": "Is the direction of greatest variance in the data. The points are most spread out along that axis, right? If I was holding a football here, the first principal component would be right along the center of the football, right? The football is most spread out right along sort of its, you know, inner core. You could core a football. Not very tasty. So one unit increase in the PC, One Direction. This is a vector with two dimensions, right? Vector with two dimensions. So what are the two components of this vector? We can describe this vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2034,
+      "type": "audio",
+      "text": "Using some of rating one and some of rating 2. And I've used this notation with you before. I've used this wording before, but this is another one of those recipes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2062,
+      "type": "audio",
+      "text": "Rating 2 here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2062,
+      "type": "audio",
+      "text": "The principal components. This is like a good statement to take out of this class. The principal components are recipes of the original features. So the first principal component in this case is .7 parts rating 1 and .71 parts rating 2. This is a unit vector of length one. OK, so that's why these are scaled to be .7 and .71. So these are mostly equal parts of these two ratings, but we have a little bit of extra."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2065,
+      "type": "audio",
+      "text": "OK, that's the first principle component."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2097,
+      "type": "audio",
+      "text": "OK, so now I want to show you something interesting because the question is like why? Why are we doing this? Like why? Why does why should we care? Why is measuring distances along this axis any better? So I'm going to start like moving pictures around that we've already worked with. So I'm going to like rotate this picture. We're going to rotate it. Yeah, like that. OK, we're going to rotate it right horizontal. So now I have that picture from before. We have other pictures too. Oh, and I could say the same thing here. The variances of the distances from the X are the same thing as what we might say the variances of our."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2118,
+      "type": "audio",
+      "text": "Latent feature one. So the principal component tells us the direction of the data. The latent feature is the actual distances along that line. So if I go one or let's say +2 in the right direction here, I would say that the value of the latent feature is 2 for this particular data point."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2148,
+      "type": "audio",
+      "text": "OK, same idea if I would go left of that X in the middle, and I could say that the variance of those distances from the center is the variance of that latent feature. So let's go back to some other plots too. I'm going to switch this one as well. Sorry, I did a little early right there. Okay, now it's switched. Okay, And so we have the variance of rating one on the left and we have the variance of rating 2 on the right. This is what we saw before and I'm going to put these all sort of in the same dimension on the same screen here. And what can we see? So here's the variance of reading one. Here's the."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2165,
+      "type": "audio",
+      "text": "Variance of rating 2. Those lines right? Those points spread out along the line. The projection of the original data spread out along the line. But notice along PC1 this is PC1 dimension now, not the horizontal dimension, not the vertical dimension, the PC1 dimension. Notice the points are more spread out."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2183,
+      "type": "audio",
+      "text": "Questions. Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2183,
+      "type": "audio",
+      "text": "I've retained more information about my data set using the PC1 dimension. Distances measured in the PC1 dimension then I do by using either rating one or rating two. I've retained more information and I'm still measuring things in one dimension questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2188,
+      "type": "audio",
+      "text": "This is the fantastic question. How did you find PC1?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2215,
+      "type": "audio",
+      "text": "We're going to put off that question from this lecture, which is horribly frustrating. I wish I didn't say it, but PCA really deserves like 4 lectures of linear algebra. The appendix does a nice job of showing you different ways to think about how to get PC1. But today we're going to have to do thing I sort of hate to do is like take it for granted that we can find the PCs, but hopefully you can just see visually that we can point out the PCs in 3D. OK. When you start thinking about pointing out PCs in thousands of dimensions, it's a little trickier. Yeah, go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2249,
+      "type": "audio",
+      "text": "It's a great question. Is there a reason we equate variance with information? Could we use two times variance as information? So I'm not like defining information as variance. I'm just giving that to you as sort of a heuristic to think about the value of variance. Variation in your features is information in those features, right? When things are more uniform, I can't take advantage of variation to try to predict something else or to try to pick up on patterns, right? Patterns are defined by variation. Otherwise there's no pattern, right? It's just constant."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2251,
+      "type": "audio",
+      "text": "Others, yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2290,
+      "type": "audio",
+      "text": "So this is another fantastic question. If we had more time to talk about PCA and a lot of like the little details of it, I would start telling you more things like usually you want to center your data before you do PCA. You want to subtract the mean from every data point. You often want to standardize your axes, subtract the mean and divide by standard deviation so that one of your axes isn't dominant, right? And so the answer to your question is like, you know, why don't we standardize? It's like we usually should. Usually you do standardize every variable before PCA, but the intuition doesn't require those steps. And I'm just trying to."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2294,
+      "type": "audio",
+      "text": "You're ahead of those. You know other steps that should happen. This is sort of the core intuition of PCA. I want you to pick up what else?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2296,
+      "type": "audio",
+      "text": "What else?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2298,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2327,
+      "type": "audio",
+      "text": "I love this question. Can we simply add the variance of rating one and rating 2 in order to get the variance in the PC1 dimension? In this case you can't. In this case you can't. And I'm going to show you in a minute why you can't. But we're going to actually talk about this idea of adding variances up and trying to get to some larger actual number, right? Some numeric value of variance in a bit, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2357,
+      "type": "audio",
+      "text": "So now you might be wondering like we have PC 1, so what's PC 2? And it turns out for this two-dimensional data set, PC 2 is very easy to find. The only requirements for PC 2 are the following. PC 2 is the direction of the next highest variance, the direction of the next highest variance in the data set with the requirement that it's orthogonal to all previous principal components. So in this case for PC 2, for the second principal component it has."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2372,
+      "type": "audio",
+      "text": "To be orthogonal to PC one OK or uncorrelated, that'll that'll make more sense in a SEC has to be orthogonal. So notice like what's the direction of the data set that has the second highest variance? Well, that would be something like infinitesimally close to this line, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2402,
+      "type": "audio",
+      "text": "OK, it's like the second highest variance, right? But it's, it doesn't even make sense to really think about this because it's like just slightly pushed above. That doesn't really make sense, right? We need to have this requirement that it's not only the direction with the second highest variance, it's the direction with the second highest variance that's orthogonal. And in this case, there's only one choice of line that can do this. PC 2 is just the orthogonal line going right through our original PC1 dimension. So the second principle component direction."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2402,
+      "type": "audio",
+      "text": "Is here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2423,
+      "type": "audio",
+      "text": "OK, the second principle component direction is here, and I can do the same thing as before, right? I can like project the points down onto that line, OK, Those lines have some variance, right? Those lines have some variance. That's the variance in the second principal component. And as it turns out from the question in front here, if I add the variance of rating one to the variance of rating 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2453,
+      "type": "audio",
+      "text": "That is guaranteed to be exactly the same thing as the variance of the first principle component and the variance of the second principle component. The two principal components for A2 dimensional data set fully reconstruct the data. Fully reconstruct the data. If I have a D dimensional data set or really rank dataset in this case, A2 dimensional data set with ratings 2 principal components will fully reconstruct that data set. OK, in this picture will give you a little bit of intuition here. So I've now plotted."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2483,
+      "type": "audio",
+      "text": "The points projected onto the first principal component, and I've plotted the points projected onto the second principal component, and I'm also showing you the original observations. Just sort of pointed out all the Gray dots are the original observations. OK. But if you think about what we've just done here by now having two new axes to measure our data, OK, notice it's just, you know, 2 new axes to measure our data. You know, how far are you along the PC1 dimension? How far are you along the PC-2 dimension?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2487,
+      "type": "audio",
+      "text": "All we've done is change our frame of reference right? Like turn your head 45°."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2499,
+      "type": "audio",
+      "text": "OK. It's like it's just a new set of axes, right? These are just new XY coordinates for each of these points, right? It's just a new way of looking at these data points. If I think about one of these data points right here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2503,
+      "type": "audio",
+      "text": "Right, I can give this data point a rating one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2506,
+      "type": "audio",
+      "text": "And a rating 2 coordinate."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2510,
+      "type": "audio",
+      "text": "That's one way of thinking about it, but I could equivalently give that point."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2514,
+      "type": "audio",
+      "text": "A little bit something else here I could say."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2528,
+      "type": "audio",
+      "text": "It's in the negative direction for PC one, it's to the left, and it's in the negative direction for PC 2. I could instead give that point a coordinate of like latent feature value 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2531,
+      "type": "audio",
+      "text": "And latent feature value."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2534,
+      "type": "audio",
+      "text": "2 Just a new set of axes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2556,
+      "type": "audio",
+      "text": "So again, I fully reconstructed the data set. I've just changed my frame of reference. So this is like also a hint about one of the things PCA does. It rotates your data. This is a key part of the principal component analysis algorithm that we're not going to talk deeply about. It's just rotating your data. And I really wanted to bring a football, but I don't have a football at home. I really wanted to bring it back yet, which is I could have bought, but sorry, I didn't. But if I have like a football."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2573,
+      "type": "audio",
+      "text": "Like PCA in some way, one of the pieces of PCA is just rotating that football. Maybe if it was like facing you, I'm just rotating that football so that it lies flat. I just have this new uncorrelated set of axes. If I turn my head to the left, notice those points no longer have a correlation."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2596,
+      "type": "audio",
+      "text": "Like we're literally choosing the set of axes that force the data to have 0 correlation. That's the idea with PCA. We're just trying to decorate our set of axes. Instead of working with rating one and rating 2, which may or may not be orthogonal, we're changing our frame of reference so that every dimension is orthogonal to every other dimension. Questions. That's PCA with no linear algebra. Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2621,
+      "type": "audio",
+      "text": "How do you choose which 45° to turn? Everything is equivalent if you do like in the negative, right. I well, I guess in this case, are you saying like whether you should turn this way or like this way? Yeah. So, so, you know, you might imagine like I could also say PCAPC one points in the other direction. It would just be negative. Everything mathematically is still sort of equivalent. So for this picture, because we're sloping upwards, it like makes a little bit more sense to rotate it."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2632,
+      "type": "audio",
+      "text": "You know, so that it's flat. I wouldn't worry too much about like the negative, positive piece of this. Yeah, go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2633,
+      "type": "audio",
+      "text": "Yep."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2643,
+      "type": "audio",
+      "text": "Great, beautiful question. The question was if I can fully reconstruct my data set with."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2645,
+      "type": "audio",
+      "text": "2 new dimensions."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2669,
+      "type": "audio",
+      "text": "Then like, what's what's the point, right? I've like rotated the picture, like that's all fine and hunky Dory, right? But like, what? What's the point? So the idea with PCA is like, yes, you are going to get principal components for the entire, you know, the same number of principal components as is the rank of your matrix. But remember, our original idea was can we approximate this data set with fewer dimensions? So in this case, we're really only interested in PC1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2676,
+      "type": "audio",
+      "text": "Right. It's like once we have PC two, yes, we have everything, but we're more interested in like how much more variance can I get out of PC1 than PC-2?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2690,
+      "type": "audio",
+      "text": "Right. In the case of rating one and rating 2, they had about equal variance. But notice principal component 1, there's a lot more variance in that direction than there is in the PC two direction. OK, great question. What else?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2692,
+      "type": "audio",
+      "text": "I got 2. Why don't we start there?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2729,
+      "type": "audio",
+      "text": "Yeah. So the question was, does PC1 and PC-2 represent some kind of coefficient between features? Remember before I said we want to describe the principal components as recipes of the original feature, right, .7 parts rating one and point 7.7 parts rating 1 and .71 parts rating 2 gives me my first latent feature. So yes, that .7 and that .71 are coefficients, right? They're part of a recipe to construct the new latent features."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2732,
+      "type": "audio",
+      "text": "Which we're going to talk about more after the interlude. Yeah, let's do the last one here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2764,
+      "type": "audio",
+      "text": "So this was something that was very confusing for me, like why can we guarantee that we can rotate our data in a way so that there is no correlation? So I would think about it like the football example, you can always just adjust each dimension separately so that it's just lost all of its correlation. Like if we know that some orientation has some correlation, just rotate the data in an equivalent value to that correlation to take it all away. It's a little bit tricky to think about this, but just remember with the football, I can always."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2794,
+      "type": "audio",
+      "text": "Rotate it back to this horizontal picture so that there is no correlation. OK, all right, let's, I think we have an interlude almost. Oh, I want to show you a couple cool things before we do our interlude here. So here's principal component analysis in three dimensions and then take it up to like hundreds of dimensions in just a sack and give you a really cool picture. There was a fascinating thing published in 2009, but on the left we can see we have 3 dimensions here. So we have like feature one, we have feature 2, and we have feature 3."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2822,
+      "type": "audio",
+      "text": "Again, 3D is sort of hard to see on a 2D plot, but bear with me here. The first principal component goes along the football, right? The second principle component goes sort of up and down through the football. And in this case we're, you know, we're really working with a baguette, right? We're sort of like going along the edge of the baguette where you like make the sandwich. And then the third principal component is like coming out towards us. It has the least variation in the data. So this is one of those cases where we're not using every single one of the principal components."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2825,
+      "type": "audio",
+      "text": "To fully reconstruct our data set, notice that we've gone from 3D to 2D."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2855,
+      "type": "audio",
+      "text": "And I pretty much can pick up on most of the patterns in the data set on the left. It's not perfect, but I can pick up on most of the patterns. Let's take this up to even higher dimensions. So let's say I have a genetic data set where each row represents some person and some sample of people that I had, you know, spit in a vial and go measure all of their gene expression. OK, all of the dimensions here, all of the columns are the expression of different genes. So each one of those are dimensions of the data set, right? We could have thousands of genes that are measured. But let's say we."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2884,
+      "type": "audio",
+      "text": "Use PCA to project all of this information down to just two dimensions, PC1 and PC-2. Is there anything interesting that comes from this? So it turns out there was a data set of a bunch of people from Europe who had like ancestry in Europe who submitted their information to some database with gene expression. And then what they did is they plotted principal component 1 and principal component 2 and it turns out like people are so inbred within European countries if you look towards history."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2914,
+      "type": "audio",
+      "text": "That the principal component 1 and principal component 2 actually formed the same geographic map almost as actual Europe. Pretty fascinating, right? Like, you know, what is this useful for per se? Based on like my quick read of this, it's like it's more just interesting than anything. But I think this is a really nice example of why principal component analysis is so interesting. There's lots of information you can pick up in your data set using just two dimensions, using just two dimensions, and most often when you're doing principal compon."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2925,
+      "type": "audio",
+      "text": "Analysis. You're just using 2 principal components. You're just projecting down to two because 2 dimensions are really easy to work with. A natural question of this is like, could we run clustering now?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2949,
+      "type": "audio",
+      "text": "And the answer is yes. That's why I taught you clustering before and we're learning PCA today. Even in the last lecture I told you we're going to learn about PCs, and I showed you a plot that had PC1 and PC-2. It's very natural to take data and really high dimensions, use PCA or some other dimensionality reduction technique, and then do clustering in some way and then find clusters in your data that way. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2976,
+      "type": "audio",
+      "text": "Is there any way of gaining back the information? So this is a good question. Again, it's like, let's say you completely lost your original data set and you only have the two principal components. No, you can't. You can't gain back that information by definition, right? We only have as much variance of the original data set as what we started with. Unless we have every single principal component, we can never fully reconstruct the original data set that we started with."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2982,
+      "type": "audio",
+      "text": "Yeah, so you know in the demo."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 2996,
+      "type": "audio",
+      "text": "Later today, we'll show you an example of like reconstruction on a three-dimensional data set using a plane. But why don't we do a little break here because I know this is sort of heavy duty. I'll show you this right after the interlude. OK? All right, see you in 2 minutes. It's too quick stretch."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3000,
+      "type": "audio",
+      "text": "And if you have questions, raise your hand, I can come to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3122,
+      "type": "audio",
+      "text": "Image recognition algorithms."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3122,
+      "type": "audio",
+      "text": "Because I just want to make sure I can show you a couple different demos here. And I highly encourage you to go look at the lecture demo. This lecture I know is frustrating because it seems like this really cool topic that we want to uncover more. And there's lots of cool information about PCA online, but happy to talk more about it offline. But this is an interesting data set. So MNIST is a very famous machine learning data set of a bunch of different handwritten digits. And for a long time, people were trying to make better and better."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3136,
+      "type": "audio",
+      "text": "To try to see how well they could predict what number it was based on the handwriting. And so these folks came up with this data set called Fashion MNISC that instead had a bunch of different pieces of clothing."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3159,
+      "type": "audio",
+      "text": "Right, a bunch of different pieces of clothing that they encode in some like, you know, low resolution image. And then you can use this data set to try to build a classifier that can predict, OK, you know, this is a sneaker, this is a shirt and there's some set of categories, Fashion MNIST data set. So how are those I'm going to just keep keep dismissing this."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3162,
+      "type": "audio",
+      "text": "Let's go down."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3169,
+      "type": "audio",
+      "text": "Sorry sorry we're going to come back up to that demo towards the end I hope."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3183,
+      "type": "audio",
+      "text": "But here's how they would encode the images. So they're all black and white, but you can imagine we have a bunch of different pixels. So we have something like, OK, I need to restart this thing. Sorry everybody. Okay, Data hub, come on."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3189,
+      "type": "audio",
+      "text": "I'm sure this has happened to all of you a lot this semester."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3193,
+      "type": "audio",
+      "text": "Probably feels good to watch me go through it OK?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3197,
+      "type": "audio",
+      "text": "Let's see, it should still be there."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3227,
+      "type": "audio",
+      "text": "OK, so we can encode these images as just a sequence of intensities where one is totally black, I think 1 is totally white and 0 is totally black. And we can just encode the intensity of each pixel this way, right? So it's a 27 by 27 image, 27 pixels in each dimension with some intensity for each dimension, OK. And each one of these matrices corresponds to one of these pictures."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3231,
+      "type": "audio",
+      "text": "Right one of these pictures right in the top right. It's fully white. That's why there were so many ones in the top right."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3261,
+      "type": "audio",
+      "text": "So here's what we're going to do, just like neat application of PCA is we're going to unroll these images. So 27 * 27 is 783. I'm going to take each image and instead of writing it as a 2D matrix, I'm just going to write it as A1 dimensional vector. So not very human readable, but maybe a little bit easier for a machine to read. And so now each row corresponds to an image. There's 5000 images in this data set, right? 5000 images in the data set. There are 783 pixels in each image."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3265,
+      "type": "audio",
+      "text": "So we have a 783 dimensional data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3283,
+      "type": "audio",
+      "text": "Can we project that down to just two or three principal components and still get useful information that we could cluster based on? So this is just a neat application of PCA, but if we do this, you know, we run PCA and we get this cluster of points."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3308,
+      "type": "audio",
+      "text": "OK, we get this like cluster of points. This is PC1 on the X axis here. Here's our excuse me, we should call it latent feature one on the X axis. So it's the direction along PC1 or seeing the the distances along PC1Y axis is the latent feature 2. And you look at this and you're like, yeah, there's kind of some clustering on the right, some clustering on the left and some clustering up top. But if we actually go and color these points with our knowledge of what these clothing items are."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3312,
+      "type": "audio",
+      "text": "It actually did a pretty good job of picking up on the different clothing items so it looks like when you have a large value."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3321,
+      "type": "audio",
+      "text": "You in the PC1 dimension and sort of like a middle low value in the PC-2 dimension that usually looks like a sneaker."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3351,
+      "type": "audio",
+      "text": "Right, We can see that there are these sort of distinct ish clusters of each of these different fashion items. So again, 2 dimensions is picking up on just a bunch of information across 783 pixels. It's pretty wild. It's just picking up, you know, no, no fancy machine learning going on here. And you can take this up to 3 dimensions and it's just like a pretty picture, but it says exactly the same thing. But you can see we have these clusters now in three dimensions representing each of these different clothing items. So hopefully this convinces you that PCA is picking up."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3377,
+      "type": "audio",
+      "text": "Some kind of information sitting in the data set can help you uncover interesting patterns. In this case, we already knew what each item was. And so you might not think, oh, like what's really useful about this example, I just want to show you that it can sort of pick up on information that's in your data set. You don't always have these clusters ahead of time that you can label. All right, back to the slide. So in the last half hour here, maybe we go over a little bit of linear algebra related to PCA."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3381,
+      "type": "audio",
+      "text": "So again, what's our goal? We're trying to project our high dimensional data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3389,
+      "type": "audio",
+      "text": "Down to just two dimensions and capture as much variability as possible. Retain as much variance as possible."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3401,
+      "type": "audio",
+      "text": "Why do we do this? We might want to identify clusters. You might think that the data set can be described by just a few features, and it turns out that some machine learning models benefit from features that are de correlated."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3431,
+      "type": "audio",
+      "text": "So if you think about all of the different features in some data set, there might be sort of relationships between them that aren't deterministic, right? But maybe like, you know, weight and height tend to be pretty strongly correlated with one another. And maybe you want to decorrelate your data set measure along dimensions that aren't correlated with one another. Naive Bayes is one of these algorithms. So these are reasons why you might want to do PCA. But now let's talk about it in terms of matrix multiplication. So this is going to draw on what you already learned in OS."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3439,
+      "type": "audio",
+      "text": "So remember in matrix multiplication, you know, let's say we have."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3461,
+      "type": "audio",
+      "text": "Two matrices. We have some data set that represents the number of different kinds of fruits in two different bowls of fruits. And let's say we want to say something about the costs of different bowls of fruits. We could multiply this matrix by a different matrix, telling us the cost of each of these fruits at different stores, right? What do we learn in matrix multiplication? Well, we say, OK, what's 2 * 2? What's 2 * 1? What's 2 * 4? Add them all up, you get 14."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3488,
+      "type": "audio",
+      "text": "Right, And you go through this when you first take linear algebra and you get a bunch of different values. But we talked about earlier in the class the idea of not thinking about rows when we do matrix multiplication. Let's totally throw out the idea of thinking about rows. We want to deal with column transformations. So what is the column transformation here? So here are our original columns, right? The number of the first fruit in each of the bowls, the number of the second fruit in each of the bowls, and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3494,
+      "type": "audio",
+      "text": "And then with the second matrix we can think about this instead."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3502,
+      "type": "audio",
+      "text": "As a set of recipes. Just like before with OLS. Just like before with OLS. So how do I construct the new column?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3516,
+      "type": "audio",
+      "text": "And take 4 parts, column three, kind of like coefficients."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3516,
+      "type": "audio",
+      "text": "In my resultant matrix well take two parts, column one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3516,
+      "type": "audio",
+      "text": "Take one part column two."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3531,
+      "type": "audio",
+      "text": "And we get our new column on the right. This was the same thing we did in OLS. We did it with the Theta vector. Now we're just doing it with a full matrix. So notice the matrix that we multiply by provides the recipe. Two parts column one, one part column two."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3550,
+      "type": "audio",
+      "text": "Four parts, column three, the left matrix provides our data."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3567,
+      "type": "audio",
+      "text": "And then the right matrix is our transformed values of the original data. OK, so this is the same thing we did in OLS, where we're thinking about matrix multiplication without ever considering the idea of rows. We don't care about rows, we're only thinking about recipes to combine columns in different ways."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3584,
+      "type": "audio",
+      "text": "OK, so we've seen this. We've seen this before. If you want a good review of linear algebra, excellent review of linear algebra, it's worth watching that series. OK, so let's now see this in action with PCA. I don't love this data set, but we're going to go with it. So here's width, length, area, and perimeter. I'm gonna go ahead and say let's pretend that this isn't perimeter. Let's say it's like some perturbed value of perimeter. We could say it's just like something else."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3588,
+      "type": "audio",
+      "text": "They pretend that all four of these columns are linearly independent."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3603,
+      "type": "audio",
+      "text": "So if I think about these four different columns, OK, I have a matrix that's 100 by 4, I'm multiplying by a matrix that's four by two, and I end up with 100 by two matrix. I could multiply that original data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3615,
+      "type": "audio",
+      "text": "By this matrix called V that contains my principal components. OK, so the first column represents the first principal component, the first recipe."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3627,
+      "type": "audio",
+      "text": "OK, PC 1 is a recipe for constructing the first latent feature. So how do I make the first latent feature? Well take that element parts all in one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3631,
+      "type": "audio",
+      "text": "This element parts column two."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3635,
+      "type": "audio",
+      "text": "This element parts column three."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3647,
+      "type": "audio",
+      "text": "In this element parts column four, and if I combine the original features using those sort of coefficient values, I'll get back my first latent feature."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3661,
+      "type": "audio",
+      "text": "OK, my first hidden feature or underlying feature. That's what Latent means. That's that Z value on the demo that you saw earlier. And same idea for PC 2, same idea for PC 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3687,
+      "type": "audio",
+      "text": "Questions about the linear algebra. This is just the setup here. The natural question is like, where the heck did you get this V matrix? And that's one of the things we have to put off from this introductory lecture, the actual algorithm for finding the PCs. Okay, usually when you're running PCA, it's like one line of code where you say run PCA, but it's useful to understand what's going on under the hood in terms of things like covariances. But I just want you to see the sort of math here. We start with some."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3691,
+      "type": "audio",
+      "text": "Matrix representation of our original data. The principal components represent."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3695,
+      "type": "audio",
+      "text": "Then some transformation of that data."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3699,
+      "type": "audio",
+      "text": "OK. And then what we get back is some?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3705,
+      "type": "audio",
+      "text": "Transformed data set. Those new latent features. We've gone from 4 columns down to two columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3733,
+      "type": "audio",
+      "text": "Notice in this case, we only use two principal components. You might say, well, why didn't we use all four principal components? Well, if we had used all four principal components, we were going to fully reconstruct our original data set. That's not very useful to us. The whole idea here is to try to get a lower dimensional representation of our data set. So we're just using the 1st 2 principal components. You could have included additional columns containing your third and 4th principal component, but you're typically just going to use two of them."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3735,
+      "type": "audio",
+      "text": "Questions here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3737,
+      "type": "audio",
+      "text": "Questions here. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3775,
+      "type": "audio",
+      "text": "This is a great question. Can you have more principal components than you have columns in the original data? And the answer is no, right? If a matrix has a rank of five, then that means at most we have 5 linearly independent columns. It means we do have 5 linearly independent columns. There's no way to draw 6 vectors in A5 dimensional space that are linearly independent. So the number of linearly independent columns in your data set is the maximum number of principal components, right? The number of principal components that will fully reconstruct the data. But you're typically."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3776,
+      "type": "audio",
+      "text": "Using all of them other questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3778,
+      "type": "audio",
+      "text": "Other questions before we do more fun demos."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3786,
+      "type": "audio",
+      "text": "Let's keep going."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3811,
+      "type": "audio",
+      "text": "So like I said, you know, how do we find the V matrix? Check out the appendix. I'm happy to talk about it more offline. Again, PCA deserves like at least 4 lectures to have like a full, you know, treatment. And maybe as we start thinking about shuffling topics and data 100 in the future, that might happen. But for now, I just want to give you a taste of what PCA is. So if someone says here are the principal components, you know what they're talking about, even if you don't know exactly how they got those principal components."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3843,
+      "type": "audio",
+      "text": "OK, this is what I showed earlier poorly by using my handwriting, but now here's here's some better illustrations of it. So this is what I was trying to describe before. That first principal component is a recipe for constructing the first latent feature. So to obtain the first latent feature, I take .44 parts column 1.38 parts column 2.57 parts column, 3.58 parts column four. The reason I'm making that column something other than perimeter is I want to make sure that these are all linearly independent."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3849,
+      "type": "audio",
+      "text": "Perimeter is linearly dependent on width and length. OK, so that's the big idea with the mathematics here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3874,
+      "type": "audio",
+      "text": "All right, so we saw a plot earlier. I didn't tell you what that kind of plot was called, but a plot where you show the first two principal components like this is called a principal component plot. Okay, PCA plot. When you think about a PCA plot, you're typically showing the 1st 2 principal components because we're usually visualizing information on A2 dimensional screen. And the big idea here is if PC1 and PC-2."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3875,
+      "type": "audio",
+      "text": "Explain."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3906,
+      "type": "audio",
+      "text": "A large percent of the total variance, then the PCA plot is doing a good job. Now explain kind of sounds like causality and we've talked a lot about causality in this class being very hard to get to. And so PCA has nothing to do with causality. You often hear this word explain a lot of the variance and it's a bit of a misnomer, but it's just common way of talking about it. All it's saying is that it's simply if you if you were to take the variance of the latent features in the PC1 and PC."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3916,
+      "type": "audio",
+      "text": "Two directions and add them up. It would be very close to the total variance of the actual data set. So let me show you this in practice. It's nothing to do with causality."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3946,
+      "type": "audio",
+      "text": "So what is the total variance of a data matrix? The total variance is the variance of each of the columns added up. That's it, total variance. Each of the columns added up. You might be wondering, why aren't these all on the same scale? Again, this all still works if you scale everything to be on the same scale. Just to keep things simple here, let's play with things on their raw scale. The total variance of this data set is simply the variance of each of the columns added up. So the total variance in the data set in the top right is 402.56."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3962,
+      "type": "audio",
+      "text": "Notice that the variance of anyone individual column doesn't exceed the total variance, right? Each column is providing some amount of information and So what was the goal of PCA? We're trying to capture as much of this total variance as possible."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 3992,
+      "type": "audio",
+      "text": "So what are some different things that we could do? Well, what if we proposed instead of using width, length, area, and perimeter, let's just say we use the area and perimeter columns. So we're going to pretend that our first principle component is 0 parts column one, zero parts column two, one part column three, and one part column four. Column 3 is just area, so that's just exactly the same as area. And let's say our 4th principal component, excuse me, our second principal component, just one part column, 40 parts of the other."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4020,
+      "type": "audio",
+      "text": "Column that's just the same thing as perimeter. So if I were to just add area and perimeter variance up, I get 389.52, which is pretty close to my total variance. But can we do better using the principal components? And indeed we can if you actually were to go compute the principal components of this data set and then construct the latent features. If I compute the variance of latent feature 1, so latent feature one."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4027,
+      "type": "audio",
+      "text": "And the variance of latent feature two if I were to add those up."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4035,
+      "type": "audio",
+      "text": "I get a total variance that's higher, so this is just confirming what we've already seen over and over and over again here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4044,
+      "type": "audio",
+      "text": "The principal components do better than individual features alone, right? The first principal component will do just as well as feature one or better. Can never do worse. It can never do worse."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4045,
+      "type": "audio",
+      "text": "Alright."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4063,
+      "type": "audio",
+      "text": "We talked about latent features. OK, just a couple plots I want to show you like plots that you should understand for PCA. So something called a scree plot that looks a lot like an elbow plot. Basically the same idea here, a scree plot. What is scree? Scree is like a geological like."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4093,
+      "type": "audio",
+      "text": "You know, structure kind of kind of looks like the plot, right? So a scree plot shows how much variance is captured by each principal component. So all of the principal components together capture 100% of the variance. But we can show that the first principal component captures 80% of the variance. So that's PC1. We can show that PC-2 captures a lot less of the variance, PC-3 captures even less, and so on. And so the screen plot gives you a good representation of whether PCA is doing a good job of reconstructing."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4097,
+      "type": "audio",
+      "text": "Your data, in this case 1 principal component alone."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4113,
+      "type": "audio",
+      "text": "You know, reconstructs 80% of the variance of the data. PC 1 is very strong. We're getting a lot of information just from 1 dimension in PC-2 gives us a little bit more, but in this case you might just use one principal component. Now if you have a screen plot that looks, you know, a little bit flatter."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4116,
+      "type": "audio",
+      "text": "Right. Or like slopes down a little bit more like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4126,
+      "type": "audio",
+      "text": "PCA isn't doing as good of a job. PCA isn't doing as good of a job because the higher order principal components are still explaining a lot of the original variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4135,
+      "type": "audio",
+      "text": "Right. You want to see a screen plot that really dips down quickly, because that's telling you PCA is doing a good job with your data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4141,
+      "type": "audio",
+      "text": "All right, let's go ahead and do one more demo using some Congress data."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4168,
+      "type": "audio",
+      "text": "So this is Congress data from 2019 in the House of Representatives, and we're going to think about different voting patterns of different legislators. And we're going to see if we can take the voting patterns of different legislators, different representatives, and project those votes down to just two dimensions, right? I could say every single vote that somebody voted on, but can I describe their voting pattern with just two numbers? Can I just describe their voting pattern with just two numbers? So let's see."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4172,
+      "type": "audio",
+      "text": "So we'll go back to our hopefully not."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4174,
+      "type": "audio",
+      "text": "Shut off demo here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4177,
+      "type": "audio",
+      "text": "And let's dive in."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4208,
+      "type": "audio",
+      "text": "So here's the original data set that you can pull from the congress.gov API. So Congress has an API where you can pull information if you're interested in doing a project that's related to Congress. But notice what's in each row of this data set. Each row, the granularity, good review for the final. The granularity of this data set represents a single vote from a single member of Congress, right? We know that the chamber they voted in as the House, this was in session one, roll call 5555, whatever that means, right? And this is the particular person the."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4213,
+      "type": "audio",
+      "text": "IED of the representative and then how they voted yes no abstain."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4229,
+      "type": "audio",
+      "text": "Right. And so let's pivot this data set. We're going to change this a little bit to look more like what we've seen before. So we're pivoting the data set so that each row now represents what we want to call an observation. Each row represents a representative, each column represents a vote."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4259,
+      "type": "audio",
+      "text": "So this represents one particular representative in Congress, and now we have their vote yes, no abstain for every single one of the bills. We've done some cleaning so that we're ignoring or changing all of the not voting to zero. There aren't a lot of not voting. Everything here is either A0 or A1. The big question here is, can I represent this entire set of zeros and ones again using just two numbers? Can I project this down to lower dimensions? So let's run PCA on this data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4272,
+      "type": "audio",
+      "text": "So we now have latent feature one, we now have latent feature two, We technically have all the way up to latent feature. I think there's 40 votes here, Latent feature 40, we only care about the 1st 2. So let's go ahead and plot the 1st 2 latent features."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4281,
+      "type": "audio",
+      "text": "OK. And what do we see? So latent feature 1 is on the X axis here, latent feature 2 is on the Y axis. Do we see a natural clustering form?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4289,
+      "type": "audio",
+      "text": "Yeah, it's like pretty clear. We have like a strong left, right clustering."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4302,
+      "type": "audio",
+      "text": "What do we think this these clusters maybe represent in Congress?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4323,
+      "type": "audio",
+      "text": "Yeah, the probably probably something that has to do with political party on the left and right. What do we think? Is there like an up down dimension here too? There is some variability up down. It's maybe not as clear, you know, what this could be in Congress. Could it be age, you know, could it be gender in Congress? Could it be years in Congress? You know, there's some other kind of information that's being communicated in the Y dimension, but we can see there's this really strong clustering in the X dimension. That's probably political party and indeed it is political party if you go."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4333,
+      "type": "audio",
+      "text": "Compute the color of these points."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4337,
+      "type": "audio",
+      "text": "As it turns out, most of the people on the left are left-leaning and most of the people on the right are right leaning. And if you go look at the IDs of some of these Congress folks in the middle."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4364,
+      "type": "audio",
+      "text": "These tend to be more like centrist people. So we are really getting some sense of how people are voting with just one dimension. the Y axis here isn't quite as clear. There is an independent down here. So maybe this has to do a little bit with people making votes that are totally different than other parties. Maybe this is like how maverick you are, right? Thinking back to John McCain, people further down or more maverick and will vote totally different than the rest of Congress, right? They might be more outspoken, but left, right looks like it's actually representing how left or right people are."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4377,
+      "type": "audio",
+      "text": "Now we can keep going with this can take this up to 3 dimensions and think about additional principal components here. But again, it's much easier to understand PCA using just two of the PCs."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4408,
+      "type": "audio",
+      "text": "And then finally, I'll just show you this last kind of plot that I think is clearest to see here. So you might see this kind of plot when you run PCA. And I remember there's a great book that if you're all interested in learning more data science introduction is Statistical learning in R that now has Python exercises too. But I remember reading that book, it was like the first time I felt like a data scientist, like back in like 2018. And I remember seeing this plot in particular PCA, not this data, but this, this by plot is what this is called and just."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4437,
+      "type": "audio",
+      "text": "Really not having any idea of what I was looking at it promise it's not that bad, but let me let me try to describe it to you. So what we're looking at here is the PCA plot, right? We've plotted PC1 and PC-2. We've plotted the latent features in the PC One Direction, in PC two direction. Really those shouldn't be labeled with PC1 and PC-2. This should really say latent feature 1 and latent feature 2. That's a very common issue you'll see when people are talking about PCA. OK, people using different lingo, but you'll see."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4443,
+      "type": "audio",
+      "text": "We have all of the points projected down into this 2D space, but then you'll have these like arrows."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4462,
+      "type": "audio",
+      "text": "You'll have these arrows and they're all going to be labeled with different features in your original data set. So what were the features in the original data set? The features were the different bills. Those roll calls represent bills. So this 552, for example, was a particular bill."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4463,
+      "type": "audio",
+      "text": "And for that bill?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4464,
+      "type": "audio",
+      "text": "We can plot."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4496,
+      "type": "audio",
+      "text": "I'll show you the math for this in a little bit. But that arrow represents for that bill how much that bill contributes to each direction of your principal components. So notice that that bill is very strongly pointing to the left. It seems as though that bill is very strongly associated with voting more Democratic. When you vote yes on that bill, that's pushing you more towards the Democratic side. When you vote yes on a different bill, it's pushing you more towards the Republican side. And then."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4525,
+      "type": "audio",
+      "text": "These bills that are sort of pointing up and down, you might imagine are sort of the unanimous votes in Congress that happen quite a bit. Like most things are either right on party line or unanimous. And then you might think if those are sort of describing unanimous votes, these are the people that will sometimes be the one person in Congress who votes against a unanimous vote to sort of get more attention, right? Or something like this. But that's what the by plot is showing. I'll show you mathematically where the direction of these arrows is coming from, but that's the idea. It's simply telling you how much each feature."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4530,
+      "type": "audio",
+      "text": "Corresponds to the principal components, it's just plotting the recipes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4536,
+      "type": "audio",
+      "text": "Right. How much does Bill 515 contribute to our recipes?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4545,
+      "type": "audio",
+      "text": "So we'll go back to the slides and then I'll wrap up a little early since I know today's the last lecture. So here's a picture of what we were looking at before we had X, our original data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4549,
+      "type": "audio",
+      "text": "Original data set and we had Z our latent features."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4558,
+      "type": "audio",
+      "text": "And then we had these columns that represented our principal components. The columns are the principal components."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4573,
+      "type": "audio",
+      "text": "So remember that in our principal components, each element tells us."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4587,
+      "type": "audio",
+      "text": "Some part of the recipe. How much does column one contribute to principal component 1? How much does column two contribute to principal component 1? So those arrows that we just plotted, they're two-dimensional arrows. Those arrows are simply plotting each row of this matrix these arrows represent."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4588,
+      "type": "audio",
+      "text": "Each row."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4589,
+      "type": "audio",
+      "text": "Of the matrix."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4600,
+      "type": "audio",
+      "text": "Right. How much does the first column contribute to PC1? How much does the first column contribute to PC-2?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4609,
+      "type": "audio",
+      "text": "OK, so those arrows are simply plotting the rows to try to give you a better sense of how the features correspond to the principal components."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4631,
+      "type": "audio",
+      "text": "All right, all right. Now we have a couple minutes left here, but that's pretty much everything I think I wanted to say here. Yeah. Just to summarize here, what are the three plots you should be familiar with in PCA? The PCA plot itself, plotting each of the latent features and factors, the screen plot showing how much variance, how much information is in each principal component. And then finally the by plot, which is the same as the PCA plot, just with those arrows appended."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4634,
+      "type": "audio",
+      "text": "And that's it. Thanks everybody. Great semester."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4649,
+      "type": "audio",
+      "text": "I'll stick around for office hours, midterm 3 review, anything you'd like to do, but I'll end the recording there. Thanks everyone."
+    },
+    {
+      "id": "audio-ds100-sp26-1776983642-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1776983642",
+      "timestamp": 4660,
+      "type": "audio",
+      "text": "All right."
+    }
+  ]
+}

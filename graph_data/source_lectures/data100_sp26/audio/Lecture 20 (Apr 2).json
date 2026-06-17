@@ -1,0 +1,2935 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1775169221",
+  "display_name": "Lecture 20 (Apr 2)",
+  "count": 418,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 557,
+      "type": "audio",
+      "text": "All right everyone, thanks for all your patience there. So today we're going to continue our discussion of inference, right? Understanding going from, you know, we want to we have something we want to estimate like the mean height of a population, but maybe we want to do more than just get a single number, maybe want to reason about it. And maybe you want to do the same thing about our OLS models, right? When we're using OLS, we have, you know these models that we get we want to reason about the."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 558,
+      "type": "audio",
+      "text": "The predictions, The coefficients."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 587,
+      "type": "audio",
+      "text": "So announcements before we start again. Project A2 is due tomorrow. Start early, which means if you haven't already started, you definitely want to start tonight. And if you have already started, good. We will have officers as usual tomorrow. Midterm 2 is next week. There's an Ed post on Ed with all the details. We'll have a review session tomorrow from 3:00 to 5:00. And if you have not already signed up, please, please, please sign up ASAP. There might not be that many slots left. You may not get a time."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 589,
+      "type": "audio",
+      "text": "That is ideal for you."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 598,
+      "type": "audio",
+      "text": "And also this week, which is to say today right after lecture, I'll be taking over Josh's office hours. So if for those of you who are."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 602,
+      "type": "audio",
+      "text": "Who want to ask any questions? I'll hang out here after class."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 625,
+      "type": "audio",
+      "text": "All right, so with that, why don't we go ahead and get started? So last time we talked about the idea of estimation, right, we said we sort of have this idea of a data generating process, which we can think of as this warehouse with 32,000 slips of paper, one for the height of every undergrad at UC Berkeley."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 654,
+      "type": "audio",
+      "text": "And we go out and we sample 100 of them, right? We pull out a hundred of these slips of paper from the warehouse, right? That's kind of how our data is generated. It's sort of drawn from this infinite pool, right? And we also sell the factory line model for the same kind of mental intuition building idea for the same thing. We don't know the distribution of the population, but we want to know the average height. So we go out and be at 1 sample and the average height of our one sample is 68.1 inches."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 656,
+      "type": "audio",
+      "text": "5 foot 8.1."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 688,
+      "type": "audio",
+      "text": "But we could have gotten a different sample, right? Again, we said, imagine this parallel universe version of me who gets, you know, a different number of a different sample of size 100 and gets a different sample, right? And we talked about how do we evaluate whether one of these samples is good, right? These estimates that we come up with, how do we know if it's good? And we defined bias and variance and MSE as a way of quantifying that. And we came up at the end with this result that the model risk, which is to say."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 717,
+      "type": "audio",
+      "text": "The average mean squared error, right? Mean squared error is equal to the irreducible error that is just a noise in our model plus the variance of our estimator, right? Which we saw in the sort of regression cases we can kind of think of as a measure of model complexity, right? More complex models have higher variance because you change a little bit and you know, because the model is more complex, it can fit all the points exactly."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 718,
+      "type": "audio",
+      "text": "So it kind of varies a lot more."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 727,
+      "type": "audio",
+      "text": "As the data changes and then there's model bias and we saw simpler models have higher models so there's a trade off."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 736,
+      "type": "audio",
+      "text": "More complex models have lower bias but higher variance, and simpler models have higher bias but lower variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 752,
+      "type": "audio",
+      "text": "And the higher and lower don't necessarily equal out. You want to find a sweet spot where you get both of these as small as possible so that the total error is as small as possible, right? So this is kind of the idea we learned where we saw cross validation as a way of helping us pick the best model."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 775,
+      "type": "audio",
+      "text": "Right. So we can't really deal, we can't really do anything about the noise. But sometimes we can increase model complexity, which might give us slightly higher variance, the cost of greatly reduced bias or we could regularize where we might greatly reduce variance at the cost of slightly increased bias."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 806,
+      "type": "audio",
+      "text": "So today we're going to answer a different side of that same question, which is thinking about the uncertainty, right? So last time was all about, you know, I'm thinking about this parallel universe concept to measure the quality of how good that estimate is. Today we're going to think about the uncertainty in that estimate and that's going to lead us into something called inference, which is going to then lead into how do we reason about our models, right? When you get a, when you use OLS, we get some coefficients. What do they actually mean?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 810,
+      "type": "audio",
+      "text": "Is. Is that is that meaning useful in the real world at all, and if so, how?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 820,
+      "type": "audio",
+      "text": "An extra topic for today is on Co linearity of features. We won't have time to cover it in class, it won't be in scope, but it's an interesting topic useful to know, so there's some slides in the appendix. Recommend checking those out."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 846,
+      "type": "audio",
+      "text": "OK, so to start, let's talk about how we actually create parallel universes, right? Last time we spent a bunch of time on this idea of a parallel universe, right? A different sample. But in the real world, we only ever get one, right? Again, here's the warehouse, you know, we go get our sample, here's our sample mean. And so our best guess for the population average is the mean of our sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 854,
+      "type": "audio",
+      "text": "But how certain or uncertain are we about that? Guess you can imagine two different scenarios, right? In scenario one."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 868,
+      "type": "audio",
+      "text": "I go to the person who's, you know, constructing a new building who wants to know the average height of all 32,000 undergrads. And scenario one, I tell them, yeah, the average height is like 5 foot 8, but it might be as low as 5 seven, it might be as high as 59."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 872,
+      "type": "audio",
+      "text": "Right. So I have my estimate and I have some range of uncertainty around."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 883,
+      "type": "audio",
+      "text": "In the second scenario, I go to the person building it and I say the average height is 57, but it could be as low as 5 feet and it could be as high as 6/6."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 897,
+      "type": "audio",
+      "text": "Well, that's way less useful, right? The increased amount of uncertainty in that second scenario means that our estimate is a lot less useful, even though it's the same estimate 5 foot 8."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 904,
+      "type": "audio",
+      "text": "Having a higher uncertainty means it's less useful, right? So we want to quantify the uncertainty."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 932,
+      "type": "audio",
+      "text": "But also we want to be honest about it, right? Because if it is in fact the case that the there is that much uncertainty, then the people making the building better design for that, obviously with the heights, you know, it's kind of silly that's not going to happen. But you know, you might go out and you might build a model that will predict the sales for the next quarter of some product or the number of customers you're going to find, right. And if you go to your boss and you say, yeah, I think there's going to be, you know, our sales are going to be $7.5 million."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 933,
+      "type": "audio",
+      "text": "There's a big difference between."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 937,
+      "type": "audio",
+      "text": "It's going to be like between 7.4 and 7.6."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 941,
+      "type": "audio",
+      "text": "Versus it's going to be between like 5 and 10."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 952,
+      "type": "audio",
+      "text": "Right. And you may have cases where both of those are the actual answer. And if it is 5 to 10, you have to make very different plans on the business side. So it's important to communicate that uncertainty."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 958,
+      "type": "audio",
+      "text": "So that's what we're going to do, right? We're basically going to answer the question, Are you sure about that when we get an estimate?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 985,
+      "type": "audio",
+      "text": "Right. So again, you know, how do we answer that question? Well, again, we can use this idea of parallel universes, right? Because imagine if we had access to all the parallel universes, right? With every single different sample. We could look at the averages from all those samples and we could see how much those vary, right across all the different parallel universes, across all these different possible samples."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 989,
+      "type": "audio",
+      "text": "What's the average in each one? And then that'll help us quantify our uncertainty."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1005,
+      "type": "audio",
+      "text": "But of course, we only ever get to see the one, right? If I had money for, you know, more than one sample of size 100, I would have just used it to get a bigger sample, right? It doesn't really, it's not really realistic to have that, you know, all these other samples."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1013,
+      "type": "audio",
+      "text": "So if we can't actually observe the parallel universes, then how can we say anything about the variability of our sample mean estimator?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1022,
+      "type": "audio",
+      "text": "So the way we're going to do this is, as you may have guessed, if you remember from data 8, is to use something called the bootstrap."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1038,
+      "type": "audio",
+      "text": "So a simple example, think of a bag of M&M's. This is an actual real example from a bag of M&M's. So you know we have all these different colours. The proportion of M&M's that are primary colours, red, blue, yellow is 9 out of 18."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1051,
+      "type": "audio",
+      "text": "So what we can do is we want to know what is that proportion across all bags of M and Ms. So bootstrap tells us if we sample with replacement from our sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1059,
+      "type": "audio",
+      "text": "Right again we take our sample right of size, in this case 18 and we draw 18 samples with replacement."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1064,
+      "type": "audio",
+      "text": "That gives us a different sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1069,
+      "type": "audio",
+      "text": "Right. So it's sort of like a synthetic version of what we would get in one of those parallel universes."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1078,
+      "type": "audio",
+      "text": "And in this sample, we happen to have a lot more greens and fewer Reds, yellows and Blues, right? So our proportion of primary colors is 7 out of 18."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1083,
+      "type": "audio",
+      "text": "A different sample might end up with more, right? In this case, it's 11 out of 18."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1090,
+      "type": "audio",
+      "text": "So we can keep doing this over and over and over and this idea of drawing samples from our sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1100,
+      "type": "audio",
+      "text": "If our sample is reflective of the population, then those samples of our sample are going to look kind of like samples from the population, right? That's the big idea behind Bootstrap."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1119,
+      "type": "audio",
+      "text": "So we do this 10,000 different times. We compute the average, you know, the proportion of primary colors in each one. And then we just, you know, use those proportions in each of the the synthetic bags as our way of communicating our uncertainty."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1127,
+      "type": "audio",
+      "text": "Right. So what we've done here is we've constructed 10,000 parallel synthetic, synthetic parallel universes."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1147,
+      "type": "audio",
+      "text": "But again, this requires a big, big assumption. It requires the assumption that the distribution of the sample that we have, my original sample of 100 or that original bag of M&M's had better look a lot like the population if for some reason that original sample is not reflective of the population."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1152,
+      "type": "audio",
+      "text": "Then any resampling I do from it is also going to have the same problems."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1162,
+      "type": "audio",
+      "text": "So again, we can't simple from the population you know. So we get our best guess of 68.1 inches and then we randomly resample with replacement."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1170,
+      "type": "audio",
+      "text": "Why do we resample with replacement? Well, if we sample the same number of points without replacement, then we just get the same points every single time."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1187,
+      "type": "audio",
+      "text": "Right, If I have 5 numbers and I draw five of them without replacement, then I'm always going to get the same 5 numbers. Very boring, right? But if I sample with replacement, then I might sample some points multiple times, I might not sample some points and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1195,
+      "type": "audio",
+      "text": "So these synthetic best guesses are our way of representing what's going on in the parallel universes."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1197,
+      "type": "audio",
+      "text": "So let's do a little demo."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1202,
+      "type": "audio",
+      "text": "This so."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1210,
+      "type": "audio",
+      "text": "We can you know there there's a bunch of text in the demo that kind of walks through."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1213,
+      "type": "audio",
+      "text": "How this looks?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1217,
+      "type": "audio",
+      "text": "So here's the code that we have for the bootstrap."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1234,
+      "type": "audio",
+      "text": "So common interview question that I have seen both I've been asked and I have asked people is write pseudo code to do the bootstrap and explain to me how and why it works right. So this is the kind of thing you might expect to see on an interview. It's helpful to understand exactly what's going on."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1248,
+      "type": "audio",
+      "text": "So what do we do? Well, again we say how many bootstrap samples we're going to get, and then we iterate, right? That is how many synthetic parallel universes we want to make, and for each one we are going to resample from our sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1270,
+      "type": "audio",
+      "text": "How do we do that? We use NP dot random dot choice. So we take our sample of 10,000 heights, right? So in this case, we have only 10, right? Instead of 100, just like so we can actually see them all right? So I run this, I can keep running this cell, right? What does this cell do? This cell sort of generates a."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1275,
+      "type": "audio",
+      "text": "Where are our heights? So here are heights, right? We have our heights."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1283,
+      "type": "audio",
+      "text": "Here we go, we have our heights of you know, these these 10 people and the average is 67.6."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1310,
+      "type": "audio",
+      "text": "Now what I can do is I can simulate 1 iteration of the bootstrap using this sub. So what it was to do we just say NP dot random dot choice heights size equals sample size which tells us how many samples do you want to get. In bootstrap we always get the same number of samples so we have 10 in our original then we better have 10 in all our resamples."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1314,
+      "type": "audio",
+      "text": "And do we want to replace yes or no sample with or without replacement we need to say true."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1320,
+      "type": "audio",
+      "text": "So I can run this and this will give me one random sample right? One synthetic universe?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1336,
+      "type": "audio",
+      "text": "And we can see that our mean of our original was 67.6 and the mean of our synthetic parallel universe, right? Our sort of using bootstrap to simulate what might have happened if we'd gotten a new sample of size 10 is 67.0."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1339,
+      "type": "audio",
+      "text": "Right. And if I can run this cell again?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1344,
+      "type": "audio",
+      "text": "And I can run it again and again and again and wait a second. I get the same number every single time."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1359,
+      "type": "audio",
+      "text": "If we're sampling randomly, shouldn't we get a different number every time? Well, no. Why? Because here I have this NP dot random dot seed at the top of my cell, which tells numpy you know when you do regenerate, random numbers start from the same place."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1371,
+      "type": "audio",
+      "text": "So this is helpful when you want to do something where you want to reproduce and have the exact same effect. But you better not do something like this inside your loop, because then every single one of your bootstrapper samples is going to be the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1386,
+      "type": "audio",
+      "text": "So this is useful. Good to know how you tell numpy to start from the same place. That's often helpful in making sure that your results, even if they're randomized, can be reproduced and replicated by someone else."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1401,
+      "type": "audio",
+      "text": "So how does this work? We do our for loop and in each for loop we do exactly the same thing right as we did up there. We do a NP dot random dot choice, we get the size and then we compute the mean and then we append that to our list."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1410,
+      "type": "audio",
+      "text": "And then at the end we print out the number, the number of them, we print out the first five and they look like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1428,
+      "type": "audio",
+      "text": "So obviously I'm not going to print out all 10,000, that's not really helpful. But we can visualize them, right? So I make a visualization and I get something like this, right? Again, I'm visualizing A1 dimensional continuous variable, so a histogram is a great choice."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1430,
+      "type": "audio",
+      "text": "So this histogram reflects."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1436,
+      "type": "audio",
+      "text": "You know the X axis tells me when I get a sample of size 10, what does it mean of that sample going to look like?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1452,
+      "type": "audio",
+      "text": "You know, and judging by this histogram, looks like it could be as low as like 65, could be as high as 68 1/2, probably not going to be higher than that. And it's centered around the mean of our observed sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1484,
+      "type": "audio",
+      "text": "So this is a distribution of what our estimator the using the sample mean to estimate the population mean, that sample mean estimator, this is the distribution that that might look like and very similar to what we saw last time. What was the central limit theorem? But the nice thing about the bootstrap is that it's general, right? We don't have to, you know, the central limit theorem applies to means, but we can use the bootstrap with any estimator, right? We didn't have to make any."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1490,
+      "type": "audio",
+      "text": "Or use any central limit theorem or anything like that here. This works for any asterisk estimator."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1493,
+      "type": "audio",
+      "text": "There are somewhere it doesn't work. We'll talk a little bit about those in a bit."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1498,
+      "type": "audio",
+      "text": "So we can use this to generate what is called a confidence interval."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1513,
+      "type": "audio",
+      "text": "How do we do that? Well, think about it right. If I have the all, if I actually had all these parallel universes and I could say in 95% of those parallel universes, my estimate would be between."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1529,
+      "type": "audio",
+      "text": "A&B, then that would be a great way of quantifying the uncertainty, right? It would be a great way of saying that the, you know, true value. We're likely to capture the true value with our estimate based on how wide it is."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1554,
+      "type": "audio",
+      "text": "So the way we construct our kind of interval is we use NP dot percentile to get the two point 5th and 97 point 5th percentile values right. The way our interval is 90 captures 95% of the estimates and we get something like this right where we have our histogram, our mean of the observed sample and now we have the lower bound and upper bound of our sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1561,
+      "type": "audio",
+      "text": "So we could say something like we're 95% confident about this interval containing the true parameter."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1591,
+      "type": "audio",
+      "text": "Quick reminder on how we interpret confidence intervals. The true mean of the population is fixed, right? So it does not make sense in this framework. There are other frameworks where it does, but in the confidence interval framework, it does not make sense to say the true value has a 95% chance of being here in this interval, right? Because the true parameter is fixed, right? The true mean of the population, the true mean of all 32,000 people is fixed. It doesn't make sense to talk about it having some probability."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1592,
+      "type": "audio",
+      "text": "The thing that's random?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1603,
+      "type": "audio",
+      "text": "Well, is our data set and the interval that we computed from the data set, right? So our interval has a 95% chance."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1607,
+      "type": "audio",
+      "text": "Of capturing the true parameter inside of it."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1613,
+      "type": "audio",
+      "text": "In other words, if we were to go into a bunch of parallel universes."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1615,
+      "type": "audio",
+      "text": "Do the bootstrapping in each one."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1628,
+      "type": "audio",
+      "text": "Then in 95% of those parallel universes, our confidence interval would contain the true population average. That's how we interpret our confidence rules."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1638,
+      "type": "audio",
+      "text": "We can also use them for hypothesis testing. Again, this is mostly review from data 8, but if we say we have a null hypothesis that our mean of the population is 68."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1650,
+      "type": "audio",
+      "text": "Right. And we want to say do we have evidence to potentially reject that null hypothesis? Well, what does 68 look like in our data set? It looks something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1666,
+      "type": "audio",
+      "text": "And I want to take a step back and note on the side. Notice here that I have a lot of vertical lines in this graph, right? This is a remember when we talked about visualization, we talked about how you want to draw the viewer's eye to what you're trying to show. So if you compare this graph and the last one."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1669,
+      "type": "audio",
+      "text": "Notice that what I did was I made the histogram a little lighter."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1697,
+      "type": "audio",
+      "text": "So that the lines pop a little more because what I'm trying to show you is stuff about these vertical lines and the histogram is kind of fading into the background because you've seen it a bunch of times. These are the kinds of things you want to think, be thinking about when you make visualizations, right? So this is kind of what I thought about when I was preferring this today. And these are the kinds of things you want to do when you're constructing visualizations for audiences. OK, That being said, we have our mean if the null is true is 68."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1722,
+      "type": "audio",
+      "text": "And we can see that that mean it's squarely within the realm of possibility according to this bootstrap process, right? You say, you know, 95% this confidence interval can easily contains this null hypothesis. And so we would not reject the null hypothesis. The data here favours the alternative or the null hypothesis that the mean is in fact 68."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1728,
+      "type": "audio",
+      "text": "OK, again, that's just a quick recap from Data 8."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1756,
+      "type": "audio",
+      "text": "There's more here on bias variance than MSE. I'm not going to go through all of the demo notebook today, but it has a lot of good stuff. Highly encourage you to take some time after class to go through the notebook yourself. Make sure everything makes sense. Poke around with it, play around with it a little, change values, see what makes sense, make sure you understand what's going on because this, again, this material is tricky. It takes a couple of different times seeing it and playing around with it before it'll all really sink in and make sense."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1758,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1766,
+      "type": "audio",
+      "text": "So in what situations might the bootstrap do a bad job of simulating the uncertainty around our best guess?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1768,
+      "type": "audio",
+      "text": "So take a minute."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1781,
+      "type": "audio",
+      "text": "And turn to the person next to you talk about when the bootstrap might not be so good, right, that little asterisk I said for any estimator, when might it not be such a good choice?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1789,
+      "type": "audio",
+      "text": "All right, discuss. I want to hear people talking."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1908,
+      "type": "audio",
+      "text": "All right, if you're still typing, feel free to wrap finish up, but let's look at what people are saying. Oops. I don't, I can't see what people are saying, but let's talk through some of the limitations that come up when using the bootstrap, right? When is it not such a good idea? Well, we already kind of alluded to one of them, which is that the quality of the bootstrap sample depends on the quality of the original sample, right? If we're using samples out of our sample to reflect the population."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1913,
+      "type": "audio",
+      "text": "Well, that's our original sample. Had better be a good representation of the population."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1919,
+      "type": "audio",
+      "text": "So in cases where you have large random samples, bootstrap works well."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1932,
+      "type": "audio",
+      "text": "But if you don't have that many data points and not so great, right? So 10 like we saw in this little example might not be the best idea, right? Bootstrap might not be a great choice if you only have."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1947,
+      "type": "audio",
+      "text": "Ten data points in your sample? 30 probably better. 50 you know better. Hundred or more better? It kind of depends. It depends on what you're estimating. It depends on how the distribution of your population."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1952,
+      "type": "audio",
+      "text": "Bootstrap does not work well when the population distribution is heavily skewed."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1962,
+      "type": "audio",
+      "text": "So suppose you're trying to estimate the average income, the mean income of some neighborhood in, let's say, somewhere in Seattle. But it turns out you pick the neighborhood where Bill Gates lives."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1973,
+      "type": "audio",
+      "text": "All right, well, The thing is Bill Gates income is huge, right? He has a ton of investments. He probably makes billions of dollars every single year."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1979,
+      "type": "audio",
+      "text": "And the average is probably going to raise your, you know your mean."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 1996,
+      "type": "audio",
+      "text": "But the problem is when you do bootstrap, there's a pretty decent chance that especially if you have a large sample, Bill Gates is not going to be in all of your bootstrap resamples, right? And so the ones that he's in are going to be probably pretty reflective of what you're looking for."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2008,
+      "type": "audio",
+      "text": "And the ones that he's not in just by chance are going to be way, way, way, way, way, way, way lower, right? Because, again, he makes billions of dollars. Everyone else in that neighborhood probably makes a lot of money, but probably nowhere near as much as Bill Gates."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2012,
+      "type": "audio",
+      "text": "So the true average income is really high."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2031,
+      "type": "audio",
+      "text": "But any random sample might not contain Bill Gates. And so the bootstrapping procedure is not going to be an accurate conference rule, right? Because we have this one point that our, our data, our estimate heavily depends on, right? It's a property of our data. Our data are skewed."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2034,
+      "type": "audio",
+      "text": "This means that bootstrap is not a good choice."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2035,
+      "type": "audio",
+      "text": "On the other hand."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2049,
+      "type": "audio",
+      "text": "We could have properties of our estimator that make bootstrapped a bad choice, right? If our estimator is extreme, then bootstrap doesn't work well, right? Suppose instead of the average height, I wanted to get like the Max height of all the undergrads in Berkeley."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2058,
+      "type": "audio",
+      "text": "Well, if I collect a sample of size 100 and I, you know, want to find that Max of the population, what's my best guess?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2061,
+      "type": "audio",
+      "text": "Probably just take the maximum my samples, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2066,
+      "type": "audio",
+      "text": "So if I take the maximized sample, then you know that gives me an estimate."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2081,
+      "type": "audio",
+      "text": "And if I wanted to quantify the uncertainty, well, here's the thing. It doesn't really make sense to keep drawing resamples because a most of those samples are going to have the Bill Gates problem where, you know, they might not contain that tallest person."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2090,
+      "type": "audio",
+      "text": "But even like at a bigger picture level than that, it doesn't really make sense to quantify uncertainty that way, right? If I think about the uncertainty in my estimate, it's all one way."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2092,
+      "type": "audio",
+      "text": "What do I mean by that? Well."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2106,
+      "type": "audio",
+      "text": "The average height of the population is always going to be at least as much or more than the tallest person in my sample, right? There's no way it's going to be less right? Because the tallest person in my sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2115,
+      "type": "audio",
+      "text": "Oh, there's no way that they're not in all the undergrounds, right? So the tallest undergrad in all of Berkeley is at least as tall as the person in my sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2128,
+      "type": "audio",
+      "text": "So quantifying uncertainty this way doesn't really make sense for the Max. And you know, the same kind of logic holds for things like min even like, you know, first percentile, 99th percentile and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2157,
+      "type": "audio",
+      "text": "Now, 50th percentile Bootstrap works great. So somewhere in there is maybe a trade off, right? And so where is that line? Kind of depends. Depends. This is where these factors all start to come into play with each other, right? How much data do you have? How skewed is your distribution and so on in understanding, you know, is a 90th percentile good for bootstrap? Probably not. But maybe if you have a ton of data points and they're not that skewed, maybe it would work."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2159,
+      "type": "audio",
+      "text": "So notice that the second two."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2178,
+      "type": "audio",
+      "text": "There's this bigger picture pattern, right that bootstrap fails if the thing you're estimating depends on a small number of data points. Whether that's true of your distribution or of your estimator, right, you have a skewed distribution with some outliers, or the thing you're estimating depends on a small number of points, bootstrap is not going to work well."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2182,
+      "type": "audio",
+      "text": "OK. So that's quantifying uncertainty?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2193,
+      "type": "audio",
+      "text": "I want to talk now about something that Josh introduced way, way back in Lecture 10, literally half the class ago, about this idea of prediction versus inference."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2197,
+      "type": "audio",
+      "text": "Right. And so this is a slide from Lecture 10 where?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2203,
+      "type": "audio",
+      "text": "We talked about inference, prediction and causality."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2233,
+      "type": "audio",
+      "text": "Right. And whenever you go out to do something, you're usually interested in some using data and doing data science, you're usually interested in some combination or subset of these three things, right? Maybe you care about making predictions. Maybe you care about doing inferences. So predictions being, I want to know, you know, can I do a good job of finding AY hat that's as close as possible to the real Y, right? That's prediction just like give me AY hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2241,
+      "type": "audio",
+      "text": "An estimate for something I want to predict that's as close as possible. Don't really care about anything else, just want to make it as close as possible."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2244,
+      "type": "audio",
+      "text": "Sometimes we care also about inference."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2271,
+      "type": "audio",
+      "text": "Inference is the process of reasoning about phenomena that happen, right? Maybe answering questions like, well, you know, maybe I want to predict that someone's height based on their parents height, but I want to understand the relationship between parent sites and children's sites. And maybe I also want to understand how that relationship is mediated by other factors, nutrition and so on. I don't just want to predict a child's height, I want to understand what those relationships are."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2287,
+      "type": "audio",
+      "text": "Sometimes that understanding might just be, you know, correlational. I just want to look at, you know, what are the correlations. But sometimes I might want to go one step further into the causality column, thinking about when does one thing cause another."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2294,
+      "type": "audio",
+      "text": "Right. Does eating a more nutritious diet cause children to grow taller versus not?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2302,
+      "type": "audio",
+      "text": "Right. Does do eating different kinds of grains, do eating meat, vegetables, different foods cause children to be taller or not?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2319,
+      "type": "audio",
+      "text": "So these are three different things we want. And usually in practice, you almost always might have some combination of the two, right? We often want to strike a balance. Usually we don't care about one necessarily. We care about more than one. How much we care about each one depends on the thing we're looking at."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2342,
+      "type": "audio",
+      "text": "So in this class so far, we've focused primarily on just prediction, right? All the stuff about OLS, we've focused on minimized mean squared error or mean absolute error, right? We really care about making the error as small as possible, right? Getting our Y hats to be as close as possible to the YS. And you know, we saw all the less, we saw regularization as a tool for for all that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2348,
+      "type": "audio",
+      "text": "And we spent a lot less time on interpreting."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2376,
+      "type": "audio",
+      "text": "Those relationships, right? What is the relationship between X&Y? Yeah, sure, it's nice to make predictions, but maybe I also care about understanding the relationship, right? Maybe when I make a prediction about whether, you know, how much money some new product is going to make, maybe I also care about understanding why is it going to make those that much money? Or are there things that I can do to help it make more money or be more successful in the market?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2381,
+      "type": "audio",
+      "text": "So this difference is kind of the prediction versus inference distinction."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2398,
+      "type": "audio",
+      "text": "So as an example, prediction, as a couple examples, prediction problems are things like can we predict how well the stock market is going to do, right? Is the stock market going to go up tomorrow or down tomorrow? You know, is someone going to make another speech that thanks to stock market or not?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2400,
+      "type": "audio",
+      "text": "Is."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2412,
+      "type": "audio",
+      "text": "This credit card charge fraudulent, right? If I make a charge, you know my credit card company wants to know whenever there's a charge on my card, is this fraud or not? It's fraud. They should flag it, deny it, maybe send me an alert. If not, let it through."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2419,
+      "type": "audio",
+      "text": "Or facial recognition, right? If there's a picture of someone, can my phone when I, you know, unlock it, can it accurately detect my face?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2450,
+      "type": "audio",
+      "text": "And funny examples. So there are these websites where that build these models of like, you know, collections of people's faces and these massive surveillance databases and so on. And Josh and I plugged our faces into, into these, you know, you can go and look and see. And one of the results that came back was for Josh was this doppelganger, which I thought was, which we thought was kind of funny because like it's not Josh, but like you can kind of see where they were going with it."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2454,
+      "type": "audio",
+      "text": "The ones for me were way less interesting so I stuck with that one."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2462,
+      "type": "audio",
+      "text": "But inference on the other hand answers the question how and why? How or why?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2466,
+      "type": "audio",
+      "text": "Do X&Y relate to each other?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2492,
+      "type": "audio",
+      "text": "So instead of predicting how much is the stock and market going to go up, maybe I want to understand are the relationships between the overall stock market and certain sectors like tech or pharmaceuticals right? Can I use the behavior of those sectors to better understand the relationship of the overall market? Maybe I don't necessarily care whether one causes the other, but I want to have an understanding of the relationship between the two."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2516,
+      "type": "audio",
+      "text": "Sometimes when we do inference, we do care about causality though, right? Maybe we want to know what is the effect of getting a college degree on life outcomes? Notice that this is a very different question from Can we predict somebody's life outcome, right? Can we predict how much money somebody's going to make over their lives versus understanding? Does getting a college degree 'cause somebody to make more money in their life?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2524,
+      "type": "audio",
+      "text": "Another example is how does raising minimum wage affect unemployment Right, which you kind of played around with on Homework 4."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2554,
+      "type": "audio",
+      "text": "So prediction and inference are not necessarily like, you know, non overlapping circles. There is overlap between the two. There's a little Venn diagram that skips slides you're welcome to take a look at. But you know, a credit card agency might build a model to predict somebody's credit scores, right? Credit score is, you know, the companies maintain information about you. So you apply for a loan or something like that, they know how trustworthy you are, how likely you are to repay it. So higher credit score means you're more likely to they."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2556,
+      "type": "audio",
+      "text": "And give you lower interest rates, blah blah blah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2561,
+      "type": "audio",
+      "text": "But if so, I go and I apply for a loan and they give me some information."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2568,
+      "type": "audio",
+      "text": "And I might not want to know, well, why? Why, you know, isn't my credit score as high as it might be?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2577,
+      "type": "audio",
+      "text": "So in that case, they want to give me not only a credit score, but also an explanation of why the score is the way it is."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2586,
+      "type": "audio",
+      "text": "Right. So they might say, well and the explanation is, you know, lack of recent installment loan information or you have too many accounts."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2590,
+      "type": "audio",
+      "text": "Right, so these are explanations of why."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2591,
+      "type": "audio",
+      "text": "The prediction was made the way it was."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2617,
+      "type": "audio",
+      "text": "So let's think about this prediction versus inference distinction in an example of large language models like ChatGPT or Claude identifying the next most likely next word in a sequence the way large language models do. Is that in inference problem or a prediction problem? Or is it a little bit of both? And if it's a little bit of both, which one is it more of?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2621,
+      "type": "audio",
+      "text": "All right, take a minute and let's go quickly on this one. Talk with the person next to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2682,
+      "type": "audio",
+      "text": "All right, so large language models are next word predictors, right? Their goal is to say what is the most likely next word, right? I type in a question and they want to know what is the next word that is most likely to satisfy me or you know, make me more likely to say like, yes, I like this answer when they give me a response. So yes, there is research on why."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2687,
+      "type": "audio",
+      "text": "Large language models produce the results they do, how the training processes, how they data."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2692,
+      "type": "audio",
+      "text": "That's lead to certain kinds of responses being favored over others."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2703,
+      "type": "audio",
+      "text": "But the primary thing that Open AI cares about is making their large language models better at predicting the word. That is going to satisfy me. That comes next."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2711,
+      "type": "audio",
+      "text": "So why that word is selected? It's kind of secondary for all these large language model organizations."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2719,
+      "type": "audio",
+      "text": "But again, that doesn't mean it's completely unimportant, it just means it's not necessarily the priority for building a large language model."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2731,
+      "type": "audio",
+      "text": "And again, you know these two overlap, right? Maybe if you understand why, you could do a better job of making predictions. These two things often overlap and complement each other."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2755,
+      "type": "audio",
+      "text": "Inference, there's kind of two, There's a particular sub flavor of inference called causal inference, where we want to know whether one thing causes another. But sometimes we may just care about correlations, right? So correlational inference is understanding our homes with granite countertops worth more money, right? If I have a home that has a granite countertop, is that, you know, more likely to be more expensive, less expensive?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2769,
+      "type": "audio",
+      "text": "The people who have college degrees have higher lifetime earnings, right? Again, just looking at correlation. Are people who smoke more likely to get cancer? For the longest time it was thought that well, question."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2771,
+      "type": "audio",
+      "text": "They say I'm muted. Oh no."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2775,
+      "type": "audio",
+      "text": "That's not good."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2779,
+      "type": "audio",
+      "text": "I see audio coming through on here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2786,
+      "type": "audio",
+      "text": "Yeah, I'm not sure why I do see audio. If you if a bunch of people see that, please let me know and I'll take a look at it."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2813,
+      "type": "audio",
+      "text": "OK, so with smoking and cancer, for the longest time it was thought that, well, we don't know if smoking causes cancer. Maybe there's some gene that makes people more likely to smoke to like make them want to smoke, and that same gene also causes cancer. Maybe smoking actually has nothing to do with it."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2834,
+      "type": "audio",
+      "text": "Right. And you can't really do what we learned. We know is like the gold standard of causal inference and randomized experiment. So it took a long time before methods were developed to answer the question of does smoking cause cancer? Which of course nowadays we know the answer is yes. But for the longest time, it's like, well, there's a correlation, but we don't know whether that correlation is causation or not."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2850,
+      "type": "audio",
+      "text": "So causal inference is harder, right? Like I said, it requires A randomized experiment or something sophisticated, which we won't get to in this class. But that requires answering questions like."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2851,
+      "type": "audio",
+      "text": "Does this not work?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2883,
+      "type": "audio",
+      "text": "How much do granite countertops raise the value of a house, right? If I have a granite countertop, is that going to cause a house to be worth more? If somebody has a college degree, does that cause them to make more money? And if somebody smokes, does that cause them to get cancer? Right? These are causal questions. Correlation, causation, not necessarily the same thing, right? Correlation does not necessarily imply causation, right? You've heard this statement over and over, and it's true, but the keyword there is necessarily."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2894,
+      "type": "audio",
+      "text": "Sometimes it does, and you know that in like a randomized experiment which you learned in data 8. If you have correlation, we can assume causation, but in general not necessarily."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2906,
+      "type": "audio",
+      "text": "Also notice that causal questions are about the effects of interventions, right? If I do something, does that cause a change in the outcome? Right. If I make this intervention, if this thing happens, does that result in a different outcome?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2927,
+      "type": "audio",
+      "text": "So, you know, like we said in 88, you learned about randomization, right? So maybe we take this doppelganger and we could randomly assign him to either get it, go to college, get a college degree, not go to college, not get a college degree and see which, you know which, what his earnings would be."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2936,
+      "type": "audio",
+      "text": "But of course we can't do this experiment right? Like we can't AIDS, not for feasible ethical to like randomly assign people to like get degrees or not."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2952,
+      "type": "audio",
+      "text": "And B, it takes forever, right? Like we can't just wait until, you know, this guy retires and then say, OK, what was your lifetime income? That takes a really, really long time to study. And other factors are going to change so much in the world, the economy and everything that our answer might not be relevant by then."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2958,
+      "type": "audio",
+      "text": "So in other words, all we can do is correlational analysis."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2978,
+      "type": "audio",
+      "text": "And if you want to learn how and why you can use correlation to infer causality, highly recommend taking STAT 156. Data 102 also does a shorter version of causal inference. STAT 156 really goes into detail. Excellent class, highly recommended."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 2998,
+      "type": "audio",
+      "text": "OK, So that's correlation causation. We're going to come back to it in a couple of the examples we do, but I want to talk about inference in regression. This is maybe one of the most important topics for today is understanding how, why and when our regression models can be used."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3006,
+      "type": "audio",
+      "text": "For inference, in other words, how can we take our models that we get out of OLS and draw meaningful and interesting conclusions out of it?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3021,
+      "type": "audio",
+      "text": "So suppose I get a data set from a bunch of people, right? I go to maybe like a retirement home and you know, I go and interview a bunch of people on how much money did you make over the course of your life? And did you earn a college degree, Yes or no?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3028,
+      "type": "audio",
+      "text": "Right, so this is, you know, I collect a bunch of data set, it has these two rows, these two columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3038,
+      "type": "audio",
+      "text": "And I can ask a question about correlation, right? I can say the correlation between earnings, lifetime earnings and college degree. I can write this as a regression."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3051,
+      "type": "audio",
+      "text": "And you know, we we write like Y hat or Y equals something X something. But we can also write it like this, right? Earnings hat equals Theta, not hat plus Theta one hat times has college degree."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3057,
+      "type": "audio",
+      "text": "Right. So notice that even though this is zero or one, this is just a binary yes or no."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3074,
+      "type": "audio",
+      "text": "We can still use it in linear regression, right? We are smart. We can do, you know, whatever columns we want. Linear regression is dumb. It's just going to say, oh, this is a number, Great, we can do it. We can calculate the coefficients even if the values are just zero and one, kind of like we do with one hot encoding."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3078,
+      "type": "audio",
+      "text": "So if we do this regression."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3080,
+      "type": "audio",
+      "text": "How do we interpret?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3087,
+      "type": "audio",
+      "text": "That Theta hat zero and Theta hat one that come out. In other words, these regression coefficients that come out of this model."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3088,
+      "type": "audio",
+      "text": "What do they mean?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3097,
+      "type": "audio",
+      "text": "Well, Theta hat 0 is the predicted lifetime earnings for someone without a college degree."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3105,
+      "type": "audio",
+      "text": "Right. Because if you think about it, well, Theta hat zero tells us what is the, it's like the intercept, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3116,
+      "type": "audio",
+      "text": "What is the intercept? The intercept is what happens when X = 0, right? If X = 0, then somebody who does not have a college degree, well then their lifetime earnings is just Theta zero hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3118,
+      "type": "audio",
+      "text": "Right, so our intercept."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3124,
+      "type": "audio",
+      "text": "Is sort of the predicted Y value when my X variables are all 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3128,
+      "type": "audio",
+      "text": "What about Theta 1/2?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3134,
+      "type": "audio",
+      "text": "Poet says how much higher are predicted earnings for someone with a degree."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3137,
+      "type": "audio",
+      "text": "Relative to someone without a degree."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3145,
+      "type": "audio",
+      "text": "In other words, if I look at somebody who does have a college degree."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3158,
+      "type": "audio",
+      "text": "Right there, increase predicted increase in earnings over someone who doesn't is reflected by Theta 1/2, right? That slope tells me when I plug in A1."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3160,
+      "type": "audio",
+      "text": "Well, think about it right. If I plug in a zero to this equation."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3164,
+      "type": "audio",
+      "text": "Then."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3166,
+      "type": "audio",
+      "text": "If I plug in a 0 here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3175,
+      "type": "audio",
+      "text": "Then this is really just earnings hat equals Theta zero hat, right? So sorry if I plug in a 0 here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3185,
+      "type": "audio",
+      "text": "Right. If somebody does not have a college degree, their predicted earnings would just stay to 0 high. If somebody does have a college degree, their earnings are Theta 0 plus Theta 1/2."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3201,
+      "type": "audio",
+      "text": "So suppose I, you know, run this regression. I collect this data set and I go and do my regression and I find that Theta one hat is large and positive."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3208,
+      "type": "audio",
+      "text": "Right. Again, I get a large positive they don't want to have. Is this strong evidence that getting a college degree increases lifetime earnings?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3216,
+      "type": "audio",
+      "text": "Take a minute, discuss with the person next to you. We'll go a little quick. We have a bunch of these, so we'll go a little faster on them, but do take a moment and discuss this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3268,
+      "type": "audio",
+      "text": "So what do people think?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3281,
+      "type": "audio",
+      "text": "So we have kind of a split, pretty close to even split, which is fun. I did not plan for that to happen, but always exciting when that does. So looks like we have a few more people saying no than yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3292,
+      "type": "audio",
+      "text": "So this statement is this strong evidence that getting a college degree increases lifetime earnings? Well, it turns out that the answer here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3294,
+      "type": "audio",
+      "text": "Gosh, why does this not work?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3300,
+      "type": "audio",
+      "text": "All right, well."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3306,
+      "type": "audio",
+      "text": "Is this strong evidence right? Well, it turns out the answer is no."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3327,
+      "type": "audio",
+      "text": "Why? Well, because again, we're just doing correlational analysis here, right? The way we collected our data, we're just looking at correlation, right? We it might be that there's other factors that 'cause people to get college degrees more often and also cause them to have higher lifetime earnings."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3344,
+      "type": "audio",
+      "text": "For example, right, we can think about our two variables that we're interested in having a college degree and lifetime earnings. And the thing we're interested in is this error, right? Is this is there a causal error between having a college degree and lifetime earnings?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3374,
+      "type": "audio",
+      "text": "Well, it could be the case that there are other things that get in the way. For example, family wealth is called a confounder because it has an effect on getting a college degree, right? People who have more family wealth are a lot more likely to get college degrees right. That's a fact in our society. People who have family wealth are also much more likely to make more money over the course of their lives, regardless of whether they have a degree or not."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3384,
+      "type": "audio",
+      "text": "Right. They have more access to connections, more access to resources to earn more money, more access to like wealth to invest and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3394,
+      "type": "audio",
+      "text": "So this is called a confounder or confounding variable because it prevents us from like measuring the effect that we want and we're kind of confounded by it, right? We're sort of like, oh, this is in the way of understanding. We want to understand."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3411,
+      "type": "audio",
+      "text": "So just because Theta one hat is large, that just tells us that yeah, people who have college degrees are, you know, there is a correlation with earning more money, but that earning that correlation might not be caused by."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3413,
+      "type": "audio",
+      "text": "The college degree it might just be caused by this other thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3430,
+      "type": "audio",
+      "text": "All right. So seems like this is a confounder. Let's just include this in our model, right? We say, OK, earnings now is a more sophisticated model. We say Theta zero hat or intercept plus Theta one hat times has college degree and now we're going to add a second term."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3432,
+      "type": "audio",
+      "text": "Right. Or a third term."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3440,
+      "type": "audio",
+      "text": "That is Theta 2 hat times family wealth."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3453,
+      "type": "audio",
+      "text": "Great. How do we interpret each of these? Well, again, Theta zero hat is what is the predicted lifetime earnings for somebody with no college degree and zero family wealth, right. So again our intercept we always interpret as."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3461,
+      "type": "audio",
+      "text": "What is the predicted Y value when all of the XS are 0? Right when somebody does not have a college degree and has absolutely no family wealth."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3469,
+      "type": "audio",
+      "text": "Sometimes all the X's being 0 might not make sense, but again, that is how we would interpret the intercept."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3476,
+      "type": "audio",
+      "text": "What about Theta one hat? Well, how much higher are predicted earnings for somebody who has a college degree?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3484,
+      "type": "audio",
+      "text": "Relative to someone who doesn't holding family wealth constant. In other words, for a given level of family wealth."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3490,
+      "type": "audio",
+      "text": "What is the difference in earnings between somebody who does and doesn't have a college degree?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3492,
+      "type": "audio",
+      "text": "What's Theta 2 hat?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3502,
+      "type": "audio",
+      "text": "So here are a few options. They're cut off on the side, but you know you can see them properly on Slido."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3507,
+      "type": "audio",
+      "text": "What is the interpretation of Theta 2 hat? Take a minute and discuss this one."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3563,
+      "type": "audio",
+      "text": "Alright, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3567,
+      "type": "audio",
+      "text": "How do we interpret Theta 2 or Theta 2 hat?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3582,
+      "type": "audio",
+      "text": "Well, let's actually go through and do a couple examples, right? Let's actually write out the earnings for somebody who has a degree and has a family wealth of 1000 bucks and the earnings for somebody with a degree whose family wealth is 1001 bucks."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3597,
+      "type": "audio",
+      "text": "And you know, like simple numbers just to like understand what's going on. So how do we make the prediction for this first line? Well, this person has a degree, so we can follow the equation above, right? Our prediction is Theta zero hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3605,
+      "type": "audio",
+      "text": "Plus Theta one hat times one for hazard degree."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3607,
+      "type": "audio",
+      "text": "Plus Theta 2 hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3613,
+      "type": "audio",
+      "text": "Times the family wealth and dollars, which is 1000."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3620,
+      "type": "audio",
+      "text": "All right, so this is just equal to Theta zero at plus Theta one hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3624,
+      "type": "audio",
+      "text": "+1000."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3626,
+      "type": "audio",
+      "text": "Theta 2 hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3640,
+      "type": "audio",
+      "text": "All right, what about somebody with a degree with the family wealth of 1001 dollars? Well, again, we can follow a pretty similar process, right? Theta zero hat plus Theta one, right? Times 1 + 1001."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3642,
+      "type": "audio",
+      "text": "Times Theta 2 hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3648,
+      "type": "audio",
+      "text": "So now we can ask the question if I take these two."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3653,
+      "type": "audio",
+      "text": "And I subtract."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3659,
+      "type": "audio",
+      "text": "Right, I ask what is the difference in predicted earnings between these two people?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3670,
+      "type": "audio",
+      "text": "Well, if I take the second one minus the first, the Theta zeros and Theta ones hats cancel and I get 1001 Theta 2 -, 1000 Theta 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3673,
+      "type": "audio",
+      "text": "So that gives me just Theta 2 hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3676,
+      "type": "audio",
+      "text": "Right, so the difference."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3680,
+      "type": "audio",
+      "text": "Between these two people is Theta 2 hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3682,
+      "type": "audio",
+      "text": "In other words, this tells me."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3689,
+      "type": "audio",
+      "text": "For somebody with the same, for two people with the same level of education."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3701,
+      "type": "audio",
+      "text": "Who are $1.00 apart in family wealth? What is my change in the prediction? In other words, for every increase in."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3703,
+      "type": "audio",
+      "text": "By $1.00 in family wealth."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3705,
+      "type": "audio",
+      "text": "Holding everything else constant."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3711,
+      "type": "audio",
+      "text": "For every $1.00 increase, how much do I predict their family earnings is going to go up?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3718,
+      "type": "audio",
+      "text": "And this is in general how we interpret our regression coefficients holding everything else constant."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3724,
+      "type": "audio",
+      "text": "If the corresponding X variable increases by one, how much does Y increase?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3730,
+      "type": "audio",
+      "text": "Right. For two people with the same education who are a dollar apart, what is the difference in predicted earnings?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3736,
+      "type": "audio",
+      "text": "You know we can do the same thing for these two, right? This is Theta zero hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3741,
+      "type": "audio",
+      "text": "Plus Theta 1 * 0 which we drop plus 1000 Theta 2 hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3745,
+      "type": "audio",
+      "text": "And this is Theta zero hat plus."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3747,
+      "type": "audio",
+      "text": "1001."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3751,
+      "type": "audio",
+      "text": "Theta 2 hat and again we can do the same subtraction."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3755,
+      "type": "audio",
+      "text": "And get."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3757,
+      "type": "audio",
+      "text": "Take it too hard."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3763,
+      "type": "audio",
+      "text": "OK. Questions on this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3781,
+      "type": "audio",
+      "text": "This is very important because a big part of the reason linear regression is useful is because our coefficients are really easy to interpret right? If I go and do this and I get a coefficient of Theta 2 hat of like $5000."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3793,
+      "type": "audio",
+      "text": "Then that tells me that my model predicts for every increase by $1.00 in family wealth, this person is predicted to make $5000 more over the course of their life."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3806,
+      "type": "audio",
+      "text": "Right, So that means that there's a lot of money. There's a big difference between just $1.00 of wealth. Causes, not causes, correlates with a $5000 increase in predicted wealth."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3808,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3823,
+      "type": "audio",
+      "text": "So now suppose that we do earnings hat equals, you know, this model that we just talked about. And now let's suppose that Theta one hat is large and positive."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3828,
+      "type": "audio",
+      "text": "Right this time we find out that Theta one hat is large and positive in this model."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3835,
+      "type": "audio",
+      "text": "Now, do we have strong evidence that getting a degree increases lifetime earnings, causes an increase in lifetime earnings?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3837,
+      "type": "audio",
+      "text": "Take a minute and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3904,
+      "type": "audio",
+      "text": "All right, So what do we have? We have a majority of people saying no, decent minority saying yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3906,
+      "type": "audio",
+      "text": "Well, this one, it turns out."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3908,
+      "type": "audio",
+      "text": "Is the answer is still no?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3929,
+      "type": "audio",
+      "text": "Right. Even though we have, you know, we've sort of adjusted for one confounder in our model, right? We've included this here. There could be other ones, health, demographics, location, intrinsic motivation, you know, socioeconomic status, other factors."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3939,
+      "type": "audio",
+      "text": "That might have a causal effect. Because we don't observe all of them, we can never be certain of causality."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3943,
+      "type": "audio",
+      "text": "So in order to do causal inference."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3961,
+      "type": "audio",
+      "text": "You always need either a randomized experiment or you need to be able to make the assumption that all the confounders are observed and adjusted for, which is called ignorability and causal inference lingo, and in practice this is a very difficult assumption to make clear."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3986,
+      "type": "audio",
+      "text": "So if we have this assumption that it might imply A causal relationship, but the assumption cannot be verified, right? There's no way for me to prove or disprove like oh, I have or don't have all the confounding variables. So it is important when you make statements to be transparent about how you how to interpret your model, right? When you go and communicate and interpretation of your regression coefficients, you had better not communicate a causal interpretation."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 3991,
+      "type": "audio",
+      "text": "If one doesn't exist right? So be careful to add a warning about you know it doesn't mean causality or."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4004,
+      "type": "audio",
+      "text": "You know this is a correlational interpretation and so on and so on when you tell people how to interpret the coefficients. OK, let's take a quick stretch break before we do another example."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4010,
+      "type": "audio",
+      "text": "I'll walk around to folks have questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4153,
+      "type": "audio",
+      "text": "Alright, let's do a more interesting example."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4160,
+      "type": "audio",
+      "text": "So this is A and based on an actual study that came out."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4180,
+      "type": "audio",
+      "text": "A month, two months ago, month and a half recently in the last couple months. So Anthropic makers of Claude, ran a randomized experiment to see whether beginner programmers who used AI, and I think it was specifically Claude, when learning a new concept."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4193,
+      "type": "audio",
+      "text": "Whether that causes them to do better or worse on a quiz that tested that concept. So they did a randomized experiment. They randomly took people into either the like use a I group, or the, you know, not allowed to use a I group."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4204,
+      "type": "audio",
+      "text": "And then they basically said, OK, all of you go learn this concept. And then they did, they did some exercises and then at the end they had everyone take a quiz."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4210,
+      "type": "audio",
+      "text": "And they wanted to know is there a difference in quiz score between these two groups?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4219,
+      "type": "audio",
+      "text": "And what they found was that the group who used AI had a 17% lower score on the quiz, which corresponded to like I think 2 letter grades of difference."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4237,
+      "type": "audio",
+      "text": "So suppose we take that data set that, you know, again is an actual study that Anthropic, the makers of Claude did, and we use that to try to do the same kind of analysis that we just did on that income college degree example."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4256,
+      "type": "audio",
+      "text": "So we can construct a model, right? We can say the quiz score, predicted quiz score right in our data set is Theta zero hat plus Theta one hat times whether or not the person used AI, right? So each row we have one or zero is this person you know in the AI group randomized the AI group or the non AI group and then we have their score on the quiz."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4262,
+      "type": "audio",
+      "text": "So in this example, how do we interpret?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4264,
+      "type": "audio",
+      "text": "Theta zero and Theta one."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4270,
+      "type": "audio",
+      "text": "Well, I want you to take a minute and think through how you would interpret these two coefficients for this example."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4274,
+      "type": "audio",
+      "text": "Oh no, wrong."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4281,
+      "type": "audio",
+      "text": "OK, well you can take a picture of this photo. This is an old example that's hypothetical instead of the real 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4285,
+      "type": "audio",
+      "text": "So you got the Slido. OK, this is the."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4289,
+      "type": "audio",
+      "text": "Interpret Theta zero and Theta one hat in this example."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4293,
+      "type": "audio",
+      "text": "All right, take a minute and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4295,
+      "type": "audio",
+      "text": "And we'll go quickly on this one too."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4311,
+      "type": "audio",
+      "text": "All right, discussed. I want to hear people talking."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4341,
+      "type": "audio",
+      "text": "All right, well, let's let's wait a couple more minutes. We have only 54 people responding."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4345,
+      "type": "audio",
+      "text": "So we'll wait another minute."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4347,
+      "type": "audio",
+      "text": "Type in your answer."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4361,
+      "type": "audio",
+      "text": "All right, so how might we interpret these two coefficients?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-331-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4383,
+      "type": "audio",
+      "text": "Well, again, we have the same interpretation that we always do for our intercept, right? It's if all of the other X variables are zero, What is our predicted Y value? In this problem, that translates to if somebody is not using AI, use AI as zero. That is that group of learners who were assigned to the no AI group."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-332-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4391,
+      "type": "audio",
+      "text": "What was their average quiz score? Right? How well on average do students score when they don't use AI?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-333-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4393,
+      "type": "audio",
+      "text": "That's how we interpret Theta 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-334-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4414,
+      "type": "audio",
+      "text": "Pat, what about Theta one? Well, we can interpret that as the predicted change in quiz score when students do use AI, right? In other words, right, if Theta one hat is basically how much the quick score increases, predicted quiz score increases when used AI is 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-335-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4426,
+      "type": "audio",
+      "text": "Right, for USAI equals one, this predicted score is Theta 0 plus Theta is 1. Freezing equals 0, it's just Theta 0, right? So Theta one is the increase in score from using AI."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-336-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4429,
+      "type": "audio",
+      "text": "Or if it's negative, the decrease in score."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-337-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4451,
+      "type": "audio",
+      "text": "OK, so they found in their study that they don't have equals -17% in other words, there is a 17 percentage point drop. It's a different key. Important difference is not like a 17% of the score. This is just, you know, instead of like an 85% of the quiz, they got a 68% of the quiz."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-338-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4459,
+      "type": "audio",
+      "text": "So is this strong evidence that using AI causes students to score worse on the quiz? Yes or no?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-339-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4461,
+      "type": "audio",
+      "text": "All right, I love this. If you haven't even split already."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-340-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4464,
+      "type": "audio",
+      "text": "All right, take a minute and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-341-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4510,
+      "type": "audio",
+      "text": "All right, so the last one I kept giving you a bunch of cases where the example was the answer was no."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-342-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4518,
+      "type": "audio",
+      "text": "But the reason why was why was the answer no over and over and over in that last earning example, it's because we were dealing with observational data."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-343-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4523,
+      "type": "audio",
+      "text": "In this example we are dealing with a randomized experiment."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-344-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4533,
+      "type": "audio",
+      "text": "Right. So again, here we have a randomized experiment where people were randomized into either the AI or no AI group."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-345-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4553,
+      "type": "audio",
+      "text": "Right. So people were either randomly chosen to go here or randomly chosen to go there. In other words, we can't have any confounding factor like prior experience in CS or amount of familiarity with AI with large language models because people were randomized into these two groups."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-346-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4558,
+      "type": "audio",
+      "text": "In other words, because the data here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-347-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4560,
+      "type": "audio",
+      "text": "Coming from a randomized experiment."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-348-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4565,
+      "type": "audio",
+      "text": "We can use this methodology to infer a causal relationship."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-349-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4575,
+      "type": "audio",
+      "text": "Not does not really have to do with the choice of the methods. It has to do with the data. Because the data come from a randomized experiment, we can in fact conclude."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-350-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4591,
+      "type": "audio",
+      "text": "That in their experiment, at least among the kinds of people they chose for this experiment, using AI caused people to do worse on the quiz. In other words, it caused people to not learn the material as well and do worse on the quiz."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-351-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4606,
+      "type": "audio",
+      "text": "Now, is that true in all populations? Maybe not. But they did a pretty good job of selecting sort of junior engineers, you know, learner programmers who were trying to learn a concept for the first time."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-352-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4616,
+      "type": "audio",
+      "text": "All right, so let's go back to the regression and think about the question of uncertainty, right? How do we quantify?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-353-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4622,
+      "type": "audio",
+      "text": "Uncertainty in a regression coefficient."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-354-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4641,
+      "type": "audio",
+      "text": "Well, why is this useful? Because we saw that regression coefficients have meaning, right? In this example, our Theta one hat is our way of saying how much do we think lifetime earnings is going to increase? Predicted lifetime earnings is going to increase."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-355-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4645,
+      "type": "audio",
+      "text": "When someone does or doesn't have a college degree."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-356-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4660,
+      "type": "audio",
+      "text": "Yeah, it's correlational. It's not a causal measure, but it's still interesting and useful, right? It's still interesting to know in this population that, hey, you know, there's a correlate, there's a correlation between having a college degree and lifetime earnings."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-357-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4664,
+      "type": "audio",
+      "text": "What is that correlation? How strong is that? How big is the difference in my data?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-358-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4668,
+      "type": "audio",
+      "text": "So we can kind of think of the data like as looking at something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-359-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4679,
+      "type": "audio",
+      "text": "And I know I told you back in the second third week of class to not do visualizations like this right? This is not a great way of visualizing this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-360-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4699,
+      "type": "audio",
+      "text": "But it is a good way of visualizing it for the purpose of understanding how linear regression works, right? I would never use a visualization like this to communicate to someone the difference in these two groups, right? Because it's like you have to like look at all the scatter points and kind of see how they're spread out. I'd rather use an overlaid histogram or box plots or whatever."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-361-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4706,
+      "type": "audio",
+      "text": "But it is really useful for us in understanding how linear regression addresses this question."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-362-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4728,
+      "type": "audio",
+      "text": "Right, because we have our data set that looks like this and linear regression, again, linear regression is dumb, right? I give it data points. Yeah, they all happen to be 01. But linear regression just sees, hey, these are numerical data points. I'm going to go and find, you know, the solution that minimizes the MSE and gives me back data hats."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-363-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4729,
+      "type": "audio",
+      "text": "So this is the solution. I get this line in black."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-364-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4730,
+      "type": "audio",
+      "text": "And the slope."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-365-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4732,
+      "type": "audio",
+      "text": "Of that line."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-366-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4744,
+      "type": "audio",
+      "text": "Tells me the difference between earnings. That is sort of associated with having a college degree, right? That is correlated with having a college degree."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-367-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4753,
+      "type": "audio",
+      "text": "How do we measure that uncertainty, right? Maybe I say the, you know, difference is $500,000."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-368-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4763,
+      "type": "audio",
+      "text": "But is it like $500,000 plus or minus like $100,000 or is it like $500,000 ± 1,000,000?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-369-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4769,
+      "type": "audio",
+      "text": "Right. Like is the difference big? Is it small? What is the uncertainty, big or small?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-370-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4772,
+      "type": "audio",
+      "text": "Well, we can use the bootstrap."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-371-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4778,
+      "type": "audio",
+      "text": "So this is supposed to be a GIF. There we go, right? So what we can do is we can take a bootstrap resample."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-372-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4784,
+      "type": "audio",
+      "text": "Right, so we take a blue which is a bootstrap resample of the original data fit a line to that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-373-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4800,
+      "type": "audio",
+      "text": "Then we take the yellow, which is a bootstrap resample of my original data points, and we fit a line to that right. And we take purple, which is again another bootstrap resampled from my original data, fit a line to that and repeat and repeat and repeat."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-374-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4809,
+      "type": "audio",
+      "text": "Right. So each one of these again is going through that process of a synthetic parallel universe, right, where we're sampling out of our sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-375-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4811,
+      "type": "audio",
+      "text": "When we're fitting a line."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-376-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4822,
+      "type": "audio",
+      "text": "Two, that resampled data set, and we're taking all those different lines, each of which has a slightly different slope."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-377-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4828,
+      "type": "audio",
+      "text": "And then we can use all of those lines to construct a confidence interval for the slope."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-378-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4841,
+      "type": "audio",
+      "text": "So this is exactly what and we do have time for the demo. Excellent. So this is how we can construct confidence intervals for regression coefficients."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-379-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4845,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-380-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4847,
+      "type": "audio",
+      "text": "This is."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-381-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4872,
+      "type": "audio",
+      "text": "Great. OK, so here, right, we, if you remember the car data set where we have, you know, a bunch of different cars where each one we have the the mileage per gallon, you know, gas mileage pretty important these days and the weight of the car, a bunch of other data factors. Let's fit SLR to just predict miles per gallon gas mileage from weight."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-382-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4878,
+      "type": "audio",
+      "text": "So the original data points look something like this, right? These points in blue?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-383-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4888,
+      "type": "audio",
+      "text": "But what I've done is I've done a whole bunch of different bootstrap resamples of the original data set, right so."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-384-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4891,
+      "type": "audio",
+      "text": "If I think about the."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-385-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4895,
+      "type": "audio",
+      "text": "Code."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-386-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4905,
+      "type": "audio",
+      "text": "Right. What is this doing? How does the bootstrap function work? Here we say what is the sample? What is the statistic?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-387-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4918,
+      "type": "audio",
+      "text": "And now statistic is a function. So this is a more general version of the bootstrap that can do any statistic and we say the number of repetitions."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-388-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4930,
+      "type": "audio",
+      "text": "So all we have to do is we say, you know again our same number of repetitions. Usually 10,000 just happens to be the number most people use."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-389-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4941,
+      "type": "audio",
+      "text": "But a lot you just want to go a lot of times each bootstrapper partition we sample from our data set, right? And remember pandas data frames have the dot sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-390-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4956,
+      "type": "audio",
+      "text": "Method which we can say sample frac equals one which says sample 100% of my data right proportion of one just same number of data points as in the original and sample width replacement."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-391-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4960,
+      "type": "audio",
+      "text": "So here, instead of NP dot random dot choice, we're using pandas to do the sampling."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-392-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4965,
+      "type": "audio",
+      "text": "And then we say, OK, calculate a statistic on that data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-393-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4970,
+      "type": "audio",
+      "text": "Right on that bootstrap sample, we calculate it and then we just add that to our list."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-394-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4978,
+      "type": "audio",
+      "text": "Right. And this is a more general way of doing the bootstrap right Here we can say basically take any function we want."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-395-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 4986,
+      "type": "audio",
+      "text": "Anything we want to estimate? Sample Mean, Regression coefficients? Median."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-396-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5002,
+      "type": "audio",
+      "text": "You know the Sky's the limit, well, not the sky. You know, the limits are the things we talked about earlier. No maxes, no 90th percentiles. Be careful with skewed datasets. Those are the limits. But within those limits, you can do anything you want here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-397-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5007,
+      "type": "audio",
+      "text": "So we can do this and."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-398-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5009,
+      "type": "audio",
+      "text": "Basically loop over."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-399-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5018,
+      "type": "audio",
+      "text": "This and here our estimator is basically going to fit linear regression."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-400-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5026,
+      "type": "audio",
+      "text": "Right, we fit linear regression to the XS or the weight columns. Y is the gas mileage and of course we have an intercept."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-401-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5030,
+      "type": "audio",
+      "text": "And then we return the intercept and the slope."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-402-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5036,
+      "type": "audio",
+      "text": "Right. And so this basically tells us that if we do it on the original data set, our intercept is 43."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-403-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5047,
+      "type": "audio",
+      "text": "And how do we interpret this? This says for a car with a weight of 0, the predicted gas mileage is 43.5 miles per gallon."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-404-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5049,
+      "type": "audio",
+      "text": "Does that really make sense? No."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-405-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5074,
+      "type": "audio",
+      "text": "In the sense that there's no car with a weight of 0, but it does kind of give us a sense of like where the predicted miles, gas mileages start and then they only go down from there, right? This basically says for every increase by one in the weight, and I forget the units of weight, but for every increase in pounds, for every £1.00 or one 1 LB increase, our gas mileage decreases by .006."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-406-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5082,
+      "type": "audio",
+      "text": "In other words, for every £1000 increase, my predicted gas mileage goes down by 6.9 miles per gallon."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-407-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5087,
+      "type": "audio",
+      "text": "Again, very important to know how to interpret progression coefficients."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-408-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5117,
+      "type": "audio",
+      "text": "So bootstrap, you know, we, we do this over and over. We fit a line, get the coefficients, fit a line, get the coefficients, fit a line, get the coefficients. And each time we, you know, we store this in the array, we unpack them, intercept slope, we draw them by calculating XY equals intercept plus slope times X and we do add scatter and then they look something like this, right? So this has come sometimes called a spaghetti plot kind of makes sense. It like looks like a bundle of spaghetti."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-409-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5127,
+      "type": "audio",
+      "text": "And what as often happens in a spaghetti plot, there's sort of like a narrow point in the middle. It's like where you're like holding the spaghetti and then it kind of like fans out a little as you go out."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-410-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5133,
+      "type": "audio",
+      "text": "Kind of makes sense, right? You're like more certain about what's happening here, less certain about what's happening here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-411-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5137,
+      "type": "audio",
+      "text": "So this way we can quantify the uncertainty in the slope."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-412-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5147,
+      "type": "audio",
+      "text": "By looking at a histogram of all the slopes and we can also quantify the uncertainty in predictions, right? I can say that for a car."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-413-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5150,
+      "type": "audio",
+      "text": "With a weight of 4500."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-414-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5164,
+      "type": "audio",
+      "text": "My predicted miles per gallon, my predicted gas mileage is in this range, right? It's like most likely going to be between like 14.7 and 10, but sometimes it might be as low as 6.7."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-415-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5192,
+      "type": "audio",
+      "text": "Right. So now we're able to quantify the uncertainty and communicate that for not just their coefficients, but also the predictions, right? So Bootstrap is really powerful to help us communicate uncertainty, right? And why is this useful? Because again, if I, you know, maybe like a car regulator and I want to know what is the gas mileage going to be passed a certain weight, it's helpful to have a sense of certainty or uncertainty."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-416-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5200,
+      "type": "audio",
+      "text": "All right, so this is what the distribution of the slope is. We can build a confidence interval using 2.597.5."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-417-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5202,
+      "type": "audio",
+      "text": "And you know the interval will look something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775169221-transcription-418-c0-e0",
+      "lecture_id": "ds100-sp26-1775169221",
+      "timestamp": 5219,
+      "type": "audio",
+      "text": "All right, that is all for today. I will have office hours here next week. We will kind of switch gears entirely and talk about SQL or SQL, a completely different programming language for dealing with databases."
+    }
+  ]
+}

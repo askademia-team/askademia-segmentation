@@ -1,0 +1,2144 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1773354712",
+  "display_name": "Lecture 16 (Mar 12)",
+  "count": 305,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 735,
+      "type": "audio",
+      "text": "All right. Hi, everybody. Welcome. My name is Arie Edmondson. I'm a lecturer here in the History department. I teach in the Human Context and Ethics program. Some of you might know me from Data 104, if you don't already. There's a good chance you'll see me again in the future in that class. So I'm here today to talk to you about."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 741,
+      "type": "audio",
+      "text": "Well, a story, a case study that's going to be at the center of your upcoming upcoming project A."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 771,
+      "type": "audio",
+      "text": "It's a story about something called the Cook County Assessor's Office, or CCAO for short, as I'll be referring to it, and their Open Data Initiative. It's a case study itself is the source of the data you're about to work with on this upcoming project. And it's a story about what's involved in trying to use some of the tools of data science that you're learning about in this class to try and solve real world problems, to do real world kind of political work."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 789,
+      "type": "audio",
+      "text": "And so my presentation of this case study will help you kind of have some context for thinking about what's at stake and how to reason more broadly and contextually about what you're going to be doing in your project A, where you, you know, build a model and predict housing prices."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 800,
+      "type": "audio",
+      "text": "So what's this case study about? Well, let's start with the place. Anybody know where Cook County is? This place called Cook County? I see hand coming up. Where is it?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 810,
+      "type": "audio",
+      "text": "OK. So you know, are you from there?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 840,
+      "type": "audio",
+      "text": "But you know a lot about Cook County. Yeah. So it's it is it's it is in Illinois. It's basically Chicago and Chicago sort of surrounding townships borders right on Illinois and on Lake, MI there. And So what you see here is this image of Cook County, Illinois. And it's about this institution called an assessor's office. This is an office that is tasked with doing something that, you know, probably to you is, you know, most of you are in your, you know, early 20s or teens and."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 858,
+      "type": "audio",
+      "text": "Probably going to sound really dry and boring, but it's about assessing property values and doing this at scale. That is, it's about it's an agency in the county that's tasked with figuring out how much every residential and commercial property is worth in the county and doing this every three years."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 862,
+      "type": "audio",
+      "text": "And this is a difficult task."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 869,
+      "type": "audio",
+      "text": "They can't just figure out what this is based on its last sale price, because if something hasn't sold in decades."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 870,
+      "type": "audio",
+      "text": "It's no longer."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 884,
+      "type": "audio",
+      "text": "That that that price from three decades ago doesn't really mean a lot about its value today. Why does an assessor's office need to do something like this? Assess property values at a regular interval? Anybody have a guess or no?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 886,
+      "type": "audio",
+      "text": "Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 921,
+      "type": "audio",
+      "text": "Yeah, so Illinois and most states in the US assess property taxes based on an estimated current value of a home. Now, California pioneered something that exists in a handful of other states back in the 70s with Prop 13, which means your property taxes are pegged to its original sale value, and they can only go up a small amount. Parts of problems in California State budgets are related to this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 923,
+      "type": "audio",
+      "text": "Which we're not going to get into today, but it might be a strange thing if you're from California, because."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 943,
+      "type": "audio",
+      "text": "Our assessors don't have to worry about making these estimates. There's just a kind of fixed small amount, something that can go up. So if you bought your house in the 1970s, your property taxes are extremely low compared to somebody who just bought their similar home down the street the previous year."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 968,
+      "type": "audio",
+      "text": "So doing this, figuring out how do we estimate the value of a home is a very data intensive practice. It's a massive operation in part just because of the scale of the of properties that have to be assessed, especially in a county like Cook County where you have about 900,000 assessed properties in in in a cycle, more or less."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 995,
+      "type": "audio",
+      "text": "So today what I'm going to do is I'm going to walk you through a case study related to this institution and why it has to do what it does and what sorts of problems it's encountered. And I'm going to do this in a few stages. We're going to focus at first on just like, what was the problem? What was the problem that confronted this agency such that it turned to a new kind of data intensive system for trying to assess property values? What is the political social problem underneath all of this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1003,
+      "type": "audio",
+      "text": "How did they try to mobilize data to solve this problem subsequently, and we're going to spend the bulk of our time."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1022,
+      "type": "audio",
+      "text": "Doing that work of tracing out the response and, and, and giving you some tools to analyze how this is a very political act. And then at the very end, I'll just leave you with a few key takeaways about like, what's the point of approaching a case study like this in, in the ways that we're, we're going to walk through today."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1052,
+      "type": "audio",
+      "text": "So let's start with the problem, the situation that prompted the Cook County Assessor's Office to form a sort of new open data initiative internal to itself, one that's now actually migrated and central to like all the county offices. But it's one that kind of made the situation where you got the data that made the data open. It's there for you to use in this project. Where did that come about? Well, it started with a scandal, a scandal that goes back to this 2017 investigative report from the Chicago Tribune."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1079,
+      "type": "audio",
+      "text": "And they basically uncovered a major scandal in the property assessment system managed by the CCAO under the watch of then County Assessor Joseph Barrios. So the every assessor's office is headed by a county assessor who's actually democratically elected by the citizens in the county. Now, journalists working for the Chicago Tribune, working with experts from the University of Chicago."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1082,
+      "type": "audio",
+      "text": "Investigated and then demonstrated."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1097,
+      "type": "audio",
+      "text": "The presence of systematic bias and corruption that was resulting in a highly regressive tax system whose burden felt disproportionately on poor and non white homeowners in Cook County."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1114,
+      "type": "audio",
+      "text": "So the journalists took advantage of data analysis and visualization techniques to try to make visible to a public the workings of this unjust system and to try to make the argument that it was in fact unjust and explain why they think this happened."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1133,
+      "type": "audio",
+      "text": "Now they referenced some standard metrics that are used in the assessment business, which we'll refer to a little bit later, and convincingly argued that the system not only was inaccurate, that is the assessments it's producing were error ridden, but that the assessments were inaccurate in a way that made them unfair systematically."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1160,
+      "type": "audio",
+      "text": "In other words, the errors, the distribution of errors, converted what's supposed to be a flat tax rate into an effectively regressive tax rate. What do I mean by that? Some of you know this, some might not. So property taxes are supposed to be a flat tax rate. No matter how much your income, whatever your income is, no matter how much your home is worth, you should be taxed the same percentage, sort of, no matter what."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1164,
+      "type": "audio",
+      "text": "How they set the percentage is based on the total aggregate amount they expect to collect."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1172,
+      "type": "audio",
+      "text": "But they set that rate and it's supposed to be the same for everybody. You get the number and you just multiply the value of the home by that, you know, .08% or whatever."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1189,
+      "type": "audio",
+      "text": "A regressive tax rate of course is 1, where the more income you have, or in this case the more your home is worth, the lower the effective tax rate is. So the wealthier you are, the less you pay."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1199,
+      "type": "audio",
+      "text": "Proportionally and progressive is the opposite. Progressive tax is 1. Whether in in practice or by rule, you tax people more the more wealthy they are."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1214,
+      "type": "audio",
+      "text": "So this is supposed to be a flat tax rate in practice. Basically what they demonstrated was that the property tax rate in Cook County was effectively regressive according to a number of different metrics."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1239,
+      "type": "audio",
+      "text": "So on the right over here you have a graph illustrating the regressivity of the effect of property tax rate with respect not just to property values but to median household incomes. Because there is I think you would expect to see a correlation between household income and the value of homes. It's not a one simple correlation, but but more or less does. So the the the wealthy you were, the less effectively you were paying in taxes proportionally."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1247,
+      "type": "audio",
+      "text": "So the system was regressive, in other words, because it distributed tax burdens unevenly and in a particular direction."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1253,
+      "type": "audio",
+      "text": "Placing A disproportionate burden on lower income homeowners."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1281,
+      "type": "audio",
+      "text": "Now, some of this, people have pointed out, could have been due to the effects of the recession. This is data, you know, from that shows what was happening in the 20 tens roughly, that perhaps it was because there was a sudden dip and then rise in home prices that you have this kind of inaccuracy. But it was noted in comparison with other counties that you didn't have the same drastic changes in these metrics. So they realized something else was going on that was more specific to Cook County."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1288,
+      "type": "audio",
+      "text": "One thing that they also noticed, and this was due in part to the fact that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1314,
+      "type": "audio",
+      "text": "Cook County and Chicago is, according to a number of metrics, regularly boasts of being one of the most segregated, perhaps in some metrics the most segregated city in the United States. This discrepancy, because it mapped onto class, also mapped very clearly on to race as well. So the regressivity might have also been legally discriminatory because of the way the burden fell disproportionately."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1316,
+      "type": "audio",
+      "text": "On Cook County's nonwhite homeowners."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1339,
+      "type": "audio",
+      "text": "OK. Just a quick sort of check your understanding, Paul, because I know sometimes when looking at this project, students will make a mistake about this. If you're a home owner and you are thinking about tax assessors valuing your home, do you want the tax assessor to, is it in your interest, in your material interest to have your home undervalued or to have your home overvalued?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1343,
+      "type": "audio",
+      "text": "Let's give you all a second to think about it and."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1347,
+      "type": "audio",
+      "text": "Post your answers."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1351,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1378,
+      "type": "audio",
+      "text": "So it looks like the bulk of you are answering get this right, at least right in the way that I'm hoping you understand this. If you're a homeowner, you might want your home to be highly valued on the market. You know you get more money when you sell it, but that when you have a tax assessor assessing the value of your home, the higher it's priced, the more you pay. So generally, unless you're somebody that just like loves to pay taxes."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1382,
+      "type": "audio",
+      "text": "You usually will want your tax to be undervalued or low. You know the lower the."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1386,
+      "type": "audio",
+      "text": "Value the tax assessor thinks it is the better four year taxes."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1418,
+      "type": "audio",
+      "text": "OK, so that's a that's a kind of just crucial thing to keep in mind about the interests at work here. Let's run one more poll. Which of the following is an example of a regressive tax? Just to make sure we got our definitions of what regressive taxation means. Is it that an owner of an inexpensive home pays a higher tax rate than owners of expensive homes, or vice versa? The other other side, owners of expensive homes pay a higher tax rate than owners of inexpensive homes?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1429,
+      "type": "audio",
+      "text": "OK, looks like the vast majority of you got this one right too. Great job. We know what regressivity is."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1430,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1436,
+      "type": "audio",
+      "text": "And as some of you might still be trickling in with your answers, so I'll give you a few more seconds before I move on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1441,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1472,
+      "type": "audio",
+      "text": "So it's clear that there was some sort of a problem. The next step in all of this was to figure out what actually caused it. Now, if you're familiar with some conventional data ethics case studies, you might think that I'm here to teach you about algorithmic bias. There was an algorithm, it was biased, and they found a way to fix it. The thing is, that's not really the story here, or at least it's not really the main one that I'm here to talk to you about. It wasn't primarily a technical issue of, you know, poor modeling of a bad."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1502,
+      "type": "audio",
+      "text": "The model, that being said, that might have been a piece of what the story was very simple models like linear regression that they did use during Berios tenure do tend to be regressive because they regress towards the mean price. But in large part it was something else really that that caused a lot of this divergent. It was in fact it was because of a social structure, the institutional social structure of the property assessment system in which a human review process enabled those who are wealthy."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1507,
+      "type": "audio",
+      "text": "And more privileged to more easily and successfully challenge their assessments."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1530,
+      "type": "audio",
+      "text": "How does this work? So at first glance, this seems like something good and intuitive. You get mailed this assessment. It's a kind of highly automated process that generates some number because it has to be done at scale. You get it in the mail and you look at it and you might be like, this has got to be wrong. Like, I know what I bought my house for. I see this number."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1538,
+      "type": "audio",
+      "text": "There must be some way I can go and get this adjusted right. And so indeed there is a whole tax review board and you can go and you can challenge your assessment, go before real human beings and making your case."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1565,
+      "type": "audio",
+      "text": "And argue, oh, you've overvalued my home, I deserve to pay less in taxes. And this exists. And it sounds like a good important idea you have. Everybody has same equal access to this board. But the problem is, is that equal access is not actually as equal in practice as it sounds. In theory. Everybody legally can go to this board, But to actually have the material ability to go to that board and make a convincing case is another story."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1580,
+      "type": "audio",
+      "text": "Because knowing the intricacies of the tax code and intricacies of like, what's a good argument for demonstrating that an error has been made requires a certain level of expertise that most of us don't have. So what do you do? You hire a tax lawyer."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1598,
+      "type": "audio",
+      "text": "And that costs money. And indeed, in Chicago, there was a massive and thriving tax attorney industry largely dedicated to helping wealthy people go and convince the tax board to get their people wealthy people's taxes lowered. And this is something that's just not affordable or accessible to most lower income Chicagoans."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1630,
+      "type": "audio",
+      "text": "And So what you have in practice is that wealthier and wider neighborhoods would appeal more often and when reductions far more often than their less wealthy neighbors. In 2015 alone, residential property owners filed assessment appeals involving 370,000 properties winning reductions 80% of the time. So this was happening at a large scale. A lot of people were making a lot of money off of it, and wealthy homeowners were was worth it to them. They were paying so much less in property taxes, it was worth paying."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1632,
+      "type": "audio",
+      "text": "A lawyer."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1635,
+      "type": "audio",
+      "text": "To help them get their assessment lowered."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1654,
+      "type": "audio",
+      "text": "Now, the Tribune's analysis of this pointed towards corruption, and a lack of transparency is the root of this problem. Barrios, the county assessor, had really close ties to the tax lawyer industry. In fact, more than half of his campaign contributions came from tax law firms that benefited from this setup."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1660,
+      "type": "audio",
+      "text": "The chief partner of the biggest law firm dealing with the largest property appeals was in fact the Illinois House Speaker."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1669,
+      "type": "audio",
+      "text": "And in fact, industry plays a really powerful role and still does today in Illinois and Chicago politics."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1684,
+      "type": "audio",
+      "text": "And one of the things that you see here was a clever adaptation of this language of community engagement, of keeping the human in the loop to give the system a veneer of fairness, even where that very institution was the cause of this unfairness."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1703,
+      "type": "audio",
+      "text": "Now, as the Tribune reported, a large number of black and Latino homeowners purchased affordable houses one year, only to find their house appraised at levels far in excess of what they paid for it, suddenly threatening them with the possibility of no longer being able to afford their home."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1721,
+      "type": "audio",
+      "text": "Right. The thing to think about this is not just an inconvenience. Some people are paying a little more, Some or not people staked their entire future and the money that they have in taking out a mortgage based on the expectation of being able to pay a certain rate. But when suddenly you're overvalued, you're having to pay more in taxes, that puts you in a really difficult situation."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1735,
+      "type": "audio",
+      "text": "Because you can potentially lose your house, have it foreclosed on because you can't make your mortgage payments, or you have to sell it because you can no longer afford once you're suddenly responsible for paying thousands of extra dollars a year and more than you had budgeted."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1762,
+      "type": "audio",
+      "text": "Now, even if your home is not valued, or let's just say overvalued, if wealthy homeowners win this disproportionate number of reductions, poor homeowners actually end up paying more as a result. It's a kind of complicated process, but basically the county sets a fixed amount that they're going to collect and they set the tax rate based on it. And so if wealthy people are overall being assessed as having a smaller proportion of the total value."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1775,
+      "type": "audio",
+      "text": "Of all residential properties, then effectively the lower income people, even if their houses are being accurately assessed, end up paying more proportionally than everyone else because of that sort of 0 sum setup."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1804,
+      "type": "audio",
+      "text": "Came to be as segregated as it was."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1804,
+      "type": "audio",
+      "text": "Now, not only is this unfair in all these ways, but the issues of justice goes deeper here, in part because of the ways that this replicated those much older patterns of racially discriminatory housing practices in Chicago that go back decades, and a lot of early and very racialized real estate practices going back to things like redlining that you may have learned about elsewhere. Many of those were indeed pioneered in Chicago and were part of the story of how Chicago."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1808,
+      "type": "audio",
+      "text": "OK, let's do a quick poll."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1839,
+      "type": "audio",
+      "text": "So just to check our understanding, what was identified as the primary cause of this unfair burden in the Cook County property assessments in the 20 tens? And so you have a few options. There was racial bias in the data, which caused the model to overvalue the homes of black homeowners. The CCAO use a simple linear model, which tends to be regressive. The Board of Review disproportionately favored wealthier homeowners, reducing their relative tax burden and increasing that of poor homeowners. And then the last."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1844,
+      "type": "audio",
+      "text": "The CCO made it difficult for poor people to secure mortgages to purchase new homes."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1849,
+      "type": "audio",
+      "text": "I guess I have to push."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1852,
+      "type": "audio",
+      "text": "Next to see how you all are voting."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1855,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1885,
+      "type": "audio",
+      "text": "So there were two correct answers here, both, you know, you could vote multiple times and those ones are in green. Now, again, it's a common story to say that there's racial bias in the day. But as I said, there wasn't actually any clear evidence of racial bias in the data. If one thing people often look for when they look at this is to be like, oh, there's racial bias in the data, It's because there's, you know, race shows up in the data and that undervalues homes. But if some sort of racial devaluations, which take."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1906,
+      "type": "audio",
+      "text": "And other domains came through in the data that would actually benefit a low income homeowners instead. So that wasn't the primary thing. It had an effect, a racial effect because of the overlapping of class and racial demographics. But racial bias in the data wasn't the main cause. It was these these two top ones."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1920,
+      "type": "audio",
+      "text": "OK, so we've finished with the problem. Let's talk about what was done and how data was mobilized and leveraged to try to address that and solve this problem. And that'll occupy us from most of the rest of today's lecture."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1926,
+      "type": "audio",
+      "text": "So what happened was Chicagoans were understandably outraged about this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1941,
+      "type": "audio",
+      "text": "And so they elected a new county assessor, a guy named Fritz Kagi, and he had a mandate to fix this problem. And part of the platform he ran on was to create a new Office of Data Science."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1955,
+      "type": "audio",
+      "text": "To make it open and transparent to the public, to show like here, we're going to publish all our data, we'll talk about our models, we'll make public and transparent our pipeline so everybody can see exactly what we're doing and hold us accountable."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1972,
+      "type": "audio",
+      "text": "So the idea was not only to create a more accurate algorithmic model, but to design a whole kind of socio technical system to try to rectify these problems that had been identified in the prior administration."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 1997,
+      "type": "audio",
+      "text": "Now what I'm going to do is sort of walk through how the Cook County Assessors office and their data science department tried to develop their solution by reconstructing and analyzing their path through the kind of classic data science life cycle that you've touched on. In this class. I'll be focusing in particular on how you frame and understand your task, like what is, you know, looking at the asking a question, framing a problem."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2001,
+      "type": "audio",
+      "text": "And then thinking about how your understanding of the context."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2016,
+      "type": "audio",
+      "text": "Like the meaning of your very text task shapes how you frame the problem in ways that affect how you create a model and assess and evaluate your model at the end, which will all be things that you'll be asked to do in in your project."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2025,
+      "type": "audio",
+      "text": "OK, so you're a data scientist, you're working for the CCAO to build this new system, and you want to replace this old and unfair 1?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2053,
+      "type": "audio",
+      "text": "Now, the way that the problem was framed shapes the task you have before you. And in some ways the problem was already framed for you by the Chicago Tribune story and was framed for you by this county assessor. The CCAO has lost public trust, and it's trying to restore that trust. The primary problem is not about data. It's not about accuracy. It's not about error. It's errors. It's about social trust, and it's about trying to mobilize data science to restore trust."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2055,
+      "type": "audio",
+      "text": "The CCAO and the public seem to agree."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2060,
+      "type": "audio",
+      "text": "That the loss of trust has to do with the unfairness of the system."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2085,
+      "type": "audio",
+      "text": "Now for the CCAO at least, the system, the unfairness of the system as a result of this other concept, accuracy, it was unfair because it was inaccurate, and not just inaccurate in a generic way, but inaccurate in a particular way, right? That overburdened those with the fewest means. So their task was to create a system that would be more accurate and therefore more fair, and thus to restore trust in the agency."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2093,
+      "type": "audio",
+      "text": "As they put it, the task was to, quote, create a robust pipeline that accurately assesses property values at scale and is fair."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2095,
+      "type": "audio",
+      "text": "So there's some assumptions here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2101,
+      "type": "audio",
+      "text": "What is public trust about? In this case? It's a matter of this thing called fairness."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2108,
+      "type": "audio",
+      "text": "Fairness, in turn, is a matter of accuracy. An accuracy, in turn, has to do with a certain way of measuring error."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2126,
+      "type": "audio",
+      "text": "So as we go forward, I'm going to put some pressure on this, but for now, just note that there is a whole series of equivalences between different concepts that are made to seem to be identical. Part of what the work they're doing is naturalizing the sense that public trust is about fairness, is about accuracy, is about error."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2156,
+      "type": "audio",
+      "text": "OK, real quick, so which of the following best describes the goal of the CCIO and its new data science department? Is it? I'm sorry this is hard to read because it keeps changing order. Restore public trust in the agency. Ensure distributional equity and property taxes by maintaining a flat tax rate. Undermine the ability of the wealthy homeowners to disproportionately win appeals at the Board of review. Create a robust pipeline that estimates the value of each property."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2158,
+      "type": "audio",
+      "text": "Accurately, uniformly, and impartially."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2159,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2183,
+      "type": "audio",
+      "text": "Most of you say restore public trust, so there's no right or wrong answer here. In a way, all of these are true. Which of the following, you know, best describes the goal? That's an interpretive thing. All of these in some way describe the goal. But you'd say the highest level goal is restoring public trust. And each of these is sort of a translation of like, what does it mean to do that? It means to do this whole series of other things."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2189,
+      "type": "audio",
+      "text": "So one quick question is, do you think that the goals on the previous slide are all equivalent to one another or do they mean different things?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2222,
+      "type": "audio",
+      "text": "OK, so they've convinced most of you that indeed all of those different goals actually mean the same thing. If you do any one of them, you're kind of doing the others. So they're radically different concepts in terms that most of you feel convinced by this series of equivalences, a series of translations from one one goal to another, restore public trust in the CCIO, ensure distributional equity and property taxes, etcetera, all the way down to, you know, this more technical."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2227,
+      "type": "audio",
+      "text": "Of creating, you know, a robust pipeline that estimates the value of each property accurately, uniformly, and impartially."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2232,
+      "type": "audio",
+      "text": "Nope. What I want to suggest to you is to not take for granted that these all mean the same thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2241,
+      "type": "audio",
+      "text": "That there is a very social goal that takes a detour through several different layers of kinds of technical practices."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2272,
+      "type": "audio",
+      "text": "And this detour is in some way supposed to go and actually solve the problem, that by translating one problem into another into another, you somehow make it more tractable, and that allows you to go back and actually do the original thing. So part of what we're studying is how this detour through the abstractions of data and algorithms can actually be used to address this problem. Part of it is by convincing people that all of these things are identical, despite in some ways they're very obvious semantic differences."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2273,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2301,
+      "type": "audio",
+      "text": "So if the technical goal we have at hand is to create a robust pipeline that accurately assesses property values at scale, what does it actually mean to do that? What role does this concept of scale play? In what sense is making accurate property assessments a task for a data scientist? So in some sense, there's three questions here that we'll be working through kind of very deliberately and carefully. What exactly is an assessment, A single assessment? What does it mean? What is being assessed?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2317,
+      "type": "audio",
+      "text": "We all think we know what that means, but I think it turns out to be surprisingly tricky. What does it mean for any assessments to be accurate? And what makes an accurate assessment not just accurate, but fair? And we'll break this down one step at a time."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2327,
+      "type": "audio",
+      "text": "So let's start with that very simple question. What is an assessment? So we know at some level in assessment, we've already gone through this. It's the estimate of a value of a home."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2336,
+      "type": "audio",
+      "text": "And what kind of a value? Well, obviously we've already established its monetary value, it's how much it's worth in dollar terms."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2362,
+      "type": "audio",
+      "text": "Now my question, though, is what determines the dollar value of a home? There's a lot of different ways that you could imagine kind of guessing at the economic value of a home if you don't actually have recent, if it wasn't sold, say in the last few days, you could kind of look at it, think about its construction materials and property size. You can imagine a world in which there's a state that just decides what the fair price of a home ought to be given certain."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2363,
+      "type": "audio",
+      "text": "Features or constraints?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2388,
+      "type": "audio",
+      "text": "In the past, it was very much up to what a real estate expert thought based on some combination. Their sense of location, materials, quality, size, etcetera, could be based on just whatever a homeowner thinks their property is worth because what they paid for it, what they know about their neighborhood and its properties. But of course, none of these is has much to do with what the property assessors use as their target variable. That is what they're trying to guess and predict."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2393,
+      "type": "audio",
+      "text": "Of course, what they're trying to predict is its market value."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2400,
+      "type": "audio",
+      "text": "What it actually sells for, what somebody is willing to pay and someone else is willing to sell at one specific moment in time."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2405,
+      "type": "audio",
+      "text": "Now this is really important, even though it probably seems really obvious at first glance."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2418,
+      "type": "audio",
+      "text": "If it's just its market value, which is a single moment, a transaction that takes place at 1 moment in time and not another, it means that a home's value has a hazy kind of existence because market value fluctuates all the time."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2430,
+      "type": "audio",
+      "text": "This value, this number which you just say is a fact about the world, actually only exists when it's measured. And in this case, the measurement of a home's value just is this market transaction."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2459,
+      "type": "audio",
+      "text": "So the value of a home, right, is not like a physical object in the world that exists whether or not you measure it. Something that doesn't change its shape when you measure this lectern is a certain height, and its height doesn't depend on me measuring it, though I did just learn that it goes up and down and I can change the height. The value of a home is actually a little different. I could sell my house today for $1,000,000 and whoever buys it could sell it in a few months for $1.2 million without anything fundamental changing about the house."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2474,
+      "type": "audio",
+      "text": "So what in when between those two sales? What kind of value does a house have? Does it just have no value? Is it the value someone you know somewhere in the middle? Is it just the original sale value? What exactly kind of value does it have?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2502,
+      "type": "audio",
+      "text": "You could say it has a kind of potential value. It's not valueless. You can take out a mortgage on it based on an assessment of its value. You pay taxes based on this guess, this assessment. So it has a kind of real that those numbers have a reality, but it's market value is indeterminate. And I'd say it's not uncertain. When I say indeterminate, I don't mean uncertain. Like I'm uncertain how tall this lectern is. I'm going to guess if I get out of measuring tape, I can tell you what the real value is. It has a fixed real true value."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2504,
+      "type": "audio",
+      "text": "That won't change unless somebody."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2505,
+      "type": "audio",
+      "text": "Pushes this button."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2516,
+      "type": "audio",
+      "text": "It's indeterminate in the sense that it hasn't been determined yet, and only the act of measuring that is selling it will resolve that indeterminacy."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2539,
+      "type": "audio",
+      "text": "So to say it's indeterminate doesn't mean that it's simply arbitrary either. Houses don't sell for random or arbitrary prices. If it's a so-called arms length transaction, meaning you know it's a real market transaction. It's not apparent selling their child a house for $5, right? There are reasons why it sells for what it sells for. It can be predictable. There's a structure to the market, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2553,
+      "type": "audio",
+      "text": "So if you're trying to determine the price of a home, that is you're trying to assess its market value for figure out tax burden, the only way of perfectly you could say reliably knowing its value is to actually determine it by selling it."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2559,
+      "type": "audio",
+      "text": "And in a sense, an estimate is only really accurate if you can test it by selling the property."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2578,
+      "type": "audio",
+      "text": "Or if you have sales data that you've held out and you can, you know, you'll test your model, it's a different story. And even then, it's only perfectly accurate at that single moment. There's a big recession tomorrow, obviously that number becomes like pretty indeterminate very quickly."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2588,
+      "type": "audio",
+      "text": "And so, as so many properties haven't been sold for decades, every year that passes makes that previous sale a little bit less reliable as an indicator for what the value is in the present."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2599,
+      "type": "audio",
+      "text": "And so you could say the resolution of the homes home values indeterminacy at the moment of its sale gets full determinacy the moment of sale that gradually wears off over time."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2619,
+      "type": "audio",
+      "text": "OK, real quick to check your understanding. When I say the monetary value of a home that hasn't been sold in 10 years, is it the value uncertain? Is it simply unknown? Is it something you cannot determine, it's unable to be determined? Is it nonexistent or is it 0?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2624,
+      "type": "audio",
+      "text": "All right, let's see what people say."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2626,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2628,
+      "type": "audio",
+      "text": "Most people say uncertain."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2631,
+      "type": "audio",
+      "text": "So, uh."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2634,
+      "type": "audio",
+      "text": "Anybody want to explain why that's not what I was arguing?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2643,
+      "type": "audio",
+      "text": "Why is uncertain not what I was trying to suggest right now that it's uncertain."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2670,
+      "type": "audio",
+      "text": "OK, so right here what I'm getting at, uncertain means would mean it has a real value, a fixed value out there in the world that we simply don't know. When we have some amount of uncertainty about what that real value is, an uncertainty we could quantify and measure. When I say it's indeterminate or unable to be determined at that moment even actually, I'd say that language is."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2690,
+      "type": "audio",
+      "text": "Little. It should be indeterminate rather than unable to be determined because it can be determined by a sale. But the idea is, is that it's indeterminate because it has not yet been determined. You're guessing it. You're not uncertain about the value. The value doesn't have a kind of stable existence for you to be uncertain about in the same way, OK?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2692,
+      "type": "audio",
+      "text": "Let's keep moving."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2717,
+      "type": "audio",
+      "text": "So obviously selling your house is not a great way to know property values. If you're a county assessor, you have to make estimates based on the data that you have. And that's where data science steps in, because with the right data about homes and with sale prices on enough other houses, you can probably predict the value of a property with some degree of reliability."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2734,
+      "type": "audio",
+      "text": "Even if you're not a data scientist, like you know that there's these websites out there, Zillow and Redfin, that give you these estimates of what they think properties are worth and they constantly update them. They of course don't know the value, but they make estimates and they predict what they think the thing would sell for if it's sold that year."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2739,
+      "type": "audio",
+      "text": "How do they do this? They do something very similar to what county assessors do and what you'll be doing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2766,
+      "type": "audio",
+      "text": "They do it with a lot of data, but you can do this even if you don't have lots of data. Imagine, you know, you own. Think about the home maybe you grew up in. Maybe you know how much your home is worth. You know what or how much you know your parents paid for it some number of years ago. You know what? Some houses that are very similar to it just down the road, sold for, right? You have some sense of like, OK, well, that house is pretty similar to mine."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2771,
+      "type": "audio",
+      "text": "But it has a little bit better of a view, so it probably is worth what we bought ours for last year, but maybe just."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2773,
+      "type": "audio",
+      "text": "Like a little bit more."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2794,
+      "type": "audio",
+      "text": "Of course, as a data scientist, you can be precise because you have so much more data about each home and about all of the different homes. And so that's where you turn to next. Start to look at the data and what's in it. What data do we have and what data might we need that we don't have that would help us to make a better estimate of of the value of a home?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2825,
+      "type": "audio",
+      "text": "So they've got a lot of data, in particular two different data sets. One data set is full of property characteristics. That is things you see here like for every property, like how many full baths does it have, how many fireplaces does it have, does it have a basement, how many bedrooms, things like that. So you have property characteristics data and you have another data set of recent sales data on all homes in the county. Of course, not all homes have been sold recently, but you want to have the data set of at least."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2829,
+      "type": "audio",
+      "text": "The most recent ones to help train your model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2859,
+      "type": "audio",
+      "text": "And So what you try to do is figure out how do these different data points correlate with each other and with sales price. Now, all this data makes it possible to create a number of different models. What you'll be doing is creating a little linear model to predict sale price, that is, the fair market value of unsold properties, by discovering patterns in datasets containing these known sale prices and characteristics of similar and nearby properties, training the model on the data and applying it to all of these properties."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2880,
+      "type": "audio",
+      "text": "That you don't have recent sales data for. And so you figure out like, OK, I can get a model that looks pretty reliable on the sales data that I have. I can show myself that it's relatively accurate. And then I can extrapolate that all of these other homes that don't have recent sales data, when I make estimates about them, it'll probably be relatively accurate, yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2894,
+      "type": "audio",
+      "text": "Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2903,
+      "type": "audio",
+      "text": "Yeah, it's a great question. How do you deal with like, you know, one off ambiguous reasons why a house might sell for a lot 1 moment rather than another? You can't."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2934,
+      "type": "audio",
+      "text": "There's no, this is when I was getting at about the home value being indeterminate, like the, the market value of a home is just what it sells for. And there's all kinds of little specific contingencies that can actually have a large influence on why a particular home sells for what it does at some moment in time. So you try to control for extreme outliers that are obviously outliers and you'll be doing that a little bit when you do some exploratory data analysis. You try to eliminate those arms length transactions. I I not non arms length transactions like, Oh yeah, that house was sold for 100 bucks."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2956,
+      "type": "audio",
+      "text": "That clearly is not a proper market transaction, but it's like, Oh yeah, somebody was really like they had, that was their childhood home and they're coming back. They really want to buy it and they're willing to outbid anyone, so they overpay for it. You know, you can't really, it's it's hard to know. And you know, there's no objective truth that just says you did definitely overpaid or you didn't. There's a kind of a judgment call that goes into that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2958,
+      "type": "audio",
+      "text": "This is a great question."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 2989,
+      "type": "audio",
+      "text": "OK. So that's what you're doing. You train the model on the data, apply it to all the properties about which you don't have sales data to try to figure this all out. Now, part of what you're doing is also trying to get new data. And one of the things that the new Cook County assessor realized was that the data was, in fact, relatively spotty. So they looked and thought about, you know, let's try to fill in the gaps, and let's also try and consider new kinds of data we simply haven't been collecting that might actually have predictive value."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3000,
+      "type": "audio",
+      "text": "So just think for your for yourself, Ramon, because I think it's really great before you go out and build a model to just think intuitively about what it is you're trying to predict and how you think the world works. So."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3017,
+      "type": "audio",
+      "text": "Can you think of any kinds of features that would be really useful? Like if you were trying to guess, you know, how am I going to I, I want to go collect data, new data on homes. What do you think would be a useful data point to collect that you think would be predictive of a home sale price?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3021,
+      "type": "audio",
+      "text": "What's that?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3044,
+      "type": "audio",
+      "text": "Historic sales. Well, so you have that, that's that's the kind of the second data set you have. You have your like property characteristics and you have recent sales data. So those are, you know, the sales data is you can't do anything if you don't have the sales data, certainly. But just intuitively what features of a property like, what does it like data about?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3052,
+      "type": "audio",
+      "text": "About a property other than its sales price, do you think would be highly correlated with sales price? Just intuitively, what would you be looking for? Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3056,
+      "type": "audio",
+      "text": "How many floors it has? OK, so Flores seems to you like it would be a really clear big one. Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3058,
+      "type": "audio",
+      "text": "Square footage."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3077,
+      "type": "audio",
+      "text": "School districts, yeah. So these are all things, you know, and you can't take for granted that any one of these things was you have to go look at the data where they actually tracking this. And then you look at school districts and you have to appeal like, what is a good school district? What's not? There are rating systems out there which are all weird and problematic in their own right. But yeah, school districts, what else?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3098,
+      "type": "audio",
+      "text": "The age of a house, right? And that can be, you know, sometimes age is a desirable thing, depending on the age. Sometimes it's not. So that would be probably, it's not something that's linear, like, oh, we don't like houses built in the 70s. Those are cheap. But we love the houses built in the 30s and houses built 20 years ago. So there might be a really, you know, complicated relationship with with age."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3125,
+      "type": "audio",
+      "text": "OK. And So what they did was they looked through this, they started doing some EDA look at what things appear to be predictive and started thinking about like what kind of data did they also not have that might be important. They realized nobody, there was no data in the older models on whether the house was in a floodplain would be it flooded every few years or is it right next to Midway or O'Hare airport? And so like you just have planes, planes landing overhead because obviously you can have a really nice house, but if you got jet engines going right overhead every 10 minutes."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3127,
+      "type": "audio",
+      "text": "Probably has a negative impact on your property value."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3137,
+      "type": "audio",
+      "text": "So they went out to try to collect things, to find other data sources, to leverage commercial real estate data as well, to try and fill in missing data points."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3165,
+      "type": "audio",
+      "text": "And then in the EDA phase, they start to do more of this, understand the data, start to do some visualizations, start to think about what you believe, as we just talked about is highly correlated with sales price. And they notice some things, you know, varies based on neighborhood. One extra bedroom can add a lot in one neighborhood and very little in another. And they suggested that they actually do a good job. Might need to use different models on different neighborhoods or in different townships."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3166,
+      "type": "audio",
+      "text": "You had to guess like what? What do you think is the single biggest driver?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3168,
+      "type": "audio",
+      "text": "In property value."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3173,
+      "type": "audio",
+      "text": "Speaking of one kind of data point, that would be the most influential."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3185,
+      "type": "audio",
+      "text": "Yeah, neighborhood location. Location is the number number one thing. And they did indeed find that that was the largest driver of countrywide variation. And then impacts as I suggested, how other features get weighted."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3214,
+      "type": "audio",
+      "text": "And at this stage, you do things like, are there any misleading data points that might improperly bias the model? Do all neighborhoods have the same quality and resolution and granularity of data? And if not, how do you rectify that? And you go through this and think, is this, you know, is there enough? Is our data good enough to actually move on and start modeling? Or do we go back and keep collecting data? And this is something the CCAO had to go through a few a few stages to feel like our models will actually be reliable."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3214,
+      "type": "audio",
+      "text": "On the data that we have."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3223,
+      "type": "audio",
+      "text": "Covered all that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3250,
+      "type": "audio",
+      "text": "All right, so now we've jumped forward to the stage of actually making your model, making predictions and inferences about the world. We're trying to figure out how to, you know, want to make a model that's as accurate as possible. But we also want to decide how we know whether our model is accurate enough. We want to assess how accurate is it? In what kind of way is it accurate? What do we even mean by accuracy?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3254,
+      "type": "audio",
+      "text": "Such that when I make them model more accurate, I also make it more fair."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3257,
+      "type": "audio",
+      "text": "That's the big question right here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3279,
+      "type": "audio",
+      "text": "So how do you know if your model, your estimate is accurate? How do you go about doing this? Just think like your data science cap, you've gone, you've created a linear model and on all this data and you want to actually make a, you want to, you know, tell yourself, is my model good or not? What do you do? It's the basic procedure here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3289,
+      "type": "audio",
+      "text": "You compare similar houses."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3314,
+      "type": "audio",
+      "text": "OK. Yeah. So your model is obviously based on all of this sales data that you have and how you hold out, basically hold out a test set, right? You have a bunch of homes that you haven't actually trained your model on because you don't want to overfit your model. And you basically see when I run the model on that test set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3316,
+      "type": "audio",
+      "text": "How does it actually perform?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3333,
+      "type": "audio",
+      "text": "When it predicted, you know you and, and you basically try and see how close does it get to the correct prices. When I, when I run it on this set of properties with sales characteristics and I I reserve and hold off that sales price, how close are those sale prices?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3361,
+      "type": "audio",
+      "text": "To evaluate then how close your estimate was to the actual sales price, recent sales price, you have data on making sure not to overfit your model and this is what you're going to be doing in your project. And then you go back and say, I can accurately predict the price of any individual house that has not been sold recently because my model produces values that in some measure or another are pretty close to that recent sales data about other houses that I do have data for, at least in most cases."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3365,
+      "type": "audio",
+      "text": "So in the sense your confidence that you're estimating the value of anyone house accurately."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3374,
+      "type": "audio",
+      "text": "Rests on this other numerical measure. You have the overall accuracy of your model when used at scale on that test set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3384,
+      "type": "audio",
+      "text": "Now, your ability to successfully generalize from that training data to your test data gives you that confidence that you can generalize to other homes for which there isn't recent sales data."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3391,
+      "type": "audio",
+      "text": "Now presumes, of course, that there's no systematic difference between a set of homes that have sold recently and those that haven't."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3405,
+      "type": "audio",
+      "text": "But let's put that question aside for the moment and talk about some other challenges that might arise. So you want to establish how accurate your model is by running it on your test set. How do you measure how close you are?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3428,
+      "type": "audio",
+      "text": "You might be thinking, aren't there different ways of being close? And as a data scientist, you think of this not in terms of how close, but how far away are you? How much error right is there? And as a data scientist, you know that there are different kinds of errors and they mean different things. And there are trade-offs between trying to optimize or minimize, you could say, different kinds of error."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3432,
+      "type": "audio",
+      "text": "What that means is that you end up with some hard choices to make."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3440,
+      "type": "audio",
+      "text": "If you can adjust your model to, you know, minimize different kinds of error, which one are you aiming to minimize? If you can't minimize them all and how do you decide?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3445,
+      "type": "audio",
+      "text": "How do these different measures of error relate to this higher order goal of fairness?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3465,
+      "type": "audio",
+      "text": "So one option is to turn to root mean square error and that's what you'll actually asset use to assess your model in project A. Then the question of course is, is RMSE a good proxy? Is it a good stand in for fairness in this context?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3478,
+      "type": "audio",
+      "text": "So RMSE is a pretty powerful tool for doing quite a lot of things. It gives you a nice, clean, simple number that tells you the average overall error across all of your predictions."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3481,
+      "type": "audio",
+      "text": "But RMSC has some limits too."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3503,
+      "type": "audio",
+      "text": "One thing is it doesn't tell you where the error takes place. That is how the error is distributed, and it doesn't tell you whether it is positive or negative. So when we're concerned about fairness, a low RMSE might. It might not be good enough if the error that it still exists overvalues less expensive homes and undervalues more expensive ones."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3511,
+      "type": "audio",
+      "text": "So right, What are all the things RMSE doesn't tell you? It doesn't tell you the distribution of errors."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3526,
+      "type": "audio",
+      "text": "It doesn't tell you the sign of the errors is an error, positive or negative, and if we're worried about regressivity, that matters quite a bit. And it doesn't tell you about the relative size of of the errors at any given place in the distribution."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3532,
+      "type": "audio",
+      "text": "It just gives you the average overall error across that whole distribution."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3549,
+      "type": "audio",
+      "text": "And so then the question are the errors for expensive properties larger or smaller than for inexpensive ones, RMSC doesn't tell you that. So in short, right, it doesn't tell you anything about regressivity. And that can be a problem if what you really care about is making something that is more fair because less regressive."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3552,
+      "type": "audio",
+      "text": "So what's the alternative to RMSE?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3584,
+      "type": "audio",
+      "text": "Now, in some ways, domain experts have tried to make this, you know, easier for you. You, the data scientist that's not familiar with property, don't have to reinvent the wheel. You don't have to make hard choices about what fairness really means in any context. There's an institution out there, a professional institution called the International Association of Assessment Officers, and they've maybe done it for you. They've created a few standardized tests and determined some appropriate thresholds for what counts is close enough to be fair for a model that estimates property."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3585,
+      "type": "audio",
+      "text": "Values at scale."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3601,
+      "type": "audio",
+      "text": "So one approach is just plug and play, try to meet their standards of various, you know, thresholds. These things that you don't have to worry about, we're not going to learn in them in any technical detail, you know, coefficient of dispersion and price related differential, which are different ways of trying to access things like regressivity."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3617,
+      "type": "audio",
+      "text": "So most data scientists might just say, OK, great, there's professional standards. Who am I to rethink them? I'm just going to accept them. There's good reasons for that. You know, there's good reasons to think these are experts that might know better than you."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3644,
+      "type": "audio",
+      "text": "But as always, just simply black boxing, stuff like that comes with risks, should always be cognizant that these standards were made for reasons, and those reasons may have been contentious. It appears that like they all agree on this, but it's possible there was deep disagreement there. Particular politics that get concealed. All you see is there's a standard and I work with it. But maybe those reasons were very partial or contested or limited."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3648,
+      "type": "audio",
+      "text": "Right. These standards are not just natural facts about fairness in the world, they're the results of specific decisions."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3653,
+      "type": "audio",
+      "text": "Made by experts at particular moments in time."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3667,
+      "type": "audio",
+      "text": "And it's not only that experts are fallible. Expert knowledge, at least in matters of public policy, are also always political. It's not just about getting it right or wrong. It's that there's deep like matters of politics that don't have clear right or wrong answers here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3674,
+      "type": "audio",
+      "text": "Expert knowledge reflects certain assumptions about how the social world ought to be organized."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3688,
+      "type": "audio",
+      "text": "They're the products of expert agreements, A threshold that was stabilized by Fiat at some point in time to generate these standardized practices within a profession. But they could have been made otherwise, and there might be good reasons to make them differently."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3702,
+      "type": "audio",
+      "text": "So are these measures of error, measures of accuracy, necessarily the most bare measures? Perhaps they are. Perhaps they're not. It's worth thinking about why they may or may not be."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3704,
+      "type": "audio",
+      "text": "For example."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3732,
+      "type": "audio",
+      "text": "You could determine that any error that exists is only permissible when it's progressive, and you might prefer to have more error overall, as long as the errors lean in a progressive direction. That is, you prefer a model that is slightly more inaccurate overall, according to say, something like RMSE, but it always ensures that the errors for those, say, in the bottom quartile tend to reduce rather than increase their tax burden."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3744,
+      "type": "audio",
+      "text": "I'm not saying that's the correct answer. I'm saying that that is a political decision one could make about what is permissible, what's actually fair. It's a political and ethical decision to set those standards."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3750,
+      "type": "audio",
+      "text": "It's not arbitrary, but it's not simply a matter where the math will tell you it is objectively correct in every situation."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3756,
+      "type": "audio",
+      "text": "Fairness always means more than it can be captured by any single metric."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3775,
+      "type": "audio",
+      "text": "But then the metric that you do choose influences all sorts of other things. It influences what kind of model and pipeline you build, because different models might do better with respect to different loss functions. So there are hard choices about which model to use depending on the trade-offs. So let's actually skip this poll."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3781,
+      "type": "audio",
+      "text": "And I want to get at your intuitions."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3806,
+      "type": "audio",
+      "text": "About fairness in this particular case study, there's no object to the point of this is there's no objectively right or wrong answer to this poll. It is really about your intuitions about what feels most fair. And there are good reasons one can bring up for any of these. So what are the choices? You can just say, you know what's most fair, a model that has lower overall RMSE, but it's, you know, somewhat regressive."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3808,
+      "type": "audio",
+      "text": "But it has a particularly low RMSE."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3837,
+      "type": "audio",
+      "text": "You could say it's a model that minimizes regressivity, but compared to that first option has a little bit higher overall RMSE, but it minimizes regressivity a bit more. You could say it's a model that minimizes regressivity, but where its highest errors are happen to be clustered around the most expensive properties, whether those are, you know, above or below and the size of you know, the biggest error rates tend to there's bigger errors for wealthier people basically. And the last one is a model that's slightly progressive."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3841,
+      "type": "audio",
+      "text": "But out of all of these options, the RMSE is the highest."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3852,
+      "type": "audio",
+      "text": "So take a minute to think through those vote while you're all voting. Does anybody want to share what they voted for and what their reasoning was?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3858,
+      "type": "audio",
+      "text": "Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3925,
+      "type": "audio",
+      "text": "Yeah, so really thoughtful, and I think gets it. One of the key things I want you all to think about is like, putting that number out there isn't about getting things objectively right or wrong. It's a rhetorical act. Publishing a number is about making a public performance and trying to persuade people. And so I think really powerfully, part of what you suggested is like, you have an ethical intuition that makes you feel better about progressivity at a pure moral level. But some level you like the third one because it seems like a nice balancing act. You're like, I don't want to **** *** the wealthy people who are powerful."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3947,
+      "type": "audio",
+      "text": "Because that's going to undermine the legitimacy. They're going to have a lot of power to to dispel to, you know, say that don't don't trust that institution. So we need to make sure that everybody is a little bit happy, even if it's some absolute level, it's not the most ethical outcome in the world. OK, thank you. That's really, really thoughtful. Anyone else want to share how they voted and why they voted?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3949,
+      "type": "audio",
+      "text": "The way they did."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 3953,
+      "type": "audio",
+      "text": "Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4021,
+      "type": "audio",
+      "text": "OK, yeah. So you're really thinking concretely about like what does an error mean for different people at different ends of the spectrum? And if you're wealthier, you know, the impact of an error is lessened by the fact that it's easier for you to contest as we talk about. So if you're going to have error somewhere, make sure it's, you know, it's happening more often amongst the people who can actually handle that error and don't just have to accept it. OK, Thank you. Really thoughtful answer. Anyone else want to share? So, you know, that is the highest one that both of you said that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4024,
+      "type": "audio",
+      "text": "That anyone who answered any of these other ones want to articulate their thoughts about why they voted the way they did."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4030,
+      "type": "audio",
+      "text": "Yeah, in the back."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4066,
+      "type": "audio",
+      "text": "OK, so you're thinking in like absolute terms, you know, a certain percent error on an expensive home."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4070,
+      "type": "audio",
+      "text": "Is actually costs quite a bit more, so like."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4111,
+      "type": "audio",
+      "text": "Oh, yeah, yeah. OK. So you're talking about, you're thinking about like the absolute error isn't what matters. And in some ways, yeah, I think what we want to do is we're measuring sort of percent how what, what percent are you being overvalued your relative? Yeah, which I think is a better measure. I think that's sort of piece of post here. But you're, you're indicating something that's really important. You know, the absolute difference, you know, a $10,000 difference on $1,000,000 home versus a $10,000 difference on $100,000 home mean drastically different things. Yeah. And paying attention to that difference is super, super important. Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4139,
+      "type": "audio",
+      "text": "Thank you. OK, so it's something to keep thinking about. I'm sure a lot of you have your, you know, various reasonings, but it's a complex problem. And I'm really glad that we had a chance to kind of talk through the kinds of considerations that go into how you make these kinds of decisions. Right. So whatever your politics, the point is to think about what these different visions of society actually entail. What happens in the real world when there are errors? What do they mean? How are they experienced by different people depending on their social location, their identity, their position in society?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4153,
+      "type": "audio",
+      "text": "And so we've already touched on some of these, but I'll run through some other examples. You know, the experience of being over and or under assessed is simply different depending on who you are."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4182,
+      "type": "audio",
+      "text": "So a wealthy homeowner, we've talked about this with respect to, you know, the wealthy homeowner being able to to challenge their assessments. But it also gets at this issue of the kind of relative impacts of an error. A wealthy homeowner being over assessed, that's more likely to be treated as an inconvenience. I have a little less money to spend on luxury items. A lower income home owner is much more likely to experience the same percentage overvaluation as catastrophic. As I said earlier, this could mean losing your home."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4190,
+      "type": "audio",
+      "text": "Simply looking at the numbers and treating you know a percent you know a certain percentage over assessment at different parts of the spectrum is equivalent would be a mistake."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4221,
+      "type": "audio",
+      "text": "Simply trying to optimize for abstract metrics of accuracy isn't enough if you don't think carefully about the specific social effects, the specific harms from this perspective of all the different kinds of people who might encounter them. So in this sense, a system might be more fair that errors on the side of overvaluing high value homes and errors on the side of undervaluing lower value homes, even if this means reducing the overall accuracy of the model as we sort of suggested is 1 possibility that fourth one that I put up."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4222,
+      "type": "audio",
+      "text": "There before."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4237,
+      "type": "audio",
+      "text": "Now, the other piece here is that simply looking at one metric in time can help you overlook the cumulative effect of other forms of discrimination that add up over time."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4252,
+      "type": "audio",
+      "text": "Fairness is not just a quality of a single act that happens at 1 moment, a discrete moment in time, which is all you're testing. When you're looking at accuracy, one thing you want to think about is how do these effects accumulate and sometimes get compounded, whether there are effects over whole specific communities or neighborhoods."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4280,
+      "type": "audio",
+      "text": "You know, for just the simplest version of this to say that improving the fairness of the outputs doesn't address all the years of over assessments that were levied on certain communities. They don't get that money from decades of being over assessed back. So in the sense of a kind of justice that involves redress of past harms is not actually done here. So there's a certain kind of fairness that you're getting out, but there's other dimensions of fairness that this simply doesn't even consider at all."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4307,
+      "type": "audio",
+      "text": "And as some historians and sociologists have pointed out, and I talk about this in Data 104, the language of fairness has become the dominant way to talk about justice over the last 50 years or so in the United States. But its ascendance is in part come at the cost of more egalitarian intuitions about fairness and justice in the United States. Your sense, you know that an accurate prediction, you know, in the in the past."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4310,
+      "type": "audio",
+      "text": "We've had higher rates of people voting for, you know, minimize overall accuracy. RMSE just."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4342,
+      "type": "audio",
+      "text": "Strict, straightforward low errors. The thing everybody's being treated relatively equally, having the same error is, is a vote that in the past a lot of students have voted for. And that intuition corresponds to a very broad cultural sense that, you know, an accurate prediction. Every individual being treated abstractly equally, is more important than say, a system that is redistributive or tends towards a more egalitarian world. And that intuition is very much a reflection of this history and changing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4345,
+      "type": "audio",
+      "text": "About fairness in the American public."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4347,
+      "type": "audio",
+      "text": "But there's more than that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4351,
+      "type": "audio",
+      "text": "So far we've been talking about fairness as an abstraction."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4379,
+      "type": "audio",
+      "text": "You know, these are relationships between numbers that get produced by an algorithm. But if you want to build a system that works, you can't just assume that your fair numbers, publishing numbers that are appear to be fair will actually bring about a more fair world. And when we have this conversation about the importance of the rhetoric, like treating the numbers as a form of communication that is there to persuade people, gets you a lot closer to thinking about what part of your duty is when you're a data scientist putting numbers out into the world."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4401,
+      "type": "audio",
+      "text": "Fairness is not a natural fact to the world. It's a way that we collectively make sense of and evaluate our social relationships, and we feel differently about it and we have conflicts over it. So simply printing out numbers by itself doesn't entail you know anything about fairness unless we do something with them that enacts and convinces people that what's being done is fair."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4414,
+      "type": "audio",
+      "text": "So it's all in so many ways about the system that you're building. How it's going to be perceived is what matters. The numbers don't just speak for themselves. Error rates mean different things to different people and can get politicized in different ways."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4445,
+      "type": "audio",
+      "text": "And remember what we said before about, you know, generalizing from, you know, good accuracy on, you know, your test set to all these other properties that haven't been sold in decades. Just because your model minimizes some error rates on your test set doesn't give you any guarantees. It gives you statistical measures of confidence, but you don't you can't guarantee that the error would be the same for unsold properties. There might be something different about those houses that haven't sold recently. Is there? Is it possible that houses that don't sell as often?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4447,
+      "type": "audio",
+      "text": "Have some similarity."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4457,
+      "type": "audio",
+      "text": "Structural similarities that mean that they just look different than the houses that are sold recently. So we can't assume that our model is going to generalize because they are structurally different."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4487,
+      "type": "audio",
+      "text": "But it's also because you know about the way that statistics is about aggregates for any individual case, there's always the possibility that there's an error, that there's some unique specific aspect, some feature of that unique individual home that is doesn't isn't fully captured in the data, an absentee sales data. There's just no way to measure it. All you can do is give reasons for why you ought to accept it or not. And that's why people go to the tax board and this is crucial."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4506,
+      "type": "audio",
+      "text": "Because it's really, it's not hard to imagine that somebody, you know, disagrees with their assessment, no matter how statistically accurate the CCAO can prove their model to be. They go to the tax review Board and, you know, they say, OK, sure, the model is usually close for most of the properties that have recent sales data, but I think it made a big mistake for mine."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4524,
+      "type": "audio",
+      "text": "Or that I think the world has changed since those other houses were sold and you can go in and say, prove to me that there isn't something about my property, neighborhood, or market that the model didn't capture. Prove to me that the numbers which you claim to show that you know, you correctly estimated some set of home sale prices this year have some bearing on my property, too."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4535,
+      "type": "audio",
+      "text": "And again, as those of us here who we trust a lot in the power of good statistics to be to increase our confidence and our certainty about the world, you know, we take this for granted."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4545,
+      "type": "audio",
+      "text": "And perhaps most people who aren't negatively affected by a system might feel comfortable making that translation from these statistical measures of accuracy towards fairness."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4547,
+      "type": "audio",
+      "text": "It's pretty reliable at scale."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4554,
+      "type": "audio",
+      "text": "So for any given property, that gives us a lot of reasons to trust that it's probably right."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4572,
+      "type": "audio",
+      "text": "There's always the possibility, though, that there's something the data or model doesn't capture. There's a gap that's just part of living with the uncertainty of a complicated world. And it's a gap that, no matter how sophisticated our statistics, it's a gap that is only ever bridged by social trust."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4579,
+      "type": "audio",
+      "text": "So in other words, accuracy for an individual assessment depends on that trust."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4582,
+      "type": "audio",
+      "text": "Trust. Sorry."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4597,
+      "type": "audio",
+      "text": "It's the trust that the measure of accuracy published at scale also holds for my property, or a general social trust that the model is close enough for any given property, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4605,
+      "type": "audio",
+      "text": "My point, though, is that there's a translation, a sort of another equation that has to take place to make all of this work."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4634,
+      "type": "audio",
+      "text": "A translation from a measurement of error for a whole batch of assessments to the belief that the assessment for an individual property is accurate and trustworthy. There's nothing about human reason that forces us to take that leap. In some ways, we have to be convinced to take it, to accept the legitimacy and fairness of the assessment that you get in the mail. And that puts us into this terrain of politics, One that you feel like you leave when you're just working on your math, but one that you've never really left as long as you're doing this kind of work."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4634,
+      "type": "audio",
+      "text": "So what's the point of all this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4646,
+      "type": "audio",
+      "text": "Now, I'm not saying all this because I want you to disbelieve in statistical predictions. Quite the opposite. I'm saying that making these predictions socially robust."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4661,
+      "type": "audio",
+      "text": "Making socially robust claims about the world involves understanding and paying attention to the social work that numbers do in the world and the social work the beliefs, values and trust that are needed to help them do that work."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4671,
+      "type": "audio",
+      "text": "The numbers don't do the work by themselves, no matter how technically proficient you are at your job. They do work, in part because they have a kind of social meaning."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4680,
+      "type": "audio",
+      "text": "And trust is at the heart of all of this. Why and when do we trust in numbers and statistical arguments, and when do people distrust them?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4698,
+      "type": "audio",
+      "text": "And This is why people will still go to the review board and make arguments that the numbers should not be trusted. And it might be one small part of why this system so far hasn't been as effective as promised, even though it's demonstrably more fair. And so there is a story that came out just last fall."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4711,
+      "type": "audio",
+      "text": "That some data scientists went and took a look and concluded that indeed, this new system did, according to certain metrics, make property assessments fair across this period."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4719,
+      "type": "audio",
+      "text": "But Despite that, despite their ability to publicize that, to say that statistically they are making better and more fair and more accurate assessments."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4734,
+      "type": "audio",
+      "text": "There's been quite a lot of frustration amongst residents in Cook County, in particular amongst the wealthy ones, and so this graph over here shows how change in total property taxes by Ward. If you know anything about Chicago, you know the South Side, which is the."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4749,
+      "type": "audio",
+      "text": "Has a higher proportion of black residents and is a lower income as a whole. Actually had the very large drop in total property taxes, which is another indication that like there was a positive, you know, more fair development."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4780,
+      "type": "audio",
+      "text": "In the reassessment. But a lot of Chicagoans were really upset, and the newspapers highly publicized this. My best friend's parents are wealthy Chicagoans, and they were really upset about the new county assessor because their property taxes skyrocketed. It might be because they actually got their taxes reassessed to a proper level. That might have been fair abstractly, but it made them angry, and that created a lot of press around the issue and a lot of kind of dropped sort of in the way that we talked about a moment ago. It angered the rich, and there's been some effects from that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4785,
+      "type": "audio",
+      "text": "Another piece of the story is that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4809,
+      "type": "audio",
+      "text": "The biggest there's a new imbalance started to show up between residential and commercial properties. So far we've talked mainly about residential properties. You're only going to be looking at residential property data, but the CCIO also deals with commercial properties. Commercial properties are owned in many cases by even wealthier people and by corporations that have even more money to spend on tax review boards. One of the things that's turned out is there's been a bigger divergent between residential and commercial properties."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4823,
+      "type": "audio",
+      "text": "Such that private residents are paying a larger overall share of that whole pie than commercial properties as a result of the new system, in part because the review board is just doing its work even more powerfully."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4825,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4855,
+      "type": "audio",
+      "text": "No clear resolutions. This is an ongoing story. You're recreating the steps that this, you know, actual living institution is going through and trying to solve a problem. And part of the purpose of doing this is to give you the kind of experience of doing real world data science research and to think as you're working through it about the implications and the politics. Politics that have no clear answers, politics that haven't been resolved. Because that's part of getting you to think about what your responsibilities are with the tricks and difficulties are of doing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4858,
+      "type": "audio",
+      "text": "That kind of real world data science research."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4885,
+      "type": "audio",
+      "text": "So I'll just end with a handful of the kind of key takeaways, right? What have we been asking? You know, what are the things that go into actually leveraging data science to solve a social problem? How do you convert a social problem into a technical one? How does taking that detour work or not? What makes it difficult? And in this case, we're saying, you know, how does, how does accuracy, this very technical notion of error, contribute to making a system more or less fair?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4894,
+      "type": "audio",
+      "text": "And what are the social conditions that allow us to say that accuracy comes to be somewhat or partially equivalent to fairness?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4923,
+      "type": "audio",
+      "text": "And as we've seen powerfully, accuracy is not one simple thing. Fairness is not one simple thing. So when we evaluate, you know, there are models for how you know, for for error. We have to think about that whole model as part of a larger system, think about how it intersects with a larger underlying distribution of social power. And to think about the really specific concrete impacts that the system has on different kinds of people depending on how they're situated in society, when they say how they're positioned, right, Things like."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4947,
+      "type": "audio",
+      "text": "Income, race, class, gender, immigration status, to which those things make you differentially exposed and vulnerable. When these errors in systems like these, the same identical mathematical error doesn't actually mean the same thing. It doesn't have the same material impact on every individual, the subjective to it."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4977,
+      "type": "audio",
+      "text": "And so we said accuracy isn't neutral. Trying to make accuracy equivalent to fairness is always a political act. Political here doesn't mean you know, that there's, it's an ideological veil that covers over the kind of deep objective truth. There is no, you know, single uncontestable truth out there. It's contestable. It's political all the way down. And so that means when you do this work, you know, when you choose a measure of error in a situation like this, you're doing politics, you're committing yourself to a."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 4989,
+      "type": "audio",
+      "text": "Particular and contestable version of what a good social order looks like, or what sorts of tools are used to get to that kind of social order. You're making social order when you're choosing a metric of error."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 5018,
+      "type": "audio",
+      "text": "And in the end, we looked at how improving accuracy doesn't, you know, necessarily bring about fairness. Numbers don't speak for themselves. And making accuracy equates to fairness, making it seem that those two things are equivalent. As I think many of us felt that they just meant the same thing at the beginning, We actually see that that's a rhetorical act, and it's one that may or may not work. It might persuade homeowners, voters, members of the review boards, you know."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 5020,
+      "type": "audio",
+      "text": "And engender social trust. But it also might not."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 5041,
+      "type": "audio",
+      "text": "And there's always that risk, that little bit of leap of faith that like, what I'm going to do is going to work. But at the end of the day, part of your responsibility is to think through exactly what sorts of what you know, what your obligation is to do that work of good rhetoric. That's all for today. Thank you very much. Happy to take questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 5062,
+      "type": "audio",
+      "text": "So why don't we? I'll, I'll actually, I could answer individual questions unless anybody has a general question that they'd like to ask, but."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 5066,
+      "type": "audio",
+      "text": "Than to just individual questions for the next little while."
+    },
+    {
+      "id": "audio-ds100-sp26-1773354712-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1773354712",
+      "timestamp": 5184,
+      "type": "audio",
+      "text": "And Josh is still going to have office hours right now, too."
+    }
+  ]
+}

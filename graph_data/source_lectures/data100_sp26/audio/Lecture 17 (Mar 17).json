@@ -1,0 +1,3285 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1773786810",
+  "display_name": "Lecture 17 (Mar 17)",
+  "count": 468,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 464,
+      "type": "audio",
+      "text": "All right, everyone, good to see you all again. So today we're going to talk more about the question of understanding model complexity, and particularly understanding it from the sense of how do you know what the right level of complexity to choose is right? Should you use the second degree polynomial? Should you just use a linear model? Should you use an eighth degree polynomial? How do you decide and how do you quantify?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 467,
+      "type": "audio",
+      "text": "The performance of each of those different models so you can make that decision in an informed way."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 477,
+      "type": "audio",
+      "text": "And so we're going to use two tools to help us with those knobs and understanding how those two things work, cross validation and regularization."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 481,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 483,
+      "type": "audio",
+      "text": "See where in."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 492,
+      "type": "audio",
+      "text": "With this little."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 500,
+      "type": "audio",
+      "text": "All right, so now since before we start Lab 6 is due today."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 506,
+      "type": "audio",
+      "text": "Homework There's no homework due this week, but we do have Project A1 due on Friday."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 516,
+      "type": "audio",
+      "text": "For the project is like a longer homework. It's your chance to take some of what you learned last Thursday and apply it to the CCAO data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 533,
+      "type": "audio",
+      "text": "Another announcement, my office hours for this week will be replacing Josh's. So I didn't have office hours yesterday, but I will have office hours right after class today. So come find me and we'll walk over to 422 Evans and then on Thursday I'll just have office hours right here after class."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 560,
+      "type": "audio",
+      "text": "OK, So what did we talk about last time? So Josh talked about this idea of 1 hot or not last time on Tuesday, 1 hot encoding, which is where we want to encode a categorical variable for use with regression and other models. And so the key idea is to create one column for each unique value of the categorical variable right in that TIPS data set. It was one for each day of the week."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 564,
+      "type": "audio",
+      "text": "And common practice is because if we do this and an intercept."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 578,
+      "type": "audio",
+      "text": "They're linearly dependent, so a common practice is to either eliminate one of the columns and use that as a reference value, or to not use intercept. Generally best practice to eliminate one use that as a reference value."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 602,
+      "type": "audio",
+      "text": "So we talked about model performance on unseen data, right? We can fit this super high order polynomial and fit all of our training points perfectly. But the point of training models is so that we can use them on new, never seen before data. That's the whole point of training a model, right? If I have a model that's going to predict how home values in Chicago for the CCAO."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 630,
+      "type": "audio",
+      "text": "I want to use that model next year when it comes time to audit the houses and assess them and figure out how much each one is worth. Right? Yeah, sure. It's nice to know how well I do in the past. But really what I want is I want for that model to be useful in the future. And in the future, I'm going to get data that I have never seen before. And that's the whole point of this process is to mimic how do we simulate the idea of seeing data and testing our model on data that we have never seen before."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 633,
+      "type": "audio",
+      "text": "Because that's how the models are going to be used in the real world."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 657,
+      "type": "audio",
+      "text": "Every regression model that I have ever trained and used has been then deployed on data that it never saw during training, right? And we want to make sure that when whoever's responsible for using the decisions that come out of that model, they want to know that they can trust it. They want to know that it's going to do the right thing. And so we have to have some way of convincing them based on the data that we have."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 670,
+      "type": "audio",
+      "text": "So if we make this super complex model, it's not going to generalize well to new data, right? It's too complex and we said this is overfit to the training data."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 698,
+      "type": "audio",
+      "text": "So what did we do? Well, we said we can split our data set into training and testing, right? So the training set is what we train our model on, right? That's what we do. Like, OK, figure out the coefficients, the thetas so that we can make our predictions. And then our validation set is what we're going to use to help us tune the knobs of our model. Do we want like a quadratic? Do we want a cubic? What kind of do we want these features? Those features, how do we decide?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 718,
+      "type": "audio",
+      "text": "We're going to use the validation set to help us decide. And then at the very, very end, once and one time only, we're going to run our model on the test set and use that as a measure of how well we think it's going to do going forward in the future on new data that it's never seen before."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 728,
+      "type": "audio",
+      "text": "And so because we want to simulate that process of new data that we've never seen before, we have to be very careful to lock our test set down and never touch it during that process."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 747,
+      "type": "audio",
+      "text": "So this is super important for model evaluation. You know, in the process of fitting your model, don't use your test set, don't use it to choose number of parameters, don't even use it to figure out the means, the averages to, you know, standardize your data. You never want to touch it until the very end."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 760,
+      "type": "audio",
+      "text": "And we saw this graph right where on the X axis we have model complexity, right? So we have this idea of more complex and less complex models."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 766,
+      "type": "audio",
+      "text": "Right, so we have more complex models."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 798,
+      "type": "audio",
+      "text": "And as we increase in complexity, the training error, that blue line goes down, right? Because we can make our model more and more complex. That's that like crazy polynomial that we fit to that data, right? We can just like throw complexity at it and it's like great, we can just fit the training data better and better and better and better. But again, that's not going to generalize, right? The variance of the model increases. We introduced the idea of the variance. What does variance in this context mean? It means if we get a different data set, if."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 799,
+      "type": "audio",
+      "text": "The data set changes a little."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 812,
+      "type": "audio",
+      "text": "How does the model change? If our data set, you know, changes a tiny bit and the model gets like totally different then that's high variance. The data set changes in the model sees mostly the same, that's low variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 831,
+      "type": "audio",
+      "text": "And we have this idea of validation error, which is our way of finding this sweet spot, right? Because over here, we're underfitting, right? We're using too simple of models that don't actually capture on what's going on in our data set. And over here, we're using two complex models that are like memorizing the training data."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 837,
+      "type": "audio",
+      "text": "So we always want to hit this sweet spot and validation error is going to be our way of doing it."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 850,
+      "type": "audio",
+      "text": "We're going to say, OK, let me evaluate the model on this validation set and see how well it does. And then out of the different candidates, I'm going to pick whichever one did the best on the validation file."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 865,
+      "type": "audio",
+      "text": "Right. Maybe I try my linear model, my constant model, my quadratic, my cubic. I try all these different models. Maybe I try adding in an extra feature that I found somewhere and I see whichever one does best on the validation."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 873,
+      "type": "audio",
+      "text": "Because the validation wasn't used during training, I can have some faith that yeah, like whichever one does validation hopefully will do the best in the future."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 879,
+      "type": "audio",
+      "text": "So it will help me hit the sweet spot of model complexity question."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 893,
+      "type": "audio",
+      "text": "The question was, can you generally assume that validation and test error will always be higher than training error?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 918,
+      "type": "audio",
+      "text": "I'm hesitant to say always, but most of the time, yes. And why is that? Because well, the model is fit on the training data, right? Like we are trying to minimize the RMSE in the case of OLS, we're trying to minimize it on the training data set. And so it's like the best possible model for the training data set. So any other data set probably not going to do as well, but there's probably edge cases where that's not true."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 921,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 927,
+      "type": "audio",
+      "text": "Our goal we want to find that sweet spot, the model complexity that minimizes the validation error."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 940,
+      "type": "audio",
+      "text": "So today we're going to talk about Hayfold cross validation as a way of doing that, right. Last time you saw this idea of a validation set and briefly touched on K fold cross validation. Today we're going to go into that a little more detail."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 948,
+      "type": "audio",
+      "text": "So the question we had was what if that validation set that we use?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 969,
+      "type": "audio",
+      "text": "Haben Finopi representative, right? What happens if we get a little unlucky, you know, we happen to get, you know, relatively unrepresentative validation set. And remember, we don't want to like waste a ton of data on validation, right? We don't want to say, let me like choose a huge data validation set. So it's going to be representative because then it gives us less training data, right? It's like a trade off."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 977,
+      "type": "audio",
+      "text": "So the way we get around this is by saying, well, that validation set that we chose, it's not the only validation set we could have chosen."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 983,
+      "type": "audio",
+      "text": "Right. Suppose we should use 20% of our data, 1/5 for validation."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 987,
+      "type": "audio",
+      "text": "So in this case, the entire data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 989,
+      "type": "audio",
+      "text": "Looks like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 996,
+      "type": "audio",
+      "text": "Right, it's this entire box and I'm using the last 20% of the data for validation."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1000,
+      "type": "audio",
+      "text": "Right. And maybe I call this V1 my first possible validation set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1021,
+      "type": "audio",
+      "text": "But that's not the only one, right? I could say, well, let me use the 1st 20% of the data set or the 2nd 20% or the 3rd 20% or the 4th 20%, right? There's really five different blocks I can think of and each one of those could have been my validation set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1029,
+      "type": "audio",
+      "text": "Right, so in this example here my training data set is going to be this combined with this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1042,
+      "type": "audio",
+      "text": "And over here is going to be my validation set, right? Same thing with the others. Basically I can pull out any 20% subset I want to be my validation set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1053,
+      "type": "audio",
+      "text": "And we're going to call each of these chunks. Each of these possible chunks we can use a fold. So each one of these is a fold. And our training data set has five different folds."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1064,
+      "type": "audio",
+      "text": "Could we're using 5 here for illustration. You could use three, you could use 7, you could use 6, you could use 8, you could use 10. Any number you want. We're going to use 5 just for convenience."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1071,
+      "type": "audio",
+      "text": "So what we really have is five validation set. 5 different validation sets hidden in here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1090,
+      "type": "audio",
+      "text": "And with the way process validation works, if we're just going to evaluate the model on each of these folds that if we're going to run the process of fit a model, look at how it does on the validation set 5 different times, which each of those five different possible splits between training and validation."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1107,
+      "type": "audio",
+      "text": "So that's all the areas to cross validation. It's basically saying we're going to pull out this validation set in five different places or K different places in general and we're just going to use whichever 1 is most or we're going to average all of them at the end."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1112,
+      "type": "audio",
+      "text": "So how does it work? We basically are just going to say for K folds."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1122,
+      "type": "audio",
+      "text": "We're going to pick one of them to hold out. We're going to take all the rest, lump that into our training data, and we're going to compute the error on the held out fold."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1125,
+      "type": "audio",
+      "text": "And we're going to repeat that for all K of the folds."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1127,
+      "type": "audio",
+      "text": "That folder is to it."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1135,
+      "type": "audio",
+      "text": "So the cross validation error is. Then we take this error from each of those little 5 different iterations or K different iterations."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1136,
+      "type": "audio",
+      "text": "And we average."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1148,
+      "type": "audio",
+      "text": "Right. So we start with the the first one, we train the model on all the other folds that's that light blue and then we compute the error, in this case the MSE or RMSE on the validation set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1151,
+      "type": "audio",
+      "text": "And that validation error #1."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1153,
+      "type": "audio",
+      "text": "And then I'm going to keep validation error #2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1157,
+      "type": "audio",
+      "text": "Using the same process on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1159,
+      "type": "audio",
+      "text": "This set as my training."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1165,
+      "type": "audio",
+      "text": "And this as my validation and so on and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1171,
+      "type": "audio",
+      "text": "So now I have 5 different validation areas and I just take the average across the folds."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1179,
+      "type": "audio",
+      "text": "So how do we put that all together? How do we use that in a model selection workflow?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1182,
+      "type": "audio",
+      "text": "We start with our full data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1193,
+      "type": "audio",
+      "text": "And then we carve off some subset of it as our test set. We're not going to touch it till the very end because that's what we're going to use to reliably report how well our model is going to generalize to new data in the future."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1200,
+      "type": "audio",
+      "text": "But our training set, we can do whatever we want with it, so let's split it up."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1208,
+      "type": "audio",
+      "text": "Basically into this is now fourfold cross validation that I'm showing you here right where we have 4 different validation sets."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1212,
+      "type": "audio",
+      "text": "And for each of these 4 iterations I'm going to compute, I'm going to train the model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1214,
+      "type": "audio",
+      "text": "So this is I'm going to train the model on this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1216,
+      "type": "audio",
+      "text": "And evaluate on this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1229,
+      "type": "audio",
+      "text": "I'm going to train the model on this combined with this, and then I'm going to evaluate on this and so on and so on and take the average of those four and that gives me my cross validation error."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1235,
+      "type": "audio",
+      "text": "Then at the end, I'm going to say OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1242,
+      "type": "audio",
+      "text": "Now I have all these different candidate models that did each cross validation for each one."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1264,
+      "type": "audio",
+      "text": "And I'm going to pick whichever one had the lowest cross validation error, right? I do this process that I outlined in red for my linear model. I do it for my quadratic model, I do it for my cubic model, and so on and so on. And then whichever one has the lowest CV error, that is the lowest average error across all four folds, that's going to be the model I use for."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1266,
+      "type": "audio",
+      "text": "That I actually end up deciding to use."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1270,
+      "type": "audio",
+      "text": "So in practice."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1272,
+      "type": "audio",
+      "text": "What we'll talk about in practice later."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1283,
+      "type": "audio",
+      "text": "So in general, cross validation can be used to select any hyperparameter. What is a hyperparameter? It's basically something that we get to choose in the process of creating a model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1298,
+      "type": "audio",
+      "text": "Right. So things like something you can't solve for using standard, you know, like OLS, gradient descent and so on, right? Because the parameters of your model, the coefficients that just OLS does that for you."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1327,
+      "type": "audio",
+      "text": "So if you're deciding between a quadratic model or a cubic model, there's no way to tell gradient descent, hey, decide between these two for me, right? There's no like gradient of the degree of the polynomial. I have to figure out how to make that decision. The learning rate is another hyperparameter. The regularization penalty, something we'll talk about in a little later in class today, is another example of a hyperprint. You can kind of think of hyperparameters, you know, if you think about like following a recipe."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1357,
+      "type": "audio",
+      "text": "You can control a lot of things. You can control the temperature of the oven. You can control how much flour or sugar or butter. But what you can't control is what happens after you put everything into the oven, right? Mix all your ingredients, you put it in, and then a bunch of chemical reactions are going to happen. You have no control, right? You can't nudge the molecules to like, become fluffier or lighter or moisture. All you can do is control the stuff at the beginning and then the model you know has its internal process."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1361,
+      "type": "audio",
+      "text": "That's kind of how we like to think about fitting models here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1370,
+      "type": "audio",
+      "text": "We have all these hyperparameters we can choose, so we want to figure out what's the best one. Is it better to bake the cake at 3:50 or 325?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1385,
+      "type": "audio",
+      "text": "Some of these times these decisions are obvious, like should we make it at 3:50 or at 600? If I bake it 600, it's going to like, you know, my, it's going to set my kitchen on fire. Not so good. But maybe 325 is better for like a more delicate cake."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1414,
+      "type": "audio",
+      "text": "So these hyperparameter decisions, we have to figure out some way of making them, right? And the modeling world is usually corresponds to, sometimes it corresponds to things like learning rate where you know, some learning rates might like get us better versions of the model, right? And we saw there's like a sweet spot, right? Too big of a learning rate and you jump all over the place. Too small, you don't go far enough. How do you find that Goldilocks sweet spot? Same thing with model complexity, right? We want to find that sweet spot."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1422,
+      "type": "audio",
+      "text": "So hyperparameter tuning is something that we do with cross validation. It's to help us do exactly this process."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1424,
+      "type": "audio",
+      "text": "So how do you do it?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1432,
+      "type": "audio",
+      "text": "Basically, we're going to list out a bunch of different guesses, and we're going to use those guesses to create a grid of values."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1438,
+      "type": "audio",
+      "text": "Right. Maybe I'm going to say for polynomials I want order 234 and 5."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1447,
+      "type": "audio",
+      "text": "And for my learning rate I want, you know, 0.10.001 and 0.00001."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1470,
+      "type": "audio",
+      "text": "So that gives me 9 different possibilities and then for each one of those, I'm going to just compute the CV error. I'm going to do the folds and you know, like split the data set and train and evaluate, train and evaluate, train, evaluate a bunch of times. And then I'm going to pick whichever one has the lowest CV error."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1478,
+      "type": "audio",
+      "text": "So for example, suppose we wanted to pick the best learning rate between alpha equals 0.1, alpha equals 1 and alpha equals 10 and we're going to use three fold cross validation."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1488,
+      "type": "audio",
+      "text": "So first we start by doing alpha equals .01 and we do three fold cross validation. We split our data set into."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1504,
+      "type": "audio",
+      "text": "You know, we train on this, we evaluate here, we train on this plus this, evaluate here, we train on all this, evaluate here and we average the error from those 3 evaluations, right? Average error of evaluating this model on this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1519,
+      "type": "audio",
+      "text": "Average of evaluating this on this and average of evaluating this on this and that averages 4.67. Then we repeat the process for alpha equals 1 and we repeat the process for alpha equals 10."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1528,
+      "type": "audio",
+      "text": "And we can see that this one gave us a cross validation error 4.67, this one 7.01 and this 110.22."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1531,
+      "type": "audio",
+      "text": "So which model do we choose?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1533,
+      "type": "audio",
+      "text": "Which one?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1548,
+      "type": "audio",
+      "text": "Yeah, that one, right. We choose the first one because it had the lowest CV error. Pretty straightforward, right? It's just you have to do all this stuff a bunch of times. Thankfully, there's code in scikit learn that does the the brunt of it for you."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1552,
+      "type": "audio",
+      "text": "So at the end of the day we choose alpha equals .01 or .1."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1563,
+      "type": "audio",
+      "text": "So let's do a little get a little practice. Suppose we want to choose the best polynomial degree for our model out of five possible options."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1569,
+      "type": "audio",
+      "text": "There are five options and we're going to do 4 fold cross validation."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1573,
+      "type": "audio",
+      "text": "So how many times if we do this are we going to compute?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1578,
+      "type": "audio",
+      "text": "The MFE on a validation fold in total."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1587,
+      "type": "audio",
+      "text": "OK, take a second turn to the person next to you if you don't already know them. Introduce yourself and discuss what the answer to this would be."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1669,
+      "type": "audio",
+      "text": "Alright."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1677,
+      "type": "audio",
+      "text": "So how many times will we compute the MFE on a validation fold? Well, what are we going to do?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1690,
+      "type": "audio",
+      "text": "We have 5 hyperparameter choices and four fold cross validation. SO4 fold cross validation means that for each possible hyperparameter choice, we're going to fit 4 models."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1700,
+      "type": "audio",
+      "text": "And then evaluate each one, right, each time each for each fold, we train on the other folds, evaluate on that one. And we're going to do that four times for every model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1719,
+      "type": "audio",
+      "text": "And then we're going to average that to get the error for one hyperparameter value, right? So the first polynomial degree we're going to do that for, we're going to do 4. Then the next one we're going to do 4, and so on and so on. And so we have 5 different hyperparameter values, which means we're going to get 4 * 5 is 20."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1731,
+      "type": "audio",
+      "text": "So now schools want to do the same thing. It's like the best polynomial degree, 5 possible options, 4 fold cross validation. How many times are we going to train the model?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1739,
+      "type": "audio",
+      "text": "All right, so this one, I'm going to give you a little less time because hopefully maybe I kind of already gave away the answer when we talked about the loss."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1744,
+      "type": "audio",
+      "text": "All right, discuss. I still want to hear you discussing, even if this one's pretty easy."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1796,
+      "type": "audio",
+      "text": "All right, So the answer to this one, it turns out, is, well, the same, right? Because each time we evaluate a model, we are training a model to do that evaluation, right? So it's the same thing for each of the hyperventilated choices, you have to do 4 different trained steps."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1802,
+      "type": "audio",
+      "text": "Right, and evaluate for each one. And then we have to do that five times for five different polynomial degrees."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1804,
+      "type": "audio",
+      "text": "So 4 * 5 is 20."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1817,
+      "type": "audio",
+      "text": "Right. This is a flavor of the kind of thing we might ask on an exam, right? You take a look at the past exams, you see a lot of questions like this to give you an idea of how much is involved in actually running cross validation question."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1849,
+      "type": "audio",
+      "text": "The question was, what does it really mean to like fit 4 models? What it means is we're going to take this data set, right? Like imagine let's do three fold cross validation where each person in the room is one data point and I'm doing fold one fold 2, fold 3, right? So I'm going to start by training on these two folds, right? So I'm going to say each of these data points I'm going to like do my SGD or combine them and run my."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1851,
+      "type": "audio",
+      "text": "You know X transpose X inverse X transpose Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1859,
+      "type": "audio",
+      "text": "With all these data points and that is going to give me my first set of coefficients. Then I'm going to evaluate that on that fold."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1890,
+      "type": "audio",
+      "text": "Then I'm going to train another model on these two folds, right? So I'm going to train a model on all these data points, each one, each data point that each one of you is holding. And then, you know, use that to figure a set of parameters. I'm going to evaluate it on that fold. That is the data points that all of you are holding over in the corner. And then last but not least, I'm going to train a data point on all of those data points and all of those data points combined."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1891,
+      "type": "audio",
+      "text": "And evaluate it on all of these."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1896,
+      "type": "audio",
+      "text": "So that's like what the process would actually look like. Does that make sense? OK, cool."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1899,
+      "type": "audio",
+      "text": "That's how cross validation works."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1931,
+      "type": "audio",
+      "text": "So I'm going to briefly talk about some pitfalls before we move on. So couple things. One thing, what if our data set happens to be sorted right? We have a bunch of points that are in sorted order. Well, the whole point of cross validation was to say, well, we don't want to like get stuck with one particularly bad or unrepresentative validation set. But if our data set is sorted, then each split, each fold might be unrepresented because it's like."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1936,
+      "type": "audio",
+      "text": "Just to put value from this to this right if it's sorted on one variable?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1957,
+      "type": "audio",
+      "text": "So how do we get around that? Well, we can just randomize, right? We can just shuffle the data and then do K fold cross validation. OK, great, not a big deal. But what if the data points are related to each other? A lot of times we assume our data points are independent. A lot of times in practice they're not. Talk a little bit more about what like independent means Thursday and after spring break, but."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1971,
+      "type": "audio",
+      "text": "For example, let's suppose we have data in pairs, right? We're trying to predict total household household income of individuals and we do a survey. But it turns out in our survey, we surveyed a bunch of people who are married to each other."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1984,
+      "type": "audio",
+      "text": "And so that means that every data point in our group has 2 or maybe more if they're, you know, in a polycule or something. We have like many, many people and some of them are related to each other."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 1986,
+      "type": "audio",
+      "text": "So that means if I train a model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2002,
+      "type": "audio",
+      "text": "On the people, some of the people in some of the households and then try to evaluate it on some of the people in the same households, right? Like I train a model and one of the data points is me, and then I try to evaluate it on my partner."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2028,
+      "type": "audio",
+      "text": "Well, that's not fair because we have the same household income, we have the same pattern. And so it's not a fair evaluation because in the future, that model is not going to be used on the spouses, the partners and the people in my data set. It's going to be used on an entirely new people. So that's an unfair evaluation. It's going to make our validation or test error look unreasonably high."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2034,
+      "type": "audio",
+      "text": "Right, because it's going to be like, Oh yeah, like your errors or unreasonably low, right? It's going to be like, Oh yeah, your model is great. Really low error. Looks fantastic."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2038,
+      "type": "audio",
+      "text": "But it actually will not generalize at all."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2065,
+      "type": "audio",
+      "text": "So the solution to this is to partition the data points, right, to say, OK, let's make sure that you know all the, if we, if we train a model, then every time we train we have, if we have a person, we always have whoever else is in their household, right? If there are blocks, if there are groups, we always sort of keep everybody in the group in either the training or the validation set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2072,
+      "type": "audio",
+      "text": "What if both of the above are true? For example, what happens if you have a time series?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2085,
+      "type": "audio",
+      "text": "Well it doesn't really make sense to like take a time you know the data .1 for every day, train on some of the days and then predict the others because you know day-to-day things are similar."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2102,
+      "type": "audio",
+      "text": "So how might we get around this? Well thankfully scikit learn has something called time series cross validation and the way people do this is the first fold. We train on the 1st chunk of the data and validate on the next chunk."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2128,
+      "type": "audio",
+      "text": "The second time we train on this set of the data and validate on this chunk and so on and so on and so on. With the idea being, again, we want to simulate what is going to happen in the future, right? We want to our validation and test process to match how the model is going to be used in the future, which means we want our validation set to be the future of the training set, right? If we think about this training set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2131,
+      "type": "audio",
+      "text": "The future is this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2133,
+      "type": "audio",
+      "text": "Similarly, if we think about."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2136,
+      "type": "audio",
+      "text": "This data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2140,
+      "type": "audio",
+      "text": "The future is this and so on and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2162,
+      "type": "audio",
+      "text": "So this is just a sampling of the kinds of things you need to think about in practice when you do training test validation splits in most real world problems. Just like a complete random slip is not good enough and will often end up leading you to be overly optimistic or you know, get some kind of mistake. So keep this in mind when you apply this idea in in practice."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2170,
+      "type": "audio",
+      "text": "All right. So that's cross validation, you know, and we've talked about."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2176,
+      "type": "audio",
+      "text": "The idea of model complexity and, you know, thinking about underfitting and overfitting and we want to find that sweet spot."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2182,
+      "type": "audio",
+      "text": "And we've seen one way of kind of thinking about model complexity."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2186,
+      "type": "audio",
+      "text": "Which is polynomials, right? We have models where."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2193,
+      "type": "audio",
+      "text": "We say we're going to try a square and a cube, and sometimes that makes sense."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2205,
+      "type": "audio",
+      "text": "But sometimes you may want to add more complexity to our model that doesn't necessarily involve polynomials, but we're going to talk about certainly works for that too. But in general."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2224,
+      "type": "audio",
+      "text": "We might also want to like add more features, right? And some of those features may be polynomial, you know, transformations of our original. Some of them might be entirely new, some of them might be some other nonlinear combinations of features that some domain expert told me is really important, right? Maybe a ratio of two of my features."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2252,
+      "type": "audio",
+      "text": "But, you know, in theory, we could just do this forever, right? We could just like add a whole bunch, All right? I'm looking at the ratio of like, you know, X1 and X2. Why not look at the ratio of X1 over X3 and X1 over X4 and X3 over X2 and log of X 3 -, X two, right? I could do this all day, but at some point I have to stop. How do I know which ones are useful and which ones are not? How do I control the complexity of my model?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2258,
+      "type": "audio",
+      "text": "So one way to do this is using something called regularization."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2266,
+      "type": "audio",
+      "text": "And the idea behind regularization is we're going to say if we have a bunch of different features, some of them might be like polynomial transformations or something like that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2275,
+      "type": "audio",
+      "text": "We only want to use like a little of each in the model, right? We want to kind of like hold back on how much we're allowed to use each one."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2302,
+      "type": "audio",
+      "text": "But the idea being is this. We just like let all our features run wild. Our model gets super complex and there's all kinds of crazy stuff going on. But if we're able to like, say we can only use each feature a little bit, then maybe we can control the complexity. There's an example of this. Imagine we just say, I'm just going to set a bunch of the thetas to 0. Not all of them, but I'm going to choose a bunch of them and just like set them to 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2308,
+      "type": "audio",
+      "text": "That sure makes our model simpler, right? Because then that means to make a prediction I can completely ignore those variables."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2314,
+      "type": "audio",
+      "text": "So that is a simpler model than one where all of the features are non 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2325,
+      "type": "audio",
+      "text": "And generally, if a feature if a Theta value is small, that means that the corresponding feature contributes less to the overall prediction."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2329,
+      "type": "audio",
+      "text": "With heavy asterisks there that we'll get to towards the end of class."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2337,
+      "type": "audio",
+      "text": "So as an example, let's think about a bunch of different polynomials. So this red polynomial has, you know."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2354,
+      "type": "audio",
+      "text": "And so cubic with a bunch of different coefficients, and then I'm just shrinking all of these coefficients, right to start, like shrinking them, making them smaller and smaller and smaller. And the smaller I make them, the closer I get to just having a flat line."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2369,
+      "type": "audio",
+      "text": "And you agree that the flat line is like the simplest possible thing we can do, right? If somebody gives me, you know, an X and tells me to make a prediction, the absolute simplest, dumbest thing I can do is just say 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2384,
+      "type": "audio",
+      "text": "0 every single time, right? Dumbest thing I can do, simplest thing I can do. Probably not a good idea. You know, one level up is like the constant model. Then there's like SLR and there's OS and then there's like, you know, all these other things we can do, but there's this like spectrum of complexity."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2391,
+      "type": "audio",
+      "text": "So regularization is going to push us towards simpler models."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2401,
+      "type": "audio",
+      "text": "By telling our process. I'll talk about how in a SEC. By telling our process to kind of like only use each feature a little bit."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2403,
+      "type": "audio",
+      "text": "So how are we going to do that?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2407,
+      "type": "audio",
+      "text": "Well, suppose we give the model a budget."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2416,
+      "type": "audio",
+      "text": "We say, OK, you have, you know, your, your thetas, you're going to choose what they are. I'm going to give you a budget of Q."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2423,
+      "type": "audio",
+      "text": "And the absolute value of each of your coefficients added up has to be less than or equal to Q."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2437,
+      "type": "audio",
+      "text": "So why is this controlling complexity? Because if we have a lot of coefficients and they're all big and you know, we let all the features, you know, have a big impact on the output, then we're going to go over our budget."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2446,
+      "type": "audio",
+      "text": "But if we only use a few of them or we keep all of them small, then we are going to stay within this budget."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2457,
+      "type": "audio",
+      "text": "So this is one way of controlling the complexity of our model, right, to sort of give this budget of how much coefficient we're allowed to use in the OLS process?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2468,
+      "type": "audio",
+      "text": "That means that if we do this right, then the model will only use that budget on the most important, most informative features."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2486,
+      "type": "audio",
+      "text": "Right. If I try to like find the best value where the best coefficients, but I only have a budget, I'm going to try to spend that budget on the coefficients for the features that matter the most, and I might ignore some other ones or like make their coefficients pretty small."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2494,
+      "type": "audio",
+      "text": "So this is one way to do it. It's a pretty reasonable common way to do it. And this is how we're going to look at today."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2523,
+      "type": "audio",
+      "text": "So what does this actually mean though, right? Like we haven't sort of intuitive interpretation of that equation, but let's also think about it geometrically. Specifically, let's just like limit ourselves to the case of two thetas in addition to an intercept. We're not going to talk about the intercept right now, right? And so if you remember, we had the Josh had that demo for gradient descent, right? Where we had two different thetas, right? There was 1 going this way and one going this way, right? And this Theta and this Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2532,
+      "type": "audio",
+      "text": "And then we had our like gradient surface and we're trying to find the minimum. So if we think about that space of Theta, that two-dimensional space of thetas."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2535,
+      "type": "audio",
+      "text": "What does this constraint look like?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2537,
+      "type": "audio",
+      "text": "Well, it looks like a diamond."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2541,
+      "type": "audio",
+      "text": "Right. Why does it look like a diamond? Well, if we think about."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2544,
+      "type": "audio",
+      "text": "Full as we set Theta 2 equal to 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2546,
+      "type": "audio",
+      "text": "What is the largest Theta 1 can be?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2550,
+      "type": "audio",
+      "text": "If Theta 2 is here and there's only two."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2554,
+      "type": "audio",
+      "text": "Q Right. So that means if we go out."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2561,
+      "type": "audio",
+      "text": "By Q that is the largest possible value we can get for Theta one."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2566,
+      "type": "audio",
+      "text": "And you know there's a line going up to. Similarly for."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2567,
+      "type": "audio",
+      "text": "Theta 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2571,
+      "type": "audio",
+      "text": "Right. And then you know same way we could do negative Q."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2578,
+      "type": "audio",
+      "text": "And there's a line going down. And so that's how we get this diamond."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2585,
+      "type": "audio",
+      "text": "So this diamond is our sort of space that we have to work with within our budget."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2590,
+      "type": "audio",
+      "text": "We can see if we increase the budget, the diamond gets bigger. We decrease the budget, diamond gets smaller."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2594,
+      "type": "audio",
+      "text": "What does that actually mean?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2602,
+      "type": "audio",
+      "text": "Well, let's think back to gradient descent. Remember, we have this idea of a lost surface that we visualize as a contour map."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2617,
+      "type": "audio",
+      "text": "And our goal is to find the combination of parameters that gives the lowest loss, right? Think about that demo again. We want to find the combination of Theta values that makes that gradient as small as possible to get the to that bottom the lowest point on that shower curtain."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2619,
+      "type": "audio",
+      "text": "So in this example here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2631,
+      "type": "audio",
+      "text": "The best possible data is that black point in the center right, the gold arrow pointing to it. That's where that's like the best possible data we can do because it minimizes."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2635,
+      "type": "audio",
+      "text": "The function right, which I've shown with those contour points."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2640,
+      "type": "audio",
+      "text": "All right. So this is our sort of Theta hat with no regularization."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2644,
+      "type": "audio",
+      "text": "But if we impose regularization right, we add this budget."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2653,
+      "type": "audio",
+      "text": "And say, well now I'm only allowing solutions that fit within the diamond."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2662,
+      "type": "audio",
+      "text": "I'm only going to let you make solutions. Choose Theta values that don't go over your budget that only fit within this green diamond."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2666,
+      "type": "audio",
+      "text": "So how can someone tell me what the best point within the diamond is going to be?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2674,
+      "type": "audio",
+      "text": "It's kind of like actually maybe just people kind of like point."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2684,
+      "type": "audio",
+      "text": "Yeah, I'm seeing a lot of people point straight up, right. Why? Well, we want to be as close to this this point as possible."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2688,
+      "type": "audio",
+      "text": "But if we're within the diamond, we can see that, you know, anything down here is bad."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2693,
+      "type": "audio",
+      "text": "But we're all the way up here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2706,
+      "type": "audio",
+      "text": "Then we're kind of close to the optimal solution, but we're still within our budget."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2711,
+      "type": "audio",
+      "text": "And notice that we ended up picking a point on a corner and this is a common property of this specific flavor of regularization where we have a diamond as our budget surface."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2715,
+      "type": "audio",
+      "text": "We ended up picking this point that is on the corner."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2719,
+      "type": "audio",
+      "text": "So this is our."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2723,
+      "type": "audio",
+      "text": "Values of the parameter."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2732,
+      "type": "audio",
+      "text": "That are closest to the true loss within the budget that we set right subject to the regularization that we imposed."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2736,
+      "type": "audio",
+      "text": "And again, Q is an arbitrary number. We'll talk more about how we choose QA little later."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2750,
+      "type": "audio",
+      "text": "Spoiler alert is going to be things like cross validation, but this is how this kind of thing works. Now we can imagine we can like make you bigger, smaller, right? If I say let's like shrink Q."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2759,
+      "type": "audio",
+      "text": "Going to be more stingy with the budget and say like you can't use as much. Well then the the optimal value moves right from here to here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2765,
+      "type": "audio",
+      "text": "Same thing, I can make data bigger and now the optimal value is over there."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2769,
+      "type": "audio",
+      "text": "Right. Notice that even though it's."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2773,
+      "type": "audio",
+      "text": "No longer on the corner, it's still on the edge."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2780,
+      "type": "audio",
+      "text": "And we can go more extreme. Oh, we'll do that next. Let's talk about how the size of Q relates to model complexity."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2788,
+      "type": "audio",
+      "text": "Right, so we saw 2 examples, one with like a small value of Q the little diamond and one of the bigger value Q the bigger diamond."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2797,
+      "type": "audio",
+      "text": "So does choosing Q larger increase or decrease model complexity?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2799,
+      "type": "audio",
+      "text": "Take a second turn to the person next to you and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2885,
+      "type": "audio",
+      "text": "All right, so how does the size of Q relate to model complexity? Well, if we think about it, changing the value of Q."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2914,
+      "type": "audio",
+      "text": "Modifies the region of allowed parameter combinations, right? If you have a small Q, then that means that every feature only gets to contribute a little bit to the model, right? Or like being pretty strict with our budget, we're being kind of stingy. You know, there's not as many thetas as the Theta factory. And so we're saying OK, like, you know, you can't use very much. So on the other hand, if we use larger values of Q."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2916,
+      "type": "audio",
+      "text": "Then that means that the features can contribute more to the model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2922,
+      "type": "audio",
+      "text": "And the model ends up being more complex, right? So bigger Q, bigger budget."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2924,
+      "type": "audio",
+      "text": "More complex models."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2926,
+      "type": "audio",
+      "text": "Smaller Q."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2931,
+      "type": "audio",
+      "text": "Smaller budget, less complex models, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2941,
+      "type": "audio",
+      "text": "And you can kind of think about the extreme. What happens when you know Q goes to 0 or in the other extreme where Q goes off to Infinity?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2948,
+      "type": "audio",
+      "text": "So if Q is really, really, really large, that means we have this diamond getting bigger and bigger and bigger."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2968,
+      "type": "audio",
+      "text": "And at some point, our solution are like, no regularization solution just ends up being within the diamond, right? It's sort of like, yeah, like you can, you know, maybe you're imposing the penalty. But the best possible solution even without the penalty happens to be within my budget. So I'm just going to go with that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 2985,
+      "type": "audio",
+      "text": "So a couple quick things on regularization. So again, another way of looking at this instead of the like budget perspective is saying that we want to penalize large values of Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3008,
+      "type": "audio",
+      "text": "Right. We want to penalize things that are too big, right? One way of saying, Oh yeah, we're going to like impose a budget and kind of like limit and constrain. The other way is going to say, hey, like this model spent a lot on, you know, all these different thetas. It's going to get penalized for spending too much. This other model didn't spend as much. It's going to be penalized less."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3020,
+      "type": "audio",
+      "text": "So it turns out that these perspectives are mathematically equivalent. Requires a little math that's well beyond the scope of this class. Takes in 27 if you want to learn more, but that is how we're going to end up figuring out how to solve this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3040,
+      "type": "audio",
+      "text": "And an important aside is that we usually don't apply the penalty to the intercept term in practice. Why not? Well, we don't really need to penalize the constant term, right? The constant term doesn't really like contribute to model complexity. It's just like this is like the baseline, the constant value."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3043,
+      "type": "audio",
+      "text": "So we tend to not penalize the constant term."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3047,
+      "type": "audio",
+      "text": "OK, so knowing those things."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3051,
+      "type": "audio",
+      "text": "Suppose we pick a very small value of Q."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3056,
+      "type": "audio",
+      "text": "What kind of model are we going to get? Are we going to get a model that only returns zero? Are we going to get a constant model?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3060,
+      "type": "audio",
+      "text": "We're going to get all life. We're going to get something entirely different."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3062,
+      "type": "audio",
+      "text": "Take a minute, turn to the person next to you and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3139,
+      "type": "audio",
+      "text": "All right, so if."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3143,
+      "type": "audio",
+      "text": "We pick a very very very small value of Q."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3152,
+      "type": "audio",
+      "text": "Well, we can think about that diamond, our budget shrinking and shrinking and shrinking and shrinking and shrinking, right? And the smallest it can possibly be."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3161,
+      "type": "audio",
+      "text": "Well, you know this isn't getting pretty pretty small. You can imagine getting even smaller, and the smallest it can possibly be is just a single point."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3165,
+      "type": "audio",
+      "text": "At the origin of this axis."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3179,
+      "type": "audio",
+      "text": "So if we have a model with no intercept, then that means that you know it's just an always 0 model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3179,
+      "type": "audio",
+      "text": "What does the origin correspond to? Well, it just means that Theta one is 0 and Theta 2 is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3191,
+      "type": "audio",
+      "text": "And if we do have an intercept, it's again usually most of the time you want to have an intercept, then this means that the coefficients on the XS are zero and this is just a constant model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3196,
+      "type": "audio",
+      "text": "Right. And so if your penalty is too harsh, if your budget is too small."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3203,
+      "type": "audio",
+      "text": "Then you're going to end up with a model that's either like a constant model with an intercept, or a zero model with no intercept."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3217,
+      "type": "audio",
+      "text": "OK, So what we have is if we think about this model complexity regularization gives us a way to move along this axis."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3222,
+      "type": "audio",
+      "text": "Right, if we have regularization with like small values of Q."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3232,
+      "type": "audio",
+      "text": "Then that means we get simple models that might underfit, right? Like that extreme example of the zeros model, or 0 or constant."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3243,
+      "type": "audio",
+      "text": "And if we go to the other extreme, right, we're increasing complexity as we go this way, right? Then we have large queues, big budgets and we can say, yeah, you can model can be as complex as you want."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3246,
+      "type": "audio",
+      "text": "Right. And then you might end up with overfitting."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3266,
+      "type": "audio",
+      "text": "And again, we have this exact same problem we had before of how do we find the sweet spot in the middle right? How do we make this diamond the right size so that we control the complexity? We may be like do well on a validation set without overfitting or underfitting."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3280,
+      "type": "audio",
+      "text": "So there's different kinds of regularization. The kind that we've been looking at where the absolute values sum up to be less than or equal to some number is called L1 regularization."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3290,
+      "type": "audio",
+      "text": "Because if you think about like a linear algebra thing, if you have a vector, you compute the sum of the absolute values of the entries. That's called the L1 norm."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3297,
+      "type": "audio",
+      "text": "So This is why this is L1 regularization, right? We are regularizing the L1 norm of the coefficient vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3300,
+      "type": "audio",
+      "text": "Basically some of absolute values."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3309,
+      "type": "audio",
+      "text": "How do we actually do this in practice? How do we actually, you know, take the, take this and optimize it?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3313,
+      "type": "audio",
+      "text": "Because OLS, right? Vanilla. Plain old OLS."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3322,
+      "type": "audio",
+      "text": "Looks something like this, right? We're like minimizing the sum of squares, you know we're minimizing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3328,
+      "type": "audio",
+      "text": "Y minus Theta 0 plus Theta 1X1 plus Theta PXP and so on and so on squared, and we're summing over our data points."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3334,
+      "type": "audio",
+      "text": "And we you know, use calculus or in this case geometry to solve this problem."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3358,
+      "type": "audio",
+      "text": "But an L1 regularization, we're doing a constrained minimization, right? We're no longer just saying that oh, minimize this, but minimize this subject to that is you also have to satisfy this condition right among the possible thetas that live within the diamond, among every the thetas that satisfy that equation."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3362,
+      "type": "audio",
+      "text": "Which one is going to give you the best optimal answer?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3368,
+      "type": "audio",
+      "text": "Well, this is a lot harder, right? You can't just sort of like take the derivative. The geometry gets a little trickier."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3376,
+      "type": "audio",
+      "text": "But it turns out that the theory of optimization gives us a tool called Lagrangian duality."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3381,
+      "type": "audio",
+      "text": "That says that we can take that constrained optimization problem."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3385,
+      "type": "audio",
+      "text": "This thing here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3389,
+      "type": "audio",
+      "text": "And we can say that this is exactly equivalent."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3395,
+      "type": "audio",
+      "text": "To adding in an extra term in our minimization."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3400,
+      "type": "audio",
+      "text": "That includes this same sum."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3410,
+      "type": "audio",
+      "text": "Right. And This is why I said earlier you can kind of think of this equivalently as imposing a penalty on models with potatoes that are too large."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3423,
+      "type": "audio",
+      "text": "Why is this true? Again, beyond the scope of this class. If you're curious, highly recommend taking X 127. Even if you're not curious, highly recommended. Anyway, it's important. It's important stuff to know as a data scientist."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3431,
+      "type": "audio",
+      "text": "But the long and short of it is that we can now just solve this optimization problem here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3438,
+      "type": "audio",
+      "text": "Right, so now we have an optimization problem where we're trying to find thetas that minimize this term."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3444,
+      "type": "audio",
+      "text": "And there's a connection between."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3453,
+      "type": "audio",
+      "text": "Q Our budget and Lambda, which we can think of and we call our regular evasion penalty."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3461,
+      "type": "audio",
+      "text": "Isaac called a penalty. Well, again, this is something we're trying to minimize, right? We're trying to make this whole equation on the bottom as small as possible."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3470,
+      "type": "audio",
+      "text": "So the second term we can think of as a penalty term because it's saying if your thetas are too big."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3474,
+      "type": "audio",
+      "text": "The thing you're minimizing is going to grow big and get out of control."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3496,
+      "type": "audio",
+      "text": "And if your Lambda is really large, that means you're imposing A harsh penalty, right? When you minimize this thing. You really want to minimize thetas because that Lambda, every Theta, every like bit you spend on putting into your coefficients is going to get multiplied by Lambda and add a lot to your loss function."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3502,
+      "type": "audio",
+      "text": "If Lambda is small, like really really small, then that second term not going to matter so much."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3512,
+      "type": "audio",
+      "text": "So we can see that Lambda kind of behaves the opposite of Q, right? Big values of Q, like big budgets, correspond to small lambdas, small penalties."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3522,
+      "type": "audio",
+      "text": "Whereas small values of Q tiny budgets, simpler models correspond to big penalties."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3529,
+      "type": "audio",
+      "text": "So now we just have to find data that minimize our new objective function."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3551,
+      "type": "audio",
+      "text": "So now, unlike leaf squares or OLS, we can no longer just find a closed form solution, right? We can no longer sort of use the sort of beautiful geometry of the space of the span of the columns and the Y and the residual. We can no longer do any of that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3554,
+      "type": "audio",
+      "text": "Instead we have to use gradient descent."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3564,
+      "type": "audio",
+      "text": "So again this term has two parts. The first part is make the MSC on the data small, right? Make sure that the model fits the data."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3572,
+      "type": "audio",
+      "text": "And the second term says, yeah, do that, but also keep the size of the parameters small, right? Ensure that the sum."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3579,
+      "type": "audio",
+      "text": "Doesn't get too big, right? And we're minimizing. So we want to minimize both of those things."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3588,
+      "type": "audio",
+      "text": "If we call it a regularization penalty and it is a hyperparameter, right, we get to choose it."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3596,
+      "type": "audio",
+      "text": "Well, I don't necessarily know how to choose it right. Like offhand I can't tell you. Like oh Lambda equals 7 is always the best value because it depends on the problem."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3603,
+      "type": "audio",
+      "text": "How do you figure that out? Well, again, spoiler alert, we're going to see we can use things like cross validation to do it."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3615,
+      "type": "audio",
+      "text": "So large values of Lambda correspond to big penalties, right? Because you're saying that even just like a little increase in beta is going to like make my loss function shoot way up?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3621,
+      "type": "audio",
+      "text": "Small values of Lambda correspond to smaller penalties."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3626,
+      "type": "audio",
+      "text": "And bigger budgets where you can say like, yeah, sure, let the coefficients do what they want."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3639,
+      "type": "audio",
+      "text": "OK, so that is Lhasa. This is L1 regularization, which we also call LASSO. LASSO stands for at least absolute shrinkage and selection operator."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3642,
+      "type": "audio",
+      "text": "Why shrinkage? Shrinkage because we are shrinking our coefficients."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3649,
+      "type": "audio",
+      "text": "Right, we are literally shrinking our coefficients by making them smaller."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3652,
+      "type": "audio",
+      "text": "And then we are also doing selection."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3661,
+      "type": "audio",
+      "text": "Why are we doing selection? Well, it turns out that Lasso has this really nice property where your solutions are often going to end up at the corners of the diamond."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3674,
+      "type": "audio",
+      "text": "And you know, you can think of in higher dimensions, the diamond is going to be like along the axis. But what does it mean to be on the corner? It means that one or more of your coordinates are going to be 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3684,
+      "type": "audio",
+      "text": "Why is that nice? Well, we'll get to that in a little bit. But if you think about, think about a model where, you know, maybe most of the thetas are 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3704,
+      "type": "audio",
+      "text": "Well, that's a pretty simple model, right? If I have a model with like 20 features and then I run this and, you know, it turns out that 18 of them are 0, then that tells me that those other two are maybe more important than the other 18, right? And so we're doing feature selection. We are choosing the most important features."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3707,
+      "type": "audio",
+      "text": "By looking at which ones have nonzero Theta values."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3710,
+      "type": "audio",
+      "text": "So that's why it's called Least absolute shrinkage and selection."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3718,
+      "type": "audio",
+      "text": "So as I said, there's no closed form solution, unlike OLS."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3727,
+      "type": "audio",
+      "text": "In practice we have to use gradient descent or variance other optimization algorithms that do essentially the same thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3737,
+      "type": "audio",
+      "text": "And we are going to use in this class the lasso model class in scikit learn. There's a demo for today. I'm going to like briefly talk about it, but."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3747,
+      "type": "audio",
+      "text": "I encourage you to like, read carefully over the whole thing. It's good stuff, and it's stuff that you'll need to know for this class and also your future data science career."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3754,
+      "type": "audio",
+      "text": "So what does it look like? We say import scikit learn linear model as LM and then we say LM dot lasso."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3770,
+      "type": "audio",
+      "text": "Sometimes people import from SK, learn linear model, import lasso. It really depends. There's not like a standard or a convention the way there is with numpy, pandas, things like that. And how do we do it? We call dot fit just like we did with OLS."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3783,
+      "type": "audio",
+      "text": "And we can get the coefficients using dot cof under score just like we did with OLS, right? And we can make predictions for new points using dot predict again just like we did with OLS."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3795,
+      "type": "audio",
+      "text": "All of the FICAT learn models have this nice uniform interface that we can rely on being able to call dot fit, call dot predict, and have it behave in roughly the same way."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3798,
+      "type": "audio",
+      "text": "Even if what's going on under the hood is pretty different."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3819,
+      "type": "audio",
+      "text": "From recall coefficients, you know when you get the coefficients fusing dot coeff under score, we get back coefficients that look like this, right? What does this mean? This means that the first coefficient The coefficient for the first feature is -0.5. The coefficient for the second feature is."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3845,
+      "type": "audio",
+      "text": ".001 this is .000002. This is basically practically 0. This one is practically 0, practically 0, practically 0, practically 0, right? So we can see that already this has zeroed out a bunch of the coefficients for and this one I think is run on the same demo from last Tuesday."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3849,
+      "type": "audio",
+      "text": "Predicting horse or miles per gallon from horsepower, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3852,
+      "type": "audio",
+      "text": "And we can see that most of these coefficients go to 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-331-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3856,
+      "type": "audio",
+      "text": "And especially the higher powers of the polynomial go to theorem."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-332-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3858,
+      "type": "audio",
+      "text": "That's kind of nice."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-333-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3861,
+      "type": "audio",
+      "text": "So let's do a little demo."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-334-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3865,
+      "type": "audio",
+      "text": "So as always, you can follow along with the demo."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-335-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3891,
+      "type": "audio",
+      "text": "So this is the example with the car data set, but let's do an example on coral reefs. So as you know, climate change, as you may or may not have heard, climate change is affecting pretty much everything in the world, including but not limited to coral reefs, right? So coral reefs, these beautiful corals that live are beautiful sort of ecosystems that exist off the coast of many, many places in the world."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-336-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3893,
+      "type": "audio",
+      "text": "And as temperatures increase."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-337-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3900,
+      "type": "audio",
+      "text": "And there's pollution, then all these little algae that live on the coral."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-338-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3915,
+      "type": "audio",
+      "text": "Kind of like die off or leave and the coral gets bleached, right? And that bleaching leaves it vulnerable, more likely to die off. So generally more bleaching bad. We want to predict how this might happen."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-339-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3939,
+      "type": "audio",
+      "text": "So we have a data set of a bunch of different reefs all over the world, right? So I have, I think there's a few thousand in here. And you know, we have which ocean, it's in which country, a bunch of different information. I can keep scrolling and I can see I have a lot of different data about it, right? I have the sort of sea surface temperature, the temperature of the reef."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-340-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3963,
+      "type": "audio",
+      "text": "Have a bunch of other variables including but not limited to the temperature surface anomaly, that is, how much the temperature at any particular point is different from the normal temperature, and so on and so on, right? I have a bunch of different features. And then there's sort of like rate of temperature change, right? Is the temperature changing fast, slow, longitude, latitude, and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-341-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3971,
+      "type": "audio",
+      "text": "So let's suppose I want to train a model and I'm going to use these as my columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-342-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3973,
+      "type": "audio",
+      "text": "And."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-343-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 3975,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-344-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4002,
+      "type": "audio",
+      "text": "I'm going to drop all the rows that are missing. Again, I told you earlier, not good practice, but we're going to just do it for now just so we can see what's going on with this data set. So we do our training test split using Scikit learns handy dandy function and our training data set, the XS, the columns we're going to use are predictors. Our features, again, you should like make yourself familiar with all these words over time. Look something like this, right? This is our design matrix."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-345-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4004,
+      "type": "audio",
+      "text": "And, you know, have all these different features."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-346-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4014,
+      "type": "audio",
+      "text": "We can pull out the Y value, our targets, our dependent variable again, whatever you want to call it. Looks something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-347-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4030,
+      "type": "audio",
+      "text": "So we can use OLS, right, to create a linear model. We call fit, we get the coefficients and we notice that they're all, you know, kind of they all have some values and we can see that it has some mean squared error on the validation set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-348-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4038,
+      "type": "audio",
+      "text": "So what happens if we use lasso right? Basically lasso and maybe I just choose alpha equals 0.1, I call dot fit and I get coefficients that look like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-349-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4056,
+      "type": "audio",
+      "text": "Right, I say this coefficient is -.2 and so on and so on. You know, you can see most of these are like, you know, 10 to the -2 just like .01 ish. Some of them are 0, some of them are smaller. This one happens to be quite a bit bigger."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-350-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4062,
+      "type": "audio",
+      "text": "So maybe Lasso is doing something here, but we have a problem."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-351-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4067,
+      "type": "audio",
+      "text": "And what is the problem? Well, it turns out."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-352-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4080,
+      "type": "audio",
+      "text": "That different features and this is true of like most prediction problems you'll work on have different scales, right? And sort of the like simplest cartoon example of this is maybe 1, you know, parameters in feet, another one is in inches."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-353-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4086,
+      "type": "audio",
+      "text": "They mean the same thing, but they are stored in different scales."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-354-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4096,
+      "type": "audio",
+      "text": "Why is that a problem for us? Well, remember, once we start doing LASSO, we're introducing this idea of a budget."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-356-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4105,
+      "type": "audio",
+      "text": "If we give our model a budget."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-355-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4105,
+      "type": "audio",
+      "text": "But."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-357-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4111,
+      "type": "audio",
+      "text": "It's going to spend it more where it can have an impact, right? So let's take these two columns in our design matrix year and TSA, that's that like surface anomaly, how far we are from the normal temperature."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-358-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4119,
+      "type": "audio",
+      "text": "Well, if I modify the coefficient for year just like a little tiny bit."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-359-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4138,
+      "type": "audio",
+      "text": "And that's going to have a big impact on my output, right? Because year increments, if year is like 2000, right? So like the year, because that's how we store years, right? Like this is 2000 years since the common era, it's going to be big, right? So a small increase in that coefficient is going to be 2000 times that coefficient on the output."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-360-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4140,
+      "type": "audio",
+      "text": "This one on the other hand."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-361-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4153,
+      "type": "audio",
+      "text": "Probably matters more, right? If we think about bleaching of the reef, coral reef, the temperature surface anomaly probably matters a lot more than what year it is for making that prediction."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-362-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4176,
+      "type": "audio",
+      "text": "But the problem is that this, these values are all really small, right? They're like 36.17, right? They're like fractions of a degree because they're averages. And we know that these small amounts matter, right? Like even just like 2° of warming can have catastrophic impacts for the Earth, right? So this like 5° of warming, it's a pretty big deal."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-363-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4181,
+      "type": "audio",
+      "text": "But the problem is if we increase the coefficient on this just a little bit."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-364-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4184,
+      "type": "audio",
+      "text": "Not going to have the same impact on the output."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-365-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4188,
+      "type": "audio",
+      "text": "So because we're doing apples and oranges comparisons on the scales."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-366-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4190,
+      "type": "audio",
+      "text": "We're not going to use our budget properly."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-367-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4198,
+      "type": "audio",
+      "text": "So how do we solve this? Well, the good news is you probably have already seen this before. Maybe in data 8."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-368-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4207,
+      "type": "audio",
+      "text": "But features with larger values naturally contribute more."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-369-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4211,
+      "type": "audio",
+      "text": "Right. And we talked about this. So one solution is to standardize the data."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-370-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4219,
+      "type": "audio",
+      "text": "That is, we subtract the mean and divide by the standard deviation. Convert the data to what are called standard units."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-371-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4231,
+      "type": "audio",
+      "text": "So that means that the resulting features are all going to be on the same scale, because they're all going to be centered at zero and they're all going to have a variance or standard deviation of 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-372-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4249,
+      "type": "audio",
+      "text": "Why exactly that is, we'll talk a little, get into that a little more on Thursday when we start talking about what like mean and standard deviation mean. But essentially you can imagine, you know, we're sort of like centering them. We're sort of taking away the scale, right? If one is in feet, one is in inches, we're going to divide by a bigger number for the one in feet or for the one in inches and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-373-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4261,
+      "type": "audio",
+      "text": "So if we do that and convert to standard units, right, we say X train minus the mean divided by the standard deviation."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-374-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4284,
+      "type": "audio",
+      "text": "And notice here that we're doing the same for the validation set. We are also subtracting the mean of the training data set. I want you to think about why that is not going to answer it in class, happy to talk about afterwards, but think about why this is a very important choice that we should be using the training mean rather than the validation or the entire data set. So now if we take that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-375-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4293,
+      "type": "audio",
+      "text": "Data transformed data that has been converted to standard units that is centered at 0, scaled to have standard deviation 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-376-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4297,
+      "type": "audio",
+      "text": "Then we can see that the coefficients look very different."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-377-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4301,
+      "type": "audio",
+      "text": "Right. And now if I zoom out."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-378-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4307,
+      "type": "audio",
+      "text": "We can see that the."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-379-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4313,
+      "type": "audio",
+      "text": "Earlier model right had a pretty big coefficient."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-380-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4322,
+      "type": "audio",
+      "text": "On this 4th."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-381-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4325,
+      "type": "audio",
+      "text": "You know coefficient here and I had all these coefficients on these other variables like over here you know we have the latitude and longitude."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-382-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4334,
+      "type": "audio",
+      "text": "We have, you know, coefficients here, and now we can feed that the coefficients change quite a bit once we introduce this right, we get a sense of which ones matter more or less."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-383-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4349,
+      "type": "audio",
+      "text": "So always when you're doing lasso or other kinds of regularization, make sure you standardize your features so I can learn has something called a standard scaler that will do this for you if you use it properly."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-384-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4356,
+      "type": "audio",
+      "text": "So before we wrap up on regularization, move to random variables, I'll talk briefly about a different kind of regularization."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-385-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4371,
+      "type": "audio",
+      "text": "Up until now, we've been doing everything with where we said our budget is calculated as the sum of absolute values of the coefficients. That's not the only way we could have allocated the budget, right? We saw like the sum of absolute values gives us a diamond."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-386-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4377,
+      "type": "audio",
+      "text": "But that's not the only way it made sense. It's a reasonable way, but it's certainly not the only way."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-387-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4383,
+      "type": "audio",
+      "text": "So suppose we had applied a different constraint and said the sum of squares."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-388-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4387,
+      "type": "audio",
+      "text": "Not to some of the values, but the sum of squares."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-389-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4389,
+      "type": "audio",
+      "text": "Is constrained."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-390-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4406,
+      "type": "audio",
+      "text": "Well, what does that correspond to in 2 dimensions? That's a circle, right? Higher dimensions, that's like a sphere or like a hypersphere. But basically what that means is now instead of living on a diamond, our solution is going to live on this circle."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-391-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4421,
+      "type": "audio",
+      "text": "And notice that we no longer have that property of the points kind of living on the corners because, you know, the corners of a circle are not as special just because you don't have that sort of like point that a corner non differentiable corner at the end."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-392-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4425,
+      "type": "audio",
+      "text": "So this is called."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-393-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4439,
+      "type": "audio",
+      "text": "You know, how do we do this? We can use the exact same process of saying this is a constrained optimization problem where you know, we're doing like, OK, fit our data right, we want to minimize the mean squared error."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-394-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4444,
+      "type": "audio",
+      "text": "And subject to or such that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-395-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4461,
+      "type": "audio",
+      "text": "The sum of squares of the coefficients is less than or equal to sum of Q. Using the same optimization trick Lagrangian duality, we can convert this into a single optimization function where instead of a budget queue we now have a penalty Lambda."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-396-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4474,
+      "type": "audio",
+      "text": "Again, these two are related. How they're related, again, requires a little more math than we have available to us in this class, But these two are sort of, at least intuitively, you can see that, you know, as Q goes up, Lambda goes down."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-397-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4482,
+      "type": "audio",
+      "text": "So this it turns out using some vector calculus actually has a closed form solution."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-398-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4490,
+      "type": "audio",
+      "text": "Right. So if we want to minimize this, if we want to find thetas that minimize this objective function."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-399-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4498,
+      "type": "audio",
+      "text": "Right again, we want to do the same thing. Keep the mean squared error low and also keep the sum of squares of the parameters small."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-400-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4501,
+      "type": "audio",
+      "text": "This is called Ridge regression."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-401-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4510,
+      "type": "audio",
+      "text": "So we have lasso for the L1 norm, sum of absolute values and Ridge for sum of squares."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-402-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4531,
+      "type": "audio",
+      "text": "And in scikit learn we use the Ridge model class. It runs gradient descent. In practice there is actually a closed form solution, but we rarely compute it because gradient descent ends up being more stable. It ends up getting us to nicest solutions. We don't end up in edge cases. And if you want to know more about that, take 127 or 189."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-403-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4540,
+      "type": "audio",
+      "text": "So I mentioned Lasso ends up zeroing out things because we end up on these corners."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-405-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4553,
+      "type": "audio",
+      "text": "Panel talked a little bit about this, but like I want you to think for a second about why this zeroing out might be useful."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-404-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4553,
+      "type": "audio",
+      "text": "Why might it be useful to 0 things out?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-406-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4556,
+      "type": "audio",
+      "text": "To take a second or a minute really, and discuss with your neighbor."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-407-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4560,
+      "type": "audio",
+      "text": "And you can answer this one more than once if you want."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-408-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4593,
+      "type": "audio",
+      "text": "All right, discuss. I want to hear more people talking."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-409-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4634,
+      "type": "audio",
+      "text": "All right, so Oh no, I can't see the answers."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-410-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4643,
+      "type": "audio",
+      "text": "Oh well, that would have been nice. Well, well, if I want to share what you thought."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-411-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4647,
+      "type": "audio",
+      "text": "Why it might be nice to 0 out from coefficients?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-412-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4649,
+      "type": "audio",
+      "text": "Sure."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-413-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4660,
+      "type": "audio",
+      "text": "Yeah, to remove terms from the model, right, We have a bunch of parameters that are 0. That means we're saying those features don't contribute to our model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-414-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4664,
+      "type": "audio",
+      "text": "Why is that nice? Because it means our model is simpler. It is ignoring those features."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-415-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4668,
+      "type": "audio",
+      "text": "If I have 5000 features."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-416-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4698,
+      "type": "audio",
+      "text": "And you know, 4500 of them are zero. That means I only have to think about 500 when making predictions. If I want to interpret my model, that means I only have to interpret 500 instead of 4000. And it means that my model is simpler, more likely to be to not be overfit. So these are generally nice things to have that we want in our models. This is often called parameter sparsity. There's a whole field of study on this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-417-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4699,
+      "type": "audio",
+      "text": "A lot of rich mathematical theory on like."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-418-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4707,
+      "type": "audio",
+      "text": "Why Lasso ends up getting you sparse solutions, but generally this is something nice to have."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-419-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4719,
+      "type": "audio",
+      "text": "We do. As I mentioned earlier, we use it for feature selection, right? Features with non 0 parameters are more informative. And one thing that sometimes people do is they'll use lasso, they'll run lasso once."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-420-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4722,
+      "type": "audio",
+      "text": "To figure out which features are the most important."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-421-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4740,
+      "type": "audio",
+      "text": "And then anything where the feature is the sorry, the coefficient is 0, they'll just drop those columns from the design matrix and move on with the others, right? It's a good way of removing features that might be less informative, less useful in making your predictions."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-422-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4744,
+      "type": "audio",
+      "text": "This is why it's called Least absolute shrinkage and selection operator."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-423-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4770,
+      "type": "audio",
+      "text": "Yeah, I mentioned there's a closed form solution for Ridge. And to summarize, we have this table which I'll talk a little bit more at the beginning of on Thursday. But I want to start briefly introducing some important big ideas and notation that we'll be using for Thursday's lecture on random variables. And I'll start by saying I'll talk a little bit more about this on Thursday that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-424-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4776,
+      "type": "audio",
+      "text": "Keep in mind that people in this class come in with different backgrounds, right? Probability is not a prerequisite for this class."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-425-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4784,
+      "type": "audio",
+      "text": "Some of you are taking probability right now, some of you are not. Some of you already have. Some of you might have never taken a probability class."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-426-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4799,
+      "type": "audio",
+      "text": "And so we are tailoring this lecture with that expectation that you don't necessarily have any probability background. So, you know, if you feel like, Oh yeah, you're a probability ace, this will probably be, you know, old hat for you. That's totally fine."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-427-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4810,
+      "type": "audio",
+      "text": "OK, so a random variable which we often abbreviate RV, is something that represents the outcome of a random event."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-428-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4835,
+      "type": "audio",
+      "text": "There's a little bit of a simplification, there's a formal mathematical definition that's a little beyond the scope of this class. But for intuition, I think this is good enough, right? And for the purpose of this class is good enough, which is, it's something that represents the outcome of some random event happening in the world, right? Maybe you can think of the number of points for your favorite team scores as a random event. You can think of the outcome of a coin flip."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-429-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4840,
+      "type": "audio",
+      "text": "As maybe a less interesting random event, you can think of the."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-430-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4857,
+      "type": "audio",
+      "text": "You know, somebody's score on a midterm as a random event and so on and so on, right? There's many different things that have randomness in the world, and a random variable represents the outcome of a random event that we can measure numerically."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-431-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4864,
+      "type": "audio",
+      "text": "So notation wise, we're going to use XI. This is capital XI."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-432-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4876,
+      "type": "audio",
+      "text": "To represent the outcome of a random variable. So let's suppose that we have a fair coin and it can land heads or tails, and we're going to flip it a bunch of times."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-433-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4882,
+      "type": "audio",
+      "text": "So XI represents the outcome of the ith flip."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-434-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4888,
+      "type": "audio",
+      "text": "X1 is first slip heads or tails, X2 second flip heads or tails, and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-435-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4898,
+      "type": "audio",
+      "text": "So each XI we're going to say it's one if the coin is heads and 0 if the coin is tails."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-436-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4907,
+      "type": "audio",
+      "text": "Maybe we could have used actual HS&T's, but we like numbers, right? Numbers are convenient for us. And so we'll kind of say heads corresponds to A1, tails corresponds to a 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-437-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4927,
+      "type": "audio",
+      "text": "And let's suppose that we flip a coin repeatedly. The first slip is X1 is one second flip tails, and so that means X2 is 0. Third flip also tails, which means that X3 is 0. So we have this sequence of values."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-438-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4930,
+      "type": "audio",
+      "text": "Which are the outcomes of these random events, the outcomes of the coin flips?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-439-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4932,
+      "type": "audio",
+      "text": "And so."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-440-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4950,
+      "type": "audio",
+      "text": "So we have different kinds of random variables, different kinds of."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-441-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4959,
+      "type": "audio",
+      "text": "Variables discrete and continuous. So discrete this is DISCRETE does not mean the same thing as EET. Discrete ET means like quiet and it's kind of like, you know, low key sneaky. Discrete mean ETE means sort of like finite."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-442-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4962,
+      "type": "audio",
+      "text": "Number of possible outcomes."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-443-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4984,
+      "type": "audio",
+      "text": "So a coin flip is a discrete random variable because there's only two possible things that it can be, right? Heads or tails in our representation 0 or one, right? So these Xis are a discrete random variables. A continuous random variable has an infinite number of possible outcomes, right? If we think about."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-444-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 4987,
+      "type": "audio",
+      "text": "How long somebody has been alive."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-445-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5006,
+      "type": "audio",
+      "text": "This is actually an interesting one because depending on how you measure it, it could be discrete or continuous, right? If I just say I want to measure somebody's age, well then yeah, then that's just a discrete random variable, right? Because it's an integer, right? 1234, so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-446-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5020,
+      "type": "audio",
+      "text": "But if I want to measure somebody's age as like the number of seconds they've been alive with, including like the fractional part, then there's an infinite number of possibilities, right? Right now, I might be, you know, this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-447-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5037,
+      "type": "audio",
+      "text": "You know, 30.145 second, you know, years, seconds, whatever old and then now I might be 47.3489 whatever years old, right. So I can also think of that as a continuous random variable."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-448-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5049,
+      "type": "audio",
+      "text": "So continuous is something that has an infinite number of possible outcomes, right? Another example is if I flip a coin, how long does it spend in the air? Well, again, that isn't."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-449-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5057,
+      "type": "audio",
+      "text": "There are an infinite number of possible outcomes, right? It could be one second, it could be two seconds, it could be anywhere in between."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-450-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5066,
+      "type": "audio",
+      "text": "So these are continuous random variables. So you know, let's say the first slip, right, we're going to define Yi."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-451-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5074,
+      "type": "audio",
+      "text": "As a random variable that represents the number of seconds in the air. So I flip one coin, it's in the and I look at my watch, it's in the air, 2.134 seconds."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-452-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5083,
+      "type": "audio",
+      "text": "Y1 is 2.134 but another coin is in the air 1.789 seconds so that is my value of Y2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-453-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5101,
+      "type": "audio",
+      "text": "So now why? Why? I can be any real number, right? There's an infinite number of possible values it can be."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-456-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5119,
+      "type": "audio",
+      "text": "In a discrete random variable, each possible outcome has an associated probability, right? For a flip of a fair coin. Probability of one remember corresponds to heads is five. Probability of 0 corresponds to tails is also .5."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-455-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5119,
+      "type": "audio",
+      "text": "So every outcome also has a corresponding probability."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-454-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5119,
+      "type": "audio",
+      "text": "And so we say it's in the positive real numbers."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-457-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5137,
+      "type": "audio",
+      "text": "Probabilities, as you probably you may remember from data 8, have to add up to 1 the probability of two different things happening. If there's no overlap between them, we can add them up. The probability of one thing happening and then based on that, that another happened, we can multiply and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-458-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5146,
+      "type": "audio",
+      "text": "So those are probabilities, but for continuous random variables, it's important to keep in mind that individual outcomes all have probability 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-459-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5175,
+      "type": "audio",
+      "text": "Why is that? Well, if we think about it, there's an infinite number of possible values, right? That coin was in the air 1.789 seconds. But if you think about how likely was that relative to 1.78903 or 1.7889421? Well, there's an infinite number of possibilities. And so if we divide by a denominator of Infinity, we get 0, right? That's sort of a very hand WAVY explanation. So no single event."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-460-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5177,
+      "type": "audio",
+      "text": "Is special."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-461-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5189,
+      "type": "audio",
+      "text": "Right, the probability of anyone value is 0. So we can't really like talk about probabilities of continuous random variables equaling or being certain values."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-462-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5209,
+      "type": "audio",
+      "text": "But we can talk about probabilities of ranges. I can say my continuous random variable is like between the probability that my coin flip my coin is in the air between 1 and 2 seconds that I can define right? And maybe I want to say that the probability that my coin is in the air for between zero and two seconds is defined as .8."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-463-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5238,
+      "type": "audio",
+      "text": "OK, so that's like a very, very high level overview of random variables. We'll spend a lot more time on this on Thursday. So today weekend we talked about cross validation regularization. The big idea, if you take nothing else away, I want you to remember that there is a spectrum of model complexity. And our goal is to find the sweet spot, right? We do so by measuring the error on a validation set, a test set to simulate how well it's going to do in the future."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-464-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5241,
+      "type": "audio",
+      "text": "Regularization is a tool that lets us control the complexity."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-465-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5254,
+      "type": "audio",
+      "text": "Cross validation is a tool that lets us take the best value on that spectrum, the best model on that spectrum. I'll have office hours now you know, I'll, I'll be walking over to 422. Come over and we can walk over together. I'll see you on Thursday."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-466-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5271,
+      "type": "audio",
+      "text": "Uh-huh."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-467-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5275,
+      "type": "audio",
+      "text": "Well, the other parameters be different. Sorry, just give me one second."
+    },
+    {
+      "id": "audio-ds100-sp26-1773786810-transcription-468-c0-e0",
+      "lecture_id": "ds100-sp26-1773786810",
+      "timestamp": 5295,
+      "type": "audio",
+      "text": "Not sure why."
+    }
+  ]
+}

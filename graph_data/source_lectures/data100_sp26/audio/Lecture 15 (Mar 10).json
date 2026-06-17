@@ -1,0 +1,2893 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1773182170",
+  "display_name": "Lecture 15 (Mar 10)",
+  "count": 412,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 334,
+      "type": "audio",
+      "text": "Hello, hello, data 100 hello, hello, hello. Thanks for brave and midterm week and coming out for lecture. Much appreciated. Hopefully some of you are done with the midterm, which is great. Let's go ahead and get started announcement. So keep in mind we won't be answering any questions about exam material. That's everything up to sampling until the exams are done. That includes my office hours. That includes any office hours this week. That includes Ed Ed is completely private until exams are."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 341,
+      "type": "audio",
+      "text": "Finished, we will make anything public that needs to be made public. CBTF is filled up. If you miss your exam you're going to get a 0 just like a regular old exam."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 364,
+      "type": "audio",
+      "text": "We won't be able to reschedule you and make sure you're signed up for an exam and you can review the CBTF policies here. So you can either go retake the orientation quiz to remind yourself about the CBTF policies. We also have a PDF of all of the questions in the orientation quiz if you want to just do a quick once over. I think that's what's linked here to make sure you you have all of the CBTF policies down."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 393,
+      "type": "audio",
+      "text": "Other announcements. So Ramesh is going to be lecturing next week. I'm lecturing today. We have a guest lecture on Thursday from Marie Edmondson from the history department to talk about human context and ethics, material on housing pricing and discrimination and all kinds of interesting things. Ramesh is taking over office hours next week. Tuesday and Thursday he will be lecturing both slots. He'll take over my office hours. I won't be around. So my office hours are cancelled next week, but I still have office hours today."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 425,
+      "type": "audio",
+      "text": "5:00 to 6:00 PM Happy to help with the second-half of Homework 5 that's not on sampling and happy to answer questions about any material since sampling. OK, we're on to our last bit with gradient descent and feature engineering before we move on to, like I said, the CCAO lecture, Cook County Assessor's Office, and a few other topics. But let's wrap up with gradient descent and feature engineering today. So just some reminders about gradient descent from."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 435,
+      "type": "audio",
+      "text": "Last time so this picture which I don't have the convenient demo here to look at, but remember that on a 3D or higher loss surface we're gonna have 3D when our model has two inputs just like SLR."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 462,
+      "type": "audio",
+      "text": "The gradient is a vector in input space. Remember, the gradient is not tangent to the loss surface. The gradient and this is the negative gradient we're looking at. The gradient is a vector in the input space. What direction do I need to move the inputs in order to increase the loss function? The negative gradient tells me what direction should I move the inputs to decrease the loss function, which is what we want."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 468,
+      "type": "audio",
+      "text": "And looking from above, you want to get used to looking to pictures. Looking at pictures like this, we're looking at a contour plot."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 493,
+      "type": "audio",
+      "text": "From above, where darker parts of this plot correspond to a lower point on the lost surface, lighter spots correspond to a higher point on the lost surface, we can see that same gradient vector, and remember we work with that gradient vector independently. We look at the partial derivatives with respect to one input, the partial derivative with respect to the other input, and we move each of those two inputs independently based on the value of that gradient vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 518,
+      "type": "audio",
+      "text": "Some other pieces. So in this three-dimensional picture here we have two inputs and. So our gradient vector has two elements. It's a 2D vector. It exists in 2D space in the space of the inputs. And what is our gradient update rule look like from last time? Well, we have our next value of the parameters is equal to our current value of the parameters perturbed by whatever the negative gradient is multiplied by."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 523,
+      "type": "audio",
+      "text": "Some learning rate, OK, we spent lots of time on this equation last time and remember last time we spent all this time."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 526,
+      "type": "audio",
+      "text": "I'm putting all of this together into this slide."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 556,
+      "type": "audio",
+      "text": "Where everything on the slide we've covered, and I promise you understand better than you might think from just looking at this slide and being overwhelmed by by how many equations are here. But you know all of this. Here's the simple linear regression model. Here's squared loss. Here's the average squared loss over our data set, the mean squared error. Our goal when we fit a model is to make our average loss as low as possible. How do we do that? Well, we can climb down our loss surface using gradient descent. There's our gradient descent update rule. This is the general form."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 561,
+      "type": "audio",
+      "text": "For any number of parameters. This is the form for just two parameters."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 591,
+      "type": "audio",
+      "text": "And then we thought, well, if we're taking the gradient of the average loss, then we need to think about what makes up the average loss. Well, the average loss is the average of the loss on individual data points. So that required us to compute the gradient of the loss on individual data points. That's sort of the smallest component we need to compute. Once we compute that for each of the points in our data set, we average over all of them to get our gradient and then we can enact our gradient descent update rule. So this is all review from last."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 595,
+      "type": "audio",
+      "text": "And what we've sort of built up to in gradient descent."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 626,
+      "type": "audio",
+      "text": "OK, so let's compare some techniques for gradient descent. We talked about this at the end of last lecture. I'll go over them one more time here because we didn't spend a lot of time on what's called stochastic gradient descent. So the kind of gradient descent that we learned first is vanilla gradient descent. Actual gradient descent, sort of just your standard gradient descent where you compute your gradient over all of the data points in your data set. This is always going to descend smoothly towards a local minimum of your loss function. In this case, we have a convex loss function."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 656,
+      "type": "audio",
+      "text": "So it's going to the global minimum. But then we talked about this idea of approximating each of those gradients. Instead of computing the gradient over all of the data points in our data set, we thought, well, why don't we take a random sample? Let's cut our data set in half randomly and approximate the gradient using two different random samples. And we know that if our data set is relatively large, these random samples are quite good. Half the data set is going to represent the full data set pretty darn well. So when one pass through the data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 676,
+      "type": "audio",
+      "text": "One epoch. Looking at each data point once, we can actually get 2 gradient updates, and we call these approximate updates because these aren't the true gradient. This isn't the average loss over all of the data points, it's the average loss over a random subset of the data points. Half of those data points question here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 708,
+      "type": "audio",
+      "text": "That's a great question. Are we sampling here with or without replacement? The idea here is you want to give each point it sort of do contribution to the average loss. So we're not sampling with replacement, we're not letting certain points affect us more, certain points affect us less. The idea is you're going to randomly split this up into two separate samples, treat them both independently. And so this way each epoch represents 1 pass through every individual data point. We're not suddenly taking, you know, three of the second data point and none of the."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 738,
+      "type": "audio",
+      "text": "Data point, so you would say this is without replacement? Yeah, great question. OK. And so again, we got 2 approximate updates here per one epoch and epoch is 1 pass through the entire data set. And then at the very end of the lecture, this was at the very last couple minutes. So this is where we pick up from last time. What did I say? Well, in the previous slide, we cut the data set in half randomly. We could have also cut the data set into thirds, we could have cut it into quarters. How far can we take this? And indeed, what if we cut this into the smallest pieces?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 767,
+      "type": "audio",
+      "text": "Possible. What if we computed the gradient or approximated the gradient by looking at the gradient of the loss on the individual data points? Individual data points on their own are not very representative of the full average loss, but in expectation, on average, our long-run average is we're going to get the gradient correct individual data points. If I average the gradients that I keep getting, on average, we do get the true gradient, but each individual update is going to be."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 794,
+      "type": "audio",
+      "text": "Highly approximated. So we're going to keep repeating this in one epoch, one pass through the data points, we're going to compute the gradient of loss on individual data points and use those approximations to update our estimates of Theta. So again, we're using the gradient of loss on a single data point to run each update. And so when one pass through the data set, we're going to get N updates."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 813,
+      "type": "audio",
+      "text": "We're going to get whatever the number of data points we have, that's the number of approximate updates we're going to make to the parameters. And you can imagine we're going to have a picture that looks very similar to the one on the right, but maybe even more wacky, where each of those jumps isn't descending nice and smoothly to the bottom and it's maybe jumping all over the place. But on average it's working its way towards the minimum."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 836,
+      "type": "audio",
+      "text": "And it's doing it in a more efficient way than having to compute for each one of those steps, the average gradient across the entire data set. OK, this is what's called stochastic gradient descent. Stochastic gradient descent, Really important term to take out of data. 100 SGD, commonly used acronym our true gradient."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 866,
+      "type": "audio",
+      "text": "Is the average gradient of the loss on all of the individual data points the approximate gradient we can get through a random sample? For stochastic gradient descent, that's when we have a sample size of just one. So mini batch gradient descent is when we take any size sample. Any size sample. We could take half the data set, we could take a third of the data set. Stochastic gradient descent is technically a subset of mini batch gradient descent. It's mini batch gradient descent where the batch size is just one."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 878,
+      "type": "audio",
+      "text": "But it gets its own special name, stochastic gradient descent, just one record at a time. We're going to approximate the gradient at each step using the gradient on just one randomly sampled individual data point."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 884,
+      "type": "audio",
+      "text": "OK, one randomly sampled individual data point and we call this the stochastic gradient. And to compute this is very easy."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 891,
+      "type": "audio",
+      "text": "Or at least it's a lot easier than the full gradient. Remember that the gradient has P elements. We have P features."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 906,
+      "type": "audio",
+      "text": "That are inputted to our model, and so we need to just compute P values. So this runs on the order of P instead on on the order of n * P, the number of data points times the number of parameters. It's much faster to run updates this way."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 914,
+      "type": "audio",
+      "text": "Let's go ahead and do a Slido on stochastic gradient descent. If you got questions, raise your hand, I will come to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 922,
+      "type": "audio",
+      "text": "Give this to go, and feel free to talk with your neighbor, but this is a nice review of SGD. We'll move on to feature engineering after this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1019,
+      "type": "audio",
+      "text": "All righty. So remember stochastic gradient descent is we use one data point at a time to get one approximate gradient and with that one approximate gradient we get 1 update."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1025,
+      "type": "audio",
+      "text": "So if we go through 1 epoch, that means we're going to pass through every single one of the data points."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1048,
+      "type": "audio",
+      "text": "We're going to have one gradient update for each of the data points. So we're going to end up with 8192 updates that wasn't supposed to show, but anyway 8192 updates. So again one epoch is 1 pass through all 8192 data points. Stochastic gradient descent is this idea that we use one data point per."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1050,
+      "type": "audio",
+      "text": "Gradient that we approximate."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1053,
+      "type": "audio",
+      "text": "And with each of those approximate gradients, we can compute 1 update."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1058,
+      "type": "audio",
+      "text": "Questions on SGD or gradient descent as a whole? It looks like we got one in the back."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1074,
+      "type": "audio",
+      "text": "Oh, and sorry, and I forgot to mention too, folks who are sitting towards the back right here, there was a glass bottle that broke earlier. So just check your feet to make sure there aren't any shards or anything. I think it was like 3 rows down. So people further up, don't worry about it, but just watch out. Watch out for your foot. Go ahead. Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1098,
+      "type": "audio",
+      "text": "So it's an excellent question. We had exactly the same question that was asked during the break. The question was, doesn't this run with similar or even more computational complexity per epoch? When we run gradient descent, we don't say run for one epoch, we say run until convergence."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1106,
+      "type": "audio",
+      "text": "If we say run until convergence, we might only need 100 updates from stochastic gradient descent. We might not need every single one of the updates in the data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1113,
+      "type": "audio",
+      "text": "OK, so we need 8192 updates. Makes sense we don't have to do 1 epoch. Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1116,
+      "type": "audio",
+      "text": "Other questions about gradient descent?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1124,
+      "type": "audio",
+      "text": "You'll work with this more on Homework 6 I believe, and it'll be happening in the background when you fit models and other homeworks too."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1155,
+      "type": "audio",
+      "text": "OK, shall we move on to feature engineering? Let's do feature engineering. All right, feature engineering, let's talk. So a couple observations from previous lectures. First one, we saw that we could apply transformations to help linearize a data set. We saw that in two places. We saw it in the visualization lecture when you learned about the log transform. We did it again with simple linear regression. And then we also saw that like, why do we want to linearize data? What was the point of this? The idea is that linear modeling ordinary."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1167,
+      "type": "audio",
+      "text": "Squares. It's a linear model. The thetas and the X's are a linear combination. This works best when we have a linear relationship between inputs and outputs."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1169,
+      "type": "audio",
+      "text": "So feature engineering."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1199,
+      "type": "audio",
+      "text": "Is sort of a larger umbrella term for what we did on the previous slide. We can transform a feature to make it more useful, to make our relationship look more linear. But there's other things we can do to features to make them more useful in models. This is called feature engineering. Our goal here is to make the features more informative. Often this is one of the most important steps in modeling. It's not that you need a better model, it's that you need to engineer your features a little bit better. You need to use domain expertise to help your model understand the world better."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1226,
+      "type": "audio",
+      "text": "OK. And this is something that's often forgotten. If you feel like I need to be using a more complex model to do this better when really at the end of the day, your inputs to the model just aren't expressive enough. And So what can this do? It allows us to express nonlinear relationships. We just talked about this. It allows us to use categorical variables. This is something I alluded to. Linear regression requires a design matrix that's numeric. What happens when other columns of that matrix?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1232,
+      "type": "audio",
+      "text": "You know, or other columns of the data frame we're using to fit our model has like ABC. How do you get a linear model to understand?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1262,
+      "type": "audio",
+      "text": "And ABC Group A or Group B or Group C, We're going to talk about that in a minute here. And then again, capture domain knowledge. This was something I did in a project on college admissions a while back. But I could just dump latitude and longitude into my model. Let's say each row represents like an application of some student to some university, and I have information about their high school. I could just dump mindlessly into my model the latitude and longitude of their high school. But the model isn't necessarily smart enough to pick up on important relationships like, well, how?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1291,
+      "type": "audio",
+      "text": "This is the nearest university. I might want to transform latitude and longitude into a metric that tells me how close is that student to the nearest university. That information might be more useful to my model. It was encoded in the background in latitude and longitude, but I'm bringing in additional information. I'm transforming my features into something that the model can take advantage of. OK, so the goal here is to be more expressive with our data. So the first thing I'm going to teach you about is 1 hot encoding. 1 hot encoding. So what is 1 hot encoding?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1312,
+      "type": "audio",
+      "text": "OK, so think back to this TIPS data set we had before where we tried to predict the tip based on all kinds of features. How much was the total bill? What was the recorded sex of the waiter or waitress? Were they a smoker? And what day of the week did the bill take place on So again."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1339,
+      "type": "audio",
+      "text": "We only worked with the numeric columns here, but this is also information on the right. Like we know that that's information, but so far we've only learned how to incorporate features into a model when they are already numeric. So how do we get a model to understand what day of the week it is, or what sex the person identifies with, or whether or not they're a smoker? So This is why we use one hot encoding. It's a way to turn qualitative features, categorical features."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1343,
+      "type": "audio",
+      "text": "Right, these discrete categories into information that a model can take advantage of and not just."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1347,
+      "type": "audio",
+      "text": "Linear models. All different kinds of models."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1375,
+      "type": "audio",
+      "text": "OK, what is 1 HUD encoding? So here's the description. I'm just going to show it to you. It's a little bit easier. So my original data is on the left here. Some fake data. In the first row we have Sunday, 2nd row Sunday, 3rd row Thursday, 4th row, Friday, 5th row Saturday. How do I get a model to interpret all of those letters? Here is the way you do it. One hot encoding. We're going to take each of the unique values that appear in that column. Every single one of the unique values. Notice there's no Monday and Tuesday."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1405,
+      "type": "audio",
+      "text": "Maybe in this particular data set, Monday and Tuesday don't show up. Maybe they do, maybe they don't. This is a very important idea. In One hot encoding. Sometimes you fit a model to a data set that doesn't have a Tuesday, and then you try to apply it to some new data set that has a Tuesday and you run into issues. So this is something downstream you can think of with one hot encoding. But at least in this particular data set, in our training data set, those are the only unique values. And then all we do is we make binarized columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1406,
+      "type": "audio",
+      "text": "Under each of those values on the right."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1408,
+      "type": "audio",
+      "text": "We say take on the value 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1414,
+      "type": "audio",
+      "text": "If the left side corresponds to the column, so we have the Sunday column."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1440,
+      "type": "audio",
+      "text": "And we're going to give it the value 1 because this is a Sunday. And we're going to give it the value 0 for all other columns. Second row, 13 zeros. Next one. Second one is a one. Third one is a 1/4, one is A1. We're now encoding all of the information on the left using numeric columns on the right. We're going to see this in action more in just a second, but I want to pause questions on this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1442,
+      "type": "audio",
+      "text": "Questions on this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1444,
+      "type": "audio",
+      "text": "Makes sense?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1448,
+      "type": "audio",
+      "text": "Right fret."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1482,
+      "type": "audio",
+      "text": "Great question. What are we saving from this? What are we going to keep when we actually do our modeling? So if I try to pass in a string column to ordinary least squares, there's no way for it to take advantage of that information. So internally, I might keep track of this Sunday, Tuesday, whatever on my own data frame that's stored on my computer. But what I actually pass into the model or what gets passed into the model for me, a lot of the times this happens automatically in the background. This is what gets held inside of the design matrix."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1484,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1488,
+      "type": "audio",
+      "text": "All right, let's see this in action."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1514,
+      "type": "audio",
+      "text": "So we use them right in the design matrix to train a model. Now, one thing you might notice is that the bias column is missing. We're going to talk about that in a minute. Once you start one hot encoding features, the intercept starts to gain more meaning. We'll talk about this in just a SEC. For now, we're not going to worry about the biased column. So notice on the left we have raw features. They are not transformed, untransformed features. On the right, we have features that are 1 hot encoded."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1518,
+      "type": "audio",
+      "text": "And so here's what our model would end up looking like. Our predicted outcome."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1522,
+      "type": "audio",
+      "text": "Is equal to stuff we're used to seeing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1526,
+      "type": "audio",
+      "text": "Theta is multiplied by numeric features and then we do exactly the same thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1551,
+      "type": "audio",
+      "text": "The OLS model, as I keep saying, is dumb, right? It only understands what you pass into it. It doesn't know that this column of zeros and ones is any different than these columns of two threes or this column of total bills. It treats those columns identically to any other numeric feature. And so you're going to get coefficients for each of those columns, and you're going to get values that you just pass right in, right Day, Sunday, day, Thursday, you'll often see this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1557,
+      "type": "audio",
+      "text": "Notation. If the original column is called day, you'll see that these columns are often renamed."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1564,
+      "type": "audio",
+      "text": "Whatever that original column was called, under score whatever the unique value is."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1573,
+      "type": "audio",
+      "text": "Corresponding to the particular column. OK, so we get a model just like before. Now this looks like a data frame that we've used before, just with zeros and ones in some of the columns. So let's go interpret a little bit here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1585,
+      "type": "audio",
+      "text": "What tip would the model predict for a party with size 3 and a total bill of $50 eating on a Friday based on this model? Give this a go. Feel free to talk with your neighbors. Raise your hand if you got questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1653,
+      "type": "audio",
+      "text": "All right, hopefully this one wasn't too bad. Let's take a peek."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1659,
+      "type": "audio",
+      "text": "So let's see. Let's look. So party of three."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1689,
+      "type": "audio",
+      "text": "$50 total bill eating on a Friday. We can just look at each of the values in our model and plug in whatever makes sense. So we have a party of three. So we're going to plug that in for size. That's right there. We have a $50 total bill. We plug that right in for total bill and then it's a Friday. It's a Friday, so we only care about the day Friday coefficient here. Sometimes we'll say we only turn on the day Friday coefficient. We turn all the other coefficients off with one hot encoding. You're always just."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1708,
+      "type": "audio",
+      "text": "Turning on one feature at a time. You're never simultaneously turning on multiple features. We can talk about how to handle that in a little bit. I don't think we talk about it explicitly in the lecture, but I'm happy to talk about it in office hours. But notice we can only turn on one thing at a time. If it is Friday, by definition it is not Saturday, Sunday, or Thursday."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1739,
+      "type": "audio",
+      "text": "OK, And I didn't want you to do this math necessarily, but that's the expression for the predicted bill. Now, the thing that's interesting with these coefficients is we can think about how they're interpreted. Let's think about interpreting each of these coefficients. This is one thing that's really nice about linear models is they're very interpretable. This is a nice benefit to linear modeling over other kinds of modeling, like a random forest or a neural network. If your goal is prediction, getting really accurate predictions and you don't care about why certain."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1768,
+      "type": "audio",
+      "text": "Predictions are made. You can lean towards a random forest, you can lean towards a neural network, but very often an industry in academia, we're not only interested in predicting things accurately or modeling the world as accurately as possible, but we also want to be able to say something meaningful about maybe why one thing causes something else, or why one thing is correlated with something else, or to what degree is one thing correlated with something else. And we get that through the coefficients. So when you do linear modeling, you're not only interested in the predictions, you're also interested in the value of the coeff."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1783,
+      "type": "audio",
+      "text": "Very often. So how do we interpret these coefficients? 1 tip I will give you. If you're ever trying to interpret a coefficient in a model, try to 0 out everything else. If you 0 out everything else, the interpretation will sort of just present itself."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1808,
+      "type": "audio",
+      "text": "So look at this .75 coefficient on day Friday here. How do we interpret that coefficient in a way that as a consultant or as a data analyst or as whatever we could tell somebody else who maybe isn't familiar with linear modeling what that means? Well, let's try zeroing out everything else. Let's zero out the total bill. Let's say I have a bill of 0. Is that realistic?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1819,
+      "type": "audio",
+      "text": "Not really. So one thing to keep in mind is that coefficients, when you interpret them, they don't always give you a realistic interpretation, even if it's a valid interpretation. What else? Let's zero out the size. Let's pretend we had a size of 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1831,
+      "type": "audio",
+      "text": "I want to keep the coefficient of interest. So I'm going to say it's Friday and we know that if it's Friday, it's not any one of those other days. And So what do we get back? We get that the predicted bill."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1837,
+      "type": "audio",
+      "text": "Excuse me, the predicted tip on a day with no bill, zero bill $0.00 and no people."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1859,
+      "type": "audio",
+      "text": "Properties of 1 hot-encoated columns. Notice that we didn't include a biased column."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1859,
+      "type": "audio",
+      "text": "Not really. Is it a valid interpretation? Yes. I'm going to show you how to make this interpretation better in just a second. That's our interpretation. OK, All right. So interesting. Sort of."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1859,
+      "type": "audio",
+      "text": "Is $0.75. Is that a useful interpretation?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1888,
+      "type": "audio",
+      "text": "If we had included a bias column, what's the problem here? What's the problem here that we learned about in the OLS lecture? What happens if I add up those 4 columns? If I add up those 4 columns, I get the bias column. I get linear dependence. My model will not fit. So when we don't include a bias column, things will work out fine. Knowing three of those columns doesn't tell me what the value of the other column is, but if I include a column of all ones, I get linear dependence."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1906,
+      "type": "audio",
+      "text": "So then what should I do? Should I just no longer ever fit a model with an intercept? I've said earlier you should essentially always fit your model with an intercept unless you have very strong reason not to, and this is not a reason not to include an intercept. So let me show you what are we going to do. We have two choices. We could either say."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1908,
+      "type": "audio",
+      "text": "Do what we did before."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1910,
+      "type": "audio",
+      "text": "Do what we did before. Get rid of the bias column on the right."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1922,
+      "type": "audio",
+      "text": "Let's ignore the biased column, keep everything else. We don't have linear dependence, but to resolve linear dependence, we could technically just get rid of any one of these columns and we would be hunky Dory. Everything would be just fine."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1952,
+      "type": "audio",
+      "text": "So why might we choose the left option instead of the right option? That's what I'm going to show you. Typically, the left option is a better option. We select one of our levels of our categorical variable to drop and we keep our intercept. You might be wondering, how do we choose which one of those columns to drop by default? Your regression package, again, is not smart. You are smart. So what does the regression package do? It drops the first one alphabetically."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1966,
+      "type": "audio",
+      "text": "This works out nicely in cases where you have a natural ordering to your categorical variable. But in this case it doesn't necessarily make sense to just drop Friday. We might want to think a little bit harder, and so let me show you how you might choose which one of these columns to drop."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1971,
+      "type": "audio",
+      "text": "The choice is. Again, it's about interpretation. This is not a choice about prediction."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1980,
+      "type": "audio",
+      "text": "Both of these models will fit identically. You're going to get exactly the same predictions from both of these models. This choice is about interpretation."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1983,
+      "type": "audio",
+      "text": "So let's omit the Day Friday column."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 1995,
+      "type": "audio",
+      "text": "Remember that the day Friday coefficient before was .75 and now the intercept is .75. That's not a coincidence. But let's omit the day Friday column. We're going to include an intercept in our model now."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2007,
+      "type": "audio",
+      "text": "And then we're going to keep all of the other levels of our variable. How do we interpret our coefficients now? So let's do exactly the same thing as before. What's a very nice trick for interpreting coefficients 0 out everything else?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2022,
+      "type": "audio",
+      "text": "So how do I interpret the intercept? How might I interpret the intercept? Well, it's zero out everything else for a bill of 0 and a party of 0 where it's not Saturday, not Sunday, and not Thursday, which means it must be."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2024,
+      "type": "audio",
+      "text": "Friday."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2046,
+      "type": "audio",
+      "text": "The predicted bill is $0.75. Notice it's exactly the same as before, but now the intercept represents something else. The intercept represents the predicted outcome for the reference level of our categorical variable. Whatever column was excluded from our data set becomes the reference level. Our intercept gains new meaning."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2061,
+      "type": "audio",
+      "text": "It's the predicted outcome when all of our variables are 0 is the same thing as saying it's the predicted outcome when all of our numeric variables are zero and all of our categorical variables are at their reference level. So Friday is our reference level."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2071,
+      "type": "audio",
+      "text": "I'll give you a nice description here. For a $0.00 bill with a party of size 0, what is the predicted tip for the reference level? In this case, it's Friday."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2084,
+      "type": "audio",
+      "text": "You might want to pick a different reference level. Why might? Why might you want to pick a difference reference level? Well, let's think about the coefficients on the other terms. Here the coefficients on the other terms. How do I interpret, for example, the day Saturday coefficient?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2087,
+      "type": "audio",
+      "text": "So before on the previous slide."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2093,
+      "type": "audio",
+      "text": "The day Saturday coefficient was interpreted very similarly to the day Friday coefficient."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2100,
+      "type": "audio",
+      "text": "The day Friday coefficient was the predicted bill for or predicted tip for a zero bill 0 size."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2103,
+      "type": "audio",
+      "text": "The day Saturday coefficient is the predicted bill for."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2116,
+      "type": "audio",
+      "text": "The same exact situation, but on a Saturday."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2132,
+      "type": "audio",
+      "text": "It gives us the actual outcome for Saturday. Think about for a moment, what's the difference between 75 and 62? If I subtract these, I get .13. For Saturday, it's $0.13 lower. That's a more interesting interpretation in my book. I don't really care about what the predicted tip is on Saturday when everything is zeroed out. That's not very useful to me, but it is useful for me to think about what is the predicted tip on a Friday?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2137,
+      "type": "audio",
+      "text": "Relative to a Saturday holding everything else constant."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2141,
+      "type": "audio",
+      "text": "So where can we get that .13 from? We get that back."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2142,
+      "type": "audio",
+      "text": "When we."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2150,
+      "type": "audio",
+      "text": "Drop a reference level. So it's because of the rounding. It's .12, but that's the same value we wrote before."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2164,
+      "type": "audio",
+      "text": "About .13, exactly the same value. The rounding is just a little bit funnier. So how do we interpret this? How do we interpret this coefficient? Well, once you have the intercept interpreted, you can leave the intercept and start zeroing out other things. So let's do this one now."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2166,
+      "type": "audio",
+      "text": "So we know that the Intercept is our bill."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2172,
+      "type": "audio",
+      "text": "Predicted predicted tip. I keep saying that the predicted tip."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2182,
+      "type": "audio",
+      "text": "When it's Friday and we have nobody in the party and the bill is 0. So how do we interpret the day Saturday coefficient? Well in order to keep this day Saturday coefficient hanging out Theta 3?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2194,
+      "type": "audio",
+      "text": "Theta three, I need to make sure it's Saturday and it can't be both Saturday and Friday, can't be both Saturday and Friday. And so we end up with an expression Theta 0 plus Theta 3."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2206,
+      "type": "audio",
+      "text": "The predicted tip on a Friday is Theta 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2223,
+      "type": "audio",
+      "text": "The additional predicted tip on a Saturday is Theta 3. In this case, it's negative. Does that make sense to us? Would the tips be lower on a Saturday than a Friday? Probably more people are eating during the day. Maybe they're drinking less alcohol, right? We don't know what necessarily is going on, but it makes sense that Saturday tips might be a little bit lower than Friday tips. All right, I've done a lot of talking. I'm going to pause questions on interpreting coefficients."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2230,
+      "type": "audio",
+      "text": "I know a lot of data 100 is very focused on prediction. This is one of those places where we can think more about interpretation."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2232,
+      "type": "audio",
+      "text": "Questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2238,
+      "type": "audio",
+      "text": "Questions, questions, questions here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2244,
+      "type": "audio",
+      "text": "OK, feeling good."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2246,
+      "type": "audio",
+      "text": "Let's keep going."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2249,
+      "type": "audio",
+      "text": "All right, polynomial features. So that's one hot encoding. That's one way to do feature engineering."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2254,
+      "type": "audio",
+      "text": "One way is with one hot encoding, Another way you've seen before."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2268,
+      "type": "audio",
+      "text": "But we did in sort of a unfortunate way. I told you when we added a ^2 term in a previous lecture that this isn't really the right way to add a ^2 term, and I was going to teach you how to do it correctly in a future lecture. We've arrived at that future lecture."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2276,
+      "type": "audio",
+      "text": "So we've seen before that if we try to fit a linear model to nonlinear data without doing any transformations, it's not good."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2289,
+      "type": "audio",
+      "text": "Our residuals no longer are randomly scattered. We get a pattern in our residual and we can just see visually that that straight line is not a good fit and we saw before we can incorporate A nonlinear feature to help us out."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2299,
+      "type": "audio",
+      "text": "So let's add another feature to this model. We're going to add the square of the horsepower. You might be wondering, why not just exclude that middle term? Why are we?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2320,
+      "type": "audio",
+      "text": "Adding both the linear term and the squared term, Well, you might think back to algebra and think about if I have the equation ax plus BX squared versus the equation ax. Excuse me, this first one should be A plus BX squared versus the equation A+ BX plus CX squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2351,
+      "type": "audio",
+      "text": "This equation is a lot more flexible than the first one. I can fit a lot more different parabolas in different places in space than that first equation. So typically when you add polynomial features, you always include the linear terms as well. You don't just include the polynomial term. It's always a good idea in general to also include the linear term because it gives you a more flexible model. If you remember before in that plot I said it basically looks like it's a straight line. This was a couple lectures ago."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2353,
+      "type": "audio",
+      "text": "But trust me, it's just a little bit curved."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2375,
+      "type": "audio",
+      "text": "This was the problem. That first model wasn't flexible enough. It couldn't curve enough to fit all of the data points. This model can fit all of those different data points, and so this still is a linear model. This still is a linear model. Why is this still a linear model? Remember that this model is linear with respect to Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2379,
+      "type": "audio",
+      "text": "We can still write this as a dot product of our Theta vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2388,
+      "type": "audio",
+      "text": "And a vector of 1X and X ^2. This is still a linear model. Again, the models are dumb. We are smart."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2410,
+      "type": "audio",
+      "text": "OLS has no idea that that column is horsepower squared. It doesn't know what horsepower is. It's just a column of numbers. To OLS, the horsepower column, it's just a column of numbers. It has no idea what these underlying relationships are. But we do, and we can take advantage of those relationships."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2416,
+      "type": "audio",
+      "text": "OK, to Oles, this is just a different feature, totally different feature, but we know that those two features are related."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2428,
+      "type": "audio",
+      "text": "OK, all right. And then in this case, notice that our model, if we just plot our model as a function of horsepower. So we generate predictions for all of the different values of horsepower and we plot the model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2432,
+      "type": "audio",
+      "text": "At each of the possible input values of horsepower, we get a kerb line."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2434,
+      "type": "audio",
+      "text": "We get a curved line in space. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2460,
+      "type": "audio",
+      "text": "What's an example of a nonlinear model? So we've seen some of these before, but a nonlinear model would be something strange, like let's say we have Theta one over Theta 2, you know, X1 plus log Theta 3 * X two. If we're ever making modifications to the thetas and trying to fit them in this strange way, the models no longer linear, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2462,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2462,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2472,
+      "type": "audio",
+      "text": "So Theta one and Theta 2 are both constants exactly, but we end up with an expression."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2488,
+      "type": "audio",
+      "text": "That is a curved line in space, right? So to the OLS model under the hood, it's fitting Theta not plus Theta 1X1 plus Theta 2X2. It doesn't know X1 and X2 are related and so in the OLS space."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2518,
+      "type": "audio",
+      "text": "Where in a world where we have three different inputs, 3 different inputs, I guess two different inputs if we ignore the intercept. Let me see if I can draw a nice 3D picture for you here. I'm awful at drawing 3D pictures, but OLS is fitting a hyperplane in three dimensions. OLS is fitting a model that has horsepower on one axis, horsepower squared on another axis, and the predicted Y on this axis. And it's fitting a hyperplane in three-dimensional space. It's not a regression line, it's a regression plane."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2528,
+      "type": "audio",
+      "text": "And so notice that's still a linear picture, but we're smarter than that. We know that horsepower and horsepower squared are related. So rather than plotting these predictions."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2550,
+      "type": "audio",
+      "text": "As a plane in three dimensions on a horsepower and horsepower squared axis, we can just plot our predictions directly against just horsepower and it's going to give us this curved line in two-dimensional space. So it's still linear in the space that OLS is working in, but in the space that we know this data exists, horsepower and horsepower squared, we get the curved line back."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2553,
+      "type": "audio",
+      "text": "Follow up, go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2591,
+      "type": "audio",
+      "text": "Is there any reason to do a non like? So in this case, we're still fitting a linear regression right to fit a curved model. The idea is that linear regression is actually quite expressive. So the idea of curved regression is exactly what we're doing here. We can plug in all of these nonlinear features. Notice I didn't say nonlinear thetas I said nonlinear features, and then plot back on the original scale of those features and get models that are curving in space. This is why linear models end up working so well in practice because you really can't express."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2593,
+      "type": "audio",
+      "text": "Very complex nonlinear relationships using a linear model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2608,
+      "type": "audio",
+      "text": "Make sense? So the idea of a curved regression is exactly what we're doing here. We're still fitting linear regression, but we're able to sort of fit in curved space if we're not working in that sort of hyperplane dimension I talked about in the top right. Other questions, right, Frank?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2633,
+      "type": "audio",
+      "text": "So nice question. If I have a bunch of different features, how do I know which features to square? So I'll give you like the social scientist rule, at least in my world, what do we typically do? So we've said this before, we'll typically log any non negative values like counts, population dollars."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2636,
+      "type": "audio",
+      "text": "Those tend to be right skewed."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2640,
+      "type": "audio",
+      "text": "And so then, when do we square? When do we need the flexibility to fit a ^2 model?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2672,
+      "type": "audio",
+      "text": "So if you're just doing prediction and you're trying to fit as closely as possible to the data, sometimes it is square everything. But if you need something that's more interpretable, often you'll see a ^2 term for age because patterns that you often see in political science give you these funny age patterns where people who are younger tend to be more liberal, people who are middle-aged tend to be more conservative, people who are older tend to be more liberal. And so you need the flexibility to be able to fit a curved line to adjust for that. So age is something that we often square, but the question of what we square is, is a domain question. It's not necessarily."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2676,
+      "type": "audio",
+      "text": "Statistical question, Yeah, go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2699,
+      "type": "audio",
+      "text": "Sure. So I think the easiest way to put it in the question was why is this more accurate than just fitting a linear model? So are you saying why isn't this more accurate than just fitting? Oh, that's not erased because that is in the picture if we just fit like Y hat equals Theta naughty plus Theta 1 horsepower."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2703,
+      "type": "audio",
+      "text": "Or Theta 1 horsepower squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2711,
+      "type": "audio",
+      "text": "Yeah. So the idea is that this comes back to the very first point that I had said earlier, the idea that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2741,
+      "type": "audio",
+      "text": "If you just think algebraically about the space of height of parabolas you can fit in, the world that meet that first criterion has no X term. The X term is zeroed out. It's only a constant and only a square term. You can only fit so many parabolas using that formula. But the second form of it with the BX plus CX squared, it allows for a lot more flexibility. The space of the different parabolas that you can fit in two-dimensional space using that second form is much higher. So you're going to fit your data points a lot more closely if you use the second."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2745,
+      "type": "audio",
+      "text": "Makes sense. OK, others. These are awesome questions. Yeah, go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2762,
+      "type": "audio",
+      "text": "Beautiful question because it connects to what we're going to talk about later. The question was if we keep adding features to our model, does the model become more reliable?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2772,
+      "type": "audio",
+      "text": "We saw earlier that if we keep adding features to our model, R-squared is either going to stay the same or go up and in continuous space. Usually it's always going up and we can keep sending it up and up and up and up and up."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2782,
+      "type": "audio",
+      "text": "And so why don't we just keep adding features to our model? We're going to talk about it in about 10 slides that question. So hold your questions, excellent. Other questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2784,
+      "type": "audio",
+      "text": "Others."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2786,
+      "type": "audio",
+      "text": "Right there. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2808,
+      "type": "audio",
+      "text": "So the question was right. Now this is linear with respect to Theta. If we were to add another variable, would this suddenly not become linear? So the idea is, let's say we add another variable here, and let's say we even square that other variable."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2838,
+      "type": "audio",
+      "text": "So let's say we add Theta three. We're trying to predict miles per gallon here. Let's say we do Theta 3 like length of the car, so L and we'll do like Theta three, Theta 4, excuse me, l ^2. Is our model no longer linear? Our model is still linear in Theta. None of the thetas are getting modified. We can still separate out a vector of thetas multiplied by some vector of features. Can we draw this picture? What? We can draw this picture for a fixed value of car length. But now we have two different inputs."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2848,
+      "type": "audio",
+      "text": "We have horsepower and we have the length of the car, so we can no longer draw this nice two-dimensional picture what we would end up having to draw."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2852,
+      "type": "audio",
+      "text": "Is a regression plane. We would add a third dimension to this picture going into the page for length."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2856,
+      "type": "audio",
+      "text": "And we would end up getting some."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2885,
+      "type": "audio",
+      "text": "Sort of sheet that's curved in 2 dimensions, but again, in the hyperplane space that OLS is fitting, OLS is fitting a model that has a horsepower dimension. There's one vector for horsepower, there's one vector for horsepower squared. There's one vector for length. There's one vector for length squared. We're now up in higher dimensions that we can't visualize. Things are still linear. Things are still linear to the OS model, but how we visualize it might have to change a little bit, but everything still holds in these higher dimensions."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2887,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2893,
+      "type": "audio",
+      "text": "Others, and I'm happy to talk more about that point too, in office hours. If we want to do more illustrations, go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2897,
+      "type": "audio",
+      "text": "No, no."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2936,
+      "type": "audio",
+      "text": "Good. So the question was, can you repeat one more time why this model is fit in such a way that we can draw a curved line in two-dimensional space, yet somehow we're still claiming that this model is linear. Let me try to clean up this picture a little bit here, try to get a page that it doesn't have a lot of. Maybe we can do a little bit of white space. Remember drawing this in office hours couple semesters ago for somebody and the picture looks really interesting. So let me redraw the picture that's in the top right. So the first thing to remember is that we're passing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2941,
+      "type": "audio",
+      "text": "Into OLS horsepower and horsepower squared. OLS has no idea that horsepower squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2953,
+      "type": "audio",
+      "text": "Is the square of that other column has no idea. It's just a different column of numbers. So if we have that same picture that I had in lecture, right, that same exact picture, we had different vectors in space, what would we end up having?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2962,
+      "type": "audio",
+      "text": "Well, I can't draw it because we're going to be in 4 dimensions here, but we would have a horsepower vector, we'd have a horsepower squared vector, and we would end up having a vector of ones."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 2990,
+      "type": "audio",
+      "text": "And then we'd have our Y vector. This would all be in four dimensional space, and we'd project our Y vector onto the hyperplane defined by those 3 vectors. So under the hood, the model is still linear. It's still fitting a linear hyperplane that's in three dimensions from this 4 dimensional Y vector. So it's still linear. However, we are smart and we know that the horsepower and horsepower squared columns are related."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3011,
+      "type": "audio",
+      "text": "And so we can use the OLS model to generate predictions in this space. Whatever, we get Y hats for all of our different data points. Then we can just plot each of those Y hats as a function of just horsepower on our own defined axes. And as it turns out, we get a curved model IN2D space. Does that make sense? It's tricky to get used to this geometry, but that's the idea. Yeah, Follow up. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3034,
+      "type": "audio",
+      "text": "Against horsepower square, Yeah. If you were to like plot horsepower square here, Yeah, yeah. It would just be like transforming the horsepower graph. Yeah, yeah, good. But we we we think in horsepower, we don't think in horsepower squared. Yeah, great. Go ahead. And then this will be last question before we move on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3056,
+      "type": "audio",
+      "text": "So the question was, is the reason we do this because of the ease of linear algebra when Theta is linear? Do you say it's easier to do this relative to fitting a more complex model? Yeah. So the big idea, yes, is that this model is relatively computationally easy to fit because Theta is linear."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3088,
+      "type": "audio",
+      "text": "In the model, yeah, 100%. And we get a lot of interpretability benefits out of this. Once we start doing nonlinear modeling, yes, maybe we can fit the points a little bit more closely and generate slightly better predictions, but we lose that nice interpretability of the coefficients that we saw in the previous slide. We don't get these nice interpretations anymore. And so if your goal is to understand the world and why something is happening or understand correlations between variables, that's really nice to do in OLS space. But if you just care about predicting what the stock price is tomorrow and making a lot of money, which is totally fine, it's an industry."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3116,
+      "type": "audio",
+      "text": "Problem, right. Then you might use a fancier model. Good. OK, let's move on. Excellent questions, everybody. You can see that lecture gets so much richer when you ask questions. They're all excellent. All right, What happens if we add more polynomial features? So this goes to your point from earlier. Let's say we keep adding features. So we added horsepower squared. Our mean squared error was about 19, which is lower than our mean squared error. With just the horsepower term. We throw in horsepower cubed, it goes up or goes, excuse me, goes down a little bit. Our mean squared error goes down. That seems good."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3129,
+      "type": "audio",
+      "text": "Right, it goes down, not by a lot. The model basically looks exactly the same, but the mean squared error does go down. And error is bad, right? Let's add a fourth term. Oh yeah, look, look, it keeps going down a fourth term."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3151,
+      "type": "audio",
+      "text": "Mean squared error keeps going down. Nice. Not by a lot, but it's still going down. Error is bad, right? So then should we just keep going? Like should we just fit 100th degree polynomials to each of our data sets? Like intuitively this sounds like the wrong thing to do, but the mean squared error is going down. So all we've taught you for evaluating models is what's called the in sample mean squared error. How closely do you fit the data points that you're training on?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3180,
+      "type": "audio",
+      "text": "And you can get essentially as close as you want. Essentially, you can send the mean squared error to zero. You can fit such a high degree polynomial that it touches every single one of your data points so long as they don't have overlapping X values. But it seems like a bad idea. So let's talk a little bit about something else here, complexity and overfitting. Before we get into complexity and overfitting, I think we're due for a break. So why don't we take a 2 minute break? If you got questions, raise your hand or come on up. See you in 2 minutes."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3226,
+      "type": "audio",
+      "text": "Questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3230,
+      "type": "audio",
+      "text": "Questions. Questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3304,
+      "type": "audio",
+      "text": "Other questions, yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3421,
+      "type": "audio",
+      "text": "All right, let's keep going."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3430,
+      "type": "audio",
+      "text": "OK, so how far can we take this? So notice we can keep increasing the degree in the mean squared error keeps going down."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3442,
+      "type": "audio",
+      "text": "So why don't we just keep doing this? Why don't we just fit all of the data points and have A0 error model, and then we're really happy. So let me ask you, we'll just do a quick vote here. Go ahead. Which one of those do you think fits best?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3451,
+      "type": "audio",
+      "text": "Order zero, order one, order two. Order 0 is just a constant model X to the 0 power, right? We just have an intercept. Which one of these looks best?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3459,
+      "type": "audio",
+      "text": "What does best mean? Right? This is a classic data science question. What is our metric for success?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3463,
+      "type": "audio",
+      "text": "How do we define the word best? We can't just throw these words around."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3467,
+      "type": "audio",
+      "text": "OK, so where are we landing? Try not to let other people influence you here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3472,
+      "type": "audio",
+      "text": "So it depends on how we."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3474,
+      "type": "audio",
+      "text": "Define best."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3489,
+      "type": "audio",
+      "text": "Depends on how we define best. So if we want to get the model that fits our training data, the data that we train the model on as closely as possible, yeah, order five fits our data points the most closely."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3490,
+      "type": "audio",
+      "text": "But."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3520,
+      "type": "audio",
+      "text": "If we're sort of thinking about additional model complexity and interpretability, we're basically knocking it out of the park. Once we get to order two, we can't really do much better than order two in. The mean squared error tells the same story. It's kind of like an elbow, right? The mean squared error goes down at a certain point. We'll see something called the elbow method later in the class. And then at some point the mean squared error just kind of decreases really shallowly, right? It goes down fast and then decreases really shallowly. So like 2 is doing pretty darn well here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3548,
+      "type": "audio",
+      "text": "So then how do we express that in like mathematical notation, in more precise notation? OK, so as model complexity increases, its training error decreases, or technically can stay the same, but essentially always decreases, OK, As the degree of our polynomial goes up, as our model complexity goes up, you can essentially think of model complexity as like the number of polynomial degrees. There's other ways to think about it. I think that's one of the most helpful ways."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3550,
+      "type": "audio",
+      "text": "OK, our model complexity as it goes up, for example."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3558,
+      "type": "audio",
+      "text": "The degree of our model. The training error goes down the error on the data that the model was trained on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3586,
+      "type": "audio",
+      "text": "OK, if I train a model to fit a data set as closely as possible, then if I fit that data set as closely as possible, then the error is probably going to be low. It's cheating, right? It's cheating because we might have new data that we want to fit to. So let me give you a picture. So if I have 5 non overlapping data points, they're overlapping. You can draw a picture why this isn't true. But if these X values are different, we can always find a fifth degree polynomial that touches all of those points."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3591,
+      "type": "audio",
+      "text": "OK, we can always fit, excuse me, 4th degree polynomial that fits all of those points."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3610,
+      "type": "audio",
+      "text": "So we're guaranteed to find a model that has zero mean squared error if we fit a polynomial degree that's high enough. So why don't we do it? So we might be tempted to make this really complex model, right? Here's five data points. There's six data points it looks like that were randomly sampled and we fit this ultra high degree polynomial."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3638,
+      "type": "audio",
+      "text": "So that it touches every single one of these points. But think about where those data points came from. Think about what data set they could have been sampled from. We actually saw the data set earlier. That data set sort of curved down. That model does horribly on new data, terribly. It's completely overfit to the original data set. The model has essentially memorized the original data, and it has very poor generalization potential."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3641,
+      "type": "audio",
+      "text": "So this is the picture that we want to avoid. We want to avoid overfitting."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3652,
+      "type": "audio",
+      "text": "To the data points that we have, we want to fit enough so that we can work well on external datasets, but not fit so closely that we end up overfitting."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3678,
+      "type": "audio",
+      "text": "OK, So what went wrong? Essentially, the model does not generalize well. It's overfit to the original data set. And so here's a new problem that I'm introducing to you that we really haven't talked about so far. We've talked about how do you fit a model to data as closely as possible, But now we're expanding our minds and we want to think, well, what if we apply that model to new data? We're now bringing in an idea of having a different data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3707,
+      "type": "audio",
+      "text": "We want our model to generalize. So one term that I want you to understand that we're going to play around with a lot in this class is variance, and specifically model variance. When we say variance in data 100, we might be referring to either model variance or variance that we're going to talk about in the probability lecture. But what we're going to talk about here is something called model variance. How much does your model vary when you fit it repeatedly to different random samples of data? So if I randomly resample 5 data points."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3734,
+      "type": "audio",
+      "text": "From that MPG data set, notice that the high degree model changes a lot. I'm randomly sampling from exactly the same data set and if I fit a fifth degree polynomial or 4th degree polynomial, I forget which one we fit here. But notice the models. The red line looks very different depending on the resample, so we would say that this model has high variance. A high variance model is generally not good."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3738,
+      "type": "audio",
+      "text": "A high variance model is generally not good."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3761,
+      "type": "audio",
+      "text": "OK. So error variance and complexity, we're going to have a more extensive lecture on this later in the class on something called the bias variance trade off. But let's sort of get a junior approach to it here. So we know that we can decrease training error essentially to 0. We're not always guaranteed to be able to send it to 0 because of that overlap problem I mentioned, but you can essentially think I can send my training error to as close to 0 as I want."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3778,
+      "type": "audio",
+      "text": "OK, our in sample error we can send as close to 0 as we want and we can do that by increasing our model complexity and fitting as closely to the points as possible. But our out of sample error is a little bit more of an interesting picture as we pick up on the signal."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3784,
+      "type": "audio",
+      "text": "Right as we pick up on the signal, we can say we're modeling our signal."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3791,
+      "type": "audio",
+      "text": "As we model signal in our data."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3801,
+      "type": "audio",
+      "text": "We do a nice job of decreasing the error on an external data set. We're picking up on similar signals that are in both our training data and the test data. However, there's a certain point where we start modeling noise."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3819,
+      "type": "audio",
+      "text": "Modeling randomness. We're no longer modeling actual signals in the data. We're fitting closely to noise in our data set, and so the idea is that anything to the left of the bottom of that red curve we would call underfitting."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3826,
+      "type": "audio",
+      "text": "We would call that underfitting, and anything to the right we would call overfitting. Now you'll never in general be able to perfectly find this line."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3855,
+      "type": "audio",
+      "text": "You have to get over your idea of perfection. We're never going to find exactly that line. Every model is a little bit under fit or a little bit overfit. No model is perfect. Hey, But the idea is to the left of that line, we're in the underfitting zone. We haven't fully modeled the signal in our data. And anything to the right of that line is the overfitting zone. We've started fitting noise, and our goal is to go find this sweet spot. How do we go identify this sweet spot in our data set? And so that's the method we're going to learn for the rest of the lecture today in the last 20 minutes."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3872,
+      "type": "audio",
+      "text": "We're going to talk about something called cross validation and then Ramesh will pick up next week talking about some cool modifications of cross validation and another cool topic called regularization. But let's go ahead and talk about the basics of cross validation that we'll pick up on next week."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3882,
+      "type": "audio",
+      "text": "So training test validation sets and what's called K fold cross validation. So we saw this picture before an overly complex model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3891,
+      "type": "audio",
+      "text": "Will generally not generalize well. It will not generalize well on new data. OK, now one thing to keep in mind."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3894,
+      "type": "audio",
+      "text": "Is we call this a new data, often a test set?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3910,
+      "type": "audio",
+      "text": "And as usual, data science terminology is all over the place and rather than trying to stick to one thing, you just have to get used to the ambiguity. Test set can refer to lots of different things. You can think of test data as just in general."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3941,
+      "type": "audio",
+      "text": "Unseen data. Unseen data is test data. It's data that your model didn't see. Other times, it's a specific data set that you've held out. You've specifically taken the data that you were handed at the beginning of a project, and you've put 20% of that data in a lock box somewhere, and you're going to go look at that data later on once you fit your model. And then sometimes it's not even an actual data set. Sometimes your test set isn't actually a data set, but it's this idea of how well does your model perform in production when you actually go implement this model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3952,
+      "type": "audio",
+      "text": "In the real world, how well does it do with your actual customers and your clients? So just keep that in mind. I will say test data in lots of different contexts can mean any one of these things. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3976,
+      "type": "audio",
+      "text": "There was a question, is 20% the gold standard? Don't worry about that question for now. It can be all different kinds of things. 20% was just the example I used of how much to hold out. It's a common amount of data to hold out. We'll see in a minute, but it can often be 10%. If you have a really giant data set, it can just be like 1%. OK, it can totally depend. 20% is just like a common amount of data that gets held out. But I wouldn't overfit to that idea."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 3978,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4008,
+      "type": "audio",
+      "text": "Hopefully understand what overfitting is. OK, A test set, a test set. What is a test set? It's a portion of our data set that we hold out. So sometimes you'll hear on exams in this class or elsewhere, you'll hear a held out test set or a held out validation set or a held out set of data. We don't include it in model training in the idea. The sort of formal idea of a test set is we only use it once. We never cheat. We never train our model on the test set. We never use knowledge from our test set to influence."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4037,
+      "type": "audio",
+      "text": "How we build our model. We build our model, we see how well it does on our test set, and that's our answer. And that's our answer. So what's our new workflow to start here? What's our new workflow? We're gonna perform what's called a trained test split. We're gonna fit the model on whatever our training data is and then evaluate our model on the test set. So you might get handed a full data set. Instead of just modeling on that full data set and fitting a model to it, we're gonna split it. We're gonna split it up into two different things, the training set and the test set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4060,
+      "type": "audio",
+      "text": "How big should that test set be? Don't worry about this for now, but the idea is we're splitting our data set into two different pieces in that test set. We're not going to touch until the very end of our process to see how well the model fit to our training set does. In practice, we're only going to use this for evaluation. We're not going to use this for model training."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4064,
+      "type": "audio",
+      "text": "OK, we have one other idea here. Well."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4075,
+      "type": "audio",
+      "text": "You know, it kind of seems like a waste, doesn't it? Like you hold out 10% of your data, like that's information. These are a bunch of customers. Maybe there's some knowledge here we could pick out, right? And I'm holding all of it out."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4076,
+      "type": "audio",
+      "text": "And."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4102,
+      "type": "audio",
+      "text": "I test on this data set, I get some answer and I'm sort of done, right? It's like I can't go back and adjust my model. That would be cheating. No longer do we have any held out data at that point. So what am I supposed to do? How can I repeatedly evaluate my model and then just test it when I'm ready? And so we're going to introduce one other thing here called a validation set. What if we're dissatisfied with our test set performance?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4108,
+      "type": "audio",
+      "text": "The problem of going back is that we'd be factoring information to redesign our model. This would be cheating."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4114,
+      "type": "audio",
+      "text": "This is not good. No longer is our model truly being used on unseen data."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4143,
+      "type": "audio",
+      "text": "It's not being used on unseen data. So what should we do? Let's introduce a validation set. So a validation set is this idea of a sort of pseudo test set that we can use more than once. So we're gonna split our data into a training set and a test set. And then we're going to split that training set again into a validation set and a training set. And what we're gonna do is we're gonna train our model on the training set. We're gonna evaluate on the validation set. We're gonna use insights from that evaluation to refit our model. And we're gonna."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4153,
+      "type": "audio",
+      "text": "Rinse and repeat until we're happy with the model we have. And then finally, once we're happy with that model, we're going to apply it to the test set just one time."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4161,
+      "type": "audio",
+      "text": "So now we have this data set that we can play with multiple times, but again, like we're kind of throwing out data again."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4186,
+      "type": "audio",
+      "text": "It doesn't really seem like the most efficient use of all the data we have. Our training data set is just a portion of all of the data we have. It might not be representative of my full set of customers, and that might be holding me back. What if I do a randomization, a random split that gives me a really bad training data set. I'm sort of like, you know, just doesn't work. It's, it's a kind of unlucky. How do we sort of prevent this unluckiness?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4200,
+      "type": "audio",
+      "text": "So let's talk a little bit about model complexity and then we'll evaluate the question I just asked. So again, model variance is this idea is of how much our model changes. So our model is I want to fit a fifth degree polynomial."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4214,
+      "type": "audio",
+      "text": "How much do the coefficients on that model change as I repeatedly fit to new resamples of data? That's model variance. How much does the structure of the model vary? So if we use the vehicles data set?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4227,
+      "type": "audio",
+      "text": "There's a demo corresponding to this lecture that you're welcome to go take a peek at, but this is the sort of tildr from that if I fit multiple models. So this is a constant model, 0 is a constant model, this is SLR."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4229,
+      "type": "audio",
+      "text": "This is what's called a quadratic model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4250,
+      "type": "audio",
+      "text": "And then after that we just call this a higher degree polynomial. So each one of these represents one model that we fit to some data set. We can see that once we go from a constant model to a simple linear regression, we get a huge drop in the mean squared error on our validation set. We add another term a ^2 term."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4254,
+      "type": "audio",
+      "text": "We drop again and then we get that elbow I mentioned."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4258,
+      "type": "audio",
+      "text": "We get that elbow that I mentioned and then we get some weird pattern going on up here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4263,
+      "type": "audio",
+      "text": "OK, but notice what's going on here in general as we."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4267,
+      "type": "audio",
+      "text": "Decrease our or increase our model complexity."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4269,
+      "type": "audio",
+      "text": "The error is going down."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4273,
+      "type": "audio",
+      "text": "So what does this picture correspond to? So this picture?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4277,
+      "type": "audio",
+      "text": "Corresponds to."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4285,
+      "type": "audio",
+      "text": "Let's see the training here, right here. So we're adding the sort of new picture here, writing this new picture. So the idea."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4288,
+      "type": "audio",
+      "text": "Is that?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4290,
+      "type": "audio",
+      "text": "As our model complexity goes up."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4294,
+      "type": "audio",
+      "text": "Our training error tends to go down."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4306,
+      "type": "audio",
+      "text": "Our training error tends to go down, our model variance goes up. You can almost think of model variance and model complexity as synonymous. Those are essentially the same idea how much our model changes across different random samples of data."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4326,
+      "type": "audio",
+      "text": "Model variance is essentially the same thing idea. The same thing is model complexity. As our model becomes more complex, it tends to be more variable. And the idea is that the sum of those two terms, the sum of those two terms, gives us what's called validation error. There's a certain point."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4328,
+      "type": "audio",
+      "text": "Where our error or variance is minimized."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4334,
+      "type": "audio",
+      "text": "Are error or variance is minimized and then after a certain point it starts to."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4344,
+      "type": "audio",
+      "text": "Jump back up. The error on the held out validation set starts jumping up higher and higher and higher, so notice."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4348,
+      "type": "audio",
+      "text": "We get this U shape here on the validation set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4358,
+      "type": "audio",
+      "text": "EU, The bottom of EU is very flat for the most part. It's a very, very gently sloping line. So at a model complexity of two, we're essentially getting the most bang for our buck."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4362,
+      "type": "audio",
+      "text": "In model complexity of two, we've essentially reached the lowest point."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4373,
+      "type": "audio",
+      "text": "On the validation mean squared error, it keeps going down just a little bit, but the value of having a 10th degree polynomial model versus a quadratic model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4399,
+      "type": "audio",
+      "text": "Is lower. It's it's nicer to have a model that has fewer terms. We were looking for a model. That's what's called parsimonious. We want to try to explain as much as possible about our data with the fewest terms possible. This idea of Occam's razor, the best explanation is the one with the sort of the simplest. Same sort of idea here. And notice once we start increasing the polynomial to a very, very high extent."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4406,
+      "type": "audio",
+      "text": "The validation mean squared error starts shooting up, we start way overfitting and we start getting that nasty picture where we have some data set that looks like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4411,
+      "type": "audio",
+      "text": "Yet we have a model that's jumping all over the place."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4413,
+      "type": "audio",
+      "text": "OK, so we have a new."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4429,
+      "type": "audio",
+      "text": "Line 2 New lines to add to our picture. We have the training error line which we saw before. The training error goes down as we increase our model complexity. We have our model variance which goes up as we increase model complexity."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4441,
+      "type": "audio",
+      "text": "And then we have our validation error sort of this U-shaped. There's this sort of optimal point where we minimize the error or variance on our held out."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4443,
+      "type": "audio",
+      "text": "Validation set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4453,
+      "type": "audio",
+      "text": "And once we increase the model complexity past that point, our error keeps going up. All right, I'm going to pause for a minute because there's a lot on this slide, questions on this slide right there."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4480,
+      "type": "audio",
+      "text": "Why does it jump so significantly? A lot of this can just be because of the data set that we're working with that can be idiosyncratic. So when we would run this experiment, let's say, where we fit multiple models at a different model complexities, it might not jump quite as much, right? We're sort of getting a weird thing here too, where we get this U shape. But notice this like U part is really, really flat. Like this is kind of weird."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4484,
+      "type": "audio",
+      "text": "That it's so flat here, like it's still going down just a tiny little bit."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4492,
+      "type": "audio",
+      "text": "Right. But ultimately it's still sort of fitting AU shape. So the answer why on this particular data set, I can't give you an answer unless we explore more. Yeah, other questions right front."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4519,
+      "type": "audio",
+      "text": "So this is a wonderful question. So should the training error and the test error be close to one another? Do we care about how close the training error is to the test error? Not quite. Typically, your training error will always be lower than your test error."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4522,
+      "type": "audio",
+      "text": "The data that you trained your model on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4535,
+      "type": "audio",
+      "text": "Is your model is designed to fit that data as closely as possible, so if you evaluate on that same data, the error is going to be quite low. So essentially no matter what your external data set looks like."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4537,
+      "type": "audio",
+      "text": "This error is always going to be lower."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4553,
+      "type": "audio",
+      "text": "Right on your external data set. Now, does it matter how close they get to one another? Not really. What you're looking for is the bottom of that U shape."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4553,
+      "type": "audio",
+      "text": "It doesn't matter if that you is close to the training era that you could have been up here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4579,
+      "type": "audio",
+      "text": "Right. This model complexity is still optimal. It doesn't really matter how close the actual value of the errors are, right? What's more important is, is also thinking about what that value of the error means in practice. If your root mean squared error is like, you know, $10 on a prediction problem where you're predicting the price of penny stocks that costs cents, that's like a really high error, right? So that's really the magnitude of the errors, what you care about more than how close they are to one another. Go ahead in the back."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4602,
+      "type": "audio",
+      "text": "Yeah, so the order of the polynomial is synonymous with the number of features. So if I have a second degree polynomial, that means I'm passing now 2 features to OS in addition to an intercept."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4606,
+      "type": "audio",
+      "text": "We know that it's one feature squared, but O less it's 2 features. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4644,
+      "type": "audio",
+      "text": "That's generally the idea. When you're fitting linear models, there's it's not really a good idea to leave out the lower order terms. But the idea of model complexity here can mean several things. How many features are you passing into your model? What's the degree of the polynomial, which is essentially the same thing as the number of features? How how complex is your model in terms of are you linear modeling versus using a random forest versus are using a neural network? Those are more complex models. They can fit more nonlinear relationships in your data set. So that's another idea of model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4651,
+      "type": "audio",
+      "text": "Complexity. But just for the purposes of this plot, you know, number of features is one way to think about it. Degree of polynomial is a way to think about it. Other questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4652,
+      "type": "audio",
+      "text": "Others."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4655,
+      "type": "audio",
+      "text": "Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4672,
+      "type": "audio",
+      "text": "This is a great question. Are there instances where you would want higher or lower model variance? So this is excellent. So when we get to regularization."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4692,
+      "type": "audio",
+      "text": "We'll talk about this thing called the bias variance trade off. And bias sort of sounds like a bad word, right? We don't want our model to be biased. But the idea in regularization is that you sacrifice a little bit of bias. You increase the bias of your model a little bit to reduce its variance. In general, model variance isn't a good thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4697,
+      "type": "audio",
+      "text": "In general, it's not a good thing, but remember that as we make our model more and more complex."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4698,
+      "type": "audio",
+      "text": "As we make our model more and more complex."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4704,
+      "type": "audio",
+      "text": "The variance goes up, but if the training error goes down more."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4706,
+      "type": "audio",
+      "text": "Then that increase in variance is fine."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4724,
+      "type": "audio",
+      "text": "Right. Our goal is to minimize the validation error. Our goal isn't to minimize training error. Our goal isn't to minimize variance. Our goal is to minimize the error on the validation set. So in general, yes, increasing variance isn't good, but if you can decrease training error more than you increase variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4746,
+      "type": "audio",
+      "text": "Then you're in business. Then you're in business. OK, let's keep going just with the last five minutes we have here and talk a little bit about cross validation. So yeah, this is stuff I've already said. As model complexity increases, your training error goes down, your variance goes up, and then you get EU shape on the validation set. The error on the validation set decreases and then increases."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4755,
+      "type": "audio",
+      "text": "OK, so our goal is to pick a complexity that minimizes the validation error. And in the previous slide we saw that that would be."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4759,
+      "type": "audio",
+      "text": "Sort of somewhere in the neighborhood of 2 to 11."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4772,
+      "type": "audio",
+      "text": "But looking at this plot, if we can get essentially the same error as we do with an 11th degree polynomial using only two terms, then we'd probably go with just the 2° polynomial."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4782,
+      "type": "audio",
+      "text": "All right, let's talk a little bit about cross validation to wrap up here and then Ramesh will pick up next week. So what if we get unlucky? What if we?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4812,
+      "type": "audio",
+      "text": "Randomly split our training set and our validation set and the validation set looks nothing like the data set that we would actually validate on in the real world, right? We get sort of a strange set of data that our validation error ends up being really pessimistic, like the error looks like really really high even though our model is pretty good or the error is really optimistic. Our training set is almost identical to our validation set and so are held out. Validation error is essentially the same thing as training error. How do we avoid this right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4834,
+      "type": "audio",
+      "text": "Randomization here could be sort of a problem. So how can we get around this? So in our original validation split, we talked about this idea of setting aside some percentage of the training data to use for validation. So I've given you the example of 20% earlier. Our validation set was something like 20% of the data set. Our training was 80%. You'll often see these numbers 9010."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4845,
+      "type": "audio",
+      "text": "Don't worry about too much. We don't worry about that choice too much right now, but keep in mind we could have selected any portion of the training data for validation. That's a randomly selected subset."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4875,
+      "type": "audio",
+      "text": "Randomly selected subset. So we don't really want our results to be this sort of vulnerable to randomness. So what could we have done instead? Well, we might have selected a validation set that was at the beginning of our data. We might have set a validation set that was in the middle. Assuming our data set is ordered randomly here, we could have selected one that was in the middle, right? We could have selected one that was at the end. We could have set aside any one of these portions as a validation set. And if we want to describe this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4882,
+      "type": "audio",
+      "text": "More formally, we could say that there are five non overlapping chunks."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4901,
+      "type": "audio",
+      "text": "Of data that we could have selected. So imagine taking your data set, putting it in a randomized order. If I want to select 20% of my data as a validation set, we could imagine, well here's 5 different ways of doing it, here's 5 different ways of doing it where none of those validation sets."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4912,
+      "type": "audio",
+      "text": "Overlap with one another. So what's sort of the point of this? So a fold, this is a new term here. A fold is some chunk of data. So our training data, if we're holding out 20% of the data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4916,
+      "type": "audio",
+      "text": "We might say has five folds."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4920,
+      "type": "audio",
+      "text": "In the location of those folds is randomized, but each one of those folds is the same size."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4946,
+      "type": "audio",
+      "text": "OK. And so how we can think about this is really we have 5 validation sets that are hidden inside of our training data set. And so in cross validation, which I'll introduce super briefly here, cross validation, every single data point ends up getting used inside of a validation set at least once. We end up training on every single data point at some point and we end up validating on every single data point at some point, we get a better."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4951,
+      "type": "audio",
+      "text": "Representation of how the model might perform on any one of these splits of data."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4966,
+      "type": "audio",
+      "text": "So the idea with cross validation I'll give you in the last minute here, is relatively straightforward. We randomly select one subset of the data to hold out. We train on the rest of the data we randomly select."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4974,
+      "type": "audio",
+      "text": "Another subset of data to hold out that doesn't overlap with the first one. We do the same thing five different times. We choose randomly 5 different chunks of data."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4976,
+      "type": "audio",
+      "text": "We train our model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-331-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4979,
+      "type": "audio",
+      "text": "On all of the training data sets."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-332-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 4992,
+      "type": "audio",
+      "text": "And then we evaluate the model on whatever is held out, and so instead of just getting one value of the of the validation mean squared error, we end up getting 5."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-333-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5017,
+      "type": "audio",
+      "text": "Values of the validation error instead of just one value and the average of those validation errors gives me a more stable, more representative estimate of what the test error might look like in the real world. I'll go ahead and pause there. Ramesh will pick up with this. Office hours are in here if you have questions about anything that's not related to the exam. See you all on Thursday. We have a guest lecture. Please come on Thursday."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-334-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5262,
+      "type": "audio",
+      "text": "All righty, let's do office hours. So does anybody need to leave relatively soon?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-335-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5267,
+      "type": "audio",
+      "text": "I need to go first. OK, yeah, if you could just ask from there, that would be fine."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-336-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5274,
+      "type": "audio",
+      "text": "Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-337-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5287,
+      "type": "audio",
+      "text": "Yeah. So we haven't, we didn't quite have time to get to it today, but the idea is that we have, let's say, model with one feature."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-338-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5291,
+      "type": "audio",
+      "text": "Model with two features."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-339-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5297,
+      "type": "audio",
+      "text": "And model with three features. So let's just say I'm trying to decide between three different models."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-340-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5315,
+      "type": "audio",
+      "text": "We normally can decide on more different, more things here, but the idea here is I'm trying to choose which one of these models do I think is going to do best in practice. OK, So what do I do? So the idea is that I'm going to or each of these models."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-341-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5317,
+      "type": "audio",
+      "text": "If I'm performing fivefold cross validation."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-342-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5337,
+      "type": "audio",
+      "text": "I'm going to take my training data set and I'm going to split it into five non overlapping folds and I'm going to use those same folds for all three of these models. So I don't re choose the folds, I choose those five folds at the very beginning of this process."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-343-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5347,
+      "type": "audio",
+      "text": "And then what I'm going to start doing is I'm going to fit different models. So for this first model with one feature, I'm going to fit it to."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-344-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5352,
+      "type": "audio",
+      "text": "Those four folds, I'm going to evaluate it on the held out fold."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-345-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5358,
+      "type": "audio",
+      "text": "And I'm going to get one value of the validation mean squared error."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-346-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5362,
+      "type": "audio",
+      "text": "OK, I'm going to repeat that process."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-347-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5374,
+      "type": "audio",
+      "text": "OK, same exact thing except now I'm going to use the different set of folds and I'm going to evaluate on one of the held out folds and I'm going to get a validation mean squared error #2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-348-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5377,
+      "type": "audio",
+      "text": "And I'm going to do the same thing five times."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-349-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5379,
+      "type": "audio",
+      "text": "I'm going to take the average."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-350-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5393,
+      "type": "audio",
+      "text": "Of the validation mean squared errors."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-351-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5401,
+      "type": "audio",
+      "text": "From each of these three different models. So notice I have to fit 15 different models in this process. 5 models for the first model specification, 5 models for the second one, five for the third average the validation mean squared errors. Choose the model that gives me the lowest validation mean squared error."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-352-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5405,
+      "type": "audio",
+      "text": "We exactly."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-353-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5437,
+      "type": "audio",
+      "text": "Exactly. We say what the inputs are here in in cross validation is a general purpose tool. You don't just use it to select which model to use. Models have what are called hyper parameters. In OLS we don't have hyper parameters, but I guess you can kind of think of hyper parameters as like the number of polynomial features. That's something we choose ahead of time. We decide should there be one feature? Should there be two polynomial features? Should there be a third degree? Should it be 4th degree? Should it be a fifth degree? That's something we choose ahead of time."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-354-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5447,
+      "type": "audio",
+      "text": "And then that's our input to cross validation. We run cross validation, we choose the one with the lowest average validation mean squared error, sometimes called the CV error, the cross validation error at the very end."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-355-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5477,
+      "type": "audio",
+      "text": "So we're choosing between different polynomial features. You could also decide, well, what should be my learning rate for gradient descent? And you might think about how do I choose the learning rate for gradient descent? That ends up netting me a model with the lowest validation mean squared error. That's another thing you can choose when we get to the next lecture on regularization, there's something called Lambda, the regularization hyperparameter that you can choose with cross validation. This is like a very general purpose tool for choosing between different options."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-356-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5480,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-357-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5498,
+      "type": "audio",
+      "text": "Remember what the learning rate we need to decide should it be, you know, 0.01, Should it be .1? What should it be? And we can't always draw a picture of the loss function and we're not always guaranteed convexity. And So what we can do is use different values of the learning rate and see which one of these."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-358-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5510,
+      "type": "audio",
+      "text": "Runs of cross validation ends up netting us the lowest possible loss. Which one of those learning rates ends up spitting out a model? A final model of gradient descent that has the lowest loss possible?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-359-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5516,
+      "type": "audio",
+      "text": "Exactly, but you're training it using gradient descent."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-360-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5531,
+      "type": "audio",
+      "text": "But at the end of the model fitting process, right? So you're trained the model using gradient descent with some learning rate, you evaluate it on some held out validation set and then you get your CV error at the end you choose."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-361-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5542,
+      "type": "audio",
+      "text": "The learning rate, the input at the very beginning. That Nets you a model that has the lowest validation mean squared error at the very end of the model fitting process."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-362-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5557,
+      "type": "audio",
+      "text": "Exactly. Yeah, Yeah. So this is the idea is this is a way to choose between different model formulations, different hyperparameters for your model. It's a totally general purpose, but we're going to talk more about it in depth in the next lecture. I only had five minutes to talk about it, but that's the idea."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-363-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5562,
+      "type": "audio",
+      "text": "They might get some extra."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-364-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5572,
+      "type": "audio",
+      "text": "Yeah. I mean, you might see that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-365-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5588,
+      "type": "audio",
+      "text": "You know, a super low learning rate isn't converging, your models aren't converging, and so your validation error is really high and a super high learning rate is leading to that bouncing around the oscillation. So you're not getting an optimal model and so you might see really high."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-366-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5599,
+      "type": "audio",
+      "text": "Validation error for super low learning rates and super high learning rates. But then you know the middle ground learning rate might be a little bit better. The best learning rate depends on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-367-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5607,
+      "type": "audio",
+      "text": "Specifics of your data set, right? It's like we can't say in general, this learning rate is best. Depending on your data set, one learning rate might work better than others."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-368-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5611,
+      "type": "audio",
+      "text": "Now."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-369-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5620,
+      "type": "audio",
+      "text": "I just feel like will there be no model? Just you'd like a clear, yeah?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-370-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5624,
+      "type": "audio",
+      "text": "Right."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-371-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5630,
+      "type": "audio",
+      "text": "Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-373-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5641,
+      "type": "audio",
+      "text": "So let me say I have X1 and X2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-372-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5641,
+      "type": "audio",
+      "text": "So let me show you one. So let's say I have a tree based model or I have this kind of data."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-374-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5645,
+      "type": "audio",
+      "text": "The next two, forget about the intercept for now."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-375-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5648,
+      "type": "audio",
+      "text": "And I'm going to color the data points by."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-376-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5650,
+      "type": "audio",
+      "text": "The outcome for White?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-377-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5654,
+      "type": "audio",
+      "text": "And so let's say in this upper left quadrant."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-378-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5661,
+      "type": "audio",
+      "text": "Y is equal to 1 in this bottom right quadrant. Y is equal to 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-379-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5665,
+      "type": "audio",
+      "text": "In this top right quadrant."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-380-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5676,
+      "type": "audio",
+      "text": "Here, I'm actually going to do this, not exactly as quadrants. Hold on, I'm going to do this as."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-381-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5677,
+      "type": "audio",
+      "text": "Minus this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-382-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5682,
+      "type": "audio",
+      "text": "Here Y is equal to 1 and then up here Y is equal to 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-383-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5686,
+      "type": "audio",
+      "text": "And down here Y is equal to 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-384-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5693,
+      "type": "audio",
+      "text": "So let's say that's the true relationship between Y&X."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-385-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5694,
+      "type": "audio",
+      "text": "A linear model, even though it's a very simple model, right? Like under the hood?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-386-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5700,
+      "type": "audio",
+      "text": "We can set a decision role. I could say that when X2 is less than."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-387-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5707,
+      "type": "audio",
+      "text": "Say we call this A, and let's say we call this B. We have a very simple decision rule if X2 is less than B and."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-388-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5710,
+      "type": "audio",
+      "text": "X- one is less than a."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-389-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5713,
+      "type": "audio",
+      "text": "Predict one right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-390-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5720,
+      "type": "audio",
+      "text": "And so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-391-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5723,
+      "type": "audio",
+      "text": "But there's no way for me to make a linear model that can model that data."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-392-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5730,
+      "type": "audio",
+      "text": "There's no way to set up a linear combination that spits out one or zero."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-393-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5733,
+      "type": "audio",
+      "text": "Based on how this is set up and so we need a different kind of model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-394-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5739,
+      "type": "audio",
+      "text": "And so depending on your domain, this might be a model that makes more sense. A tree based model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-395-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5745,
+      "type": "audio",
+      "text": "Would work fine here. What is a tree based model? A tree based model is exactly like this decision role you say?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-396-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5759,
+      "type": "audio",
+      "text": "X1 exactly right, right, right. And we say if X is less than a, go in this direction, if X is greater than A, go in that direction. And then same idea is X2 bigger than B."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-397-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5768,
+      "type": "audio",
+      "text": "X2 less than BX2 bigger than BX2 less than B or something like this, whatever. And then you have you know, each of your predictions."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-398-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5772,
+      "type": "audio",
+      "text": "And the tree is very easy to write down, but a linear model couldn't handle that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-399-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5783,
+      "type": "audio",
+      "text": "Linear model can't predict like that. A linear model can only make a linear hyperplane separating each of those quadrants, right? A linear model can only fit a relationship that looks like that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-400-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5788,
+      "type": "audio",
+      "text": "Right."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-401-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5793,
+      "type": "audio",
+      "text": "Can't split them."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-402-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5800,
+      "type": "audio",
+      "text": "Makes sense?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-403-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5812,
+      "type": "audio",
+      "text": "No, not data 100, we get to them in CS189, but understanding linear modeling well will help you with this. We don't do trees in data 100, we do K means clustering, which is a different. This is still supervised learning. We still have outcomes here. But yeah, we don't get to this in data 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-404-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5817,
+      "type": "audio",
+      "text": "Lotto cover in data science, but this is not one of the things we get to in this class."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-405-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5836,
+      "type": "audio",
+      "text": "Take a look get it to me my whole life we can't carry like make a friend for me by log Y minus this one equals not beta 2 + X."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-406-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5842,
+      "type": "audio",
+      "text": "It's like the window, just make transformation to like."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-408-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5858,
+      "type": "audio",
+      "text": "Let's say I want to fit this model."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-407-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5858,
+      "type": "audio",
+      "text": "Yeah, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-409-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5874,
+      "type": "audio",
+      "text": "Log Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-411-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5894,
+      "type": "audio",
+      "text": "Oh, I gotta take this one second."
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-410-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 5894,
+      "type": "audio",
+      "text": "Equals Theta naughty plus Theta 1X and like transform the Y. Is that kind of what you're thinking or are you thinking more complex than this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773182170-transcription-412-c0-e0",
+      "lecture_id": "ds100-sp26-1773182170",
+      "timestamp": 7961,
+      "type": "audio",
+      "text": "Yeah."
+    }
+  ]
+}

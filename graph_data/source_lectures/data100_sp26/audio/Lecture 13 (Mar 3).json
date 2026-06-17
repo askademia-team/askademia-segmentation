@@ -1,0 +1,2550 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1772580967",
+  "display_name": "Lecture 13 (Mar 3)",
+  "count": 363,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 13,
+      "type": "audio",
+      "text": "Thank you all that."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 15,
+      "type": "audio",
+      "text": "I'd like to."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 20,
+      "type": "audio",
+      "text": "Without."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 26,
+      "type": "audio",
+      "text": "These shame Stop Jay."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 32,
+      "type": "audio",
+      "text": "Do you pass?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 45,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 49,
+      "type": "audio",
+      "text": "Well, that's all sweet."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 58,
+      "type": "audio",
+      "text": "I'd like to Jesus, but I can break away from all these shed."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 63,
+      "type": "audio",
+      "text": "Somebody stop. Stop looking, Jay."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 91,
+      "type": "audio",
+      "text": "Change the world."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 135,
+      "type": "audio",
+      "text": "Edge of my word now."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 188,
+      "type": "audio",
+      "text": "You can be sending that."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 194,
+      "type": "audio",
+      "text": "Of respectful try."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 286,
+      "type": "audio",
+      "text": "In the richly black of a lonely hall."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 292,
+      "type": "audio",
+      "text": "No."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 300,
+      "type": "audio",
+      "text": "On the train."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 355,
+      "type": "audio",
+      "text": "Everybody, welcome to lecture 13. Let's jump right in. Announcement. So homework 5 is due this Friday. Homework 5, notoriously the longest homework assignment of the semester. If you have not started, start today if you can. Starting this the night before is a recipe for disaster. Now, keep in mind, half of homework 5 is relevant to your midterm. Half of it isn't. OK, there's a homework party this Friday and Warren 101 B five hours. Head there, work with other folks."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 356,
+      "type": "audio",
+      "text": "Let's work with the Tasmania."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 385,
+      "type": "audio",
+      "text": "Get it done, wrap it up, but I would start as soon as you can. And I would especially if you plan to use slip days on this homework, which is fine, totally fine to use slip days. But keep in mind the first half of homework 5 covers sampling, which is on the midterm. So you are, you'll benefit from completing all of those sampling questions before you attempt your midterm. So again, if you're going to take slip days, that's fine, but hopefully your midterm is later in the week. If you do that, these sampling questions on homework 5 will help prep you for the midterm."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 401,
+      "type": "audio",
+      "text": "OK, all right, So what are some midterm prep resources we have? There are lots of posts on Ed about the midterm, and I'm not going to regurgitate everything, but I'll give you some of the highlights. So keep in mind part of discussion this week does cover midterm prep."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 433,
+      "type": "audio",
+      "text": "If you're not assigned to a degraded discussion section, you're still allowed to go to mega discussion, which I think is Wheeler 212 on Thursdays. You can double check the website for that. You're welcome to go for more midterm prep. There's a midterm review session this Friday from 3:00 to 5:00 PM. And then also I posted something late last night about the midterm one format and study tips in the fall. There wasn't a like canonical example of what a CBTF midterm would look like with these shorter questions. But now that you all are."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 462,
+      "type": "audio",
+      "text": "Spring, you can go look at the fall midterm. Even though it's printed out on paper, those are the kinds of questions you're going to see on the midterm. We've moved towards these sort of shorter questions that don't take as much context, don't have as many interdependencies. This way we can still test you on all of the material in only 50 minutes. OK, so I recommend checking out that post. There's also some study tips if you need to just do one thing to study. If you only have time for one thing, make sure to work through the fall 2025 midterm after that."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 478,
+      "type": "audio",
+      "text": "Look at past midterms. After that you can start doing a deep review of homework, discussion, lectures and all that. But you're studying of lectures, homeworks, and all of those things should be in service of understanding past exam questions. OK, I always like to tell people."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 503,
+      "type": "audio",
+      "text": "You can't learn to drive a car by reading a book about driving a car. It's the same way with taking exams. If you don't take actual exams. If you don't look at practice exams, you can read all about the Data 100 material, but you probably will have trouble applying it on an actual exam. Just please keep that in mind. I get students every semester asking me why didn't I do well in the midterm and almost every single time they didn't do practice exams and then I just want to remind you."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 507,
+      "type": "audio",
+      "text": "During the any lecture you have academia where you can ask questions to the chatbot."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 530,
+      "type": "audio",
+      "text": "But keep in mind, we have a TA in the room always to answer any questions that you may have. If you just scan that top right QR code on any slide, you can ask a question anonymously and it'll be answered in almost real time for you. So just keep in mind you have that as a resource. I've noticed that questions have been down. I don't know if that's a signal that I've been telling you everything you need to know or people don't know about it."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 542,
+      "type": "audio",
+      "text": "Let's move on. OK, so more things about the midterm. If you have not signed up for a slot to take the midterm, please do that right now. Scan this."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 560,
+      "type": "audio",
+      "text": "OK, there's a mandatory orientation quiz that you must take either in person, which is what we recommend and most people are doing that, or at home. If you've already used the CBTF before for whatever reason, you can't come to campus. You can do the second option, but make sure you do the orientation quiz that's a required component of Homework 5."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 592,
+      "type": "audio",
+      "text": "And then midterm 1, you also need to sign up for so the orientation quiz just to get a feel for what it's like to take a computerized exam. These are starting to show up in more courses at Berkeley. So this probably isn't going to be the first and last time that you see and examine the CBTF. We're just one of the first courses to start piloting this. You need to reserve a slot for midterm one on Prairie Test. Prairie Learn is where the content is hosted. Prairie Tests is where you sign up to take an exam. Now, keep in mind, midterm 1 cannot be taken at home. The orientation quiz can be, we're not going to require."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 620,
+      "type": "audio",
+      "text": "To come in for that if you don't want to, but midterm one must be taken in person. Must be taken in person, OK And if there's no slots available when you're available, get in contact with us and we can try to help you out. But there should be slots that are available that you can sign up for now. All right, let's get off logistics and let's review a little bit where we were last time. So today is going to be half OLS and I'm going to begin to introduce you to gradient descent. I want to remind you about this thing called the design matrix that we were working with."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 622,
+      "type": "audio",
+      "text": "This big X."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 654,
+      "type": "audio",
+      "text": "This big X of all of our features, and also this special column of ones that we include to make sure that we have an intercept in our model. But each row of this matrix corresponds to a row in a data frame, all of the feature values for a particular observation. Each column in the matrix corresponds to all of the feature values for one particular feature in your data set. So all of the feature values across all of your different observations for one."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 675,
+      "type": "audio",
+      "text": "Particular feature OK row corresponds to 1 observation. Rows are observations. Columns correspond to features. We store all of this information in a matrix called X that we call the design matrix for our model, and the goal is for us to fit a model that uses information in that design matrix X to try to predict."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 677,
+      "type": "audio",
+      "text": "Values in our."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 680,
+      "type": "audio",
+      "text": "Outcome vector Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 707,
+      "type": "audio",
+      "text": "Our predictions are called Y hat. They get stored in the prediction vector, the Y hat vector. OK, other things to keep in mind. Yeah. So the column of ones is needed in order to include a bias, or, excuse me, an intercept term in your model. We often call this a bias column, an intercept column, the constant column. Unless you have strong reason not to, you should always include intercept in your model. For the most part, data 100 especially. I don't think there's a single."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 712,
+      "type": "audio",
+      "text": "Real example we give you where it's a good idea to remove the intercept. We don't want to force our models to go through the origin."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 738,
+      "type": "audio",
+      "text": "OK, so I want to remind you a little bit about matrix multiplication from last time. So when you've done matrix multiplication before data 100, you've probably thought iterate over the rows, iterate over the rows in your vector to the right, multiply, do a big dot product right? Iterate over the rows, iterate over the columns. Takes a long time, but it works. But last lecture we introduced you to this new idea of taking the design matrix."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 740,
+      "type": "audio",
+      "text": "And multiplying by."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 759,
+      "type": "audio",
+      "text": "The vector of thetas our parameter vector. This is equal to our prediction vector Y hat. And when you do that matrix multiplication up top, you get an expression on the right inside of the matrix that looks like each prediction. So this is my first."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 764,
+      "type": "audio",
+      "text": "Y hat value, that's Y hat one. This is Y hat N."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 768,
+      "type": "audio",
+      "text": "We have our predictions for all North observations."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 792,
+      "type": "audio",
+      "text": "It's not working for the bottom here. There you go. Pretend that's lower. OK, now the interesting pattern that I wanted you to pick up on from last time is that we don't actually have to think about rows when we do matrix multiplication like this. Instead, we can think about taking the columns of X. So once again, in multiple dimensions, are columns of X, are vectors here, are columns of X along the table here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 814,
+      "type": "audio",
+      "text": "OK, we can take our columns of X and combine them with some recipe. Take a little bit of column one, take a little bit more of column two, take a little bit less of column three, and so on to create our vector of predictions represented by the tape measure here. That's our vector of predictions. How do you combine these two vectors in order to create this new vector of predictions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 822,
+      "type": "audio",
+      "text": "And we saw that we can think of matrix multiplication as taking the columns of X and using each of our values in the Theta vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 826,
+      "type": "audio",
+      "text": "As each of the parts of the recipe that we're dealing with take."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 837,
+      "type": "audio",
+      "text": "Two parts column one, take three parts column two take 5 parts column three. Put it all together and you get the prediction vector. OK, another big idea from last time."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 864,
+      "type": "audio",
+      "text": "OK, then we had this picture. We had this picture which I can draw up on the screen here, but it's much easier to see it live. We have our columns of X as vectors. We have two columns in our design matrix here. We can either think of this as like an intercept column, a column of ones, and a feature column, or we can think of it as a model with no intercept and just two features. We have our Y vector, the thing we're trying to predict."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 867,
+      "type": "audio",
+      "text": "We're trying to figure out the combination of these 2X columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 881,
+      "type": "audio",
+      "text": "So it has to exist somewhere in the span of this table. The combination of those 2X columns that gets as close as possible to that Y vector, and it turns out that that vector exists directly below the Y vector. We call that our vector of predictions."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 900,
+      "type": "audio",
+      "text": "The difference between those predictions, the prediction vector and the YS gives us our residual vector represented by the chain. Again, this is like one of the 10 things you should take out of data. 100 is this picture that we're looking at here, because you can answer all different kinds of questions with this picture, OK?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 930,
+      "type": "audio",
+      "text": "All right, so let's talk about some of the OLS properties. We'll come back to this idea of checking model performance in OLS. But one thing I just want to remind you of is that this gives you all of the answers, or a lot of the answers in OLS. We can ask you all different kinds of questions in OLS, or you can be an actual data scientist and think about different manipulations you might make to your data set. And then think about, well, what's going to happen to the parameters? What's going to happen to the residuals? What's going to happen to the predictions if I modify the design matrix in a certain way? So let me give you an example here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 945,
+      "type": "audio",
+      "text": "What happens to the residuals if we multiply a column of X by 100? Why would I multiply a column of X by 100? Maybe I'm converting that column from meters to centimeters. How is this going to change my model? Let's think about one of our columns of X here. If I multiply this vector by 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 947,
+      "type": "audio",
+      "text": "Are my residuals changing?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 951,
+      "type": "audio",
+      "text": "No, right? The span of X is exactly the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 954,
+      "type": "audio",
+      "text": "The span of these two vectors is still the table."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 985,
+      "type": "audio",
+      "text": "Right, the span of these vectors is still the table. The closest vector in that span is still the tape measure. The residuals are still right here. Y did not change. So it looks like multiplying one of our columns of X by a constant isn't changing our vector of residuals. It isn't changing our prediction vector, right? We can ask other questions. What if I multiply all the columns of X by 10? Same idea. The span is not going to change. I can shoot these vectors out as far as I want, or as far as I want in as long as they're not zero and that span is exactly."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 986,
+      "type": "audio",
+      "text": "Same. Exactly the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 995,
+      "type": "audio",
+      "text": "What happens to the predictions if we multiply Y by 10 if I increase the length of this vector by a factor of 10?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1000,
+      "type": "audio",
+      "text": "What would happen to the predictions? What would happen to the residuals? Well, this is just a right triangle."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1005,
+      "type": "audio",
+      "text": "If I increase the hypotenuse by 10, all of the other legs have to go up by 10."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1037,
+      "type": "audio",
+      "text": "Right, So my residuals are going to grow by a factor of 10. My predictions are going to grow by a factor of 10, right? All different kinds of questions we can ask. What happens to the residuals if the X vectors move closer to Y? What if these two X vectors get closer to the Y vector? What if I could move these up in space closer to the Y vector? Notice that the residuals would start shrinking. The predictions are better. Why are the predictions better? Well, the X vectors, what I'm using to predict is closer to what I'm trying to predict the Y vector, right? And you can ask an even hard one. I'll leave."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1049,
+      "type": "audio",
+      "text": "Set for extra credit after if you want to think about this, but keep in mind that that picture is a guide to OLS. It's a guide to OLS. All right, some residual properties to keep in mind. Here's a property to write down. Again, you can use this as a guide."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1064,
+      "type": "audio",
+      "text": "To tell you why this is true, why if I multiply my matrix X by the residuals, do I get zero? Well, if I multiply a matrix by a vector and get the 0 vector, that tells me."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1084,
+      "type": "audio",
+      "text": "That this residual vector is orthogonal to X. Based on this picture, is this residual vector orthogonal to X? Bless you. Yes it is right. Yes it is orthogonal. So I get an equation out of this X transpose times the residual vector is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1088,
+      "type": "audio",
+      "text": "Why is this useful? Why is this useful? Well."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1093,
+      "type": "audio",
+      "text": "This is exactly what I just said. Our predicted responses in the span of X by definition."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1096,
+      "type": "audio",
+      "text": "OK, and we know that the residuals are orthogonal to."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1100,
+      "type": "audio",
+      "text": "The span of X. So it must also be orthogonal to Y hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1107,
+      "type": "audio",
+      "text": "And So what we end up getting from this are sort of interesting properties of OLS. You're going to prove this."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1109,
+      "type": "audio",
+      "text": "You're going to prove this on your homework."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1135,
+      "type": "audio",
+      "text": "That the sum of the residuals and it's a very quick proof that the sum of the residuals in any regression model, no matter how bad that regression model is, as long as it's fit using OLS, the sum of the residuals will always be 0. The sum of squared residuals won't be 0 necessarily, but the sum of the residuals will always be 0. And this is sort of a proof hint to getting at that we know that the span of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1140,
+      "type": "audio",
+      "text": "So the whole the matrix that represents this whole world here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1159,
+      "type": "audio",
+      "text": "OK, this whole span of the table we know that this is orthogonal to our residual vector and that tells us that any vector in the span of X first column of X second column of X the prediction vector. All of these vectors are also orthogonal to the residuals. We know that this big column of ones, the ones vector must also be."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1161,
+      "type": "audio",
+      "text": "Orthogonal to the residuals."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1168,
+      "type": "audio",
+      "text": "And we can start deriving interesting properties using that statement. So you'll do that on the homework. You'll see that on Homework 5."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1176,
+      "type": "audio",
+      "text": "OK, let's keep going so we can expand. We can expand a little bit here. We know that the sum of the residuals is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1188,
+      "type": "audio",
+      "text": "What is a residual? A residual is the difference between an actual outcome and a predicted outcome for that same observation. So I can just rewrite that statement that the sum of residuals is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1207,
+      "type": "audio",
+      "text": "Just a different way, if I use the rules of sums. If I use the rules of sums, what can I do? Well, I can get a new rule out of that. A new rule. Well, I can split up that sum I equals one to north of Yi -I = 1 to north of Yi hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1209,
+      "type": "audio",
+      "text": "We know this is equal to 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1225,
+      "type": "audio",
+      "text": "I can multiply both sides by 1 / n, that same trick that we saw earlier in the class. I can also leave them exactly the same and just write that the sum over all I of Yi is equal to the sum over all I of Yi hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1233,
+      "type": "audio",
+      "text": "We learned last time that a sum of a variable like this is N times the average of that variable."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1263,
+      "type": "audio",
+      "text": "And So what does that tell us? This tells us that the average of our predictions is equal to the true average of the outcomes Y. This is why the average of the YS is always on your regression line. If you draw a regression line, the average of the YS as always on your regression line. Here's another proof using this picture of OS. OK, so the big idea here is this is like the key to deeply understanding OS."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1264,
+      "type": "audio",
+      "text": "Pause for questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1265,
+      "type": "audio",
+      "text": "Pause for questions here. What do we think?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1267,
+      "type": "audio",
+      "text": "Do you believe me?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1299,
+      "type": "audio",
+      "text": "You'll be playing around with this more on the homework, and you'll get a lot more flexibility with these ideas. We'll do all kinds of interesting things. We'll draw on the homework. This is a new question. As of spring 2025, you'll draw this equivalent picture for 2D world instead of 3D World. How do you draw this picture in A2 dimensional space? What does that correspond to in that data space? That picture I showed you where you think about vectors, where you think about data points. How do those two pictures correspond? If that picture is in 2D, that'll be part of your homework."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1325,
+      "type": "audio",
+      "text": "All right, let's keep going. So we've gotten to another great point in our modeling journey. So the first model that we learned about was simple linear regression using mean squared error as our loss. We saw that we have a closed form expression for each of the parameters of our model, the slope and the intercept. We can solve for those exactly using our data. We could ask the question, is this a unique solution? Is there just one single line?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1354,
+      "type": "audio",
+      "text": "That uniquely minimizes the sum of squared residuals for some data set with one input and 1 output. And yes, that is the case. We did the same thing for the constant model. We did it for both mean squared error and mean absolute error. We saw that the optimal parameters in the case of MSE in the constant model was the mean. The optimal parameter in the constant of the Mae constant model was the median of our outcomes. And now we've arrived down here at an ordinary least squares."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1378,
+      "type": "audio",
+      "text": "A generalization of simple linear regression, right? What do we have here? What does our model look like? Our predictions are the product of our design matrix and now a vector of thetas. Before it was just a vector of length 2, slope and intercept. Now we can have as many thetas as we want. We do have a somewhat of a limit. I'll show you that in a couple slides from now. There was a closed form solution we derived last time."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1398,
+      "type": "audio",
+      "text": "From the normal equations, Theta hat equals XTX inverse xty. We can solve for exactly the parameters that optimize this model using mean squared error. Now the question is, is this a unique solution? When we calculate this value, are we always going to get exactly the same values of Theta hat?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1428,
+      "type": "audio",
+      "text": "When we run the OLS algorithm, do we get exactly the same parameters then? Yes, we generally do, so long as X is what's called full column rank. So let's do a little bit of linear algebra review. Another way of thinking of full column rank is thinking that all columns are linearly independent of one another. What does that mean? What does that mean here? So let me give you an example. This concept will come back to us later in the course when we get to PCA Principal component analysis."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1450,
+      "type": "audio",
+      "text": "This, but how can we think about full column rank? Full column rank is when the columns of a matrix are linearly independent. In other words, I cannot recreate any particular column of the data frame by adding or subtracting other columns or multiplying them by constants. There's no way for me to recreate another column. So you might think."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1462,
+      "type": "audio",
+      "text": "Is there any way for me to recreate why in this picture using the two columns of X? There's no way for me to add these two columns or multiply by constants that can recreate Y?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1492,
+      "type": "audio",
+      "text": "Why? Here is linearly independent of the two columns of X? We can see examples here. We know that weight in pounds and kilograms. This is approximately equal to. But we can perfectly reconstruct a column in kilograms using a column in pounds or vice versa. These two columns are not linearly independent. I can reconstruct one or the other by multiplying by constants or adding them together. In this case you have one option, so we just need to multiply by constants on the right side. Here we can see that presumably there's no linear independence here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1521,
+      "type": "audio",
+      "text": "You could construct some weird case where maybe it ends up adding up precisely based on some specific group of people, But in general, knowing somebody's height and weight does not tell you precisely what their age is, and it really has to be precisely, not approximately right. Knowing someone's agent weight does not tell you exactly what their height is. There might be patterns we could pick up on, but it doesn't tell you exactly. So these columns are linearly independent, and we say that this matrix represented as a data frame here is full column rank. This matrix is."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1529,
+      "type": "audio",
+      "text": "Full column rank. This matrix is not full column rank, so now let's use this with OLS so we only get a unique Theta hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1561,
+      "type": "audio",
+      "text": "A unique set of fitted parameters only if our design matrix is full column rank. Why is this the case? Well, in our normal equation, we need to be able to invert XTX inverse. In order to be able to invert X TX, we need to be able to invert X. That's not something you have to know how to do in data 100. There's a proof I think in the last lecture in the appendix if you want to go take a look. But ultimately we need to make sure that X is full column rank so that XTX can be."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1573,
+      "type": "audio",
+      "text": "Inverted. What are the two scenarios where X is not full column rank that you need to be aware of as a data scientist? So this first rule is pretty core. It's pretty core. It shows up quite a bit."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1604,
+      "type": "audio",
+      "text": "If you have a wide design matrix, you'll often hear this term a wide data frame. It means that you have a lot of columns, you have a lot of features, and not a lot of observations. Pretty much in data 100, every data set we give you for the most part will be what's called a long data frame. You have a lot more observations than you do features. You have 1000 people and you've measured their height, their weight, and their age. That's usually how we think about data frames and data 100, but there are also sets of."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1614,
+      "type": "audio",
+      "text": "Where this is not the case, maybe you can study 10 patients, but then you have 10,000 single nucleotide polymorphisms in their DNA."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1644,
+      "type": "audio",
+      "text": "That tells us whether or not that particular polymorphism exists. And we have 10,000 features for only 10 patients. So this can show up as well. And when that shows up, when we have that, we can't fit an OLS model that's unique. We can't fit an OLS model that's unique. Let me give you a little bit of intuition for why this is the case. Here's my first bit of intuition for you. Let's take it all the way down to 1 dimension. Notice to understand OLS, we took it down a lot of dimensions. This is a useful problem solving technique."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1652,
+      "type": "audio",
+      "text": "Don't try to think in six dimensions, right? Work your way down, work your way down. So let's think with one data point n = 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1673,
+      "type": "audio",
+      "text": "If I think about SLR, SLR has P = 1. If we think about P is the number of input features and then we also have one intercept. We also have one intercept. So we often say we have P + 1 features. Or you might hear that we have P features and one intercept. Everyone sort of saying the same thing in a different way. But notice if I were to draw this picture."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1677,
+      "type": "audio",
+      "text": "For SLR I have one data point, I have one input and one output."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1679,
+      "type": "audio",
+      "text": "How many different lines can I fit through that point?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1681,
+      "type": "audio",
+      "text": "That have 0 error."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1694,
+      "type": "audio",
+      "text": "Infinite number of lines, right? I could fit a line that looks like this, so it goes right through the point. Mean squared error is 0. What about that line? That line is great too. How about this one? That's fine too, right? There's an infinite number."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1706,
+      "type": "audio",
+      "text": "Of slopes and intercepts that will give me 0 mean squared error infinite number. And it's because that N is less than P + 1 is not satisfied, right? We have 1 + 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1708,
+      "type": "audio",
+      "text": "Is 2 N equals 1?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1727,
+      "type": "audio",
+      "text": "One is less than two. Our matrix is wide. Our matrix is wide. OK, here's some more intuition for you given 2 non overlapping vectors in 2D space. So let's now think about vector world instead of observation world. We've been thinking about these two different worlds. If we think about two vectors that aren't overlapping, they're not collinear."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1746,
+      "type": "audio",
+      "text": "You'll notice I don't use always the most precise language because I'm a social scientist. OK, but let's say we have two non overlapping vectors. So what do we mean by this? Well, maybe one of those is a feature, and one of those is the intercept vector. One of those is a feature, one of them is the intercept vector, and we're in 2D space, which means that there's two."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1752,
+      "type": "audio",
+      "text": "Data points. Two data points in this vector world. OK if I think about any vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1767,
+      "type": "audio",
+      "text": "In the span of these two vectors. So what's the span of these two vectors? What points can these two vectors reach? Those two vectors? If I add them up and multiply by constants, I can reach any point in 2D space."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1775,
+      "type": "audio",
+      "text": "I can reach any point in 2D space, and there's exactly one way to do it for each point. So if I want to reach."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1778,
+      "type": "audio",
+      "text": "That vector using a combination of those two vectors."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1787,
+      "type": "audio",
+      "text": "There's exactly 1 combination of those two vectors that gets me to this point. There's just one solution, but as soon as I add a third vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1793,
+      "type": "audio",
+      "text": "As soon as I add a third vector, let's say I have 3 blue vectors now."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1816,
+      "type": "audio",
+      "text": "Once I have 1/3 vector, there's an infinite number of ways that I can combine those 3 vectors to get the green vector. There's no longer just one solution, there's an infinite number of ways that I can combine them. OK, now keep in mind in data 100 and often in data science, I think more often than not you'll usually have datasets where north is a lot larger than P."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1844,
+      "type": "audio",
+      "text": "Of course, a lot of people work on data science problems where that's not the case, like genetics, like the example I just gave you. But keep in mind most of the time you have N much greater than P, so you don't usually have to worry about this. And then we're also going to teach you some techniques later in the class in a couple lectures to address this issue where you can fit a variant of the OS model. You change the loss function around a little bit. But what's the more common reason or more subtle reason? I shouldn't say necessarily more common. So another reason that this might happen."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1852,
+      "type": "audio",
+      "text": "Is when your design matrix has features that are linear combinations of other features. But just like we saw before, let's say you have."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1858,
+      "type": "audio",
+      "text": "The perimeter of a rectangle as one of your columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1866,
+      "type": "audio",
+      "text": "And then you have the width and the height of that rectangle as two of the other columns you can perfectly reconstruct."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1872,
+      "type": "audio",
+      "text": "The perimeter column using those other two columns right two times width +2 times length."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1902,
+      "type": "audio",
+      "text": "OK, if the third column was area, it wouldn't be true. You can think about why that's the case, think about what linear combinations are. But the thing that's sort of tricky here is like, well, what if I have like a giant data set? What if I have like 10 billion rows and like 10,000 columns? How can I check for this? And the easy answer here, which I thought I wrote on this slide, but looks like I didn't write on the slide, The easier answer here is your. Your algorithm will typically error when that happens. Or you can use a fancier technique called singular value decomposition, which we no longer cover."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1918,
+      "type": "audio",
+      "text": "Data 100. But keep in mind there's ways to sort of think about this problem. But those are the 2 main reasons why OLS wouldn't have a unique solution. Why design matrix, wide design matrix or linear dependence among the columns?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1947,
+      "type": "audio",
+      "text": "OK, so performance. So we'll we'll pull out a demo. Let's hopefully the demo will work today. It's my first demo of the semester here. So performance, let's talk about residuals, multiple R-squared and some other things. So in our model fitting pipeline that we've talked about so far, we have these four steps. First step, choose your model, choose your loss function, fit the model, and then is your model any good? So now we're going to talk about the is your model any good part? These aren't the only ways to evaluate a linear model, but these are just some of the ways. So in simple linear regression."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1962,
+      "type": "audio",
+      "text": "We saw that we can use the correlation coefficient. We can also use that thing R-squared that we learned about briefly in an earlier lecture. But we can also measure RMSE. What is the root mean squared error? Why are we taking the square root?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 1986,
+      "type": "audio",
+      "text": "Error squared is in unit squared. We want to get back on the natural scale of the data for multiple linear regression or OLS. We can also use root mean squared error to evaluate our model. And we can also use this thing R-squared that I mentioned before. To what extent does the sum of the area of your boxes when you fit a linear model?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2014,
+      "type": "audio",
+      "text": "How much do those boxes shrink compared to a constant model? There's some intuition in previous slides about R-squared, but often you'll hear about R-squared being used to evaluate a linear model. For example, if we use that basketball data set from before, if we fit a model predicting the number of points that a particular player scores on average just from the number of assists they have per game on average, we get an R-squared of about .46."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2017,
+      "type": "audio",
+      "text": "46% of the variation in our outcome."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2047,
+      "type": "audio",
+      "text": "Can be explained by this linear model. If we add another feature, 3 point assist, R-squared goes up. And as it turns out, as we add more and more features, R-squared can only stay the same or go up even if you're adding pure noise. But just keep in mind we're evaluating R-squared in this case on the same data that our model was fit exactly the same data. When we start evaluating our models on external data, things become a little hairier. We're going to talk about that more later in the class, but just keep in mind if you keep adding features to your model."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2051,
+      "type": "audio",
+      "text": "R-squared is just going to keep going up and up and up or stay flat, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2061,
+      "type": "audio",
+      "text": "All right, we're on to gradient descent. Now. Why don't I pause there questions about OLS before we start talking about gradient descent and we'll have a break in just a little bit here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2063,
+      "type": "audio",
+      "text": "Questions about OLS."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2071,
+      "type": "audio",
+      "text": "And remember you have Slido 2 to help you out if you got questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2078,
+      "type": "audio",
+      "text": "All right, why don't we do our break a little early? Because I know we just talked about a lot of math. Let's do 2 minutes, we'll come back and then we'll talk about gradient descent."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2221,
+      "type": "audio",
+      "text": "OK, Should we talk about gradient descent?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2240,
+      "type": "audio",
+      "text": "Are our minds freshened up? We'll do more on Gradient Descent on Thursday and I have a new demo for you all on Thursday This is the little demo, the big demos coming on Thursday 5 by 5 by 5 feet all right so let's."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2261,
+      "type": "audio",
+      "text": "Talk about fitting our model and code. Let's actually do a little bit of coding together. So we have a new prediction problem I'll introduce you to. Can we predict how deep the bill is of a Penguin based on how long its flipper is and how much it weighs? So let's see. So we have the lecture demo up here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2290,
+      "type": "audio",
+      "text": "And the first thing I just want to show you is like, let's actually go do the matrix multiplication XTX inverse XTY using Python. So let's see. So we're going to load in this data set called Penguins, canonical data set of all these different Penguins, all these observations. We know how long their bills are. We know how deep their bills are. We know how long their flippers are. We know how much they weigh. We can sex them. OK? This is called the Penguins data set, We'll call it DF. And we're just dropping missing values here without explaining why, which is good."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2310,
+      "type": "audio",
+      "text": "That not good for EDA, right? Not good for demonstration here we're dropping NA values, any row with an NA value. Just know that is tends to be bad practice in data science, but this is a teaching example here. So what we're going to do is actually take that data set and all I care about here are what I'm going to use in my prediction."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2337,
+      "type": "audio",
+      "text": "What's the input? What's the output? I'm going to use build depth and flipper length to try to predict body mass. So I'm taking my data frame and bringing it down to just the columns I use to train. So I'm sort of creating a design matrix here. There's one other piece of the design matrix that we need in order to fit a column. Or excuse me, in order to fit a model with an intercept, we need a column of ones. We need a column of ones. So let's go add a column of ones to this data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2341,
+      "type": "audio",
+      "text": "And I guess we're only using."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2350,
+      "type": "audio",
+      "text": "Yeah, I guess we're only using flipper length here. I think we took out the other one for some reason. OK, so notice what we're doing here. We're going to try to predict body mass using."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2352,
+      "type": "audio",
+      "text": "Just flipper length."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2370,
+      "type": "audio",
+      "text": "Just flip a blank. OK not the build depth anymore. And we also add this column of ones. Literally just say make the bias column all ones. Notice what pandas does here. It does something called broadcasting. This is a column of ones, yet I set the column just equal to the number one."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2381,
+      "type": "audio",
+      "text": "This is an example of vectorized operations. You might have seen this already a little bit with numpy. Here's another example in pandas where it automatically broadcasts that one to every single row in the data frame."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2412,
+      "type": "audio",
+      "text": "OK, now let's go ahead and start using this data frame X, which is looks just like a design matrix. It has all the same qualities of a design matrix. The design matrix doesn't have column names, even though each column represents some feature. But all of the numbers here, notice they're all numbers. We don't have any categorical variables. Your design matrix can't contain categorical variables. We'll talk in a future lecture about how to use categorical variables in regression, but notice this looks already a lot like."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2418,
+      "type": "audio",
+      "text": "Design matrix. It's just stored as a data frame. Let's go grab. Oh, never mind. Sorry everybody, we're predicting build depth."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2449,
+      "type": "audio",
+      "text": "Not body mass. Sorry about that. Very different problem here. We're predicting build depth. So we're predicting build depth. We have a separate vector for build depth, and we're going to predict build depth using body mass, flipper length, and the bias column. OK, so the same, same variables as before. We have an intercept term, we have one feature flipper length, we have one feature body mass, and we have one outcome, build depth. Sorry about that. And then now let's go solve for Theta's. Let's go solve for our vector of Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2458,
+      "type": "audio",
+      "text": "Our optimal values of Theta we need to take our design matrix X. We need to transpose it if you do X dot capital T."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2470,
+      "type": "audio",
+      "text": "Pandas automatically knows turn that matrix, or excuse me, turn that data frame into a matrix. dot T means transpose. To multiply 2 matrices you use the at symbol."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2491,
+      "type": "audio",
+      "text": "So XTX xdotx is multiplying 2 different matrices together. One of them is transposed. Then we can use this function numpy dot linear algebra dot invert to invert XTX. OK, that's this part of the formula here that we derived. Then we multiply by X, transpose, we multiply by Y and we get back."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2498,
+      "type": "audio",
+      "text": "A vector of length three. What is this vector? This vector is giving us our intercept."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2505,
+      "type": "audio",
+      "text": "Theta, not Theta zero. It's giving us our Theta 1, the coefficient corresponding to."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2507,
+      "type": "audio",
+      "text": "Flipper length."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2522,
+      "type": "audio",
+      "text": "And it's giving us Theta 2, the coefficient corresponding to body mass. So we now have our vector of thetas if we want to write this model out. Now you can see the model written out here, the predicted build depth."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2525,
+      "type": "audio",
+      "text": "Is equal to our intercept about 11."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2534,
+      "type": "audio",
+      "text": "Plus the Theta one coefficient, Theta one hat coefficient times flipper length, and then finally the Theta 2 hat coefficient multiplied by body mass."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2561,
+      "type": "audio",
+      "text": "OK, there's some notes here about whether this is an efficient way to do OLS. This will probably be the first and last time I think maybe do it on the homework. I don't think you do it on homework. The first and last time you solve for OLS coefficients using this method. In a machine learning class, you might mess around with matrices like this to get parameters, but usually all of this process is encapsulated in a much more efficient function that we'll see in a minute that just computes."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2563,
+      "type": "audio",
+      "text": "All of the linear regression coefficients for you."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2573,
+      "type": "audio",
+      "text": "So this is what's going on under the hood, and maybe an inefficient way. I just want to show you that this all works, but we're going to run linear regression using a single line of code in just a second."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2602,
+      "type": "audio",
+      "text": "OK, another way you can solve for this is using another function here numpy dot linear algebra dot solver. Don't worry about that, it's a little more efficient. OK, now how could we make predictions using this Theta vector? How do we get our predictions? Predictions are equal to Y hat is equal to our design matrix X times our vector of parameters Theta hat. So let's go get our vector of predictions. We can take our."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2604,
+      "type": "audio",
+      "text": "X Design matrix this dot to numpy."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2608,
+      "type": "audio",
+      "text": "Method converts X into a numpy matrix."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2613,
+      "type": "audio",
+      "text": "And then we're using that matrix multiplication symbol at."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2617,
+      "type": "audio",
+      "text": "And we're multiplying by the vector that we solved for earlier, the optimal thetas."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2636,
+      "type": "audio",
+      "text": "And notice we now get a column of predictions for the build depth. We get a column of predictions. It's not exactly the same, but it's pretty darn good. 18.3 build depth here is 18.7. This one's a little bit over predicting. OK, but this is by hand everything we just did in the previous lecture."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2662,
+      "type": "audio",
+      "text": "OK. All of that intuition we built up is very useful to fit the model in practice and to just get your coefficients is relatively quick. But keep in mind, as a data scientist, they're not hiring you just to type these characters and get this answer and interpret it using some formulaic way, right? Everything we learned so far is a huge part of the intuition you need to use as a data scientist when fitting these models. All right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2663,
+      "type": "audio",
+      "text": "OK, let's keep going."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2669,
+      "type": "audio",
+      "text": "So back to the slides. So I alluded to this earlier, but this is just one way to get those optimal parameters."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2682,
+      "type": "audio",
+      "text": "Hey, we can do this in a more efficient way using packages in Python or other programming languages. So we've seen a couple different ways to fit a model. So far we've done it with calculus."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2708,
+      "type": "audio",
+      "text": "And the SLR lecture and in the constant model lecture we used calculus to identify the minimum of our loss surface. In the OLS lecture we did it with geometry. But how does it actually happen in practice most of the time? Most of the time you use some numerical algorithm to find the minimum of the loss surface, and one of the ways to do that is with a package called scikit learn."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2737,
+      "type": "audio",
+      "text": "Sci-kit learn. So let's talk about scikit learn. So this is just one of the packages that's common in industry for fitting these kinds of models. There's other machine learning libraries out there, Xgboost, Pytorch, Tensorflow, Hugging Face. You may have heard these words thrown around in later classes, you'll use some of these libraries. But for sort of simple machine learning tasks, the kind that we talk about in Data 100 in simple doesn't mean simplistic. Simple just means more straightforward, more interpretable. The methods we learn in Data 100 are used all the time."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2746,
+      "type": "audio",
+      "text": "In industry, but for these simpler models, these more interpretable models, scikit learn has all different kinds of implementations."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2765,
+      "type": "audio",
+      "text": "OK, so at a high level, just like we had four steps for fitting a model, SK Learn has this three-step process that you all should get used to. The first thing you have to do is sort of state. What model are you going to use? I want to fit a linear regression, so I'm going to use the LM module."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2790,
+      "type": "audio",
+      "text": "From scikit learn and I want to fit a linear regression model. This is sort of a blank template model. We've set up our model formulation before. We saw step one choose a model, here's choose a model and in the background it's automatically choosing a loss function of mean squared error unless you say use some other loss function. So this is sort of steps one and two of our model fitting process from before Step 2 of the SK learn."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2797,
+      "type": "audio",
+      "text": "Pipeline here is take that model object, that blank model object you just created and fit it to data."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2816,
+      "type": "audio",
+      "text": "Take that model object and fit using some design matrix, some vector of outcomes and go get actual coefficients for the model. So we start blank, we fit it to actual data and then finally we can make predictions on that same model object. So notice we start with a blank model object once we fit that model object."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2827,
+      "type": "audio",
+      "text": "That object is now storing an actual fitted model based on data. You'll see it'll change colors in Data hub and then finally you can generate predictions with your model using."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2829,
+      "type": "audio",
+      "text": "Some set."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2841,
+      "type": "audio",
+      "text": "Of feature values, whether that's the original data that you trained on or some new set of data. So this three-step process that you have to get used to initialize, fit your model and then play around with it."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2873,
+      "type": "audio",
+      "text": "All right, And then to extract the actual parameters, if you want to go look at the thetas. So we saw before we got that vector of thetas when we did the linear algebra by hand. How do we get those parameters back? You can use the.co fattributeand.interceptattributeofthemymodelobject.interceptgivesyouthe1interceptterm.coefficients.co F gives you all of the values of the parameters. Remember, there's lots of different words used to describe the same thing. We might say parameters, we might say thetas."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2877,
+      "type": "audio",
+      "text": "You might say coefficients. You want to get used to seeing all of these different terms in practice."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2883,
+      "type": "audio",
+      "text": "All right, let's go play around with it. Let's fit the exact same model using sklearn."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2897,
+      "type": "audio",
+      "text": "Let's go do the exact same thing using SK Learn. So Scroll down here. Let's go fit that same model predicting build depth using SK Learn. So what are we going to do? We're going to from the SK Learn."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2900,
+      "type": "audio",
+      "text": "Library. There's a submodule."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2930,
+      "type": "audio",
+      "text": "Linear model. And from that we're going to import what's called the linear regression class. OK, it's a type of object. We're going to construct a blank model. Notice it's yellow here. It's yellow. You can look inside this object and see there's all kinds of weird stuff in here. You know, are we going to actually go fit and intercept in this model? Yes, we are. By default, we fit with an intercept inside of the parentheses. You might put in options saying, well, don't fit with an intercept, use some other loss function, whatever. OK, so we're going to construct our blank."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2959,
+      "type": "audio",
+      "text": "Model. We're going to fit that model to some set of data. So we have that set of data from before our design matrix are the two columns of our data frame. Notice we don't have to convert it into a matrix. All of that happens for us on the back end, but we pass in a data frame with all of the columns of our design matrix, all of the features. Notice we don't have to create an intercept column. Sklearn does that for us automatically. When we say fit intercept equals true by default, it's going to insert that column of 1's forest. We don't have to think about."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2967,
+      "type": "audio",
+      "text": "That anymore, right? It's abstracting away that thinking for us, and then we pass in some vector of outcomes. Why build depth?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2973,
+      "type": "audio",
+      "text": "So we fit our model. Notice it's changed colors. Change colors towards yellow, now it's blue. There's a fitted model object now."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2986,
+      "type": "audio",
+      "text": "OK, and then you can start playing around with that object and seeing what's inside. So for example here I'll look at the parameters first and show you if I do model dot intercept, notice I get an intercept of 11."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2992,
+      "type": "audio",
+      "text": "11.00299 Let's go look away earlier. Did we get the same intercept using linear algebra?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 2996,
+      "type": "audio",
+      "text": "Yes we did. OK SK learn."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3026,
+      "type": "audio",
+      "text": "Getting us the same answer is when we use the linear algebra formulas that we derived in the last lecture, and it's the same thing for the other coefficients. The other coefficients we had, 0.00980.0015 sklearn gives us exactly the same coefficients if we look inside of our fitted model, exactly the same coefficients. That fitted model we're looking at right here is exactly the same as the one we got before. But notice it was a lot easier to fit."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3038,
+      "type": "audio",
+      "text": "This model we didn't have to think about what's the closed form solution to OLS and go figure out what needs to be a matrix, What needs to be a vector? What do I need a transpose? What do I need to invert? All of this is abstracted away."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3040,
+      "type": "audio",
+      "text": "By SK Learn."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3046,
+      "type": "audio",
+      "text": "OK. And then you can grab predictions using."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3075,
+      "type": "audio",
+      "text": "Model dot predict Model dot predict. We can pass in our original data. You can also pass in new data, new flipper lengths, new body masses and get predictions from your model. In this case, we're creating a new column of our data frame that includes those predictions. And notice now we have that original data frame with all of this information predicted. Build depth and millimeters is the prediction from our matrix operation X dot T at symbol X all that notice SK learn."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3106,
+      "type": "audio",
+      "text": "That's exactly the same predictions. So when you're actually fitting models in practice, you're gonna use something like sklearn. You're probably not going to write out all of that linear algebra by hand, but you should understand what's going on under the hood because it tells you about the limitations of your model and you know, can explain changes in your model when your client asks you to do something new or you fit a new model or you get some new data, all of these different things. OK, I'll pause for a moment. Questions about SK learn so far. This is just a high level summary of how SK."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3115,
+      "type": "audio",
+      "text": "Works. You can plug in instead of linear regression. We'll see. We'll use logistic regression later in the class. There's all different other kinds of classes of model objects that you can fit."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3117,
+      "type": "audio",
+      "text": "OK, questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3151,
+      "type": "audio",
+      "text": "Right, I think we're all ready for a little bit of gradient descent. So what's actually going on under the hood? I think in the special case of OLS, I think SK Learn actually does all of those matrix multiplications under the hood. But most of the time when SK Learn fits a model, it's not doing a bunch of matrix multiplications. It's using an algorithm or a variant of an algorithm called gradient descent. This is a huge topic in data 100 that immediately follows OLS. So now let's get into some gradient descent."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3181,
+      "type": "audio",
+      "text": "All right, so here's where we're going. Big assumptions. When we use calculus to minimize loss, we can't always use calculus. There's not always a derivative we can solve for. We don't always have this pretty geometry to work with. Okay, we need to use something else. So we use this new algorithm called gradient descent. It's an optimization technique in the idea here is we're going to use a iterative algorithm step by step. It's a numeric algorithm. It's an approximation. It's not an."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3196,
+      "type": "audio",
+      "text": "Exact solution, but it's good enough to numerically compute the minimum of that loss surface. So we keep talking about this bull shape that could sometimes look a little bit funky. We are going to use gradient descent to find minima."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3198,
+      "type": "audio",
+      "text": "Of those lost surfaces."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3204,
+      "type": "audio",
+      "text": "OK, we already had our stretch break. You can enjoy the comment quickly. You take a sip of water and we'll keep going."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3206,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3210,
+      "type": "audio",
+      "text": "All right, let's go minimize A1 dimensional function."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3231,
+      "type": "audio",
+      "text": "So I have a question for you. Let's say I had this another demo here. I don't have time to build another demo, but let's say we had like a demo that's kind of like a skateboard ramp here, OK? And I start dripping some water at the top right of that curve. What happens to that water? It runs down the hill and it lands at the bottom right, sort of hangs out right here and starts pooling."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3244,
+      "type": "audio",
+      "text": "OK, drip, drip, drip right to the bottom. OK, So what is like a water droplet do right? Does it have GPS? No, it doesn't know where the bottom is. A water droplet can only see directly around it."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3275,
+      "type": "audio",
+      "text": "Right. If I blindfolded one of you and put you at the top of the lecture hall and asked you to get to the stage, it's the same sort of idea. You can only feel the ground right below you. You can't see where you're going. Big idea of gradient descent. The algorithm can't really see where it's going. It can only see directly below it. Right? Directly right next to it. OK, So what does this water droplet do? Well, it faces the path of least resistance and then just moves in that direction a little bit. Faces the path of least resistance. It moves in that direction a little bit, and that's it."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3278,
+      "type": "audio",
+      "text": "Right. So this is the idea that's going to drive all of gradient descent, this idea of."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3300,
+      "type": "audio",
+      "text": "Following this path of least resistance and eventually you end up at the bottom of a bowl. Do you end up at the bottom of the best bowl? We'll see in a minute. No, but you will at the end end up at the bottom of a bowl if one exists. Let's say the hill just goes on to Infinity. Yes, you will just keep falling, you know, until Infinity. But if a bowl exists at the bottom of that hill, you will end up there."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3312,
+      "type": "audio",
+      "text": "OK. So what are the driving instructions for this droplet, Right. We're going to face the path of least resistance. We're going to move a little bit in that direction. We're going to face the path of least resistance again. We're going to move in that direction a little bit, and we're going to keep going."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3331,
+      "type": "audio",
+      "text": "Until we sort of stay put, right, Until the path of least resistance doesn't really exist, we're sort of a flat tangent ground. All right, let's put this on a plot now. So now we have a nice Victorian woman to help us out here, looking through binoculars. How could we not, as a droplet, find the minimum of a function?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3343,
+      "type": "audio",
+      "text": "OK, when I show you this, it might seem simple. There's one core idea here that I'm going to try to get you all used to over the next two lectures. Keep in mind that everything I tell you, all of the driving instructions I give you, I don't tell you what to do on the hill."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3345,
+      "type": "audio",
+      "text": "I tell you how to move the Victorian woman."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3360,
+      "type": "audio",
+      "text": "Everything is from the perspective of the Victorian woman, from the perspective of the inputs. I'm going to repeat this a lot over the next two lectures. It's one of the key ideas that causes confusion with gradient descent."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3370,
+      "type": "audio",
+      "text": "We're moving as a function of the input space. In this case, there's just one input X. We're not moving down the hill per SE. OK, all right, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3378,
+      "type": "audio",
+      "text": "How do we figure out how to get to a bottom? Well, the Victorian woman looks up at this plot looks at the derivative."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3381,
+      "type": "audio",
+      "text": "Directly above her."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3384,
+      "type": "audio",
+      "text": "And calculates a tangent slope."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3387,
+      "type": "audio",
+      "text": "The slope of that tangent is positive."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3389,
+      "type": "audio",
+      "text": "Which tells me that up is to the right."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3391,
+      "type": "audio",
+      "text": "And down is to the left."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3397,
+      "type": "audio",
+      "text": "So when my tangent slope is positive and I'm trying to reach a bottom."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3399,
+      "type": "audio",
+      "text": "That means I should go to the left."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3401,
+      "type": "audio",
+      "text": "If my tangent slope is negative."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3406,
+      "type": "audio",
+      "text": "That tells me if I want to reach a bottom, I need to go to the right."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3420,
+      "type": "audio",
+      "text": "This is gradient descent, not gradient ascent. The slope tells us the direction of ascent. We're interested in finding the bottom of our loss function, so we go in the opposite direction. So if we have a positive."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3424,
+      "type": "audio",
+      "text": "Slope. That means that we'll go uphill if we move to the right."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3428,
+      "type": "audio",
+      "text": "OK, and if I want to go downhill I need to go to the left."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3445,
+      "type": "audio",
+      "text": "So the Victorian woman sees that there's a positive slope, positive tangent slope. And so that tells us, well, let's move a little bit to the left. Notice I didn't say move down the hill. I said move a little bit to the left from the perspective of the Victorian one. And then we repeat, slope is still positive. If I want to go downhill, move left. Eventually I end up at the bottom."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3461,
+      "type": "audio",
+      "text": "Notice I mentioned at the beginning that we started at a random guess. We don't know necessarily where we should start, where the best place to start is. We're starting at some random guess. What if my random guess had been different? If I had started over here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3464,
+      "type": "audio",
+      "text": "Well, the Victorian woman had looked up."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3472,
+      "type": "audio",
+      "text": "She would notice that the tangent slope is negative and so downhill is to the right. We would have ended up at the same place. What if my random guess was over here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3478,
+      "type": "audio",
+      "text": "OK, then I might have just ended up at this little cup right here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3480,
+      "type": "audio",
+      "text": "This little cup is lower."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3487,
+      "type": "audio",
+      "text": "This is not a guaranteed way to get to the very bottom of a function. It will get to a bottom, we'll get to a cup, it will get to a bowl."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3497,
+      "type": "audio",
+      "text": "A local minimum. Some functions just have one global minimum, right? The local minimum is the same as one global minimum, but not always."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3505,
+      "type": "audio",
+      "text": "This idea of gradient descent is not perfect. It doesn't guarantee that we land at the bottom of a function, it just guarantees that we land at a bottom."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3522,
+      "type": "audio",
+      "text": "A local minimum. So again, what's the summary here? If we have a negative tangent slope, we want to move to the right to go down. If we have a positive slope, we want to move to the left to move down our function. This is the big idea. First slide over today."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3522,
+      "type": "audio",
+      "text": "What do you think?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3528,
+      "type": "audio",
+      "text": "Best guess here is fine. Feel free to talk with your neighbor. If you got questions raise your hand, I will come to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3594,
+      "type": "audio",
+      "text": "People, looks like we're getting some people answering. OK, maybe. Did you you tried scanning the one on the left?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3595,
+      "type": "audio",
+      "text": "For that."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3626,
+      "type": "audio",
+      "text": "All right, looks like we're getting lots of responses. So if we're trying to move our point downhill to identify the bottom, how big of a step should we take each time? Because I said if the slope is positive, right, move the Victorian woman with the binoculars to the left. But how much should the step go? How big should that step be? Right? Should we take a constant valued step, exactly 1 unit or choose some number of units to move each step? Should we move?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3628,
+      "type": "audio",
+      "text": "A value that's equal to the current slope."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3647,
+      "type": "audio",
+      "text": "Right. If the current slope is really steep, should I move really far to the left? And if my slope is really shallow, should I move just a little bit to the left? Right. Should it be proportional to the current size? Bigger slope is a bigger step or inversely proportional? Bigger slope means that I should have a smaller step. Let's think about this a little bit."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3653,
+      "type": "audio",
+      "text": "So let's try one of these out. What if our step size was the same as the value of the slope negated?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3676,
+      "type": "audio",
+      "text": "Right, Remember that if our slope is positive, we want to move to the left. So the size of the step is the same as the slope, but just remember it's in the left direction. So imagine this is F of X, our hill here. This is our droplet representing us trying to find the minimum of this function. Let's say we wanted to take a step of a certain size, and I'm going to give you some notation now to think about. So I'm going to call the."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3695,
+      "type": "audio",
+      "text": "Step that I'm currently at XT in parentheses. This is not an exponent. This is telling me that at time step T, my current position along the X axis along my inputs is here. So X of T is my position at time TX of t + 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3724,
+      "type": "audio",
+      "text": "Is that the next time step? Where do I exist after taking a step? One step, where am I? So we're working in discrete time here. We're not working in continuous time, discrete time 123 and so on. So what if my step size was the same as my tangent slope? But what could I do? I can go compute the tangent slope at my current position. So I'm going to look up. I'm going to compute that tangent slope. And let's say I take a step to the left that's the same size as that tangent slope. So what is that tangent slope?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3726,
+      "type": "audio",
+      "text": "Can go look and say well."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3731,
+      "type": "audio",
+      "text": "Take a look at my function that I'm trying to find the minimum of."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3734,
+      "type": "audio",
+      "text": "Take a look at that function at the position."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3751,
+      "type": "audio",
+      "text": "That's the same as my current position and go find the derivative of the function at that point and we're taking a step to the left. So the magnitude, the size of this step is the derivative of the function at that point, and I'm taking a step to the left."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3758,
+      "type": "audio",
+      "text": "I can summarize all of this into a nice equation that we're going to build on in the gradient descent lectures. It's really important to understand this. How do I find my next?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3765,
+      "type": "audio",
+      "text": "Position along the X axis. So I'm going to start at some position X of T, my current position."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3771,
+      "type": "audio",
+      "text": "I'm going to move to the left by the same value as the derivative. This is what I'm just proposing to start."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3777,
+      "type": "audio",
+      "text": "OK, so here's one thing I could do to try to find my minimum."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3777,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3805,
+      "type": "audio",
+      "text": "Let's see, take a step with the same size as the slope, but in the opposite direction, just like I showed you. OK, again, to summarize here, X of t + 1 is our next guess for where the minimum could be our next step. This is our current guess, our current guess. You can also think of the left as the current guess, and this is the previous guess. Same sort of idea. You'll see a lot of these iterative algorithms in machine learning and then take a step in the left."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3807,
+      "type": "audio",
+      "text": "The same size as the slope."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3809,
+      "type": "audio",
+      "text": "This is my first proposal."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3815,
+      "type": "audio",
+      "text": "So if we do this, we actually do this in code, we end up with something kind of interesting. For the sake of time, I'll just show it to you here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3819,
+      "type": "audio",
+      "text": "So let's say I took a."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3825,
+      "type": "audio",
+      "text": "Guess as to where the minimum could be to start. So I take my first guess and it's at 4."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3837,
+      "type": "audio",
+      "text": "Right, so this is X of 0. My initial position, OK, X of 0 is along the X axis. It's really down here, X of 0. This is really F of X of 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3848,
+      "type": "audio",
+      "text": "OK. And then notice the slope is negative, so I'm going to take a step to the right. I'm taking a step to the right that's the same size as the slope at that position. I'll put this in a new color for you."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3855,
+      "type": "audio",
+      "text": "OK, I do the same thing for the next point. So this next point."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3856,
+      "type": "audio",
+      "text": "X of 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3861,
+      "type": "audio",
+      "text": "I'm going to take a step to the right. Notice that it's a little bit steeper at X of 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3865,
+      "type": "audio",
+      "text": "So notice the step that I took is also a little bit longer."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3869,
+      "type": "audio",
+      "text": "But then notice something kind of funky happens. Something funky happens. So I end up at X of two right here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3871,
+      "type": "audio",
+      "text": "There still is a negative slope."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3873,
+      "type": "audio",
+      "text": "And so I'm going to take a step to the right."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3889,
+      "type": "audio",
+      "text": "But something kind of funky happens. Take a step. OK, take a step this way. Take a step this way. If I always take a step that's the same size as the slope in this particular instance, I end up just oscillating around the bottom. There's no way for me to smoothly get to the bottom of that ball."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3911,
+      "type": "audio",
+      "text": "So if I take a step that's the same size, I'm going to end up with this oscillation problem. So how do I get around this oscillation problem? I probably have to modulate my step size somehow. My step size should probably be a little bit smaller. Perhaps I could also think of taking a step that gets smaller and smaller as time goes on."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3929,
+      "type": "audio",
+      "text": "OK, but let's see this in action. So what could I do? So each step is too big, so we're overshooting that, minimizing X. So let's go ahead and decrease the size of the step. So we're going to simplify our algorithm, or maybe, I guess, complicate our algorithm with one additional constant, this constant called alpha, the learning rate parameter. This is something we choose."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3945,
+      "type": "audio",
+      "text": "This is something we choose. It's not a parameter that we fit. It's a parameter we choose. We call this a hyper parameter. In machine learning, this is a hyper parameter. It's not something that's fit with an algorithm. We pick the value of alpha. How do we pick? We'll talk about that in a bit."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3976,
+      "type": "audio",
+      "text": "So instead of taking a step the full size of the derivative, I'm going to take a step that's proportional to the size of the derivative. When the derivative is large, I'll take a larger step. I'm more confident that I'm going downhill in One Direction, but I'm going to use this learning rate. AA is typically less than one. It doesn't have to be less than one. OK, it's a constant in data 100, but you could also have alpha decay over time. So sometimes you'll see something like, well, instead of alpha."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 3998,
+      "type": "audio",
+      "text": "Use alpha over T As the current time step increases from 1:00 to 2:00 to 3:00 to 4:00 to 5:00, that alpha over T value goes down. That's one thing you can do in data 100. We're just going to leave it as alpha. We're just going to leave it as alpha, and we're going to think about what's the best value of alpha for us to pick. Like I said, typically less than one. Doesn't have to be, but typically less than one."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4006,
+      "type": "audio",
+      "text": "OK, again, our guess starts at the previous guests and moves opposite to the slope proportional in size to the slope."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4026,
+      "type": "audio",
+      "text": "How big? How much proportional should it be? Right? To what degree should it be proportional? That's controlled by alpha. So you might have an alpha of .1 or an alpha of .2. You can try different values of alpha. So in that previous example, if we add an alpha to this instead of taking."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4035,
+      "type": "audio",
+      "text": "So we have that initial guess of X0. Instead of taking that full step we saw before, we take a smaller step modulated by some value of alpha. Let's see, what value of alpha did we pick?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4066,
+      "type": "audio",
+      "text": "So let's Scroll down, Scroll down, guess and check Scipy optimize, minimize descending with derivatives. Sorry if this is a little nauseating to look at. Sorry, you can look away. OK, what do we do in this case? Well, we set up a function to actually take one step where you plug in some value of alpha. And so the alpha that we use in that picture turns out to be .3. And if you open up the lecture demo on your own, you can play around with different values of alpha to see what this plot could look like. But the big idea here that I want you to understand is simply that."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4077,
+      "type": "audio",
+      "text": "Reducing the step size so that we more smoothly descend to the bottom. You might say, well why don't we just make alpha really really small, like 0.00001?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4083,
+      "type": "audio",
+      "text": "Then we're going to be taking these tiny little steps in. Each one of those tiny little steps is a computation your computer has to do."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4089,
+      "type": "audio",
+      "text": "And so we're reaching this interesting point where we have this trade off between accuracy and computation."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4095,
+      "type": "audio",
+      "text": "Right accuracy and computation. This is a common trade off you have to deal with."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4114,
+      "type": "audio",
+      "text": "Can I take 10,000 steps? Does that take super long to run on my computer so that I can get a little bit closer to the bottom, a little bit more of a precise estimate? Do I not really care about how precise my estimate is, right? If I sort of reach close to the bottom of the loss function, am I happy enough right? Does it take a really long time to fit my model?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4124,
+      "type": "audio",
+      "text": "Right to fit my model and compute these numbers so I can't take as many steps. These are things to think about. What's the trade off between precision and computation?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4126,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4128,
+      "type": "audio",
+      "text": "So we've introduced this learning rate."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4132,
+      "type": "audio",
+      "text": "When do we stop updating?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4162,
+      "type": "audio",
+      "text": "But when do we stop? So I've told you how to like continue forward, take steps proportional in size to the slope in the opposite direction. But when do we stop? I give you sort of a general idea with the droplet earlier where I said sort of stop when you reach this sort of like flat tangent line or flat enough. What is flat enough mean? So a couple different reasons you could stop. So one is you want to make sure your computer doesn't just keep running. Let's say your loss function doesn't actually have a minimum and it's just because, you know, straight line down that goes to Infinity."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4174,
+      "type": "audio",
+      "text": "You want your computer to stop at some point, right? You don't want an infinite loop of steps, so you'll often set a fixed maximum number of updates, and you'll see this all the time when you start fitting models, it'll say gradient descent didn't converge."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4178,
+      "type": "audio",
+      "text": "After a certain number of steps, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4195,
+      "type": "audio",
+      "text": "Because you don't want your computer to fry, right? You want to just end up in a constant loop. But when do we actually like stop and say like great gradient descent sort of finished here? Once our updates start getting really small, once we start taking these tiny little steps, our derivative has gotten really, really small and we've reached sort of a flat area along our loss function."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4219,
+      "type": "audio",
+      "text": "OK. So this idea of convergence, what is convergence versus divergent convergence is the idea of when an algorithm settles on some solution and it's always an approximate solution. These aren't exact solutions we're getting. They're sort of good enough, which is often great in data science, OK. And we stopped meaningfully updating the updates that we're making at some point are so small."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4228,
+      "type": "audio",
+      "text": "That we've pretty much chosen a great value of X that minimizes our function or reaches a local minimum."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4241,
+      "type": "audio",
+      "text": "OK, so notice on the left, we have no convergence. We keep jumping around, we're oscillating the diverging solution. In this case, we have a convergence. We've reached a point where our updates start getting so small."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4244,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4244,
+      "type": "audio",
+      "text": "That we're happy where we landed. That's called convergence."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4247,
+      "type": "audio",
+      "text": "What if our guests had been elsewhere?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4258,
+      "type": "audio",
+      "text": "What if our guests had been elsewhere? So notice we have the true global minimum of this function, assuming that this function just keeps increasing to the left and right, and we have a local minimum on the left."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4261,
+      "type": "audio",
+      "text": "So if we hadn't started on the right."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4267,
+      "type": "audio",
+      "text": "And we'd start it up here on the left. Gradient descent would probably land us."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4269,
+      "type": "audio",
+      "text": "In the local minimum."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4272,
+      "type": "audio",
+      "text": "Maybe we take some giant step."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4299,
+      "type": "audio",
+      "text": "Right. Maybe we got lucky and we take some giant step over in our first iteration ends up here, and then we suddenly get to the bottom of the true global minimum. But probably that's not going to happen. We're probably going to end up settling around a local minimum, which is not optimal, right? We don't want to end up at local minima. We want to get the best set of parameters, not one of the best sets of parameters in some particular space of the loss function. We want the best set of parameters. How do I minimize my loss?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4302,
+      "type": "audio",
+      "text": "So tell me now I want you to describe."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4312,
+      "type": "audio",
+      "text": "You don't have to use fancy mathematical language here by any means. Just use sort of intuition here. Think of the droplet. Describe what that loss function should look like."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4321,
+      "type": "audio",
+      "text": "So that we avoid this problem of getting stuck in a local minimum. Feel free to talk with your neighbors about this. If you got questions, raise your hand, I will come to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4330,
+      "type": "audio",
+      "text": "No need to whisper to."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4470,
+      "type": "audio",
+      "text": "OK. Thank you."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4477,
+      "type": "audio",
+      "text": "All right, what are the characteristics of a function that would avoid this problem?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4506,
+      "type": "audio",
+      "text": "Let's see what people say. Lots of good stuff here. So if you don't know what convex is, that's fine. I'm going to teach you in just a second. But convex. But let's see, like, what are some like, you know, more, more colloquial language here. So there's just a single minimum. A single minimum. What else? Yeah, only one minimum. Good. What else do we see here? Quadratic. Quadratic, kind of shaped like a parabola. These are all good answers here. We just have this one big bowl."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4525,
+      "type": "audio",
+      "text": "Right. We have some function that's just one big bowl, and one way to describe a function that's just one big bowl is convex. And you're going to see this in homework 5. So in plain English, how do I define what a convex curve is? I can draw a line between any two points on the function."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4529,
+      "type": "audio",
+      "text": "If we can never intersect to the function. So notice that the 2 lines."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4543,
+      "type": "audio",
+      "text": "Two points that are connected by that line. I cannot draw 2 connected points that intersect the function. There's no place where I can draw an intersection. But notice here on the left we have a non convex function."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4556,
+      "type": "audio",
+      "text": "That line is intersecting part of the function. That's the visual proof of convexity of a function, right? What's the plain English proof? Big bowl, right? Big bowl faces up."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4585,
+      "type": "audio",
+      "text": "OK, there's the definition. You're going to play around with it in homework 5. Not as bad as it looks. Guess you will work with this expression in Homework 5. So for a convex function, for a convex function, and it turns out mean squared error is always convex. I hinted at this in an earlier lecture that we never have to worry about checking the second derivative for mean squared error because it's always convex. OK. For any convex function, any local minimum is the global minimum. There's just a single minimum. It's the global minimum for any convex function."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4593,
+      "type": "audio",
+      "text": "That's true. So when we use this thing called gradient descent that we're building up to if we're using it on a convex function."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4622,
+      "type": "audio",
+      "text": "We know we're reaching the true global minimum if the function is not convex or we don't know whether it's convex. We don't have these kinds of guarantees. Now, should you never use gradient descent on a non convex function? No, we still use gradient descent on all different kinds of functions. But there's different ways of approaching gradient descent to make sure that your answer is good enough. For example, why don't you run gradient descent multiple times?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4626,
+      "type": "audio",
+      "text": "And see which gradient descent algorithm run ends up at the lowest value."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4633,
+      "type": "audio",
+      "text": "Of your loss function, right? You could try multiple runs. It's like 1 idea here. But if we want to guarantee that we reach a minimum, we need a convex function."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-331-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4641,
+      "type": "audio",
+      "text": "OK, all right, Mean squared error is convex. It's one of the reasons it's popular as a choice of loss function."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-332-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4645,
+      "type": "audio",
+      "text": "OK, mean absolute error is also convex. Also works out nicely."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-333-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4649,
+      "type": "audio",
+      "text": "OK. All right."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-334-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4672,
+      "type": "audio",
+      "text": "So, gradient descent. We've seen this before. It's only guaranteed to converge for convex functions given enough iterations and appropriate step size. If you're taking tiny little steps and you only iterate 100 times, sure, you might only make it down you know a little bit of your function, but given enough time and a big enough step size, you will end up at the minimum of a convex function."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-335-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4700,
+      "type": "audio",
+      "text": "All right, let's do gradient descent on A1 dimensional model. That will take us to the end of today. And then on Thursday we'll have our big demo and we'll start thinking about gradient descent in multiple dimensions. We're going to start taking partial derivatives today. We're just going to do derivatives, so let's do gradient descent on A1 dimensional model. We're going to use some of the notation we've seen earlier in the class now and move out of like X world from algebra. Let's move back into Theta world. So remember that when we're modeling, we're trying to find the set of thetas that minimizes loss."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-336-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4709,
+      "type": "audio",
+      "text": "So instead of using X&F of X, let's go back to the notation we've been using. We want to choose the value of Theta that makes our loss function L of Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-337-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4716,
+      "type": "audio",
+      "text": "As small as possible. We want to get the smallest possible value of the loss right. We're trying to find the Theta that minimizes loss."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-338-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4743,
+      "type": "audio",
+      "text": "So what can we do? Well, first I want to define this term that I've been saying many times, but I didn't give you a precise definition of what is the gradient of a function. A gradient I like to think of is sort of a multi dimensional derivative. When you're in one dimension, a gradient is just the derivative. The gradient is the direction of steepest ascent for some function at a specific input. Now, a lot of people."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-339-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4745,
+      "type": "audio",
+      "text": "Think about the gradient as the tangent slope."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-340-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4749,
+      "type": "audio",
+      "text": "The gradient is not the tangent slope."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-341-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4753,
+      "type": "audio",
+      "text": "The gradient does not point tangent."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-342-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4785,
+      "type": "audio",
+      "text": "Along the lost surface. That is one of the most common points of confusion and gradient descent that I also had when I thought about gradient descent. That is not the gradient. The gradient gives you driving instructions along the X axis. This is what I said earlier that it was so important to think about what direction does the Victorian woman move along the X axis and not think about what the tangent slope is. That is not the gradient. Up there. The gradient tells us which direction to move in to the left and right."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-343-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4793,
+      "type": "audio",
+      "text": "To ascend the function. So if I look at this function at that point, what's the slope there, right? If I pretended these were other numbers, let's pretend the slope here was like -2."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-344-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4807,
+      "type": "audio",
+      "text": "-2 right. What does that tell me? That tells me that if I move to the left, I'm going to ascend the function. So the gradient tells us the direction of steepest ascent -2 is not a vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-345-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4817,
+      "type": "audio",
+      "text": "Right -2 is not a vector. It's not this tangent line. It's not the equation of a line, right? That doesn't make any sense -2 is just a number."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-346-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4820,
+      "type": "audio",
+      "text": "And why does that work out? Well, that's telling me that."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-347-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4822,
+      "type": "audio",
+      "text": "If I move."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-348-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4826,
+      "type": "audio",
+      "text": "-2 to the left. I'm going to go up."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-349-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4847,
+      "type": "audio",
+      "text": "OK, If I move to, really it's just telling me if I move to the left, I'm going to go up. Weird stuff could happen on the function that's just telling me that I can go to the left. So keep in mind the gradient is not a tangent line. Very common point of confusion. We're going to see this in the demo on Thursday. Everything I tell you, all the driving instructions will be as a function of what I show you on the floor and not."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-350-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4853,
+      "type": "audio",
+      "text": "How we move along the big clear tarp that's going to be on the stage on Thursday."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-351-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4884,
+      "type": "audio",
+      "text": "OK, all right, so the earlier algorithm that we worked with used X's and F of X's. Let's move back into thetas and L of thetas. So what is the one-dimensional gradient descent algorithm? It's exactly the same as what we saw before. Instead of thinking about X as the input, we're thinking about Theta as our input. We're trying to find the value of Theta or the set of thetas that makes our loss function, our loss surface as small as possible. So how do we do this? We have some current guess of Theta, our guess at time T. How do we get our guess at?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-352-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4894,
+      "type": "audio",
+      "text": "Time t + 1 where we subtract. We're trying to descend, so we move opposite to the direction of the slope because this is gradient descent."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-353-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4897,
+      "type": "audio",
+      "text": "We're going down the hill."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-354-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4903,
+      "type": "audio",
+      "text": "We take a derivative of our loss function as a function of Theta T."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-355-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4904,
+      "type": "audio",
+      "text": "OK, multiply by alpha."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-356-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4917,
+      "type": "audio",
+      "text": "And we have our iterative algorithm exactly the same thing as we saw before. I've just replaced the XS with thetas and replaced the little F with a Big L or loss or average loss."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-357-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4930,
+      "type": "audio",
+      "text": "OK, now keep in mind L right now is just a function of one Theta. We've seen before that our loss function can be a function of multiple values of Theta. We can have an intercept, we can have a slope, we can have multiple slopes."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-358-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4938,
+      "type": "audio",
+      "text": "Single dimensional derivatives aren't going to cut it. We're going to have to take gradients. We're going to take partial derivatives. That starts in the next lecture question right here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-359-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4953,
+      "type": "audio",
+      "text": "So it's instantaneous ascent. It's instantaneous ascent. So let me give you an example. The question was, is this an ascent over some domain or is it instantaneous ascent? So let's say I had a function that looks like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-360-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4956,
+      "type": "audio",
+      "text": "Right. Like right at this point."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-361-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4960,
+      "type": "audio",
+      "text": "The gradient tells me move left to go up the hill."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-362-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4971,
+      "type": "audio",
+      "text": "But just keep in mind that's just a tangent slope right? That's not telling me Like universally 2 steps to the left, I'm guaranteed to go up again. The water droplet can only see directly around it. It has no sense of where it's going."
+    },
+    {
+      "id": "audio-ds100-sp26-1772580967-transcription-363-c0-e0",
+      "lecture_id": "ds100-sp26-1772580967",
+      "timestamp": 4988,
+      "type": "audio",
+      "text": "It's the tangent slope at that point exactly in one dimension. It's the tangent slope at that point in multiple dimensions. It's the values of the partial derivatives with respect to each possible Theta. And so that's what's coming on Thursday. Why don't we go ahead and pause there? Thanks, everybody. Take your minute back."
+    }
+  ]
+}

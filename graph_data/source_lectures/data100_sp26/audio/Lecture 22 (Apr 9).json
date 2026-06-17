@@ -1,0 +1,3376 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1775774076",
+  "display_name": "Lecture 22 (Apr 9)",
+  "count": 481,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 381,
+      "type": "audio",
+      "text": "There we go. Good."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 400,
+      "type": "audio",
+      "text": "All right, hello everybody. You might be wondering why it's not Ramesh or Josh up here. We're just giving them a little bit of a break today. They've had a a busy last month, so we're just going to take over the Sequel 2 lecture today, politically called sequel to the sequel."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 406,
+      "type": "audio",
+      "text": "Yeah. Oh, we have a Slido. Wait, now it's not working."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 419,
+      "type": "audio",
+      "text": "There we go. A little bit of technical difficulties, of course, but yeah, there's a slider join link in the top right corner. Absolutely. Feel free to join that if you want to get your attendance credit for today."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 444,
+      "type": "audio",
+      "text": "So some basic announcements, congratulation on completing your midterm. Of course, midterm 2 has been running all of this week. Congratulations. If you've already done that, for the very few of you who have not, you know, good luck on your exam. I do want to say there are three midterms this semester. Unfortunately, the third one is not an April Fools joke. And so it's really important for you to keep that momentum going, right? I know we just took a midterm and you really want to, you know, get some rest in, but."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 448,
+      "type": "audio",
+      "text": "Keep in mind, 3 weeks later we're getting right back into another exam."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 461,
+      "type": "audio",
+      "text": "So I guess Speaking of the midterm, to avoid overcrowding, we've pushed around some of the deadlines for the assignments this week. First things first, Lab 8 is due next Monday. It would have been due this Tuesday, but we pushed it to next week."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 484,
+      "type": "audio",
+      "text": "Similarly, Homework 6, also due next Monday, would have been due tomorrow normally, and then lab 9, just released today, will be due next Tuesday as expected. So keeping this in mind, this is 3 exams or not 3 exams. Sorry. This is 3 assignments that are due early next week, so as soon as you finish your midterm, I would honestly just get started on these assignments. Get them out of the way so you don't have to worry about them too long."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 501,
+      "type": "audio",
+      "text": "After this, this is something Ramesh might have mentioned last lecture, but Josh is OH. Since he couldn't be here, he's rescheduled it for the next week. This week and next week his OH is going to be Monday 4:00 to 5:00 PM and Friday 3:00 to 4:00 PM on Zoom. You can find the link for that on Ed."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 530,
+      "type": "audio",
+      "text": "And then finally, so we've had open-ended questions, right, for the last few weeks in the class, not for the last few weeks for some of the assignments homework, 2B3 and four, if you want any feedback, right, If you don't feel that you got a lot of feedback from core staff about your approach, right, Maybe you want to, you know, improve your kind of idea for your open-ended question. The idea is you can just fill out this Google form. Nothing that we kind of say or do will change your grade for the open-ended question. So you know, if course staff are like overly."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 542,
+      "type": "audio",
+      "text": "About your approach to the open-ended question, you're not going to lose points by requesting more feedback, but you know, if you want more feedback, you want to spend a little bit more time on the open-ended questions, just fill that out."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 546,
+      "type": "audio",
+      "text": "And so the idea for today is we're really just."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 574,
+      "type": "audio",
+      "text": "Kind of extending what we did last lecture we're going through, we're learning more and adding more tools to our SQL toolkit. The idea is that you've seen a lot of this before, but in Pandas, right? So keeping in mind grouping, you've seen that, filtering groups, you've seen that. Performing exploratory data analysis, you've seen that. And joining tables, you have seen that, right? This is all stuff that you're familiar with at this point in Pandas, but we're just boarding it over to Sequel, getting ready, getting excited."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 576,
+      "type": "audio",
+      "text": "There are use cases where you would really need to know this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 584,
+      "type": "audio",
+      "text": "Of course, all of this stuff could definitely be on an exam for DATA 100, but you're definitely going to want to know this going forward."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 588,
+      "type": "audio",
+      "text": "So yeah, well, for their do, we can just get right into grouping."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 596,
+      "type": "audio",
+      "text": "So we have this table. I mean last lecture Ramesh was kind of focusing on the dragon table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 628,
+      "type": "audio",
+      "text": "Yeah, last lecture we were focusing on the dragon table and I think it's kind of ready for us to take a little bit of a step up today. This isn't too much more complicated. I mean, granted, we're just taking a look at food and then for each, you know, dish, we have a type basically is that food and entrees, that food and appetizers, that food at dessert and we have a cost associated with that meal. OK, this isn't necessarily something that's more complicated, but it tells a little bit more of a complicated story."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 641,
+      "type": "audio",
+      "text": "From that right we have this very basic SQL query. All we're doing is we're saying from the dish table we're selecting all the columns, right? Running a query like this just kind of return the entire table that we have access to."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 664,
+      "type": "audio",
+      "text": "All right, So what happens if we want to get a little bit more information? Because one thing you note is that if you take a look at the type column, right, you take a look at the type column and you can see that there's multiple different subgroups that we can identify here, right? For example, we have the entrees, we have the appetizers. Yeah, we have the appetizers, and then we have the dessert."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 680,
+      "type": "audio",
+      "text": "OK, so the idea is we have, we can recognize a bunch of different subgroups. My circling is a little bit messy, you can ignore that. But the idea is how can we group by in order to gain some more insights for when we're, you know, doing a little bit more exploratory data analysis."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 689,
+      "type": "audio",
+      "text": "That brings us to GROUP BY is nothing that you haven't seen before. It might be a little bit of a different syntax, but the idea is the same. We basically run the group by code."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 698,
+      "type": "audio",
+      "text": "And what that's going to do is it's going to go through our data frame and it's going to recognize the different subgroups in our specified column. So in this case, type."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 705,
+      "type": "audio",
+      "text": "And it's just going to go through and identify subgroups. Pretty straightforward. It's nothing you haven't seen before. It might be a different syntax as I just said, but."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 717,
+      "type": "audio",
+      "text": "Really, really important to understand. We're not breaking any new ground here, right? With this entire lecture, You've done all of this before. Big picture, everything is the same. We're just learning a new syntax."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 730,
+      "type": "audio",
+      "text": "So keeping that in mind, one thing that's interesting about pandas, right is that if you just run this group by function by itself and you don't use it in conjunction with something like an aggregator."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 732,
+      "type": "audio",
+      "text": "Or a filter."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 740,
+      "type": "audio",
+      "text": "Right. You're going to get something that isn't very readable, right? It'll give you like a spew of an object."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 757,
+      "type": "audio",
+      "text": "The idea here is that with SQL, it does a little bit more of the error catching for you. Instead of just returning a indecipherable object class, it'll return something that looks like this. So if you just run group by by itself, what it's going to do is it's going to identify the labels for each individual group."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 776,
+      "type": "audio",
+      "text": "Pretty straightforward. You're not going to find a lot of cases where this is all that useful, but I like to think of it as a pretty easy and quick way to just get a kind of a value counts, or not a value counts, but a unique list of all the unique items or entries in the type column."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 785,
+      "type": "audio",
+      "text": "Yeah. And then you can see just highlighting those different subgroups and linking them back to there."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 800,
+      "type": "audio",
+      "text": "OK, one thing that's really important though to understand about the way SQL is working is we've had we have this lecture demo. The idea with the lecture demo is basically, you know, you can follow along. There's a lot of code in today's lecture."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 816,
+      "type": "audio",
+      "text": "I wouldn't necessarily say that I'm going to spend a ton of time using this lecture demo slides, but the lecture demo notebook. But you know, there's a lot of syntax and getting used to syntax with SQL. So I would highly recommend opening up a Jupyter notebook following along on your own time."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 818,
+      "type": "audio",
+      "text": "Are following along on your own computer."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 824,
+      "type": "audio",
+      "text": "Anyways, if I run all the cells to get everything started, we can see that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 839,
+      "type": "audio",
+      "text": "Yeah, we can see that there is our data frame or our table. Actually, these are not data frames technically. That is one important distinction to make. Data frames is what we're working with at Pandas, right? This is, this is a table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 852,
+      "type": "audio",
+      "text": "So from there what we're doing is we essentially have our table. We can select certain columns just by running type. This is a little bit of a review from last lecture and then more importantly we can run group by."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 867,
+      "type": "audio",
+      "text": "This is actually something pretty interesting about SQL is if I run the cell over and over again, you're going to notice that we have a different result. So for example, if I run this once, we see an entree dessert appetizer if I run it again."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 888,
+      "type": "audio",
+      "text": "You can see that the order has changed. Appetizer, entree, dessert. I know on midterm one this might have tripped a little a few people up. As far as the syntax of group by and how it works in pandas. In SQL there is no predictable order. Now if you want it to show up in a predictable order you can of course use an order by function right? Something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 924,
+      "type": "audio",
+      "text": "And that will give you a predictable result where it'll always go in alphabetical order. But keep in mind it won't be in order. The reason for this is because on the back end, SQL is doing a lot of optimizations. Remember these databases, these tables can be like terabytes of data. And the idea is we need things to load a lot quicker, right? So it's doing a lot of optimizations on the back end. So as a result, you might see some randomized orders for when you run some of these functions."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 938,
+      "type": "audio",
+      "text": "If you want to learn more about that, highly recommend reviewing or I guess enrolling in a class like Data 101 or CS1186 databases. Very, very helpful for really getting more context into how what's going on behind the scenes."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 941,
+      "type": "audio",
+      "text": "But yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 948,
+      "type": "audio",
+      "text": "To keep that in mind, you're not necessarily going to have a predictable output every time you run a little bit of SQL code."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 979,
+      "type": "audio",
+      "text": "That being said, you know, we just did the group by on the previous slide. What if we want to get something a little bit more useful, right? Something more useful than just the names of the useful columns? Well, in addition to writing group line, all we have to do is we can use an aggregator function. Maybe we want to get the sum of all of the costs for a certain type of dish, right? So we want to get, let's say you're hosting a party. You know, how much would it cost me to buy every single entree or how much would it cost me to buy every single?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1011,
+      "type": "audio",
+      "text": "Appetizer or how much would it cost me to buy every single dessert, right? So what you can do is in the select column or in the select statement, all you do is you can create a new column by running a function. This function is the aggregator function. The idea is you can run or call sum and then inside the parentheses you just call cost. OK, and what this is going to do is pretty straightforward, but it's just going to create a new column for you that sums up the cost for each individual type of entree."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1012,
+      "type": "audio",
+      "text": "For each individual type of dish."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1015,
+      "type": "audio",
+      "text": "You can see you have a row for the entree, dessert and appetizer, and then it's just summing these up."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1028,
+      "type": "audio",
+      "text": "OK, again, nothing you haven't seen before in pandas, right? This is all just kind of a review in a little bit of a different flavor."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1038,
+      "type": "audio",
+      "text": "But something's weird. If you might not have, you might have noticed this from the previous slide, but one thing we're doing here is we're calling."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1051,
+      "type": "audio",
+      "text": "An aggregator before we're telling SQL what we want to aggregate on or what we want to group on, right? And that is because of a really good peculiarity with SQL is that it's a declarative programming language."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1081,
+      "type": "audio",
+      "text": "This is not the same as what we would, what we wouldn't call Python declarative programming language. The idea with Python is that everything goes in a very specific order, right? You run one line of code. That's like your first step when you run a second line of code that uses that first line of code's output. That's the idea there, right? But with Sequel, it's a declarative programming language. What does that mean? Well, very basically, all that means is you describe or you declare what you want your end result to look like."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1085,
+      "type": "audio",
+      "text": "And then SQL will do all the heavy lifting to get your query there."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1103,
+      "type": "audio",
+      "text": "Now, I mean, if you think that's a little bit reductive, it's really not. The truth is though, is that SQL is so popular because of this usability, right? You take a look at this query, it's very easy to read, like plain English, right? You're selecting the type column and you're creating a new sum of the cost column."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1104,
+      "type": "audio",
+      "text": "From the dish table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1123,
+      "type": "audio",
+      "text": "And your grouping by type, right? You can read it like English. And it is that readability, that declarative nature of SQL that makes it so popular in the real world. There's a lot of people without any formal training in data science or computer science that know SQL, because if you have a job where you're working with data in any capacity, you probably need to know SQL."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1128,
+      "type": "audio",
+      "text": "So yeah, really just building that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1157,
+      "type": "audio",
+      "text": "All you have to do is declare describe your desired end result for your end table and SQL will literally handle all the rest for you. There is one thing you do need to think about though when it comes to syntax, and it's this the fact that you need to follow a specific order when you're writing your SQL queries. So First things first, you start with a select statement. OK, so you're selecting the columns that you want, or you're creating new columns. After that you specify the table you're drawing from."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1162,
+      "type": "audio",
+      "text": "If you want to filter out rows based on some conditional, you can call a where statement."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1192,
+      "type": "audio",
+      "text": "And then if you are in the mood for it, you can of course do a group by operation. Something we haven't yet introduced, but we'll introduce in a couple slides is the idea of the HAVING statement. This is very similar to just filtering based on the result of your group BY, so basically filtering out groups at a time instead of singular rows at a time. And then of course, the final thing is if you want to order your your table by a specific, you know, column, or if you want to limit your query to a specific number of rows."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1198,
+      "type": "audio",
+      "text": "All you need to worry about is that when you're writing your queries, you're following this order."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1214,
+      "type": "audio",
+      "text": "OK, everything else is being handled for you behind the scenes. And that's being said, you know SQL is not necessarily going to be evaluating your code in this order, right? You write your statements in this order, but SQL will go through and create its own order for how to handle your query."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1231,
+      "type": "audio",
+      "text": "Pretty helpful. I know it's a little bit of a black box. There are, you know, database courses, Data 101, CS 186 that really go into more about why this is the case. Just that you should know, you know, we're really just replicating what we can do in Pandas, but with SQL."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1258,
+      "type": "audio",
+      "text": "OK, so we already used aggregation functions. Can we use multiple at a time? The idea is pretty straightforward. So in addition to using or summing the cost values for each individual unique type of the dish, we can also call multiple aggregation functions at once. The result of that is pretty straightforward, something you'd expect. It creates a new column for each individual aggregation."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1262,
+      "type": "audio",
+      "text": "So some of the costs, some of the OR the minimum of the costs and the maximum of the name."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1293,
+      "type": "audio",
+      "text": "One peculiar thing, and this is pretty common in most programming languages, including SQL, but if you're trying to get the maximum or minimum of a alphanumeric column, such as the name column here in SQL you call it a varchar column. But the idea is that if you're trying to get the maximum or minimum, the maximum just refers to whichever it comes alphabetically last. The minimum is whichever comes alphabetically first. Pretty straightforward there. So you can see of course Taco alphabetically lies after."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1296,
+      "type": "audio",
+      "text": "And ravioli. Therefore it shows up first."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1311,
+      "type": "audio",
+      "text": "OK. We kind of speed through it, but I think there's a couple more aggregations that we should get through before we move on from GROUP by. And this one's very, very important and it's really understanding the idea of count, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1322,
+      "type": "audio",
+      "text": "So if you remember from pandas, we have group by dot count, right? And what that date in pandas is, it basically went through the columns, right? So let's say you group on year."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1324,
+      "type": "audio",
+      "text": "So we've grouped on here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1325,
+      "type": "audio",
+      "text": "Move this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1347,
+      "type": "audio",
+      "text": "So if we've grouped on here, it's going to create a new group for each individual unique value of year, right? And within each one of those groups, it's basically going to go ahead and count the number of non null rows, right? The number of non null rows. Remember, dot count in in pandas does exactly that, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1354,
+      "type": "audio",
+      "text": "So the idea is you get something that looks like this despite the fact that there is an entry for 1937."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1359,
+      "type": "audio",
+      "text": "The cute column has a null value there, right? And as a result."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1360,
+      "type": "audio",
+      "text": "You get a 0 right here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1361,
+      "type": "audio",
+      "text": "Whenyourun.com."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1381,
+      "type": "audio",
+      "text": "The idea is pretty straightforward. I mean, you can kind of see exactly what's happening with the rest. There are no null values in any of the other groups, so it's just counting the number of entries there. OK, that is exactly like dot count in in Pettis, except done in SQL."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1405,
+      "type": "audio",
+      "text": "But instead of, if you're passing in like for example here we passed in the name of a column. If instead of passing in the name of a column, you're passing in an asterisk, right, You're passing in all the columns at once. Is analogous to if you just called group by dot size. Right? Group by dot size in pandas gives you the number of rows in your table, while it's doing the exact same thing here, right? Count is giving you the exact same or the exact."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1410,
+      "type": "audio",
+      "text": "It's giving you the number of rows per individual group."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1420,
+      "type": "audio",
+      "text": "Notice how it doesn't differentiate between the null columns or I guess the null values in the column and the regular values."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1422,
+      "type": "audio",
+      "text": "So keep that in mind. Count *."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1429,
+      "type": "audio",
+      "text": "Returns the number of rows in each group, including the rows with the nulls."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1446,
+      "type": "audio",
+      "text": "OK. Any questions about Group I, Again, it's not conceptually all that different from what you've already done in Pandas, but any questions about that before we move on to filtering?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1454,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1474,
+      "type": "audio",
+      "text": "I think we can go right into filtering. This is a little bit of a step up, admittedly. Syntactically it's not too different from what we just did. And you could argue it's maybe a little bit easier than how we handle it in Pandas. Because in pandas when we want to filter out group by tables, we have to use this dot filter function, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1493,
+      "type": "audio",
+      "text": "And to use a dot filter function and we have to pass in a Lambda function essentially to apply a conditional to a group at a time or a subframe at a time. In SQL it's a little bit simpler actually. Once we've identified our groups by calling group by and then naming a column, we can just call the HAVING keyword and then pass in a conditional statement."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1504,
+      "type": "audio",
+      "text": "We pass in that conditional statement and then all it's going to do is it's going to keep the rows for the groups that, you know, pass that conditional statement and it's going to drop the rows that don't."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1505,
+      "type": "audio",
+      "text": "Here's what that looks like."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1510,
+      "type": "audio",
+      "text": "So we can go through step by step. We have the dish table here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1514,
+      "type": "audio",
+      "text": "And we're selecting all the columns from the dish table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1518,
+      "type": "audio",
+      "text": "We're selecting all the columns from the dish table, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1531,
+      "type": "audio",
+      "text": "Then what we're doing is we're going through each individual row and we're checking to see is cost greater than or equal to four or greater greater than four, sorry, not greater than or equal to greater than 4."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1539,
+      "type": "audio",
+      "text": "We noticed that these values are all equal to 4, therefore it's not greater than 4. We can basically just drop these rows from a query."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1548,
+      "type": "audio",
+      "text": "After that, then we run group by. So we're doing the group by type. You see that we create two different groups, one for the entrees, one for the desserts."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1569,
+      "type": "audio",
+      "text": "OK. And then now we run our having keyword to filter out certain subgroups. The idea there is we take the maximum cost within each group. For this entree group, you can see the maximum cost is 13, right? And we check to see is that less than 10? Well, no, it's not less than 10, right so."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1570,
+      "type": "audio",
+      "text": "We dropped that as well."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1579,
+      "type": "audio",
+      "text": "The result of this query ends up just being a singular row that says ice cream, dessert, and five."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1586,
+      "type": "audio",
+      "text": "That is the result of that query. We have essentially applied our filter function to the subframes at a time."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1590,
+      "type": "audio",
+      "text": "And that got rid of all of this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1610,
+      "type": "audio",
+      "text": "Now, really, one thing that's important to know, and this is something students do get caught up on all the time, is that, you know, where is only just for filtering certain rows at a time, right? So we filtered these rows at a time because their costs were too low or their cost, yeah, their costs were too low, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1617,
+      "type": "audio",
+      "text": "But when you're using group by, you're using having and group by, you're filtering out groups at a time, right? That's what we did up here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1627,
+      "type": "audio",
+      "text": "So really important to understand the difference between where and having it's filtering out individual rows versus filtering out subgroups, OK. Any questions about that?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1632,
+      "type": "audio",
+      "text": "This one's a little bit more complicated, I'm not going to lie. So we do have."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1649,
+      "type": "audio",
+      "text": "A quick check on your own. I'm hoping the Slido is working, but it's just a Slido poll. It's a little bit of a query. So we've got the dragon data frame from last lecture and we have this query which includes a WHERE statement and a HAVING statement. And the question is how many rows will be returned from the following query."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1663,
+      "type": "audio",
+      "text": "Yep. Take a moment, think about that yourself, maybe talk about it with the people around you, and then, of course, make sure you actually submit the poll for attendance credit today."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1703,
+      "type": "audio",
+      "text": "Antibiotic counting, I can't tell if there's only 100 people in here. I think there's a little bit more, so give it a couple more minutes."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1785,
+      "type": "audio",
+      "text": "OK. So the number of respondents is slowing down, so I think we're going to move on."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1796,
+      "type": "audio",
+      "text": "For those of you who answered one, congratulations, you are correct. If you did get that wrong, don't feel bad. This is a little bit more of a complicated topic, but we can go and walk through this example to explain why the answer is just one."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1801,
+      "type": "audio",
+      "text": "So First things first, right? We have the dragon table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1830,
+      "type": "audio",
+      "text": "And we're selecting just the year and Max column. The way I like to read a sequel query is actually not top to bottom, and this can vary depending on your personal preference. The way I like to read a SQL query is I start with the the table name, then I go to the where function, then the group by function, then the HAVING function, and then I like to end with the select statement. I know a lot of people probably don't find that intuitive. Absolutely just whatever works for you. This is just the way I like to work through these."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1832,
+      "type": "audio",
+      "text": "Types of questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1848,
+      "type": "audio",
+      "text": "So we start with the dragon table, right? And then we want to apply a where filtering, right? So all we're doing is we're going through each row and we're checking to see is the name value equal to toothless."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1851,
+      "type": "audio",
+      "text": "Trogon or Regal right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1859,
+      "type": "audio",
+      "text": "Pretty straightforward. You can see Dragon 2, Puff and Smaug. Those are not Toothless, Dragon or Rigol and so those get dropped from the row or from the table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1890,
+      "type": "audio",
+      "text": "After that, we're going to run a group by operation, right? So we're grouping by year. We create a group for the Dragons in 2010, and we create a group for the Dragons from 2011, OK. After that, we apply a halving function. So all we're doing is we're checking to see for each group, let's take a look at the minimum Q value. So for the 2010 group, that minimum Q value is 10, and we're checking to see is it greater than or equal to 0. If it is, it'll stay in our final query for the result of our final query."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1895,
+      "type": "audio",
+      "text": "As a result, this definitely stays right. 10 is greater than or equal to 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1905,
+      "type": "audio",
+      "text": "But for the 2011 group, right, that minimum Q value is actually -100, which is, you know, a little bit below 0 as a result."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1909,
+      "type": "audio",
+      "text": "That group will be dropped from our final query as a result."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1923,
+      "type": "audio",
+      "text": "We have after running halving, we're at this point where we only have one row right now. This is why I like to do the select statement last and it's because now that we have our one row, I can go back and say, OK, we want to grab the year column."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1938,
+      "type": "audio",
+      "text": "And by the way, this should probably just be yr, not here, but I like that we have the yr column and then we want to grab the Max of the cute column in that group, right? So since there's only one group that remains a result looks something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1939,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1941,
+      "type": "audio",
+      "text": "Any questions about that?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1946,
+      "type": "audio",
+      "text": "It's a little bit tricky, I understand, but going through step by step will make it a little bit easier for you."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1952,
+      "type": "audio",
+      "text": "Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1959,
+      "type": "audio",
+      "text": "So if it's less than 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1963,
+      "type": "audio",
+      "text": "In this case, yes, because if it's less than 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1967,
+      "type": "audio",
+      "text": "Or sorry, did you mean greater than 0 or less than 0?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1974,
+      "type": "audio",
+      "text": "Mm-hmm."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1986,
+      "type": "audio",
+      "text": "Yeah, yeah, exactly. That's a really great question. So what you're saying is if we had a essentially multiple, we had."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 1992,
+      "type": "audio",
+      "text": "These both entries actually enter into our final query result."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2010,
+      "type": "audio",
+      "text": "Would we still have one row or would both rows show up in our final table? This is a really good question. Both rows would not show up on our final table because remember, we're running this final aggregation last, right? So we're running this final aggregation Max cute last, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2012,
+      "type": "audio",
+      "text": "So that's a really good question."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2020,
+      "type": "audio",
+      "text": "We've essentially it doesn't matter if you have after the HAVING statement, it doesn't matter if we have two rows in our data frame, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2026,
+      "type": "audio",
+      "text": "If we're if they're both in the same group, then after we run our aggregation, it'll all get reduced down to 1 again."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2054,
+      "type": "audio",
+      "text": "OK, so summary so far, this is really just a overview of all the functions that we've covered. Last class in this class, select from where group by having order, limit, offset, stuff that you've seen before, right? You might notice a lot of this stuff is pretty much taken right out of pandas, right? Just in a completely different syntax. As I mentioned, we're really just expanding our SQL toolkit to tackle the same problems that we've been able to do in pandas."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2057,
+      "type": "audio",
+      "text": "And then later in this lecture there will be some problems that we can't do in pandas, right reasons we might want to use."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2066,
+      "type": "audio",
+      "text": "Use SQL instead of pandas. The idea is when we get to that, you guys are going to be really excited I'm sure."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2075,
+      "type": "audio",
+      "text": "So any questions about filtering groups before we move on to exploratory data analysis in Sequel? It's really just using what we already knew in order to do a little bit of exploration, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2081,
+      "type": "audio",
+      "text": "So really the group by having on calls that are in the selectivity."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2085,
+      "type": "audio",
+      "text": "Actually, no."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2107,
+      "type": "audio",
+      "text": "So this is a really good question too. You do not need to include these columns in your select statement. Granted, your table might be a little bit harder to decipher, right, if you're not grabbing, for example, year, right? Because if this column wasn't in your table, it'd be pretty difficult to interpret what's going on. But yeah, you don't need to use those columns or you don't need to."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2112,
+      "type": "audio",
+      "text": "I guess select the columns that you're using in your group by operation or you're having operation."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2114,
+      "type": "audio",
+      "text": "That makes sense."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2117,
+      "type": "audio",
+      "text": "Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2145,
+      "type": "audio",
+      "text": "Dot com, if you get additional columns with the origin, we said having on that, but we didn't select that home, that would be OK. Yeah, that's more than fine. Yeah, you don't have to select the columns that you're using in your query. It's just more of a. And that's kind of why I say I like to think about the seat, the select statement at the end, because I'd like to maintain this entire original data for this entire original table with as many columns as possible. And then at the very end, we're choosing the columns that we want to work with, right, that we want to return."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2149,
+      "type": "audio",
+      "text": "Yeah, that's a great question. Any others? Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2160,
+      "type": "audio",
+      "text": "Could you say that again? I can't hear you."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2181,
+      "type": "audio",
+      "text": "This is my ears are probably pretty bad. Can I? I'm going to come a little bit closer, but can you speak a little bit louder?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2204,
+      "type": "audio",
+      "text": "Yeah. You wouldn't drop the row, you wouldn't drop the group entirely, right? What you need to know is when. Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2209,
+      "type": "audio",
+      "text": "Yeah, yeah. So the question is if for example, one of these columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2212,
+      "type": "audio",
+      "text": "Or one of these rows."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2219,
+      "type": "audio",
+      "text": "Was not eliminated by the having function, right? So let's say."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2236,
+      "type": "audio",
+      "text": "Let's say we just said anything that was not equal to 0, right? In that case, right? Let's say anything that's not equal to -100 right? That would drop out the Drogon row, but not the Rhaegal row, right? The idea is that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2266,
+      "type": "audio",
+      "text": "As long as we're applying this minimum function to the entire subgroup, right, we're tying this minimum to the entire subgroup, right? So it's not necessarily possible for one group to fall under that restriction and one group to not fall under that restriction, right? Because if you think about it, this minimum value is just a singular value per individual subgroup, right? So if, for example, we take the minimum of this 2011 column, this minimum is always going."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2279,
+      "type": "audio",
+      "text": "To be -100 and so it doesn't matter whether or not it doesn't really matter what value regal is, as long as that minimum meets the requirement of the halving function."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2281,
+      "type": "audio",
+      "text": "Is that kind of answer?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2283,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2306,
+      "type": "audio",
+      "text": "So moving on to exploratory data analysis, the idea is let's introduce ourselves to a new database and a new data set. So IMDb, the Internet Movie Database, you might have heard of it, pretty, pretty well known website, but it's also a database. So it's a collection of tables. And in this case, let's say we're interested in only the title table shown below."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2328,
+      "type": "audio",
+      "text": "Breaking it down right, we have a bunch of different columns here. We have AT construction column that's kind of like a unique identifier, like an ID column. Another, an alternative way to think about it is it's like the index in a data frame, right? Then we have the title type that tells us what type of media that we're looking at. In this case, is it a movie? Is it a TV show?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2357,
+      "type": "audio",
+      "text": "Then we have the primary title. That's a pretty self-explanatory. That's just the title of your piece of media. After that the original title. So one example is for foreign movies that might have debuted with a different under a different language, that would be the original title and then the primary title would show the translated version. We have a flag for whether or not the movie is meant for adults. We have a 2 columns that basically give us the start and end year. Note that for movies, right, they only start in one year."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2370,
+      "type": "audio",
+      "text": "The idea is that the end year column is supposed to describe a show that runs across multiple years, right? The the start year would be the year it debuted, and then the end year would be the year it stopped running."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2380,
+      "type": "audio",
+      "text": "After that, runtime minutes. Pretty straightforward, right? That's just the number of minutes in your movie. If it's a TV show, then it's the sum of the number of minutes for each episode."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2387,
+      "type": "audio",
+      "text": "And then genres also pretty self-explanatory. That's a list of all the genres that this media falls under."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2399,
+      "type": "audio",
+      "text": "So we have a really cool table. This is actually loaded onto the data hub. So if you want to follow along, you want to explore this data set, you're absolutely welcome to. You'll also work with it on Homework 7."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2423,
+      "type": "audio",
+      "text": "So there's a really massive data set. And in fact, you'll know that if you want to load this database onto your Jupyter hub, it's going to be like 3 gigabytes long or three gigabytes large. That is very large. And so you might not want to be working with every single one of those rows at once, right? So you're going to have to come up with a way to maybe work with a sample of those rows, right? Like a sub sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2433,
+      "type": "audio",
+      "text": "Where you can do that is quite literally sampling. So one strategy is what we can do is we can select our original table and we can shuffle it by ordering it by some random order."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2435,
+      "type": "audio",
+      "text": "And then taking the 1st 2:00."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2443,
+      "type": "audio",
+      "text": "Right, very simply, what's that doing is just reordering our table and then taking the 1st 2 entries from that reordered table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2445,
+      "type": "audio",
+      "text": "Pretty straightforward."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2467,
+      "type": "audio",
+      "text": "However, you might consider this is somewhat inefficient, right? Because imagine we have a table that is several gigabytes large, right? And what we're doing is we're shuffling an entire several gigabytes long table and then just taking two values. That is a waste of computation. It's a waste of time. If you're working with a lot of data, it's not realistic."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2491,
+      "type": "audio",
+      "text": "One alternative to this is reservoir sampling. So this is not something that you're necessarily going to have to memorize. This kind of code never really shows up on an exam. But the idea here is that by using a sample method, this is these are two keywords that you can use and call and sequel. So using sample and then designating the type of sample. So reservoir sampling is like a sampling strategy."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2493,
+      "type": "audio",
+      "text": "And then?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2497,
+      "type": "audio",
+      "text": "Designating the size of your sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2500,
+      "type": "audio",
+      "text": "And then designating a seed in case you want your results to be reproducible."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2524,
+      "type": "audio",
+      "text": "What this is going to do is it is a linear complexity. I don't know if you've taken 61 B, but this, the reservoir sampling methodology, has a time complexity that I'm pretty sure is linear. The idea is it's very efficient. It's a lot faster. If you want to just get a random subset of a table, that's the way you would probably want to do it. You don't need to know that code. It's not never really going to ever be tested, but super, super helpful to know."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2538,
+      "type": "audio",
+      "text": "So going back to the exploratory data analysis in the IMDb page, what if we wanted to filter that table by titles that contain the substring Star Wars?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2551,
+      "type": "audio",
+      "text": "OK, titles that contain the substring Star Wars. The idea is pretty straightforward. We're selecting the title type and then the primary title from the title table, where the primary title contains the substring Star Wars."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2557,
+      "type": "audio",
+      "text": "Pretty straightforward. You run that query and you're going to get something that looks like this on the right."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2560,
+      "type": "audio",
+      "text": "Where you have every row contains this upstream Star Wars."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2570,
+      "type": "audio",
+      "text": "Now this might seem a little bit familiar and is the concept of these wild card characters right? The one that we're using here is the percent sign."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2580,
+      "type": "audio",
+      "text": "And if you remember, see if you remember regex. It's very similar to if we just did dot *."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2593,
+      "type": "audio",
+      "text": "What it's saying is, preceding Star Wars, I want to match any number of characters, which could be 0 characters, it could be 500 characters and then the same thing after the phrase Star Wars. OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2595,
+      "type": "audio",
+      "text": "Pretty interesting."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2617,
+      "type": "audio",
+      "text": "Now, instead of doing something like dot star, you could also just do dot where we're expecting only a single specific character, right? That can be done using the under score. We don't really use it in this example, but you know, essentially if you are expecting a certain or a single character to proceed Star Wars."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2629,
+      "type": "audio",
+      "text": "You can throw in an under score instead of a percent sign. You'll find though, if you throw in that under score here, you're not going to get any matches because there isn't ever actually a character that appears before a Star Wars entry here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2650,
+      "type": "audio",
+      "text": "So this is a little bit complicated. It heavily, heavily depends on your understanding of regex. But if you are more comfortable using regex than this slightly new notation, you're completely welcome too. Duck DB definitely allows you to use something called the similar to. So instead of like you can use similar to."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2653,
+      "type": "audio",
+      "text": "And you can just input a regex pattern to do the same thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2661,
+      "type": "audio",
+      "text": "Most often people who haven't learnt regex, they will use the syntax on the top. You're more than welcome to do either."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2663,
+      "type": "audio",
+      "text": "So any questions about that?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2667,
+      "type": "audio",
+      "text": "Yeah. So if I give the percentage."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2682,
+      "type": "audio",
+      "text": "Like he had no rejects about 3DS did that equipment? Yeah, pretty much. Right. So it's it's a little bit different in the sense that we're kind of searching for a literal substring and we're just saying that before that substring."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2711,
+      "type": "audio",
+      "text": "We want to match just any number of characters. It's not like regex where we're actually trying to return matches. In this case, we're all we're trying to do is we're filtering rows where that substring exists. So we're not necessarily concerned with greediness because as long as there exists a match, we're going to get that row back. That being said, yes, that percent sign will kind of perform like regex where it'll try and match the longest possible substring."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2712,
+      "type": "audio",
+      "text": "Mm-hmm."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2714,
+      "type": "audio",
+      "text": "Any other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2719,
+      "type": "audio",
+      "text": "Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2727,
+      "type": "audio",
+      "text": "You can, you can. You could do the percent send in the middle."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2732,
+      "type": "audio",
+      "text": "And if you put this percent sign in the middle and then."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2763,
+      "type": "audio",
+      "text": "Nothing on the side. Basically, you'd be looking for something that starts with the word star and ends with the word wars and then has any number of characters in between, right? Whether it be 0 characters or no character or, you know, 5 million characters. If you kept those percent signs on the very end, then you'd be looking for really anything that contains the word star and anything that contains the word war sometime after that, right? It might take a little bit of practice in thinking to see why that would be the case, but that is definitely going to be the case."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2765,
+      "type": "audio",
+      "text": "Any other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2790,
+      "type": "audio",
+      "text": "Is there any trade off? No, not at all. It's just you would use, similar to if you want to pass in an actual regex pattern, and you would use like if you want to pass in something of this format perfectly, completely up to your personal preference. On an exam, you could use either. In the real world, you can use either. It's really just whichever you'd prefer."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2818,
+      "type": "audio",
+      "text": "OK, in the interest of time, I think we're going to move on. So one more thing to think about is just like in a Pandas data frame, every column has its own data type, right? So for example, you might have a string column in Pandas and SQL, the equivalent column would be a varchar column, right? So let's presume that the runtime minutes column is a varchar, but we want to basically display it or we want to use it as an integer, right? In our new in our new query."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2829,
+      "type": "audio",
+      "text": "Pretty straightforward way to do that. You create a new column by casting right. You cast your runtime minutes as an integer."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2834,
+      "type": "audio",
+      "text": "That's all you have to do, and all of a sudden that'll get you."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2837,
+      "type": "audio",
+      "text": "A column with a bunch of integers."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2852,
+      "type": "audio",
+      "text": "Now, if you're worried about the fact that this column name is a little bit ridiculous, of course you can use an alias. So after that you can say something like as mins or something, and then that would change the name to mins."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2860,
+      "type": "audio",
+      "text": "But pretty straightforward way of converting strings to integers if Sequel can find a convenient way to do that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2873,
+      "type": "audio",
+      "text": "And this is maybe the most important thing you'll learn about for the select statements is the case and when and then, then and then else and then. Yeah, the case statements, very, very important."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2877,
+      "type": "audio",
+      "text": "So the idea here is that when you're using a select statement, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2885,
+      "type": "audio",
+      "text": "You can essentially create a new column using this really long case statement and it is basically saying OK we have some conditional."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2896,
+      "type": "audio",
+      "text": "In this new column that we're going to create, if this conditional is true, then this column is going to output a specific value in that row, right? If that is not true."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2911,
+      "type": "audio",
+      "text": "Then we're going to move on to the next line and check this new conditional, and if that conditional is true, then we're going to output this. If that's not true, we're going to keep going down and down the line until we've we've reached this base case where we just output a default value."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2924,
+      "type": "audio",
+      "text": "I think it really helps to take a look at an example. So this is what that might look like, right? So we're selecting the title type, we're selecting the start year, right? And the idea is that we're creating a new column called Movie Age."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2929,
+      "type": "audio",
+      "text": "OK and this movie age column is going to display old."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2932,
+      "type": "audio",
+      "text": "If the start year is less than 1950."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2940,
+      "type": "audio",
+      "text": "It's going to display middle-aged if the start year is less than 2000 but greater than or equal to 1950."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2944,
+      "type": "audio",
+      "text": "And then if it's greater than or equal to 2000, it's going to display new."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2954,
+      "type": "audio",
+      "text": "What that might look like is something like this. Now unfortunately this example is a little bit."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2967,
+      "type": "audio",
+      "text": "Simplistic because it's only old movies and so there really isn't a good show of mixing there, but the idea is the same. You can pretty much imagine that you'd have old, middle-aged and new entries in that movie age column."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2969,
+      "type": "audio",
+      "text": "Pretty cool stuff, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 2994,
+      "type": "audio",
+      "text": "No, no, no. Yeah. So it goes in order. So I think the best way to think about this is like if else statements in in Python. So if this first statement is true, then it just does that and that'll be the result. If this statement is false, then it moves on to the next statement to test if that's true."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3002,
+      "type": "audio",
+      "text": "So it goes sequentially. You don't need to account for the previous statements because you know, they've already been flagged as false. Yeah. Mm-hmm."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3015,
+      "type": "audio",
+      "text": "Yeah, in SQL, yeah, of course. So actually in SQL, one thing you can do is when for example, you're doing conditional, you can say where and then."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3028,
+      "type": "audio",
+      "text": "Imagine this is going to be a conditional. Right here you can do condition 1. You know, you're basically checking to see if something is less than 1950. You can just write and."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3031,
+      "type": "audio",
+      "text": "And then condition 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3035,
+      "type": "audio",
+      "text": "What that's going to do is it's going to check to see if both conditions are true at the same time."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3046,
+      "type": "audio",
+      "text": "And yeah, you can use that, of course. So this is really just one conditional statement, the exact same thing that you would see in a where statement or a HAVING statement, right? It's a conditional."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3049,
+      "type": "audio",
+      "text": "Yeah, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3056,
+      "type": "audio",
+      "text": "Yeah. I mean we're the next slide, yeah. So yeah. Any other questions about that?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3060,
+      "type": "audio",
+      "text": "Mm-hmm."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3071,
+      "type": "audio",
+      "text": "Sorry, can you repeat that?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3098,
+      "type": "audio",
+      "text": "So, yeah, that's a great question. When you're ever you're making a query, and this is actually really important to understand. When you're making a query, you're not automatically updating your the database that you're pulling from. It's kind of doing the same thing that Pandas is doing automatically where it's creating a new copy or a new view essentially of that data we're pulling from. Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3112,
+      "type": "audio",
+      "text": "For the sake of time, I think we're going to head right into our interlude. So take about one minute, get ready. I can answer questions and then during the break. But yeah, get ready, we're going to switch speakers. Thank you all for letting me do that. All right."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3198,
+      "type": "audio",
+      "text": "OK. I think that was about one minute. So we're going to go ahead and get started with the second-half of lecture today. So this next part is going to be all about joints, right, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3200,
+      "type": "audio",
+      "text": "They lower this a little bit."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3236,
+      "type": "audio",
+      "text": "OK, so last lecture we talked about this multi dimensional table, this star schema aspect, right? And so before we only really taught you PD dot merge, right? And we told you, you know, PD dot merge and you merge a table would be good, but that's not the full story, right? So oftentimes when we're working with SQL, right, we're we're actually in the business of storing things efficiently, right? And so storing a bunch of tables with a lot of repeat rows is not very helpful for that. And so because of that, we're going to be doing."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3246,
+      "type": "audio",
+      "text": "A lot of more joins to get extra information from those dimension tables, right? So we work with our fact table, pull extra information from those dimension tables."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3251,
+      "type": "audio",
+      "text": "So joins are going to be more important with SQL and that has to do with storing data efficiently."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3255,
+      "type": "audio",
+      "text": "So we're going to look at the cats data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3263,
+      "type": "audio",
+      "text": "And here's what we're looking at. So we have Persian cats, Ragdoll cats, Bengal cats, and we're going to have these two tables, S&T."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3272,
+      "type": "audio",
+      "text": "Where these names are really just coming from the ending letters and cats. Nothing special going on here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3274,
+      "type": "audio",
+      "text": "And we also have."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3284,
+      "type": "audio",
+      "text": "Professor Grossman's cat, Helios, who is cute enough to be in this data set, but not in this data set. I mean, come on, look at that tongue. You kidding me?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3290,
+      "type": "audio",
+      "text": "What?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3296,
+      "type": "audio",
+      "text": "Oh, oh, that's my bad. That's just."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3299,
+      "type": "audio",
+      "text": "I actually don't know why that's there."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3304,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3308,
+      "type": "audio",
+      "text": "Anyway, so we're working with this table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3311,
+      "type": "audio",
+      "text": "Clear that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3325,
+      "type": "audio",
+      "text": "And the first thing we're going to be looking at is an inner join. So this is kind of where we left you with pandas, right? This is the same thing as PD dot merge. OK? So what we're looking at first is we say, OK, I have this table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3331,
+      "type": "audio",
+      "text": "And I know I'm going to be looking for a match on some key, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3337,
+      "type": "audio",
+      "text": "So I see and I see. OK, here's ID one, here's ID one in table T."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3339,
+      "type": "audio",
+      "text": "These are a match."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3342,
+      "type": "audio",
+      "text": "Likewise for two."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3346,
+      "type": "audio",
+      "text": "And four here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3367,
+      "type": "audio",
+      "text": "And so we take those matches, right? And we only really care about things with matches, right? So this, you know, poor Persian guy gets eliminated. And same up here with apricots, right? So we're only going to take something if we can match it across both tables, right? This is an inner joint, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3377,
+      "type": "audio",
+      "text": "Where do we specify these joint statements in our long SQL query? Right, This is going to be in the FROM clause. OK?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3385,
+      "type": "audio",
+      "text": "Thanks. So specifically what do we have? So we're in the FROM clause."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3394,
+      "type": "audio",
+      "text": "And we're going to be selecting from this new table. What is this new table? This new table is going to be a join between Table 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3396,
+      "type": "audio",
+      "text": "And Table 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3408,
+      "type": "audio",
+      "text": "And what key should I match with right to decide if I should have that row in my new table? I'm going to match on key, key in this case, right? So what does that look like here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3413,
+      "type": "audio",
+      "text": "As we're marching on S dot ID equal to T dot ID."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3438,
+      "type": "audio",
+      "text": "OK, so that was what you've done so far. Now let's take a new step into a different kind of join. And this one's going to be called the cross join. So it might seem silly at first, right? But what a cross join is, is it's going to say, I just want to see all the possible combinations of the rows in S with the rows in T."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3461,
+      "type": "audio",
+      "text": "OK, every possible combination. And so we have right Apricot, we're going to match it up with Persian, going to match up with Ragdoll, Bengal, Persian etcetera. Same for all of these guys, right? 4 rows in S4, rows in T, we're going to get 16 total rows, OK?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3474,
+      "type": "audio",
+      "text": "So something to think about here, right is both of our original tables only had four rows. Our new table has 16, right? This is an expensive operation across join right? And the other thing you'll notice we're missing here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3495,
+      "type": "audio",
+      "text": "So there's no key, right? There's no, you know, S dot ID equal to T dot ID, right? There's no key to match on, right? And part of this is that a cross join itself means that we aren't matching on anything, right? We want to see every possible combination. So I don't really need you to tell me what to match on."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3496,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3516,
+      "type": "audio",
+      "text": "Cross joins as a concept are not typically used too often, but you will see kind of one specific example, which is called implicit joining, where you might use a cross strain. So we'll get to that in a little bit. But again, notice that there's no need to specify a matching key for merging."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3524,
+      "type": "audio",
+      "text": "Now we've talked about two joints, so we've talked about the inner join and the cross join."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3530,
+      "type": "audio",
+      "text": "There is an inner joint hiding in here. There's an inner joint hiding in the cross join."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3532,
+      "type": "audio",
+      "text": "OK, where is it?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3534,
+      "type": "audio",
+      "text": "Well, it's wherever."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3538,
+      "type": "audio",
+      "text": "I have a match in Sid."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3540,
+      "type": "audio",
+      "text": "And tid, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3549,
+      "type": "audio",
+      "text": "So I could also do a cross join right? And then set a simple where condition where S dot ID equals T dot ID right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3556,
+      "type": "audio",
+      "text": "So we noticed that these things are related to each other, right? So this is one way we could see that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3563,
+      "type": "audio",
+      "text": "Right, so conceptually if we were to want to do an inner join."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3568,
+      "type": "audio",
+      "text": "It would really just involve specifying this extra wear condition."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3572,
+      "type": "audio",
+      "text": "OK, so we would eliminate all of the rows."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3577,
+      "type": "audio",
+      "text": "For which the S dot ID column did not match the T dot ID column."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3611,
+      "type": "audio",
+      "text": "OK, And then let's just talk a little bit about the difference of these from a runtime perspective, right? So, well, why would I do this cross join piece, right? Why would I first look at all the combinations and then filter those down when I could instead just do this simple inner join, right? I don't need 16 rows, right? I know I'm really only caring about those matches. So your database optimizer behind the scenes will take whatever SQL code you give it and, you know, optimize that for you."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3620,
+      "type": "audio",
+      "text": "Right. So even if you say, you know, even if you say this cross join business behind the scene, your database optimizer is going to run an inner join, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3629,
+      "type": "audio",
+      "text": "OK, so now actually let's switch over to the demo."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3636,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3643,
+      "type": "audio",
+      "text": "So this first line."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3645,
+      "type": "audio",
+      "text": "Else we run everything up top."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3657,
+      "type": "audio",
+      "text": "Come back down."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3667,
+      "type": "audio",
+      "text": "So the first thing to look at here is we're just going to use this line to connect to that cats database."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3683,
+      "type": "audio",
+      "text": "OK, so we connected over to Cats and the first thing we're going to do is going to run this cell. So this is how you would create a table in Sequel. You don't need to care too much about the semantics here, but you can feel free to look at that on your own time. So the first thing we could do here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3696,
+      "type": "audio",
+      "text": "So we could do this inner joint. OK, so we say select S dot ID name breed from's inner join on T right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3700,
+      "type": "audio",
+      "text": "Notice I say S ID here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3713,
+      "type": "audio",
+      "text": "Does it matter right? Could I have said literally anything right? Isn't S dot ID the same thing as T dot ID? And the answer is yes, right? So you could also put TID here, but if I don't put any table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3730,
+      "type": "audio",
+      "text": "I'm going to get an error here, OK? And what SQL is going to tell me, you know, actually decently in plain English, right? Sometimes we get these errors and they're not very easy to interpret, but here it tells us that this is ambiguous, right? Do you mean S dot ID or T dot ID?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3736,
+      "type": "audio",
+      "text": "And so even though we know that these things are the same, sequel doesn't. So you're gonna have to specify."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3744,
+      "type": "audio",
+      "text": "Another thing we can do is we could just do select *."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3748,
+      "type": "audio",
+      "text": "And get all the columns right. But notice that when we do this."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3759,
+      "type": "audio",
+      "text": "We will get 2 ID columns. This is the default behavior right? So it's going to give us both that S dot ID column and that T dot ID column, OK?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3773,
+      "type": "audio",
+      "text": "If you don't specify what kind of join sequels default will be an inner join. OK, so if I just say from S join T this is the same as an inner join."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3780,
+      "type": "audio",
+      "text": "What about a cross join?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3788,
+      "type": "audio",
+      "text": "So this is the table we saw in the slides, but now we can see."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3805,
+      "type": "audio",
+      "text": "A different way of specifying. So right here we say from S cross join T Note again that we are we don't have any matching key here, right? So cross string we don't need this matching key. We want all the possible combinations of all the rows in S with all the rows in T OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3811,
+      "type": "audio",
+      "text": "Now you do not actually have to specify cross join in this way."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3813,
+      "type": "audio",
+      "text": "You could also."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3817,
+      "type": "audio",
+      "text": "Just say select star from S comma."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3819,
+      "type": "audio",
+      "text": "And it will do that cross strength for you."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3822,
+      "type": "audio",
+      "text": "Behind the scenes, OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3825,
+      "type": "audio",
+      "text": "So just another way we could do a cross join."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3857,
+      "type": "audio",
+      "text": "So now we're going to give you the main use case, right, for this cross join, which is this implicit join. OK? So what I mean by implicit here is that there is a join happening that you don't really see, right? So there's this cross join happening where we then filter down this where condition, right? But you don't see that cross join happen. All you see is that inner joins output, OK? So this is what we mean by an implicit join."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3859,
+      "type": "audio",
+      "text": "Any questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3865,
+      "type": "audio",
+      "text": "Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3869,
+      "type": "audio",
+      "text": "Where is the ID."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3889,
+      "type": "audio",
+      "text": "Yes. So this is where if we don't specify, we just say select star, it's going to give us all of the columns back, right? But the columns we had an ID column in S and an ID column in T, right. So it's going to put both of those in our final table. Good question."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3891,
+      "type": "audio",
+      "text": "The others."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3894,
+      "type": "audio",
+      "text": "OK, quick context switch. You're going back to the slides."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3899,
+      "type": "audio",
+      "text": "A little easier for me to switch than you guys so now."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3901,
+      "type": "audio",
+      "text": "Go ahead and clear this slide."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3918,
+      "type": "audio",
+      "text": "So now let's talk about a left join, right? So now we're going to do something else. So a left join is where I basically care a lot about my left table, right? I want you to keep all the rows in my left table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3948,
+      "type": "audio",
+      "text": "And I want you to look at the right table, see if there's a match on this matching column. If there is, add that to my data frame or my table. If there is not, just put some null values there, but keep everything in this left side. OK, this left join, I care a lot about what's in my left table. I want you to add extra stuff if you can, but if you can't, just leave it null. This is a very common operation where we want to keep everything we are currently looking at and only add extra dimension if it's available."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3951,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3956,
+      "type": "audio",
+      "text": "So we would do. Here is we look in that left hand table, so we look in S."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3966,
+      "type": "audio",
+      "text": "And we see OK does this have a match in the T table on ID? It does not boots does right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3968,
+      "type": "audio",
+      "text": "So we get these matches."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3975,
+      "type": "audio",
+      "text": "And then the last piece is just that, even if."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3979,
+      "type": "audio",
+      "text": "We don't get a match like in the case of apricot. We still want to keep this row."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 3989,
+      "type": "audio",
+      "text": "You know Apricot is a very cute cat. It would be a shame to just throw her out, right? So we're going to keep Apricot."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4004,
+      "type": "audio",
+      "text": "And then just a note that the left table right you might be like what is this notion of left and right? Your left table is always going to be the first table you specify. So when you say from S left join TS will be your left table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4014,
+      "type": "audio",
+      "text": "So like I said, select star from S, left join T Oops, that was the wrong thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4019,
+      "type": "audio",
+      "text": "From S left join T."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4024,
+      "type": "audio",
+      "text": "On S dot ID equals ID."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4026,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4033,
+      "type": "audio",
+      "text": "Now I have these slides on a right join, so given what you know about a left join already."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4040,
+      "type": "audio",
+      "text": "I will tell you that many SQL libraries will not even have an operation for you to do a right join."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-331-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4042,
+      "type": "audio",
+      "text": "Why?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-332-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4046,
+      "type": "audio",
+      "text": "Why would I not need a right join? Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-333-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4061,
+      "type": "audio",
+      "text": "Great. Exactly. So any right join I could write as a left join, OK. And there's a little bit of clunkiness also in a right join that we'll kind of explain here, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-334-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4065,
+      "type": "audio",
+      "text": "Kind of the weirdness in writing a right join OK is going to be that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-335-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4080,
+      "type": "audio",
+      "text": "When I say right join, I'm going to do exactly the inverse operation, right? So everything in my right hand table, I want to keep all of those rows and then if there's a match in the left, keep the match, but if there isn't just put a null value, OK?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-336-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4084,
+      "type": "audio",
+      "text": "Why? This looks kind of weird."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-337-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4111,
+      "type": "audio",
+      "text": "Is that I say from S, right, join T? And so then from T, we're kind of looking back at S for those matches, right? But then when we go back to finally set up our table again over here, notice we put those S columns first, right? So there's kind of this confusing piece where even though these are the, this is the table we said we want to keep, right? This is our right join."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-338-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4114,
+      "type": "audio",
+      "text": "You know we still get the the left columns coming first."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-339-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4124,
+      "type": "audio",
+      "text": "OK. So oftentimes there's kind of just this like weird behavior that you're not expecting and so easier to just write left joins."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-340-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4126,
+      "type": "audio",
+      "text": "And as a lefty."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-341-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4130,
+      "type": "audio",
+      "text": "Just."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-342-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4132,
+      "type": "audio",
+      "text": "Leave that there for you."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-343-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4156,
+      "type": "audio",
+      "text": "All right, so now let's talk about a full outer join. OK, so this is going to be, I like to call it the keep everything right, the hoarder mentality, right? You're like, I need to keep all these rows in S and all these rows in T Don't take my data from me. That's not OK Give me null values if you have to, right? But give me everything in S and everything in T."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-344-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4161,
+      "type": "audio",
+      "text": "So what does that look like? Right, We see that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-345-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4166,
+      "type": "audio",
+      "text": "We again get this inside."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-346-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4172,
+      "type": "audio",
+      "text": "That looks basically like our inner join right where we had those matches."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-347-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4174,
+      "type": "audio",
+      "text": "And then we also notice."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-348-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4180,
+      "type": "audio",
+      "text": "That we keep both apricot which did not have a match in the S table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-349-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4182,
+      "type": "audio",
+      "text": "And we also keep."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-350-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4184,
+      "type": "audio",
+      "text": "Persian over here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-351-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4193,
+      "type": "audio",
+      "text": "Which did not have a match in the right table, right? So full outer join is like let's just take everything."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-352-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4197,
+      "type": "audio",
+      "text": "And and then put no values if we need to right but match things up."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-353-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4197,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-354-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4201,
+      "type": "audio",
+      "text": "That's a full outer joint."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-355-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4204,
+      "type": "audio",
+      "text": "Notice."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-356-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4211,
+      "type": "audio",
+      "text": "That this inner joint is still hiding in here, right So."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-357-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4220,
+      "type": "audio",
+      "text": "If you wanted to just write every single join you ever wrote as an outer join with filters, you could."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-358-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4222,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-359-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4227,
+      "type": "audio",
+      "text": "So if there's one joint to eru the mall, it's the full outer join."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-360-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4235,
+      "type": "audio",
+      "text": "OK so like if I wanted to do an inner join for example I could say you know where."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-361-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4238,
+      "type": "audio",
+      "text": "S dot ID and T dot ID."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-362-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4241,
+      "type": "audio",
+      "text": "Are not null right? And then that would get me my inner join."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-363-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4246,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-364-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4258,
+      "type": "audio",
+      "text": "Slido time, Hopefully you're not asleep. We have a Slido question, so go ahead and see about those. ABC what looks the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-365-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4260,
+      "type": "audio",
+      "text": "As the query you see there."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-366-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4321,
+      "type": "audio",
+      "text": "Wait for that number to keep ticking up a little bit."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-367-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4333,
+      "type": "audio",
+      "text": "Hey, get those answers in."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-368-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4340,
+      "type": "audio",
+      "text": "Closing in 5432."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-369-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4344,
+      "type": "audio",
+      "text": "While they'll start jumping, maybe I should wait a second."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-370-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4346,
+      "type": "audio",
+      "text": "OK, 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-371-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4352,
+      "type": "audio",
+      "text": "Wow."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-372-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4363,
+      "type": "audio",
+      "text": "Perfect. OK, great. So the correct answer is actually all of these. So let's go ahead and go over that, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-373-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4369,
+      "type": "audio",
+      "text": "Let's first look at what that top query is going to give you, right? So what are we doing here? We're selecting *."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-374-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4373,
+      "type": "audio",
+      "text": "So all the columns from."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-375-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4383,
+      "type": "audio",
+      "text": "Left join on T right so left join. I have S Keep everything in South. Do not get rid of South. I love S is my soulmate. Never leave a guess."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-376-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4395,
+      "type": "audio",
+      "text": "Then we need a left join on T right? So if it's got a match, keep it, if it doesn't, drop it right. So that's where we see these null values. Here right is we're keeping this row in from S even though it didn't have a match in T."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-377-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4399,
+      "type": "audio",
+      "text": "OK, So what is a doing here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-378-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4409,
+      "type": "audio",
+      "text": "We'll notice the only difference between A and. Our top statement here is we're joining on TID equal to F dot ID instead of S dot ID equal to T dot ID."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-379-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4411,
+      "type": "audio",
+      "text": "And is this okay?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-380-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4413,
+      "type": "audio",
+      "text": "Sure."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-381-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4423,
+      "type": "audio",
+      "text": "I think typically we read from left to right, so I would usually put the left table and then the right table, but this absolutely works OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-382-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4426,
+      "type": "audio",
+      "text": "Next piece, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-383-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4432,
+      "type": "audio",
+      "text": "We have select star OK we're selecting everything from T."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-384-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4445,
+      "type": "audio",
+      "text": "Right join on's right? So this is going to be keep everything in S, look back at T for those matches right and then show me a table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-385-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4449,
+      "type": "audio",
+      "text": "Do that on Sid. Is this going to be the same thing?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-386-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4453,
+      "type": "audio",
+      "text": "Yes, sort of."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-387-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4453,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-388-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4455,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-389-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4458,
+      "type": "audio",
+      "text": "Sorta why sorta."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-390-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4462,
+      "type": "audio",
+      "text": "Well, because those, uh."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-391-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4492,
+      "type": "audio",
+      "text": "The way Sequel is going to interpret this is even though we are at table S and we're looking back at table T to write join, right? Even though that's where our focus is, we're still going to display the columns from S 1st, OK? Because that's just how SQL is going to display. So we would actually get, you know, or in this case, right, it's S and then we're right joining on T So since T comes first right in, you know, in this like reading left to right sense."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-392-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4493,
+      "type": "audio",
+      "text": "We're going to have."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-393-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4495,
+      "type": "audio",
+      "text": "T dot ID."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-394-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4497,
+      "type": "audio",
+      "text": "And breed."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-395-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4501,
+      "type": "audio",
+      "text": "Before we would have S dot ID."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-396-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4503,
+      "type": "audio",
+      "text": "End name."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-397-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4506,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-398-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4512,
+      "type": "audio",
+      "text": "So same table but the rows I mean the columns. The order of the columns is going to be a little different."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-399-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4524,
+      "type": "audio",
+      "text": "And that's coming from this weirdness of right joint, right? Even though we are right joining S and we're looking back at T, we still put T's columns first, right? There's something weird about that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-400-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4529,
+      "type": "audio",
+      "text": "OK. Then we have this final one, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-401-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4545,
+      "type": "audio",
+      "text": "Select star S all join T right, So keep everything full join, keep everything OK everything in South, everything in T match where you can put knolls where you have to OK, and then we're saying."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-402-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4547,
+      "type": "audio",
+      "text": "Even more so."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-403-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4551,
+      "type": "audio",
+      "text": "I want Sid to not be null."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-404-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4556,
+      "type": "audio",
+      "text": "OK, so this is going to take us from that outer join."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-405-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4568,
+      "type": "audio",
+      "text": "Into this left join right where we're basically going to only keep the rows where S dot ID exists, right where we had a real S dot ID OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-406-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4570,
+      "type": "audio",
+      "text": "So this also works."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-407-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4572,
+      "type": "audio",
+      "text": "Questions here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-408-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4579,
+      "type": "audio",
+      "text": "Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-409-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4592,
+      "type": "audio",
+      "text": "Yeah, so good question. The question is, will those null values get input by default? And yes, they will, right? So if there isn't a match, SQL will just put in those nulls for you."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-410-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4593,
+      "type": "audio",
+      "text": "Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-411-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4613,
+      "type": "audio",
+      "text": "Yes, sort of. Yeah. So sorta is just because the order of the columns that gets returned back to us is different, right. So yes, it's the same table, but the order is different. So I wouldn't you know, if we're doing a one to one comparison, it's not exactly the same, right? Goes back in a different order."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-412-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4617,
+      "type": "audio",
+      "text": "OK, let's take a time. We're going to keep moving."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-413-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4650,
+      "type": "audio",
+      "text": "OK, so aliasing and joins simple idea here, which is oftentimes, right. These tables need to have understandable names, right? And so they can oftentimes have longer names of like, you know, most prolific actors, twenty 10s or something like that. And that's great for readability. But for writing code, you know, I don't want to be wasting my eye space on a really long main, right. So what we can do is we can alias these tables or give them a new name."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-414-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4661,
+      "type": "audio",
+      "text": "Right to call them just within this query and that will go away after, right? We're not affecting any of the actual names of these tables, I would just prefer to refer to title St."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-415-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4662,
+      "type": "audio",
+      "text": "And rating as R."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-416-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4665,
+      "type": "audio",
+      "text": "While I'm doing this SQL query right? So notice then."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-417-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4669,
+      "type": "audio",
+      "text": "I only have to specify."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-418-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4673,
+      "type": "audio",
+      "text": "T dot tconst equal to R dot construction."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-419-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4678,
+      "type": "audio",
+      "text": "Instead of saying title dot tconst equals rating dot tconst."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-420-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4682,
+      "type": "audio",
+      "text": "OK, shortcut for readability."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-421-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4692,
+      "type": "audio",
+      "text": "And then even more of a shortcut for readability is the as keyword is optional. OK, so I actually could have just said."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-422-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4694,
+      "type": "audio",
+      "text": "Title T."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-423-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4696,
+      "type": "audio",
+      "text": "And rating R."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-424-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4701,
+      "type": "audio",
+      "text": "OK, even more shortcuts."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-425-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4705,
+      "type": "audio",
+      "text": "So now really important part of this lecture CTE."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-426-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4708,
+      "type": "audio",
+      "text": "So let's let's start here so."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-427-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4737,
+      "type": "audio",
+      "text": "What is this common table expression? So oftentimes with SQL, right, you will kind of want to create some alternative tables and then do some arithmetic on those tables, right? And that can be hard to do all within one query, right? And so something you can do is you can have think about your your meaty comparison business between these two tables being in this SELECT clause here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-428-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4745,
+      "type": "audio",
+      "text": "And then this width clause is going to be where you create all the tables you'd like to then work with in your select statement."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-429-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4747,
+      "type": "audio",
+      "text": "OK, so first."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-430-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4751,
+      "type": "audio",
+      "text": "Just an example here, we could think about creating a."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-431-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4759,
+      "type": "audio",
+      "text": "Good action movies. Let me switch my color here. A good action movies table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-432-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4765,
+      "type": "audio",
+      "text": "Right where we join title and reading."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-433-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4778,
+      "type": "audio",
+      "text": "Where genre is like action, right? So remember we had genre being a list of those genres. So that's how we can make sure action is in one of those genres. Average rating greater than 7."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-434-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4793,
+      "type": "audio",
+      "text": "And non votes greater than 5000, right? So we're trying to say, you know, the average rating should be roughly should be higher than 7 and people should have voted on this movie, right? We don't want five people strong votes guiding our movie choices."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-435-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4797,
+      "type": "audio",
+      "text": "Similarly, we might want to define something like prolific actors, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-436-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4801,
+      "type": "audio",
+      "text": "So this could be a table where I am."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-437-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4805,
+      "type": "audio",
+      "text": "Taking where the category is Actor."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-438-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4835,
+      "type": "audio",
+      "text": "And grouping by their ID and their primary name and then counting the number of rows, right? So the number of like movies, TV shows they've been in as the number of roles that they've taken on, right? So we can do all these like SQL queries to create tables and then do arithmetic all them, right? So the main thing with SQL is we're not storing any of these data frames slash tables anymore, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-439-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4837,
+      "type": "audio",
+      "text": "So we're going to need the ability to refer to things."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-440-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4839,
+      "type": "audio",
+      "text": "As we build them."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-441-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4851,
+      "type": "audio",
+      "text": "OK, so then we could do this final statement right where we select all of these columns that come from these tables we created above."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-442-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4860,
+      "type": "audio",
+      "text": "And refer to things in those tables without having to do so much of the heavy lifting within our main statement. OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-443-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4864,
+      "type": "audio",
+      "text": "So this makes for very readable SQL code."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-444-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4866,
+      "type": "audio",
+      "text": "That's the primary thing we're doing here."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-445-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4870,
+      "type": "audio",
+      "text": "Questions on Ctes?"
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-446-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4877,
+      "type": "audio",
+      "text": "OK, then we're going to do some quick demo code."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-447-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4881,
+      "type": "audio",
+      "text": "So we're going to come back to the demo."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-448-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4882,
+      "type": "audio",
+      "text": "Go ahead and load in."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-449-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4889,
+      "type": "audio",
+      "text": "Except we're going to have to rerun everything because Jupiter."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-450-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4897,
+      "type": "audio",
+      "text": "Let's just restart the kernel."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-451-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4908,
+      "type": "audio",
+      "text": "You load all those extensions."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-452-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4910,
+      "type": "audio",
+      "text": "Great, so now."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-453-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4913,
+      "type": "audio",
+      "text": "We're going to come all the way down."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-454-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4917,
+      "type": "audio",
+      "text": "To our IMDb database."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-455-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4922,
+      "type": "audio",
+      "text": "MMM."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-456-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4931,
+      "type": "audio",
+      "text": "Table with title does not exist. OK, we'll rerun the top part."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-457-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4937,
+      "type": "audio",
+      "text": "So we ran that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-458-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4942,
+      "type": "audio",
+      "text": "Seems like we're probably missing some sort of IMDb so."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-459-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4952,
+      "type": "audio",
+      "text": "Equal MGP."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-460-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4960,
+      "type": "audio",
+      "text": "Let's try this again. Load SQL."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-461-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4964,
+      "type": "audio",
+      "text": "Load that database."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-462-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4965,
+      "type": "audio",
+      "text": "Connect to it."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-463-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4981,
+      "type": "audio",
+      "text": "Sorry about this guys, but the main thing we're going to look at here is just the exact query we just wrote."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-464-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4988,
+      "type": "audio",
+      "text": "So it seems like this is having an error."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-465-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4990,
+      "type": "audio",
+      "text": "Run all."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-466-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4992,
+      "type": "audio",
+      "text": "OK, let's try that."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-467-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 4997,
+      "type": "audio",
+      "text": "Oh yeah, Colonel."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-468-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 5010,
+      "type": "audio",
+      "text": "OK, so we'll let that run for a second."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-469-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 5011,
+      "type": "audio",
+      "text": "Oh well."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-470-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 5013,
+      "type": "audio",
+      "text": "That's a long table."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-471-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 5015,
+      "type": "audio",
+      "text": "Commandments."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-472-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 5023,
+      "type": "audio",
+      "text": "OK, here we go. So now let's go ahead back to our IMDb."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-473-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 5030,
+      "type": "audio",
+      "text": "OK, so the first thing we're going to do here is."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-474-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 5033,
+      "type": "audio",
+      "text": "Look at all the different tables that we see."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-475-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 5057,
+      "type": "audio",
+      "text": "So we can do that using this SQLite master, right? So this is going to tell us everything that's currently in our sequel database, OK. And then we're going to be able to do various selections here. So selecting just for these TV shows, right? There's some missing values here, and normally we would do a separate analysis of those, but here we're just going to skip them."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-476-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 5058,
+      "type": "audio",
+      "text": "And then we see."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-477-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 5067,
+      "type": "audio",
+      "text": "In general, when we do these visualizations right, we see that IMDb over time, it seems like there's more of a spread."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-478-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 5095,
+      "type": "audio",
+      "text": "In these recent years across these ratings than there is earlier, OK, our kind of hypothesis for this is that earlier movies, right, IMDb did not exist for. So if you added a movie that you wanted people to talk about on IMDb, it was probably a good one from 1926, right. So this is kind of our idea of why they older movies might be much higher rated and now we are almost out of time."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-479-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 5099,
+      "type": "audio",
+      "text": "But there are some cool visualizations here. It's kind of ironic that the action movies."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-480-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 5129,
+      "type": "audio",
+      "text": "Analysis ends up looking kind of like a gun. But again, we kind of have this hypothesis that for this one we have like our runtime, right? So the runtime of the movie on the X axis and the rating on the Y axis, right? So movies that had a shorter runtime had more of a spread in the rating. Reasons for this could be a lot of things, but movies with smaller budgets tend to be shorter, OK? So you can get more of a spread in what kinds of movies come out of those kinds of experiences."
+    },
+    {
+      "id": "audio-ds100-sp26-1775774076-transcription-481-c0-e0",
+      "lecture_id": "ds100-sp26-1775774076",
+      "timestamp": 5139,
+      "type": "audio",
+      "text": "So now we're officially done. Thank you guys so much. And we have one final Slido question for you as our Tas run through the roads with Candy. So thank you for coming."
+    }
+  ]
+}

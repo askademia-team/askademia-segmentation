@@ -1,0 +1,2571 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1776810864",
+  "display_name": "Lecture 25 (Apr 21)",
+  "count": 366,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 196,
+      "type": "audio",
+      "text": "And I forget you."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 229,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 240,
+      "type": "audio",
+      "text": "Can I forget?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 246,
+      "type": "audio",
+      "text": "What's your name?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 253,
+      "type": "audio",
+      "text": "Let it all shouts will tomorrow."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 258,
+      "type": "audio",
+      "text": "Public Chamber."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 264,
+      "type": "audio",
+      "text": "We see."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 388,
+      "type": "audio",
+      "text": "OK, I Data 100 feel like I haven't been up here in a while. Nice to see so many people come in on the last week of content for Data 100. We have more lectures, one more lecture next week and then also Midterm 3. But next week we'll have a guest lecture. OK, Announcements Lab 10 tonight, Project B1 Friday, Midterm 3 review session on Friday from 3:00 to 5:00. That's recorded. If you want more details about it, check out Ed. We have a guest lecture in here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 419,
+      "type": "audio",
+      "text": "Here on Tuesday, 4/28, it, it is optional attendance because we really only want the people to come who, like, wanna get a lot out of it. But Ben Packer has come several Times Now to Data 100. I think this is his third time here. He was a staff data scientist at a nonprofit called Recidivism. He worked at Google for a long time as a data scientist. He'll usually come here and talk a little bit about some of the projects he's worked on. He then talks a little bit about data science recruiting, and then he stays afterwards for as long as people want to talk questions about being a."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 442,
+      "type": "audio",
+      "text": "Scientist, data science, recruiting, all kinds of great stuff. So it's this really neat opportunity to speak with someone really, really senior in data science and who's been around for a while. So highly encourage you to come on Tuesday. This is not recorded. This is not live streamed just because the projects that Ben talks about might be confidential. So if you want to come see Ben and interact with Ben and watch things got to be here in person on Tuesday of next week."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 448,
+      "type": "audio",
+      "text": "OK, road map for today. So today we're talking about sort of a brand new topic really."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 479,
+      "type": "audio",
+      "text": "You know, there's some interesting connections to what we've learned about already in DATA 100, but really this is like brand, brand new. So let me introduce you to this idea of clustering. So, so far in DATA 100, what we've done is mostly really entirely supervised learning. Supervised learning. What is supervised learning? The idea is that we're creating some function that maps inputs to outputs. We're trying to predict some ground truth. There is like something out there that's correct."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 479,
+      "type": "audio",
+      "text": "And we're trying to get a machine."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 509,
+      "type": "audio",
+      "text": "To also figure out whether or not something is correct, like we have answers to work with. OK, so every model is trained on this, you know, XY pair. We have inputs and we have outputs. And then based on the model output, we see how well did the model output compare to the actual output. So we have these things called features, which are going to still come up today. We have these things called outputs or labels or outcomes. And what we're going to see in a minute is that an unsupervised learning, we don't have labels, we don't have outcomes, we don't have a why? Why."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 539,
+      "type": "audio",
+      "text": "Is gone. All we're going to talk about today are the exes. All we're gonna talk about are the XS. And then we've talked about two different kinds of supervised learning. The most common types, regression, where we're trying to predict some outcome that's quantitative, like a number. Think linear regression or classification, where we're trying to predict some category like logistic regression, where we're trying to estimate whether something is 0 or A1. Now on the other hand, we have this thing called unsupervised learning. Unsupervised learning doesn't have these input output pairs we're only working with."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 569,
+      "type": "audio",
+      "text": "X we're only working with the design matrix. There's no Y. That's like one of the big ideas of today. There's no why. And so there's a couple different things that we can do in unsupervised learning. Two of the most common are dimensionality reduction, which we're gonna talk about on Thursday. Will give you sort of a gentle introduction to this idea of reducing your data down to fewer dimensions. Can I describe a data set with a bunch of patients and a bunch of genes, let's say, and how much those genes are expressed? Can I reduce that data set down to just like."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 598,
+      "type": "audio",
+      "text": "2 columns and still communicate a lot of the information in that data set. That's coming on Thursday. Today we're going to talk about something called clustering a little bit different. We're clustering the observations here. You can almost think of like dimensionality reduction is like reducing your number of columns. And you can think of clustering almost like reducing the number of rows. Sort of a course description I heard recently that I really liked. So today we're going to focus on the rows. So what's clustering? So let me give you an example of clustering first, just one one sort of straightforward example."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 629,
+      "type": "audio",
+      "text": "So why might you want to compress an image? You might have heard of this idea of reducing the size of an image by compressing it. Why is this good? Well, we can reduce the storage size of images. And as humans, we can only see so much detail. Maybe we don't need all of that detail. And so one way we can approach this is with clustering. So let's say we have some image that uses these 6 Shades of Grey, these 6 Shades of Grey. And then let's say you know what? I'm not going to use all 6 shades. I'm not going to use all 6 shades. Let's go ahead and say I'm going to replace every time I see."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 635,
+      "type": "audio",
+      "text": "One of these 3 shades of Gray with some new average with some new average."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 641,
+      "type": "audio",
+      "text": "OK. And then same idea for the 2nd 3 Shades of Grey. I'm going to replace this just with some average."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 671,
+      "type": "audio",
+      "text": "And all I'm going to do is go through the image, I'm going to go identify when I see one of the pixels on the left or one of the pixels on the right and justice replace it with its corresponding average. And you can see this is Professor Nargis Neruzzi's Kat Pichi. You can see on the left you have an original image of Pichi. And on the right we can see an image of Pichi that just uses two colors. And we can see like there's clearly a cat there, right? There's like something lost, right? There's some detail that's lost. But depending on the level of detail that we actually need, like that might be fine. Like I know there's a cat."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 685,
+      "type": "audio",
+      "text": "Maybe that's enough, right? Maybe I don't need to see like individual hairs or anything like this. And then you can kind of imagine as we increase the number of clusters up in the top right, we slowly just recreate the original image."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 704,
+      "type": "audio",
+      "text": "Once you have a ton of clusters, if you have the same number of clusters as data points, right, every data point is its own cluster and you've sort of like lost the purpose of clustering. So we want to try to find some happy medium, right, where we cluster our data with enough clusters that we can still describe our data, but not so many clusters that were essentially just recreating our data set with clusters."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 736,
+      "type": "audio",
+      "text": "OK, so let me talk about some a taxonomy of clustering approaches. One thing that can be scary in machine learning is, you know, you hear about this like new method or this new technique and it like has like this very like intense sounding name and you immediately look at it and you're like, that must be hard. But I'm gonna show you today that, you know, sometimes true, but not always true. So what are some clustering approaches? So there are these hierarchical approaches and there's also these partitional approaches, hierarchical approaches kind of nest items in the cluster. I'll explain what that means in a little bit. But we have these sort of sequence of."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 765,
+      "type": "audio",
+      "text": "Clusters, partitional approaches try to separate your data into sort of like distinct clusters. Like here's a cluster right here, cluster right here, cluster right here. There isn't any overlap. There isn't a sequence of clusters I'm gonna make. I'm just gonna split my data into parts. And so using hierarchical approaches to clustering, you can define different kinds of distance metrics. We're gonna talk about each of these in a little bit. How do we want to define how similar 2 points are in space? We could use something called single linkage. We could use average linkage. We could use."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 794,
+      "type": "audio",
+      "text": "Thing called complete linkage we'll see that in a bit and then in these partitional approaches there's lots of different techniques that are out there that you'll learn about in future courses or out on the job today we're just gonna talk about kmeans clustering we're just gonna talk about kmeans clustering but there's lots of other sort of cool algorithms out there that you can go explore offline or in future classes but we're gonna focus on hierarchical approaches to clustering on the left today and also this idea of K means clustering sort of the very most basic kind of clustering that you can sort of you know stake your."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 797,
+      "type": "audio",
+      "text": "Tuition in and then build future intuition off of."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 828,
+      "type": "audio",
+      "text": "OK, so what's K means? Clustering. What the heck is this, right? It might sound a little bit like K nearest neighbor, something you've done in Data 8, totally unrelated, totally unrelated, totally different approach. K nearest neighbor is a supervised, this is unsupervised. The only thing that's similar about them is they're both what are called non parametric approaches, whereas things like OLS and logistic regression are parametric approaches. But don't worry about that too much. K means clustering something totally different than K nearest neighbors. So this is sort of the most popular or just sort of the most widely understood."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 857,
+      "type": "audio",
+      "text": "Clustering algorithm and it's very intuitive. So rather than just go through like the text up here, I am going to go through the text. Let's like look at this visually because it's much more clear to just jump into the visuals and we'll sort of connect back to the text. There's like humans, we have these like wonderfully strong visual systems and we can like look at a picture and we start seeing these clusters. You might have taken a psychology class and learned about this idea of like Gestalt principles. Gestalt principles, like one thing we do is sort of group similar things together and we like look at this picture, how many clusters are there?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 859,
+      "type": "audio",
+      "text": "What do you think? Throw out a number if you just yell it?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 890,
+      "type": "audio",
+      "text": "Two, right? Like someone might argue maybe there's like 3 in the top right? But like as humans, we look at this from like, there's two clusters, right? But like, how do we get a machine to come up with that, right? How do we get a machine to recognize that there's two clusters in this picture? So here's one approach. Here's our raw data. OK, in this case, we have X&Y, which is a little bit misleading. I didn't really realize this in the slides after teaching this class four times in a row. But this really shouldn't be a why it's kind of confusing because the idea here is we really have like feature one and we have something like feature 2."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 893,
+      "type": "audio",
+      "text": "We don't have outcomes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 903,
+      "type": "audio",
+      "text": "We don't have outcomes and clustering. We're just dealing in feature space here. There's no correct output we're trying to predict. We're not trying to draw a regression line on this picture."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 932,
+      "type": "audio",
+      "text": "OK, but first thing we do in K means clustering is we toss 2 clusters randomly into the space of points that we're working with. It doesn't have to be an actual point. Notice I picked 2 clusters to start. You might have just said, well, like how do we tell a machine that it's supposed to be two clusters? Bear with me here. For now, we're just going to set the number of clusters ahead of time. We could have picked 3, we could have picked 4, we could have picked 5. All of this will still hold. But let's say we just picked 2. So I'm going to randomly assign 2 clusters that are sort of in the space of these data points, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 959,
+      "type": "audio",
+      "text": "Technically, K means will still work if you were to like assign a cluster way out here, but it's best if you just sort of stay in the range, you know, the vertical and horizontal range of your data set. So we initially assign some clusters. This is the random initialization of K means clustering key first step. OK, so then what do we do? We're just going to repeat two steps until this algorithm converges and it pretty much always converges. Really weird cases where it doesn't, but you know you'll be totally safe if you say K means clustering always converges."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 991,
+      "type": "audio",
+      "text": "So what do we do? First thing we do is we're going to color the points according to their closest cluster. Each cluster gets its own unique color. We're assigning the points to their nearest cluster. So notice all of these points in the bottom left and a little bit of this top right group get assigned to the blue star. The rest of the points get assigned to the orange star. So we color the points according to the closest center. And then using the points in each of these assignments, we're going to then take the average, the two-dimensional average, right? We're going to average all of the."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1011,
+      "type": "audio",
+      "text": "X1 values, all of the X2 values and each of these clusters, and we're going to update the center. We're going to update the cluster center, what's called the centroid. So notice what's going to happen here. We have the initial assignment. We then move our centroids to the new average of the points that they're assigned to. So now we have a new."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1013,
+      "type": "audio",
+      "text": "Cluster center New set of cluster centers."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1016,
+      "type": "audio",
+      "text": "And then what do we do? Rinse and repeat."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1019,
+      "type": "audio",
+      "text": "Assign."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1036,
+      "type": "audio",
+      "text": "Points to their closest cluster center. How do we define closest? We're using Euclidean distance here. Just standard, you know, distance formula distance. There are other sort of distance metrics that are out there, but we're just using standard distance here. Assign update. Notice the update here is a lot smaller."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1039,
+      "type": "audio",
+      "text": "Same thing assign."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1041,
+      "type": "audio",
+      "text": "Update."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1048,
+      "type": "audio",
+      "text": "Assign update and the thing that's interesting is that in this step."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1049,
+      "type": "audio",
+      "text": "And this next step?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1053,
+      "type": "audio",
+      "text": "Notice all the points stay the same color."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1062,
+      "type": "audio",
+      "text": "Orange points don't change, blue points don't change. The cluster centers updated at the very end, but the assignments don't change. When the assignments stop changing, we've converged."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1093,
+      "type": "audio",
+      "text": "And like I said, kmeans clustering essentially guaranteed to converge, except in weird edge cases that you probably won't see in practice. There's a link to a weird edge case on the next slide if you want to see it. So between iteration 4 and 5, the clusters slightly moved in position, but the assignments of points to clusters did not change. And that's when K means clustering has converged OK, no points change color. If we try to do this assignment and update again, nothing's going to move, nothing's going to change."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1099,
+      "type": "audio",
+      "text": "Fully converged? OK, questions about the algorithm before we dig in."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1106,
+      "type": "audio",
+      "text": "What's cool about this algorithm is like very sort of intuitive, right? We didn't run any integrals here, right? It's sort of straightforward, this idea. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1115,
+      "type": "audio",
+      "text": "False convergences? No, no, once. Once it's converged, it's done right once the assignments stop."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1120,
+      "type": "audio",
+      "text": "They can't suddenly shoot back up again. Yeah, it'll always just converge. Other questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1145,
+      "type": "audio",
+      "text": "We're going to dig more into the algorithm too, but other questions just on this basic idea. This is something you want to understand. Well, coming out of data 100. OK, So yeah, like I said, once cluster assignments stop changing, K means has converged. And then there's some weird edge cases you can go see where like you get this weird, like, you know, iteration at the very end or the sort of oscillation between two different clusters. But they're sort of weird edge cases, not not something you're going to see practically."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1172,
+      "type": "audio",
+      "text": "So I mentioned this before, K means clustering and K nearest neighbors K&N that you learned about data 8 totally different things, totally different things. K means let's you cluster assignments. It's an unsupervised techniques. K nearest neighbors was a way to do classification. You know each point on a grid. Look at the three closest neighbors, are they orange? Are they blue? OK, I'm going to sign that little point on the grid orange, right? You create this sort of map of how to classify."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1176,
+      "type": "audio",
+      "text": "Totally different. It's a classification algorithm. Can also be used as a regression algorithm."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1191,
+      "type": "audio",
+      "text": "It's supervised, whereas K means clustering is unsupervised. Just one note I want to make. This is very common point of confusion. People confuse these two things all the time. All the time. All right, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1211,
+      "type": "audio",
+      "text": "K means clustering. Like what's the goal? How do we know if our clusters are good or bad? The cool thing in supervised learning is like if I predict that something is 10, then the actual answer is 11. I know that I was like one point off, right? I have like this like very clear sense of error. But in K means clustering. There's no ground truth."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1212,
+      "type": "audio",
+      "text": "Right, like."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1243,
+      "type": "audio",
+      "text": "You know, we look at this picture and we kind of see two clusters, but there's really no sort of ground truth to this process. An unsupervised learning. We have no outcome that we can compare to. We have to come up with some other way to determine whether our algorithm has done a good job of clustering or reducing the dimensionality. We need to have some kind of metric. So let's let's talk a little bit about a metric in a world where we don't have an outcome to compare to. So I'm going to introduce you to this idea of inertia in distortion. So like I said, we don't have to limit ourselves to K equals."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1273,
+      "type": "audio",
+      "text": "Two, we could have also shot up to K = 4. The algorithm will still run. It'll still come up with assignments. It doesn't just know that K = 2 is better and K means clustering. You have to state what value of K to use from the beginning. And then it becomes up to you to think about, well, what's the best value of K? Something we're going to talk about. So here's K = 4. But let me show you something weird I mentioned at the very begin. Beginning of of K means clustering is we have this random initialization of our cluster centers. Remember we sort of randomly."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1303,
+      "type": "audio",
+      "text": "Sign where those stars start out. It turns out this matters. This is not just like a thing we have to do. This can actually affect the final clustering results. So depending on the random seed we use in each of these examples, notice that our four clusters look a little bit different from one another. So on our way to sort of defining this idea of a good cluster, let's try to think about what this means as sort of humans with our strong visual systems. Why don't you tell me which one of those is best?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1316,
+      "type": "audio",
+      "text": "And then we're going to think about what does sort of best mean in practice. Feel free to talk with your neighbor if you want. Feel free to just throw an answer. There's nothing correct here. So I recommend just like, what's your gut feeling? Don't spend too long on this one. What's your gut feeling?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1336,
+      "type": "audio",
+      "text": "Toss in an answer."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1342,
+      "type": "audio",
+      "text": "I'm thrilled how many people are here last week of the class. Thanks for coming."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1344,
+      "type": "audio",
+      "text": "Great."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1350,
+      "type": "audio",
+      "text": "All right, all right, let's let's go see what people voted."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1367,
+      "type": "audio",
+      "text": "So OK, it looks like we have a little bit of a horse race here between B&A, but people tend to like A, but there's also some people that like B sort of these like, you know, distinct cluster in the bottom left and like, you know, 3 clusters in the upper right seems like almost unanimous agreement that we don't like C."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1382,
+      "type": "audio",
+      "text": "Right. We don't like C probably because that red point is kind of far away from that star. The cluster is sort of split over these two larger clusters that we can see as people. OK, so, so what's sort of going on here? How do we, how do we say to a computer that I like the two on the left, I don't like the one on the right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1390,
+      "type": "audio",
+      "text": "So which one is best? So we need to define some kind of metric, some sort of loss function for clustering. And so let's let's think about what this could be."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1398,
+      "type": "audio",
+      "text": "So think like what's good about this leftmost clustering versus the rightmost clustering, again like."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1428,
+      "type": "audio",
+      "text": "A&B both have sort of this distinct cluster in the bottom left with sort of which sort of matches our visual intuition. But there's sort of something weird going on here on the right where this cluster is split and we end up having this like sort of big gap between that point and that centroid. And so how do we describe this to a computer? So let's let's think about some loss functions here. So one of them is very similar to what we've seen before, some of squared errors, or in this case some of squared distances. There isn't really this idea of error."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1440,
+      "type": "audio",
+      "text": "String because we have no ground truth. Remember that. So these are the sum of squared distances from each point to its cluster center sum of square distances, right? We don't want distances canceling each other out."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1441,
+      "type": "audio",
+      "text": "Right."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1448,
+      "type": "audio",
+      "text": "Distortion is very similar to inertia. Very similar. The idea is that we just wait."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1456,
+      "type": "audio",
+      "text": "By the inverse size of the cluster, all this really means is that in the first case."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1458,
+      "type": "audio",
+      "text": "Sort of. Every point is weighted the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1470,
+      "type": "audio",
+      "text": "Every point is weighted the same, but in distortion, which I'll show in a SEC, it's not quite the case, but we sort of weight clusters equally."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1488,
+      "type": "audio",
+      "text": "And it's like, this isn't quite true, but sort of this is what we're kind of doing here. Even if a cluster only has three data points, we're going to try to weight it pretty similar to another cluster that has a hundred data points. It's not exactly true, but that's the idea with distortion. So here's a picture of two different clusters with two different."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1502,
+      "type": "audio",
+      "text": "Size elements in each of them. The one on the bottom left has three elements. The star represents the centroid, the points represent the data. So we have seven data points here. So this is 1 particular clustering for these seven data points."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1512,
+      "type": "audio",
+      "text": "How do I compute inertia? Inertia is just the sum of square distances from each point to its cluster center, so we're simply taking each one of these distances."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1516,
+      "type": "audio",
+      "text": "Squaring them and adding them up."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1531,
+      "type": "audio",
+      "text": "Right. And I put parentheses in the top here, not that they matter, just to show you that we're doing it each for each of these clusters separately. All distortion is is same exact thing, but just divide by the cluster size. So I'm just dividing that first cluster that's smaller by three."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1545,
+      "type": "audio",
+      "text": "But I'm dividing the larger cluster by 4. Remember I'm trying to sort of weight the clusters equally, so if a cluster is bigger I want to bring it down in size closer to the smaller cluster hand."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1583,
+      "type": "audio",
+      "text": "Excellent question. Is there a way of normalizing these distances if these axes aren't essentially on sort of similar scales? Even in this case the scales are quite different. Should we be doing something like normalizing? And so if you don't have a natural weighting of all of your categories and you don't really care about anyone category more than the other, you could just standardize all of the axes, subtract the mean, divide by the standard deviation. But let's say you cared about one thing more than another."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1597,
+      "type": "audio",
+      "text": "Right. You could let those distances stay on like a larger scale and then sort of shrink other axes. But it's an excellent question. The idea here is I'm teaching you like the very vanilla version of K means clustering, and you can make sort of little improvements like that. Great question. Other questions about inertia and distortion here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1602,
+      "type": "audio",
+      "text": "Other questions about inertia in distortion."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1608,
+      "type": "audio",
+      "text": "Hopefully this feels pretty intuitive so far, nothing crazy."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1616,
+      "type": "audio",
+      "text": "So let me show you some problems with inertia. So we're going to focus on inertia for the rest of today. I just wanted to show you that there's this distortion metric out there."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1623,
+      "type": "audio",
+      "text": "So take a look if we go back to those original 3 clusterings that we had."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1631,
+      "type": "audio",
+      "text": "A&B both have pretty low inertia. Technically A has slightly lower inertia. So those of you who voted for a good job."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1654,
+      "type": "audio",
+      "text": "But C has the highest inertia. And what's 1 of the reasons why? Well, one of the reasons why is we created this large distance right here, and when that distance gets squared, it contributes a lot to inertia. So we now have what looks like a pretty decent way to say whether a particular clustering is good for a fixed value of K. So notice in this case we have."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1662,
+      "type": "audio",
+      "text": "K = 4. In all of these cases, we're not comparing against different numbers of clusters, we're saying 4/4 clusters."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1667,
+      "type": "audio",
+      "text": "How does the inertia compare across different randomizations?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1683,
+      "type": "audio",
+      "text": "So let me ask you a question now. What is the inertia if K is equal to your number of data points? I mentioned this earlier, if we keep increasing K all the way up to the number of data points, we end up just recreating the data itself. But what is the inertia when K is the?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1700,
+      "type": "audio",
+      "text": "A number of data points. Feel free to talk with your neighbor about this one. Feel free to talk with your neighbor. I'm gonna go back to the definition of inertia just so you can talk a little bit, and then I'll go back to the other slide so you can select an answer. But remember, the question is what is the value of inertia? If I have the same number of clusters as data points, Give that a go."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1705,
+      "type": "audio",
+      "text": "If you got individual questions I can come around too."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1735,
+      "type": "audio",
+      "text": "Slido will be active in just a SEC when I get back down."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1739,
+      "type": "audio",
+      "text": "Just for now think about your answer. If you got questions let me know."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1769,
+      "type": "audio",
+      "text": "I'll go ahead and open the Slido. What is the value of inertia when K is the number of data points? Give this a go."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1808,
+      "type": "audio",
+      "text": "OK, I'm hearing lots of discussion, which is fantastic, so let's reason through this. Let's reason through this. So if K my number of clusters is the same as the number of data points, then every single data point is its own cluster."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1827,
+      "type": "audio",
+      "text": "We've essentially just recreated the data set with clusters, right? If K is the number of data points, every data point is in its own cluster. The distance from each point to its cluster center is exactly 0. If I'm a data point and I'm right on top of my cluster center, the distance from me to me is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1854,
+      "type": "audio",
+      "text": "So if I take a bunch of sum of squared zeros, I get 0 for inertia. So just like before with mean squared error, where we talked about essentially sending mean squared error to 0, we can in fact with K means clustering, send inertia to 0 if we make K just the number of data points. But we clearly know that this is a bad idea. There's no point in doing this. We haven't reduced."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1857,
+      "type": "audio",
+      "text": "We haven't reduced the dimensionality of our data set. We haven't, we haven't summarized our data set in any way. We've just sort of spit back."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1874,
+      "type": "audio",
+      "text": "The data set we started with. And so this is sort of overfitting. This is this is the idea of overfitting in K means clustering is when you use too many clusters. Underfitting is when you don't use enough clusters. OK, so in a little bit we'll talk about how to pick."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1876,
+      "type": "audio",
+      "text": "A good value of K."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1892,
+      "type": "audio",
+      "text": "How do we pick a good value of K? Should we do K = 1, K equals 2K equals three, K = 4, right? Clearly we shouldn't do K = n where N is the number of data points. But for now let's say just for a single K."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1895,
+      "type": "audio",
+      "text": "We saw before for a single K."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1903,
+      "type": "audio",
+      "text": "Here's a single value of K4 clusters. What's the best clustering? Right clearly on the left. This is the best of these three."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1912,
+      "type": "audio",
+      "text": "But what's the best possible way to cluster all of these data points with four clusters? How do we find the globally optimal solution?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1919,
+      "type": "audio",
+      "text": "Right. What's one thing you could do? Well, you could go check for every single possible placement of those four stars. What's the inertia?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1941,
+      "type": "audio",
+      "text": "Right. You can check every single possible placement, iterate through that entire picture, right? We're testing like an infinite number of possible placements here, and then go through the list and go figure out, OK, which one has the lowest inertia. But that sounds really inefficient, Does it is? Is there a more efficient way to actually go figure this out? And as it turns out."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1970,
+      "type": "audio",
+      "text": "There actually isn't a better way to do this. This is a particular class of problems called an NP hard problem. This is a problem that cannot be done anymore efficiently. So for a particular value of K, we have to go check every single possible set of assignments. So if we have 4 different colors, we can use an end data points. Then there's K to the north power different ways of assigning each point to a."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1971,
+      "type": "audio",
+      "text": "Color."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1982,
+      "type": "audio",
+      "text": "And So what could we do? Well, for each one of those K to the north colorings, we could compute what are the centers? What are the average of the points assigned to each?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1990,
+      "type": "audio",
+      "text": "Color each cluster center and then we can go compute the inertia for each of those different centers and we pick the one that's best."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 1992,
+      "type": "audio",
+      "text": "Turns out there's no better way to do it."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2009,
+      "type": "audio",
+      "text": "You can't find a globally optimal set of clusters any other way. This is actually like hard unsolved problem. It's called an NP hard problem. Some people can go look up on your own. Not something we test in data 100. Kind of an interesting property of K means clustering."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2017,
+      "type": "audio",
+      "text": "If you've heard of the traveling salesman problem, this is like another sort of NP hard question. Oh, thank you. Yes, that was a good assist. Yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2035,
+      "type": "audio",
+      "text": "Oh, is there any like more efficient way of saying like I'm going to go skip this set of clusterings just so I don't have to go through every single K to the north values of them?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2061,
+      "type": "audio",
+      "text": "Oh, in this case, we don't have to worry about actually running the K means algorithm. We're just setting up sort of artificially K to the north different ways it could converge hypothetically, right? So actually doesn't have to do with convergence time. Yeah, separate issue. Good question. What else?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2063,
+      "type": "audio",
+      "text": "What else?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2070,
+      "type": "audio",
+      "text": "Thanks again for the the assist. All right, which one you like better, A or B?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2080,
+      "type": "audio",
+      "text": "Two different clusterings. That's what we ended with last time. If you remember, that was actually where we ended with. There was a blue point assigned to the sort of group in the top, top right. Which one of these do you like better? This is quick."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2083,
+      "type": "audio",
+      "text": "Hopefully it's quick."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2092,
+      "type": "audio",
+      "text": "This is like, are you a agreeable person or are you a chaotic evil person?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2097,
+      "type": "audio",
+      "text": "OK, so let's see."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2109,
+      "type": "audio",
+      "text": "Good. All right, so we got 9% of people who are chaotic evil and we have 91% of people who are agreeable. Yeah, clearly A is better, right? Like clearly bottom left is like."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2119,
+      "type": "audio",
+      "text": "A cluster in the top right should be a cluster like, you know, human strong visual system. We can we can see this. This is great, but as it turns out, the one on the right has lower inertia."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2127,
+      "type": "audio",
+      "text": "So. So it turns out that the distance between this cluster center and that point is shorter than the distance between."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2132,
+      "type": "audio",
+      "text": "The top right cluster center and that point. So if we use our inertia metric."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2133,
+      "type": "audio",
+      "text": "That one's better."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2165,
+      "type": "audio",
+      "text": "So what do we do? How do we make sure we make clusters that we know are good even if a machine doesn't know that they're good? Clustering is not a one-size-fits-all solved problem. There's many different kinds of clustering algorithms that are out there. Some do better in certain situations than other. I'll show you a really cool visualization that's also in the lecture demo and you can play with and you can go see how different state-of-the-art or more basic clustering algorithms do on different kinds of data sets. So let me show you a way out of this."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2170,
+      "type": "audio",
+      "text": "Right after the interlude."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2171,
+      "type": "audio",
+      "text": "2 minutes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2333,
+      "type": "audio",
+      "text": "All right."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2335,
+      "type": "audio",
+      "text": "Let's keep going."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2346,
+      "type": "audio",
+      "text": "All right, let's talk about hierarchical agglomerative clustering. Scary sounding word, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2375,
+      "type": "audio",
+      "text": "Probably a simpler idea than kmeans clustering. Again, machine learning stuff sounds scary. Read about it a little bit. Don't just assume that it's really complicated. That's kind of a scary looking word, but you're going to see it's insanely logical, possibly more logical than K means clustering. It's how somebody who has no familiarity with machine learning, if you ask them to figure out how to cluster, would probably do something like hierarchical agglomerative clustering. So let's think about it. So that doesn't work the idea."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2377,
+      "type": "audio",
+      "text": "Very intuitive. Let's say we have five data points."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2404,
+      "type": "audio",
+      "text": "CD and E, what do we do? Every data point starts as its own cluster, so treat them all as their own cluster. We're starting from the bottom and working our way up to when all of the points are just in one giant cluster. And what do we do? We just compute the distances between each of the clusters or each of the data points, and then start merging. A&B are closest to one another, so that's going to be the first merge. Turn them into a cluster. C&D are the next closest, Make them a cluster."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2412,
+      "type": "audio",
+      "text": "Right, what's next? It looks like cluster AB and CD are close to one another. Merge them and then finally we have a Singleton merge that."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2421,
+      "type": "audio",
+      "text": "Very easy. That's it. That's like pretty much all of hierarchical agglomerative clustering in a couple sentences. Start with every data point as its own point."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2427,
+      "type": "audio",
+      "text": "Start merging things that are close to one another. Keep going until everything is 1 giant cluster. That's it."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2456,
+      "type": "audio",
+      "text": "OK. But I used some words there that we hear and we nod, but we can think a little bit harder about what does it mean for the distance between A&B to be smaller than the distance between D&E? What should I use to measure distance? What does it mean for the distance from cluster AB to be closer to cluster CD than E? How do I measure the distance between two clusters? So let's talk a little bit about that. Notice on the right too, we get this interesting picture."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2458,
+      "type": "audio",
+      "text": "This is what I meant earlier about this idea of secure sequential."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2484,
+      "type": "audio",
+      "text": "Nested clusters. This isn't just returning one set of clusterings. Or let's say K = 3 and we have three different groups. We have a bunch of different options for any number of clusters. If you just want one cluster, use the outermost. If you want 3 clusters, use ABCD and E You can choose how many clusters you want along this sequence of clusters. OK, another cool property."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2493,
+      "type": "audio",
+      "text": "This is called a bottom up or agglomerative clustering. We're sort of agglomerating points, right? We're sort of squishing them together as they get close to one another."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2498,
+      "type": "audio",
+      "text": "This thing called the linkage criterion tells us."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2527,
+      "type": "audio",
+      "text": "How do we combine clusters or how do we combine data points in the very beginning linkage criterion. So what is the linkage criterion? OK, so there are a couple different ones. The first one I'll tell you about is single linkage. Single linkage is probably the most intuitive one. Average linkage is also pretty intuitive. Complete linkage is a little tricky, but let me show you. Single linkage says go figure out the minimum distance between points in two different clusters."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2534,
+      "type": "audio",
+      "text": "And use that to determine which clusters get merged. The best case scenario. Single linkage is sort of your best case."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2548,
+      "type": "audio",
+      "text": "OK, minimum possible distance. Let me give you a picture. Here's four data points. Here's four data points. Like I said, we start with every data point its own cluster. We start merging them. Points that are close to one another get merged."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2550,
+      "type": "audio",
+      "text": "Each of those groups."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2557,
+      "type": "audio",
+      "text": "Are the closest possible to each other, so I'm going to make each of those groups their own cluster. But here's where it gets tricky."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2560,
+      "type": "audio",
+      "text": "Here's where it gets tricky. So."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2562,
+      "type": "audio",
+      "text": "If we look at these three clusters."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2565,
+      "type": "audio",
+      "text": "You know, you could make the argument that."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2592,
+      "type": "audio",
+      "text": "Those two clusters are the closest. You could also make the argument that those two clusters are the closest. You probably wouldn't make the argument that the diagonal is closest. So let's focus on the top 2 clusters and the left side. And you might say, well, isn't this symmetrical? Can't we do the same thing on the right? Exactly. So let's just say we randomly picked where to start. We're going to start with the top left. Should we merge the top 2 clusters first or the left side first?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2596,
+      "type": "audio",
+      "text": "So with single linkage, we say what's the best."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2610,
+      "type": "audio",
+      "text": "Case scenario, What's the closest distance between each of those clusters? For the top 2 clusters, the minimum distance between any two points are those two inner points along the top."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2618,
+      "type": "audio",
+      "text": "Right. This is the shortest distance between those two clusters. What's the shortest distance between the clusters on the left?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2625,
+      "type": "audio",
+      "text": "That OK, which one of those two distances is the shortest?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2635,
+      "type": "audio",
+      "text": "Top one right, Top 1. So what do we do next? We merge the top, We merge the bottom. We have two clusters left, we merge everything together and we're done."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2665,
+      "type": "audio",
+      "text": "That single linkage? What's the minimum possible distance between points into clusters? What's the best possible case for how close two different groups are? OK, there's another one called average linkage, where instead you take the average of every distance, every combination of distances between all points in two different clusters. So you compute every single distance."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2668,
+      "type": "audio",
+      "text": "Take the average over all four. That's what you use to measure distance between clusters."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2677,
+      "type": "audio",
+      "text": "Complete linkage is the tricky one that I also want to cover, so single linkage was the sort of best case."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2692,
+      "type": "audio",
+      "text": "This is the best case distance between two clusters. What's the shortest distance? Complete linkage is the worst case. What's the farthest possible distance between points in any 2 clusters? So let's do exactly the same thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2700,
+      "type": "audio",
+      "text": "1234 to start. Those are all closest, but we're back at the original conundrum."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2702,
+      "type": "audio",
+      "text": "Is the."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2710,
+      "type": "audio",
+      "text": "Clusters. Pair of clusters on the top closer or is the pair of clusters on the left?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2717,
+      "type": "audio",
+      "text": "Closer to one another, Well using single linkage we said OK, well the top 2 clusters are that far apart."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2721,
+      "type": "audio",
+      "text": "And the left clusters are that far apart."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2734,
+      "type": "audio",
+      "text": "But that was the best case. What's the worst case? What's the longest possible distance between the top 2 clusters? The longest possible distance between the top 2 clusters is the distance from the point on the far left."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2746,
+      "type": "audio",
+      "text": "To the point on the far right, that's the maximum possible distance between points and two clusters on the left side. Same sort of idea. The diagonal is the worst case."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2754,
+      "type": "audio",
+      "text": "And notice in this case that top distance is larger than the diagonal distance on the left, so we're going to merge vertically."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2774,
+      "type": "audio",
+      "text": "We merge vertically and then we merge everything together. So completely linkage LED us to a different place than single linkage. Now one thing that can get kind of confusing with these different linkage metrics is single linkage says compute the minimum distance between 2 clusters."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2802,
+      "type": "audio",
+      "text": "That's how you get the distances between all the clusters and then choose the minimum of all those distances. Average linkage says take the average of all pairwise distances between clusters and pick the minimum of all those distances. Complete linkage says find the maximum possible difference between every single pair of clusters, and then at the end we choose the minimum of all those maxima."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2806,
+      "type": "audio",
+      "text": "So notice at the very end of the process we're always choosing what's the smallest distance."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2834,
+      "type": "audio",
+      "text": "This idea of choosing min, Max, or average is just giving you a sense of what are the distances between clusters at the very end of the process. You then say, OK, well then what's the smallest of all of those distances I just computed? So we're always ending with a minimum, but we might start with this idea of finding the maximum possible distance, finding the average distances, finding the minimum distance, questions about the linkage criterion."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2835,
+      "type": "audio",
+      "text": "We're going to go play with this in a second."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2835,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2869,
+      "type": "audio",
+      "text": "Can you link the diagonal ones? So we could, we could say, well, what's the distance between the top left cluster and the bottom right cluster? The complete linkage distance is that distance which is larger than either of those two Gray distances. So those would not be merged because that's the largest of those 3 differences. This is that same weird idea I was saying where first we need to define what the distances are, right? What's the maximum possible?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2879,
+      "type": "audio",
+      "text": "Between each cluster, once we've defined those distances, we then say what's the shortest. Makes sense. OK, That's like the weirdness that goes everybody goes through this when they're learning hierarchical clustering. Yeah, go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2880,
+      "type": "audio",
+      "text": "Right, friend? Yeah, we can go there in a second."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2887,
+      "type": "audio",
+      "text": "I'm going to have a great slide for you on that couple slides."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2891,
+      "type": "audio",
+      "text": "Was there another hand right there? No, and and go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2915,
+      "type": "audio",
+      "text": "Yeah, it is expensive, right? So this is one thing we're going to talk about. What's the trade off between K means clustering and hierarchical clustering? K means is super fast, super efficient, doesn't take a lot of data. You can apply it to new data very easily. Hierarchical clustering gives you a lot of cool benefits about seeing relationships in your data set. So it depends on your data set what you're trying to do hand here and then we'll keep going."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2923,
+      "type": "audio",
+      "text": "How would average linkage work? Excellent question. Average linkage is very similar."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2929,
+      "type": "audio",
+      "text": "But the idea is to figure out the distance, let's say between the top 2 clusters."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2956,
+      "type": "audio",
+      "text": "We go compute this distance, we go compute this distance, we go compute this distance, and we compute the outer distances, find the average of all of them, and that's the distance between the two clusters. Keep in mind we already have to do that when we do complete linkage or single linkage, because we need to go find the minimum distance and the maximum, which means we have to go compute every possible distance. So you're always doing that under the hood. Yeah, a lot of computations. All right, let's keep going."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 2986,
+      "type": "audio",
+      "text": "OK, we're going to do a complete linkage on like a more complicated data set and sort of step through it. There isn't a Slido here, but I, I'm going to have you like talk to your neighbor for a second and just sort of remind yourself which of these points is going to get merged first. If you can step through this diagram on your own, which I recommend doing after today, go step through this diagram, make sure you can predict every single next step. If you can do that, you understand complete linkage and hierarchical agglomerative clustering."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3015,
+      "type": "audio",
+      "text": "So we have 12 data points. I've labeled each of them here zero to 11, and we're just going to start merging. Now, what I'm going to do, in addition to just providing these data points, is I'm going to provide the three shortest distances between any of the objects in this picture, the three shortest distances between any of the objects in the picture. And you're going to have to decide which thing is going to get merged based on those distances. So right now we're all points. We don't have to worry about clusters."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3024,
+      "type": "audio",
+      "text": "In the very first step, single linkage, average linkage and complete linkage. Exactly the same first step."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3038,
+      "type": "audio",
+      "text": "OK. And now which one of these is going to get merged first? If we look at the distances between 11:00 and 10:00, one and five and zero and four, the distance between 10:00 and 11:00 is the closest. So we're going to go merge them and make them a cluster. 11 and 10 become a cluster."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3044,
+      "type": "audio",
+      "text": "And now we have our next set of distances. We have the distance between zero and four, one and five, 7:00 and 9:00."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3058,
+      "type": "audio",
+      "text": "The lowest one is the red one up top. You can assume that we provide this in an order here, so if we keep adding decimal places, the red one would still be the shortest. So the next step here we're going to merge 0 and 4."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3062,
+      "type": "audio",
+      "text": "So let's go merge 0 and 4."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3064,
+      "type": "audio",
+      "text": "We keep going here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3072,
+      "type": "audio",
+      "text": "We're still getting distances that are closest between points, so things are pretty easy. We're next gonna merge one in five."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3074,
+      "type": "audio",
+      "text": "We're next going to merge one in five."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3078,
+      "type": "audio",
+      "text": "But then now things get a little tricky."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3085,
+      "type": "audio",
+      "text": "Now things get a little tricky after I've merged one in five. What am I going to do next?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3089,
+      "type": "audio",
+      "text": "There are 6 and 8 closest are, 7 and 9 closest or are."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3106,
+      "type": "audio",
+      "text": "Three and this zero cluster closest to one another. So talk to your neighbor for a minute and say, how would you figure out the distance between 3:00 and the zero cluster? How would you determine the distance between 3:00 and the zero cluster? Go ahead, take a second think about this."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3108,
+      "type": "audio",
+      "text": "We're going to be doing this a lot."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3122,
+      "type": "audio",
+      "text": "And you got questions, Raise your hand, I can come to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3146,
+      "type": "audio",
+      "text": "There are other quick questions, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3160,
+      "type": "audio",
+      "text": "You can also think a little here too."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3166,
+      "type": "audio",
+      "text": "You know, should those two clusters be merged? How do I measure the distance between those two clusters?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3171,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3214,
+      "type": "audio",
+      "text": "So how do we measure distances? How do we measure distances? So it depends. I'm going to focus on the zero and three case here for now. I'm not going to worry about the one at the bottom quite yet. It's exactly the same logic."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3221,
+      "type": "audio",
+      "text": "But how do I measure the distance between the zero cluster and the .3? Well, it depends."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3229,
+      "type": "audio",
+      "text": "So the shortest possible distance between 3:00 and the zero cluster is right. I'll try to use a different color here. What color hasn't been used? Blue. OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3231,
+      "type": "audio",
+      "text": "That distance is the single linkage distance."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3243,
+      "type": "audio",
+      "text": "That's the single linkage distance. It's the shortest possible distance between zero and three. We're going to use complete linkage for this example because it's harder."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3252,
+      "type": "audio",
+      "text": "The other distance is the largest possible difference distance. Excuse me, this is the complete linkage distance. It's the worst case."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3283,
+      "type": "audio",
+      "text": "Worst case and then average linkage is the average of those two. If there were additional points, we would also need to average those distances, but that's the idea. So if we're using complete linkage, we need to think about this red distance here. We need to think about that red distance and then compare it to the distance between 7:00 and 9:00, six and eight, and same thing in the bottom left. What's the single linkage distance between the two clusters and the bottom electricity, the complete linkage distance between."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3288,
+      "type": "audio",
+      "text": "Those two clusters the shortest possible distance looks like here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3294,
+      "type": "audio",
+      "text": "That's the shortest possible. What's the worst case? What's the complete linkage distance? What's the longest distance?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3304,
+      "type": "audio",
+      "text": "Something like that is the longest possible distance between those two clusters. So let me update the picture. I'm going to update the picture."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3306,
+      "type": "audio",
+      "text": "What are we going to do here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3314,
+      "type": "audio",
+      "text": "So those are the two possible distances between zero and three. We just wrote that the distance between."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3318,
+      "type": "audio",
+      "text": "This point and the three."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3329,
+      "type": "audio",
+      "text": "Is the longest possible distance, so we now have the distance between cluster 0 and .3 in our distance legend in the top left."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3336,
+      "type": "audio",
+      "text": "So now we can see that the shortest of those 3 distances that are drawn is the distance between 7:00 and 9:00."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3356,
+      "type": "audio",
+      "text": "And this distance down here we're not worrying about yet. It's further down in that list of three. So what's the next thing we're going to merge? The next thing we're going to merge is 7:00 and 9:00. It's at the top of our distance list. So let's go ahead and merge 7:00 and 9:00. Then we're going to merge 6:00 and 8:00. That's the next thing on our distance list. So let's go ahead and do that."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3370,
+      "type": "audio",
+      "text": "And now we have a new set of clusters. So you can see we're starting to draw complete linkage distances all over the place. We have the red distance between zero and three, that's our shortest distance."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3375,
+      "type": "audio",
+      "text": "Of our three options right now, these clusters in the bottom left are coming into play."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3383,
+      "type": "audio",
+      "text": "That orange distance is the longest possible distance between those two clusters. We're going to merge the zero and three next."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3390,
+      "type": "audio",
+      "text": "Update our lines. Now it looks like we're going to merge cluster 1 and 10 in the bottom left."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3395,
+      "type": "audio",
+      "text": "Keep going."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3399,
+      "type": "audio",
+      "text": "What's the next thing gets going to get merged? Cluster zero? Cluster 7?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3404,
+      "type": "audio",
+      "text": "And I'll let you do the rest offline. We keep merging and we finally end."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3434,
+      "type": "audio",
+      "text": "With one giant cluster at the very end, you're always going to end. With one giant cluster, both of those two things get merged. Like I said, to make sure you understand complete linkage, step through that slowly, making sure you can predict each of the next steps when you see that the first time. To me too, it looks like a lot of things going by that don't really make perfect sense. They're kind of jumping around. Step through it slowly on your own time. Make sure it makes sense clearly."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3435,
+      "type": "audio",
+      "text": "OK, so let's step back to our."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3447,
+      "type": "audio",
+      "text": "Picture that we had before. As it turns out, if we stop agglomerative clustering of this same data set we saw earlier in the lecture. If we stop that."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3462,
+      "type": "audio",
+      "text": "At K = 2 clusters, remember we get a sequence of different clusterings all the way up to 1 giant cluster, all the way down to every point in its own cluster if we were to stop hierarchical agglomerative clustering at 2 clusters."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3477,
+      "type": "audio",
+      "text": "It gets the clustering correct on the right side. Now you might be wondering, well, how would I tell a computer to choose two clusters? We're going to get to that in just a second. But if we use two clusters, agglomerative clustering gets this question correct."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3489,
+      "type": "audio",
+      "text": "OK, so we're going to talk a little bit about how to choose K = 2 clusters, but just know agglomerative clustering handled this scenario better than K means clustering."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3490,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3508,
+      "type": "audio",
+      "text": "So we get back to this question now. All right, Well, if hierarchical agglomerative clustering beats out K means clustering for datasets that look like this, why not just never use K means clustering? What's the point of K means clustering if a glometer of clustering does all this nice stuff? So we talked about this a little bit earlier. K means is much faster."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3540,
+      "type": "audio",
+      "text": "For bigger datasets, these are very small datasets. Everything essentially runs instantly. If you have gigantic datasets, K means still runs really fast. Agglomerative clustering runs pretty darn slow as your datasets get into the, you know, billions of data points. New data can also be much more easily assigned to existing clusters in K means. So if you have clusters that are outputted as part of K means the centroids. If I get a new data point if."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3549,
+      "type": "audio",
+      "text": "If I were to suddenly get a new data point, I can just check is this data point closer to the left cluster or the right cluster? It's very easy to assign new data."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3579,
+      "type": "audio",
+      "text": "When you have existing centroids, hierarchical agglomerative clustering does not give you centroids. It's not clear necessarily how to assign new data points to your clusters. You have to sort of insert it into the clustering process. But what hierarchical clustering can do, what's sort of the advantage is it can identify pretty interesting relationships. What can we do with that sort of sequence of clusters? Well, we can make something called a dendrogram."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3587,
+      "type": "audio",
+      "text": "You might have seen these in like a genetics class, biology class, right? This sort of biology world."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3599,
+      "type": "audio",
+      "text": "Hierarchical conglomerative clustering is very big in genetics world. So let me just show you what this dendrogram is doing. So we're getting this tree, this history of how different."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3631,
+      "type": "audio",
+      "text": "Data points were merged, how different clusters were merged? How do we construct the dendrogram on the left? So start here. The one on the right is a little bit more complicated. I linked a Stat Quest video here explaining this dendrogram and how they're created. Stat Quest is fantastic. The guy's voice is a little funny, but really good. Really good. A very silly guy makes songs about statistics. But like it's actually incredibly high quality content. I really liked that video, So you can check that out if you're interested in this kind of work. But how would we show hierarchical agglomerative clustering?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3641,
+      "type": "audio",
+      "text": "Dendrogram, kind of like what we did earlier. So we read these from the bottom up. That's one of the key points of confusion is people want to read this top down. You start at the very bottom, every data point."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3645,
+      "type": "audio",
+      "text": "Gets its own line at the very bottom."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3649,
+      "type": "audio",
+      "text": "And all we do is record the distance."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3658,
+      "type": "audio",
+      "text": "Between two objects anytime they're merged. So let's say I merge. Notice like these two data points here very small are getting merged."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3669,
+      "type": "audio",
+      "text": "All we do is we make a connection between those two data points, and the height just represents the distance between those two points when they were merged."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3698,
+      "type": "audio",
+      "text": "And all we do is keep running hierarchical conglomerative clustering, recording the distance between each of the objects. That's always going to go up as we work our way up the dendrogram. But when we do this, we end up seeing really interesting relationships in the data. Notice we've sort of identified some groups, some patterns in our data. There's some natural clusters that are sort of sticking out. OK, that's a dendrogram. On the right side. We have a dendrogram that sort of two ways. I'll let you interpret this more offline, but along the top here we have different patients."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3729,
+      "type": "audio",
+      "text": "Notice we only have 7 patients. This isn't one of those interesting cases where we have a really wide data set. We only have 7 patients, 7 observations, But for each patient, we have measurements of gene expression across a ton of different genes. We have a really wide data set. And what this dendrogram is doing is it's sort of doing clustering on both dimensions. It's saying which patients are similar to one another in terms of gene expression and which genes are expressing similarly across different."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3750,
+      "type": "audio",
+      "text": "I'll let you interpret that more offline. That's not something we're going to test in Data 100 on the right. The thing on the left is something that we can talk about more in Data 100. I'm going to show you a simpler dendrogram in just a second, and we'll learn how to interpret it a little bit. OK, so this is the new plot for this semester that I like. This is courtesy of the people at SK Learn."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3773,
+      "type": "audio",
+      "text": "This is like a very popular image of all the different clustering algorithms that are out there in comparisons. I put the code that generates this inside of the lecture demo and you can go play with a little bit. I made some modifications to that code to create this image, so I'm clustering now 10,000 data points."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3785,
+      "type": "audio",
+      "text": "And then what are we seeing? We're seeing for each of these different clustering algorithms. So I put agglomerative with average link, complete link, single link K means. And then I also put this really cool algorithm called DBSCAN."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3810,
+      "type": "audio",
+      "text": "This won an award called the Test of Time Award. It was an algorithm introduced I think in the late 90s that like, you know, 10 years later, the computer science literature is still like, this is fantastic. This is still totally up to date. This still works great. So I put this in as one of the comparison points here is sort of a state-of-the-art way to cluster, but we can see some interesting things here. So on the left side, there's some sort of hidden, hidden information here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3816,
+      "type": "audio",
+      "text": "On the left side we can see that we told K means clustering to make 2 clusters. It can't do radial clusters."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3820,
+      "type": "audio",
+      "text": "K means assumes that your clusters are spherical."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3840,
+      "type": "audio",
+      "text": "Right, K means assumes that your clusters are spherical and separate. This kind of looks like the old Nickelodeon logo. Notice it handles K means clustering pretty well when we have separate spherical clusters, but it doesn't do so hot when we have radio clusters or weird spacing between the clusters. Agglomerative clustering single linkage did great."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3869,
+      "type": "audio",
+      "text": "On those circles, it did a great job of collecting all the points in each of those circles. Did a better job. But notice that K means picked up that there were sort of three noisy groups here, but agglomerative clustering just put this all into one giant category. Same idea with DB scan. DB scan didn't really pick up on the three separate groups. And then I'll let you look at this more offline, but we also have the time required to come up with this clustering, the time required to come up with this clustering. Notice all of the K means."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3877,
+      "type": "audio",
+      "text": "And essentially instantly agglomerative. Clustering with some of these cluster shapes takes thousands of times longer."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3906,
+      "type": "audio",
+      "text": "Thousands of times longer for this data set that's really not that big 10,000 data points is like small data you know medium to small data out in the real world and then DB scan you can see runs really fast DB scan also doesn't require you to choose the number of clusters ahead of time. It can just figure out how many clusters make the most sense it's not perfect but it does a pretty darn good job anyway very fun picture you can go look at this offline you can go play with this code highly recommend if you're interested in this idea of clustering so with our last 20 minutes let's talk about."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3916,
+      "type": "audio",
+      "text": "K Let's talk about picking K. How do we go figure out whether we should say K = 2 clusters or K = 4 clusters, or some other number of clusters?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3947,
+      "type": "audio",
+      "text": "And we saw that inertia didn't really work great for us. Inertia could lead us down some sort of weird paths. So look at this picture. What we're looking at here are the value of two principal components, PCs. We're going to learn about these on Thursday. Don't worry about what they are for now. Just think of them like features X1 or X2. But we have the value of two different principal components, not outcomes for all of the states. And it looks like DC as well."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3949,
+      "type": "audio",
+      "text": "But if we look at this picture like how many clusters are there?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3955,
+      "type": "audio",
+      "text": "2 Two-ish 3."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 3987,
+      "type": "audio",
+      "text": "Right, It's not immediately clear. The number of clusters in a data set isn't always obvious. Like we saw before, usually it's not obvious. OK, so we often need to think about, well, what value of K makes the most sense for a particular data set. It's often a subjective choice, right? So one way to do it is called the elbow method to actually, I talked about this elbow method earlier. Did we write it down on a slide? I don't know if it was on the slide, I guess what the training error, we did draw it, but the idea is you think about having an elbow, you think about this shape of an."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4002,
+      "type": "audio",
+      "text": "Elbow. So it's the same right here. Think of an arm. OK, what are we looking at here? We're plotting for different values of K So we're running K means clustering multiple times with multiple values of K, and we're plotting the inertia."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4010,
+      "type": "audio",
+      "text": "Associated with each value of K Remember that as we increase K, inertia is going to go down. They can go down all the way to essentially 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4041,
+      "type": "audio",
+      "text": "So then how do we pick what's the best value of K? Well, using the elbow method, assuming that your data forms this nice elbow, you might see that going from one to two clusters drops inertia substantially. And going from 2:00 to 3:00 clusters drops inertia, you know, still a good amount, but after three clusters, you know, you're getting diminishing returns. And so this is a heuristic. This is a heuristic for picking K plot inertia as a function of K."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4043,
+      "type": "audio",
+      "text": "Choose the elbow."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4073,
+      "type": "audio",
+      "text": "The location of the elbow can sometimes be subjective, but if you just want to see what these clusters look like, this is that same data set we worked with earlier with three clusters looks pretty good. Arguably, 2 clusters is still pretty good, and we can see that in the plot. 2 clusters was really what we thought was best as a class 3 works pretty darn well too. Once you start getting up to four, you're sort of, you know, picking up on noise and not actually on signal. And you'll notice with like 6 clusters. It's just nonsense, right? It doesn't make any sense. There's no reason for us to."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4076,
+      "type": "audio",
+      "text": "That way."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4082,
+      "type": "audio",
+      "text": "That's the elbow method. But you can see like, well, what if we don't have an elbow, right? Or what if people disagree about where the elbow is? What are you supposed to do?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4112,
+      "type": "audio",
+      "text": "Well, you can also use a dendrogram to pick K. If you're doing hierarchical clustering, you can also use a dendrogram. So notice what we have here. This isn't exactly true what I'm saying, but pretend that this is 10 data points, SO1234678910 data points. Remember how we create a dendrogram? Dendrograms go from the bottom up. Every time 2 objects get merged, you record the distance that they were merged."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4116,
+      "type": "audio",
+      "text": "So these two points look like they got merged first or these two."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4119,
+      "type": "audio",
+      "text": "They were merged at a distance of like 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4143,
+      "type": "audio",
+      "text": "Right. Then these two merged, then these merged, these merged slightly higher distances, and then other clusters start getting merged. But what I want to point out here is sort of the increase in distance when merging. So notice that this black bar represents the distance of the first merge of two clusters."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4153,
+      "type": "audio",
+      "text": "It's not that much higher than the bars at the very bottom. It's not that much higher than the bars at the very bottom. So maybe merging these two clusters wouldn't be so bad."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4157,
+      "type": "audio",
+      "text": "The problem is after that point."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4174,
+      "type": "audio",
+      "text": "The distances start growing substantially. These three distances to do those final three merges are quite a bit higher than all of the previous distances. So how do we choose a dendrogram to pick K? Will we go look for the location of that first big jump?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4176,
+      "type": "audio",
+      "text": "OK, we look at the first big jump."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4180,
+      "type": "audio",
+      "text": "And then we just slice the dendrogram."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4184,
+      "type": "audio",
+      "text": "Right before that big jump, we're just cutting it right before."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4214,
+      "type": "audio",
+      "text": "We hit this big distance right here. I'm just slicing right through the dendrogram and I'm saying there's one cluster, there's my next cluster, there's my next cluster, there's my next cluster. Now you might argue with me again. Well, what if there's no natural big jump? I totally agree with you. This is a subjective method. What does it mean for a jump to be big? I agree with you, that's a subjective choice. But these are just heuristics as data scientists that you can use to sort of rapidly and pretty, you know, efficiently and, and strongly."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4226,
+      "type": "audio",
+      "text": "Figure out where K might exist. OK, so that's what the dendrogram. That's where the dendrogram what we can do. I want to introduce one more metric that's more reliable than inertia."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4245,
+      "type": "audio",
+      "text": "The silhouette score of a cluster, because you need to be able to answer the question in an interview or at a job where you look at a picture, you plot that elbow, there's no elbow, or you're doing hierarchical agglomerative clustering and there's no natural jump in. Someone says, well, what do we do?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4262,
+      "type": "audio",
+      "text": "How do we actually go figure out how many values of K makes sense? I'm going to give you 2 methods for doing it. First the silhouette score and then the very last slide. I'll explain a more sort of like profit driven way to think about choosing K, but silhouette scores are a little bit more reliable than inertia."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4265,
+      "type": "audio",
+      "text": "So what is a silhouette score? Well, the first thing I'll say is that."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4282,
+      "type": "audio",
+      "text": "This point right here has a high silhouette score. This point on the left has a low silhouette score. So can you guess what silhouette score means? Silhouette score mean? A silhouette score sort of means the degree to which a point is, well, clustered."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4312,
+      "type": "audio",
+      "text": "The degree to which a point is well clustered. Are you close to other points in your cluster? Are you far away from points in other clusters? Right? We want tight clusters and distinct clusters. We want clusters that are very similar to one another, right? Clusters where all the points are similar to one another, and we want that cluster to be very different from other clusters. That's the idea with silhouette scores. So how do we represent this mathematically? So like I said, a high score is when."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4330,
+      "type": "audio",
+      "text": "Close to points in your own cluster, and far away from points in other clusters. A low score is the opposite. Notice this point is sort of on the edge of the cluster. It's far away from its cluster mates, and it's so far away from its cluster mates, in fact, that it's close to another cluster."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4347,
+      "type": "audio",
+      "text": "It's closer to this other cluster we even saw with kmeans clustering. That point ends up getting assigned to the bottom left clustering because it's so close. So then how do we represent this? So here, here's how we do it. So silhouette score is computed for every single data point."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4352,
+      "type": "audio",
+      "text": "The silhouette score is computed for every single data point. We compute 2 values A."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4359,
+      "type": "audio",
+      "text": "What's the distance to the points in your own cluster? That is, take your point."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4363,
+      "type": "audio",
+      "text": "Compute the distance to every other point in that cluster."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4366,
+      "type": "audio",
+      "text": "Every single one. Take the average. That's a."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4367,
+      "type": "audio",
+      "text": "That's a."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4376,
+      "type": "audio",
+      "text": "B. Do the same thing but take the average of all of the points in the closest cluster."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4382,
+      "type": "audio",
+      "text": "So same point, I'm going to take the distance to every single point in this other cluster."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4386,
+      "type": "audio",
+      "text": "Find the average Notice there's a lot of computation going on here."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4388,
+      "type": "audio",
+      "text": "That's B."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4394,
+      "type": "audio",
+      "text": "And what do I want? Do I want big a? Do I want A to be big? Or do I want A to be small?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4396,
+      "type": "audio",
+      "text": "I want A to be."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4404,
+      "type": "audio",
+      "text": "Small. I want to be close to the other points in my cluster. Do I want B to be small or do I want B to be big?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4407,
+      "type": "audio",
+      "text": "We want B to B."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4419,
+      "type": "audio",
+      "text": "Big because we want to be far away from the other cluster, right? We want to be well, clustered. OK, so we want small A and we want big B. So define the silhouette score as B -, A."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4423,
+      "type": "audio",
+      "text": "Over the maximum."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4433,
+      "type": "audio",
+      "text": "Of A&B, We want B to be large. So if we increase B, the silhouette square will go up. We want A to be small."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4450,
+      "type": "audio",
+      "text": "So if we make a larger notice, the silhouette score goes down. If A gets smaller, the silhouette score is going to go up. And then we normalize all this by the maximum of A&B. So let's think about this in practice. What's the highest possible value of the silhouette score?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4452,
+      "type": "audio",
+      "text": "Think about edge cases."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4454,
+      "type": "audio",
+      "text": "Talk with your neighbor."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4457,
+      "type": "audio",
+      "text": "If you like."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4471,
+      "type": "audio",
+      "text": "But I encourage you to do it. If you got questions, raise your hand. I'll come to you. I'm going to do the same thing as before, and I'm going to come back to the Slido. Let me just leave this up and I want you to think about what's the highest possible value of the silhouette score."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4583,
+      "type": "audio",
+      "text": "Okie, doke. So let's think through this now. Oh yeah, I didn't give you time to do this. Go ahead. Enter your answer here. What's the highest possible value of the silhouette score? 01 Infinity or something else? What's the highest silhouette score that we can get?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4587,
+      "type": "audio",
+      "text": "Highest possible value? Go ahead and toss in an answer."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4619,
+      "type": "audio",
+      "text": "Highest possible value of the silhouette score. What does it mean to have a high silhouette score? It means that the distance to points in our own cluster is small. The distance to points in the nearest cluster is far. We want tight and distinct clusters. So what should we do? Remember the silhouette score SB minus A over the maximum of A&B. We're normalizing this so that we don't get funky values between clusters that are maybe very far away from one another."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4629,
+      "type": "audio",
+      "text": "And clusters that are also over here. We want to make sure we can compare silhouette scores across all of our different clusters, so we normalize by the maximum of A&B."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4640,
+      "type": "audio",
+      "text": "So how do we do so? How do we get Silhouette square to be as big as possible? Remember, to make a big silhouette score, we want B to be really large. We want to be far away from points in the nearest cluster."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4651,
+      "type": "audio",
+      "text": "And we want A to be small. We want A to be small. We want our point to be as close as possible to its other cluster mates. So if we make B really large."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4658,
+      "type": "audio",
+      "text": "We can just imagine B is some really big number. I'm just going to write it as B."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4670,
+      "type": "audio",
+      "text": "And if I make a really small, let's say I have a bunch of points that are just stacked right on top of one another and they're all in one cluster, they're all stacked right on top of one another. So a is going to be 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4679,
+      "type": "audio",
+      "text": "The denominator is the maximum of A&B. If A is 0 and B is large, the maximum is B. The biggest silhouette score you can get is 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4687,
+      "type": "audio",
+      "text": "OK biggest silhouette score is 1 new challenge. What's the silhouette score? Does it have a bottom?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4689,
+      "type": "audio",
+      "text": "To silhouette square, have a bottom. Can the silhouette score be negative?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4695,
+      "type": "audio",
+      "text": "What do we think? Give this one a go. Talk with your neighbor. Think about edge cases. I'll put this back up. Think about edge cases."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4705,
+      "type": "audio",
+      "text": "Can the silhouette score be negative? What would that mean for that expression to be negative? What would have to be true?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4739,
+      "type": "audio",
+      "text": "So if we want a negative silhouette score, just want to make sure we can finish in time here if we want a negative silhouette score."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4743,
+      "type": "audio",
+      "text": "A needs to be bigger than B."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-331-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4747,
+      "type": "audio",
+      "text": "Can A be bigger than B?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-332-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4754,
+      "type": "audio",
+      "text": "Can A be bigger than B? And so it turns out. Go ahead, I'll let you fill this out, then I'll give you an answer."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-333-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4762,
+      "type": "audio",
+      "text": "Can A be bigger than B?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-334-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4770,
+      "type": "audio",
+      "text": "Can the average distance to the closest cluster?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-335-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4776,
+      "type": "audio",
+      "text": "Be bigger than the average distance to points in your own cluster."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-336-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4793,
+      "type": "audio",
+      "text": "And if you think about that point in the bottom left here, we saw earlier that the point in the bottom left is actually closer to the bottom left cluster, isn't it? We saw that weird thing with K means clustering where that leftmost point was actually closest to that bottom left cluster."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-337-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4795,
+      "type": "audio",
+      "text": "And so."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-338-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4797,
+      "type": "audio",
+      "text": "Can S be negative?"
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-339-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4800,
+      "type": "audio",
+      "text": "Yes, if A is larger than B."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-340-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4807,
+      "type": "audio",
+      "text": "The silhouette score can be negative. In fact, this silhouette score is negative."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-341-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4810,
+      "type": "audio",
+      "text": "The average distance from this point."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-342-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4840,
+      "type": "audio",
+      "text": "To all of the points in the nearest cluster is smaller than the average distance from this point to all of the points in its own cluster. You can imagine this other cluster just getting bigger out here. We could start having points that are very far away from this low score point. So there isn't a bottom to the silhouette score in the same way that it's topped out at one. OK, so it turns out the silhouette score of that little point is -.13. So let's say we've now computed the silhouette score for all of the points."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-343-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4850,
+      "type": "audio",
+      "text": "In our data set, how do we determine whether a clustering is good? Remember, silhouette score is a measure of how well clustered a point is. We want high silhouette scores."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-344-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4858,
+      "type": "audio",
+      "text": "We want high silhouette scores, so the average silhouette score across your entire data set. You want to be high."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-345-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4866,
+      "type": "audio",
+      "text": "So here's how we can plot silhouette scores. These plots can be a little bit confusing. These sort of sale plots. Let me walk you through it."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-346-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4868,
+      "type": "audio",
+      "text": "The idea on the left."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-347-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4874,
+      "type": "audio",
+      "text": "Is that each one of the sort of bars here is a single data point."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-348-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4877,
+      "type": "audio",
+      "text": "Right, so this is like a data point label."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-349-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4880,
+      "type": "audio",
+      "text": "In sort of a convenient order."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-350-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4894,
+      "type": "audio",
+      "text": "It's just a data point level label. And then what we're going to just plot for each data point is its silhouette score. And notice I'm just plotting the silhouette scores and decreasing order for all of the data points. So I'm getting these like cool sail patterns."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-351-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4922,
+      "type": "audio",
+      "text": "Where the silhouette score, you know, seems to go down for the orange cluster. But for the most part, that orange cluster, all of the points have pretty high consistent silhouette scores. Whereas for the blue cluster, we're getting kind of this ugly sale that has this little extra tail on it because it has some points that have negative silhouette scores. So you're not always going to get a sale that's just perfectly stopped at 0. Remember, silhouette scores can go below 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-352-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4948,
+      "type": "audio",
+      "text": "And we can put a dashed line on this plot indicating the average silhouette score across all data points. The average silhouette score. So it looks like the average silhouette score when we have K = 2, you know, is close to .8. Quite good. Highest silhouette score is 1. You know, that's a pretty good silhouette score average. What do we compare this against? Well, we can compare this against other clusterings."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-353-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4958,
+      "type": "audio",
+      "text": "So with K = 3, which we know is worse than K = 2 based on our visual systems, right? We know that K = 2 is a little bit better."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-354-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4967,
+      "type": "audio",
+      "text": "The silhouette score gets this correct, right? The elbow method did not get this correct if we do the exact same thing now with three clusters."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-355-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4983,
+      "type": "audio",
+      "text": "OK, notice the average silhouette score across those 3 clusters is lower than the average silhouette score across the two clusters. And so with the elbow method we get a plot that looks like this if I plot for different values of K the inertia."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-356-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4992,
+      "type": "audio",
+      "text": "I get a plot that is always decreasing and I hopefully get an elbow, but what's nice is if I plot the silhouette score."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-357-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4996,
+      "type": "audio",
+      "text": "The average silhouette score is a function of K."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-358-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 4998,
+      "type": "audio",
+      "text": "I get something that looks like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-359-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 5010,
+      "type": "audio",
+      "text": "I get a K value that gives me some maximum average silhouette score, and so this is a much more robust way to choose K."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-360-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 5039,
+      "type": "audio",
+      "text": "That's a little bit more mathematically motivated Now, in the last two minutes here, I'm just going to, you know, say something else. If you go up to your CEO and say, well, we chose K = 3 clusters because the silhouette score average was the highest, you know, what's your CEO going to say? Like, what the heck's a silhouette score, right? What does that actually mean? And maybe that is like the best answer at the end of the day, but you often need to give a more real world reason why you're choosing a certain value of K. You have to think about constraints sometimes."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-361-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 5040,
+      "type": "audio",
+      "text": "Right, if you have a designer."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-362-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 5044,
+      "type": "audio",
+      "text": "That only has time to design three different graphics."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-363-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 5071,
+      "type": "audio",
+      "text": "Then you can't have a K value that's higher than three if you're trying to cluster your customers to see a particular design. You can't go higher than three if your designer is limited to making three designs. OK, so sometimes you have this sort of real world constraint. So last example here, this is the last slide. So the real world metrics can sort of guide our choice of K. So imagine you're trying to figure out how to produce T-shirts."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-364-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 5081,
+      "type": "audio",
+      "text": "Right, there isn't, I don't think federal legislation saying that we have to offer certain sizes of T-shirts. You can choose to only sell large T-shirts."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-365-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 5111,
+      "type": "audio",
+      "text": "You could do that, but you're like losing out on potential customers. And So what can you do? Well, let's say there's two possible clusterings of customers. That's a tongue twister clustering your customers. And let's say we can take our customers heights and weights. We sample some group of people that we think are representative of our customer base. And let's say we cluster with K = 3. And that's how we pick the size of our small, medium and large shirts. But let's say we do the same thing with K = 5 and we design an extra small all the way up to an extra large shirt. Go project your."
+    },
+    {
+      "id": "audio-ds100-sp26-1776810864-transcription-366-c0-e0",
+      "lecture_id": "ds100-sp26-1776810864",
+      "timestamp": 5127,
+      "type": "audio",
+      "text": "For each of these K's, the one that gives you the highest profit pick it don't have to think about silhouette scores, right? So just keep in mind like, you know, we learn a lot of these methods, but you don't have to let them sort of restrict how you make decisions as a data scientist. All right, thanks everybody. See you on Thursday."
+    }
+  ]
+}

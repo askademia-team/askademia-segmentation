@@ -1,0 +1,2816 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1772148837",
+  "display_name": "Lecture 12 (Feb 26)",
+  "count": 401,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 258,
+      "type": "audio",
+      "text": "Change engine change."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 351,
+      "type": "audio",
+      "text": "How much is it? Much too strong? I made it to your change."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 423,
+      "type": "audio",
+      "text": "How can I explain?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 424,
+      "type": "audio",
+      "text": "When there are."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 427,
+      "type": "audio",
+      "text": "Words I can choose."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 436,
+      "type": "audio",
+      "text": "How can I explain when words get broke?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 437,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 511,
+      "type": "audio",
+      "text": "And then the next station to work."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 528,
+      "type": "audio",
+      "text": "Exchange."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 542,
+      "type": "audio",
+      "text": "OK, sorry, the volume is a little higher than usual in the room. Let's get started. I'm going to hide this."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 558,
+      "type": "audio",
+      "text": "And then we'll jump right in. OK, sorry we got started a little bit late here. There were a couple technical issues on my end. Welcome everybody to the OLS lecture. One of my favourites of the semester. We got a demo today. We'll get to at the very end, so stick around for the demo."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 560,
+      "type": "audio",
+      "text": "Let's get started."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 561,
+      "type": "audio",
+      "text": "With."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 567,
+      "type": "audio",
+      "text": "Something well done. What's going on here, man? A lot of technical stuff today."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 595,
+      "type": "audio",
+      "text": "There we go. All right, announcements, Homework for the deadline is moved up because we released it a little bit late, so it's now due this Sunday. Total redesign of Homework for. We'd love to get your feedback on Homework 4 too. So at the end there's like a content feedback section. Tell us if you like it. Do you not like it? It's a real sort of change in the way that we teach visualization and data 100. No, Homework 5 is going to be released today. I don't think it has been released yet, but it's going to be released today."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 623,
+      "type": "audio",
+      "text": "It's long. It's usually considered one of the hardest homeworks in Data 100, so be sure to start early. There is material on homework five that is on the 1st midterm sampling. There is material on homework five that is not on the midterm OLS, so keep that in mind. You might want to work on the sampling part of the homework first. It's due before midterm week catch up sessions. Just as a reminder, Fridays three to four in Evans. I talked about this last time, the CBTF orientation quiz."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 625,
+      "type": "audio",
+      "text": "There's a logistics post about this on Ed."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 656,
+      "type": "audio",
+      "text": "Please read the post. If something goes wrong at the CBTF and it's because you didn't read that post or you didn't read the CBTF logistics, you will suffer as a result. You might lose time on your exam. Just read this and everything will go just fine. Just main thing, you want to make sure you sign into Prairie test at some point. You have two options for this quiz. It's part of homework four or five part of homework five. I think it's five part of homework 5 just to participate in the quiz. You can either go in person, which I recommend doing if you've been to the CBTF before. You don't have to worry about that."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 685,
+      "type": "audio",
+      "text": "But if you have not been to the CBTF before, highly recommend you go see what it's like to show up and sit for a quiz there. There's no content from the class on it. It's just a logistics quiz or you can take it at home. There are these two things, Prairie Learn and Prairie test. Prairie test is the way that we schedule exams and slot people, and Prairie Learn is where all the content is hosted for these quizzes. So you might see links to both. And then like I said, we're not going to give extra support if you show up and did not do this quiz. One of the most important things that you should do."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 697,
+      "type": "audio",
+      "text": "Soon as possible is make sure that Duo 2 factor authentication is working on your phone. That is one of the most common issues at the CBTF and again we don't give extra time if you didn't set it up ahead of time."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 699,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 700,
+      "type": "audio",
+      "text": "Oh, screens not shared."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 703,
+      "type": "audio",
+      "text": "I don't know why it keeps getting cut off. That's so weird. All right, hold on one second, everybody."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 708,
+      "type": "audio",
+      "text": "Hold on, let's go full screen."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 711,
+      "type": "audio",
+      "text": "Let's do."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 713,
+      "type": "audio",
+      "text": "Share."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 718,
+      "type": "audio",
+      "text": "That good? All right."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 722,
+      "type": "audio",
+      "text": "Right. Floating meeting controls better. Are they still saying it's cut off?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 724,
+      "type": "audio",
+      "text": "That's weird."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 727,
+      "type": "audio",
+      "text": "See. All right, talk amongst yourselves one second."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 733,
+      "type": "audio",
+      "text": "Stop the share."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 742,
+      "type": "audio",
+      "text": "How about now?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 743,
+      "type": "audio",
+      "text": "Dara, Neil. OK now."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 749,
+      "type": "audio",
+      "text": "OK, thanks. All right, thank you folks on Zoom for talking."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 751,
+      "type": "audio",
+      "text": "OK. All right."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 753,
+      "type": "audio",
+      "text": "Now you all can't see it."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 782,
+      "type": "audio",
+      "text": "We got a lot to cover today. All right, midterm 1 logistics post is on Ed. I'm not going to talk about it here. Go read that post. It'll have all the answers you need for midterm one. Just people know that there's retakes for the midterms and data 100. But I just want to give you a sense of what retake means. It is not a free do over. There is a cost to a retake, so don't expect to just bomb the midterm and hope everything will be okay when you can retake it later in this semester. They're computer based and randomized, so it'll be a different exam than what you see for midterm 1, slightly different in content."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 783,
+      "type": "audio",
+      "text": "You're only eligible for a retake if you score below the median."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 807,
+      "type": "audio",
+      "text": "On the exam, if you score above the median, not eligible for retake. If you score below the median, you are eligible for a retake. So half the class is eligible. And then to boost your score up to the median, your score can't get boosted past the median. OK, to boost your score up to the median, you have to demonstrate mastery on the retake. If you can demonstrate mastery, which is typically close to 90% correct, that might change."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 834,
+      "type": "audio",
+      "text": "OK, we boost your score up to the median, and then for the 50% exam rule, there is still a benefit to taking the retake. We will use whatever actual score you get on the retake in that computation for the 50% rule. So there's still a benefit to doing the retake, but if you want to get your score boosted to the median, you need to show us that you really understand the material. Last semester when we did the retakes, the vast majority of people who retake retook the exams, got their score boosted. OK, so it's very doable, but it does require some studying again."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 837,
+      "type": "audio",
+      "text": "Retakes are an insurance policy, not a free do over."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 838,
+      "type": "audio",
+      "text": "Keep that in mind."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 868,
+      "type": "audio",
+      "text": "OK, let's talk about multiple linear regression. So road map, We have a lot to cover today. Fortunately, we can split this lecture in the gradient descent lecture over 3 lectures. This is for the first time we've ever been able to do this in Data 100, so we can take it a little bit slower. This is, like I said, one of the trickier topics in the class, but we're going to get you all where you need to go. Lots of linear algebra today. If you don't have a worksheet, there are PDF copies of it on Ed. It's just a list of formulas to help you sort of keep track what I'm talking, what I'm talking about today."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 893,
+      "type": "audio",
+      "text": "So let me repeat what I said at the end of the last lecture about this idea of multiple regression. And then just one note too. The first time you see this material, the second time you see this material, it's tough. It's tough to start thinking in terms of vectors. It's tough. So please be kind to yourself. You're not going to completely understand this lecture. Most likely after watching this lecture today. You're not going to fully understand everything. It's going to take a couple passes. It did for me too, OK? Just keep that in mind."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 900,
+      "type": "audio",
+      "text": "All right, so what's the multiple regression model we saw this last time our predicted value of the outcome Y hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 930,
+      "type": "audio",
+      "text": "Is equal to some intercept term plus some combination of inputs or features along with coefficients or parameters. We have P parameters, we have N data points. We have P features, we have one intercept. These are facts you're going to want to just be able to say right off the top of your head by the time you leave data 100 or take midterm 2. This is what's called a linear combination of thetas scaled by XJ. We'll define that term more precisely in a moment, but the idea is to get a."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 952,
+      "type": "audio",
+      "text": "Out of a multiple regression model, you start with a vector of features, a vector of features, and a vector of thetas. And if you put those two things together, if you make a linear combination, if you compute the dot product between them, we'll talk about that in a SEC, we get 1 prediction. We get one value for each X, right? And we're going to get a prediction for all of our observations. But this is just how you get 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 980,
+      "type": "audio",
+      "text": "OK, so just as an example, remember the cats from last time? Let's say we want to predict how old a cat is based on how long it is and how much it weighs. Here's Professor New Jersey's cats stretched out. Nice picture of length. There's a nice picture of Professor Neruzzi's cat's weight. We can see that the prediction for this cat's age is some intercept where we have some parameter representing how much we want to take into account length and how much we want to take into account weight."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1006,
+      "type": "audio",
+      "text": "OK, All right, let's complicate this a little bit. So new data set, it's kind of a toy data set. This isn't a problem that you probably would actually do in real life with this data set, but it's a nice demonstration of how OLS works in practice with something a lot of us are familiar with. But if you're not, that's OK. So we have a data set here where our outcome is the number of points scored by a particular athlete in a basketball game."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1010,
+      "type": "audio",
+      "text": "And our features, our features are different things that the athlete can do during that game well."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1041,
+      "type": "audio",
+      "text": "How many field goals on average do they make? How many assists do they make on average? How many 3 pointers do they attempt? Don't worry about the precise definition of each of those things. Just think we have three input features that are all numeric and we have one output feature, or excuse me, one output. That's all all numeric, right? Our output is not a feature, and rows correspond to individual players in the NBA. So connecting this back to what we saw before, 1 real outcome is called. Why? That's not a prediction. That's not Y hat one feature vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1071,
+      "type": "audio",
+      "text": "Is all of the values of the feature for a particular observation. So here's our feature vector X for one particular observation, our second observation. When we combine that with a vector of parameters, we get our predicted Y hat. So just like what we saw before, we would dump in the value of field goals to X1, the number of assists to X2, and the number of three-point attempts to X3 to get our prediction Y hat. So I've sort of said the same thing over and over here over and over again. This is just another."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1079,
+      "type": "audio",
+      "text": "Way to think about it with a real data set. So we're going to keep building on top of this and think about making multiple predictions simultaneously."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1108,
+      "type": "audio",
+      "text": "OK. So here are the four steps of modeling that we've been spending so much time on and we will continue to spend time on after today, choosing a model, choosing a loss function for that model, fitting it and seeing how well that model performs in practice. The first step we did already, OK, we've chosen the multiple linear regression model. We're not going to get into today why we're choosing the multiple linear regression model over something like a neural network or a random forest. But let's say we've chosen a multiple linear regression model."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1122,
+      "type": "audio",
+      "text": "And the loss function that we choose with multiple linear regression for today will be mean squared error. And that's typically what's used with multiple regression when it's fit in industry, this combination of model and loss function is often called."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1125,
+      "type": "audio",
+      "text": "Ordinary least squares."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1146,
+      "type": "audio",
+      "text": "Or OLS. We will use OLS constantly in DATA 100. You'll see it in lots of other places too. When somebody says OLS, you should just know they're talking about multiple linear regression. SLR is kind of DATA 100 specific term. I actually hadn't heard anyone use that outside of DATA 100 before, but OLS shows up all the time. SLR is a subset of OLS. OLS with just one feature."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1166,
+      "type": "audio",
+      "text": "And then we're not going to use calculus today, though if you want to come to office hours, I'm happy to show you how to do the matrix calculus. Derivation of the least squares estimate, the best fitting parameter. It's not as hard as it sounds. We're going to use a geometric argument instead today. That's why we have a nice 3D demo coming."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1176,
+      "type": "audio",
+      "text": "OK, so we've chosen our model, a multiple regression model. You're going to see this lots in Data 100 and in your future life as a data scientist or data analyst."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1186,
+      "type": "audio",
+      "text": "And what we're going to do is we're going to collapse that entire equation for all of our data points into this one matrix equation where we have a vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1204,
+      "type": "audio",
+      "text": "Of predictions, a big vector predictions, we're going to call Y hat. We have a big matrix of features, our design matrix, a big matrix of features and our feature vector Theta. But we're going to build up to that. That's where we're going. We're going to collapse all of OLS into that statement, at least for predictions."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1233,
+      "type": "audio",
+      "text": "OK, so from one feature to many features, here's a nice data set for SLR. We have one input column, one input feature X. Each one is indexed 1-2. All the way up to north. We have N features, and we have one output Y. You've seen this kind of data a lot. For the constant model, the XS didn't matter, we always just predicted exactly the same thing. So all we needed was a vector of YS."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1234,
+      "type": "audio",
+      "text": "For multiple regression."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1260,
+      "type": "audio",
+      "text": "We now just have multiple features. Multiple features. And there's a picture of this on your worksheet if you want to look and mark it up. But take a look here. What do we have as our data set for multiple linear regression? We still have one column of outputs. We're still only predicting 1 value for each observation, but we have multiple features for each observation. So for example, for the first observation in our data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1266,
+      "type": "audio",
+      "text": "The blue represents all of our features. We have the."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1294,
+      "type": "audio",
+      "text": "First feature. So the row, the observation number is the first index. What's our row? And the second index is what feature number we're dealing with. What column number are we dealing with? So X1P is the PTH feature, the last feature for the first observation. XNP is the last feature for the last observation. So we now have two indices instead of just one index on our XS."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1309,
+      "type": "audio",
+      "text": "You might be wondering what's the colon? Colon is very similar to what we saw in pandas. Colon just means everything, so all rows and all rows of the peat feature are represented by this vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1332,
+      "type": "audio",
+      "text": "This vector is all rows corresponding to the path feature, so you might see that notation as well. Like I said, today is all about notation. You don't have to understand it all after this lecture, just kind of let it absorb and you'll study it more later. Okay, keep going. So here's that same data set. Let's connect it to the basketball data set we just saw. So again, that first row."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1335,
+      "type": "audio",
+      "text": "Of our data set which includes this."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1349,
+      "type": "audio",
+      "text": "Piece that's all X's and this piece, that's our outcomes. This corresponds to our data frame that we use to fit the model right? We have the same data frame, all of our feature columns, and we have one outcome column."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1361,
+      "type": "audio",
+      "text": "If we want to deal with a feature, we might refer to something called a feature vector. We'll be talking about that a lot later today. A feature vector is a column of your data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1373,
+      "type": "audio",
+      "text": "So here's our model again. And now instead of just thinking about making one prediction on a single point like we've seen before, this is just one prediction on a single arbitrary point."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1379,
+      "type": "audio",
+      "text": "We're now breaking things up, so this is on your worksheet. We're now thinking about how can we collapse?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1380,
+      "type": "audio",
+      "text": "End Predictions."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1396,
+      "type": "audio",
+      "text": "With P features, technically all of these computations need to happen in the background. They do need to happen in the background, but this doesn't look very fun to write every time you fit multiple regression. How can we collapse this down? So that's what we're going to work on next."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1409,
+      "type": "audio",
+      "text": "So let's do exactly that, some linear algebra review. Let's talk about the dot product. The dot product. So the dot product, how does it work? The dot product can only be carried out on 2 vectors that are the same length."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1413,
+      "type": "audio",
+      "text": "We write a dot product using a dot."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1421,
+      "type": "audio",
+      "text": "And all it means is multiply each element by its corresponding element in the other vector and add them up."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1440,
+      "type": "audio",
+      "text": "And just add them up. How do we read this? We say U dot V We can write this another way too. We can write this as U transpose. So a row vector instead of a column vector multiplied by V That's an equivalent ray to do a dot product. And dot products are commutative. They can go in either direction and it doesn't matter. You'll get the same result back."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1461,
+      "type": "audio",
+      "text": "So U transpose and V transpose right there. How do we actually compute this dot product? We take the first element of U, multiply by the 1st element of V done. We take the 1st or 62nd element of U multiplied by the 2nd element of V done. And then we take the third element of U multiplied by the 3rd element of V."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1481,
+      "type": "audio",
+      "text": "Multiply each of them, add them up. We get a dot product of 6. Now you might be wondering, why should we care? Why should we care about this dot product? We're getting there. For now, I just want you to understand the mechanics of performing a dot product, something you probably already seen in the linear algebra class that you're either taking now or you took previously."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1484,
+      "type": "audio",
+      "text": "OK, let's do our first Slido today."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1487,
+      "type": "audio",
+      "text": "So an expression is linear in Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1491,
+      "type": "audio",
+      "text": "If it's a linear combination of."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1520,
+      "type": "audio",
+      "text": "Some parameter vector, we could also say linear and X, and it's some linear combination of a vector of features. Here's a more precise definition for you. Linear in Theta means we can separate an expression into two different terms. One term can have anything. One term needs to be that same vector of Theta. So let's try this out. Which of those expressions are linear in Theta? If you got questions, raise your hand. I will come to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1537,
+      "type": "audio",
+      "text": "I got 2 worksheets. Any takers?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1540,
+      "type": "audio",
+      "text": "Takers for a worksheet. Last one."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1541,
+      "type": "audio",
+      "text": "Can you pass this down for me? Thank you."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1552,
+      "type": "audio",
+      "text": "Questions. Remember the worksheet is also on Ed. I didn't know how many people would show up to lecture today."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1556,
+      "type": "audio",
+      "text": "Questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1613,
+      "type": "audio",
+      "text": "OK, let's try this out."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1617,
+      "type": "audio",
+      "text": "Let's try this out so first one."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1636,
+      "type": "audio",
+      "text": "Can we break up this expression into something that is a vector of thetas and something else? When we say linear in Theta, we could also say linear in X. Same definition, just replace your Theta vector with X. So can we rewrite this expression such that all of our thetas?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1642,
+      "type": "audio",
+      "text": "Can just be pulled out into a vector and we can compute a dot product. This looks a lot like that."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1645,
+      "type": "audio",
+      "text": "We can multiply by 1 here, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1649,
+      "type": "audio",
+      "text": "Those are just little dot product multiplications."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1656,
+      "type": "audio",
+      "text": "We can definitely separate that out. So if you see anything that's just a bunch of additions where there's one Theta term."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1657,
+      "type": "audio",
+      "text": "Per term."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1683,
+      "type": "audio",
+      "text": "And you're not doing anything weird with Theta, like dividing it by other thetas or taking the log of Theta. Then the expression is linear in Theta. So that first expression is absolutely linear in Theta second expression. We have a Theta naughty by itself. We have a Theta one by itself. We have a Theta 2 by itself. Doesn't matter what it's attached to. We care about linear and Theta, just care about the thetas Theta 3 by itself. This one looks fine too."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1689,
+      "type": "audio",
+      "text": "We can pull the thetas right out into a vector. Last one we have a problem."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1691,
+      "type": "audio",
+      "text": "Theta 3 and Theta 4."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1703,
+      "type": "audio",
+      "text": "Are stuck to one another. There's no way to pull them out such that Theta 3 and Theta four are sitting in their own vector, so that last expression is not linear in Theta. Questions on that one."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1705,
+      "type": "audio",
+      "text": "Right there."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1716,
+      "type": "audio",
+      "text": "No, that's a good question too. This also misses things up."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1723,
+      "type": "audio",
+      "text": "Log Theta 2 is also a problem here. We want to be linear in Theta, so the Theta term should be sitting by themselves right there."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1733,
+      "type": "audio",
+      "text": "No, we need all of the thetas in one vector by themselves. Yeah, I wouldn't count."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1735,
+      "type": "audio",
+      "text": "I promise there's no sneaky way to do it."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1740,
+      "type": "audio",
+      "text": "OK, all right, let's keep going. Some vector notation for you all."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1747,
+      "type": "audio",
+      "text": "So our goal, Let's try to collect all of the thetas into a single vector. We often think about a Theta vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1749,
+      "type": "audio",
+      "text": "So this looks like a dot product."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1752,
+      "type": "audio",
+      "text": "This looks like a dot product, something we just saw."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1755,
+      "type": "audio",
+      "text": "So we can write the expression like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1785,
+      "type": "audio",
+      "text": "We can have Theta Naughty plus A dot product, but this isn't very pretty, right? Theta Naughty is just hanging out by itself on the left. So we're going to do something here that's very important to the idea of OLS. Let's just pretend there's a one sitting next to Theta naughty. We're going to insert a one into this expression. You'll see this when we deal with something called the design matrix later on. We will literally insert a column of ones."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1786,
+      "type": "audio",
+      "text": "Into our matrix when you run linear regression with an intercept."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1795,
+      "type": "audio",
+      "text": "This is happening on the back end when all of your coefficients are being computed. So if we do that, if we just insert a one."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1815,
+      "type": "audio",
+      "text": "We can rewrite this as a nice clean dot product. We have a vector of thetas, and we have a vector of features. And then we sort of pretend we have one feature that's just a constant feature that always has the value one. We don't really use anything else except one. It's always one for the best interpretation here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1824,
+      "type": "audio",
+      "text": "And we can rewrite this in a very condensed form. We can just say X transpose. So when we transpose A vector, we flip it over itself."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1828,
+      "type": "audio",
+      "text": "Times the Theta vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1855,
+      "type": "audio",
+      "text": "They do not. They don't want up to Theta P And if we just do our standard vector multiplication, multiply the one by the Theta naughty and multiply the X by the Theta 1 all the way through, that's the same thing as that expression. So we've condensed things down considerably when we use this expression XT Theta. And so we can rewrite this entire result, this entire result that you have on your worksheet."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1856,
+      "type": "audio",
+      "text": "Into something a little bit better."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1862,
+      "type": "audio",
+      "text": "A little bit better, right? We have N predictions for Y and we have a bunch of shortened."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1893,
+      "type": "audio",
+      "text": "Expressions for the dot products between each of our features, each of our row vectors representing the features for an individual observation. Typically when we say feature vector, we're referring to a column, not a row like that. It's kind of a funny case. We're referring to a row vector X1 transpose times Theta, where each one of those X transpose represents the feature values for a particular observation. We're using that same indexing as before. The 1st index is the."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1923,
+      "type": "audio",
+      "text": "Observation number. So our last observation has N as its first index. The second index represents the feature number. So for the very last feature, that's our PTH feature. We have P features, so we've condensed down a little bit more. Let's keep going. Let's keep condensing this expression down into something even easier to write. You might notice that these row vectors, all stacked on top of one another, look like a structure you've worked with a lot in linear algebra. They kind of look like."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1930,
+      "type": "audio",
+      "text": "Matrix, right? Kind of looks like a matrix. So this is just connecting us back to the."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1936,
+      "type": "audio",
+      "text": "Field goal data set just so you can have some concrete numbers on all of this X here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1951,
+      "type": "audio",
+      "text": "Is the row vector corresponding to all of the features for the 2nd observation. Y2 is the outcome for that second observation. Theta is the same for all of our observations. We have one vector of thetas for our entire model."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1966,
+      "type": "audio",
+      "text": "And if we want to show this multiplication, same sort of idea. I keep repeating the same thing in slightly different ways. So if it sounds like something is similar to something else, trust your instincts, right? So we have Theta not we have Theta 1 * .4."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1968,
+      "type": "audio",
+      "text": "Theta 2 times 0.8."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1982,
+      "type": "audio",
+      "text": "And so on. Just a linear combination of the specific X values and the parameters that I have not told you how to find yet. We're just sort of taking these parameters for granted. We're going to talk about how we find those parameters in a bit."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 1989,
+      "type": "audio",
+      "text": "OK, so again, what does that structure look like? It looks a lot like a."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2005,
+      "type": "audio",
+      "text": "Matrix A matrix with N rows and P + 1 dimensions. Why P + 1 P is the total number of inputs, total number of actual features, real things that we measure in the real world in addition to?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2015,
+      "type": "audio",
+      "text": "This one sometimes called the bias term or the intercept term column of ones and our design matrix so we can turn this whole expression into."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2027,
+      "type": "audio",
+      "text": "X design matrix. We're just going to call that thing the design matrix, right? Sounds like the name of the design store a design matrix, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2030,
+      "type": "audio",
+      "text": "And we multiply that by our beta vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2038,
+      "type": "audio",
+      "text": "And the left side here, that's just a column of predictions, column of predictions. We can just call that Y hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2060,
+      "type": "audio",
+      "text": "Let's just call that Y hat. So we can take all of those expressions for prediction on every single observation and collapse all of that down into a single matrix product. We have our vector of predictions that has N elements. It's a vector that exists in N dimensional space."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2064,
+      "type": "audio",
+      "text": "Right, first element, first dimension, second element second dimension and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2095,
+      "type": "audio",
+      "text": "End predictions. We have a design matrix with N rows and P + 1 columns, and we have a parameter vector again with P + 1 elements Y. We have P inputs to our model, P things that are measured, and one bias term, 1 intercept term, the Theta naughty column of ones OK. And then our true output is also a vector we have without a hat, just Y. It has the same length as Y hat. Let's pause for a moment here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2100,
+      "type": "audio",
+      "text": "On this notation, are we feeling good about getting to this point right in front?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2111,
+      "type": "audio",
+      "text": "That's right. So when we say design matrix, we're referring to this."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2128,
+      "type": "audio",
+      "text": "Matrix filled with our features, and when we're talking about the parameter vector, we're referring to this vector called Theta, right? I didn't put a arrow over that Theta and data 100 were often just going to see a Theta hanging out by itself. It refers to the parameter vector question right there."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2145,
+      "type": "audio",
+      "text": "So the question was, the design matrix are just inputs and the prediction vector is just outputs. Outputs of your model, yes, not real outputs, not the actual outputs from your actual data set. But yes, exactly right, Design matrix is always an input to your model. Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2153,
+      "type": "audio",
+      "text": "Other questions, we want to be all on the same page with this notation because we're going to keep building on this."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2158,
+      "type": "audio",
+      "text": "OK, let's power forward."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2160,
+      "type": "audio",
+      "text": "All right, so linear algebra."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2182,
+      "type": "audio",
+      "text": "Just to go through this design matrix again and to connect it back to our original data frame of basketball data. Keep in mind that our original data frame of basketball data has the design matrix in it already. The design matrix is hanging out in that data frame, but there is one column that's missing from the design matrix or from the from the data frame, this bias column."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2187,
+      "type": "audio",
+      "text": "So before the linear regression algorithm on the back end can run if we want an intercept in our model."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2216,
+      "type": "audio",
+      "text": "It needs to insert that bias column into the data set, so again, we can connect a row of our design matrix to a row in the original data. A column of our design matrix, often referred to as a feature vector, something we're going to see a lot in this class and in future classes. A feature vector. The value of 1 feature for all of your observation. The average number of three-point attempts for all of the basketball players and your data set. OK, the third pixel for all of the images."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2218,
+      "type": "audio",
+      "text": "In your data set."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2230,
+      "type": "audio",
+      "text": "That's a feature vector. So a row corresponds to an observation, a column corresponds to a feature, something we refer to often as a feature vector, a column of features."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2234,
+      "type": "audio",
+      "text": "Again, repeating the same thing a couple different ways here. Hopefully it's clicking."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2239,
+      "type": "audio",
+      "text": "All right. And then the bias intercept column we talked about before."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2247,
+      "type": "audio",
+      "text": "Another slide. Oh, which one of these expressions is linear in Theta? Which one of these expressions is linear in Theta? Give this one a go. Feel free to talk with your neighbor."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2327,
+      "type": "audio",
+      "text": "Go ahead and put your answer in. Go ahead and put your answer in."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2333,
+      "type": "audio",
+      "text": "So not a trick question, but these have already been written in a way that shows their linear in Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2337,
+      "type": "audio",
+      "text": "We can pull all the thetas out into their own vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2341,
+      "type": "audio",
+      "text": "And we have a matrix of stuff that doesn't involve any thetas. We're golden."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2356,
+      "type": "audio",
+      "text": "We just look at both of these. They are already separated in a way that shows that they are linear in Theta. Both of these expressions are linear in Theta. The thetas are all hanging out in a vector by themselves. Everything that's not a Theta is hanging out in a matrix on the left of the parameter vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2358,
+      "type": "audio",
+      "text": "All right."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2362,
+      "type": "audio",
+      "text": "Mean squared error. So we got some more symbols to talk about mean squared error."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2387,
+      "type": "audio",
+      "text": "So we're going to get to this point just like I showed you this before and we worked our way to it. We're going to work our way to this expression. You may have seen those two bars before. It's OK if you haven't. Those two bars represent a norm of some vector. And in this case, we have the L2 norm of a vector. We heard of L2 loss previously. There's a connection there."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2393,
+      "type": "audio",
+      "text": "All right, let's talk about the L2 norm of a vector. So a norm measures the length of a vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2421,
+      "type": "audio",
+      "text": "In some sort of dimension, the L1 length of a vector is something. But when we just think of like the geometric length of a vector. If I were to hold up a vector in space for you all here, which I guess I could do, but I'm not going to do right this SEC. It represents just the length of that vector in space. It's a generalized form of the Pythagorean theorem. How do we get the length of a hypotenuse? It's sqrt a ^2 + b ^2. How do we do that in multiple dimensions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2425,
+      "type": "audio",
+      "text": "Take the square root of the length of the vector in all of its dimensions."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2453,
+      "type": "audio",
+      "text": "Squared and add them up. Take the square root. So what is the L2 norm of a vector? If you see this expression, 2 bars on each side of a vector with a little 2 subscript, it's referring to the L2 norm, the length of the vector in Euclidean space. In Euclidean space, L2 norm. There are other kinds of norms, we'll talk about them later, but the L2 norm is the one you want to understand now. OK, if we square the L2 norm, what happens if we square the L2 norm? This is a useful fact."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2455,
+      "type": "audio",
+      "text": "We get rid of the square root."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2469,
+      "type": "audio",
+      "text": "So sometimes you'll see this expression, sometimes you'll see it without the parentheses, and data 100 will usually write it with the parentheses so that things are easy to understand. But out there in the real world, this is often just written like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2475,
+      "type": "audio",
+      "text": "Meaning that we're taking the L2 norm. The two on the bottom tells us that we're taking the L2 norm."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2500,
+      "type": "audio",
+      "text": "OK, let's keep going."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2500,
+      "type": "audio",
+      "text": "In the two on the top tells us we're squaring the L2 norm after we compute it. OK, we're going to wrap it in parentheses to make your life a little bit easier, but just keep in mind that's coming in the future. So if we just want to get a sum of the squares of the elements in a vector, something that could be kind of useful to us, right, sum of squared errors, mean squared error, we just square the L2 norm."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2501,
+      "type": "audio",
+      "text": "That's the L2 norm."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2533,
+      "type": "audio",
+      "text": "So again, it's a generalization of the Pythagorean theorem in multiple dimensions. This is what I said out loud before. What's the length of this vector in 2 dimensions? We have a, we have B. If we take sqrt a ^2 + b ^2, we get the length of the hypotenuse. So this hypotenuse represents the L2 norm of this blue vector here, this blue vector right here. Now, this isn't the only way to think about an L2 norm. An L2 norm isn't just the length."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2562,
+      "type": "audio",
+      "text": "Of a vector, we can interpret it another way. We can also think about it as a measure of the distance between two vectors, the distance between two vectors. If I want to get the Euclidean distance between the tips of two vectors that start at the same point, I can take the L2 norm of their difference. So if I have vector A and vector B and I want to get this distance, I can take the L2 norm of their difference. Why is this the case? Let's think about this visually."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2570,
+      "type": "audio",
+      "text": "So if I have vector A here and I subtract vector B, that's the same thing as adding negative B."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2583,
+      "type": "audio",
+      "text": "This is the vector negative B pointing in the opposite direction and so using tip to tail we have this distance plus that distance resulting in."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2606,
+      "type": "audio",
+      "text": "This distance, this is a parallelogram. This length is the same as this length up top. So the L2 norm of the difference between 2 vectors is also a way to measure the distance between the tips of those two vectors. If it's smaller, the vectors are more similar to one another. If that L2 norm is larger, they're less similar to each other, a fact that we're going to use today."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2608,
+      "type": "audio",
+      "text": "OK, alrighty."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2623,
+      "type": "audio",
+      "text": "So let's rewrite mean squared error in vector notation. So what is mean squared error? This is an expression you have already seen before. What is mean squared error? It's the average, so add."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2653,
+      "type": "audio",
+      "text": "All of the elements up divide by the number of elements. It's the average of the errors of our model. So what is an error? What is our residual good term to remember here? This is a residual of our regression. It's the difference between an actual outcome Y and a predicted outcome for that same observation Y hat I. The sum of squared errors or the mean squared error means we have to square all of those errors if we were to just sum up all the errors themselves."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2672,
+      "type": "audio",
+      "text": "Turns out they add up to 0. That's something you're going to prove on homework 5 using some of the intuition we see today. So this is the sum of squared errors, and we call this the empirical risk. The empirical risk of a model we saw this before is a function of Theta. Our choice of parameters tells us what that line is going to look like and tells us what those Y hats is going to be."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2675,
+      "type": "audio",
+      "text": "OK, that's empirical risk."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2688,
+      "type": "audio",
+      "text": "So let's expand this out. It's another way to write this. So if we think about this expression, what we're doing is we are adding up a bunch of different differences between."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2696,
+      "type": "audio",
+      "text": "Actual outcomes and their corresponding predictions, right, We're adding all of these up."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2702,
+      "type": "audio",
+      "text": "All the way up to Y and minus Y hat n ^2."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2709,
+      "type": "audio",
+      "text": "So let's try to simplify this into a nice tight expression. We can represent all of those differences."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2713,
+      "type": "audio",
+      "text": "As a vector of residuals, we call this the residual vector or the vector of residuals."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2743,
+      "type": "audio",
+      "text": "The residual vector. It contains all of the residuals of our model in a single vector. All we're doing here is taking our vector of outcomes Y and subtracting our vector of predictions Y hat. So we often refer to this entire expression y -, y hat as our residual vector. If we say the word residual vector in data 100, you should be thinking why minus Y hat y -, y hat?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2750,
+      "type": "audio",
+      "text": "So again, what is the L2 norm? The L2 norm is taking all of the elements of a vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2753,
+      "type": "audio",
+      "text": "Squaring each of them."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2758,
+      "type": "audio",
+      "text": "And taking the square root so the L2 norm of the residual vector can be written like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2762,
+      "type": "audio",
+      "text": "L2 norm of the residual vector can be written just like that."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2767,
+      "type": "audio",
+      "text": "If we square both sides of this equation, we get rid of the square."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2776,
+      "type": "audio",
+      "text": "Square both sides of the equation. So we're now getting that expression I showed you on the previous slide the L2 norm of the residual vector squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2784,
+      "type": "audio",
+      "text": "Is the sum of the squared elements of the residual vector. This is the sum of squared errors."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2793,
+      "type": "audio",
+      "text": "Sum of squared errors. We're looking for the mean squared error, so we take our sum of squared errors and divide by N."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2812,
+      "type": "audio",
+      "text": "That's all. That's all we're doing. We take the sum of squared errors and divide by N So the L2 norm squared of the residual vector divided by N is another way for us to write our loss so we get this nice expression. So the least squares estimate the optimal Theta hat values."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2818,
+      "type": "audio",
+      "text": "For OLS, when you're using mean squared error, rather squared error is your loss function."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2841,
+      "type": "audio",
+      "text": "We can obtain it by finding the minimum of this function. One way to do that, calculus, matrix calculus. Again, it's not so bad. Happy to do it in office hours, right after this lecture. Office hours here, 5:00 to 6:00 PM Stick around. We're right in this room, but we're going to do it with a geometric argument in just a little bit after we take our break in just a moment. But let's do a slide."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2848,
+      "type": "audio",
+      "text": "How should we interpret the OLS problem? In other words, how should we interpret this idea of finding the least squares estimate?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2864,
+      "type": "audio",
+      "text": "Of minimizing this expression. How should we think about the OLS problem? I'll let you think a little bit on this slide so you have all the reference material, and then I'll show the Slido in just a minute. Feel free to talk with your neighbor here. It's a good idea to talk this out. This is hard to get used to. OK, If you've got questions, raise your hand. I'll come to you."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 2894,
+      "type": "audio",
+      "text": "Questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3012,
+      "type": "audio",
+      "text": "I didn't throw your answer into the Slido. This will be quick, so go ahead, toss whatever answer you came up with into the Slido. Which one of these is a valid way to interpret the OLS problem?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3040,
+      "type": "audio",
+      "text": "Turns out all of these are good. All of these are good so."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3060,
+      "type": "audio",
+      "text": "What is the OLS problem? We're trying to minimize the mean squared error for the linear model. Yes, that's exactly what's stated up here. This is the mean squared error right there, and we're saying that the least squares estimate is the set of parameters that minimizes. Really should be the vector of parameters here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3087,
+      "type": "audio",
+      "text": "The vector of parameters that minimizes the objective function. Great, that's exactly right. Minimizing the distance between the true and predicted values. What we saw before the L2 norm can be interpreted as a measure of the distance between two vectors. So this L2 norm is the distance between Y our vector of actual outcomes, and Y hat, our vector of predictions, And if we're trying to make that expression as small as possible."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3090,
+      "type": "audio",
+      "text": "That's valid. We're minimizing the true distances between."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3100,
+      "type": "audio",
+      "text": "Those two vectors and then minimize the length of the residual vector. What is an L2 norm? An L2 norm is indeed just the length."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3102,
+      "type": "audio",
+      "text": "Of."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3115,
+      "type": "audio",
+      "text": "The vector. So the L2 norm of y -, y hat is just the length of the residual vector. We're just trying to make that as small as possible. So all three of these are valid ways to think about OS."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3125,
+      "type": "audio",
+      "text": "All right. Shall we take a break? I'm going to leave this slide up so you can think about this a little bit more. If you got questions, raise your hand. Let's do 2-3 minutes stretch. We got more to cover."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3306,
+      "type": "audio",
+      "text": "OK, lots of great discussion. This is what I like to see. This is one of my favorite topics to teach because I think on the surface, OLS looks almost impossible. But once you start getting some geometric intuition for all of this, it's relatively straightforward and it's like kind of beautiful math, kind of beautiful math. So let's dig in now."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3312,
+      "type": "audio",
+      "text": "You can enjoy a New Yorker cartoon for a second and then we'll get started."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3336,
+      "type": "audio",
+      "text": "Or not enjoy it. That's OK too. All right, geometric demo. Let's let's do the demo. So for the next two lectures, I will probably have this demo out. Probably do this twice because we have a little bit more time to talk about OLS. But after that, it usually just hangs out in Warren. If you've been in Warren before, you've probably seen this demo sitting in the corner. There is a use for it and people will use it in office hours to understand these concepts better."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3353,
+      "type": "audio",
+      "text": "OK, so the calculus derivation requires matrix calculus, which is out of scope for data 100, but you can totally understand. I can show you an office hours stick around if you'd like. We can do it, but we're going to derive the optimal Theta hats instead using a geometric argument."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3365,
+      "type": "audio",
+      "text": "OK, this is a big leap on this slide. It's on the worksheet. If you don't have a worksheet, try to find a piece of paper. But this is a big leap to thinking about."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3373,
+      "type": "audio",
+      "text": "Vectors in a slightly different way than you're used to. So what we're looking at here is SLR data."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3374,
+      "type": "audio",
+      "text": "I didn't show you this before, but under the hood."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3382,
+      "type": "audio",
+      "text": "Your computer is inserting a column of ones to the one-dimensional feature vector, so SLR you're passing in just one set of features, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3388,
+      "type": "audio",
+      "text": "It's also inserting a column of ones to make sure that you fit an intercept to your model and then there's some outcome."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3407,
+      "type": "audio",
+      "text": "And so how did we actually write this in practice? When we first learn about SLR, maybe even before data 100, you think of a line of best fit. We draw the points on the X axis, the Y axis, so we have an input axis X."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3409,
+      "type": "audio",
+      "text": "We have an output axis Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3422,
+      "type": "audio",
+      "text": "We have three data points. Each row represents one data point. We don't have to worry about the column of ones because it ends up just showing up on our plot as the intercept. Don't think too hard about what I just said, but this is what you're used to."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3428,
+      "type": "audio",
+      "text": "This is how you're used to thinking about data on a plot as a set of points in space."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3442,
+      "type": "audio",
+      "text": "There is another way to represent this data. We can sort of flip this on its head and instead we can say, well what if instead of making an X&Y axis?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3451,
+      "type": "audio",
+      "text": "What if instead we made a row 1 axis, a row 2 axis, and a row 3 axis?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3464,
+      "type": "audio",
+      "text": "And we plot vectors in this space. So we have a vector 111 feature vector. In this case it's sort of a just 111 vector. It's not actually something we measure in real life. We have a vector of XS."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3480,
+      "type": "audio",
+      "text": "And we have a vector of YS. And why do we have row one, row 2 and row three row 3 space? Well, each of those vectors has three elements and so we're existing in three-dimensional space. So again, I'm plotting the data in just two different ways. This is not drawn to scale."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3511,
+      "type": "audio",
+      "text": "So now instead of the number dimensions being 2, the number of inputs plus the number of outputs, the number of dimensions is the number of data points. How long are these vectors? So let's plot these in 3D space. This is a hard thing to get used to. Bear with me, it might seem totally weird right now. It'll click in a minute when we pull out the demo. But take a look. None of this is drawn to scale. Don't worry about positives or negatives here. But all I've done is I've drawn each of these columns as a vector in three-dimensional space. So we have an X vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3515,
+      "type": "audio",
+      "text": "OK, we have a vector of ones."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3518,
+      "type": "audio",
+      "text": "We have a vector of YS."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3529,
+      "type": "audio",
+      "text": "Questions about this picture. Not questions about why we're doing this that's coming, but questions about the setup of this picture. It's a weird way of turning this inside out. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3552,
+      "type": "audio",
+      "text": "Exactly. You'd be in 1000 dimensions, you'd be 1000 data points, right? And you'd be in a, yeah, 1000 dimensional space, exactly 3 vectors. Good. You don't have to visualize that. I'm going to show you a way to visualize this in the SLR case, and all of the logic extends up to higher dimensions. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3564,
+      "type": "audio",
+      "text": "We we haven't talked about that yet. It's coming. The question was about orthogonality of the Rose. We will talk about that in a couple slides. Thank you. What else?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3566,
+      "type": "audio",
+      "text": "Right there."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3594,
+      "type": "audio",
+      "text": "Right. So the 111 column I haven't given you a lot of detail about. Well, I guess we saw we include it so that the Theta, not the intercept term in our model isn't this separate piece of the dot product we included so that we can collapse that entire multiplication into XT Theta. So that one's column is there just to make sure we fit in intercept term. So that's why it's there, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3594,
+      "type": "audio",
+      "text": "OK, yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3602,
+      "type": "audio",
+      "text": "Are we in R2 or are we in R3 on the right side here we are in R3. We are in 3 dimensional space."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3604,
+      "type": "audio",
+      "text": "The number of elements of our vectors."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3608,
+      "type": "audio",
+      "text": "Is the number of dimensions that we're dealing with."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3610,
+      "type": "audio",
+      "text": "OK. All right."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3614,
+      "type": "audio",
+      "text": "Let's keep going. So this is like a big leap."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3621,
+      "type": "audio",
+      "text": "That's how we're going to work. So OK, we're switching to the demo. So let me turn off screen share here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3629,
+      "type": "audio",
+      "text": "OK, we're going to repeat everything in screen share and I have all these reminders to myself, but let's think about."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3632,
+      "type": "audio",
+      "text": "Two vectors. OK, so I'm going to make 2 vectors here for you."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3635,
+      "type": "audio",
+      "text": "I probably should have made them ahead of time, but that's OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3639,
+      "type": "audio",
+      "text": "OK, what's the span?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3664,
+      "type": "audio",
+      "text": "Of this one vector in space. Here's a vector in space. What's the span of this vector? The span is everywhere. I can reach in space by just adding this vector to itself, multiplying by a constant. That's it. So what is the span of this vector? The span of this vector is though. I could just extend a line that goes right through that vector, right? The single vector can just reach anywhere on this line. I can multiply it by any constant. I can add it to itself."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3670,
+      "type": "audio",
+      "text": "OK, that's just the span of 1 vector, but I want to think about more than one vector. Let's think about the span of."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3672,
+      "type": "audio",
+      "text": "2 vectors."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3686,
+      "type": "audio",
+      "text": "What's in there? Let's think span of two vectors. OK, so the span of two vectors is anywhere I can reach by adding these vectors together or multiplying by some constant."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3706,
+      "type": "audio",
+      "text": "OK, so I have two vectors in space here. Where could I go? Well, I could go to the point I don't have long enough arms here. But if I add these two vectors like this, the point at the end of these two vectors represents one point in the span. If I double the length of this vector, we get that point too way out there. So what is the span of two vectors in space like this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3728,
+      "type": "audio",
+      "text": "You might imagine it's a plane. That's not a line, it's a plane that kind of looks like this. If I were to rotate like Saturn here, if I were to rotate and you imagine that plane going in Infinity in either direction here, that is the space of points that I could reach with these two vectors. OK, I'm going to try to simplify this a little bit, and let's go ahead and put this on a table."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3758,
+      "type": "audio",
+      "text": "OK, so now it's a little bit easier to think about here. What is the span of those two vectors? The span of those two vectors is the plane defined by this table. If it just goes out to Infinity, feeling OK so far. So that's the span of two vectors. So we might think of those two vectors as the X vectors in our matrix, or even one of these could be our vector of ones, and another of these could be the vector from the previous slide here, the XS. So we have like the vector of ones and we have the."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3763,
+      "type": "audio",
+      "text": "Of X's and so the span of those two vectors is represented by this table."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3765,
+      "type": "audio",
+      "text": "OK, so let's keep going."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3770,
+      "type": "audio",
+      "text": "Let's keep going here, OK? I'm going to turn screen share back on. Now we're going to do a little bit of writing."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3774,
+      "type": "audio",
+      "text": "Let's do a little bit of writing."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3778,
+      "type": "audio",
+      "text": "Where is my screen share?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3780,
+      "type": "audio",
+      "text": "Hold on one SEC here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3785,
+      "type": "audio",
+      "text": "Share this Good."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3787,
+      "type": "audio",
+      "text": "All right."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3795,
+      "type": "audio",
+      "text": "Slide floating meeting controls slideshow. Let me know if it gets cut off. I think it might OK so."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3820,
+      "type": "audio",
+      "text": "So this is another sort of leap in your way of thinking about matrices and vectors and how we do matrix and vector multiplication. But it's a good leap. It'll help you out. It'll make matrix and vector multiplication a lot easier. It'll seem harder at first, but I promise it'll make life easier. So so far, how we've thought about OLS is to generate a single prediction, our Y hat one. What did we do? We took the vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3826,
+      "type": "audio",
+      "text": "Of all of the different features for our first observation."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3834,
+      "type": "audio",
+      "text": "And then we made a linear combination. We constructed a dot product of that set of features along with."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3845,
+      "type": "audio",
+      "text": "The vector of thetas and we did matrix multiplication. We went across, right? We went across, right, We went across. We did this. We're very used to this from linear algebra. At least you've seen this in linear algebra."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3853,
+      "type": "audio",
+      "text": "OK, what's another way of writing this? This is on your worksheet so you can mark this up. We had our design matrix X."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3856,
+      "type": "audio",
+      "text": "We had our parameter vector Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3873,
+      "type": "audio",
+      "text": "And when we multiplied those two things, it looked something like this. We had linear combinations of each of the row vectors for each of my observations multiplied by each of the different thetas. OK, so we had this multiplication on the right. Now I've written this out."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3886,
+      "type": "audio",
+      "text": "To try to identify a pattern in this picture, because how would you do this multiplication before today? Well, you would work across, you'd multiply, you'd work across, so you'd multiply. We're going to throw that out the window."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3910,
+      "type": "audio",
+      "text": "OK, and we're going to think about this a little bit differently. This is a big idea from Data 100. This is like a top ten idea from Data 100. So what can we do? Well, instead of thinking about row multiplications, row multiplications, let's think about the columns. I've been talking about these things, the feature vectors, the columns of your design matrix. Notice that the columns of this design matrix are hanging out."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3911,
+      "type": "audio",
+      "text": "In the columns."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3914,
+      "type": "audio",
+      "text": "Of the matrix product."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3916,
+      "type": "audio",
+      "text": "And the thetas."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3920,
+      "type": "audio",
+      "text": "Are just scaling each of those."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3928,
+      "type": "audio",
+      "text": "Feature vectors. So what's going on here? There's a recipe hiding here. There's a recipe. Let me tell you the recipe."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3930,
+      "type": "audio",
+      "text": "Sorry, I'll leave this up for a SEC. What's the recipe?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3935,
+      "type": "audio",
+      "text": "So how do I make my vector of predictions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3939,
+      "type": "audio",
+      "text": "Well take Theta zero parts."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3944,
+      "type": "audio",
+      "text": "Of the ones vector take Theta one parts."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3949,
+      "type": "audio",
+      "text": "Of the first feature vector and so on. This is just a."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3964,
+      "type": "audio",
+      "text": "Recipe We have all of the columns of our features here, each scaled by their corresponding parameter. The vector of parameters is just a recipe book for constructing our predictions, so let me show you this one more time."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3985,
+      "type": "audio",
+      "text": "OK, so we can think of this just as a linear combination of feature vectors. So let me give you a recipe for chocolate milk, chocolate milk, 10 parts milk with one part chocolate syrup. Maybe you do it a little bit differently. That's how I do it. 10 parts milk, one part chocolate syrup. Doesn't matter how many cups, right? Or tablespoons or whatever. We just need the ratios here. So same idea here to construct our vector of predictions."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 3990,
+      "type": "audio",
+      "text": "We don't have to think about rows at all."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4003,
+      "type": "audio",
+      "text": "You do not have to think about rows, you can just think about columns. To construct our vector of predictions. Take Theta one parts of the first feature and Theta two parts of the second feature, and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4018,
+      "type": "audio",
+      "text": "Theta is just a recipe book. Questions about this, This is like a big leap, but it's very, very important and will help you a lot in future classes. Questions about this leap and what's going on and how this connects the idea of a recipe book. We'll see this again when we get to PCA."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4022,
+      "type": "audio",
+      "text": "Right."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4060,
+      "type": "audio",
+      "text": "Exactly. So this is sort of an arbitrary design matrix here. Confusingly, it doesn't include an obvious ones column here, but you could pretend that this X1 is a column of ones. We're just saying if you're multiplying to matrices where we think about the columns of the matrix as features, we can think about the output of that multiplication as just each of those features scaled by the corresponding Theta. We don't have to think about rows, and for any reason we don't have to go iterate row by row and multiply all of these elements."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4063,
+      "type": "audio",
+      "text": "We can do it much faster this way. Much faster."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4068,
+      "type": "audio",
+      "text": "I didn't learn this interpretation until after grad school, so grad school is really tough questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4074,
+      "type": "audio",
+      "text": "All right, we've got plenty of time for demo. Yeah, go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4083,
+      "type": "audio",
+      "text": "What's PCA? Great question. I won't answer it now. Why don't you ask an office hours? We'll get to it. Principal component analysis coming later in the class."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4085,
+      "type": "audio",
+      "text": "OK, yes, right here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4114,
+      "type": "audio",
+      "text": "We're getting to that when we get to the demo, the idea of if there's a way to combine all of the different feature vectors to make our prediction exactly the same as the outcome. We're going to talk about that in just a second. We'll get some intuition for that question. All right, let's keep going."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4123,
+      "type": "audio",
+      "text": "Again, that's the recipe at the top right. Study this slide. It's a really good one to take home with you after data 100. Really useful."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4130,
+      "type": "audio",
+      "text": "OK, so let's go ahead and go back to the demo. Turn off the screen share here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4138,
+      "type": "audio",
+      "text": "I'll put this back up, delete that up. OK, so let's do this now a little bit differently so I have this to help me out here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4143,
+      "type": "audio",
+      "text": "And so let's build a diagram."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4152,
+      "type": "audio",
+      "text": "We're also going to draw the diagram on slides, but it's much easier to see this stuff when you have it drawn out. So let me do this this one."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4156,
+      "type": "audio",
+      "text": "OK, it's here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4161,
+      "type": "audio",
+      "text": "Put this here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4169,
+      "type": "audio",
+      "text": "And then go ahead and click."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4175,
+      "type": "audio",
+      "text": "Here OK, so new picture similar to before."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4186,
+      "type": "audio",
+      "text": "So along the table, what do we have? Along the table we have our feature vectors, our feature vectors, the columns of our design matrix. We have the idea of the span."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4208,
+      "type": "audio",
+      "text": "Of those two features in this case, we could think of this like a vector of ones and a vector of features just like SLR. We could also think of it as multiple regression without an intercept that has two feature vectors. But all I want you to think about here is this idea that the plane described by the table is all of the vectors I could reach using just the columns of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4210,
+      "type": "audio",
+      "text": "OK, here's a new vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4211,
+      "type": "audio",
+      "text": "This vector is Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4215,
+      "type": "audio",
+      "text": "OK, pretend Y doesn't lie."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4219,
+      "type": "audio",
+      "text": "On the table. For now, just assume it's outside of the table. Here's our why."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4221,
+      "type": "audio",
+      "text": "What's the goal?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4223,
+      "type": "audio",
+      "text": "Of linear regression. What's our goal? We want to fit a model."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4231,
+      "type": "audio",
+      "text": "OK, we want to fit a model that gets some combination of the XS as close as possible."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4233,
+      "type": "audio",
+      "text": "To the top of this vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4251,
+      "type": "audio",
+      "text": "OK, we're trying to find some combination of these two vectors, something in the span here that's as close as possible to the Y vector, right? We want our predictions Y hat to be as close as possible to Y. So if we think about all the different possible vectors that we could make in the span."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4257,
+      "type": "audio",
+      "text": "New for the demo this year. If we think about all of the different vectors we could make in the span, well, we could have a vector over here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4261,
+      "type": "audio",
+      "text": "Right, we could have a vector way out here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4277,
+      "type": "audio",
+      "text": "What vector gets me closest to the tip of that Y vector? Where does that vector exist in space? Which one is closest possible to the end of that Y vector? Directly down, right? Right. As though I could take a chain and just drop it down to the table, right? So if we take a chain and drop it down to the table."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4280,
+      "type": "audio",
+      "text": "Let's see here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4284,
+      "type": "audio",
+      "text": "Sometimes this doesn't work and I have to make the vector shorter."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4288,
+      "type": "audio",
+      "text": "See you want to work today."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4318,
+      "type": "audio",
+      "text": "Maybe it might collapse. Let's see. We'll leave it. OK, so now we have our picture. This is the picture you want in your head for OLS. Move this back a little for folks who can't see over here. Here's the picture. So what do we see? We see a couple different pieces. We see our columns of our design matrix, The columns of our design matrix. OK, these are our actual feature vectors. We're trying to find the linear combination of those two columns, the recipe that combines those two columns in such a way."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4335,
+      "type": "audio",
+      "text": "That we create a vector that gets as close as possible. I'll do it this way so you can see the end of the measuring tape here. That gets as close as possible to my actual vector of outcomes, my actual Y. Where does that vector exist? It's right here. What is this vector?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4337,
+      "type": "audio",
+      "text": "We've seen this vector already today. What is that vector?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4343,
+      "type": "audio",
+      "text": "It's our vector of predictions. You're looking at Y hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4352,
+      "type": "audio",
+      "text": "Here's why. Hat along the table, it's the combination of the columns of X that gets me as close as possible to my Y vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4354,
+      "type": "audio",
+      "text": "What vector is represented by the chain?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4364,
+      "type": "audio",
+      "text": "It's the difference between my Y vector and my predictions. You're looking at the residuals."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4369,
+      "type": "audio",
+      "text": "You're looking at the residuals here. This picture summarizes most of this lecture."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4375,
+      "type": "audio",
+      "text": "In geometric space, we're going to refer back to it. Questions about that, questions about the demo right there."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4412,
+      "type": "audio",
+      "text": "The question was what are the dimensions of all of these vectors? The dimensions of all of these vectors are the same. They exist in the same 3 dimensional world. So this vector has three elements. How long is it in this dimension? How long is it in this dimension? How long is it in this dimension? Right? All of these are three-dimensional vectors, including the residual vector. And this can exist in any orientation in space. We've just put it in this convenient orientation because we're limited by gravity, right? Once holograms get good, we won't be stuck here, but for now, no holograms. Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-331-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4419,
+      "type": "audio",
+      "text": "Anybody wants to make holograms after Data 100? I'd be very grateful."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-332-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4423,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-333-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4424,
+      "type": "audio",
+      "text": "All right. Oh, right in front. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-334-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4442,
+      "type": "audio",
+      "text": "Right. So the only thing we have access to to make our predictions are the feature vectors. This is all we have access to to make our predictions. We're trying to get as close as possible to these true outcomes with some model."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-335-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4463,
+      "type": "audio",
+      "text": "Right, that's some model where the output of that model, the predictions of that model have to exist in the span of the XS. All I can do is combine those XS linearly. I can make a linear combination of those XS. I have to think of some recipe for those XS. The recipe for those XS is the thetas. How much of this vector do you need?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-336-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4471,
+      "type": "audio",
+      "text": "How much of this vector do you need? That's Theta one and Theta 2, or Theta naughty and Theta one, depending on how you're interpreting this model. Multiply that by each of the vectors of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-337-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4482,
+      "type": "audio",
+      "text": "And we end up with our prediction vector. And so this measuring tape represents the prediction vector. It exists in the span of X and we can think of all other kinds of properties here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-338-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4488,
+      "type": "audio",
+      "text": "How do we describe the relationship between this chain and the span of the XS? What is that called in linear algebra?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-339-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4496,
+      "type": "audio",
+      "text": "They're orthogonal to one another, right? They're orthogonal is why orthogonal to the residual vector?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-340-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4519,
+      "type": "audio",
+      "text": "No, why is not orthogonal to the residual vector, right? We have this picture now memorize our heads. We're at least before midterm 2 and after this class, we can think well as Y orthogonal to Y hat is Y orthogonal to y -, Y hat is X orthogonal to y -, y hat kinds of questions we like to ask on midterms because these are useful things to have in the back of your mind. All right, I'll leave this up. Let's go ahead and do back to screen share."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-341-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4524,
+      "type": "audio",
+      "text": "So that our lovely folks on Zoom can see what we're doing here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-342-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4527,
+      "type": "audio",
+      "text": "Let's hide the."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-343-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4530,
+      "type": "audio",
+      "text": "Floating meeting controls."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-344-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4544,
+      "type": "audio",
+      "text": "Good. OK, great. All right, so these slides all summarize what we've just done on the table here, but it's written on A2 dimensional screen, so it can sometimes be a little bit hard, harder to think about, but I'm going to show you it anyway."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-345-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4547,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-346-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4559,
+      "type": "audio",
+      "text": "Click, click for me. Hold on. There you go. OK, so how do I get as close as possible to Y in the span of X's? Oops, sorry. How do I get as close as by? There's the chain. How do I get as close as possible to Y?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-347-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4567,
+      "type": "audio",
+      "text": "In that span of X is. It's the vector that exists right below the end of the Y vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-348-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4585,
+      "type": "audio",
+      "text": "It's a little easier to see that out here, but that's exactly the same picture. Exactly the same picture, directly below the Y vector onto the span of the X's. It's the projection of Y, the projection of Y onto the span of the X's."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-349-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4594,
+      "type": "audio",
+      "text": "OK, let's keep going. Same picture with a little bit more. Here we can label some of these different vectors. So remember this is our Y vector."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-350-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4607,
+      "type": "audio",
+      "text": "These are our columns of X, the feature vectors. This is our Y hat vector. This is our vector of residuals. OK, that's all we're seeing in this picture."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-351-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4618,
+      "type": "audio",
+      "text": "Vector of residuals y -, Y hat. What is Y hat? How do we get Y hat? Y hat is the linear combination of the columns of X and the parameter vector Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-352-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4645,
+      "type": "audio",
+      "text": "OK, what's the goal again? We're trying to make the L2 norm of the residual vector as small as possible. We're trying to make this vector as short as possible. We're trying to make the distance between these two vectors, the distance between the tips of these two vectors, as short as possible. That's why all of those answers on the Slido, we're all saying the same thing. OK, lots of beautiful connections here. All right, we talked about this."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-353-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4648,
+      "type": "audio",
+      "text": "Some terms to understand here. So what is the Y hat vector? the Y hat?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-354-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4675,
+      "type": "audio",
+      "text": "Is the projection of the Y vector onto the span of the X's the orthogonal projection, right? Multi dimensional perpendicular orthogonal, OK. That's how we minimize the distance we need to construct that orthogonal projection. And then once again, this way of thinking about matrix multiplication is very helpful. Using this picture to help you and also using that definition to understand the picture."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-355-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4689,
+      "type": "audio",
+      "text": "OK, so let's talk about orthogonality a little bit. So vectors A and vectors B are orthogonal if they're dot product is 0. If I take the dot product of 2 vectors and I get 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-356-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4697,
+      "type": "audio",
+      "text": "They are orthogonal. We can also say that a vector is orthogonal to a matrix."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-357-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4712,
+      "type": "audio",
+      "text": "We can say a vector is orthogonal to a matrix. The span of the columns of a matrix if V is orthogonal to every column in that matrix. So let's say those were the two columns. Those two columns form the span of M."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-358-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4723,
+      "type": "audio",
+      "text": "If a vector is orthogonal to both of those vectors or any other vector in that span, we say that the vector is orthogonal to the matrix or orthogonal to the span of the matrix."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-359-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4739,
+      "type": "audio",
+      "text": "OK, so let's write things out a little bit differently here. So let's say we're just working with an arbitrary matrix M. You can think of this like X. We're just going to use M here because we're doing a definition, but we're going to connect this right back to X. We can think about each of the columns of M."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-360-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4751,
+      "type": "audio",
+      "text": "Just like we thought about each of the columns of X, and in this case we're going to use the letter D to represent the number of columns instead of the P + 1 or the P we've been working with before. Bear with me, we're going to use D instead, but it's all the same idea."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-361-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4760,
+      "type": "audio",
+      "text": "OK, so how do we describe orthogonality as a series of equations if I take the?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-362-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4762,
+      "type": "audio",
+      "text": "First column of M."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-363-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4764,
+      "type": "audio",
+      "text": "Andi dot it."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-364-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4773,
+      "type": "audio",
+      "text": "By some vector V and we get 0 and this is true for every single column of M Then I can say."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-365-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4781,
+      "type": "audio",
+      "text": "That my vector V is orthogonal to M or orthogonal to the span of M? Fine to say it either way."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-366-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4786,
+      "type": "audio",
+      "text": "Where MTV is equal to 0 in all of these cases."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-367-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4789,
+      "type": "audio",
+      "text": "OK, so if we can make this statement."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-368-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4790,
+      "type": "audio",
+      "text": "MTV Where M."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-369-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4792,
+      "type": "audio",
+      "text": "Has columns representing."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-370-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4821,
+      "type": "audio",
+      "text": "The I guess in this case these are going to be the MTV. Mt is going to have rows corresponding to the columns of M because we're doing matrix multiplication, iterating over the Ms. and then multiplying by V If we can multiply Mt by V and we get the 0 vector, that tells us that V is orthogonal to MV is orthogonal to M So now let's use that in our OLS setup before."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-371-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4824,
+      "type": "audio",
+      "text": "So looking at this picture we defined, we said the requirement here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-372-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4827,
+      "type": "audio",
+      "text": "Is that the residual vector y -, y hat?"
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-373-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4833,
+      "type": "audio",
+      "text": "Is orthogonal to the span of the XS, so let's just write this as an equation."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-375-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4842,
+      "type": "audio",
+      "text": "Solve for Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-374-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4842,
+      "type": "audio",
+      "text": "Let's just write the span of the X's transpose multiplied by. The residual vector has to be equal to 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-376-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4846,
+      "type": "audio",
+      "text": "OK, so let's do it."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-377-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4855,
+      "type": "audio",
+      "text": "So MTV, so let's work this out. So we're going to say that the vector of residuals y -, y hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-378-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4861,
+      "type": "audio",
+      "text": "Also written as y -, X Theta hat. These Theta hats we're trying to find."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-379-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4865,
+      "type": "audio",
+      "text": "If I multiply that by X transpose."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-380-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4869,
+      "type": "audio",
+      "text": "X Transpose. Remember, for this MTV setting, we're saying that the columns of V."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-381-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4890,
+      "type": "audio",
+      "text": "The columns of V become the, excuse me, the columns of M become the rows of Mt. Just like in this case, we have the columns of X become the rows of XT. We're saying that in order to find the optimal thetas, those two things have to be multiplied. And when they're multiplied, we have to get the 0 vector. And so from here we just solve. Let's distribute the X transpose."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-382-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4897,
+      "type": "audio",
+      "text": "Transpose y -, X transpose X Theta hat equals zero. I'm going to add."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-383-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4901,
+      "type": "audio",
+      "text": "X transpose X to the other side."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-384-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4912,
+      "type": "audio",
+      "text": "And how do I get rid of a matrix? I'm not allowed to divide by a matrix, I have to multiply both sides by the inverse. So if I multiply both the left and right side by XTX inverse."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-385-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4929,
+      "type": "audio",
+      "text": "I end up with an equation, a closed form solution for the multiple regression model xtx inverse xty is the optimal set of thetas. Multiple regression has what's called a closed form solution. This is a big deal."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-386-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4943,
+      "type": "audio",
+      "text": "To fit this model, we don't need to use any numerical linear algebra. We can just do matrix multiplication and we can get our optimal Theta hat. So this is a big deal. This is a big deal. This is just showing exactly the same thing. Okay, distribute."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-387-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4956,
+      "type": "audio",
+      "text": "This is often called the normal equation when these two things are set equal to one another. Just useful term to understand. You'll sometimes hear the last thing be referred to as the normal equation too, and we get."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-388-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4963,
+      "type": "audio",
+      "text": "Our optimal set of thetas and this result is so important that it deserves its own slide. This is like a big deal."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-389-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4973,
+      "type": "audio",
+      "text": "OK. This is a big deal. All right, we got 3 minutes for questions and then we'll do office hours. So let's do questions in the big group questions that anything we've talked about today."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-390-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4976,
+      "type": "audio",
+      "text": "Questions about anything so far? I'll put this back up right there."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-391-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4977,
+      "type": "audio",
+      "text": "And if you're exiting, just try to be quiet. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-392-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 4998,
+      "type": "audio",
+      "text": "Don't worry about that. For this lecture, the question was does multiplying a matrix by its transpose lead to useful properties in the context of OLS? Don't need to worry about going that deep for this lecture for now. Yeah, yes, right here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-393-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 5019,
+      "type": "audio",
+      "text": "So this was an excellent question. Again, if you're leaving, try to keep it down. The question was, is this least squares estimate specific to the matrix X? Yes, it's specific to the matrix X combined with the YS that we use to fit the model. If we had different set of YS, we'd get a different set of thetas. Other questions."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-394-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 5020,
+      "type": "audio",
+      "text": "Right here."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-395-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 5041,
+      "type": "audio",
+      "text": "A great question was under what conditions is XTX not invertible? Because don't we need to make sure that XTX is invertible? Yes, we do coming in the next lecture and we can talk about it also during office hours 5:00 to 6:00. So that's a great question when OS won't fit right in front."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-396-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 5045,
+      "type": "audio",
+      "text": "Again, those who are leaving, please keep it down. Thank you. Go ahead."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-397-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 5063,
+      "type": "audio",
+      "text": "Exactly. So the question was X as a matrix, Y is a vector. When we perform this computation where X is north by Pi, guess X is north by P so X transposes P by N."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-398-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 5085,
+      "type": "audio",
+      "text": "P by N&X transpose is also P by N&Y is N by 1:00. When we perform that matrix multiplication, we will end up with a P by 1 vector and that's our thetas Theta hats. Other question right in front please if you're leaving, if you could keep it down, that would be nice. Thank you."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-399-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 5105,
+      "type": "audio",
+      "text": "This is a great question. If Y exists in three dimensions, why is Y sorry spanned by X? And that's actually not true. So Y hat is in the span of the X's, right? Our predictions are a linear combination of our XS Y itself."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-400-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 5118,
+      "type": "audio",
+      "text": "Why itself, at least in this picture, is not in the span of XS. However, if what if Y were in the span of XS? What if Y actually were in the span of XS? What would our model predictions look like? They would be."
+    },
+    {
+      "id": "audio-ds100-sp26-1772148837-transcription-401-c0-e0",
+      "lecture_id": "ds100-sp26-1772148837",
+      "timestamp": 5137,
+      "type": "audio",
+      "text": "Perfect. We could perfectly reconstruct Y if Y existed in the span of XS in real life. That's shouldn't, that's not a good thing. If that happens, you probably did something wrong. But some we'll talk about in the next lecture. All right, I'll go ahead and pause the Zoom and then we'll go ahead and do office hours from 5:00 to 6:00. I encourage you to stick around. Thank you, everybody."
+    }
+  ]
+}

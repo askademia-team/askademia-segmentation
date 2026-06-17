@@ -1,0 +1,1962 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-upload-1769146451",
+  "display_name": "Lecture 2 (Jan 22)",
+  "count": 279,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-9-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 127,
+      "type": "audio",
+      "text": "DSB If you have DSP accommodations for assignments, please make sure your letters are submitted via the DSP portal so that we can take those into account."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-10-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 142,
+      "type": "audio",
+      "text": "Thank you."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-11-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 157,
+      "type": "audio",
+      "text": "Series. So we're going to be working mostly with tabular data, and we're going to call our tables data frames, right? So data frame just means a pandas term for a table, and each row represents an observation and each column represents."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-12-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 172,
+      "type": "audio",
+      "text": "Have some feature or attribute about that observation and we can think of a data frame as a collection of named columns, and each column is a series."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-13-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 187,
+      "type": "audio",
+      "text": "Frame one row for every candidate in every year in every presidential election in the US and we have this column which is a series named Candidate."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-14-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 202,
+      "type": "audio",
+      "text": "Basically the stuff in that column, and it also has a index, right? There's an index in it that essentially just says what is the label for each data point."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-15-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 217,
+      "type": "audio",
+      "text": "One number of rows -1 but as we'll start to see next week, we can get kind of fancy with it and do more interesting stuff with our index."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-16-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 232,
+      "type": "audio",
+      "text": "Life cycle, right? And everybody has a different version of this diagram. Generally you start with some kind of data, some kind of question, some kind of combination of the two. For the next couple weeks, we're going to be spending most of our time in the bottom right corner of this diagram basically."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-17-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 247,
+      "type": "audio",
+      "text": "Learning the tools to understand and work with data that we get right. How do we answer questions about our data? How do we kind of manipulate it and fold it and move it around to get the right stuff that we want out of it? So this week and next."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-18-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 262,
+      "type": "audio",
+      "text": "Next week will be mostly on translating a lot of the stuff you might have learned in the data science library into Pandas, basic operations on tables. How do you work with that? And then weeks 3 and 4 will be actually about how do we start doing data science in practice. We'll talk about."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-19-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 277,
+      "type": "audio",
+      "text": "Something called Exploratory Data Analysis or EDA, and we'll look at text processing as a way of manipulating data."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-20-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 292,
+      "type": "audio",
+      "text": "Is because when you get a data set, it's important to start with some curiosity. Yes, you need to have the technical skills you need to know how to work with your data, but you also need the ability to be curious. It's really important to be able to look at a data set and start thinking."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-21-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 307,
+      "type": "audio",
+      "text": "And what are the interesting questions I should be asking? What are the interesting patterns here? So I want you to take a minute look at this data set and think about what is the most interesting question you might want to ask, or the most interesting you might think you might want to know."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-22-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 322,
+      "type": "audio",
+      "text": "That you could find out using this data set."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-28-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 412,
+      "type": "audio",
+      "text": "Can someone share a question that you and or the person you next to you came up with that you might want to know? Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-29-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 427,
+      "type": "audio",
+      "text": "In the most elections, wins the most votes. Other questions, yes."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-30-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 442,
+      "type": "audio",
+      "text": "Related with the next president, right, Do we have like switching, Do we have like a continuity effect? Another great question, more questions."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-31-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 457,
+      "type": "audio",
+      "text": "Anyone."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-32-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 472,
+      "type": "audio",
+      "text": "Button and still lost, right. Interesting question, right, tells us about like the difference between the popular vote and the electoral vote winning elections. So these are all great examples of questions. Actually, we'd probably be looking through some of the questions that you all submitted and maybe we'll be addressing."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-33-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 487,
+      "type": "audio",
+      "text": "Some of them in future lectures, but it's really important when you start looking at a data set to the first thing you should do is activate kind of a curious curiosity mindset, right? Think about what do I want to know what are the interesting questions here before you start just grinding."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-34-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 502,
+      "type": "audio",
+      "text": "Getting into calculating and looking at numbers. Start with a question, start visualizing, and then go from there."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-35-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 517,
+      "type": "audio",
+      "text": "From this data set and this graph shows two line plots. In red we have the Republican percentage of the popular vote and in blue we have the Democratic share of the popular vote and."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-36-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 532,
+      "type": "audio",
+      "text": "And I'm looking at only data since 1900 because that was kind of like when these two parties really came to prominence probably a little before. But you know, 1900 is kind of a convenient point to cut things off."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-37-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 547,
+      "type": "audio",
+      "text": "1 is what data do we need to make this graph, right? Yeah, we have our whole table with like all of the data, all of the information. What subset of it do we need to actually construct this graph? And the second question is what?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-38-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 562,
+      "type": "audio",
+      "text": "Additional observations or questions Does this graph inspire right? What kind of questions do you have after looking at this that maybe you didn't even have before? So let's start by thinking about what kind of data we need to."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-39-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 577,
+      "type": "audio",
+      "text": "Make this graph. So this is a line graph right? Each point represents 1 election for one party."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-40-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 592,
+      "type": "audio",
+      "text": "Percentage, right, that's like the the Y value. So we're going to need."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-41-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 607,
+      "type": "audio",
+      "text": "And then we're also going to need party, right, because that'll tell us whether to put that data point on the blue line or on the red line."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-42-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 622,
+      "type": "audio",
+      "text": "Graph. That's the question we'll answer in a week or two, but for now I just want to answer the question what data do we need to make this graph?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-43-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 637,
+      "type": "audio",
+      "text": "Higher data frame for all years and all parties. We only want the years that are after 1900."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-44-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 652,
+      "type": "audio",
+      "text": "The Democratic and Republican parties only."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-45-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 667,
+      "type": "audio",
+      "text": "All relevant bits out of it."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-46-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 682,
+      "type": "audio",
+      "text": "It's kind of related to the question we had here is, you know, is the previous president's party correlated with who wins next? The first thing I see is there's this sort of like alternating pattern, right? As one party kind of goes up, the other party goes down, right? Which kind of makes sense. We know that there's a."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-47-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 697,
+      "type": "audio",
+      "text": "You know, dominant 2 party system in the US So usually if one party gets more votes, the other party gets less, right. And we can kind of see that over here where, you know, one party goes up, the other one goes down and then vice versa."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-48-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 712,
+      "type": "audio",
+      "text": "Time, they're kind of like going around somewhere close to 5050, right? Maybe like a little less because you know, there's always some third party candidates, but most of the time it's like, you know, the Democrats are somewhere above 50, the Republicans are that much below 50 or similarly the Republican."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-49-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 727,
+      "type": "audio",
+      "text": "That much above, Democrats are that much below."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-50-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 742,
+      "type": "audio",
+      "text": "We see the pattern change, right? We see elections get a lot closer, right? You don't see as wide of a gap between the two parties since maybe just before 2000."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-51-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 757,
+      "type": "audio",
+      "text": "Instead of this kind of like flipping back and forth up and down."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-52-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 772,
+      "type": "audio",
+      "text": "Is the amount of votes gotten by the Democratic and Republican parties smaller, Right. So this is a question that we're going to answer by digging in to the data set."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-53-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 787,
+      "type": "audio",
+      "text": "Of today, first, how do we pull out data to answer questions and make graphs? And 2nd, how do we use those skills to answer questions like what's going on in this one year?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-54-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 802,
+      "type": "audio",
+      "text": "How do we know what's going on and how do we do further investigations?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-55-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 817,
+      "type": "audio",
+      "text": "OK."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-56-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 832,
+      "type": "audio",
+      "text": "Pandas to talk about the key structures, data frames, series and indexes and how we can extract data out of a data frame in the way that we actually want to. This is going to be a three lecture sequence today."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-57-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 847,
+      "type": "audio",
+      "text": "Today, Tuesday, Thursday, talking about pandas. And there's going to be a lot of code, so for most of the time I'm not going to spend as much time on slides. I'm going to be mostly working inside of a notebook, typing stuff out, seeing what happens, and learning by writing code."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-58-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 862,
+      "type": "audio",
+      "text": "So lecture, I'm probably mostly going to introduce the high level concepts so, you know, focus on what are the big ideas, what do you need to know? And then lab and homework are where you're going to get actual practice implementing this stuff."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-59-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 877,
+      "type": "audio",
+      "text": "So how do you access the code from today's lecture? In general, from today and most of the lectures going forward, you can follow along with the code that I'm going to be running by going to the website, clicking on the lecture."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-60-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 892,
+      "type": "audio",
+      "text": "For today and that will take you to a lecture page. It looks slightly different from this because the format of the website has changed, but basically there's going to be a link to like the code, the notebook that you'll want to click into and that will get you access to the code."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-61-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 907,
+      "type": "audio",
+      "text": "I would encourage you with an asterisk to have your laptop open to with the notebook to like work with it and go interactive, right? Why? Because it makes it really easy to answer questions like what if we did this instead? Or what if we did that instead?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-62-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 922,
+      "type": "audio",
+      "text": "Why do I have the asterisk practice? When you have a laptop open, it's often kind of easy to get distracted, right? I know that if I were sitting in the audience as one of you and I had my laptop open, I'd be almost guaranteed at some point during class to like, pull up my messages."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-63-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 937,
+      "type": "audio",
+      "text": "Is or look at my E e-mail or something like that and then maybe I'll get distracted and like not pay attention and then come back 5 minutes later being like Oh no I have no idea what's going on. So I would encourage you to use your laptop so if you think it'll help you learn if your."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-64-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 952,
+      "type": "audio",
+      "text": "Finding yourself getting distracted? You can always follow along after as well."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-65-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 967,
+      "type": "audio",
+      "text": "So what happens once you click into the link? You end up with something that looks like this."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-66-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 982,
+      "type": "audio",
+      "text": "So we can see."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-67-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 997,
+      "type": "audio",
+      "text": "Stuff in, but you can see that there's the lecture notebook for that lecture, Lecco 2 ipynb. There's a data 8 transition notebook that kind of like shows you how to go from the data science library to pandas, and then there are folders with data and image."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-68-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1012,
+      "type": "audio",
+      "text": "Edges so we can click in and see that inside of data there's a baby CSV the data set will start working with next week. And then there's the elections CSC. That's the one I've been flashing up on the screen a bunch so we can click into this."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-69-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1027,
+      "type": "audio",
+      "text": "That this is a table right has all this information and this is a nice viewer that Jupyter lab gives us, but we can also."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-70-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1042,
+      "type": "audio",
+      "text": "Text, comma, text comma, text, comma, text, comma. You don't need to worry about this. Pandas handles loading it and pulling it in for you, but it's important to keep in the back of your mind this is how CSV data is stored."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-71-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1057,
+      "type": "audio",
+      "text": "You know you have a bunch of cells. You can run them by either clicking the play button or control, enter, command, enter, shift, enter depending on your operating system what you want to do. I'm a big fan of all the hotkeys. I strongly recommend if you're going to."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-72-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1072,
+      "type": "audio",
+      "text": "To be working with notebooks a lot that over time you Start learning them just because it makes it more easy, fun and efficient to work with them."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-73-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1087,
+      "type": "audio",
+      "text": "On the side you can always close it by clicking this and then reopen it by clicking again. I'm going to close it just so we have a little more room on the screen."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-74-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1102,
+      "type": "audio",
+      "text": "And I got an error name PD is not defined."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-75-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1117,
+      "type": "audio",
+      "text": "Making mistakes is a normal part of the process. The important thing is when you make an error, how do you figure out what went wrong and how do you fix it?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-76-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1132,
+      "type": "audio",
+      "text": "The index."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-77-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1147,
+      "type": "audio",
+      "text": "The values and the index."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-78-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1162,
+      "type": "audio",
+      "text": "Then we can use either a single label, right label meaning one of the values in the index, right? The index values are like labels for each thing in the series. So we can say S you know we can pick a single label, we can have a list of labels."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-79-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1177,
+      "type": "audio",
+      "text": "Or we can use a filter using a boolean mask, so."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-80-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1192,
+      "type": "audio",
+      "text": "You where the index is a."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-81-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1207,
+      "type": "audio",
+      "text": "Brackets is for creating a list right? So I have this list of all the labels that I want."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-82-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1222,
+      "type": "audio",
+      "text": "Element of the array theories kind of work the same way."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-83-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1237,
+      "type": "audio",
+      "text": "If I add 4 then I get 824 and 10 right? It adds that same number to everyone. I can do any operation I want to a series as long as the types workout properly."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-84-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1252,
+      "type": "audio",
+      "text": "The is greater than 0 to every element creating a boolean mask, and then I can say S bracket S greater than 0 to pull out only the elements that satisfy that condition."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-85-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1267,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-86-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1282,
+      "type": "audio",
+      "text": "Hear me say theories is not technically correct. I just happen to say it. You'll probably hear people say stuff like that. Technically it's plural. Series is series, but people are going to say what they're going to say."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-87-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1297,
+      "type": "audio",
+      "text": "There are many different ways to do it. We can do it from a CSV file, we can do it from a Dictionary of columns, or we can do it from a list of rows, right? Because when we think about it, we had that question at the end of last time. How do you actually make a series? There's two ways to do it right? One is we."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-88-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1312,
+      "type": "audio",
+      "text": "You can think of, well we stack a bunch of rows together or we can kind of like glom a bunch of columns together."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-89-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1327,
+      "type": "audio",
+      "text": "Syntax that we show you is a lot more important than memorizing it, especially for this. But generally for most of today, it's not so important that you memorize the exact details of the syntax, but it is important that you remember. Oh yeah, pandas has a way to do this."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-90-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1342,
+      "type": "audio",
+      "text": "And I think it looks kind of like that because you will always have the opportunity in practice to look it up, right? You do a Google search, you can look up the documentation, you can ask an LLM and you can always find out how to do something. But knowing what you can do and having."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-91-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1357,
+      "type": "audio",
+      "text": "Those concepts in your mind is an important skill that we want to teach you in this class."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-92-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1372,
+      "type": "audio",
+      "text": "1st and."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-93-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1387,
+      "type": "audio",
+      "text": "Going to be the returned value from this So yes, you can run this and it's actually in the notebook but before you run it I want you to think about what is going to happen and try to predict it first, right? Because that will help you see whether you understand what."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-94-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1402,
+      "type": "audio",
+      "text": "Pandas is doing under the hood, and if you have a good mental model of how it's going to work all right, take a second turn to the person next to you and talk about what this is going to return."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-101-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1507,
+      "type": "audio",
+      "text": "Submit your Slido."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-102-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1522,
+      "type": "audio",
+      "text": "The slidos are at the very end of the notebook, so I'm going to scroll all the way down. Scroll, scroll, scroll."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-103-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1537,
+      "type": "audio",
+      "text": "We showed on the slide, right and it says, you know, create a series and do something with the series."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-104-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1552,
+      "type": "audio",
+      "text": "Through what's going on is to actually just like break it apart and run things step by step and look at the output of every single step."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-105-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1567,
+      "type": "audio",
+      "text": "Also useful when you're debugging your own code, right? If you're trying to do something, you write a bunch of code and it gives you totally something different from what you wanted. A great way to see what's going on is to like break down the steps and run each 11 by 1. And so that's where."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-106-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1582,
+      "type": "audio",
+      "text": "We're going to do here."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-107-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1597,
+      "type": "audio",
+      "text": "It's a series with three items, numbers 4-5 and six data type int and index 123."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-108-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1612,
+      "type": "audio",
+      "text": "Example greater than 4."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-109-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1627,
+      "type": "audio",
+      "text": "All of the ones that are greater than 4, right? So for this first one that was 4/4 is not greater than four, it's false. Two and three are they're five values are 5 and 6."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-110-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1642,
+      "type": "audio",
+      "text": "And is."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-111-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1657,
+      "type": "audio",
+      "text": "Is greater than 4."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-112-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1672,
+      "type": "audio",
+      "text": "Five and six. Remember inside of every series there are the values which is an array and the index which is kind of like an array ish. It has some extra things it can do. OK, questions on this exercise."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-113-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1687,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-114-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1702,
+      "type": "audio",
+      "text": "5-6 If I had wanted to get this instead of this I would have to convert this to a list right? Right now it's an array. This thing without the array in front is a list in Python, so I would just have to say the array to list or list of the."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-115-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1717,
+      "type": "audio",
+      "text": "Question."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-116-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1732,
+      "type": "audio",
+      "text": "You have like an index 123, only want things that index greater than one. That's a great question. Save it for like half an hour from now, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-117-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1747,
+      "type": "audio",
+      "text": "Stuff out so."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-118-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1762,
+      "type": "audio",
+      "text": "It's important that you know that there are different ways to construct a data frame. The exact details not so important because every time you do it, you'll probably look it up."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-119-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1777,
+      "type": "audio",
+      "text": "Read CSV function. So pandas comes with a read CSV that loads in data. So where is our data? Our data is in data elections dot CSV."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-120-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1792,
+      "type": "audio",
+      "text": "Dot CSV and."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-121-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1807,
+      "type": "audio",
+      "text": "Read CSV has a ton of different arguments you can give it. It's super, super flexible. It can handle all kinds of like wacky C, Svs, it can process them. It can do a bunch of things. For example, one of the things you can do is you can tell it."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-122-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1822,
+      "type": "audio",
+      "text": "But which column panda should use as an index? So for example I can say index column equals year."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-123-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1837,
+      "type": "audio",
+      "text": "So notice that this index is a little weird, right? The index is not unique, right? Yeah, I have labels for every row, but there's like some rows that have the same label."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-124-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1852,
+      "type": "audio",
+      "text": "Tomorrow or Tuesday, we'll talk a little bit more about that."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-125-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1867,
+      "type": "audio",
+      "text": "Create a data frame from a list of rows. So you call it PD dot data frame and you give it a list."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-126-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1882,
+      "type": "audio",
+      "text": "399 we specify the columns fruit and price."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-127-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1897,
+      "type": "audio",
+      "text": "49 Fruit colon orange price 399 and it gives us the same data frame."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-128-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1912,
+      "type": "audio",
+      "text": "Columns. So those columns can be lists, they can be series, they can be arrays, whatever is most convenient at the time you're creating it. So for example here I say a dictionary where the column fruit is Kiwi and orange."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-129-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1927,
+      "type": "audio",
+      "text": "The price column is 540-9399 and I create the same data frame."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-130-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1942,
+      "type": "audio",
+      "text": "And I can build a data frame from this. If you do it this way, the series you use have to all have the same index. Not Pandas is going to kind of like do weird stuff to try to fit them together. Generally you want to make sure that any series you use to combine."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-131-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1957,
+      "type": "audio",
+      "text": "A data frame have the same index."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-132-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1972,
+      "type": "audio",
+      "text": "Data frame of a series. It'll make you a one column data frame."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-133-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 1987,
+      "type": "audio",
+      "text": "Name, so pandas just gave it the default name of here."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-134-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2002,
+      "type": "audio",
+      "text": "Now we're going to talk about how we pull data out of data frames. Again, remember we started by thinking we want to take the selections data and we want to pull out the certain subset of the information to make our plot. We wanted to investigate what was going on in 1992."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-135-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2017,
+      "type": "audio",
+      "text": "How do we extract data?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-136-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2032,
+      "type": "audio",
+      "text": "North number of rows you can grab data with a certain label right? Either certain grow label or certain column label, you can grab data at a certain position right? Maybe I want the like 7th, 13th and 19th."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-137-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2047,
+      "type": "audio",
+      "text": "Throws umm."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-138-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2062,
+      "type": "audio",
+      "text": "And that you could use any of them so that when you're facing a problem, you say, ah, I know this is going to be the right tool for this job and you can use it."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-139-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2077,
+      "type": "audio",
+      "text": "So we can get this for now. So we have this elections data frame and we can, you know, start by thinking about what are the ways to get the first few and last few rows."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-140-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2092,
+      "type": "audio",
+      "text": "Sometimes it's kind of annoying that, you know, if I print out elections, it literally fills up the entire screen. Yeah, sure, I'm zoomed in to show all of you, but it fills up the whole screen with this data frame. Maybe I only want to print like the first few rows, so then I can say elections dot head."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-141-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2107,
+      "type": "audio",
+      "text": "And I can tell it how many rows I want."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-142-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2122,
+      "type": "audio",
+      "text": "If I don't **** **** or tail any arguments then."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-143-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2137,
+      "type": "audio",
+      "text": "But it might not always be the best."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-144-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2152,
+      "type": "audio",
+      "text": "Exactly. If something's messed up somewhere in the middle, then head or tail is not going to show you. So maybe it's more useful to like just like pull out some random elements from it and that's what we'll talk about next time."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-145-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2167,
+      "type": "audio",
+      "text": "Next, we're going to start by extracting things out based on labels. And what do I mean by labels? I really mean specific columns or specific rows. And we're going to use this attribute called loc."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-146-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2182,
+      "type": "audio",
+      "text": "How does it work? You say my data frame and then loc and you give it some rows that you want and you give it some columns that you want."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-147-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2197,
+      "type": "audio",
+      "text": "Take this data frame and suppose I want this row #1 with this index label 1. So these are my row labels and these are my column labels, right? My row labels are my index, my column labels are my columns."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-148-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2212,
+      "type": "audio",
+      "text": "And I can say electionsloc of 1. So this is my row I want and candidate."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-149-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2227,
+      "type": "audio",
+      "text": "Out the information there."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-150-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2242,
+      "type": "audio",
+      "text": "That a list of items, maybe 7029."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-151-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2257,
+      "type": "audio",
+      "text": "Rose 7020 and 9 and columns Party and Percent."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-152-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2272,
+      "type": "audio",
+      "text": "So 70 was a Democrat who got 41 percent, 4220 was a Democrat who got 45%, and so on. So I can pass in a single value, I can pass in a list, or I can pass in a slice."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-153-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2287,
+      "type": "audio",
+      "text": "And you've worked with slices, right? You've seen, you know, when you have a list and you want like elements all the way up to the from the beginning up to the first five, you say colon 5."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-154-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2302,
+      "type": "audio",
+      "text": "Loc of 10/15 and I can give a slice of columns. What does a slice of columns look like? Well, I can say some if I look at the columns."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-155-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2317,
+      "type": "audio",
+      "text": "Like party colon percent."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-156-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2332,
+      "type": "audio",
+      "text": "This gives me everything up to and including the last value, right? It's party, popular vote, result and percent, everything in between and including the right hand argument."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-157-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2347,
+      "type": "audio",
+      "text": "We can also extract all the rows, right? Maybe I don't want just like a few. Maybe I want all of the rows. So I give a colon. A colon is a special kind of slice that says give me all."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-158-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2362,
+      "type": "audio",
+      "text": "Of those right? If I say my list and I index it with colon, then it says that's like all of the items."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-160-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2392,
+      "type": "audio",
+      "text": "I forgot to use loc and so it does this."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-161-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2407,
+      "type": "audio",
+      "text": "40 and 50 and colon. Then that gives me all of the columns. I can also mix and match right? I can say elections. Maybe I want a certain number of rows but I want."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-162-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2422,
+      "type": "audio",
+      "text": "Only one column? Maybe I only want party."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-163-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2437,
+      "type": "audio",
+      "text": "Here I'm giving you back that single column as a series. So if you pass in a list, it'll give you back a data frame, right? A list and a list will give you a data frame. But if you pass in a single item, it'll give you a series."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-164-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2452,
+      "type": "audio",
+      "text": "That this same information as a data frame instead of a series."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-165-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2467,
+      "type": "audio",
+      "text": "Instead of a series."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-166-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2482,
+      "type": "audio",
+      "text": "We can also select using a boolean mask, right? The same way we saw with a with a series that we use the boolean mask. We can do the same thing here, right? Maybe I only want the rows that correspond to?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-167-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2497,
+      "type": "audio",
+      "text": "2008."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-168-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2512,
+      "type": "audio",
+      "text": "This kind of like illustrates the the problem with just using the beginning and end, right? If I just kind of look at this, I'm like, oh, it's always false, but we know it's not always false. It's just like the the earlier ones are false, the later ones are false. The truths are somewhere in the middle."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-169-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2527,
+      "type": "audio",
+      "text": "I can say elections Lok of this."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-170-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2542,
+      "type": "audio",
+      "text": "So I can use a boolean mask to index and I can use. I can mix and match, right? I can use a mask, I can use a mask and a list. I can use a slice in a mask. Anything that we want we can mix and match to pull stuff out."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-171-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2557,
+      "type": "audio",
+      "text": "OK, questions on accessing data using Look yes."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-172-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2572,
+      "type": "audio",
+      "text": "Practice. I have almost never actually used the math to the columns. Like yes, you can do it, but in practice it ends up not being useful because usually you pull out the columns that you know, right? It's very rare that we say like what kind of mask would."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-173-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2587,
+      "type": "audio",
+      "text": "Could we ask for the columns? Would we say, well, I want like the columns where the word starts with P Yes, we could do that, but that's kind of a rare operation to do. So that's actually a pretty good question because it highlights the point that certain kinds."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-174-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2602,
+      "type": "audio",
+      "text": "Kinds of ways of accessing things are more common or convenient for rows, and certain ways are more common or convenient for columns."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-175-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2617,
+      "type": "audio",
+      "text": "Before I prepared for this lecture, I don't think I had ever used a slice of columns. I knew that you could do it, but in practice it's generally not a good idea. Why? Because what if the data you get, the order changes right if someone generates?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-176-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2632,
+      "type": "audio",
+      "text": "The data slightly differently in a different order, so usually if you're choosing multiple columns, it's often best to just give them as a list."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-177-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2647,
+      "type": "audio",
+      "text": "Values and lists are more common for columns, right? It's kind of like weird that I kept doing this like 7029 right? Because."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-178-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2662,
+      "type": "audio",
+      "text": "I just did it because it was convenient to show you how it works. So accessing single items and accessing lists tend to be more common operations that we do with comps."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-179-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2677,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-180-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2692,
+      "type": "audio",
+      "text": "Like year is greater than this and party is this and that and that. Yes, you can. It's a great question. We'll get back to it towards either the end of class or next time, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-181-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2707,
+      "type": "audio",
+      "text": "Parties, right, because we want like, stuff after 1900 and only the Democrats. Republicans, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-182-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2722,
+      "type": "audio",
+      "text": "Back to the slides. So to recap, what do we do? We talked about HEAD and tail. Head gives you the first however many rows, tail gives you the last however many rows, and Loak gives you a way of select."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-183-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2737,
+      "type": "audio",
+      "text": "Certain role labels and certain column labels."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-184-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2752,
+      "type": "audio",
+      "text": "Information on this slide will be on the Data 100 reference sheet, so it's linked from the Resources section of the website. Generally, this means this is not something you have to memorize. You should understand it, you should know it exists, you should kind of know what it is, but you don't have to memorize it."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-185-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2767,
+      "type": "audio",
+      "text": "OK, again, the labels are these bolded things, right? They're the column labels. Bolded stuff on top row labels bold stuff on the bottom."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-186-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2782,
+      "type": "audio",
+      "text": "Argument row labels, column labels. Each one can either be a single value, a list, a slice, or a mask."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-187-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2797,
+      "type": "audio",
+      "text": "String or float or integer or whatever. If we give a combination of a list and a single value then we get back a series instead of a data frame."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-188-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2812,
+      "type": "audio",
+      "text": "We'll get back a full data frame with those values, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-189-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2827,
+      "type": "audio",
+      "text": "And again, unlike normal Python slicing, this is inclusive of the right hand of the slice, right? So if I slice up to here, it gives me that up to an including percent. Similarly, if I were to use a slice for the rows, it would give me the values up."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-190-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2842,
+      "type": "audio",
+      "text": "To and including whatever the last thing I give it is."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-191-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2857,
+      "type": "audio",
+      "text": "All of the columns."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-192-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2872,
+      "type": "audio",
+      "text": "Many rows there are where every entry is true or false, and if we put that in, Panda says hey, you're using those trues and falses to only pick out the rows where the condition is true."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-193-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2887,
+      "type": "audio",
+      "text": "So let's do a little practice. So here's an exercise where I have this data frame called weird."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-194-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 2902,
+      "type": "audio",
+      "text": "And I want to know which one is going to give me bluefish back."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-201-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3007,
+      "type": "audio",
+      "text": "Going once, going twice. All right, so again, we're going to move back to the end of the notebook."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-202-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3022,
+      "type": "audio",
+      "text": "So notice that we use one of these techniques for constructing a data frame that I talked about earlier and we have it. And So what happens if I do weird loc 11?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-203-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3037,
+      "type": "audio",
+      "text": "The row labeled one and choose the column labeled 1."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-204-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3052,
+      "type": "audio",
+      "text": "Actual error it says key error 1."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-205-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3067,
+      "type": "audio",
+      "text": "Column B? Great, that's what I want. That's bluefish. Just for the sake of completeness, let's talk about the other two, right? If I do Lok of list 11, what happens?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-206-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3082,
+      "type": "audio",
+      "text": "Because I passed in a list."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-207-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3097,
+      "type": "audio",
+      "text": "As this so these two are the same. So with Lok and with ilok, which we're about to talk about, if you'd only give it one index or set of indices, it will assume that you meant the rows and that it'll give you all the columns."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-208-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3112,
+      "type": "audio",
+      "text": "So here notice that I chose the same row twice. This is a data frame where both the rows are exactly the same. They're both the row labeled one with two fish, blue fish, 2 fish, blue fish."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-209-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3127,
+      "type": "audio",
+      "text": "If I do one and B with the list, well if we think about what we just saw then this is really saying give me the rows 1 and B and give me all columns."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-210-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3142,
+      "type": "audio",
+      "text": "Right, none of my index index values are B. So if I run this I get a key error again because it can't find the row labeled B."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-211-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3157,
+      "type": "audio",
+      "text": "So I can click this to minimize it and it kind of hides it for now. I can always expand it by clicking the slack."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-212-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3172,
+      "type": "audio",
+      "text": "I like to say low because it's like location. You'll hear people say all kinds of different things. I don't think 1 is like more correct or less correct. I guess it's like GIF or GIF. It's important to know that, you know, different people say we'll use different ways of saying the same thing."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-213-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3187,
+      "type": "audio",
+      "text": "OK. And we saw that most of the people got it right."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-214-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3202,
+      "type": "audio",
+      "text": "The label, but I actually just want a certain number, row or column. So for example, let's suppose I want to grab the first, second and third columns regardless of what they're called. And this is what I look is good for. So I stands for integers."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-215-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3217,
+      "type": "audio",
+      "text": "So this is a good way of indexing using integers as in the first, second or third value. How does it work? We use the standard Python convention that the first one is always labeled 0, right? So here's our data frame, the."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-216-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3232,
+      "type": "audio",
+      "text": "Rows are always going to be 01234 regardless of the index. The columns are always going to be 01234 and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-217-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3247,
+      "type": "audio",
+      "text": "Well, we can again extract stuff using that iloc, so I'm going to scroll way back up."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-218-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3262,
+      "type": "audio",
+      "text": "1st row and I want the second column."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-219-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3277,
+      "type": "audio",
+      "text": "Like look something like this. This gives me Andrew Jackson right? It pulls out the first row, second column. And just like with LOC, I can use a any combination of a list or."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-220-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3292,
+      "type": "audio",
+      "text": "A slice here right? So for example I can say elections iloc."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-221-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3307,
+      "type": "audio",
+      "text": "And I want let's say the second column and I get the second column using one."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-222-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3322,
+      "type": "audio",
+      "text": "Similarly I can do lists and list."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-223-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3337,
+      "type": "audio",
+      "text": "So if I do this."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-224-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3352,
+      "type": "audio",
+      "text": "Run this."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-225-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3367,
+      "type": "audio",
+      "text": "So if I slice with ilok, my slice behaves like kind of a typical Python slice where it doesn't include the last value. Right here this is like 012345, so I only get 3 and 4."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-226-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3382,
+      "type": "audio",
+      "text": "Up to and not including five."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-227-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3397,
+      "type": "audio",
+      "text": "Again, number three and four really means you know the second and third columns."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-228-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3412,
+      "type": "audio",
+      "text": "Means room so I can say elections iloc of two and four."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-229-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3427,
+      "type": "audio",
+      "text": "So each of the two arguments can be an integer, a list, or a slice. We don't really use boolean masking because, again, we're pulling out certain numbers, right? So it doesn't really make sense to like, say, the the numbers if we're."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-230-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3442,
+      "type": "audio",
+      "text": "Doing boolean mask, we typically want to use LOC or the next kind of a mixing we're going to talk about in a little bit."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-231-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3457,
+      "type": "audio",
+      "text": "Or two lifts and get back a data frame that's like been sliced or narrowed down."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-232-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3472,
+      "type": "audio",
+      "text": "Just like range AB or like list of you know zero to three it'll exclude index 3."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-233-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3487,
+      "type": "audio",
+      "text": "So let's get some practice with this."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-234-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3502,
+      "type": "audio",
+      "text": "Take a second turn to the person next to you and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-243-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3637,
+      "type": "audio",
+      "text": "And we will go to the."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-244-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3652,
+      "type": "audio",
+      "text": "Where the index is 01 and the column labels are A&B."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-245-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3667,
+      "type": "audio",
+      "text": "Column #1 starting at 0, so rows this is 01, so it's going to give me something from this row and column wise it's going to give me this is 0 this is one, right? So right over here I'm going to get bluefish."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-246-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3682,
+      "type": "audio",
+      "text": "Exactly what I get."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-247-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3697,
+      "type": "audio",
+      "text": "It will give me."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-248-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3712,
+      "type": "audio",
+      "text": "Want like the second row and the second column. But we already know this is not going to work right? Because we start at 0 so if we only have two, there's zero and one two goes past the end so we get an error index error."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-249-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3727,
+      "type": "audio",
+      "text": "The bounds for axis zero with size 2."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-250-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3742,
+      "type": "audio",
+      "text": "Doesn't match in numbers and labels, so if we try to do this, we're also going to get an error."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-251-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3757,
+      "type": "audio",
+      "text": "That is how we use iloc."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-252-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3772,
+      "type": "audio",
+      "text": "At a particular location dot iloc gives us integer based extraction."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-253-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3787,
+      "type": "audio",
+      "text": "Vogue is often safer because you know if the order is different or gets changed. Either because somebody gives you the data set differently, or it's a public database, or you do some operations that change the order of things, then it's often more useful to go with."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-254-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3802,
+      "type": "audio",
+      "text": "LOC because it's more consistent."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-255-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3817,
+      "type": "audio",
+      "text": "Candidate and result for those rooms."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-256-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3832,
+      "type": "audio",
+      "text": "01 and four are right, so it's often a lot more readable to use LOC instead of iloc."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-257-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3847,
+      "type": "audio",
+      "text": "Index right? You take the length, divide by two and access it there. Or if you want the very last value then you can usually use iloc -1. Things like that."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-258-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3862,
+      "type": "audio",
+      "text": "Depending on what you're trying to do."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-264-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3952,
+      "type": "audio",
+      "text": "How many people have heard of the kool-aid Challenge meme?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-265-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3967,
+      "type": "audio",
+      "text": "It's a little powder you put in water makes this like super sweet sugary juice or juice like drink. It's mostly just sugar. And there are these ads for it that had this like giant kool-aid man, which is basically a pitcher of kool-aid smashing through a wall."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-266-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3982,
+      "type": "audio",
+      "text": "And they kind of became a meme because it was, like, pretty outrageous, like just smashing through a wall. A couple years ago, there was this meme going around of, like, the kool-aid challenge where people would, like, go and, like, smash through walls and say, oh, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-267-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 3997,
+      "type": "audio",
+      "text": "So really silly. So up until now we've been talking about LOAK and ILOC and they make sense, right? It's like you give real labels, you have column labels, ones for like labels, ones for integers."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-268-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4012,
+      "type": "audio",
+      "text": "And the third way, that's pretty common and it's indexing using brackets. So the brackets are like the kool-aid man, now that I've completely explained and killed a joke. Anyway, here's a video of people doing the kool-aid challenge. They're like smashing through fences people got."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-269-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4027,
+      "type": "audio",
+      "text": "Really injured. It was kind of scary anyway."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-270-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4042,
+      "type": "audio",
+      "text": "Using brackets, not using local bracket iloca bracket. It's just using the brackets."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-271-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4057,
+      "type": "audio",
+      "text": "Month. If you only give one argument then it always treated as a rows and if you only want to select certain columns then you know you just put in a colon for the rows and then you say the columns."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-272-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4072,
+      "type": "audio",
+      "text": "The third way of indexing."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-273-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4087,
+      "type": "audio",
+      "text": "And if you think back to a little while ago when I was like, yeah, usually when I'm picking out columns, I always almost always just use like a single label or a list. And usually if I'm picking out rows, I use a mask or maybe a slice."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-274-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4102,
+      "type": "audio",
+      "text": "Is how the rules for indexing with brackets works. You might see this referred to as like context dependent extraction. You might say referred to as like indexing with brackets or with get item. But how does it work?"
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-275-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4117,
+      "type": "audio",
+      "text": "You pass in a single label or a list of labels. Then pandas will assume you mean columns and treat those labels as columns."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-276-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4132,
+      "type": "audio",
+      "text": "To growth, right? Remember earlier someone asked like, can you do a mask of columns with Logan with Lok? Yes you can. In practice people never do. And so by this default way of using indexing, if you just pass in a boolean mask, it's like, hey."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-277-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4147,
+      "type": "audio",
+      "text": "You must mean columns and gives you back columns or you mean rows. Let me give you back rows."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-278-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4162,
+      "type": "audio",
+      "text": "See this widely used in pandas code. I use it all the time in my code. A lot of times because it's shorter than like writing out Lok and thinking about this and like I just have a mask. I want to use the mask and get certain rows or I just want to pull out one column."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-279-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4177,
+      "type": "audio",
+      "text": "Let me pull that out."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-280-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4192,
+      "type": "audio",
+      "text": "It is. Then you might have to like go look it up. So it can be a little more confusing to read and more advanced operations stuff that is useful, but beyond the scope of this class, typically it doesn't work so well. So it's useful. It's important that you know it, that you know."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-281-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4207,
+      "type": "audio",
+      "text": "Know how to use it, read it, know what's going on with it. But also for if you're writing code in like an engineered software system, might be better to use LOC or ILOC."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-282-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4222,
+      "type": "audio",
+      "text": "Dependent extraction in this class just like this cow text extraction here. OK so."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-283-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4237,
+      "type": "audio",
+      "text": "All right, so how do we do this? We're going to go back up to."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-284-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4252,
+      "type": "audio",
+      "text": "Or list that gets treated as a column label. So if we take our elections and we just say year."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-285-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4267,
+      "type": "audio",
+      "text": "The year and percent."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-286-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4282,
+      "type": "audio",
+      "text": "We can also pass in a slice or a boolean mask."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-287-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4297,
+      "type": "audio",
+      "text": "The slicing behaves the same way that iloc or others Python slicing behaves where it is not inclusive. It is exclusive of the last argument."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-288-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4312,
+      "type": "audio",
+      "text": "Sections of year equals."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-289-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4327,
+      "type": "audio",
+      "text": "So again we can pass in a single column label. Again here the little panda. This is on your reference sheet."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-290-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4342,
+      "type": "audio",
+      "text": "Column labels, which you'll get back as a data frame. You can pass in a slice of row integers, right? And the slice has to be integers, right? It'll behave kind of like iloc. You can do other stuff. It gets kind of messy. I would rather."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-291-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4357,
+      "type": "audio",
+      "text": "Recommend not doing it."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-292-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4372,
+      "type": "audio",
+      "text": "Path in a boolean mask. This is like 70% of the time, 70 plus percent of the time. The first thing I do with the data set is usually to do an operation like this. I usually just start filtering and I start filtering by just doing this kind of one mass."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-293-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4387,
+      "type": "audio",
+      "text": "Or some complex mass and filter this now."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-294-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4402,
+      "type": "audio",
+      "text": "Talk about more sophisticated ways of masking, right? We have that question earlier that was like, oh, you know, I have a mask and you know what if I want a more complicated mask, something more than this, something maybe even like a Mission Impossible style mask."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-295-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4417,
+      "type": "audio",
+      "text": "Well, we can combine operators using what are called bitwise operators, right? We can combine different conditions. So for example, suppose I want all the rows where."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-296-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4432,
+      "type": "audio",
+      "text": "Either it was 2008 or the candidate won over 60% of the popular vote. In that case I can say elections."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-297-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4447,
+      "type": "audio",
+      "text": "Right, I use the vertical bar for or elections of percent greater than or equal to 60."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-298-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4462,
+      "type": "audio",
+      "text": "Give me everything from 2008 and also everything where the popular vote was over 60%."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-299-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4477,
+      "type": "audio",
+      "text": "C is exponent multiplication. Python follows something similar for different operators, like equals, equals and or. And it turns out that if you don't include parentheses the way it does it."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-300-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4492,
+      "type": "audio",
+      "text": "Anytime you're combining these, always make sure you put each condition in parentheses and then use the bitwise operators around them."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-301-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4507,
+      "type": "audio",
+      "text": "Year greater than 2000."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-302-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4522,
+      "type": "audio",
+      "text": "Is."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-303-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4537,
+      "type": "audio",
+      "text": "Multiple filters and creating something more sophisticated."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-304-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4552,
+      "type": "audio",
+      "text": "So AND and OR are going to be maybe by far the most common that you'll use. You know, if they behave like logical AND in order you'd expect them to."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-305-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4567,
+      "type": "audio",
+      "text": "Know that it exists. There's not. Which is great for negation, right? If you have a boolean mask and you want to negate it, right, make all the truths false, all the false is true, then you use tilde."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-306-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4582,
+      "type": "audio",
+      "text": "It's also XOR, right? XOR is like exclusive or meaning one or the other but not both. I don't think I've ever used this, but kind of good to know it exists. Maybe I used it once for like a puzzle or something but never used it in practice."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-307-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4597,
+      "type": "audio",
+      "text": "Again and again, always make sure to put parentheses around each condition when you use these guys."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-308-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4612,
+      "type": "audio",
+      "text": "We have this graph and 1st off we wanted to say how can we find just the columns that we want which were X axis year, Y axis percent and the color party."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-309-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4627,
+      "type": "audio",
+      "text": "Also we only wanted rows after 19104 Democrats and Republicans."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-310-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4642,
+      "type": "audio",
+      "text": "Well, we, we need this subset of the data, right? So we know we're going to need specific rows and specific columns. So great use case for LOC, right? Because we're going to pull out certain columns, certain rows and then certain."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-311-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4657,
+      "type": "audio",
+      "text": "Income. What rows do we want? Well, we want the rows where the party."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-312-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4672,
+      "type": "audio",
+      "text": "Or."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-313-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4687,
+      "type": "audio",
+      "text": "So this is my row condition and then my column condition."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-314-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4702,
+      "type": "audio",
+      "text": "Party and."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-315-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4717,
+      "type": "audio",
+      "text": "Here. So I forgot to capitalize here here."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-316-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4732,
+      "type": "audio",
+      "text": "In 1992."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-317-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4747,
+      "type": "audio",
+      "text": "An independent was actually a billionaire who ran for president. Kind of a, you know, outside the system. Candidate ran for president, actually got a lot of votes, a lot of celebrity endorsements, but only managed to crack 18% of the votes."
+    },
+    {
+      "id": "audio-ds100-sp26-upload-1769146451-upload-audio-318-c0-e0",
+      "lecture_id": "ds100-sp26-upload-1769146451",
+      "timestamp": 4762,
+      "type": "audio",
+      "text": "We'll talk a little bit more next time about how to put that in context and then we'll talk about more advanced operations we can do. I will see you all on Tuesday."
+    }
+  ]
+}

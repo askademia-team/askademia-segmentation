@@ -1,0 +1,2942 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1774996403",
+  "display_name": "Lecture 19 (Mar 31)",
+  "count": 419,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 487,
+      "type": "audio",
+      "text": "Thank you for raising your hand to point that out."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 501,
+      "type": "audio",
+      "text": "All right, now I can focus on why and hear me. If not, please say something. If not, we will continue. OK, cool. So."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 529,
+      "type": "audio",
+      "text": "Announcement for today, so project A2 is due this Friday. Please highly recommend starting early. Definitely a good thing to start ahead of time. Do not wait until the last minute. It's long. There's a lot to do, just like Project A1, except now this builds more on, you know, what we've continued to learn, thinking about feature engineering and so on. Midterm 2 is coming up next week, so there's a review session this Friday from 3:00 to 5:00."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 531,
+      "type": "audio",
+      "text": "And it's the exam itself."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 541,
+      "type": "audio",
+      "text": "This week, Monday to Thursday of next week. So again, this will be another CBTF exam, so you'll want to sign up using the link up there."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 550,
+      "type": "audio",
+      "text": "And yeah, please sign up if you have any issues. There's an Ed post. Check out the end post that has all the details about scope and duration and all that good stuff."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 556,
+      "type": "audio",
+      "text": "And again, I mentioned Josh is out this week, so I will be holding office hours after class today and Thursday."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 560,
+      "type": "audio",
+      "text": "So if you want to hang out, ask questions, feel free to stick around and chat."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 565,
+      "type": "audio",
+      "text": "OK, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 571,
+      "type": "audio",
+      "text": "Last time we talked about this idea of a random variable. All right, folks, let's."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 588,
+      "type": "audio",
+      "text": "Let's quiet down a random variable. So what is a random variable? Well, there's a actual mathematical definition for the purpose of this class. It is a representation of the outcome of a random event. So there's some event that happens, it's random."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 614,
+      "type": "audio",
+      "text": "So we talked about this example of coin flipping, which again is nice and simple and you know, we use it a lot because it's simple. And you know, we have this random variable XI, which can have to be 1 point of heads, 0 if it's tails, right? And the probability that it comes up heads is P to usually think of as being .5. But you know, we saw that, well, actual real coins are actually biased in One Direction. It's actually .51."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 618,
+      "type": "audio",
+      "text": "And there are some years where coins were made that are actually very biased. Coin collectors love them."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 644,
+      "type": "audio",
+      "text": "And so you can imagine that maybe the probability of, you know, a coin coming up heads might not be .5, right? And Bernoulli random variables are a named family of distributions that we can represent a anything that happens either yes or no, right? Yes with some probability P and no with some probability 1 -, P And so this notation here."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 656,
+      "type": "audio",
+      "text": "This tilde here means is distributed as right? So XI is distributed as a Bernoulli with parameter P and we also use."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 672,
+      "type": "audio",
+      "text": "Sometimes the notation iid right we write iid over the little tilde to say XI that is X1X2 and so on through XN are independent and identically distributed. So sometimes write that to mean that."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 691,
+      "type": "audio",
+      "text": "And remember that XI is random, right? When we flip a coin, we get heads. But we could have gotten tails, right? It could have been different. The point of modeling something as a random variable is to say this is something that could have been different, right? There's randomness involved. So XI is random, but on the other hand P is not."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 704,
+      "type": "audio",
+      "text": "Right. The probability that the coin will come up heads, it is what it is, right? That's just a property of the coin. We're not thinking about P as being random. We're just thinking about XI as being random."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 713,
+      "type": "audio",
+      "text": "So XI random P fixed. Sometimes we know P right if we say the coin is fair, sometimes we don't."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 741,
+      "type": "audio",
+      "text": "We talked about expectation and variance. The expectation is just a long run average of that random variable. It's like for a fair coin, the expectation is .5, right? For any Bernoulli random variable, the expectation is P we learned. And the variance is kind of the expected amount that the random variable is going to fluctuate around its average, right? We say OK, like on average how far from the mean from the expected value?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 744,
+      "type": "audio",
+      "text": "Do we expect to be?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 757,
+      "type": "audio",
+      "text": "And we learned a couple properties about expectation, namely that it's linear. So if we have A, a constant A and a constant B, expectation of Ax plus B is just a times expectation of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 772,
+      "type": "audio",
+      "text": "Plus B, right? So this is linear. And if we have two random variables, no matter what, whether they're independent or not, expectation of X + Y is always expectation of X plus expectation of Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 773,
+      "type": "audio",
+      "text": "And the variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 785,
+      "type": "audio",
+      "text": "Remember, follows the property of not quite being linear. But if we take the the variance of ax plus B, well, the plus B doesn't matter, right? Because you're just shifting it, you're not changing how spread out it is or isn't."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 811,
+      "type": "audio",
+      "text": "But this is a ^2 times the variance of X. So we have a constant, it comes out as a square. And then if we have two random variables X&Y, the variance of X + y is variance of X plus variance of y + 2 times. Something called a covariance. Just kind of like an unnormalized correlation. Basically, if they're like positively correlated, it's positive, they're negatively correlated, it's negative."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 825,
+      "type": "audio",
+      "text": "Again, most of the time, if we'll random variables are independent, which we often assume they are, then the covariance is 0 and this term goes away. But it only goes away if we assume that they are independent."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 837,
+      "type": "audio",
+      "text": "So remember we talked about independent identically distributed. Identically distributed just means they have the same distribution. Independent means knowing 1 doesn't tell you anything about the distribution of the other."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 858,
+      "type": "audio",
+      "text": "And then we started at the very end of class, right before spring break to talk about this idea of understanding the variance of 2X1 versus X1 plus X2, right? We had this idea where Josh and I rolled 2 dice and I say, OK, let me take the 1st result of the first die and double it."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 862,
+      "type": "audio",
+      "text": "And Josh is going to take the result of the two rules and add them up."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 874,
+      "type": "audio",
+      "text": "So the average of my outcome is expectation of 2X1, average of Josh's outcome is expectation of X1 plus X2. And we saw that those are both 7."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 887,
+      "type": "audio",
+      "text": "Right, for the average of seven in both cases it's the same. But what about the variance right? Is the variance of my outcome 2X1 different from the variance of Josh's outcome X1 plus X2?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 910,
+      "type": "audio",
+      "text": "And what we saw was that if we think about it, well, you know, we can make a table of like the all the outcomes I could get, right, 24681012 each equally likely versus Josh's outcomes where small outcomes are less likely in his case, right? Because you know, the only way to get a 2 is to get snake eyes. The only way to get a 12 is for two sixes. And there's lots of different ways to get A7."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 913,
+      "type": "audio",
+      "text": "So if we visualize it."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 942,
+      "type": "audio",
+      "text": "We see something like this, right, where the outcome of 2X1, like what I get is a lot more spread out than the outcome of X1 plus X2, which is kind of like bunched up towards the middle, right? We see this bunching where there's a lot more probability of getting something close to the center versus on 2X1 this, you know, probability of getting stuff far away. So this distribution has a higher variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 948,
+      "type": "audio",
+      "text": "Than that one, right? Because it's more spread out. You think variance, you want to think how spread out it is."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 950,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 962,
+      "type": "audio",
+      "text": "And we ended by talking about this fact. Variance of X + Y equals variance of X plus variance of Y if they're independent, right? If they're independent, then that two covariance of XY term goes to 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 974,
+      "type": "audio",
+      "text": "So now let's use that fact, let's get some practice and figure out how we can calculate these two different variances. So what is the variance of 2X1?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 979,
+      "type": "audio",
+      "text": "Well, this is the variance of a constant times a random variable."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 989,
+      "type": "audio",
+      "text": "So I can go to this formula over here and say, well that's just two squared times variance of X1."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1002,
+      "type": "audio",
+      "text": "Right. Or alternately I can just write this as 4 variance of epsilon. I think variance of X1 is like 35 / 12 or something like that. Exact number is not that important, it's in the footnote of the slides."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1012,
+      "type": "audio",
+      "text": "But what about variants of X1 plus X2? Well, that we say is the variance of X1."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1016,
+      "type": "audio",
+      "text": "Plus variance of X2."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1018,
+      "type": "audio",
+      "text": "Plus another term with the covariance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1030,
+      "type": "audio",
+      "text": "But I told you that the 2 rules are independent, right? They're just two completely separate die rules. Knowing 1 doesn't tell me anything about the other, and so that covariance term is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1039,
+      "type": "audio",
+      "text": "Right. So if they are independent, then the variance of the sum is the sum of the variances in general. Not always true, but always true if they are independent."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1049,
+      "type": "audio",
+      "text": "So this is equal to two times the variance of X1."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1051,
+      "type": "audio",
+      "text": "So now if I look at these two together."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1054,
+      "type": "audio",
+      "text": "Well, hey, I can see that."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1064,
+      "type": "audio",
+      "text": "They differ by a factor of 2, right? If I look at my two different outcomes, one is 4 times something and the other is 2 times that same thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1068,
+      "type": "audio",
+      "text": "Right. So in other words, that first result is double the second one."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1075,
+      "type": "audio",
+      "text": "Right, so this is a mathematical way of showing that intuitive hand WAVY result we saw by visualizing the distributions."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1095,
+      "type": "audio",
+      "text": "And again, for a slightly cleaner version of the same thing with the probability, you can see this again, there's a bunch of skip slides that you know, go through a lot of the stuff in more detail. Highly recommend checking out a bunch of the skip slides from last time. They cover a bunch of intuition, a bunch of ideas that are probably going to be helpful in understanding probability a little better."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1114,
+      "type": "audio",
+      "text": "So how does this dice example relate to investments? Remember last time spent a bunch of time on this example of, oh, you know, you're a venture capital firm, then you're going to invest in this company that has only a 10% chance of succeeding. You gain big, but a 90% chance of failure and you lose everything."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1117,
+      "type": "audio",
+      "text": "Well, if we think about investments."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1140,
+      "type": "audio",
+      "text": "General advice that people give you is diversify your portfolio, right? Hedge your bets. Don't just put all your money into NVIDIA. Well, of course, if you've done that five years ago, you probably would have made a lot of money. But if you do that today, who knows? You might make a lot of money several years from now, but you might not. Who knows if supply chain issues, bubble issues are going to come up? You don't know, right? And so."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1147,
+      "type": "audio",
+      "text": "Don't gamble everything on the first iPhone. Don't take just one roll and multiply it by a lot."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1176,
+      "type": "audio",
+      "text": "Instead, spread your investments out across many different investments, right? Think about making multiple but each investment is a different die roll, and you're putting money into each of those, and your variance decreases, right? The variance of the two rule situation is lower than the variance of the single rule double. So spread your money out. Diversifying reduces the variance of your portfolio."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1189,
+      "type": "audio",
+      "text": "It's kind of the same idea as why we pay for insurance, right? You think about insurance, we pay some premiums where we reduce our expected value, right? You pay money every month for like your car insurance. But if there's a catastrophe, right, some accident."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1208,
+      "type": "audio",
+      "text": "Then you don't have to worry about paying as much, right? There's a lower chance of getting some extreme outcome where you have to pay a lot of money to like replace your whole car because of your insurance. So the idea is to spread the risk. So variance is helpful in thinking about a lot of real world concepts."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1238,
+      "type": "audio",
+      "text": "OK. So all of that probability that we've done last time and you know just over the last couple of minutes is a build up to today where we're going to talk about bias and variance and the next time talk about inference as a general idea and talk about something called multicollinearity. So the big idea, the big question for today, I want you to like have in the back of your mind if when we you know do some kind of statistical procedure or fit some model or do something like that."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1244,
+      "type": "audio",
+      "text": "How do we know if our results are any good, right And what does good mean?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1257,
+      "type": "audio",
+      "text": "So First off, we're going to have to find some way to define what good means, and then we're going to have to quantify it, or at the very least intuitively for some models. I want to start with some simple cases and build up to more sophisticated ones."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1288,
+      "type": "audio",
+      "text": "So today's lecture, like last time is can be a lot, right? There's a lot of notation coming. And it also requires you to like bend your mind a little, think about things in a slightly different way using something called frequentist estimation. Don't have to worry about the the name for today. But it's a different way of thinking about how we reason about some unknowns that we want to like figure out what they are. So behind yourself, you know, if it's a lot, feel free to like look at it again. Come to office."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1294,
+      "type": "audio",
+      "text": "For help, see the same material in discussion, come by catch up session and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1316,
+      "type": "audio",
+      "text": "OK. So we're going to start with something called data generating processes. Then we're going to build up from starting by, OK, let's think about just like how do we estimate the mean of a population using the mean of a sample? And then we're going to build from there and think about quantifying how good estimating the mean that way is. And then we're going to use those ideas to reason about."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1327,
+      "type": "audio",
+      "text": "Measuring predictions, right? Remember with OLS, right, linear regression, we want to make predictions and we're going to say, can we quantify how good those predictions are?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1344,
+      "type": "audio",
+      "text": "So what is a data generating process? So you know we have a random variable or a sequence of random variables. We can. One way of thinking about it is as a data generating process. So this is a story about how data are generated."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1368,
+      "type": "audio",
+      "text": "And as I go through it, you'll probably think, well, some parts of the story don't really make sense, or you have to make a lot of assumptions for this story to be realistic. And those are very valid concerns, and they're important, right? It's important that the assumptions that we make are reasonable. If they're not, then a lot of what we're going to do falls apart and there are more sophisticated methods that we have to use."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1397,
+      "type": "audio",
+      "text": "So keep that in the back of your mind. So what is the data generating process, the story for how data are generated? So imagine I have this sequence of coin flips. Well, I can think about it as like coin flips coming off a factory line, right? Think about like an Amazon warehouse. You know, we have a bunch of coin flips coming out, right? So every coin flip is like something coming off the assembly line, right? And we have this sort of never ending series of, OK, here's a coin flip, here's a coin flip, here's a coin flip, here's a coin flip. And this is how the sequence of flips is generated."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1409,
+      "type": "audio",
+      "text": "Right. So we have the first one, it's like heads, then tails, tails and so on and so on. And we have an infinitely long sequence of them, right? So up until you know, some infinite point."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1421,
+      "type": "audio",
+      "text": "So we can ask questions like what is the expected value of XI? Or in other words, what is the long run average of these coin flips?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1449,
+      "type": "audio",
+      "text": "And, you know, in this case, we know that because it's a Bernoulli random variable, the expectation is P. And what is the variance? Well, again, that's answering the question of how do these coin flips vary, right? How variable are they? Are they spread out a lot relative to their average or are they pretty closely concentrated? And we can go and look that up from last time or, you know, online or in a book. And that tells us that it's, hey, it's P * 1 -, P. Don't need to worry about exactly about the details. It's something you should know that you can look up."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1482,
+      "type": "audio",
+      "text": "Another way of thinking about this data generating process or DGP is there's an assembly line model. And there's also, maybe you can think of it as like think of a warehouse, right? Very online retail heavy analogies today, right? Think about a warehouse that is infinitely large, that has like an infinite number of coin flips in it. And we, when we get data are just sampling out of that infinite warehouse of coin flips, right? So here's this big old warehouse."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1497,
+      "type": "audio",
+      "text": "Full of coin flips and we sample X1, right? That's like one of the coin flips from the warehouse, then X2 another one of the coins flips from the warehouse and so on and so on. And we can answer the same questions, right? Two different equivalent perspectives on the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1498,
+      "type": "audio",
+      "text": "Data generating process or DGP?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1509,
+      "type": "audio",
+      "text": "So coin flips are, you know, fine and interesting for learning about probability. But you know, today we want to move on to like some more real and interesting examples. So let's think about heights."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1534,
+      "type": "audio",
+      "text": "So there is like 32,000 ish undergrads at Berkeley. And let's suppose I want to estimate the average height of all 32,000 Berkeley undergrads. Maybe I'm, you know, in charge of hallways at the new Gateway building. And I want to know, you know, how tall should I make them? What's the average height? So I want to know what is the average height of all 32,000 people?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1544,
+      "type": "audio",
+      "text": "So I can think of those 32,000 people as each one of their heights, living as a sheet of paper sitting in this warehouse."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1567,
+      "type": "audio",
+      "text": "And 32,000 is a lot. I'm going to kind of like, imagine that it's infinite, right? There's this warehouse full of an infinite number of scraps of paper, right? Each one with somebody's height written on it. And I'm going to go out and I'm going to collect a sample of 100 people. I don't have the resources to go and talk to everyone, but I do probably have the resources to sample 100 undergrads at random and collect their rights."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1577,
+      "type": "audio",
+      "text": "So you know if this exists, right? The heights of all the people, all the undergrads at Berkeley do exist, but I might not get to observe them, but they're there."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1590,
+      "type": "audio",
+      "text": "So I can ask about those heights of everybody, I can say what is the expected value on average? What is the height of these 32,000 people?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1593,
+      "type": "audio",
+      "text": "Well, the answer is I don't know, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1603,
+      "type": "audio",
+      "text": "I don't really know what the answer is. That's the whole point of doing science is to reason about unknown things, hopefully by using data."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1612,
+      "type": "audio",
+      "text": "Similarly, I can think about the variance. How spread out are their heights, right? Is everybody's heights really similar? Are they really spread out?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1620,
+      "type": "audio",
+      "text": "Also don't know the answer to that either, right? So unlike the previous example, this is maybe a little more realistic where we don't know what the expectation and variance are."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1647,
+      "type": "audio",
+      "text": "And we don't even know what the distribution is, right? Here are three possible examples of what that distribution of heights could look like, right? So this is the distribution of heights of the 32,000 people, right? So the X axis is like the height of any person, Y axis density. And these are three possible examples, right? Maybe it's kind of like this little bell shape. Maybe it's like these two different modes. There's all kinds of possible distributions."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1653,
+      "type": "audio",
+      "text": "So I don't know what the distribution is and I'm not going to assume that I know it for the rest of today."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1657,
+      "type": "audio",
+      "text": "Because again, in reality, we often don't know what our distributions are."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1679,
+      "type": "audio",
+      "text": "But even if we don't know it, we want to estimate properties about it, right? I want to know what might be the true average height of those 32,000 undergrads. And one way I can do that is, like I said, take a sample, right? Go out randomly, sample, right? We had a whole lecture on sampling. I can collect a simple random sample of 100 people and estimate their heights."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1682,
+      "type": "audio",
+      "text": "And use the mean of my sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1687,
+      "type": "audio",
+      "text": "As an estimate for the mean of the population."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1701,
+      "type": "audio",
+      "text": "Now we know that that estimate isn't going to be perfect, right? Because my sample and the population are different, right? One's 100 people, the other is 32,000 people. But how can I quantify whether that estimate is good or not?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1731,
+      "type": "audio",
+      "text": "Right. So again, we can think about this warehouse of, you know, all these slips of paper heights. So I'm going to draw a sample, right? A sample of 100 X 1X2 and so on all the way up to X-100. And this is a random sample of 100 heights. I compute the mean of my sample, say 68.1 inches, that's like 5 foot 8.1. And then I say, well, my best guess for the average of the population is 5 foot 8.168.1 inches."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1732,
+      "type": "audio",
+      "text": "So is that good?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1736,
+      "type": "audio",
+      "text": "Is that a good estimate? Is it like? What does good even mean?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1755,
+      "type": "audio",
+      "text": "Right, because I want, these are important questions to answer, right? I want to know is my estimate good at all? And I want to know by what measure of good, right, what is what does good mean? Can we come up with some definitions that might help us answer that question? So that's what we're going to focus on today."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1769,
+      "type": "audio",
+      "text": "So we'll start again, like I mentioned, with an estimator for the sample mean. And then we're going to build up to more complicated and sophisticated estimators and build up this idea of how we can measure how good they are getting to prediction."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1797,
+      "type": "audio",
+      "text": "So I want you to, in order to think about how good it is, we kind of have to do something called counterfactual reasoning, right? Which is like, I went out and I got my sample of 100 people, but I could have gotten a different sample, right? I could have sampled a different 100 people. And you can imagine like a parallel universe version of me that sampled 100 people. That parallel universe version of me would have probably sampled a different group of 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1805,
+      "type": "audio",
+      "text": "So maybe that parallel universe version of me sampled, you know, people and computed an average of 69.2 inches."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1811,
+      "type": "audio",
+      "text": "Is that good? How does that How does mine estimate fit into that?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1826,
+      "type": "audio",
+      "text": "And really, there's not just one parallel universe, there's a whole multiverse of many different means, each one collecting a sample of 100 different people, right? So we can imagine this random variable."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1830,
+      "type": "audio",
+      "text": "X-100."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1833,
+      "type": "audio",
+      "text": "Right, notice that I said X1X bar 100 is also a random variable."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1846,
+      "type": "audio",
+      "text": "It is different from the random variables XI, right? This over here is the distribution of the XI. Each individual height looks like one of these, or maybe something completely different from all three of them."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1850,
+      "type": "audio",
+      "text": "But I can also think about well, if I compute the average of those random heights."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1854,
+      "type": "audio",
+      "text": "That average depends on the random heights, and so it's also random."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1863,
+      "type": "audio",
+      "text": "Right. You think about all these different possible samples and all these different possible universes that forms a distribution."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1873,
+      "type": "audio",
+      "text": "Right. In other words, there is a probability distribution for the average height of a sample, right? I take a sample, I compute the average."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1881,
+      "type": "audio",
+      "text": "But I could have gotten a different sample with a different average, right? So we can think about what is the distribution of the sample average?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1890,
+      "type": "audio",
+      "text": "And we sometimes call this a sampling distribution, and the sample average is called an estimator."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1900,
+      "type": "audio",
+      "text": "Why is it called an estimator? Because it's something we use to estimate the thing we care about. The thing we care about is the mean of the population. Our estimator gives us a way of measuring it."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1906,
+      "type": "audio",
+      "text": "So we can think about the distribution of our estimator, also called the sampling distribution."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1916,
+      "type": "audio",
+      "text": "And the central limit theorem, which again you briefly find data 8, tells us that that sample average follows a normal distribution."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1918,
+      "type": "audio",
+      "text": "Right if."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1925,
+      "type": "audio",
+      "text": "My excise right, my sampling of 100 people are IID and N is big enough."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1929,
+      "type": "audio",
+      "text": "For some definition of big enough."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1948,
+      "type": "audio",
+      "text": "Then the distribution of the sample mean is roughly normal. And this is true regardless of the distribution of X, right? If it looks like any one of these, if it looks like something else completely different, if they're IID and there are enough of them, the distribution of the sample average will look normal."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1968,
+      "type": "audio",
+      "text": "So what is this distribution on the X axis? Here we have X bar 100. That is, we can think about our sample average, right? So each point in this histogram represents a different random sample, right? There's many different random samples. You know, all of them could give me different sample averages. And we look at that distribution here."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 1991,
+      "type": "audio",
+      "text": "And this is a theoretical result. In the real world, we will never see this entire distribution, right? We'll always only see one sample. So what we're doing today is thinking about things theoretically. We're thinking about a theoretical lens on, well, yeah, I only get 1 sample, but let's reason about what could have happened if I'd gotten a different one."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2004,
+      "type": "audio",
+      "text": "So going back from the warehouse analogy to the factory line analogy, right, we can think about our dating data generating process and we can say that well."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2007,
+      "type": "audio",
+      "text": "The XIS."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2022,
+      "type": "audio",
+      "text": "Now follow some distribution, some unknown distribution. Maybe it looks like one of these in the bottom left, maybe not. And that unknown distribution has some mean MU and some variance Sigma squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2032,
+      "type": "audio",
+      "text": "I don't know what MU is, but it exists, right? Like there is some average of the heights of the 32,000 undergrads at Berkeley. I don't know it, but it exists."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2041,
+      "type": "audio",
+      "text": "And finally, there is some variance of that population. I don't know it, but it exists, so I'm going to define MU and Sigma squared to represent those unknown quantities."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2056,
+      "type": "audio",
+      "text": "And those quantities are unknown and they're also fixed, right? There is just some true mean of all 32,000 people, right? I'm not really thinking about it as random. It's, it's there. I just don't know it, right? What's random is my data."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2060,
+      "type": "audio",
+      "text": "So if I assume this then."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2062,
+      "type": "audio",
+      "text": "This tells me that."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2064,
+      "type": "audio",
+      "text": "I add in an extra."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2078,
+      "type": "audio",
+      "text": "Piece of an assumption into my central limit theorem. And if I make that assumption then I can say that the distribution of the sample mean then not only is it normal, but it's normal centered at mu."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2083,
+      "type": "audio",
+      "text": "And has variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2090,
+      "type": "audio",
+      "text": "Sigma squared over north right? Or in other words standard deviation Sigma over square root of north."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2122,
+      "type": "audio",
+      "text": "And does this even make sense? Well, let's think about it, right? Suppose N is like really, really, really, really, really big, right? Suppose I collect N is 32,000, right? I go and sample all 32,000 people. And then I collect a different sample of size, 32,000 and another sample of 32,000, another, another, another. But all of them are going to have exactly the same sample, meaning, right? So as N gets really large, the variance in this distribution is going to shrink down to like a single point."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2136,
+      "type": "audio",
+      "text": "Right. Whereas if like N is really, really small, like N is 1, then the distribution of the the mean of one point or maybe like 2, to be realistic, the distribution of the mean of two points is going to be all over the place. It's going to be really spread out."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2139,
+      "type": "audio",
+      "text": "So that's what the central limit theorem tells us."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2155,
+      "type": "audio",
+      "text": "OK, so that's a little bit about data generating processes, so let's do a little slide up. Which of the following are true about Dgps? First, a DGP is a model for how data are randomly drawn from a true distribution or population."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2159,
+      "type": "audio",
+      "text": "2nd, we typically do not observe the true structure of an AGP."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2179,
+      "type": "audio",
+      "text": "3rd, we typically use an observed sample of data to estimate properties of the DGP. And last, after our analysis is complete, we can confirm whether estimated DGB properties are equal to the true properties, right? Take a minute and discuss with the person Xu."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2182,
+      "type": "audio",
+      "text": "What the answer is which one of these are correct?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2190,
+      "type": "audio",
+      "text": "If you have questions, I'll come around and answer them."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2192,
+      "type": "audio",
+      "text": "Discuss. I want to hear people discussing."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2267,
+      "type": "audio",
+      "text": "All right, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2294,
+      "type": "audio",
+      "text": "Let's go through these four different statements. So remember, a data generating process is a model. It's like how we think about how we get data from a population, right? It's a model for how data are sort of created by nature, right? Like by the world. Like when you have some population, how do we get data from that population through the data generating process?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2297,
+      "type": "audio",
+      "text": "So which I'm following is true the first one? Yes, this one is true."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2302,
+      "type": "audio",
+      "text": "It is a model for how data are randomly drawn from a true distribution of population."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2331,
+      "type": "audio",
+      "text": "In general, we do not observe the true structure of a DGP, right? We don't actually see, oh look, all these heights are actually a from a normal distribution. We just see our sample, right? We get our one single sample. Whereas the DGP is a way of thinking about like the universe of all possible samples or like the multiverse of all possible samples. In general, we use an observed sample that we get to estimate properties of the DGP."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2337,
+      "type": "audio",
+      "text": "Properties being things like the mean of everybody, all 32,000 people."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2340,
+      "type": "audio",
+      "text": "The last one is false."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2344,
+      "type": "audio",
+      "text": "Right, and this is where things may feel a little weird."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2360,
+      "type": "audio",
+      "text": "Because when our analysis is complete, we do not get to confirm whether things DGP properties that we estimated are actually correct, right? I go out, I collect my sample of 100 people. I compute the mean of that sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2365,
+      "type": "audio",
+      "text": "I don't get to compare that sample average to the true mean of everybody."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2368,
+      "type": "audio",
+      "text": "I knew the true meaning of everybody to compare it to, I would just use that in the first place."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2379,
+      "type": "audio",
+      "text": "So everything we're doing today is a way of building up a theoretical framework to reason about how good these processes are."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2406,
+      "type": "audio",
+      "text": "And we'll see that that reasoning can help us even in the case where we don't know the true properties, right? We can sort of build up some guarantees and reason about is there, you know, process for estimating this mean good or not. We can do that regardless of whether we actually know the true properties. But we don't ever get to observe the true properties of a DGP because if we do, we just use those in the first place."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2415,
+      "type": "audio",
+      "text": "So we're typically assumed make an assumption that the data are generated with some structure and we estimate components of that structure."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2435,
+      "type": "audio",
+      "text": "So like Josh said a month ago, all models were wrong, but some are useful, right? The DGP is not an exact representation of how the world really works, right? It's a simplification, but it's a simplification that's helpful to us because it helps us reason about are the estimates that we get good or not?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2449,
+      "type": "audio",
+      "text": "So thinking about the central limit theorem, right, there's three big things that it says. The first are that the first one is that the distribution of the sample mean is roughly normal."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2457,
+      "type": "audio",
+      "text": "The second is that it has mean MU and the third is it has variance or standard deviation Sigma over square root of north."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2482,
+      "type": "audio",
+      "text": "So the first one that the distribution is roughly normal beyond the scope of this class, right? We're not going to cover it. But the second two we can actually show using the tools we've learned, right? And I've put sort of a mini CHEAT SHEET of useful facts about expectation and variance up here. So let's use them and go ahead and derive the expectation and standard deviation of the sample mean."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2492,
+      "type": "audio",
+      "text": "So again, what is the sample mean? Well it is this right. The sample mean is the average of the X times we take the X is we add them up and divide by N."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2503,
+      "type": "audio",
+      "text": "So what is the expectation of that sum? Well, it's expectation of 1 / n times stuff. One over north is a constant, so we can pull that constant out."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2511,
+      "type": "audio",
+      "text": "So this looks like 1 / n expectation of some."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2520,
+      "type": "audio",
+      "text": "XI, right. And I'm going to use the shorter sum notation with just a little I to represent the fact that this goes from I equals one to North."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2527,
+      "type": "audio",
+      "text": "All right. And what is the expectation of?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2533,
+      "type": "audio",
+      "text": "This sum, well, that's like expectation of X1 plus, X2 plus, X3 plus and so on all the way up to XN."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2538,
+      "type": "audio",
+      "text": "But we know that expectation is linear, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2550,
+      "type": "audio",
+      "text": "Expected value of 1 random variable plus another is this expectation of the first plus expectation of the second. So this means that we can turn this into 1 / n."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2556,
+      "type": "audio",
+      "text": "Sum of expected value of XI."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2560,
+      "type": "audio",
+      "text": "Right where by this step we've used the property I underlined in blue."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2564,
+      "type": "audio",
+      "text": "What is the expectation of each XI?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2584,
+      "type": "audio",
+      "text": "Well, I told you that that is, we made the assumption that this is just MU, right? We assume that it is MU. It's not much of an assumption, right? Because we don't know what MU is. We're just naming whatever unknown mean it has MU. And so this is really 1 / n."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2585,
+      "type": "audio",
+      "text": "Sum of MU."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2597,
+      "type": "audio",
+      "text": "And what does that sum mean? Well, that sum is really just MU plus MU plus MU plus MU plus MU N times, which is just N times MU."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2602,
+      "type": "audio",
+      "text": "So this is 1 / n * n MU."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2604,
+      "type": "audio",
+      "text": "Which is just me."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2609,
+      "type": "audio",
+      "text": "Right, which is exactly what we wanted to show."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2622,
+      "type": "audio",
+      "text": "Great. OK, so that was easy. What about the variance? Well, the variance is again variance of X bar N the sample average, right? That's one over North times the sum of stuff."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2631,
+      "type": "audio",
+      "text": "When we have variants of a constant times stuff right like one over north is a constant. When we pull that out we have to square it."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2637,
+      "type": "audio",
+      "text": "So this is 1 / n ^2 times the variance of."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2639,
+      "type": "audio",
+      "text": "Sum XI."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2649,
+      "type": "audio",
+      "text": "All right, So what is the variance of the sum? Well, again, we can use this fact here."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2657,
+      "type": "audio",
+      "text": "Right. And in particular we are assuming that XI are IID."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2660,
+      "type": "audio",
+      "text": "Right. So if we assume that their IID."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2671,
+      "type": "audio",
+      "text": "Independent and identically distributed. That means that knowing 1 doesn't tell us anything about the other. So that means that all these covariance terms are 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2676,
+      "type": "audio",
+      "text": "Right, so the variance of the sum is just the sum of the variances because all those other terms are 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2683,
+      "type": "audio",
+      "text": "So this is 1 / n ^2 times the sum."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2685,
+      "type": "audio",
+      "text": "Of."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2687,
+      "type": "audio",
+      "text": "Variance of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2697,
+      "type": "audio",
+      "text": "Well, what is the variance of each XI? They are identically distributed, their variances are all the same and."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2703,
+      "type": "audio",
+      "text": "We know that the standard deviation is Sigma and so the variance is Sigma squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2709,
+      "type": "audio",
+      "text": "So this is 1 / n ^2 times sum."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2714,
+      "type": "audio",
+      "text": "Of Sigma squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2722,
+      "type": "audio",
+      "text": "And again, what does that sum? It's just Sigma squared plus Sigma squared plus Sigma squared plus Sigma squared and so on. North times, which is just north times Sigma squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2734,
+      "type": "audio",
+      "text": "So to north cancels with one of the NS in the denominator and we get Sigma squared over N."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2739,
+      "type": "audio",
+      "text": "So that's the variance, the standard deviation."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2744,
+      "type": "audio",
+      "text": "Of X bar N."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2749,
+      "type": "audio",
+      "text": "Is equal to the square root of the variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2760,
+      "type": "audio",
+      "text": "Right. So that means it's equal to square root of Sigma squared over north, which is just Sigma over square root of north."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2765,
+      "type": "audio",
+      "text": "So that is our standard deviation of the sample mean."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2769,
+      "type": "audio",
+      "text": "Right, that is this."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2797,
+      "type": "audio",
+      "text": "OK, so we did the math. Great. But what does that mean, right? What does all this math that we didn't mean? It means that the variance of this random variable, the sample average, right? In other words, variance meaning like if we had a different sample, right? Like I get a sample, my parallel universe twins all get samples, right? And each one of us has a, you know, sample how variable, how spread out are those samples? Sample averages, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2813,
+      "type": "audio",
+      "text": "How spread out are those sample means across different samples? Well, how spread out are they? They're standard deviation is Sigma, the standard deviation of the individual data points divided by square root of north."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2830,
+      "type": "audio",
+      "text": "OK, so this is we showed kind of the two parts of the central limit theorem. The last part, little beyond the scope of this class requires some advanced probability machinery. We won't cover it, but when you go on to take probability, you'll see some discussion of that."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2838,
+      "type": "audio",
+      "text": "OK. Let me pause for questions on any of the manipulations or kind of like working with probability stuff that we just did here."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2839,
+      "type": "audio",
+      "text": "Questions on this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2841,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2846,
+      "type": "audio",
+      "text": "The question is, why can we assume that they're IID?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2878,
+      "type": "audio",
+      "text": "Well, the short answer is because I said so, right? Because like I told you that their IID, that's kind of an unsatisfying answer, right? The real answer is if you go out and you follow good practices and you collect a sample of truly independent data points, then you will get an IID sample, right? But if you take a convenience sample, then they probably won't be right. And so this is part of why it's important to do good sampling is because all."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2894,
+      "type": "audio",
+      "text": "Of our theory about how this stuff works is based on the idea that our sample points for IID. So if they're not, a lot of this falls apart, you know, you can imagine a bunch of other stuff is going to happen here, maybe the variance is going to increase, right? So yeah, great question."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2896,
+      "type": "audio",
+      "text": "Other questions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2908,
+      "type": "audio",
+      "text": "All right, so here is oops."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2921,
+      "type": "audio",
+      "text": "Here is a slightly neater version of what I just did. If you don't like my handwriting, you can check out that. Let's take a short break. So get up, get some fresh air and move around a little."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 2927,
+      "type": "audio",
+      "text": "I'm I'm going to search too. My physical therapist has told me I need to stretch."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3054,
+      "type": "audio",
+      "text": "Right, so."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3059,
+      "type": "audio",
+      "text": "Let's continue building things up to."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3075,
+      "type": "audio",
+      "text": "Get to again, we're our sort of Holy Grail for today, which is going to be understanding the errors in prediction models, right? Can we have some way of understanding how good our prediction models are at making predictions?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3077,
+      "type": "audio",
+      "text": "Prediction models like OLS."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3079,
+      "type": "audio",
+      "text": "So to start."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3110,
+      "type": "audio",
+      "text": "We want to build from what we have. We've been talking about where the sample mean, right? We kind of understand the sample mean. We kind of like use the central limit theorem a little to think about it. And now we're going to kind of generalize one step and think about not just the sample mean, but maybe any other estimator that we might want to reason about and talk about how good that estimator is at estimating the thing we care about, which we sometimes call the estimand."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3117,
+      "type": "audio",
+      "text": "Right, like the true mean of the all 32,000 people is like the S demand. My average of my sample is the estimator."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3149,
+      "type": "audio",
+      "text": "You can estimate, not something we'll be using that much in this class, but it's something you'll hear people use. There's a lot of different words for these kinds of things. So often when you go out and you talk to people, they might use different vocabulary from you. Often it's helpful to just ask like what exactly do you mean by that? So that you can take whatever word they're using and map it onto the concepts that you already know, right? Different people use different vocab, but a lot of the underlying concepts are the same. So when you hear a new word, try to map it onto the concept."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3165,
+      "type": "audio",
+      "text": "You know, OK, so let's think about this data generating process again, right? Our samples are like little, you know, widgets coming off an assembly line, right? There's some infinite assembly line, some infinite population, and we get a bunch of samples."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3173,
+      "type": "audio",
+      "text": "And each sample is iid, some unknown distribution and has mean MU variance Sigma squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3198,
+      "type": "audio",
+      "text": "And again, thinking about this sort of like parallel universe setup, right, where we have all these different possible samples, right? This sort of multiverse of every like little universe, parallel universe has its own different sample. Understanding this idea behind the sample could have been different. Let's think about all these samples is going to be key to the rest of today and to most of Thursday."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3203,
+      "type": "audio",
+      "text": "So again, Thursday we're going to talk a little bit more about how we might construct them from our data."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3207,
+      "type": "audio",
+      "text": "But today, we'll just kind of take for granted that they exist in theory."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3220,
+      "type": "audio",
+      "text": "Right. And it kind of makes sense, right? Like the sample I got could have been different. Maybe there's no parallel universe version of me. Maybe there is. But the sample could have been different, right? I could have gotten something different."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3222,
+      "type": "audio",
+      "text": "So we just get one."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3231,
+      "type": "audio",
+      "text": "Right, I have XN right the sample in blue X bar N right I get a sample of size N, but there's all these other possible ones."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3255,
+      "type": "audio",
+      "text": "So what is the behavior of X bar N this like sample average across different samples right across different parallel universes? How good is XN right? Or how do the XNS vary right on average? Are they good bad. What does good bad mean?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3277,
+      "type": "audio",
+      "text": "So let's define a couple terms that will help us quantify the goodness or not of the sample averages. I'm going to start with one called bias, right? So the bias says, on average, how close are the sample averages to the true mean MU?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3299,
+      "type": "audio",
+      "text": "Right. On average, are we like consistently over? Are we consistently under? Are we consistently over by a lot, by a little, right? So the bias tells us how close are we to the true average, right? And here we care about the sign, right? So we're not going to do any like, you know, squared or absolute value stuff. We actually care. We over are we under when we measure the bias?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3320,
+      "type": "audio",
+      "text": "We also care about the variance, right? And here I want to emphasize the variance of the sample average tells us how variable is the sample average with respect to itself, right? In other words, in all these different universes, each one has like a different average. How spread out are they?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3334,
+      "type": "audio",
+      "text": "Right. Maybe they're all consistently like, you know, off from the true value, but maybe they're always close together, right? In that case, they would have a low variance, right? So the variance is kind of a measure of how spread out are they relative to themselves."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3344,
+      "type": "audio",
+      "text": "And then we can also think about the mean squared error, our old friend, right? Which is what is the expected squared difference between?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3348,
+      "type": "audio",
+      "text": "The value that we get and the true average mean."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3378,
+      "type": "audio",
+      "text": "So these are three quantities, three ways of measuring how good X bar N is. And I'm not going to say that like 1 is necessarily worse or better than the other. They're all, you know, useful quantities. We're going to see how they're related at the very end of class. But I hope you can agree that these are like reasonable ways of measuring the goodness or not of an estimator. So like I said, we're going to kind of take."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3379,
+      "type": "audio",
+      "text": "Conceptual step and generalize."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3388,
+      "type": "audio",
+      "text": "Right, instead of just thinking about estimating the sample mean, we're going to think about estimating any parameter Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3392,
+      "type": "audio",
+      "text": "Right, so now we're no longer just going to be estimating the mean, we're going to estimate some arbitrary parameter Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3419,
+      "type": "audio",
+      "text": "Right. And maybe Theta could be the mean, but maybe Theta could be the median, right? Maybe I want to estimate the median of my population. What is the median height across all 32,000 people? Or maybe I even want to know what is the 80th percentile height across all the population, right? So I'm designing doorways. Maybe I don't really want the average. Maybe I want the 80th percentile so I can know most of the time people are going to fit."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3428,
+      "type": "audio",
+      "text": "So these are the kinds of things we might want to estimate. So we're going to use Theta to represent this parameter."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3449,
+      "type": "audio",
+      "text": "And if you think, well, hey, Theta looks familiar, we've been we've been looking at thetas before. Good dot, this is exactly the kind of direction we're going in. So Theta is a, a property of the unknown distribution, right? We may want to estimate the variance, right? Maybe I don't necessarily want to know the mean. I want to know what is the variance from the population."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3452,
+      "type": "audio",
+      "text": "Can I use my sample to estimate the variance of the population?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3461,
+      "type": "audio",
+      "text": "So Theta hat N is an estimator for Theta that we calculate with our sample, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3467,
+      "type": "audio",
+      "text": "And the subscript N tells us that we calculated it with a sample of size N."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3477,
+      "type": "audio",
+      "text": "Right, so Theta 100 subscript 100 is an estimator for Theta that has been calculated from a hundred a sample of size 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3485,
+      "type": "audio",
+      "text": "So X bar N right is 1 is an estimator of MU with N data points."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3498,
+      "type": "audio",
+      "text": "Right. So now just like before where we had, you know, all these different possible samples and the sample means for each one, now we have all these different possible samples and a general estimator Theta hat for each one."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3506,
+      "type": "audio",
+      "text": "Right. Could be the sample mean, could be something else, could be the sample 80th percentile, could be the sample standard deviation, and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3517,
+      "type": "audio",
+      "text": "Again, we want to answer the same questions that we just did right? Those questions are useful and relevant regardless of whether you're talking about the mean or something else. How can we quantify whether Theta hat N is good or not?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3537,
+      "type": "audio",
+      "text": "Well, we're going to use the same 3 concepts. The bias which is on average how close are the estimators Theta hat and to the true value Theta. The variance how spread out are the Theta hat ends from each other and the MSE right? What is the expected square difference between Theta hat north and the true value Theta?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3541,
+      "type": "audio",
+      "text": "So let me pause here for questions before we go on."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3547,
+      "type": "audio",
+      "text": "Question."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3560,
+      "type": "audio",
+      "text": "All right. And again, you know this is like Theta is some property of the DGP, right? Some underlying property of the population that we don't know?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3571,
+      "type": "audio",
+      "text": "That we want to know that we care about, that we're interested in, that we're using our sample and computing Theta hat from our sample and using that to reason about the true value Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3575,
+      "type": "audio",
+      "text": "So what is a good estimator?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3581,
+      "type": "audio",
+      "text": "Well, let's try to think about bias and variance as an analogy with maybe like archery."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3591,
+      "type": "audio",
+      "text": "Right. So if I think about, you know, an Archer shooting a target, right, the true value Theta is like the center of the target."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3593,
+      "type": "audio",
+      "text": "So each arrow."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3599,
+      "type": "audio",
+      "text": "In this example, corresponds to a different estimate Theta hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3601,
+      "type": "audio",
+      "text": "Obtained from a different random sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3611,
+      "type": "audio",
+      "text": "Right, so up there I have 6 different arrows which represents 6 different random samples and each one of those random samples has a value of Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3622,
+      "type": "audio",
+      "text": "Right. The values of Theta that are like far away, right? Those have maybe a high bias. The values of data that are close by have a low bias."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3626,
+      "type": "audio",
+      "text": "Right. And you know you can think about the variances how spread out those are."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3630,
+      "type": "audio",
+      "text": "In the example of heights right, we can think about the center of the target as MU."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3638,
+      "type": "audio",
+      "text": "Right, the center of the target is MU. That is the true average height of all 32,000 undergrads."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3649,
+      "type": "audio",
+      "text": "And each arrow corresponds to a sample mean that we've computed from 1 sample, right? I go in and I collect a sample of 100 people, compute the average. That's like firing 1 arrow at the target."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3664,
+      "type": "audio",
+      "text": "Right. And you know, hopefully it's close to the true average. Maybe it is, maybe it isn't, but this analogy will help us reason about things. And again, another quick word on vocab, right? We have our."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3678,
+      "type": "audio",
+      "text": "Theta hat, which again we can call our estimator. We can call our sample statistic, right? Because it is a statistic that we compute from our sample and then we want to use to ask that to estimate the true value Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3705,
+      "type": "audio",
+      "text": "Sometimes people call this the true parameter, the population parameter DGP property. Sometimes people call it the S demand. Again, all words you'll see eventually. You should be familiar with all of these words so that you can converse with people who might use different ones. So to evaluate how good Theta hat is, we can think about how well it does across these parallel sampling universes."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3713,
+      "type": "audio",
+      "text": "Right. Or in other words, on average, how close is the estimator to Theta, the true parameter?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3732,
+      "type": "audio",
+      "text": "We can think about how variable is the estimator across different random samples. I mean, think about what is the average squared difference between the estimator and Theta. These are exactly our three things we just talked about. The bias, right? The bias which tells us on average how close it is to the true value, right? So the bias."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3737,
+      "type": "audio",
+      "text": "We can really think of as expected value of Theta hat minus Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3747,
+      "type": "audio",
+      "text": "Right, on average, what is the difference Theta hat minus Theta between our estimator Theta hat and the true value of Theta?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3751,
+      "type": "audio",
+      "text": "What is that value on average or what is the expectation of that difference?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3759,
+      "type": "audio",
+      "text": "Using properties of expectation we can say it's just this right? Just expectation of Theta hat minus Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3778,
+      "type": "audio",
+      "text": "Notice that the bias again is sine right, meaning that it can be positive or negative, right? Positive values tell me that on average I'm too big. Negative value suddenly on average I'm below and so on. And you know 0 means on average I'm right on the mark."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3789,
+      "type": "audio",
+      "text": "How variable is it? That's our variance, right? That is the expected value of Theta hat minus the expected value of Theta hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3789,
+      "type": "audio",
+      "text": "Squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3803,
+      "type": "audio",
+      "text": "Right, which is kind of a mouthful, but really this is like on average, what is the behavior of Theta hat right across all different possible multiverses, right, different universe parallel universes."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3806,
+      "type": "audio",
+      "text": "What is the average I'm going to get?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3823,
+      "type": "audio",
+      "text": "And then I think about that average and again, across all these multiverses, how spread out are my different sample averages, right? How spread out are my different sample 80th percentiles? How spread out are my different estimators relative to this true sample average?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3829,
+      "type": "audio",
+      "text": "So we can also ask about the MSE right on average."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3833,
+      "type": "audio",
+      "text": "What is Theta hat minus Theta squared?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3842,
+      "type": "audio",
+      "text": "And notice here that the variance of the MSE look kind of similar, but they have one very very important difference, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3852,
+      "type": "audio",
+      "text": "Variance, we're looking at the how spread it out is relative to itself, right, relative to the the mean of Theta hat, whereas in."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3860,
+      "type": "audio",
+      "text": "The case of the mean squared error, we're looking at how spread out it is relative to the true value Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3867,
+      "type": "audio",
+      "text": "OK, so these are three quantities we're going to use to understand our."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3871,
+      "type": "audio",
+      "text": "And."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3871,
+      "type": "audio",
+      "text": "Our estimators."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3888,
+      "type": "audio",
+      "text": "To think about the analogy, right, the center again is like the true Theta. So each arrow corresponds to a separate estimate from a different random sample, right? So each arrow represents kind of the result in one parallel universe."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3898,
+      "type": "audio",
+      "text": "So let's do a little exercise. Which of these little diagrams demonstrates high variance and low bias?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3904,
+      "type": "audio",
+      "text": "So I'm going to flash up the code and then I'm going to go back just for like a moment and then go back to the version that actually has the equations on it."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3906,
+      "type": "audio",
+      "text": "So if you haven't taken a photo."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3911,
+      "type": "audio",
+      "text": "Please do that now and then just a second or two, I will go back to."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3920,
+      "type": "audio",
+      "text": "Again, same diagram, but also has the you know version with the equations on here. All right, take a minute and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 3978,
+      "type": "audio",
+      "text": "All right, so let's think about these 4 examples."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4010,
+      "type": "audio",
+      "text": "So if we think about these, well, again, bias tells us on average, how close are we to the true value, right? Are we high? Are we low? So if we think about it, we can kind of put them on this axis, right, where bias is kind of increasing going left to right and variance is increasing going bottom to top. Why? Well, think about that version in the bottom left. That's kind of like the best one, right? Like this is sort of the ideal situation where."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4016,
+      "type": "audio",
+      "text": "We have a bunch of errors. They're all pretty close to the target. So why does this have low bias? Because again, on average."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4035,
+      "type": "audio",
+      "text": "Our arrows are spot on the mark, right? So this is low bias because on average the arrows are close to the true, are at the true value, and it has low variance because again, relative to themselves the arrows are not very spread out."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4039,
+      "type": "audio",
+      "text": "So this is low bias low variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4070,
+      "type": "audio",
+      "text": "Then we can move over here, right, where we increase the bias, we keep the variance low. Well, why are we keeping the variance low? Because again, the points stay close to each other, right? For different data sets, the they don't land very far apart. And so the variance is low, right across different possible samples, across different possible, you know, universes, I get relatively similar results. So the variance is low."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4082,
+      "type": "audio",
+      "text": "But here the bias is high. Why is the bias high? Because on average I'm off, right? On average I am pretty far away from the true value Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4086,
+      "type": "audio",
+      "text": "So this is an example of high bias and low variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4101,
+      "type": "audio",
+      "text": "Throw out the one at the top left. Well, again, you know, on average. Well, if we look at like the average of those arrows, it's Theta, right? They are centered on the true value Theta. And so this is an example of low bias."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4107,
+      "type": "audio",
+      "text": "Because on average they are right at the true parameter Theta."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4111,
+      "type": "audio",
+      "text": "But it is high variance because they are spread out."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4122,
+      "type": "audio",
+      "text": "Right. The the points are kind of all over the place. There's, you know, different samples can result in very different results. So this is an example of low bias and high variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4129,
+      "type": "audio",
+      "text": "And then last but not least, we have points that are very spread out and on average are far from the true value. So this is high bias and high variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4141,
+      "type": "audio",
+      "text": "OK, so now now that we've built up an idea of measuring the goodness of estimators using bias, variance and MSE."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4149,
+      "type": "audio",
+      "text": "We're ready to approach the problem of how do we think about prediction, right, How do we think about prediction as estimation?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4157,
+      "type": "audio",
+      "text": "So let's go one level up and make our data generating process one level more sophisticated."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4161,
+      "type": "audio",
+      "text": "And think about a data data generating process that looks like."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4166,
+      "type": "audio",
+      "text": "Each point now has a Yi and an XI."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4169,
+      "type": "audio",
+      "text": "Right if this is sounding familiar."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4176,
+      "type": "audio",
+      "text": "Good, right? So we have Yi which is some function of XI plus epsilon."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4180,
+      "type": "audio",
+      "text": "And we want to know what that function is, right? We want to know."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4182,
+      "type": "audio",
+      "text": "OK, I."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4188,
+      "type": "audio",
+      "text": "Is some function F of XI."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4196,
+      "type": "audio",
+      "text": "Plus epsilon. We'll talk about epsilon in a SEC, and I want to estimate based on that what is the function F?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4201,
+      "type": "audio",
+      "text": "Right, maybe I know X and I want to estimate the function F."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4207,
+      "type": "audio",
+      "text": "Epsilon is going to have some unknown distribution."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4217,
+      "type": "audio",
+      "text": "Right, so here in my data generating process, epsilon is kind of the random piece and it has mean 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4221,
+      "type": "audio",
+      "text": "And variance Sigma squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4245,
+      "type": "audio",
+      "text": "So kind of to illustrate that, what does that look like? Well, X, right? F of X looks something like this, right? I have X, you know, going from -1 to 5. Then F of X represents sort of the Y values, different possible results. And that's what I really want to estimate that thing down there, right? This is part of the data generating process, but I don't get to observe that actual F of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4269,
+      "type": "audio",
+      "text": "Instead, I get to observe what's in this little animated graph here, which are the blue points, right? So at, you know, X = 1, right? There's the black point, which is F of X, right, F of -1. And then what I actually get to observe is the blue, which is F of -1 plus noise."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4274,
+      "type": "audio",
+      "text": "Right, so the noise is kind of an inherent part of my data."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4277,
+      "type": "audio",
+      "text": "That represents the stuff that I don't care about."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-331-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4282,
+      "type": "audio",
+      "text": "Right, so epsilon has mean zero, which is nice because we don't want average, it's 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-332-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4289,
+      "type": "audio",
+      "text": "But it has some variance, right? The points I get are never going to be the true F, they're always going to be spread out around it."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-333-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4307,
+      "type": "audio",
+      "text": "So at X = 1, right F of X is that black point, and then I compute noise which is that little black bar. Add that to F of 1 and I get the blue point. Similarly, F of two plus the noise which in this case is negative, I get the blue point."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-334-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4321,
+      "type": "audio",
+      "text": "Y sub 2 and so on and so on and so on right? So this is a data generating process where I have XS that are sort of like inputs and YS which are what I observe right? And the YS depend both on."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-335-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4329,
+      "type": "audio",
+      "text": "Whatever is going on with X's through F of X but also depend on this noise epsilon."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-336-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4333,
+      "type": "audio",
+      "text": "And my goal is to estimate."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-337-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4342,
+      "type": "audio",
+      "text": "Right. And so we're going to do a few more of these little animated graphs to help us understand how this kind of fits in with like bias and variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-338-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4353,
+      "type": "audio",
+      "text": "So the goal again is to try to reconstruct F right? I want to know what is F? What is the function F right? If I have an X, how can I use that X to compute AY?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-339-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4369,
+      "type": "audio",
+      "text": "But all I have are the blue points, right? I don't ever actually get to observe that black line, and I don't know what the noise actually is. All I get to observe are the blue points, and given those blue points, I want to estimate the black curve."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-340-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4375,
+      "type": "audio",
+      "text": "OK. Questions on the setup before we talk about estimation here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-341-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4380,
+      "type": "audio",
+      "text": "So far so good."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-342-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4382,
+      "type": "audio",
+      "text": "All right."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-343-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4394,
+      "type": "audio",
+      "text": "So let's make things a little more interesting. So the X is like a bunch of 120 evenly spaced points from -1 to 5, right? So again, in this framework, X is given."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-344-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4421,
+      "type": "audio",
+      "text": "Right. So X is kind of like fixed. It's constant. It's given we know what X is, right? X might be, you know, the number of rooms in a house and why it might be the price of that house for a maybe relevant example. And we want to know as X varies. Well, maybe it's not the number of rooms because you have -1 rooms, but X is some variable and we want to know."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-345-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4423,
+      "type": "audio",
+      "text": "What is the relationship between X&Y?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-346-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4425,
+      "type": "audio",
+      "text": "Question."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-347-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4451,
+      "type": "audio",
+      "text": "The question was, are we given that it's quadratic or can it be any curve? We are not given anything, right? It could be anything. We don't know what it is. We want to guess what it is. Yeah, great question. We don't know. In this case, you know, I have chosen F of X = 1 + X + X ^2. But F is unknown to us. We just know that it exists. We don't know that it's quadratic. We don't even know that it's polynomial."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-348-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4480,
+      "type": "audio",
+      "text": "So knowing that, or rather not knowing that, how can we use the points to estimate F right? And here I'm cycling through a few different colors where each color shows a different version of epsilon, right? So each with each color I'm showing a different random sample where the F of X is the same, but my points which are F of X plus noise are different every time. Question."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-349-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4485,
+      "type": "audio",
+      "text": "Like kind of noise like this simulate like."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-350-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4513,
+      "type": "audio",
+      "text": "If they're going to like, yeah, the question was, is epsilon just random noise? Yes, epsilon is just random noise, right? And we use things like random noise to represent unknowns in our data, right? Maybe it's like measurement error from an instrument. Maybe it's like variables that we don't know how to account for or can't use in our data set. It's just we use that just as a catch all for like the stuff that we can't really reason about in our statistical model. Yeah, great question."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-351-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4530,
+      "type": "audio",
+      "text": "So again, our goal is to estimate the black curve by using these points, right? Maybe I get the blue points, maybe I get the yellow points, maybe I get the purple points, I get some set of points and I need to estimate that curve."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-352-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4550,
+      "type": "audio",
+      "text": "So I have some choices, right? I can choose a more or less complex model, right? We talked about, you know, we've been talking about how we can think about, well, maybe we want to use a linear model or a constant model or a quadratic model, or, you know, cubic and so on and so on. So what kind of model should we use?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-353-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4554,
+      "type": "audio",
+      "text": "Well, suppose we actually fit this model here."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-354-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4555,
+      "type": "audio",
+      "text": "F Hat."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-355-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4556,
+      "type": "audio",
+      "text": "Right equals."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-356-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4587,
+      "type": "audio",
+      "text": "This, right? And how might we fit a model like this? Well, we use OLS, right? Then we can use the tools we've already built up and we can say, OK, let me you know, compute features X ^2, X and have an intercept and then fit linear regression OLS. And I get my thetas and then I make some predictions, right? And those predictions are represented by these colorful lines, right? So I have the purple points."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-357-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4589,
+      "type": "audio",
+      "text": "I fit my line, I get the purple."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-358-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4598,
+      "type": "audio",
+      "text": "Curve right? I have the red point, I fit it, I get the red curve, and so on and so on and so on. So these estimates are all unbiased."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-359-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4602,
+      "type": "audio",
+      "text": "Why are they unbiased? Because, well, I'm using the true."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-360-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4614,
+      "type": "audio",
+      "text": "Model, right. On average, they are correct, right? Yeah, sure, sometimes they're a little high, sometimes they're a little low, but overall they are unbiased."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-361-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4627,
+      "type": "audio",
+      "text": "So notice here that unbiased does not necessarily mean perfect right? Unbiased just means on average the error IS0 right? I'm not like always high or always low. On average Theta hat minus Theta is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-362-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4633,
+      "type": "audio",
+      "text": "Because of the random noise, my estimate in this case is never going to be perfect."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-363-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4641,
+      "type": "audio",
+      "text": "OK. But again, you know, we had a great question over there. Do we know it's quadratic? Usually not, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-364-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4652,
+      "type": "audio",
+      "text": "Sure. If I look at the black curve, I can say, yeah, of course that's quadratic. But looking at the points, you know, I might not know that, right? I might not know that they come from a quadratic."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-365-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4660,
+      "type": "audio",
+      "text": "So let's suppose instead I fit a linear model, right? No polynomial terms, just they don't want 0 plus Theta 1X."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-366-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4663,
+      "type": "audio",
+      "text": "Right, just a simple linear regression."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-367-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4670,
+      "type": "audio",
+      "text": "So this is systematically incorrect on average, right? In other words, there is bias here."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-368-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4672,
+      "type": "audio",
+      "text": "On average."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-369-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4701,
+      "type": "audio",
+      "text": "I am off, right? I am on average, I, I make errors on average, right? Even if I average across different models, right? I look at the again, remember the average here is not over the XS. The average is over different models, right? So I average across the result from the blue, the result from the yellow, the result from the purple and the result from the red and so on and so on and so on. If I think the about the average across all of those different."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-370-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4703,
+      "type": "audio",
+      "text": "Different data sets."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-371-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4724,
+      "type": "audio",
+      "text": "Right. Different samples, different parallel universes, the average is going to be biased, right? My, my errors are consistently off. My predictions are consistently off. My error is consistently, you know, positive or negative, right? So this is a model that has a high bias."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-372-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4726,
+      "type": "audio",
+      "text": "But."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-373-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4740,
+      "type": "audio",
+      "text": "Again, if I look at these animations right, these different lines as they cycle through the colors, well, the line doesn't change that much right as the data set changes. As I go from sample to sample to sample to sample, the results are pretty similar every time."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-374-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4745,
+      "type": "audio",
+      "text": "Right. And again, that corresponds to like those little."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-375-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4753,
+      "type": "audio",
+      "text": "Arrows in the archery example all being close together, right? Because across different samples my results are always pretty similar."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-376-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4757,
+      "type": "audio",
+      "text": "So that means that I have low variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-377-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4761,
+      "type": "audio",
+      "text": "So in general."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-378-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4773,
+      "type": "audio",
+      "text": "Simple models, models with low complexity like this, you know SLR, tend to have low variance but often high bias."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-379-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4794,
+      "type": "audio",
+      "text": "So simple models usually equals low variance, high bias, right, Low variance because as the you know, we go through different data sets, they generally produce similar results, but high bias because they don't necessarily capture what's going on in the data. We make systematic errors. Our predictions are systematically off."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-380-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4800,
+      "type": "audio",
+      "text": "On the other hand, let's suppose we fit a 20th degree polynomial right go way far other extreme end of the spectrum."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-381-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4802,
+      "type": "audio",
+      "text": "For now."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-382-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4832,
+      "type": "audio",
+      "text": "Let's look at this 28th degree polynomial and we can see that, yeah, like, you know, it's generally kind of fitting the points reasonably well, right? If we think about the error in our predictions, like are we high, low, Are we off? Well, in general, like the errors seem to not be that bad, right? So this is an example of low bias, right, As we average across the different colors as we cycle through the different possible samples."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-383-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4835,
+      "type": "audio",
+      "text": "Then we have relatively low."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-384-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4837,
+      "type": "audio",
+      "text": "Bias."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-385-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4839,
+      "type": "audio",
+      "text": "But."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-386-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4845,
+      "type": "audio",
+      "text": "As I cycle through the line, the curves do not look similar to each other at all."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-387-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4854,
+      "type": "audio",
+      "text": "Right, a very small change in the sample, right? Just going from 1 sample to another completely changes the."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-388-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4858,
+      "type": "audio",
+      "text": "What the curve looks like? So that is why this model has high variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-389-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4868,
+      "type": "audio",
+      "text": "So in general, models with high complexity like high degree polynomials tend to have high bias, or sorry, low bias and high variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-390-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4891,
+      "type": "audio",
+      "text": "Let's do like some lightning sliders. We're going to go two of these. We're going to go pretty quick so that we can get to the the punch line. But suppose we fit an OLS model to data randomly generated by the given DGP, right? In this case, it's just F of X plus CF of X is 1 + X. Which of the given Ola specifications will have the lowest bias?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-391-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4898,
+      "type": "audio",
+      "text": "The constant model Theta 0 plus Theta 1X, Theta 0 plus Theta 1X plus Theta two X ^2."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-392-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4904,
+      "type": "audio",
+      "text": "Right, take just a few moments to answer the question."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-393-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4906,
+      "type": "audio",
+      "text": "Let's go through relatively quickly."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-394-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4937,
+      "type": "audio",
+      "text": "All right, so let's think about this, right? What is the true F of XF of X = 1 + X right? This is just a straight line with positive slope of 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-395-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4952,
+      "type": "audio",
+      "text": "Right. And we fit in OLS. Well, if we think about it, Theta 0 is going to have a high bias. Why? Because it's systematically off, right? We have a model of insufficient complexity for our data."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-396-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4960,
+      "type": "audio",
+      "text": "Right. So the constant model in this case is going to have bias, high bias because it, you know, can't model our data."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-397-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4972,
+      "type": "audio",
+      "text": "Theta 0 plus Theta 1X is going to be unbiased, right? This has enough complexity. Yeah, sure, we'll have noise. Maybe it might not be perfect, but on average our predictions will match the true values."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-398-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 4996,
+      "type": "audio",
+      "text": "And if we think about the quadratic model, well, this one will also be unbiased, right? If we average across random samples, the estimates of Theta 2 are going to be 0, right? Which is like the true what we actually want, right? Our estimates for the quadratic term again average across different samples will average out to 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-399-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5018,
+      "type": "audio",
+      "text": "But the problem is they won't always be 0. So again, biases alone is not alone enough to capture the fact that this last model is not quite right. So why might we prefer be over C, right, if they're both unbiased? Well, maybe I'm kind of giving away the answer to the next slide, which will also do pretty quickly, so just take a moment."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-400-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5024,
+      "type": "audio",
+      "text": "And for those same three models, which one is going to have the lowest variance?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-401-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5027,
+      "type": "audio",
+      "text": "Right, so we just did. Which one has the lowest bias? Now, which one has the lowest variance?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-402-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5069,
+      "type": "audio",
+      "text": "All right, So what about the variance of these? Well, again, you know, we talked about how the first ones biased in the last two are unbiased, but what about variance? Well, that first one, the constant model is going to have the lowest variance, right? As my data set changes, the the constant, which remember is just going to be the average data point is going to be pretty similar each time. It's not going to change wildly from sample to sample, right? If I collect a sample parallel universe twin collects a."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-403-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5072,
+      "type": "audio",
+      "text": "And so on and so on. They're all going to get pretty similar results."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-404-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5080,
+      "type": "audio",
+      "text": "You know Theta 0 plus Theta 1X, we're going to see a little more variance, right? Because there's more parameters refitting, things might change a little more sample to sample."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-405-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5084,
+      "type": "audio",
+      "text": "But the quadratic model is going to have even higher variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-406-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5099,
+      "type": "audio",
+      "text": "So we can see that this second model is kind of like a sweet spot, right? It has low bias and like a little bit of variance, right? So going from A to B, we are accepting a big drop in bias, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-407-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5107,
+      "type": "audio",
+      "text": "Because A is really biased, B is not. So we're accepting a big drop in bias for like a little bit of an increase in variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-408-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5120,
+      "type": "audio",
+      "text": "So this kind of shows that there's a trade off between these, right? So for a fixed set of features, we can think about the bias, the variance and the mean squared error."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-409-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5149,
+      "type": "audio",
+      "text": "Right bias stole this. On average, how close is our fitted model to the true F variance? How much does the fiddled model's prediction vary from sample to sample? And mean squared error, which we've also talked about it called model risk, is the average squared error between the predictions and the actual outcome. Right bias variance and MFE, right. So we can think about risk as this and there's a skip slide that goes through the math and derivation to show that the."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-410-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5155,
+      "type": "audio",
+      "text": "Model risk expectation of y -, y hat squared can be decomposed into these 3 terms."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-411-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5169,
+      "type": "audio",
+      "text": "The total mean squared error. Average mean squared error can be written as a sum of the irreducible error, meaning you know Sigma squared how big your variance of your noise is."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-412-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5189,
+      "type": "audio",
+      "text": "Plus the model variance. In other words, variance of F hat right plus the model bias, plus whatever the bias of your model is. So we can write this variant, This error mean squared error as a sum of these 3 terms."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-413-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5205,
+      "type": "audio",
+      "text": "How do we interpret this? So the irreducible error that Sigma squared, the noise, you cannot address that no matter how good your model is, you cannot address Sigma squared, right? That's just an inherent problem, an inherent part of your data set. No model you do, no better modeling you do can deal with that."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-414-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5213,
+      "type": "audio",
+      "text": "But there's a trade off between bias and variance, right? To decrease bias, we increase complexity."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-415-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5217,
+      "type": "audio",
+      "text": "And as a result we often accept higher variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-416-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5238,
+      "type": "audio",
+      "text": "And if we decrease variance, then we reduce the complexity, which might lead us to underfit and might lead to higher bias. So often This is why regularization helps, because we increase the bias, right? When we regularize, we push towards simpler models that have higher bias."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-417-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5241,
+      "type": "audio",
+      "text": "But then we'll achieve lower variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-418-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5259,
+      "type": "audio",
+      "text": "So that is the bias variance tradeoff. The math again is in a skip slide, not necessarily important, but this is super important to understand, right? It's sort of a way we can understand underfitting and overfitting. All right. Next time we'll talk a little bit more about this and move on to collinearity and inference."
+    },
+    {
+      "id": "audio-ds100-sp26-1774996403-transcription-419-c0-e0",
+      "lecture_id": "ds100-sp26-1774996403",
+      "timestamp": 5263,
+      "type": "audio",
+      "text": "And again, I'll have officers now for those who want to hang out here."
+    }
+  ]
+}

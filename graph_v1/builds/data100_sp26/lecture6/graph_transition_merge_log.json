@@ -1,0 +1,427 @@
+[
+  {
+    "merged_from": "node_2",
+    "merged_into": "node_1",
+    "reason": "llm_group: The first node introduces the lecture session, and the second node begins the main content of the lecture. The transition is seamless, and the logistical announcements in node_2 are minor and do not disrupt the conceptual flow from the introduction to the main topic."
+  },
+  {
+    "merged_from": "node_4",
+    "merged_into": "node_3",
+    "reason": "llm_group: Both nodes discuss logistical updates and resources for student support, including homework, tutoring, weekly sessions, and preparation strategies. The concepts are closely related and temporally adjacent, forming a cohesive topic."
+  },
+  {
+    "merged_from": "node_6",
+    "merged_into": "node_5",
+    "reason": "llm_group: Both nodes discuss course updates and focus areas, with overlapping content on data wrangling, text data, EDA, and regular expressions. The transition between them is seamless, and they represent the same concept at the same abstraction level."
+  },
+  {
+    "merged_from": "node_5",
+    "merged_into": "node_3",
+    "reason": "llm_group: Both nodes provide updates related to course logistics, including homework, tutoring, and office hours. The content is closely related and temporally adjacent, making a merge appropriate."
+  },
+  {
+    "merged_from": "node_10",
+    "merged_into": "node_9",
+    "reason": "llm_group: Both nodes discuss dataset quality issues, including duplicate rows, invalid values, and redundant columns. The content is conceptually identical and temporally adjacent, making a merge appropriate."
+  },
+  {
+    "merged_from": "node_11",
+    "merged_into": "node_9",
+    "reason": "llm_group: Both nodes focus on identifying and evaluating issues within a dataset, with node_11 being a continuation of the discussion in node_9, specifically diving deeper into the relevance of a particular column. The conceptual continuity is strong, and the temporal adjacency supports the merge."
+  },
+  {
+    "merged_from": "node_12",
+    "merged_into": "node_9",
+    "reason": "llm_group: Both nodes discuss issues related to dataset quality, specifically focusing on missing and inconsistent data. The second node elaborates on the challenges introduced in the first, maintaining a strong conceptual continuity."
+  },
+  {
+    "merged_from": "node_14",
+    "merged_into": "node_13",
+    "reason": "llm_group: Both nodes discuss handling data duplicates and errors, focusing on ensuring data reliability and integrity. The concepts are closely related and build on each other, making a merge appropriate."
+  },
+  {
+    "merged_from": "node_13",
+    "merged_into": "node_9",
+    "reason": "llm_group: These nodes all focus on issues related to data quality and integrity, including identifying dataset issues, faithfulness in data trust, and handling missing data. The concepts are closely related and form a cohesive discussion on preparing datasets for analysis."
+  },
+  {
+    "merged_from": "node_15",
+    "merged_into": "node_9",
+    "reason": "llm_group: These nodes all focus on issues related to data quality and integrity, including identifying dataset issues, faithfulness in data trust, and handling missing data. The concepts are closely related and form a cohesive discussion on preparing datasets for analysis."
+  },
+  {
+    "merged_from": "node_17",
+    "merged_into": "node_16",
+    "reason": "llm_group: Both nodes discuss strategies for handling missing data, with overlapping content and continuity in the explanation. They are temporally adjacent and represent the same concept at the same abstraction level."
+  },
+  {
+    "merged_from": "node_18",
+    "merged_into": "node_16",
+    "reason": "llm_group: Both nodes discuss strategies for handling missing data, with node_18 expanding on the approaches introduced in node_16. The conceptual continuity is strong, and the nodes are temporally adjacent."
+  },
+  {
+    "merged_from": "node_9",
+    "merged_into": "node_8",
+    "reason": "llm_group: Both nodes focus on foundational aspects of data analysis, with node_8 discussing key properties in data analysis and node_9 addressing dataset issues. These topics are conceptually aligned and temporally adjacent, forming a cohesive discussion on data preparation and analysis challenges."
+  },
+  {
+    "merged_from": "node_20",
+    "merged_into": "node_19",
+    "reason": "llm_group: These nodes all focus on text cleaning and canonicalization, with a strong conceptual continuity around using pandas and regex for text manipulation and standardization. The temporal adjacency and shared focus on text data processing justify merging them into a single group."
+  },
+  {
+    "merged_from": "node_21",
+    "merged_into": "node_19",
+    "reason": "llm_group: These nodes all focus on text cleaning and canonicalization, with a strong conceptual continuity around using pandas and regex for text manipulation and standardization. The temporal adjacency and shared focus on text data processing justify merging them into a single group."
+  },
+  {
+    "merged_from": "node_24",
+    "merged_into": "node_23",
+    "reason": "llm_group: Both nodes discuss the same two primary goals of text data processing: canonicalization and information extraction. The content is nearly identical, and the temporal adjacency supports merging."
+  },
+  {
+    "merged_from": "node_23",
+    "merged_into": "node_22",
+    "reason": "llm_group: Both nodes discuss canonicalization as a key concept in text processing, with node_23 expanding on the goals introduced in node_22. The conceptual continuity is strong, and the nodes are temporally adjacent."
+  },
+  {
+    "merged_from": "node_22",
+    "merged_into": "node_19",
+    "reason": "llm_group: These nodes all focus on text data processing, including cleaning, canonicalization, and working with text in Python. The conceptual continuity is strong, and they are temporally adjacent."
+  },
+  {
+    "merged_from": "node_25",
+    "merged_into": "node_19",
+    "reason": "llm_group: These nodes all focus on text data processing, including cleaning, canonicalization, and working with text in Python. The conceptual continuity is strong, and they are temporally adjacent."
+  },
+  {
+    "merged_from": "node_26",
+    "merged_into": "node_19",
+    "reason": "llm_group: These nodes both discuss string operations in Python, with node_25 introducing text processing and node_26 elaborating on specific string operations. They are closely related and temporally adjacent."
+  },
+  {
+    "merged_from": "node_28",
+    "merged_into": "node_27",
+    "reason": "llm_group: Both nodes discuss the same concept of Pandas string methods, specifically the `.str` accessor, and their summaries and explanations overlap significantly. They are also temporally adjacent."
+  },
+  {
+    "merged_from": "node_27",
+    "merged_into": "node_19",
+    "reason": "llm_group: Both nodes focus on text cleaning and processing using pandas and regex, with node_27 elaborating on vectorized string methods introduced in node_19. The conceptual continuity is strong, and the nodes are temporally adjacent."
+  },
+  {
+    "merged_from": "node_29",
+    "merged_into": "node_19",
+    "reason": "llm_group: Both nodes discuss the application of pandas string methods for text processing, with node_29 providing a specific example of canonicalizing county names, which builds on the general explanation in node_27. The conceptual link is strong, and the nodes are temporally adjacent."
+  },
+  {
+    "merged_from": "node_31",
+    "merged_into": "node_30",
+    "reason": "llm_group: Both nodes discuss the same concept of canonicalizing data for merging, specifically focusing on standardizing county names using similar string transformation techniques. They are temporally adjacent and conceptually identical."
+  },
+  {
+    "merged_from": "node_32",
+    "merged_into": "node_30",
+    "reason": "llm_group: Both nodes discuss the same concept of canonicalizing data for merging, specifically focusing on standardizing county names using similar string transformation techniques. They are temporally adjacent and conceptually identical."
+  },
+  {
+    "merged_from": "node_33",
+    "merged_into": "node_30",
+    "reason": "llm_group: These nodes all discuss different aspects of merging DataFrames in pandas, including canonicalizing data for merging, simplifying the merge process, and handling column name conflicts during merges. They represent a cohesive concept of DataFrame merging techniques."
+  },
+  {
+    "merged_from": "node_34",
+    "merged_into": "node_30",
+    "reason": "llm_group: These nodes all discuss different aspects of merging DataFrames in pandas, including canonicalizing data for merging, simplifying the merge process, and handling column name conflicts during merges. They represent a cohesive concept of DataFrame merging techniques."
+  },
+  {
+    "merged_from": "node_35",
+    "merged_into": "node_30",
+    "reason": "llm_group: These nodes all discuss the concept of canonicalizing and standardizing data for merging, specifically focusing on handling inconsistencies in string data such as county names. The content is conceptually continuous and builds on the same topic."
+  },
+  {
+    "merged_from": "node_36",
+    "merged_into": "node_30",
+    "reason": "llm_group: These nodes all discuss the concept of canonicalizing and standardizing data for merging, specifically focusing on handling inconsistencies in string data such as county names. The content is conceptually continuous and builds on the same topic."
+  },
+  {
+    "merged_from": "node_38",
+    "merged_into": "node_37",
+    "reason": "llm_group: Both nodes focus on extracting date and time information from log files, with node_38 expanding on the challenges and introducing regex as a solution. The conceptual continuity is strong, and the nodes are temporally adjacent."
+  },
+  {
+    "merged_from": "node_39",
+    "merged_into": "node_37",
+    "reason": "llm_group: Both nodes discuss extracting information from log files, specifically focusing on date-time and timezone data. The second node builds directly on the first, and the conceptual continuity is strong."
+  },
+  {
+    "merged_from": "node_40",
+    "merged_into": "node_37",
+    "reason": "llm_group: Both nodes discuss challenges and methods for parsing log data, with a focus on extracting specific information and handling inconsistencies in log formats. The second node elaborates on the challenges introduced in the first, maintaining strong conceptual continuity."
+  },
+  {
+    "merged_from": "node_41",
+    "merged_into": "node_37",
+    "reason": "llm_group: Both nodes focus on extracting data from strings using patterns, with node_41 serving as a continuation and elaboration of the concepts introduced in node_37."
+  },
+  {
+    "merged_from": "node_42",
+    "merged_into": "node_37",
+    "reason": "llm_group: Both nodes focus on extracting specific data from log files or strings, using similar techniques like identifying patterns and string manipulation methods. The second node is a continuation and refinement of the first, making them conceptually cohesive."
+  },
+  {
+    "merged_from": "node_43",
+    "merged_into": "node_37",
+    "reason": "llm_group: Both nodes focus on extracting specific data from strings or log files using Python techniques. The second node is a continuation and elaboration of the first, providing a step-by-step process for parsing structured text data."
+  },
+  {
+    "merged_from": "node_44",
+    "merged_into": "node_37",
+    "reason": "llm_group: Both nodes focus on extracting and parsing data from log files, with node_44 providing a continuation and more detailed explanation of the process introduced in node_37. The conceptual continuity is strong, and the temporal adjacency supports merging."
+  },
+  {
+    "merged_from": "node_45",
+    "merged_into": "node_37",
+    "reason": "llm_group: Both nodes focus on extracting data from strings, with node_37 discussing log file processing and node_45 introducing regex as a more efficient method for string extraction. The conceptual continuity is strong."
+  },
+  {
+    "merged_from": "node_30",
+    "merged_into": "node_19",
+    "reason": "llm_group: Both nodes focus on text data processing and cleaning, with node_19 introducing text cleaning and node_30 discussing canonicalization for merging. These are closely related tasks in text data preparation."
+  },
+  {
+    "merged_from": "node_46",
+    "merged_into": "node_37",
+    "reason": "llm_group: Both nodes deal with extracting structured information from strings using patterns. Node_37 focuses on log file data extraction, while node_46 generalizes the concept to pattern-based string extraction, making them conceptually continuous."
+  },
+  {
+    "merged_from": "node_48",
+    "merged_into": "node_47",
+    "reason": "llm_group: Both nodes discuss using patterns and regular expressions for string extraction, with node_48 elaborating on the example introduced in node_47. The conceptual continuity is strong, and they are temporally adjacent."
+  },
+  {
+    "merged_from": "node_49",
+    "merged_into": "node_47",
+    "reason": "llm_group: Both nodes focus on the concept of using regular expressions for pattern matching and string extraction. The second node builds directly on the first, providing additional context and examples, making them conceptually continuous."
+  },
+  {
+    "merged_from": "node_50",
+    "merged_into": "node_47",
+    "reason": "llm_group: Both nodes focus on the purpose and use of regular expressions for pattern extraction, with a strong conceptual continuity and no significant digressions between them."
+  },
+  {
+    "merged_from": "node_51",
+    "merged_into": "node_47",
+    "reason": "llm_group: These nodes all focus on regular expressions, covering their use, understanding, and practical application. The content is conceptually continuous and builds on the same topic without introducing unrelated material."
+  },
+  {
+    "merged_from": "node_52",
+    "merged_into": "node_47",
+    "reason": "llm_group: These nodes all focus on regular expressions, covering their use, understanding, and practical application. The content is conceptually continuous and builds on the same topic without introducing unrelated material."
+  },
+  {
+    "merged_from": "node_37",
+    "merged_into": "node_19",
+    "reason": "llm_group: These nodes all focus on text data processing and the use of regular expressions (regex) for extracting patterns and cleaning data. The transition between these topics is seamless, and they represent a continuous exploration of text-related EDA techniques."
+  },
+  {
+    "merged_from": "node_47",
+    "merged_into": "node_19",
+    "reason": "llm_group: These nodes all focus on text data processing and the use of regular expressions (regex) for extracting patterns and cleaning data. The transition between these topics is seamless, and they represent a continuous exploration of text-related EDA techniques."
+  },
+  {
+    "merged_from": "node_53",
+    "merged_into": "node_19",
+    "reason": "llm_group: These nodes both focus on the use of regular expressions, with node_47 introducing regex as a tool for pattern extraction and node_53 providing a practical resource (regex101.com) for practicing and testing regex. The conceptual continuity is strong, and the latter builds directly on the former."
+  },
+  {
+    "merged_from": "node_55",
+    "merged_into": "node_54",
+    "reason": "llm_group: Both nodes cover the same concept of regex basics, specifically focusing on concatenation as a core operation. The second node slightly expands on the first but remains within the same conceptual scope, making a merge appropriate."
+  },
+  {
+    "merged_from": "node_56",
+    "merged_into": "node_54",
+    "reason": "llm_group: These nodes all cover the fundamental operations of regular expressions (regex) and are conceptually continuous, with each building on the previous. The topic progression from concatenation to OR operation to the summary of all four basic operations is logical and cohesive."
+  },
+  {
+    "merged_from": "node_57",
+    "merged_into": "node_54",
+    "reason": "llm_group: These nodes all cover the fundamental operations of regular expressions (regex) and are conceptually continuous, with each building on the previous. The topic progression from concatenation to OR operation to the summary of all four basic operations is logical and cohesive."
+  },
+  {
+    "merged_from": "node_59",
+    "merged_into": "node_58",
+    "reason": "llm_group: Both nodes discuss constructing regular expressions for matching patterns with an even number of 'o's or 'O's, representing the same concept at the same abstraction level. The temporal adjacency and conceptual continuity justify merging."
+  },
+  {
+    "merged_from": "node_58",
+    "merged_into": "node_54",
+    "reason": "llm_group: All three nodes focus on regular expressions, starting with the basics (node_54), moving to a specific example (node_58), and concluding with a general introduction and demonstration (node_60). The conceptual continuity of regex as a topic justifies merging these nodes."
+  },
+  {
+    "merged_from": "node_60",
+    "merged_into": "node_54",
+    "reason": "llm_group: All three nodes focus on regular expressions, starting with the basics (node_54), moving to a specific example (node_58), and concluding with a general introduction and demonstration (node_60). The conceptual continuity of regex as a topic justifies merging these nodes."
+  },
+  {
+    "merged_from": "node_61",
+    "merged_into": "node_54",
+    "reason": "llm_group: Both nodes focus on regular expressions, with node_54 introducing a basic operation (concatenation) and node_61 introducing a tool (Regex101) for working with regex. The topics are closely related and sequentially build on each other."
+  },
+  {
+    "merged_from": "node_62",
+    "merged_into": "node_54",
+    "reason": "llm_group: Both nodes are about regex, with node_54 introducing a basic operation (concatenation) and node_62 expanding on constructing effective regex patterns, maintaining a clear conceptual progression."
+  },
+  {
+    "merged_from": "node_63",
+    "merged_into": "node_54",
+    "reason": "llm_group: Both nodes focus on regular expressions, with node_54 introducing the basic operation of concatenation and node_63 expanding on regex patterns and additional operations. These topics are closely related and build on each other, making a merge appropriate."
+  },
+  {
+    "merged_from": "node_64",
+    "merged_into": "node_54",
+    "reason": "llm_group: Both nodes cover foundational concepts in regular expressions, with node_54 introducing concatenation and node_64 expanding on regex operations with dot and character classes, forming a cohesive unit on regex basics."
+  },
+  {
+    "merged_from": "node_65",
+    "merged_into": "node_54",
+    "reason": "llm_group: These nodes all cover foundational concepts in regular expressions (regex), including concatenation, character classes, and quantifiers. They are temporally adjacent and represent a cohesive progression of related subtopics within regex."
+  },
+  {
+    "merged_from": "node_66",
+    "merged_into": "node_54",
+    "reason": "llm_group: These nodes all cover foundational concepts in regular expressions (regex), including concatenation, character classes, and quantifiers. They are temporally adjacent and represent a cohesive progression of related subtopics within regex."
+  },
+  {
+    "merged_from": "node_68",
+    "merged_into": "node_67",
+    "reason": "llm_group: Both nodes cover the concept of regex character classes, including their definitions, shortcuts, and negations. The second node builds directly on the first, providing a natural continuation of the topic."
+  },
+  {
+    "merged_from": "node_67",
+    "merged_into": "node_54",
+    "reason": "llm_group: Both nodes are part of the lecture's discussion on regex basics, with node_54 introducing concatenation and node_67 expanding on character classes. They are temporally adjacent and conceptually connected as foundational regex topics."
+  },
+  {
+    "merged_from": "node_69",
+    "merged_into": "node_54",
+    "reason": "llm_group: Both nodes are part of the lecture's focus on regex, with node_54 introducing basic operations and node_69 providing a specific application of regex for repeated vowels, maintaining a clear conceptual continuity."
+  },
+  {
+    "merged_from": "node_72",
+    "merged_into": "node_71",
+    "reason": "llm_group: Both nodes discuss constructing and refining regular expressions for identifying repeated vowels in words. The second node directly continues the explanation from the first, making them conceptually and temporally connected."
+  },
+  {
+    "merged_from": "node_73",
+    "merged_into": "node_71",
+    "reason": "llm_group: Both nodes focus on specific regex tasks, with node_71 discussing repeated vowels and node_73 addressing matching entire words. The conceptual link is strong as both involve regex pattern construction, and they are temporally adjacent."
+  },
+  {
+    "merged_from": "node_74",
+    "merged_into": "node_71",
+    "reason": "llm_group: Both nodes focus on constructing and understanding regular expressions, specifically for matching patterns involving vowels. Node_71 introduces the task of creating regex for repeated vowels, and node_74 expands on this by explaining character classes, which are directly relevant to the task."
+  },
+  {
+    "merged_from": "node_3",
+    "merged_into": "node_1",
+    "reason": "llm_group: Both nodes are part of the introductory and housekeeping section of the lecture, covering the welcome and course logistics. The concept continuity is strong as they both set the stage for the session."
+  },
+  {
+    "merged_from": "node_78",
+    "merged_into": "node_77",
+    "reason": "llm_group: Both nodes explain the same concept of regex greediness with nearly identical content and examples, making them redundant and suitable for merging."
+  },
+  {
+    "merged_from": "node_77",
+    "merged_into": "node_76",
+    "reason": "similarity=0.244"
+  },
+  {
+    "merged_from": "node_82",
+    "merged_into": "node_81",
+    "reason": "llm_group: Both nodes discuss the same concept of escaping special characters in regex, with nearly identical explanations and adjacent timestamps."
+  },
+  {
+    "merged_from": "node_80",
+    "merged_into": "node_79",
+    "reason": "llm_group: Both nodes discuss non-greedy regex operators and the usage of the question mark in regex, which are closely related concepts and temporally adjacent."
+  },
+  {
+    "merged_from": "node_79",
+    "merged_into": "node_76",
+    "reason": "llm_group: The concept of greediness in regex introduced in node_76 naturally transitions into non-greedy operators discussed in node_79, maintaining conceptual continuity."
+  },
+  {
+    "merged_from": "node_76",
+    "merged_into": "node_75",
+    "reason": "llm_group: These nodes both introduce foundational regex concepts (capturing groups and greediness) and include practical applications, forming a cohesive segment on regex techniques."
+  },
+  {
+    "merged_from": "node_84",
+    "merged_into": "node_83",
+    "reason": "llm_group: These nodes collectively explore regex matching, syntax, and operations, with strong conceptual continuity and overlapping examples, making them suitable for merging."
+  },
+  {
+    "merged_from": "node_85",
+    "merged_into": "node_83",
+    "reason": "llm_group: These nodes collectively explore regex matching, syntax, and operations, with strong conceptual continuity and overlapping examples, making them suitable for merging."
+  },
+  {
+    "merged_from": "node_86",
+    "merged_into": "node_83",
+    "reason": "llm_group: Both nodes focus on regex anchors (^ and $) and their usage, with node_86 providing a step-by-step parsing example that builds directly on the concepts introduced in node_83."
+  },
+  {
+    "merged_from": "node_87",
+    "merged_into": "node_83",
+    "reason": "llm_group: Both nodes focus on specific regex patterns and their applications, with node_83 discussing anchors and node_87 applying regex to validate URLs. The conceptual link is clear, and they are temporally adjacent."
+  },
+  {
+    "merged_from": "node_90",
+    "merged_into": "node_89",
+    "reason": "llm_group: Both nodes focus on pattern matching and repetition in regex, with 'dot star' being a specific example of repetition. The concepts are closely related and temporally adjacent."
+  },
+  {
+    "merged_from": "node_94",
+    "merged_into": "node_93",
+    "reason": "llm_group: Both nodes focus on understanding and applying regular expressions, emphasizing the use of external resources like Regex101 and Python's Regex HOWTO. The conceptual overlap and sequential nature justify merging."
+  },
+  {
+    "merged_from": "node_89",
+    "merged_into": "node_88",
+    "reason": "llm_group: Both nodes discuss pattern matching and grouping in regex, with node_88 focusing on escaping characters and node_89 expanding on identifying and validating patterns. The conceptual continuity is strong, and they are temporally adjacent."
+  },
+  {
+    "merged_from": "node_95",
+    "merged_into": "node_93",
+    "reason": "llm_group: These nodes collectively emphasize learning, applying, and exploring the practical uses of regex. They are temporally adjacent and conceptually aligned, focusing on regex tools, techniques, and applications."
+  },
+  {
+    "merged_from": "node_96",
+    "merged_into": "node_93",
+    "reason": "llm_group: These nodes collectively emphasize learning, applying, and exploring the practical uses of regex. They are temporally adjacent and conceptually aligned, focusing on regex tools, techniques, and applications."
+  },
+  {
+    "merged_from": "node_98",
+    "merged_into": "node_97",
+    "reason": "llm_group: Both nodes explain the use of raw strings in Python for handling escape characters in regular expressions. The content is highly similar, and the temporal adjacency makes merging appropriate."
+  },
+  {
+    "merged_from": "node_100",
+    "merged_into": "node_99",
+    "reason": "llm_group: Both nodes focus on using Python's `re.findall` function for regex pattern matching, with similar examples and explanations. The temporal adjacency and conceptual overlap justify merging."
+  },
+  {
+    "merged_from": "node_93",
+    "merged_into": "node_92",
+    "reason": "llm_group: Node 92 discusses a specific string-matching example, while Node 93 provides a broader discussion on understanding and applying regular expressions. The conceptual link is strong, and the temporal adjacency supports merging."
+  },
+  {
+    "merged_from": "node_99",
+    "merged_into": "node_97",
+    "reason": "llm_group: Both nodes focus on Python's handling of regular expressions, specifically the use of raw strings and the `re.findall` function. The explanations are closely related and temporally adjacent, making a merge appropriate."
+  }
+]

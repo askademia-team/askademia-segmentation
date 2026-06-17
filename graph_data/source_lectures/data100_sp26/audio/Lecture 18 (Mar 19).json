@@ -1,0 +1,3362 @@
+{
+  "index": "ds100-sp26",
+  "type": "audio",
+  "lecture_id": "ds100-sp26-1773959621",
+  "display_name": "Lecture 18 (Mar 19)",
+  "count": 479,
+  "entries": [
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-1-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 435,
+      "type": "audio",
+      "text": "All right, everyone, welcome to today's lecture on random variables. So we're going to be switching gears a little, changing topics from last time. And this is an important lecture because it lays some groundwork that we're going to need for the next few lectures of the class after spring break."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-2-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 466,
+      "type": "audio",
+      "text": "So quick recap from last time we talked about cross validation and regularization, which are on this idea of how do we think about the complexity of our models, more complex, less complex. Cross validation gives us a way to figure out should we choose a model that's more complex or less complex. And regularization gives us a way to actually dial that knob of complexity, right. We say we want to impose some kind of penalty or have some kind of budget for the parameters of our model more sophisticated."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-3-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 468,
+      "type": "audio",
+      "text": "Models will cost us more when we regularize."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-4-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 487,
+      "type": "audio",
+      "text": "So random variables are announcements before we start. So project A1 is due Friday. Hopefully you all have started had a chance to work on it. If you have not already, please make sure you check out the recording of last Thursday's lecture before you jump in to work on that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-5-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 498,
+      "type": "audio",
+      "text": "My office hours this week are replacing Josh's usual time and places, which means I'll have office hours right here after lecture ends for about an hour."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-6-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 523,
+      "type": "audio",
+      "text": "Midterm scores have been released so you can check your score on Prairie Learn. The exam is out of 20, but Prairie Learn might only show you 19.25 as your Max. We're adding .75 to everyone's score, so your grade report will accurately reflect this even though Prairie Learn might not. There's a link to an Ed post with more information on grades and retakes and and so on. Highly recommend checking that out. If you have any questions, feel free to post them on there."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-7-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 554,
+      "type": "audio",
+      "text": "Announcement for today specifically. So Data 100 is a big tent, right? There's a lot of people here with a lot of different backgrounds. Some of you have not taken probability, some of you might have kind of alluded to this at the very end of last time. So the probability stuff that we're going to cover today might be review for some of you and it might be entirely new for others. So keep that in mind if you, you know, if you're a student who you know, maybe you took Data 140."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-9-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 583,
+      "type": "audio",
+      "text": "Because this stuff is important to."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-8-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 583,
+      "type": "audio",
+      "text": "Got an A+, nothing like why do we need to go through this? Yeah, this lecture is probably going to be all review for you. But if you have not seen probability before or I encourage you, even if you have seen it before, it's always worth seeing it again. Probably especially the stuff we're covering is one of those tricky topics that takes a few times as seeing it before you really understand it and it really sinks in. So I encourage you to just kind of like go with this regardless of where you're at in your probability journey."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-10-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 586,
+      "type": "audio",
+      "text": "Be a really strong data scientist."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-11-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 615,
+      "type": "audio",
+      "text": "So it's challenging if it feels tough, that is to be expected. The content today is not meant to be like, Oh yeah, super easy. It is meant to be challenging. It is meant to be kind of like, oh, what? How does that work? Oh, OK. And you'll have more of those oh, OK moments the more times you see it. So if you feel like, you know, you, you're here for today's lecture, you're watching the recording. You need to like, watch it again. You need to come back and check the recording. That's totally fine. Maybe even to be expected."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-12-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 637,
+      "type": "audio",
+      "text": "So where are we, right? We talked about, you know, model selection basics last time and now we're going to think about probability, right? We talked about sampling last time, which is like when we get our data and we're going to think about like something called estimation next time, which we need to have a foundation of probability before we can really do."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-13-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 658,
+      "type": "audio",
+      "text": "So we're going to talk about random variables more about what they are. What is the distribution of a random variable? Then we're going to talk about the expectation and variance of a random variable. And then we're going to end by talking about sums of random variables. What happens if you add up random variables like what happens to them? How do they, you know, how do they behave? Things like that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-14-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 666,
+      "type": "audio",
+      "text": "So I want to start with a story, actually an interview question or a question before, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-15-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 671,
+      "type": "audio",
+      "text": "The slides are not on the website."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-16-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 677,
+      "type": "audio",
+      "text": "Could you help? Yeah, OK, thanks. Thanks for flagging that. We'll we'll get that fixed momentarily. Thanks for letting us know."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-17-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 690,
+      "type": "audio",
+      "text": "OK, So this is this is an investing conundrum from a real interview. I think this is actually a question that Josh got on an interview just a few years ago."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-18-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 702,
+      "type": "audio",
+      "text": "So suppose you're an analyst at a small but mighty venture capital firm, and you find this hot new startup you want to invest in, and you're deciding whether or not you're going to invest $1,000,000 in this company."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-19-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 719,
+      "type": "audio",
+      "text": "So you do some analysis and you figure out, OK, there's a 90% chance that the startup is going to fail. Just like, you know, their idea is not going to work out, they're not going to find enough customers. Something's going to happen and you know it's going to fail. In that case, you will lose your $1 million investment."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-20-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 731,
+      "type": "audio",
+      "text": "But there's a 10% chance that your investment will succeed, the startup will succeed, and your investment will grow from 1,000,000 to $11 million."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-21-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 744,
+      "type": "audio",
+      "text": "So you can only decide whether or not you were going to invest in $1 million or not, right? Suppose you only have two options, yes or yes, Invest 1 million or no, Do not or do nothing. So should you invest yes or no?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-22-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 765,
+      "type": "audio",
+      "text": "So take a minute, think about it. And this is more just like a gut check, right? Like what does your gut say? How do you feel about this question? So we'll, we'll be a little quick on this one, just like your, your gut sense. Should you do this investment, yes or no? Because we'll keep coming back to this example as we build more tools for analysis over the next hour and a half."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-23-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 779,
+      "type": "audio",
+      "text": "And again, no need for like a yes question."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-24-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 788,
+      "type": "audio",
+      "text": "Yeah, we'll post on Ed and Fido. Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-25-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 806,
+      "type": "audio",
+      "text": "So we're working on getting the slides posted. If you don't see them posted, we will have a post on Ed in just a moment with that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-26-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 809,
+      "type": "audio",
+      "text": "In the meantime, you can always scan."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-27-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 826,
+      "type": "audio",
+      "text": "Here. OK, So should you make this investment? Well, the answer is going to be, as we'll find out later, that it kind of depends, but we'll use this as an example to kind of scaffold and help us figure out the tools that we're learning how they map to the real world."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-28-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 843,
+      "type": "audio",
+      "text": "And so, oh, this is great. We have literally a 5050 split or pretty much 5050 split. I love when this happens because there are good arguments to be made on both sides. So we'll help develop some tools to actually help us answer this. And it's like seeing it 5050."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-29-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 870,
+      "type": "audio",
+      "text": "So I want to say that today's lecture is going to have a lot of notation. There's a lot of like different ways of representing things and we're about to have this oncoming tsunami of notation that I'm going to be throwing at you for the next hour and a half. It's OK If it feels like a lot, be kind to yourself. If you feel like, Oh my gosh, I don't get it, that's OK. You may have to go back. Look, look over the lecture, look over the notes, see it again in discussion, see it again on the homework."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-30-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 874,
+      "type": "audio",
+      "text": "So be kind to yourself. Don't feel like Oh my God I need to understand all."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-31-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 876,
+      "type": "audio",
+      "text": "All this like what's going on?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-32-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 876,
+      "type": "audio",
+      "text": "So with that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-33-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 878,
+      "type": "audio",
+      "text": "Let's go."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-34-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 908,
+      "type": "audio",
+      "text": "So probability recap, this is from data 8. We know that probabilities go from zero to 10 is the probability of something that never happens. One is the probability of something that is certain always happens. We have the complement rule. If you want to find the probability of something not happening, it's 1 minus the probability of it happening. Multiplication rule, right? If we want to know that the probability of two things both happening, we take the probability that the first thing happens."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-35-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 910,
+      "type": "audio",
+      "text": "Times the probability that the."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-36-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 914,
+      "type": "audio",
+      "text": "The second thing happens based on or if the first thing happened given that a has happened."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-37-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 943,
+      "type": "audio",
+      "text": "An additional rule, if something can happen in exactly one of two ways, right? If there's some event that can only happen two ways, then the probability of that event is the probability of the first way plus the probability of the second way, right? Or in other words, if I want to know the probability of two things that are sort of disjoint, only one or the other can happen. I can add up their probabilities to get the probability of either one happening."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-38-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 972,
+      "type": "audio",
+      "text": "Last time at the end, we briefly introduced random variable terminology. Random variable will represent the outcome of a random event, right? We have this example of a coin flip where it's one. A random variable is 1 if it's heads, 0 if it's tails. We talked about discrete and continuous random variables, where a discrete random variable is something with a finite number of possible outcomes where each one has some probability associated with it, and a continuous random variable has an infinite number of possible outcomes."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-39-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 984,
+      "type": "audio",
+      "text": "Right. We flip a coin. The value that it comes up with is discrete, right? It has to be heads or tails. But the amount of time it spends in the air is continuous, right? There's any number of possible values and there's infinitely many possibilities."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-40-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 992,
+      "type": "audio",
+      "text": "So because there's infinitely many possibilities, somewhat weirdly, the probability of any individual one is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-41-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1003,
+      "type": "audio",
+      "text": "So we can't really talk about the probabilities of individual values, but we can talk about the probabilities of ranges, right? What's the probability that the coin spent between zero and two seconds in the air?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-42-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1007,
+      "type": "audio",
+      "text": "And ask questions like that, umm."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-43-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1017,
+      "type": "audio",
+      "text": "So if you're thinking like, oh, coin flips like what's the most like boring thing in the world? So actually there's this interesting paper from 2007, not that long ago that looked at."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-44-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1047,
+      "type": "audio",
+      "text": "When you flip a coin, it turns out the probability of it coming up heads is not actually 5050. Turns out there's actually a slightly higher than 50% chance that it comes up the same way that it started when you flip a coin. And then just a couple years ago, in 2023, some researchers put together a study collecting 350,757 coin flips. And if you look at the paper, the author list is huge because it has, like all these people who contributed, you know, they're flipping coins and looking at what they came up."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-45-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1062,
+      "type": "audio",
+      "text": "And they actually found that, yes, it turns out it is 50.8% probability of coming up the same way it started. So fun fact, coin flips are not just, you know, it's like 5050 headsets."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-46-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1069,
+      "type": "audio",
+      "text": "So, but for this class, we're just going to assume that a fair coin has an equal chance of coming up heads or tails."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-47-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1089,
+      "type": "audio",
+      "text": "So the probability distribution of a discrete random variable and talk about continuous random variables a little later. But for a discrete random variable, the probability distribution basically tells us for each possible outcome we can get for that random variable, what is the probability of getting it?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-48-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1096,
+      "type": "audio",
+      "text": "Right. For the coin flips, well, we list all of our outcomes. They're 2 heads or tails and we list out the probability of each one."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-49-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1108,
+      "type": "audio",
+      "text": "But if I'm writing a bunch of math right, I don't want to like have to write out outcome, outcome, outcome, outcome all the time. Might be nice to have a notationally convenient way of doing that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-50-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1113,
+      "type": "audio",
+      "text": "So what we write is this probability that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-51-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1115,
+      "type": "audio",
+      "text": "X = X."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-52-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1139,
+      "type": "audio",
+      "text": "Do you remember thinking like, wait, wait, wait, what's going on here? X = X? Well, capital X represents the random variable, right? You can think of it kind of like a placeholder or it represents the random variable that we're going to get. And little X is a variable that tells us like what are the possible outcomes, right? You can think of it as this is just a more convenient way of writing outcome."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-53-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1146,
+      "type": "audio",
+      "text": "Right. So the probability that capital X equals little X is like the probability that the random variable."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-54-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1154,
+      "type": "audio",
+      "text": "This you know random is this event. This outcome is equal to a specific value little X."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-55-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1162,
+      "type": "audio",
+      "text": "So capital letters, the random variable, little letters, their values that those random variables take on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-56-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1186,
+      "type": "audio",
+      "text": "So distributions can be visualized like this visualization over here in the bottom right, right we have a bar chart where on the X axis is the possible values that that random variable can take right? So we use little X and on the Y axis is probability. What is the probability that the random variable is equal to that value little X?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-57-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1189,
+      "type": "audio",
+      "text": "So for example if we read off here this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-58-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1199,
+      "type": "audio",
+      "text": "Here says that the probability that X is 4 is 0.2, right? The same thing as what's in the table?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-59-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1207,
+      "type": "audio",
+      "text": "So take a second and there's no Slido here, but just take a second. And how would you calculate these probabilities?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-60-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1219,
+      "type": "audio",
+      "text": "Because they can turn the person next to you. Talk about how you would calculate these probabilities involving the random variable X. And for this one there's only a single random variable X. We don't have like X1X2, there's just One X."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-61-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1223,
+      "type": "audio",
+      "text": "All right, take a second and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-62-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1293,
+      "type": "audio",
+      "text": "All right. So the first one, well, I kind of gave this one away for you, but the probability that X = 4, that's just 0.2, right? We can read it off from this row of the table that represents the distribution."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-63-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1316,
+      "type": "audio",
+      "text": "The probability that let me use it easier to read color here, the probability that X is less than six, well, how can X be less than six? It can be less than six if it's three or if it's four, right? So there's exactly two ways that this can happen. So in order to get the probability that it happens, we just add up those two."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-64-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1319,
+      "type": "audio",
+      "text": "So it's .1 + .2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-65-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1323,
+      "type": "audio",
+      "text": "Which gives us 0.3."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-66-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1334,
+      "type": "audio",
+      "text": "The probability that X is 6 or X = 8 again or means we think addition rule, right? These two things either one can happen or the other. So it's .4."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-67-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1336,
+      "type": "audio",
+      "text": "Plus 0.3."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-68-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1338,
+      "type": "audio",
+      "text": "Which is 0.7."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-69-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1342,
+      "type": "audio",
+      "text": "What is the probability that X is less than or equal to 8?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-70-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1354,
+      "type": "audio",
+      "text": "Well, that's all of the possibilities, right? Any which way, there's only four, and all of them are less than or equal to 8. And if we add them up, we can see that we would get one."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-71-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1367,
+      "type": "audio",
+      "text": "Right. Which in other words, tells us that if we have a random variable and we add up all of the probabilities in its distribution for a discrete random variable, they're always going to add up to 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-73-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1396,
+      "type": "audio",
+      "text": "That sum had better be 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-72-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1396,
+      "type": "audio",
+      "text": "OK, so that's the long version. So in any discrete random variable, your probabilities will always, always, always add up to one. They don't. It's not really a random variable. So mathematically, we can write this out as the sum over all possible values of X. We take the probability of the random variable being equal to that value, and we sum over all possible that values that we can get."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-74-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1415,
+      "type": "audio",
+      "text": "Kind of annoying to have to like write out some over all possible values of X every time. So for convenience shorthand we often will write sum over X right? And this is just a notationally convenient way."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-75-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1419,
+      "type": "audio",
+      "text": "Of writing this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-76-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1423,
+      "type": "audio",
+      "text": "Right, these two mean the same thing, it's just one is a little more compact than the other."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-77-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1428,
+      "type": "audio",
+      "text": "And again, for those looking for the slides, they are now posted on Ed so you can hop over there and find them there."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-78-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1447,
+      "type": "audio",
+      "text": "All right, so that is a discrete random variable, but what about a continuous one? Well, probability tables don't really work right because we can't a there's infinitely many, so we can't even like try to list them all and be even if we could, the probability of any individual one would be 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-79-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1452,
+      "type": "audio",
+      "text": "So this is kind of a like useless or meaningless table, right? It doesn't really make any sense."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-80-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1469,
+      "type": "audio",
+      "text": "So we represent continuous random variables using area and density. If you think back when we talked about histograms, right, I was trying to emphasize that, yeah, you really have to think about, you know, the Y axis on a true histogram is density."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-81-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1473,
+      "type": "audio",
+      "text": "Right, and the area in a histogram has to add up to 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-82-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1492,
+      "type": "audio",
+      "text": "Well, it turns out that that's exactly the same idea for continuous distributions of random variables. We don't talk about probabilities, we talk about densities. And when we want to calculate probabilities, we look at areas under the curve, right? And if you think back to calculus, that probably is going to involve taking some kind of integrals."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-83-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1501,
+      "type": "audio",
+      "text": "So this red area on this random variable represents the probability that Y the random variable Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-84-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1509,
+      "type": "audio",
+      "text": "Takes on values between this 6.8 and this value of 9.5."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-85-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1520,
+      "type": "audio",
+      "text": "So we won't be working that much with continuous random variables, continuous distributions in this class, but important to know and you will see this when you want to take, you know, stat 134 or data 140."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-86-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1524,
+      "type": "audio",
+      "text": "Then the full details beyond the scope of this class."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-87-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1534,
+      "type": "audio",
+      "text": "OK, so let's go back to that investing example. So let Y be a random variable representing your profit."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-88-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1543,
+      "type": "audio",
+      "text": "From this investment, right, again the profit that you're going to make, what is the probability distribution for Y your profit?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-89-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1553,
+      "type": "audio",
+      "text": "And the quick recap, it costs $1,000,000 to invest. You have a 10% chance of like it growing from 1,000,000 to 11,000,000 and you have a 90% chance of failure where you lose everything."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-90-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1556,
+      "type": "audio",
+      "text": "All right, take a second turn to the person next to you and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-91-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1562,
+      "type": "audio",
+      "text": "And unlike the last one, this one does have a correct answer."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-92-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1566,
+      "type": "audio",
+      "text": "All right, I want to hear folks discussing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-93-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1637,
+      "type": "audio",
+      "text": "All right, so let's go through."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-94-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1640,
+      "type": "audio",
+      "text": "How we would calculate this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-95-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1668,
+      "type": "audio",
+      "text": "So which one of these is our answer? Well, remember I said that Y is supposed to be your profit. So if we think about that first one, our profit is not going to be 0 or one, our profit is going to be some number of dollars. So this first one is a good way of representing whether or not we succeed, right? If we have a different random variable that represents success as a one, failure as a zero, then the first one would be the distribution of that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-96-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1672,
+      "type": "audio",
+      "text": "But it is not the distribution of our profit."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-97-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1685,
+      "type": "audio",
+      "text": "Our profit is how much we make minus how much we put in right, which has a 90% chance of being 0 right. If the company fails, then we make nothing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-98-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1689,
+      "type": "audio",
+      "text": "Right."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-99-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1694,
+      "type": "audio",
+      "text": "We."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-100-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1710,
+      "type": "audio",
+      "text": "This is, this is how much we gain, right? The second one is how much we gain because the first value is 0, our gain is 0 and the second value is we gain $10 million, right? So this represents our."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-101-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1741,
+      "type": "audio",
+      "text": "Represents sort of the the like end amount of money we have, but we start with $1.00. But in general for the last one, investments are not in this particular example continuously distributed. Yeah, in the real world it probably would be right. There probably would be possibilities of making more or less money if not that it would necessarily be exactly this or exactly this. But for this particular setup we have said that there are exactly."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-102-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1745,
+      "type": "audio",
+      "text": "Two possible outcomes. We've set up the world that way, and so those are the only possibilities."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-103-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1754,
+      "type": "audio",
+      "text": "So let's talk about named distributions. So we have many probability distributions come up so often that we give them names."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-104-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1762,
+      "type": "audio",
+      "text": "In this case we have the Bernoulli distribution, which is basically a binary random variable that takes on either zero or one."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-105-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1794,
+      "type": "audio",
+      "text": "Right. And we usually have to choose if we have some binary thing that's happening in the world. What we represent is what 1 What we represent is 0, right? Coin flipped. We call heads the ones we call tails of 0. You know, I want to know whether my thing I built succeeds my product. Is it working or is it not? I'm going to call working 1 defective 0, right? So we choose what we model with one and zero. And the Bernoulli distribution is parameterized by P."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-106-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1801,
+      "type": "audio",
+      "text": "What does that mean? It means we have this flexible parameter variable P that we can control and it tells us what the probability of success is."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-107-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1807,
+      "type": "audio",
+      "text": "So our distribution looks something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-108-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1810,
+      "type": "audio",
+      "text": "Right where we have the possible values are one and 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-109-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1815,
+      "type": "audio",
+      "text": "And the probability of a 1 is a P."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-110-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1819,
+      "type": "audio",
+      "text": "And the probability of a 0 is just one minus that 1 -, P."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-111-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1843,
+      "type": "audio",
+      "text": "So if we have a fair coin, then we represent that with, you know, the distribution of the probably getting a one is 1/2 and 1 -, 1/2 is also a half. But this is a little more flexible. It lets us say we can have any parameter P, right? Maybe I have a biased coin. I could use a Bernoulli of .51 or .508."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-112-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1868,
+      "type": "audio",
+      "text": "So for notational shorthand, again, it's kind of annoying to have to write out like XI is a Bernoulli random variable with parameter P. So notationally we write XI tilde, Bernoulli parentheses, and then the parameters, right? This is shorthand for XI is distributed as. The tilde is like is distributed as."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-113-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1876,
+      "type": "audio",
+      "text": "Bernoulli of .5 And again, you know we can be late statisticians can be lazy, and instead of writing Bernoulli sometimes we just write BER."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-114-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1906,
+      "type": "audio",
+      "text": "So the Bernoulli is not the only name distribution. This one will work. Maybe we'll be working with a lot more in this class, but there's a lot of others, right? So again, we talked about the Bernoulli. This is a random variable that is a distribution that's one with probability P0, probably 1 -, P We can generalize that maybe we flip a coin more than once. So if you want to know the number of heads out of some number of coin flips N."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-115-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1909,
+      "type": "audio",
+      "text": "Where each one has probability P of coming up heads."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-116-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1916,
+      "type": "audio",
+      "text": "That is a binomial random variable. It's a generalization of Bernoulli to like more than one flip."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-117-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1943,
+      "type": "audio",
+      "text": "So you know, instead of just one person flipping, we have like N number of people flipping and we count how many heads come up. We can talk about a categorical random variable which takes on one of K different values. You can think of like when you roll a die it comes up, you know, one to six right? So each value 123456 has some probability of occurring and if you have a fair die then it's going to be 1/6 for each one."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-118-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1959,
+      "type": "audio",
+      "text": "So these probabilities, one 6th, 161616 or in general any number of probabilities are the parameters of that categorical distribution, right? So when we write categorical parentheses and a bunch of probabilities."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-119-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1968,
+      "type": "audio",
+      "text": "Well, we can specify, right? We get to control the parameters of the 1st K -, 1 and then the last one has to be 1 minus the others, and that is a way of representing this distribution."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-120-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1979,
+      "type": "audio",
+      "text": "We can also talk about the uniform distribution, which is a continuous distribution over between A&B, right? Any value between A&B is equally likely."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-121-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1987,
+      "type": "audio",
+      "text": "This is an example of a continuous distribution, and there's also the normal Gauss or Gaussian distribution, right? And this is the sort of famous bell curve."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-122-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 1990,
+      "type": "audio",
+      "text": "That look something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-123-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2001,
+      "type": "audio",
+      "text": "So it's parameterized by its mean, which is where it's centered, and its variance, which is how wide it is."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-124-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2013,
+      "type": "audio",
+      "text": "So these are named common name distributions. This is not exhaustive. There's a lot more, you know, they're all, there's a lot of information about them on Wikipedia. If you, when you go on to take probability, you'll see more of these and work with them."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-125-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2039,
+      "type": "audio",
+      "text": "And each of them is parameterized by some number, right? So we can think of like the Bernoulli as an entire family of distributions, right? There's a Bernoulli of .1, there's a Bernoulli of .5, Bernoulli at .8, and so on. So each one of these gives me one or more parameters that I can specify that, you know, I can instantiate. OK, there's this version of the Bernoulli or this version of the uniform and so on and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-126-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2046,
+      "type": "audio",
+      "text": "So let's do more. So we've talked about."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-127-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2056,
+      "type": "audio",
+      "text": "Distributions, probability distributions, random variables. Now let's think about properties of those random variables."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-128-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2065,
+      "type": "audio",
+      "text": "So we can think about kind of two different ways of thinking about random variables. There's like the descriptions of them, which is the stuff above this line."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-129-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2095,
+      "type": "audio",
+      "text": "And then there are properties or summaries of random variables. So description wise, we can think of like, you know, we have a random variable and we actually get a list of values, right? Let's say I actually flip a coin some number of times N So then I get X one, the first flip, X through the 2nd flip and so on. I can think about the probability distribution for that random variable, right? Which is like the probability that it's one is P, the probability is 0 is 1 -, P I can also look at a histogram of the sampled."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-130-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2100,
+      "type": "audio",
+      "text": "Right, if I take these and visualize I can get something like this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-131-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2132,
+      "type": "audio",
+      "text": "And there are also properties of a random variable. We can think about two of the most important ones. They're called expectation and variance. Expectation is a way of saying the average or mean value of X. And the variance tells us the spread of a distribution. How wide is it, right? So these are kind of useful things to know, right? If I have some variable, I want to know like on average, where is it going to be centered? And I also want to know how spread out is it going to be, right? If I'm thinking about a random variable for the value of."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-132-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2161,
+      "type": "audio",
+      "text": "The house, there's a big difference between, you know, let's say I have two random variables for different houses. Let's say they both have a mean of $700,000. But one the variance, the, the, you know, the spread is like hundreds of thousands of dollars. The other is maybe like $1,000,000, right? Could be way more. So that's a big difference, right? How spread out things are matters a lot. So it's important to be able to have some way of quantifying that. That's what the variance is for."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-133-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2174,
+      "type": "audio",
+      "text": "There are other properties, skewness, kurtosis, there's a lot more you know, if you want to learn more about this, encourage you to want to take data 140 set 134. You'll cover that one outside the scope of this class."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-134-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2203,
+      "type": "audio",
+      "text": "So we talked about probability distributions, but a probability distribution again for a discrete variable fully defines that random variable. So once you have the distribution, you can compute any other properties you want mean, variance, median. And you can also simulate random draws of the random variable, right? You can write code that will say, OK, I have this distribution now do a simulation where I get this right. You can use NP dot random dot choice. You can use any number of."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-135-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2207,
+      "type": "audio",
+      "text": "Of different functions to give you a simulation."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-136-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2215,
+      "type": "audio",
+      "text": "So in practice though, we rarely ever know the true distribution of a random variable."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-137-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2218,
+      "type": "audio",
+      "text": "Right, if we think about a coin."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-138-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2241,
+      "type": "audio",
+      "text": "Unless we like, do a lot of research into like, the geometry of the coin, the way I flip it and everything, which the authors of that paper did, it's pretty hard to know the exact distribution of the coin, right? It takes a lot of work for the authors of that paper to go out and say, Oh yeah, I look at the physics and the angular momentum and you know, the angle that you hold it, and it turns out it's going to be about .508."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-139-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2247,
+      "type": "audio",
+      "text": "In practice, most of the time all we get is a bunch of samples."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-140-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2260,
+      "type": "audio",
+      "text": "Right. Instead I get 100 actual coin flips and I have some coin and I flip it 100 times. Or I simulate doing that in Python And I get 57 times. I get heads."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-141-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2268,
+      "type": "audio",
+      "text": "So that distribution of the sample is called the empirical distribution."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-142-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2272,
+      "type": "audio",
+      "text": "Right. So this thing over here is the true distribution."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-143-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2274,
+      "type": "audio",
+      "text": "That, you know, maybe it's like a fair coin 5050."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-144-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2305,
+      "type": "audio",
+      "text": "This empirical distribution is the distribution of my samples, right? So empirical just means relating to my sample or samples. And so this sample of 100 coins, the empirical distribution of X based on that sample is 5743, right? The probability of getting A1 in my sample was .57. Probably getting a zero was .43."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-145-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2311,
+      "type": "audio",
+      "text": "Let me pause for questions here on empirical distribution. Is there anything we talked about South far?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-146-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2313,
+      "type": "audio",
+      "text": "Yes."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-147-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2328,
+      "type": "audio",
+      "text": "Question was, is the empirical distribution the observed outcomes? Yes, right. The empirical distribution is the distribution of my outcome, my observed outcomes, my sample, yeah."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-148-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2334,
+      "type": "audio",
+      "text": "Does that make sense? OK, cool. Did I see another question over here? No."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-149-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2340,
+      "type": "audio",
+      "text": "OK, cool. So."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-150-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2372,
+      "type": "audio",
+      "text": "Let's talk about populations and sample averages. So think about a fair coin, right? Again, we're flipping a fair coin, which we can represent as a newly random variable. Notice we're using our fancy new notation here and saying XI tilde Bernoulli .5, right? XI is distributed as a Bernoulli random variable with parameter .5 or equivalently X, right? Can take on value one, probably .5 take on value 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-151-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2384,
+      "type": "audio",
+      "text": "Probability also 0.5 right? Again, this is the shorthand that we're using. Over time, you'll get familiar with it. For now, it's important to just keep in mind, Oh yeah, this is what it means. I can look it up until it becomes second nature."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-152-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2390,
+      "type": "audio",
+      "text": "So if I flip many coins, then I'm going to expect the average of those slips to be 5."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-153-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2392,
+      "type": "audio",
+      "text": "Right. That's kind of like what I would expect the average to be."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-154-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2405,
+      "type": "audio",
+      "text": "Right. Makes sense, right? Like if I keep flipping it over and over, I'm expecting that like the average should be about 1/2, right? And if I flip a whole lot of coins, I should expect to get like 1/2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-155-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2419,
+      "type": "audio",
+      "text": "So if I flip 100 coins and I get 57 heads, then the average of that sample of 01 flips is .57, right? The average of my sample .57?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-156-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2421,
+      "type": "audio",
+      "text": "So .5."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-157-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2423,
+      "type": "audio",
+      "text": "Right, which is this first value here?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-158-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2442,
+      "type": "audio",
+      "text": "Is the expected value or the true average of the random variable X right? If I think about X right, which is this sort of random variable probability half, then I would expect that the average value is 1/2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-159-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2455,
+      "type": "audio",
+      "text": "Right. This is sort of like a fixed property of the X, right? This sort of like coin flipping process, right? If I think about the process of flipping 100 coins, then that process has an intrinsic."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-160-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2459,
+      "type": "audio",
+      "text": "Property that the average should be about 1/2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-161-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2465,
+      "type": "audio",
+      "text": "Right, independent of any specific sample of flips that I get."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-162-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2473,
+      "type": "audio",
+      "text": "Whereas 57 is my sample average or empirical average, right? So this point 57."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-163-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2476,
+      "type": "audio",
+      "text": "Is the empirical."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-164-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2482,
+      "type": "audio",
+      "text": "Or sample average for a specific sample right for the specific sample of flips that I am doing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-165-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2498,
+      "type": "audio",
+      "text": "So this can change, right? If I go and flip 100 coins and I ask each and everyone of you to also flip 100 coins, then we're all going to get slightly different samples and we're all going to get slightly different sample averages."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-166-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2513,
+      "type": "audio",
+      "text": "Right. So those will change from sample to sample, but the true expectation of, you know, what do you expect with 100 flips is always going to be .5, right? That is sort of a fundamental property of this coin flipping process."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-167-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2524,
+      "type": "audio",
+      "text": "OK. So with that in mind, let's think about, suppose you make a hundred of these investments, right? Going again, going back to this investment example, right again."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-168-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2530,
+      "type": "audio",
+      "text": "This is this one is the correct answer where our profit right is -1 million."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-169-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2541,
+      "type": "audio",
+      "text": "L or +10 million right -1 million we lose happens probably 90% positive, 10 million happens with probability .1."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-170-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2544,
+      "type": "audio",
+      "text": "So suppose we make 100 of these investments."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-171-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2549,
+      "type": "audio",
+      "text": "On average, how much should I expect to return?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-172-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2557,
+      "type": "audio",
+      "text": "Per investment, right? That is, you know, with these 100 investments I make on average, how much should I get out of each one?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-173-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2559,
+      "type": "audio",
+      "text": "Average out the winds and losses."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-174-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2568,
+      "type": "audio",
+      "text": "All right, take a second turn to the person next to you and discuss. I know it's kind of warm. You know, it's easy to like, get a little sleepy, a little droopy. So if you need to like, stand up and move around, if you're talking, don't be afraid to do it."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-175-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2578,
+      "type": "audio",
+      "text": "The big part of how I'm saying awakened energetic is I'm like walking around. So don't be afraid to stand and move around during these discussions. All right, discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-176-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2717,
+      "type": "audio",
+      "text": "All right, so how do we go about actually calculating this?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-177-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2723,
+      "type": "audio",
+      "text": "So it's like a few different answers here. Let's like actually try to go through the calculations ourselves."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-178-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2733,
+      "type": "audio",
+      "text": "So again, let's remember that this is the expected value of or this is the distribution for our profits."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-179-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2735,
+      "type": "audio",
+      "text": "Right the."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-180-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2745,
+      "type": "audio",
+      "text": "We can make profit of -1 million or 10 million and they have probabilities 9 and one respectively, so over 100 investments."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-181-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2752,
+      "type": "audio",
+      "text": "Well, if we have 100 investments on average, how many of them are going to fail?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-182-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2760,
+      "type": "audio",
+      "text": "Like on average in any, you know, individual series of investments, maybe I don't know the exact number, but on average out of 100, how many are going to fail?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-183-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2766,
+      "type": "audio",
+      "text": "90, right, So I know that on average I'm going to get."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-184-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2777,
+      "type": "audio",
+      "text": "90 of them. And on those 90, what's going to happen? Well, I'm going to lose $1,000,000."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-185-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2783,
+      "type": "audio",
+      "text": "Right. For each one of those 90 that failed, I lose $1,000,000."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-186-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2790,
+      "type": "audio",
+      "text": "And then for the remaining 10, again, on average I would expect those to succeed."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-187-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2795,
+      "type": "audio",
+      "text": "Right. And what happens when they succeed? Well, I make."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-188-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2797,
+      "type": "audio",
+      "text": "$10 million."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-189-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2804,
+      "type": "audio",
+      "text": "Right. And so this is how much I would expect to make in total?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-190-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2819,
+      "type": "audio",
+      "text": "Right. Again, because I expect 90 of them to fail and make negative, you know, I lose a million on those, I expect 10 of them to succeed. I make 10 million on those. So this is how much I make in total and if I want to find out how much I make per investment."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-191-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2821,
+      "type": "audio",
+      "text": "Then I just have to divide."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-192-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2824,
+      "type": "audio",
+      "text": "By the number of investments I made, which is 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-193-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2829,
+      "type": "audio",
+      "text": "Which is exactly. Oh no."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-194-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2837,
+      "type": "audio",
+      "text": "Well, yeah, so this text that I covered up is says -1 million for each of the for 90 of them."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-195-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2840,
+      "type": "audio",
+      "text": "Why is this not moving?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-196-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2843,
+      "type": "audio",
+      "text": "All right, 10 million for."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-197-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2846,
+      "type": "audio",
+      "text": "For 10 of them."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-198-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2848,
+      "type": "audio",
+      "text": "And so."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-199-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2861,
+      "type": "audio",
+      "text": "If we actually do the math right and say -1 million * 90, which is my first equation here, plus 10 million * 10, then I get -90 + 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-200-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2869,
+      "type": "audio",
+      "text": "Which gives me $10 million, right? So this numerator here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-201-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2877,
+      "type": "audio",
+      "text": "Is 10 million right? Because it's like negative?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-202-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2879,
+      "type": "audio",
+      "text": "-9 + 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-203-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2882,
+      "type": "audio",
+      "text": "Or sorry -90 + 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-204-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2884,
+      "type": "audio",
+      "text": "And that gives me 10 million. So when I divide that by 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-205-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2888,
+      "type": "audio",
+      "text": "$10 million / 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-206-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2890,
+      "type": "audio",
+      "text": "Well, that gives me 100,000."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-207-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2894,
+      "type": "audio",
+      "text": "Right, so this is the same as this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-208-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2899,
+      "type": "audio",
+      "text": "So that means that our average."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-209-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2904,
+      "type": "audio",
+      "text": "Is $100,000 per investment gain."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-210-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2911,
+      "type": "audio",
+      "text": "Right. So our how do we do about doing that? Well, we just took each of the possible values we could get."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-211-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2923,
+      "type": "audio",
+      "text": "And kind of like weighted it by how often we think it's going to happen, right? We weighted that first value -1,000,000 by it's going to happen about 90% of the time, or 90 out of 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-212-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2929,
+      "type": "audio",
+      "text": "That $10 million, we said it happens about 10% of the time, so we weight it by 10 out of 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-213-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2936,
+      "type": "audio",
+      "text": "So it turns out this is exactly the definition of expectation, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-214-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2947,
+      "type": "audio",
+      "text": "So we can kind of like rewrite our computation as going from 90 to 9, right? 90 / 129 ten over 100 to 1?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-215-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2966,
+      "type": "audio",
+      "text": "Which gives us the formula for expectation, which is we add up all the different possible values, take the value that it can take on, right? In this case we take like -1 million, multiply it by .9, right? That's this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-216-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2968,
+      "type": "audio",
+      "text": "First term here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-217-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2974,
+      "type": "audio",
+      "text": "And then we take the second possible value 10 million * .1."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-218-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2976,
+      "type": "audio",
+      "text": "Which is exactly what we're doing here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-219-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2978,
+      "type": "audio",
+      "text": "And then we just added them up."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-220-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2984,
+      "type": "audio",
+      "text": "Right, the same kind of intuitive calculation we did before is the definition of expectation."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-221-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 2999,
+      "type": "audio",
+      "text": "Take all the possible values, take the value, multiply or kind of like weight it by the probability and then add them all up. That's the definition of expectation, right? The definition of the average for a random variable."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-222-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3013,
+      "type": "audio",
+      "text": "So let's get some practice. Suppose we have a random variable that looks like this right? Flip of a coin. What is expectation of X?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-223-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3020,
+      "type": "audio",
+      "text": "Take a minute. Is it 0? Is it 5? Is it 1? Is it undefined? Take a minute, turn to the person next to you and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-224-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3093,
+      "type": "audio",
+      "text": "All right, so we know how to calculate the expected value of a random variable, right? We just say, all right, we take all the possible values, weight them by their probability and add them all up."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-225-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3097,
+      "type": "audio",
+      "text": "Right, so we know that X can be one or zero."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-226-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3102,
+      "type": "audio",
+      "text": "Right. So if it's one that happens with probability 0.5."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-227-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3108,
+      "type": "audio",
+      "text": "Or it's zero. That happens with probability 0.5."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-228-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3111,
+      "type": "audio",
+      "text": "Well, 1 * .5 is just .50 times whatever is 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-229-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3115,
+      "type": "audio",
+      "text": "So this just gives us 0.5."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-230-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3123,
+      "type": "audio",
+      "text": "So hey, notice that the expected value is not a possible value that X can take on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-231-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3143,
+      "type": "audio",
+      "text": "That's OK, right? The expected value is not necessarily going to be one of the possible values that you can get, right? This just is an average, right? It tells us on average, right? Imagine an exam, right, with a whole number of numbers of points and I calculate the average. It's not going to be a possible score that someone can get on that test."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-232-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3150,
+      "type": "audio",
+      "text": "So the expectation is just an average, more cleanly done version of what I just did."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-233-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3160,
+      "type": "audio",
+      "text": "All right, so that was a half half. What if the we have a Bernoulli random variable with parameter P? What is the expectation of X? And we'll go a little quickly on this one."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-234-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3164,
+      "type": "audio",
+      "text": "So take a minute and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-235-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3166,
+      "type": "audio",
+      "text": "Or half a minute for the phone."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-236-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3204,
+      "type": "audio",
+      "text": "All right, So we can follow exactly the same process as last time, right? We don't need to necessarily have a number .5 to do pretty much exactly the same thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-237-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3214,
+      "type": "audio",
+      "text": "Right, we can say that well what possible values can X take one or 01 happens with probability P?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-238-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3218,
+      "type": "audio",
+      "text": "And then zero happens with probability 1 -, P."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-239-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3221,
+      "type": "audio",
+      "text": "Right, so I can just add these up?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-240-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3229,
+      "type": "audio",
+      "text": "Well, 1 * P is P0 times whatever is 0, and so that means my answer is just P."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-241-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3256,
+      "type": "audio",
+      "text": "So that means that for a Bernoulli random variable, and in fact for pretty much all or most named random variables, we can compute the expectation as a function of the parameters, right? The expectation of a Bernoulli random variable just depends on whatever the parameter P probability of a 1 is."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-242-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3281,
+      "type": "audio",
+      "text": "So now let's think about this analysis, right? We have this 90% chance failed, you lose 1,000,010% chance exceeds. So the investment now has an expected value of $100,000, right? So in the interview, you know, you go into this interview, you're asked this question and you say like, OK, great. Like here I'm, you know, I know my probability, I can compute the expected value. The expected value is positive. So you should invest."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-243-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3287,
+      "type": "audio",
+      "text": "Well, that's a good answer if you're trying to demonstrate that you know probability."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-244-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3291,
+      "type": "audio",
+      "text": "But if you're trying to get the job, it might not be the best answer."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-245-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3301,
+      "type": "audio",
+      "text": "Why? Well, again, the real answer is it kind of depends, right? Specifically, it depends on how much cash you have in the bank."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-246-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3304,
+      "type": "audio",
+      "text": "If you're a relatively small."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-247-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3308,
+      "type": "audio",
+      "text": "Venture capital firm and you only have like 1 and a half $1,000,000 in the bank."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-248-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3314,
+      "type": "audio",
+      "text": "Maybe it's not a good idea to bet like 2/3 of your remaining money on such an unsure bet."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-249-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3321,
+      "type": "audio",
+      "text": "On the other hand, if you're a larger firm and you have like $100 million in the bank."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-250-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3333,
+      "type": "audio",
+      "text": "Then you know, this $1 million, like, yeah, maybe you're going to lose, but like your expected value is positive and you have lots of other money to make more investments, right? You can make a hundred such investments."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-251-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3353,
+      "type": "audio",
+      "text": "So it depends on how much money you have in the bank, right? If you only have $1,000,000, it's a 90% chance you'll just end up bankrupt and lose all your money, right? This variation, this high uncertainty, high variation in the output, your outcome is working against you."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-252-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3362,
+      "type": "audio",
+      "text": "But if you have like a ton of money sitting in the bank and you can make a lot of these investments, then in the long run you will profit, right? So the more money you have."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-253-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3368,
+      "type": "audio",
+      "text": "The more sense it makes to do something like this and make this kind of an investment."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-254-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3398,
+      "type": "audio",
+      "text": "So This is why in practice, venture capital firms often do make bets like this where the probability of success is actually even lower than 10%, right? You look at like a big venture capital firm, the probably a success is lower than 10%, but the returns are really high, right? So if they make if they're if they do succeed. So if they make a lot of these bets and most of the startups fail, hey, no big deal as long as one of them, you know, gets bought out by Google or Meta for like a billion dollars."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-255-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3399,
+      "type": "audio",
+      "text": "Then you know they've got it made."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-256-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3408,
+      "type": "audio",
+      "text": "So it's important then to understand the spread of a random variable, right? We want to be able to quantify the uncertainty in a random variable."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-257-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3416,
+      "type": "audio",
+      "text": "So suppose we know what the mean is, right? Let's start there. We'll just say we know what the random variables mean is. It's going to be called MU."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-258-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3422,
+      "type": "audio",
+      "text": "Right, notationally we're writing expected value of X is equal to MU."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-259-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3449,
+      "type": "audio",
+      "text": "So MU is a fixed property of the random variable. It's a constant, not a random variable. It's sort of a fixed property, right? Yeah, X can vary, sure, you know, different get different XS. But that mean MU, it's fixed, right? Again, you know with the coin flips, right? Everybody does a sequence of 100 coin flips. The mean is the same no matter what those 100 sequences are. So the expected value of a random variable is fixed."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-260-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3454,
+      "type": "audio",
+      "text": "But how much do we expect a random draw to differ from MU?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-261-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3460,
+      "type": "audio",
+      "text": "Right. That is, on average, how far away are we going to be from MU? We want something to quantify that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-262-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3466,
+      "type": "audio",
+      "text": "Let's maybe try, I don't know, like let's actually look at just like, how far away are we?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-263-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3470,
+      "type": "audio",
+      "text": "Right, let's specifically look at expected value of X minus MU."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-264-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3477,
+      "type": "audio",
+      "text": "Right. We can say, like, you know, if X -, C is positive, we're like over. If X -, C is negative, then we're under."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-265-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3485,
+      "type": "audio",
+      "text": "Well, so we can say, yeah, like if it's big and we're far away, great."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-266-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3498,
+      "type": "audio",
+      "text": "Well, let's think about what that is, right? So now we have a new random variable called X minus MU right sitting in here, and we're trying to calculate the expected value of that random variable."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-267-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3499,
+      "type": "audio",
+      "text": "So."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-268-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3500,
+      "type": "audio",
+      "text": "If we think about it."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-269-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3504,
+      "type": "audio",
+      "text": "Half the time X minus MU."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-270-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3510,
+      "type": "audio",
+      "text": "Well, X is either one or."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-271-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3514,
+      "type": "audio",
+      "text": "0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-272-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3518,
+      "type": "audio",
+      "text": "This is not quite."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-273-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3523,
+      "type": "audio",
+      "text": "And if we think about a random variable where."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-274-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3527,
+      "type": "audio",
+      "text": "P of X = X zero."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-275-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3531,
+      "type": "audio",
+      "text": "One or zero?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-276-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3539,
+      "type": "audio",
+      "text": "5.5 then if we think about X is 1 then X minus mu."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-277-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3544,
+      "type": "audio",
+      "text": "Is .5 and X 0 minus MU is -0.5."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-278-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3558,
+      "type": "audio",
+      "text": "Right, If we think about this random variable, if we add in another column, that is what is X minus MU, right? Because now we're looking at the expected value of not just X but X minus MU."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-279-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3564,
+      "type": "audio",
+      "text": "Well, it's 1/2 with probability 1/2, and it's -0.5 with probability half."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-280-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3569,
+      "type": "audio",
+      "text": "So you take each of those, add them up, and by symmetry we're going to get 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-281-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3573,
+      "type": "audio",
+      "text": "So expected value of X minus MU is going to give us 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-282-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3584,
+      "type": "audio",
+      "text": "And the same thing is going to happen even if X is like 100 or -100. So no matter what random variable we choose, the expected value of X minus MU is always going to give us."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-283-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3585,
+      "type": "audio",
+      "text": "0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-284-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3602,
+      "type": "audio",
+      "text": "Right. That is because on average, X is going to be equal to MU. And so you can kind of see that it's just going to cancel out. We'll talk a little bit more about a proper helpful property for that a little later, but on average, it's going to cancel out. So as long as X expected value is defined."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-285-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3604,
+      "type": "audio",
+      "text": "This thing is always going to be equal to 0."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-286-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3617,
+      "type": "audio",
+      "text": "So what can we try instead? Well, OK, maybe we don't want to look at, you know, positive negatives, they cancel out. So how can we deal with positives and negatives cancelling out?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-287-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3623,
+      "type": "audio",
+      "text": "Square them? What's another answer? There's 2 answers I'm looking for. One is square them."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-288-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3629,
+      "type": "audio",
+      "text": "Absolute value, right? Those are like our two go to answers for how do we deal with things canceling out?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-289-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3633,
+      "type": "audio",
+      "text": "Well, it turns out that the absolute values."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-290-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3646,
+      "type": "audio",
+      "text": "Kind of like don't have very nice mathematical properties. The math gets kind of messy. So we tend to not like this, so we're going to go with the squared instead. Both perfectly reasonable answers in general. In practice we like the the one with the squared for this use case."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-291-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3653,
+      "type": "audio",
+      "text": "So we can write expected value of X minus MU squared instead."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-292-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3656,
+      "type": "audio",
+      "text": "And MU is expected value of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-293-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3663,
+      "type": "audio",
+      "text": "So now we can write this somewhat complicated looking thing of expected value of."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-294-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3668,
+      "type": "audio",
+      "text": "X minus the expected value of X all squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-295-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3690,
+      "type": "audio",
+      "text": "Right, which is really again a complicated but important notationally to understand way of writing out this squared difference between my random variable and its average, right? I'm just taking my first attempt which didn't work, squaring it and then plugging in mu is expected value of X and I get this thing that I'm highlighting here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-296-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3699,
+      "type": "audio",
+      "text": "Right. You can kind of see that there's some parallels, right? If you squint, it looks pretty similar, kind of similar to what we talked about with like OLS and residuals."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-297-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3705,
+      "type": "audio",
+      "text": "So it turns out that this quantity is defined and it has a name. That name is variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-298-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3711,
+      "type": "audio",
+      "text": "So the variance is the expected squared deviation from the mean."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-299-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3717,
+      "type": "audio",
+      "text": "Right. Remember that expected value. Is this right and."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-300-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3720,
+      "type": "audio",
+      "text": "If you notice that we usually."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-301-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3728,
+      "type": "audio",
+      "text": "Will write the expected value with brackets and write the variance of parentheses Y. Just standard how people do it, don't think there's a particularly good reason."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-302-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3734,
+      "type": "audio",
+      "text": "So we often can write the variance as this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-303-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3743,
+      "type": "audio",
+      "text": "And the thing about variance though, is that it's kind of weird, right? Because once we square it, the units are like the square of the unit of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-304-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3749,
+      "type": "audio",
+      "text": "If you think about our profit example, the units of variance are going to be in dollars squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-305-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3760,
+      "type": "audio",
+      "text": "I don't really know how to think in like dollars squared and so in practice we usually calculate the standard deviation which is the square root of the variance."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-306-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3768,
+      "type": "audio",
+      "text": "Right. So then that way we take like the compute the variance, get it in dollars squared, take the square root and that gives us something in dollars that we can kind of like understand and interpret."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-307-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3770,
+      "type": "audio",
+      "text": "So let's go back to that investment."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-308-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3783,
+      "type": "audio",
+      "text": "Well, what are our possible outcomes, right? We think about X can either be -1 million we lose all our money, or 10 million, we make a bunch. So."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-309-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3786,
+      "type": "audio",
+      "text": "X minus expected value of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-310-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3791,
+      "type": "audio",
+      "text": "Well, remember that expected value is 100."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-311-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3797,
+      "type": "audio",
+      "text": "So if we fill this in then we get negative."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-312-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3801,
+      "type": "audio",
+      "text": "11."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-313-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3818,
+      "type": "audio",
+      "text": "So we get a bunch of big numbers, right? And I'm don't get lost in the the arithmetic here. I'm not going to go all through the calculations, but it's important to understand how we do this right. We take this, we plug in the value of X, we plug in the value of expected value of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-314-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3827,
+      "type": "audio",
+      "text": "And here we get 10,000,000 -, 100,000 is basically 9.9 million."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-315-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3831,
+      "type": "audio",
+      "text": "All right, And we can maybe clean this one up."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-316-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3835,
+      "type": "audio",
+      "text": "As."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-317-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3839,
+      "type": "audio",
+      "text": "-0.9 million."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-318-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3852,
+      "type": "audio",
+      "text": "Right. And if we square, then we square that we get some enormously large number, We square that we get some other enormously large number. I don't want to do the arithmetic out here. Question."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-319-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3855,
+      "type": "audio",
+      "text": "You're absolutely right, it should be -1.1. Thank you."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-320-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3883,
+      "type": "audio",
+      "text": "And so this is -1.1 million ^2, which is very large, 9.9 million ^2, also very large. I'm not going to square those out. But you know, if we do the math, we get that the top one is 1.21 trillion, the bottom one is 98 trillion."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-321-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3898,
+      "type": "audio",
+      "text": "Very large numbers, but you know, we can calculate them. We can do this. And then how do we do the variance? Well, now we've calculated X minus the expected value of X ^2, which is just a different random variable, right? We kind of like transformed X to get a new thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-322-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3921,
+      "type": "audio",
+      "text": "And now we just take each of the possible values for X minus expected value of X ^2, take each of those possible values, weight them by the probability and add them up, right? Because at the end of the day, all we're doing is computing this expectation, right? And the way we compute expectations is by taking the amounts, waiting by the probabilities, adding them up."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-323-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3926,
+      "type": "audio",
+      "text": "So if we take this and multiply by 0.9."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-324-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3927,
+      "type": "audio",
+      "text": "And then we take."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-325-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3931,
+      "type": "audio",
+      "text": "This and multiply by 0.1 and add them up."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-326-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3933,
+      "type": "audio",
+      "text": "Then we get."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-327-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3937,
+      "type": "audio",
+      "text": "$10.89 trillion."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-328-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3962,
+      "type": "audio",
+      "text": "Again, that's like a 10, sorry, $10.89 trillion squared, right? Again, dollars squared, very weird unit. I don't know how to like understand that. So we take the square root and that then I find out that the standard deviation is $3.3 million, right? So that gives me a sense that there's a lot of variation on average if I think about how far."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-329-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3967,
+      "type": "audio",
+      "text": "My actual value can be from the average value it's 3.3 million."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-330-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3969,
+      "type": "audio",
+      "text": "Right on average."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-331-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 3973,
+      "type": "audio",
+      "text": "That's a lot of spread out. That's a lot of uncertainty in my random variable."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-332-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4002,
+      "type": "audio",
+      "text": "So in practice we often will end up using this more convenient formula. There is a proof in the appendix. One quick note is that today's lecture has a bunch of skip slides, a bunch of slides in the appendix with a lot of useful intuition and information that we don't have time to go over and lecture. So highly recommend checking that out. So if we were to go through this calculation, this says calculate the expected value of X ^2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-333-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4004,
+      "type": "audio",
+      "text": "Right, which is a different random variable from X."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-334-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4006,
+      "type": "audio",
+      "text": "And then subtract."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-335-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4010,
+      "type": "audio",
+      "text": "The expected value of X ^2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-336-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4028,
+      "type": "audio",
+      "text": "So notice that between these two terms, the square just the first term has like is on the X, right? So we're taking X ^2, the random variable, looking at its average. And the second term is we're looking at the expected value of X, the mean, and squaring the mean."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-337-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4036,
+      "type": "audio",
+      "text": "So what's the difference between those two? Well, if we look at expected value of X ^2, well again X ^2 here is negative $1 million squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-338-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4044,
+      "type": "audio",
+      "text": "Squared. This is $10 million squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-339-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4054,
+      "type": "audio",
+      "text": "Right, Which is like what, like 100 trillion? The first one is like 1 trillion, right? So these are very large numbers, right? Like 1 trillion and 100 trillion."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-340-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4061,
+      "type": "audio",
+      "text": "And if we do the math, then the expected value of X ^2 is 1 trillion * .9."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-341-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4075,
+      "type": "audio",
+      "text": "Right, because this is X ^2 is 1 trillion, the probability is oh point 9 + 100 trillion * .1 and that gives us $10.9 trillion as expected value of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-342-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4078,
+      "type": "audio",
+      "text": "Squared. Now the variance is this thing."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-343-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4084,
+      "type": "audio",
+      "text": "Minus the average return squared."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-344-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4113,
+      "type": "audio",
+      "text": "Right. So for here we know from before we calculated our average return as 100,000. So if we were to square that and do the math, we would get $10.89 trillion squared, same as what we got last time. And then, you know, we take the square root to get the standard deviation. So this formula is often in practice more convenient, more useful to work with. We tend to use it more. There's a proof of the appendix of why these two are equivalent."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-345-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4141,
+      "type": "audio",
+      "text": "So name distributions, it turns out you can calculate their mean and variance for pretty much all of them. The Wikipedia pages for each of these like Bernoulli and so on, are very helpful. They list out the mean or expectation, they list out the variance, and you know you can find these like probability on the probability distribution page. There's a super long list of all the different distributions that Wikipedia has, which is like most of the ones that you'll ever work with in your data science career."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-346-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4145,
+      "type": "audio",
+      "text": "And you'll if you want to learn more about this, I encourage you to take a probability class and go on to."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-347-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4147,
+      "type": "audio",
+      "text": "You can take a class like Data 102."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-348-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4159,
+      "type": "audio",
+      "text": "All right, so now let's talk about sums of random variables as our last big topic for today, right? I want to think about what happens when we add random variables up."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-349-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4164,
+      "type": "audio",
+      "text": "So again, I know this is a lot of notation, so hang in there."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-350-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4174,
+      "type": "audio",
+      "text": "Again, keep in mind you really want to understand the big ideas, and if you need to come back to understand the details, that's OK. You need a little more practice before all the details make sense. That is totally OK."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-351-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4176,
+      "type": "audio",
+      "text": "So let's think about dice."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-352-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4185,
+      "type": "audio",
+      "text": "Specifically, I want to think about X as a random variable that denotes the outcome of justice, like ruling an ordinary die."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-353-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4207,
+      "type": "audio",
+      "text": "Well, what is expected value of X if I assume that all sides are equally likely, right? It's not like a weighted or loaded die. So I have like 123456, each one has probability 1/6 and so I calculate the expected value by weighting each outcome by its probability and adding them all up."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-354-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4211,
+      "type": "audio",
+      "text": "So if I do that I end up with 3.5."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-355-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4220,
+      "type": "audio",
+      "text": "Right, so the expected value of one rule is 3.5. Makes sense, right? Kind of like 1234563.5 right in the middle. Yeah, makes sense."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-356-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4222,
+      "type": "audio",
+      "text": "Now what if I roll 2 dice?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-357-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4231,
+      "type": "audio",
+      "text": "And I want to know two things. First, what is the expected value of 2X1?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-358-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4239,
+      "type": "audio",
+      "text": "Right, which I can think of as like I take the outcome of the first rule, double it and I want to know what's the expected value of that?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-359-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4240,
+      "type": "audio",
+      "text": "Then."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-360-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4242,
+      "type": "audio",
+      "text": "Over here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-361-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4254,
+      "type": "audio",
+      "text": "Right. So I do, I do that right like I do my double the first one, look at the expected value. Then over here I go to Josh and I say, hey Josh, row two, add them up and look at the expected value."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-362-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4258,
+      "type": "audio",
+      "text": "So we each get a quantity, right? I get my 2X1, Josh gets X1 plus X2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-363-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4262,
+      "type": "audio",
+      "text": "How do our expected values of our quantities compare?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-364-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4272,
+      "type": "audio",
+      "text": "One bigger than the other, are they the same? One smaller than the other? Take a minute and discuss, right. Are these two going to be equal?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-365-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4275,
+      "type": "audio",
+      "text": "I was wanting to be bigger. Is or is 1 going to be smaller?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-366-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4278,
+      "type": "audio",
+      "text": "Take a moment to turn to the person next to you and discuss."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-367-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4287,
+      "type": "audio",
+      "text": "And again, intuitive answer, totally fine here. Looking for your gut instinct on this question."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-368-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4341,
+      "type": "audio",
+      "text": "All right, so it turns out in order to answer this we need to know a few more facts about random variables. But just as a, you know, to highlight."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-369-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4348,
+      "type": "audio",
+      "text": "Generally people's intuition is they should be the same, right? If I take the first one and double it on average, that should be the same as adding the two up."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-370-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4350,
+      "type": "audio",
+      "text": "Kind of makes sense, right?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-371-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4363,
+      "type": "audio",
+      "text": "So we're going to need some properties of expectations. So remember the definition is we look at all possible values, add take the value weighted by its probability, add them up."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-372-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4367,
+      "type": "audio",
+      "text": "So important properties are linearity."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-373-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4377,
+      "type": "audio",
+      "text": "Expectation is linear. What does that mean? That means if I take a random variable, multiply it by a constant?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-374-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4379,
+      "type": "audio",
+      "text": "And then add another constant to it."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-375-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4384,
+      "type": "audio",
+      "text": "Then the expected value of that new thing ax plus B."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-376-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4386,
+      "type": "audio",
+      "text": "It's just a times the expected value of X + b."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-377-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4396,
+      "type": "audio",
+      "text": "Right. That is, I can take the expected expectation operator and just like move it inside that linear thing, right? Expectation is linear."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-378-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4402,
+      "type": "audio",
+      "text": "Right expectation of axis B is a expectation of X + b."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-379-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4408,
+      "type": "audio",
+      "text": "There's a proof in the appendix it's out of scope. There's some helpful intuition."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-380-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4410,
+      "type": "audio",
+      "text": "On the skip slide."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-381-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4415,
+      "type": "audio",
+      "text": "And if I have two random variables X&Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-382-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4432,
+      "type": "audio",
+      "text": "Well, expectation of X + Y is just the expectation of X plus the expectation of Y, right? I can take 2 random variables and the expectation of their sum is just the sum of their expectations. I can calculate the averages, the expectations individually and add those up."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-383-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4436,
+      "type": "audio",
+      "text": "And this is really nice, because this is true no matter what."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-384-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4440,
+      "type": "audio",
+      "text": "It's true even if X&Y depend on each other."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-385-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4444,
+      "type": "audio",
+      "text": "Right, even if there's some."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-386-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4457,
+      "type": "audio",
+      "text": "You know, weird funky dependence on them, between them. This is always always always going to be true. That expected value of X + y is average of X plus average of Y."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-387-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4466,
+      "type": "audio",
+      "text": "OK, so that's nice, right? That's a very helpful fact. And it's true for more than two, right? If I have expected value of X + y + Z."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-388-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4473,
+      "type": "audio",
+      "text": "Then that's, you know, expected value of X plus expected value of Y plus the expected value of Z and so on."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-389-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4477,
+      "type": "audio",
+      "text": "So this is very useful because it makes expectations really nice to work with."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-390-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4505,
+      "type": "audio",
+      "text": "And then last but not least, expectation does not let you just sort of move inside any arbitrary function. So if I have expected value of X ^2, that is not the same as the expected value of X ^2, right? I can't just say like oh like move the square inside or outside the expectation freely the way I can with like addition and multiplication by constant."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-391-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4518,
+      "type": "audio",
+      "text": "And this is, you know, I'm doing this example, it's squared, but it's true in general for any arbitrary function. So in practice, there's like a few cases where it happens to be, but most of the time it's not."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-392-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4523,
+      "type": "audio",
+      "text": "OK, so how do we go about actually using these facts to help us with this two dice problem?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-393-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4534,
+      "type": "audio",
+      "text": "Well expected value of 2X1. We can use our linearity property and say that this is just two times expected value of X1."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-394-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4541,
+      "type": "audio",
+      "text": "Right. And I know that expected value of a fair die, we did that in the previous slide is 3 1/2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-395-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4545,
+      "type": "audio",
+      "text": "So this is just 2 * 3 1/2 which is 7."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-396-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4572,
+      "type": "audio",
+      "text": "All right, not so bad. What about this second one? Well, again, expected value of two random variables when I add them up is just the sum of their individual expectations. And why is this useful? It's useful because I don't really know how to reason about X1 plus X2, right? That's like a little more complicated than just X1 and X2 individually, right? Like if I add up die, if I'm adding up two rules, maybe some stuff changes."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-397-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4572,
+      "type": "audio",
+      "text": "But."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-398-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4582,
+      "type": "audio",
+      "text": "If I'm looking at just one at a time, it's a lot easier to reason about them, right? This second property is really helpful."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-399-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4589,
+      "type": "audio",
+      "text": "So what is expected value of X1? Well, it's a fair die roll, so it's 3 1/2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-400-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4593,
+      "type": "audio",
+      "text": "And what's expected value of X2? That's also a fair die roll, so that's three and a half."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-401-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4595,
+      "type": "audio",
+      "text": "So that gives me 7."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-402-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4603,
+      "type": "audio",
+      "text": "So it turns out everyone's intuition, or the majority of folks intuition, is correct, right? That the expected values are equal."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-403-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4605,
+      "type": "audio",
+      "text": "So that's kind of nice."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-404-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4607,
+      "type": "audio",
+      "text": "What about the variance?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-405-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4614,
+      "type": "audio",
+      "text": "Right, we saw that the mean of 2X1 is 7, right? Both of their means are 7."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-406-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4622,
+      "type": "audio",
+      "text": "So how much is each one of these right? Like my quantity where I took the first one and doubled it, and Josh's quantity where he added the two up?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-407-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4630,
+      "type": "audio",
+      "text": "How much are these going to vary around their identical means? Is 1 going to have more variance or less variance than the other?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-408-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4643,
+      "type": "audio",
+      "text": "So to quantify that I can ask what is the variance of my outcome doubling the first I? What is the variance of Josh's outcome adding the two up and how do these compare?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-409-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4656,
+      "type": "audio",
+      "text": "All right, take a minute and again, quick, let's go quickly on this one. Just your gut intuition, right? Do you think they should be equal, greater than or less than?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-410-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4658,
+      "type": "audio",
+      "text": "Again, just your gut intuition."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-411-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4691,
+      "type": "audio",
+      "text": "Question."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-412-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4702,
+      "type": "audio",
+      "text": "All right, so got intuition."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-413-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4716,
+      "type": "audio",
+      "text": "Looks like we have a almost even split between B&A, right, that the variance of like my outcome doubling the first should be either a little bigger or the same as variance of Josh's outcome adding the 12."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-414-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4720,
+      "type": "audio",
+      "text": "So let's think about what might happen here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-415-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4725,
+      "type": "audio",
+      "text": "Let's think about the distributions of these two different random variables."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-416-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4733,
+      "type": "audio",
+      "text": "So my outcome, the one where I doubled the first one, well you know, the original role can be 123456."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-417-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4739,
+      "type": "audio",
+      "text": "So really my outcome can either be 246810 or 12:00."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-418-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4744,
+      "type": "audio",
+      "text": "Right. And each one has probability 1/6 of happening."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-419-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4745,
+      "type": "audio",
+      "text": "Right."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-420-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4763,
+      "type": "audio",
+      "text": "Josh's outcome, on the other hand, can be more options, right? You can get a well, yeah, you get a 2, right, Snake eyes, he gets A2 or A3 or A4 or A5 or six or seven, you know, really any value up to 12."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-421-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4765,
+      "type": "audio",
+      "text": "Not 2212."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-422-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4770,
+      "type": "audio",
+      "text": "But are some of these more likely than others?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-423-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4781,
+      "type": "audio",
+      "text": "Well, are there? It seems like, you know, if I think about rolling a die, there's only one way to get snake eyes, right? If I want to get a two, then I have to roll 2 ones."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-424-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4785,
+      "type": "audio",
+      "text": "But there's more ways for a 7 to happen."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-425-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4787,
+      "type": "audio",
+      "text": "Right, if I think about A7."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-426-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4813,
+      "type": "audio",
+      "text": "A7 can be a three and a four. It can be A2 and A5. It can be A1 and A6, right? Or it can be a four and a three or A5 and A1, right? So there are 6 and A1. There's a lot more ways. And if I think about each of those individual like pairs I listed, all those pairs should be equally likely. But there are more of them that get me to A7 than there are that get me to A2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-427-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4823,
+      "type": "audio",
+      "text": "And if you have played a lot of like, board games involving dice, you probably have an intuitive sense for this already, right? There's a reason that the bandit in Settlers of Catan comes up on a setup."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-428-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4827,
+      "type": "audio",
+      "text": "So there are more ways to get."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-429-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4833,
+      "type": "audio",
+      "text": "These big values then these small values, which means that the probability right this is going to be big."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-430-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4836,
+      "type": "audio",
+      "text": "This is going to be small."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-431-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4846,
+      "type": "audio",
+      "text": "And if we think about the distributions, well, they actually look something like this right over here. They're all one fixed."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-432-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4855,
+      "type": "audio",
+      "text": "But here this only has a one in 36 chance of happening, whereas this has a six in 36 chance of happening. In other words, A7 is 6 times more likely than A2."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-433-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4859,
+      "type": "audio",
+      "text": "Right. And we can kind of visualize it this way."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-434-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4867,
+      "type": "audio",
+      "text": "Visualizing this, what do I think about the variance? Right. Again, the variance is a way of measuring how spread out things are."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-435-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4869,
+      "type": "audio",
+      "text": "If I think about this one."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-436-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4874,
+      "type": "audio",
+      "text": "Well, it's not quite as spread out, right? It's like bunched up in the middle. There's a lot more probability that's kind of like bunched in the center."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-437-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4878,
+      "type": "audio",
+      "text": "Whereas if I think about this one over here."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-438-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4884,
+      "type": "audio",
+      "text": "This one is a lot more spread out right? It's like even all across the these the values it can take."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-439-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4892,
+      "type": "audio",
+      "text": "So that means that intuitively, just visually looking at this, the variance of this one should be higher than the variance of that one."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-440-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4901,
+      "type": "audio",
+      "text": "So let's learn some facts about variants that we can use to help us show this analytically too."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-441-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4920,
+      "type": "audio",
+      "text": "So remember the definition, right? It's like the expected value of the quantity X -, X ^2, which is basically looking at, you know, how far is X from its average square that and how far is that on what is that value on average? So on average, how far, how much does X vary from its mean when squaring?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-442-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4926,
+      "type": "audio",
+      "text": "So important properties variance is nonlinear."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-443-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4935,
+      "type": "audio",
+      "text": "Remember I said earlier that variance is in like units squared, right? When we calculated the variance of that investment, we got dollars squared rather than dollars."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-444-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4941,
+      "type": "audio",
+      "text": "So when we multiply a random variable by a constant."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-445-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4952,
+      "type": "audio",
+      "text": "Then the variance of that multiplied random variable is the square of whatever multiplying it times the variance. In other words, if I have ax plus B."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-446-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4958,
+      "type": "audio",
+      "text": "The variance of that thing of ax plus B is a ^2 times the variance of X."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-447-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4964,
+      "type": "audio",
+      "text": "I have to square a. See, it didn't kind of make sense, right? Remember variances in units squared?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-448-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4976,
+      "type": "audio",
+      "text": "Notice that the B just disappears, right? If I add something that doesn't really change the spread, right? Think about like taking a roll of a die and adding fifty to it."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-449-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4989,
+      "type": "audio",
+      "text": "Right, Instead of getting 123456, I get 515253545556, right? Same spread between those two. Yeah, 1 is like shifted way over, but the spread is kind of the same, so the variance is the same."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-450-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 4997,
+      "type": "audio",
+      "text": "Then the standard deviation follows this. You know you multiply by the absolute value. There's some intuition, more intuition on the skip slide."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-451-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5006,
+      "type": "audio",
+      "text": "If we want to talk about what happens with multiple variables, I have to introduce something called IID which stands for Independent and identically distributed."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-452-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5025,
+      "type": "audio",
+      "text": "What does that mean? Well, we've talked about, you know, random variables might have the same distribution, right? If you think about different sequence of coin flips, then they have the same distribution. Great, they're all Bernoulli's. If I think about two different die rolls, they have the same distribution. But we also have to introduce this idea of independent."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-453-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5031,
+      "type": "audio",
+      "text": "So X&Y are, you know, identically distributed if the distribution is the same?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-454-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5040,
+      "type": "audio",
+      "text": "They are independent and identically distributed. If basically they have the same distribution, that's this."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-456-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5042,
+      "type": "audio",
+      "text": "And."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-455-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5042,
+      "type": "audio",
+      "text": "Identically distributed part."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-457-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5043,
+      "type": "audio",
+      "text": "Knowing one."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-458-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5048,
+      "type": "audio",
+      "text": "Doesn't tell me anything about the other."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-459-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5062,
+      "type": "audio",
+      "text": "So let's think about like an extreme example. Suppose that you know Josh and I both give you 2 dice roll outcomes and in version A we each role are independent, you know, die and tell you the values."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-460-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5065,
+      "type": "audio",
+      "text": "In version B."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-461-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5073,
+      "type": "audio",
+      "text": "I roll a die, I tell Josh the value and he gives you 7 minus whatever I got."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-462-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5084,
+      "type": "audio",
+      "text": "So think about Joshua. It's 7 minus what I got. Well, you know, dice roll is a fair roll of a fair die for 123456 are equally likely."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-463-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5099,
+      "type": "audio",
+      "text": "That means if I think about Josh's value, 123456 are all also equally likely, right? 7 - 1 is six, 7 - 2 is 5734, you know, So his answer could also give you one through 6, all equally likely."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-464-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5105,
+      "type": "audio",
+      "text": "Right. So they're both sort of categorical, one to six random variables, you know, uniform."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-465-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5109,
+      "type": "audio",
+      "text": "But knowing one tells you a lot about the other."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-466-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5117,
+      "type": "audio",
+      "text": "Right, in this version, B, if you know my outcome, you know exactly what Josh's outcome is going to be."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-467-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5134,
+      "type": "audio",
+      "text": "Whereas in version A, where we rolled separate die, separate dice, knowing my outcome tells you nothing about Josh's outcome, right? Because they're two different dice, right? So that's the difference between random variables that are independent, where knowing 1 doesn't tell you anything about the other, and random variables that are dependent."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-468-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5138,
+      "type": "audio",
+      "text": "Where knowing one tells you something about the other."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-469-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5151,
+      "type": "audio",
+      "text": "And you've kind of already seen this idea before, right? If you think about correlation, right, the whole idea with correlation is we look at the graph and we see, you know, the is there like some pattern, right? Does knowing one tell you something about the other?"
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-470-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5165,
+      "type": "audio",
+      "text": "Right. And if the graph looks like this, they're positively correlated. The graph looks like that, they're negatively correlated. And if it's just a call to points, there's no correlation. Knowing 1 doesn't necessarily tell you anything about the other."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-471-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5176,
+      "type": "audio",
+      "text": "So in this class we will always tell you when random variables are IID in the real world. You have to do some thinking about that for yourself, right? For example, last time I talked about with."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-472-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5193,
+      "type": "audio",
+      "text": "Cross validation the example of maybe in your data set you have like couples right? Then if your data set is you know people in your data set are related to each other. Then your data points are not IID. Knowing one tells you something about the other."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-473-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5201,
+      "type": "audio",
+      "text": "Right. Whereas if you take a random sample of people and you know their outcomes are not related to each other, then they are independent."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-474-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5210,
+      "type": "audio",
+      "text": "In practice, this is often tricky to get right. For the purpose of this class, we'll tell you when you can and can't assume things are IID."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-475-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5212,
+      "type": "audio",
+      "text": "So with that."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-476-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5239,
+      "type": "audio",
+      "text": "What do we know about variances? Well, it turns out that the variance of X + y is variance of X plus variance of Y plus this term that basically tells you how do they depend on each other. And it involves this thing called the covariance, which you can kind of think of like an unscaled version of correlation. Correlations always between zero and one covariance is like it can, you know, be outside of 0 or -1 to 1."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-477-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5244,
+      "type": "audio",
+      "text": "And it just tells you positive values means you know they're like positively correlated negative."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-478-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5253,
+      "type": "audio",
+      "text": "They're negatively correlated, and this is the formula we'll use at the start of next time after spring break to figure out how we can answer that question of the variance of two dice."
+    },
+    {
+      "id": "audio-ds100-sp26-1773959621-transcription-479-c0-e0",
+      "lecture_id": "ds100-sp26-1773959621",
+      "timestamp": 5269,
+      "type": "audio",
+      "text": "All right, I will see you all in a few weeks. Josh will be back here right after spring break, and I'll see you all in a week or two after that. Have a good spring break, take some time off, enjoy, and my office hours will be right here right now. I hope to see some of you here."
+    }
+  ]
+}
