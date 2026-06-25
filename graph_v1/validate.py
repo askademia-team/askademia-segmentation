@@ -41,7 +41,7 @@ def validate_graph(
         if not from_node or not to_node:
             err("dangling_part_of", edge_id=e.id, from_id=e.from_id, to_id=e.to_id)
             continue
-        if from_node.layer != "fine" or to_node.layer != "coarse":
+        if from_node.layer == to_node.layer:
             err("invalid_part_of_layers", edge_id=e.id, from_layer=from_node.layer, to_layer=to_node.layer)
             continue
         if from_node.parent_coarse_id and from_node.parent_coarse_id != to_node.id:

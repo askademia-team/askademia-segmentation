@@ -11,6 +11,7 @@ from typing import Any, Dict, List, Tuple
 from .llm import LLMClient
 from .models import Graph, GraphEdge, GraphNode, Span, Window, validate_edge_type
 from .retrieval import ensure_node_embeddings
+from .clustering import build_semantic_cluster_hierarchy
 from .validate import print_validation_summary, validate_graph
 
 
@@ -297,7 +298,7 @@ def _cleanup_graph_edges(graph: Graph) -> None:
         # - part_of is only allowed from a fine node to the coarse node that contains it
         # - all other semantic edges must stay within the same layer
         if e.type == "part_of":
-            if from_node.layer != "fine" or to_node.layer != "coarse":
+            if from_node.layer == to_node.layer:
                 continue
             if from_node.node_kind != "lecture" or to_node.node_kind != "lecture":
                 continue
@@ -460,6 +461,7 @@ def build_graph_for_lecture(
             f"edges={len(graph.edges)} total_merges={len(merges)}"
         )
 
+    build_semantic_cluster_hierarchy(graph, llm, max_cluster_layers=2, max_clusters=8)
     ensure_node_embeddings(graph, llm)
     validation = validate_graph(graph)
     print_validation_summary(validation)

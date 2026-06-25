@@ -8,8 +8,9 @@ from pathlib import Path
 from typing import Any, Dict, List, Literal
 
 from .llm import LLMClient
-from .models import Graph, GraphEdge, GraphNode, TutorFunctionResult, TutorSessionState
-from .retrieval import GraphRetriever
+from .models import Graph, GraphEdge, GraphHyperedge, GraphNode, TutorFunctionResult, TutorSessionState
+from .retrieval import GraphRetriever, summarize_broad_components, extract_contextual_bridge, pool_and_score_spans
+from .response_synthesizer import ResponseSynthesizer
 
 
 QuestionIntent = Literal["definition", "prerequisite", "application", "example", "comparison", "broad_recap"]
@@ -20,6 +21,7 @@ class TutorRuntime:
         self.graph = graph
         self.llm = LLMClient()
         self.retriever = GraphRetriever(graph, self.llm)
+        self.synthesizer = ResponseSynthesizer(self.llm)
         self.node_by_id = {n.id: n for n in graph.nodes}
         self.edge_by_id = {e.id: e for e in graph.edges}
 
@@ -79,6 +81,55 @@ class TutorRuntime:
         )
         ranked = [(row["id"], row["score"]) for row in ranked_rows]
         return TutorFunctionResult("rank_nodes_for_question", {"question": question, "ranked": ranked})
+
+    def get_contextual_bridge(self, node_id: str) -> TutorFunctionResult:
+        """Extract contextual bridges showing why a concept matters.
+        
+        Uses Dijkstra's algorithm to find shortest paths from this node to:
+        1. Root parents (upward hierarchy)
+        2. Prerequisites (incoming 'requires' edges)
+        """
+        bridges = extract_contextual_bridge(self.graph, node_id)
+        return TutorFunctionResult("get_contextual_bridge", {"node_id": node_id, "bridges": bridges})
+
+    def get_media_coordinates(self, node_id: str, query: str = "") -> TutorFunctionResult:
+        """Get precise media coordinates (start_ts, end_ts) for a node.
+        
+        Uses timestamp pooling with rolling window density scoring to find
+        the most semantically relevant spans. Returns exact timestamps for
+        audio/video playback.
+        """
+        pooled = pool_and_score_spans(self.graph, node_id, query, self.llm)
+        return TutorFunctionResult("get_media_coordinates", pooled)
+
+    def synthesize_humanized_answer(
+        self,
+        question: str,
+        ranked_nodes: List[Dict[str, Any]],
+        evidence_spans: List[Dict[str, Any]],
+        include_bridges: bool = True,
+    ) -> TutorFunctionResult:
+        """Synthesize a conversational tutor answer using bridge context.
+        
+        Combines local anchors, contextual bridges, and global summaries
+        into a humanized answer using scaffolded or Socratic strategy.
+        """
+        bridge_data = {}
+        if include_bridges and ranked_nodes:
+            bridge_result = self.get_contextual_bridge(ranked_nodes[0]["id"])
+            if bridge_result.ok:
+                bridge_data = bridge_result.payload.get("bridges", {})
+        
+        global_summary = self.graph.metadata.get("semantic_cluster_layers", {}).get("created_layers")
+        
+        result = self.synthesizer.synthesize_with_evidence(
+            question=question,
+            ranked_nodes=ranked_nodes,
+            evidence_spans=evidence_spans,
+            bridge_data=bridge_data,
+            global_summary=str(global_summary) if global_summary else None,
+        )
+        return TutorFunctionResult("synthesize_humanized_answer", result)
 
     def stop_and_answer(self, answer: str, cited_node_ids: List[str], cited_span_ids: List[str]) -> TutorFunctionResult:
         return TutorFunctionResult(
@@ -206,6 +257,11 @@ class TutorRuntime:
         answer = self.llm.synthesize_tutor_answer(question, answer_nodes, evidence_rows)
         cited_nodes = list(dict.fromkeys((cited_nodes + answer_node_ids)))[:3]
         cited_spans = cited_spans[:6]
+        if intent == "broad_recap":
+            component_summaries = summarize_broad_components(self.graph, self.llm, question)
+            if component_summaries:
+                broad_text = "\n".join(f"[{c['component_id']}] {c['summary']}" for c in component_summaries[:2])
+                answer = f"{answer}\n\nBroad summary:\n{broad_text}".strip()
 
         session_state.turn_count += 1
         session_state.recent_node_ids = (session_state.recent_node_ids + visited)[-20:]
@@ -294,10 +350,11 @@ def load_graph(path: Path) -> Graph:
         raw = json.load(f)
     nodes = [GraphNode(**n) for n in raw.get("nodes", [])]
     edges = [GraphEdge(**e) for e in raw.get("edges", [])]
+    hyperedges = [GraphHyperedge(**h) for h in raw.get("hyperedges", [])] if raw.get("hyperedges") else []
     from .models import Span
 
     spans = [Span(**s) for s in raw.get("spans", [])]
-    return Graph(lecture_id=raw["lecture_id"], nodes=nodes, edges=edges, spans=spans, metadata=raw.get("metadata", {}))
+    return Graph(lecture_id=raw["lecture_id"], nodes=nodes, edges=edges, hyperedges=hyperedges, spans=spans, metadata=raw.get("metadata", {}))
 
 
 def parse_args() -> argparse.Namespace:

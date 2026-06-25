@@ -36,8 +36,9 @@ class GraphNode:
     source_span_ids: List[str]
     start_ts: float
     end_ts: float
-    layer: Literal["coarse", "fine"] = "fine"
+    layer: str = "fine"
     parent_coarse_id: Optional[str] = None
+    cluster_member_ids: List[str] = field(default_factory=list)
     node_kind: Literal["lecture", "notes"] = "lecture"
     external_ref: Optional[str] = None
     embedding: Optional[List[float]] = None
@@ -56,10 +57,26 @@ class GraphEdge:
 
 
 @dataclass
+class GraphHyperedge:
+    id: str
+    layer: str
+    cluster_node_id: str
+    member_node_ids: List[str]
+    internal_edge_ids: List[str]
+    title: str
+    summary: str
+    explanation: str
+    source_span_ids: List[str]
+    start_ts: float
+    end_ts: float
+
+
+@dataclass
 class Graph:
     lecture_id: str
     nodes: List[GraphNode] = field(default_factory=list)
     edges: List[GraphEdge] = field(default_factory=list)
+    hyperedges: List[GraphHyperedge] = field(default_factory=list)
     spans: List[Span] = field(default_factory=list)
     metadata: Dict[str, Any] = field(default_factory=dict)
 
@@ -68,6 +85,7 @@ class Graph:
             "lecture_id": self.lecture_id,
             "nodes": [asdict(n) for n in self.nodes],
             "edges": [asdict(e) for e in self.edges],
+            "hyperedges": [asdict(h) for h in self.hyperedges],
             "spans": [asdict(s) for s in self.spans],
             "metadata": self.metadata,
         }

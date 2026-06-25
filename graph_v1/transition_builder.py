@@ -11,6 +11,7 @@ from .builder import _cleanup_graph_edges, load_lecture_entries, merge_graph_nod
 from .llm import LLMClient
 from .models import Graph, GraphEdge, GraphNode, SegmentationLayers, TransitionCandidate
 from .retrieval import ensure_node_embeddings
+from .clustering import build_semantic_cluster_hierarchy
 from .validate import print_validation_summary, validate_graph
 
 
@@ -474,6 +475,7 @@ def build_graph_transition_scored(
     graph.metadata["segmentation_layers"] = asdict(layers)
     graph.metadata["weak_label_counts"] = {"accepted": len(accepted_labels), "rejected": len(rejected_labels)}
 
+    build_semantic_cluster_hierarchy(graph, llm, max_cluster_layers=2, max_clusters=8)
     ensure_node_embeddings(graph, llm)
     validation = validate_graph(graph, min_segment_sec=min_segment_sec)
     print_validation_summary(validation)

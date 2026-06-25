@@ -365,6 +365,90 @@ class LLMClient:
                 "start_ts": start_ts,
                 "end_ts": end_ts,
             }
+
+    def summarize_hyperedge_to_node(
+        self,
+        cluster_id: str,
+        layer_name: str,
+        member_nodes: List[Dict[str, Any]],
+        internal_edges: List[Dict[str, Any]],
+    ) -> Dict[str, str]:
+        if not self.available() or self.client is None:
+            title = f"Cluster {layer_name} summary"
+            summary = " ; ".join(n["title"] for n in member_nodes[:3])
+            explanation = "This cluster groups related concepts: " + summary
+            return {"title": title, "summary": summary, "explanation": explanation}
+        system = (
+            "You are summarizing a semantic cluster of lecture concepts. "
+            "Produce a concise cluster node title, a 1-sentence summary, and a short explanation. "
+            "Use only the member nodes and internal edge connections provided."
+        )
+        payload = {
+            "cluster_id": cluster_id,
+            "layer": layer_name,
+            "member_nodes": member_nodes,
+            "internal_edges": internal_edges,
+        }
+        try:
+            response = self.client.chat.completions.create(
+                model=self.chat_deployment,
+                messages=[
+                    {"role": "system", "content": system},
+                    {"role": "user", "content": json.dumps(payload)},
+                ],
+                temperature=0.2,
+                max_tokens=1200,
+            )
+            content = str((response.choices[0].message.content if response and response.choices else "") or "").strip()
+            parsed = self._extract_json(content)
+            if not isinstance(parsed, dict):
+                raise ValueError("invalid JSON")
+            return {
+                "title": str(parsed.get("title") or f"Cluster {layer_name}").strip()[:120],
+                "summary": str(parsed.get("summary") or "").strip(),
+                "explanation": str(parsed.get("explanation") or "").strip(),
+            }
+        except Exception:
+            title = f"Cluster {layer_name} summary"
+            summary = " ; ".join(n["title"] for n in member_nodes[:3])
+            explanation = "This cluster groups related concepts: " + summary
+            return {"title": title, "summary": summary, "explanation": explanation}
+
+    def summarize_mst_component(
+        self,
+        query: str,
+        component_id: str,
+        node_rows: List[Dict[str, Any]],
+        edge_rows: List[Dict[str, Any]],
+    ) -> str:
+        if not self.available() or self.client is None:
+            titles = ", ".join(n.get("title", "") for n in node_rows[:3])
+            return f"Core concepts: {titles}."
+        system = (
+            "You are creating a high-level summary of the most important concepts in a lecture graph component. "
+            "Use only the provided MST nodes and edges to produce a concise broad explanation."
+        )
+        payload = {
+            "query": query,
+            "component_id": component_id,
+            "nodes": node_rows,
+            "edges": edge_rows,
+        }
+        try:
+            response = self.client.chat.completions.create(
+                model=self.chat_deployment,
+                messages=[
+                    {"role": "system", "content": system},
+                    {"role": "user", "content": json.dumps(payload)},
+                ],
+                temperature=0.2,
+                max_tokens=350,
+            )
+            content = str((response.choices[0].message.content if response and response.choices else "") or "").strip()
+            return content
+        except Exception:
+            titles = ", ".join(n.get("title", "") for n in node_rows[:3])
+            return f"Core concepts: {titles}."
         system = (
             "Summarize this lecture segment into one concept node. "
             "Return strict JSON with keys: title, summary, explanation. "

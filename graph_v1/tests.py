@@ -7,10 +7,11 @@ from graph_v1.builder import _cleanup_graph_edges, build_windows
 from graph_v1.llm import LLMClient
 from graph_v1.models import Graph, GraphEdge, GraphNode, Span, TutorSessionState, validate_edge_type
 from graph_v1.render_temporal import build_stacked_layout_dot, order_hierarchical_nodes
-from graph_v1.retrieval import GraphRetriever
+from graph_v1.retrieval import GraphRetriever, extract_contextual_bridge, pool_and_score_spans
 from graph_v1.tutor import TutorRuntime
 from graph_v1.transition_builder import _rebuild_hierarchy
 from graph_v1.validate import validate_graph
+from graph_v1.response_synthesizer import ResponseSynthesizer
 
 
 def test_windowing() -> None:
@@ -476,6 +477,132 @@ def test_rebuild_hierarchy_assigns_all_fine_nodes() -> None:
     assert len(part_of_edges) == len(fine_nodes)
 
 
+def test_contextual_bridge_extraction() -> None:
+    """Test Dijkstra-based bridge extraction for showing concept importance."""
+    spans = [Span(span_id="a_0", lecture_id="lec", timestamp=0, text="basics", modality="audio")]
+    nodes = [
+        GraphNode(
+            id="fine_1",
+            lecture_id="lec",
+            title="Fine concept",
+            summary="A basic concept",
+            explanation="Intro to the topic",
+            source_span_ids=["a_0"],
+            start_ts=0,
+            end_ts=30,
+            layer="fine",
+        ),
+        GraphNode(
+            id="coarse_1",
+            lecture_id="lec",
+            title="Coarse parent",
+            summary="Parent topic",
+            explanation="Parent level",
+            source_span_ids=["a_0"],
+            start_ts=0,
+            end_ts=100,
+            layer="coarse",
+        ),
+    ]
+    edges = [
+        GraphEdge(
+            id="edge_1",
+            from_id="fine_1",
+            to_id="coarse_1",
+            type="part_of",
+            reason="hierarchical",
+            evidence_span_ids=["a_0"],
+        ),
+    ]
+    graph = Graph(lecture_id="lec", nodes=nodes, edges=edges, spans=spans, metadata={})
+    bridges = extract_contextual_bridge(graph, "fine_1")
+    assert bridges["node_id"] == "fine_1"
+    assert len(bridges.get("upward_path", [])) > 0
+
+
+def test_timestamp_pooling_with_density() -> None:
+    """Test timestamp pooling with rolling window density scoring."""
+    spans = [
+        Span(span_id=f"a_{i}", lecture_id="lec", timestamp=float(i * 10), text=f"span text {i}", modality="audio")
+        for i in range(5)
+    ]
+    node = GraphNode(
+        id="node_1",
+        lecture_id="lec",
+        title="Test node",
+        summary="Summary",
+        explanation="Explanation",
+        source_span_ids=[s.span_id for s in spans],
+        start_ts=0,
+        end_ts=50,
+        layer="fine",
+    )
+    graph = Graph(lecture_id="lec", nodes=[node], edges=[], spans=spans, metadata={})
+    llm = LLMClient()
+    result = pool_and_score_spans(graph, "node_1", "test query", llm, window_size=3)
+    assert result["node_id"] == "node_1"
+    assert "start_ts" in result
+    assert "end_ts" in result
+    assert result["end_ts"] > result["start_ts"]
+
+
+def test_response_synthesizer_fallback() -> None:
+    """Test ResponseSynthesizer fallback when LLM is unavailable."""
+    llm = LLMClient()
+    synth = ResponseSynthesizer(llm)
+    
+    local_anchors = {
+        "top_node_id": "node_1",
+        "top_node_title": "Regex basics",
+        "direct_facts": ["Regex is a pattern matching tool"],
+        "start_ts": 100.0,
+        "end_ts": 150.0,
+    }
+    bridge_paths = {
+        "upward_path": [{"id": "node_1", "title": "Regex", "layer": "fine"}],
+        "prerequisite_chains": [{"prerequisite_id": "node_0", "title": "String basics", "reason": "strings use regex", "confidence": 0.9}],
+    }
+    
+    answer = synth.synthesize(
+        question="What is regex?",
+        local_anchors=local_anchors,
+        bridge_paths=bridge_paths,
+        global_summary="Regular expressions module",
+        strategy="direct",
+    )
+    assert isinstance(answer, str)
+    assert len(answer) > 0
+
+
+def test_tutor_synthesize_humanized_answer() -> None:
+    """Test TutorRuntime's humanized answer synthesis."""
+    spans = [Span(span_id="a_0", lecture_id="lec", timestamp=0, text="regex basics text", modality="audio")]
+    nodes = [
+        GraphNode(
+            id="node_1",
+            lecture_id="lec",
+            title="Regex basics",
+            summary="Pattern matching",
+            explanation="How regex works",
+            source_span_ids=["a_0"],
+            start_ts=0,
+            end_ts=60,
+            layer="fine",
+        ),
+    ]
+    graph = Graph(lecture_id="lec", nodes=nodes, edges=[], spans=spans, metadata={})
+    rt = TutorRuntime(graph)
+    
+    ranked_nodes = [{"id": "node_1", "title": "Regex basics", "summary": "Pattern matching"}]
+    evidence_spans = [{"span_id": "a_0", "timestamp": 0, "text": "regex basics text", "modality": "audio"}]
+    
+    result = rt.synthesize_humanized_answer("What is regex?", ranked_nodes, evidence_spans, include_bridges=False)
+    assert result.ok
+    assert "answer" in result.payload
+    assert "media_coordinates" in result.payload
+    assert "context_bridges" in result.payload
+
+
 if __name__ == "__main__":
     test_windowing()
     test_edge_types()
@@ -486,4 +613,8 @@ if __name__ == "__main__":
     test_rebuild_hierarchy_assigns_all_fine_nodes()
     test_temporal_renderer_orders_children_under_parents()
     test_temporal_renderer_stacked_layout_omits_semantic_edges()
+    test_contextual_bridge_extraction()
+    test_timestamp_pooling_with_density()
+    test_response_synthesizer_fallback()
+    test_tutor_synthesize_humanized_answer()
     print(json.dumps({"ok": True}))
