@@ -14,12 +14,89 @@ def _tokenize(text: str) -> set[str]:
     return set(re.findall(r"[a-z0-9]+", text.lower()))
 
 
+_RELEVANCE_STOPWORDS = {
+    "a",
+    "an",
+    "and",
+    "are",
+    "as",
+    "be",
+    "can",
+    "could",
+    "did",
+    "do",
+    "does",
+    "for",
+    "from",
+    "has",
+    "have",
+    "how",
+    "i",
+    "in",
+    "is",
+    "it",
+    "lecture",
+    "me",
+    "of",
+    "on",
+    "question",
+    "show",
+    "tell",
+    "that",
+    "the",
+    "this",
+    "to",
+    "topic",
+    "was",
+    "we",
+    "what",
+    "when",
+    "where",
+    "which",
+    "who",
+    "why",
+    "with",
+    "you",
+}
+
+
+def _clean_conversational_filler(text: str) -> str:
+    text = str(text or "")
+    text = re.sub(r"(?i)\b(um+|uh+|er+|ah+|like|you know|sort of|kind of|basically|so yeah|okay so|i think|maybe)\b", " ", text)
+    text = re.sub(r"(?i)\b(tricky early on|hard to interpret|not sure|i guess)\b", " ", text)
+    text = re.sub(r"\s+", " ", text).strip(" ,.;:-")
+    return text
+
+
 def _lexical_score(query: str, text: str) -> float:
     q = _tokenize(query)
     t = _tokenize(text)
     if not q or not t:
         return 0.0
     return len(q & t) / max(1, len(q))
+
+
+def should_block_retrieval_context(query: str, top_ranked_row: Dict[str, Any] | None, *, threshold: float = 0.60) -> bool:
+    if not top_ranked_row:
+        return True
+    score = float(top_ranked_row.get("score") or 0.0)
+    if score < threshold:
+        return True
+    core_query_terms = [t for t in _tokenize(query) if t not in _RELEVANCE_STOPWORDS and len(t) > 2]
+    if not core_query_terms:
+        return False
+    top_text = " ".join(
+        str(top_ranked_row.get(field, ""))
+        for field in ("title", "summary", "explanation")
+    )
+    top_terms = _tokenize(top_text)
+    if any(term in top_terms for term in core_query_terms):
+        return False
+    query_text = query.lower()
+    top_text_lower = top_text.lower()
+    if any(term in query_text and term in top_text_lower for term in core_query_terms if len(term) >= 4):
+        return False
+    return True
 
 
 def _cosine(a: Sequence[float] | None, b: Sequence[float] | None) -> float:
@@ -34,11 +111,19 @@ def _cosine(a: Sequence[float] | None, b: Sequence[float] | None) -> float:
 
 
 def node_retrieval_text(node: GraphNode) -> str:
-    return f"{node.title}\n{node.summary}\n{node.explanation}"
+    return "\n".join(
+        part
+        for part in [
+            _clean_conversational_filler(node.title),
+            _clean_conversational_filler(node.summary),
+            _clean_conversational_filler(node.explanation),
+        ]
+        if part
+    )
 
 
 def span_retrieval_text(span: Span) -> str:
-    return span.text
+    return _clean_conversational_filler(span.text)
 
 
 def ensure_node_embeddings(graph: Graph, llm: LLMClient) -> None:
@@ -49,6 +134,20 @@ def ensure_node_embeddings(graph: Graph, llm: LLMClient) -> None:
     embeddings = llm.embed_texts(texts)
     for node, emb in zip(missing, embeddings):
         node.embedding = emb
+
+
+def _ancestor_chain(node: GraphNode, node_by_id: Dict[str, GraphNode]) -> List[GraphNode]:
+    chain: List[GraphNode] = []
+    current = node
+    seen: set[str] = set()
+    while current.parent_node_id and current.parent_node_id not in seen:
+        parent = node_by_id.get(current.parent_node_id)
+        if not parent:
+            break
+        chain.append(parent)
+        seen.add(parent.id)
+        current = parent
+    return chain
 
 
 class GraphRetriever:
@@ -76,15 +175,15 @@ class GraphRetriever:
         scored: List[Dict[str, Any]] = []
         broad_query = _is_broad_query(query)
         for node in candidates:
-            if not include_coarse and node.layer != "fine":
+            if not include_coarse and node.layer != 0:
                 continue
             embedding_score = _cosine(q_emb, node.embedding)
             lexical = _lexical_score(query, node_retrieval_text(node))
             title_boost = _lexical_score(query, node.title) * 0.15
             layer_bias = 0.0
-            if prefer_fine and node.layer == "fine":
+            if prefer_fine and node.layer == 0:
                 layer_bias += 0.06
-            if broad_query and node.layer != "fine":
+            if broad_query and node.layer != 0:
                 layer_bias += 0.08
             score = 0.65 * embedding_score + 0.25 * lexical + title_boost + layer_bias
             scored.append(
@@ -218,21 +317,12 @@ def extract_contextual_bridge(
     
     bridges = {"node_id": node_id, "upward_path": [], "prerequisite_chains": []}
     
-    # Find root parents (part_of edges going upward)
+    # Follow the explicit parent chain through arbitrary depth.
     try:
-        root_nodes = [n.id for n in graph.nodes if n.layer != "fine" and n.id != node_id]
-        for root in root_nodes:
-            if nx.has_path(dep_graph, node_id, root):
-                try:
-                    path = nx.shortest_path(dep_graph, node_id, root, weight="weight")
-                    if len(path) <= max_path_length:
-                        path_nodes = [node_by_id.get(nid) for nid in path]
-                        bridges["upward_path"] = [
-                            {"id": n.id, "title": n.title, "layer": n.layer} for n in path_nodes if n
-                        ]
-                        break
-                except (nx.NetworkXNoPath, nx.NodeNotFound):
-                    continue
+        path_nodes = [node_by_id[node_id]] + _ancestor_chain(node_by_id[node_id], node_by_id)
+        bridges["upward_path"] = [
+            {"id": n.id, "title": n.title, "layer": n.layer} for n in path_nodes[:max_path_length]
+        ]
     except Exception:
         pass
     

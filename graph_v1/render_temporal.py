@@ -44,72 +44,57 @@ def node_label(node: GraphNode, title_limit: int = 28) -> str:
     return f"{short_title(node.title, limit=title_limit)}\\n[{node.start_ts:.0f}-{node.end_ts:.0f}s]"
 
 
-def order_hierarchical_nodes(graph: Graph) -> Tuple[List[GraphNode], Dict[str, List[GraphNode]]]:
-    coarse_nodes = sorted(
-        [node for node in graph.nodes if node.layer == "coarse"],
-        key=lambda node: (node.start_ts, node.end_ts, node.id),
-    )
-    fine_nodes = sorted(
-        [node for node in graph.nodes if node.layer == "fine"],
-        key=lambda node: (node.start_ts, node.end_ts, node.id),
-    )
-    if not coarse_nodes or not fine_nodes:
-        raise ValueError("Temporal renderer requires a hierarchical graph with both coarse and fine nodes.")
+def order_hierarchical_nodes(graph: Graph) -> Tuple[Dict[int, List[GraphNode]], Dict[str, List[GraphNode]]]:
+    layer_nodes: Dict[int, List[GraphNode]] = defaultdict(list)
+    for node in graph.nodes:
+        layer_nodes[int(node.layer)].append(node)
+    if not layer_nodes:
+        raise ValueError("Temporal renderer requires a hierarchical graph.")
 
-    fine_by_parent: Dict[str, List[GraphNode]] = defaultdict(list)
-    for node in fine_nodes:
-        if node.parent_coarse_id:
-            fine_by_parent[node.parent_coarse_id].append(node)
+    for nodes in layer_nodes.values():
+        nodes.sort(key=lambda node: (node.start_ts, node.end_ts, node.id))
 
-    ordered_children: Dict[str, List[GraphNode]] = {}
-    for coarse in coarse_nodes:
-        children = sorted(
-            fine_by_parent.get(coarse.id, []),
-            key=lambda node: (node.start_ts, node.end_ts, node.id),
-        )
-        ordered_children[coarse.id] = children
-    return coarse_nodes, ordered_children
+    children_by_parent: Dict[str, List[GraphNode]] = defaultdict(list)
+    for node in graph.nodes:
+        parent_id = node.parent_node_id or node.parent_coarse_id
+        if parent_id:
+            children_by_parent[parent_id].append(node)
+
+    for nodes in children_by_parent.values():
+        nodes.sort(key=lambda node: (node.start_ts, node.end_ts, node.id))
+
+    return layer_nodes, children_by_parent
 
 
 def build_stacked_layout_dot(graph: Graph, title_limit: int = 28) -> str:
-    coarse_nodes, children = order_hierarchical_nodes(graph)
-    max_depth = max((len(children[coarse.id]) for coarse in coarse_nodes), default=0)
+    layer_nodes, children = order_hierarchical_nodes(graph)
+    layer_ids = sorted(layer_nodes.keys(), reverse=True)
     lines: List[str] = []
     lines.append("digraph G {")
     lines.append("  rankdir=TB;")
     lines.append('  graph [bgcolor="white", splines=ortho, overlap=false, pad=0.35, nodesep=0.55, ranksep=0.85];')
     lines.append('  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10, margin="0.10,0.08"];')
     lines.append('  edge [arrowhead=none, color="#cbd5e1", penwidth=1.1];')
-    lines.append("  { rank=same;")
-    for idx, coarse in enumerate(coarse_nodes):
-        lines.append(
-            f'    "{coarse.id}" [group="g{idx}", label="{node_label(coarse, title_limit=title_limit)}", '
-            'fillcolor="#dbeafe", color="#2563eb", penwidth=1.8];'
-        )
-    lines.append("  }")
-    for left, right in zip(coarse_nodes, coarse_nodes[1:]):
-        lines.append(
-            f'  "{left.id}" -> "{right.id}" [style=dashed, color="#93c5fd", penwidth=1.0, weight=200];'
-        )
+    palette = ["#dbeafe", "#ecfccb", "#fef3c7", "#fae8ff", "#ffe4e6", "#e0f2fe", "#dcfce7", "#ede9fe"]
+    border_palette = ["#2563eb", "#65a30d", "#d97706", "#a855f7", "#ef4444", "#0891b2", "#16a34a", "#7c3aed"]
 
-    for depth in range(max_depth):
+    for layer in layer_ids:
+        nodes = layer_nodes[layer]
         lines.append("  { rank=same;")
-        for idx, coarse in enumerate(coarse_nodes):
-            child_list = children.get(coarse.id, [])
-            if depth >= len(child_list):
-                continue
-            child = child_list[depth]
+        for idx, node in enumerate(nodes):
+            fill = palette[layer % len(palette)]
+            color = border_palette[layer % len(border_palette)]
+            penwidth = "1.8" if layer > 0 else "1.0"
             lines.append(
-                f'    "{child.id}" [group="g{idx}", label="{node_label(child, title_limit=title_limit)}", '
-                'fillcolor="#ecfccb", color="#65a30d", penwidth=1.0];'
+                f'    "{node.id}" [group="g{idx}", label="{node_label(node, title_limit=title_limit)}", '
+                f'fillcolor="{fill}", color="{color}", penwidth={penwidth}];'
             )
         lines.append("  }")
 
-    for coarse in coarse_nodes:
-        child_list = children.get(coarse.id, [])
+    for parent_id, child_list in children.items():
         if not child_list:
             continue
-        lines.append(f'  "{coarse.id}" -> "{child_list[0].id}" [weight=100];')
+        lines.append(f'  "{parent_id}" -> "{child_list[0].id}" [weight=100];')
         for left, right in zip(child_list, child_list[1:]):
             lines.append(f'  "{left.id}" -> "{right.id}" [weight=100];')
 
@@ -142,7 +127,7 @@ def parse_plain_layout(plain_text: str) -> Tuple[float, float, Dict[str, Dict[st
 
 
 def build_fixed_overlay_dot(graph: Graph, title_limit: int = 28, show_edge_labels: bool = True) -> str:
-    coarse_nodes, children = order_hierarchical_nodes(graph)
+    layer_nodes, children = order_hierarchical_nodes(graph)
     stacked_dot = build_stacked_layout_dot(graph, title_limit=title_limit)
     with tempfile.NamedTemporaryFile("w", suffix=".dot", delete=False) as handle:
         handle.write(stacked_dot)
@@ -170,19 +155,18 @@ def build_fixed_overlay_dot(graph: Graph, title_limit: int = 28, show_edge_label
         pos = positions.get(node.id)
         if not pos:
             continue
-        fill = "#dbeafe" if node.layer == "coarse" else "#ecfccb"
-        color = "#2563eb" if node.layer == "coarse" else "#65a30d"
-        penwidth = "1.8" if node.layer == "coarse" else "1.0"
+        fill = "#dbeafe" if node.layer > 0 else "#ecfccb"
+        color = "#2563eb" if node.layer > 0 else "#65a30d"
+        penwidth = "1.8" if node.layer > 0 else "1.0"
         lines.append(
             f'  "{node.id}" [label="{node_label(node, title_limit=title_limit)}", pos="{pos["x"]:.2f},{pos["y"]:.2f}!", '
             f'pin=true, width={pos["w"]:.4f}, height={pos["h"]:.4f}, fillcolor="{fill}", color="{color}", penwidth={penwidth}];'
         )
 
-    for coarse in coarse_nodes:
-        child_list = children.get(coarse.id, [])
+    for parent_id, child_list in children.items():
         if not child_list:
             continue
-        lines.append(f'  "{coarse.id}" -> "{child_list[0].id}" [arrowhead=none, color="#cbd5e1", penwidth=1.2];')
+        lines.append(f'  "{parent_id}" -> "{child_list[0].id}" [arrowhead=none, color="#cbd5e1", penwidth=1.2];')
         for left, right in zip(child_list, child_list[1:]):
             lines.append(f'  "{left.id}" -> "{right.id}" [arrowhead=none, color="#e2e8f0", penwidth=1.0];')
 
@@ -207,11 +191,11 @@ def build_fixed_overlay_dot(graph: Graph, title_limit: int = 28, show_edge_label
     legend_x = graph_width + 140.0
     legend_y = graph_height - 60.0
     lines.append(
-        f'  legend_coarse [label="Coarse node", pos="{legend_x:.2f},{legend_y:.2f}!", pin=true, width=1.3, height=0.45, '
+        f'  legend_coarse [label="Hierarchical node", pos="{legend_x:.2f},{legend_y:.2f}!", pin=true, width=1.3, height=0.45, '
         'fillcolor="#dbeafe", color="#2563eb", penwidth=1.4];'
     )
     lines.append(
-        f'  legend_fine [label="Fine node", pos="{legend_x:.2f},{legend_y - 65.0:.2f}!", pin=true, width=1.3, height=0.45, '
+        f'  legend_fine [label="Base node", pos="{legend_x:.2f},{legend_y - 65.0:.2f}!", pin=true, width=1.3, height=0.45, '
         'fillcolor="#ecfccb", color="#65a30d", penwidth=1.0];'
     )
     for idx, (edge_type, color) in enumerate(EDGE_COLORS.items()):

@@ -7,7 +7,15 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-from .builder import _cleanup_graph_edges, load_lecture_entries, merge_graph_nodes
+from .builder import (
+    _cleanup_graph_edges,
+    attach_span_ids,
+    is_meaningful_node_payload,
+    is_meaningful_text,
+    load_lecture_entries,
+    merge_graph_nodes,
+    validate_and_sanitize_node_payload,
+)
 from .llm import LLMClient
 from .models import Graph, GraphEdge, GraphNode, SegmentationLayers, TransitionCandidate
 from .retrieval import ensure_node_embeddings
@@ -70,45 +78,19 @@ def _overlap(a_start: float, a_end: float, b_start: float, b_end: float) -> floa
 
 
 def _rebuild_hierarchy(graph: Graph) -> None:
-    fine_nodes = sorted([n for n in graph.nodes if n.layer == "fine"], key=lambda n: (n.start_ts, n.end_ts, n.id))
-    coarse_nodes = sorted([n for n in graph.nodes if n.layer == "coarse"], key=lambda n: (n.start_ts, n.end_ts, n.id))
-    if not fine_nodes or not coarse_nodes:
+    nodes_by_layer: Dict[int, List[GraphNode]] = {}
+    for node in graph.nodes:
+        nodes_by_layer.setdefault(int(node.layer), []).append(node)
+    if not nodes_by_layer:
         return
 
     # Reset parent assignments and remove all existing structural edges.
-    for fn in fine_nodes:
-        fn.parent_coarse_id = None
+    for node in graph.nodes:
+        node.parent_node_id = None
+        node.parent_coarse_id = None
     graph.edges = [e for e in graph.edges if e.type != "part_of"]
 
-    assignments: Dict[str, str] = {}
-    coarse_children: Dict[str, List[str]] = {cn.id: [] for cn in coarse_nodes}
-
-    for fn in fine_nodes:
-        containing = [cn for cn in coarse_nodes if cn.start_ts <= fn.start_ts and fn.end_ts <= cn.end_ts]
-        if containing:
-            chosen = min(containing, key=lambda cn: ((cn.end_ts - cn.start_ts), abs(((cn.start_ts + cn.end_ts) / 2.0) - ((fn.start_ts + fn.end_ts) / 2.0)), cn.id))
-        else:
-            # Fallback: choose the coarse node with the strongest temporal overlap;
-            # if no overlap remains after merges, choose the nearest midpoint.
-            scored = []
-            fn_mid = (fn.start_ts + fn.end_ts) / 2.0
-            for cn in coarse_nodes:
-                ov = _overlap(fn.start_ts, fn.end_ts, cn.start_ts, cn.end_ts)
-                cn_mid = (cn.start_ts + cn.end_ts) / 2.0
-                scored.append((ov, -abs(cn_mid - fn_mid), -(cn.end_ts - cn.start_ts), cn))
-            chosen = max(scored, key=lambda row: (row[0], row[1], row[2], row[3].id))[3]
-
-        fn.parent_coarse_id = chosen.id
-        chosen.start_ts = min(chosen.start_ts, fn.start_ts)
-        chosen.end_ts = max(chosen.end_ts, fn.end_ts)
-        assignments[fn.id] = chosen.id
-        coarse_children[chosen.id].append(fn.id)
-
-    # Drop coarse nodes that ended up empty after reassignment/merges.
-    keep_coarse_ids = {cid for cid, children in coarse_children.items() if children}
-    graph.nodes = [n for n in graph.nodes if n.layer != "coarse" or n.id in keep_coarse_ids]
-
-    # Recreate part_of edges deterministically.
+    # Recreate part_of edges deterministically, walking one layer at a time.
     existing_edge_nums = []
     for e in graph.edges:
         if e.id.startswith("edge_"):
@@ -117,23 +99,42 @@ def _rebuild_hierarchy(graph: Graph) -> None:
             except Exception:
                 pass
     next_edge_num = max(existing_edge_nums, default=0) + 1
-    for fn in fine_nodes:
-        parent_id = fn.parent_coarse_id
-        if not parent_id or parent_id not in keep_coarse_ids:
+    for layer in sorted(nodes_by_layer):
+        parents = nodes_by_layer.get(layer + 1, [])
+        if not parents:
             continue
-        graph.edges.append(
-            GraphEdge(
-                id=f"edge_{next_edge_num}",
-                from_id=fn.id,
-                to_id=parent_id,
-                type="part_of",
-                reason="fine segment assigned to containing coarse topic segment",
-                evidence_span_ids=fn.source_span_ids[:3],
-                edge_confidence=0.9,
-                evidence_count=min(3, len(fn.source_span_ids)),
+        children = sorted(nodes_by_layer[layer], key=lambda n: (n.start_ts, n.end_ts, n.id))
+        parent_sort = sorted(parents, key=lambda n: (n.start_ts, n.end_ts, n.id))
+        for child in children:
+            containing = [p for p in parent_sort if p.start_ts <= child.start_ts and child.end_ts <= p.end_ts]
+            if containing:
+                chosen = min(containing, key=lambda p: ((p.end_ts - p.start_ts), abs(((p.start_ts + p.end_ts) / 2.0) - ((child.start_ts + child.end_ts) / 2.0)), p.id))
+            else:
+                scored = []
+                child_mid = (child.start_ts + child.end_ts) / 2.0
+                for parent in parent_sort:
+                    ov = _overlap(child.start_ts, child.end_ts, parent.start_ts, parent.end_ts)
+                    parent_mid = (parent.start_ts + parent.end_ts) / 2.0
+                    scored.append((ov, -abs(parent_mid - child_mid), -(parent.end_ts - parent.start_ts), parent))
+                chosen = max(scored, key=lambda row: (row[0], row[1], row[2], row[3].id))[3]
+
+            child.parent_node_id = chosen.id
+            child.parent_coarse_id = chosen.id
+            chosen.start_ts = min(chosen.start_ts, child.start_ts)
+            chosen.end_ts = max(chosen.end_ts, child.end_ts)
+            graph.edges.append(
+                GraphEdge(
+                    id=f"edge_{next_edge_num}",
+                    from_id=child.id,
+                    to_id=chosen.id,
+                    type="part_of",
+                    reason=f"layer_{int(child.layer)} assigned to parent layer_{int(chosen.layer)}",
+                    evidence_span_ids=child.source_span_ids[:3],
+                    edge_confidence=0.9,
+                    evidence_count=min(3, len(child.source_span_ids)),
+                )
             )
-        )
-        next_edge_num += 1
+            next_edge_num += 1
 
     _cleanup_graph_edges(graph)
 
@@ -196,6 +197,9 @@ def build_graph_transition_scored(
     edge_counter = 0
     merges: List[Dict] = []
     carry_start_ts = start_ts
+    pending_source_ids: List[str] = []
+    pending_start_ts: float | None = None
+    last_valid_node: GraphNode | None = None
     recent_segments: List[Dict] = []
     recent_shift_scores: List[float] = []
     prev_transitions: List[float] = []
@@ -288,6 +292,18 @@ def build_graph_transition_scored(
             source_ids = [s.span_id for s in seg_spans]
             node_payload = llm.summarize_segment_to_node(seg_text, source_ids, carry_start_ts, c.timestamp)
 
+            if not is_meaningful_node_payload(node_payload) or not validate_and_sanitize_node_payload(node_payload.get("title", ""), node_payload.get("summary", "")):
+                if last_valid_node is not None:
+                    attach_span_ids(last_valid_node, source_ids, start_ts=carry_start_ts, end_ts=c.timestamp)
+                    rejected_labels.append({"candidate": asdict(c), "reason": "rejected_low_information_node_payload"})
+                    carry_start_ts = c.timestamp
+                else:
+                    pending_source_ids.extend(source_ids)
+                    if pending_start_ts is None:
+                        pending_start_ts = carry_start_ts
+                    rejected_labels.append({"candidate": asdict(c), "reason": "rejected_low_information_pending"})
+                continue
+
             node_counter += 1
             node_id = f"node_{node_counter}"
             graph.nodes.append(
@@ -300,7 +316,8 @@ def build_graph_transition_scored(
                     source_span_ids=node_payload["source_span_ids"],
                     start_ts=carry_start_ts,
                     end_ts=c.timestamp,
-                    layer="fine",
+                    layer=0,
+                    parent_node_id=None,
                     parent_coarse_id=None,
                 )
             )
@@ -315,7 +332,7 @@ def build_graph_transition_scored(
             if c.shift_type == "major":
                 coarse_boundaries.append(c.timestamp)
 
-            existing = [{"id": n.id, "title": n.title, "summary": n.summary} for n in graph.nodes[:-1] if n.layer == "fine"]
+            existing = [{"id": n.id, "title": n.title, "summary": n.summary} for n in graph.nodes[:-1] if n.layer == 0]
             proposed_edges = llm.propose_edges_for_new_node(
                 {
                     "id": node_id,
@@ -383,23 +400,39 @@ def build_graph_transition_scored(
         if seg_spans:
             seg_text = "\n".join(f"[{s.timestamp:.1f}s][{s.modality}] {s.text}" for s in seg_spans)
             source_ids = [s.span_id for s in seg_spans]
-            node_payload = llm.summarize_segment_to_node(seg_text, source_ids, carry_start_ts, end_ts)
-            node_counter += 1
-            node_id = f"node_{node_counter}"
-            graph.nodes.append(
-                GraphNode(
-                    id=node_id,
-                    lecture_id=lecture_id,
-                    title=node_payload["title"],
-                    summary=node_payload["summary"],
-                    explanation=node_payload["explanation"],
-                    source_span_ids=node_payload["source_span_ids"],
-                    start_ts=carry_start_ts,
-                    end_ts=end_ts,
-                    layer="fine",
-                    parent_coarse_id=None,
-                )
-            )
+            if is_meaningful_text(seg_text):
+                node_payload = llm.summarize_segment_to_node(seg_text, source_ids, carry_start_ts, end_ts)
+                if is_meaningful_node_payload(node_payload) and validate_and_sanitize_node_payload(node_payload.get("title", ""), node_payload.get("summary", "")):
+                    if pending_source_ids:
+                        source_ids = sorted(set(source_ids + pending_source_ids))
+                        if pending_start_ts is not None:
+                            carry_start_ts = min(carry_start_ts, pending_start_ts)
+                        pending_source_ids = []
+                        pending_start_ts = None
+                    node_counter += 1
+                    node_id = f"node_{node_counter}"
+                    graph.nodes.append(
+                        GraphNode(
+                            id=node_id,
+                            lecture_id=lecture_id,
+                            title=node_payload["title"],
+                            summary=node_payload["summary"],
+                            explanation=node_payload["explanation"],
+                            source_span_ids=source_ids,
+                            start_ts=carry_start_ts,
+                            end_ts=end_ts,
+                            layer=0,
+                            parent_node_id=None,
+                            parent_coarse_id=None,
+                        )
+                    )
+                    last_valid_node = graph.nodes[-1]
+                elif last_valid_node is not None:
+                    attach_span_ids(last_valid_node, source_ids, start_ts=carry_start_ts, end_ts=end_ts)
+                else:
+                    pending_source_ids.extend(source_ids)
+                    if pending_start_ts is None:
+                        pending_start_ts = carry_start_ts
 
     # coarse segmentation materialization from major boundaries
     all_coarse = sorted({b for b in coarse_boundaries if start_ts < b < end_ts})
@@ -426,14 +459,16 @@ def build_graph_transition_scored(
                 source_span_ids=source_ids,
                 start_ts=cs,
                 end_ts=ce,
-                layer="coarse",
+                layer=1,
+                parent_node_id=None,
                 parent_coarse_id=None,
             )
         )
 
         # link contained fine nodes via part_of
-        fine_nodes = [n for n in graph.nodes if n.layer == "fine" and n.start_ts >= cs and n.end_ts <= ce]
+        fine_nodes = [n for n in graph.nodes if n.layer == 0 and n.start_ts >= cs and n.end_ts <= ce]
         for fn in fine_nodes:
+            fn.parent_node_id = coarse_id
             fn.parent_coarse_id = coarse_id
             edge_counter += 1
             graph.edges.append(
@@ -475,7 +510,7 @@ def build_graph_transition_scored(
     graph.metadata["segmentation_layers"] = asdict(layers)
     graph.metadata["weak_label_counts"] = {"accepted": len(accepted_labels), "rejected": len(rejected_labels)}
 
-    build_semantic_cluster_hierarchy(graph, llm, max_cluster_layers=2, max_clusters=8)
+    build_semantic_cluster_hierarchy(graph, llm)
     ensure_node_embeddings(graph, llm)
     validation = validate_graph(graph, min_segment_sec=min_segment_sec)
     print_validation_summary(validation)

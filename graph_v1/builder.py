@@ -8,6 +8,7 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
+from .data_cleaner import LectureDataCleaner
 from .llm import LLMClient
 from .models import Graph, GraphEdge, GraphNode, Span, Window, validate_edge_type
 from .retrieval import ensure_node_embeddings
@@ -16,18 +17,28 @@ from .validate import print_validation_summary, validate_graph
 
 
 def load_lecture_entries(audio_path: Path, video_path: Path | None = None) -> Tuple[str, List[Span]]:
+    cleaner = LectureDataCleaner()
     with audio_path.open("r", encoding="utf-8") as f:
         audio = json.load(f)
 
     lecture_id = str(audio.get("lecture_id") or audio.get("display_name") or audio_path.stem)
     spans: List[Span] = []
-    for i, e in enumerate(audio.get("entries", [])):
+    audio_entries = [
+        {
+            "span_id": f"a_{i}",
+            "timestamp": float(e.get("timestamp", 0.0)),
+            "text": str(e.get("text", "")),
+            "modality": "audio",
+        }
+        for i, e in enumerate(audio.get("entries", []))
+    ]
+    for i, chunk in enumerate(cleaner.batch_process_spans(audio_entries, min_words=60)):
         spans.append(
             Span(
-                span_id=f"a_{i}",
+                span_id=chunk.get("span_id") or f"a_chunk_{i}",
                 lecture_id=lecture_id,
-                timestamp=float(e.get("timestamp", 0.0)),
-                text=str(e.get("text", "")),
+                timestamp=float(chunk.get("start_ts", 0.0)),
+                text=str(chunk.get("text", "")),
                 modality="audio",
             )
         )
@@ -35,13 +46,22 @@ def load_lecture_entries(audio_path: Path, video_path: Path | None = None) -> Tu
     if video_path and video_path.exists():
         with video_path.open("r", encoding="utf-8") as f:
             video = json.load(f)
-        for i, e in enumerate(video.get("entries", [])):
+        video_entries = [
+            {
+                "span_id": f"v_{i}",
+                "timestamp": float(e.get("timestamp", 0.0)),
+                "text": str(e.get("text", "")),
+                "modality": "video",
+            }
+            for i, e in enumerate(video.get("entries", []))
+        ]
+        for i, chunk in enumerate(cleaner.batch_process_spans(video_entries, min_words=60)):
             spans.append(
                 Span(
-                    span_id=f"v_{i}",
+                    span_id=chunk.get("span_id") or f"v_chunk_{i}",
                     lecture_id=lecture_id,
-                    timestamp=float(e.get("timestamp", 0.0)),
-                    text=str(e.get("text", "")),
+                    timestamp=float(chunk.get("start_ts", 0.0)),
+                    text=str(chunk.get("text", "")),
                     modality="video",
                 )
             )
@@ -52,8 +72,144 @@ def load_lecture_entries(audio_path: Path, video_path: Path | None = None) -> Tu
 
 def clean_text(text: str) -> str:
     text = "".join(ch if ch == "\n" or ord(ch) >= 32 else " " for ch in text)
+    text = re.sub(r"(?i)\b(um+|uh+|er+|ah+|like|you know|sort of|kind of|basically|so yeah|okay so|i think|maybe)\b", " ", text)
+    text = re.sub(r"(?i)\b(tricky early on|hard to interpret|not sure|i guess)\b", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
     return text
+
+
+_FILLER_TOKENS = {
+    "um",
+    "uh",
+    "er",
+    "ah",
+    "like",
+    "you",
+    "know",
+    "sort",
+    "kind",
+    "basically",
+    "yeah",
+    "okay",
+    "maybe",
+    "i",
+    "think",
+    "guess",
+    "tricky",
+    "early",
+    "on",
+    "not",
+    "sure",
+}
+
+_TITLE_TRANSCRIPT_PATTERNS = (
+    r"\b(we|you|i|let'?s|lets|let us|okay|ok|right|so|now|here|there)\b",
+    r"\b(going to|gonna|want to|need to|take a look|look at|talk about|see how|show you|think about|can see|we can|you can|let me|this is|that is)\b",
+    r"\b(discussion this week|i think i mentioned|right we're going|ok guys|um|uh)\b",
+)
+
+
+def _tokenize_words(text: str) -> List[str]:
+    return re.findall(r"[a-zA-Z0-9]+", str(text).lower())
+
+
+def content_density(text: str) -> float:
+    tokens = _tokenize_words(text)
+    if not tokens:
+        return 0.0
+    content_tokens = [t for t in tokens if len(t) > 2 and t not in _FILLER_TOKENS]
+    return len(content_tokens) / max(1, len(tokens))
+
+
+def is_meaningful_text(
+    text: str,
+    *,
+    min_words: int = 45,
+    min_density: float = 0.42,
+) -> bool:
+    cleaned = clean_text(text)
+    if not cleaned:
+        return False
+    words = _tokenize_words(cleaned)
+    if len(words) < min_words:
+        return False
+    if content_density(cleaned) < min_density:
+        return False
+    return True
+
+
+def node_payload_is_meaningful(payload: Dict[str, Any]) -> bool:
+    title = clean_text(str(payload.get("title", "")))
+    summary = clean_text(str(payload.get("summary", "")))
+    explanation = clean_text(str(payload.get("explanation", "")))
+    if not summary or not explanation:
+        return False
+    if title_looks_transcript_like(title):
+        return False
+
+    combined = f"{title} {summary} {explanation}"
+    if not is_meaningful_text(combined, min_words=12, min_density=0.38):
+        return False
+
+    technical_tokens = [t for t in _tokenize_words(combined) if len(t) >= 5 and t not in _FILLER_TOKENS]
+    if len(set(technical_tokens)) < 3:
+        return False
+
+    filler_fragments = {
+        "um",
+        "uh",
+        "so yeah",
+        "okay guys",
+        "where's the",
+        "tricky early on",
+    }
+    lowered = combined.lower()
+    if any(fragment in lowered for fragment in filler_fragments):
+        return False
+    return True
+
+
+is_meaningful_node_payload = node_payload_is_meaningful
+
+
+def title_looks_transcript_like(title: str) -> bool:
+    title = clean_text(title)
+    if not title:
+        return True
+    words = _tokenize_words(title)
+    if len(words) < 2 or len(words) > 5:
+        return True
+    lowered = title.lower()
+    if any(re.search(pattern, lowered, re.IGNORECASE) for pattern in _TITLE_TRANSCRIPT_PATTERNS):
+        return True
+    if lowered.endswith(("?", ":", ";", ",")):
+        return True
+    bad_starts = {"we", "you", "i", "let", "lets", "okay", "ok", "right", "so", "now", "here", "there"}
+    if words[0] in bad_starts:
+        return True
+    return False
+
+
+def validate_and_sanitize_node_payload(title: str, summary: str) -> bool:
+    title = clean_text(title)
+    summary = clean_text(summary)
+    if not title or not summary:
+        return False
+    if title_looks_transcript_like(title):
+        return False
+    if len(title.split()) > 5:
+        return False
+    if len(summary.split()) < 6:
+        return False
+    return True
+
+
+def attach_span_ids(node: GraphNode, span_ids: List[str], *, start_ts: float | None = None, end_ts: float | None = None) -> None:
+    node.source_span_ids = sorted(set(node.source_span_ids + list(span_ids)))
+    if start_ts is not None:
+        node.start_ts = min(node.start_ts, start_ts)
+    if end_ts is not None:
+        node.end_ts = max(node.end_ts, end_ts)
 
 
 def build_windows(spans: List[Span], lecture_id: str, window_sec: int = 75, overlap_sec: int = 15) -> List[Window]:
@@ -87,6 +243,10 @@ def build_windows(spans: List[Span], lecture_id: str, window_sec: int = 75, over
             idx += 1
         current += step
     return windows
+
+
+def _merge_pending_spans_into_node(node: GraphNode, span_ids: List[str], *, start_ts: float | None = None, end_ts: float | None = None) -> None:
+    attach_span_ids(node, span_ids, start_ts=start_ts, end_ts=end_ts)
 
 
 def lexical_similarity(a: str, b: str) -> float:
@@ -227,8 +387,9 @@ def merge_graph_nodes(graph: Graph, llm: LLMClient, threshold: float = 0.38) -> 
             anchor_node.source_span_ids = sorted(set(anchor_node.source_span_ids + src_node.source_span_ids))
             anchor_node.start_ts = min(anchor_node.start_ts, src_node.start_ts)
             anchor_node.end_ts = max(anchor_node.end_ts, src_node.end_ts)
-            if anchor_node.layer == "fine" and src_node.parent_coarse_id and not anchor_node.parent_coarse_id:
-                anchor_node.parent_coarse_id = src_node.parent_coarse_id
+            if anchor_node.layer == 0 and src_node.parent_node_id and not anchor_node.parent_node_id:
+                anchor_node.parent_node_id = src_node.parent_node_id
+                anchor_node.parent_coarse_id = src_node.parent_node_id
             anchor_node.embedding = None
             merges.append(
                 {
@@ -295,14 +456,14 @@ def _cleanup_graph_edges(graph: Graph) -> None:
         to_node = node_by_id[e.to_id]
 
         # Structural hierarchy rule:
-        # - part_of is only allowed from a fine node to the coarse node that contains it
+        # - part_of is only allowed from a child node to its direct parent
         # - all other semantic edges must stay within the same layer
         if e.type == "part_of":
             if from_node.layer == to_node.layer:
                 continue
             if from_node.node_kind != "lecture" or to_node.node_kind != "lecture":
                 continue
-            if from_node.parent_coarse_id and from_node.parent_coarse_id != to_node.id:
+            if from_node.parent_node_id and from_node.parent_node_id != to_node.id:
                 continue
             if not (to_node.start_ts <= from_node.start_ts and from_node.end_ts <= to_node.end_ts):
                 continue
@@ -384,7 +545,20 @@ def build_graph_for_lecture(
 
         temp_to_real: Dict[str, str] = {}
         created_node_titles: List[str] = []
+        pending_span_ids: List[str] = []
+        pending_start_ts: float | None = None
+        last_valid_node: GraphNode | None = graph.nodes[-1] if graph.nodes else None
         for n in extracted.get("nodes", []):
+            if not is_meaningful_node_payload(n):
+                pending_span_ids.extend([s for s in n.get("source_span_ids", []) if s])
+                if pending_start_ts is None:
+                    pending_start_ts = float(n.get("start_ts", w.start_ts)) if n.get("start_ts") is not None else w.start_ts
+                continue
+            if not validate_and_sanitize_node_payload(n.get("title", ""), n.get("summary", "")):
+                pending_span_ids.extend([s for s in n.get("source_span_ids", []) if s])
+                if pending_start_ts is None:
+                    pending_start_ts = float(n.get("start_ts", w.start_ts)) if n.get("start_ts") is not None else w.start_ts
+                continue
             node_counter += 1
             node_id = f"node_{node_counter}"
             temp_to_real[n["temp_id"]] = node_id
@@ -394,6 +568,13 @@ def build_graph_for_lecture(
             else:
                 start_ts = max(w.start_ts, float(n["start_ts"]))
                 end_ts = min(w.end_ts, float(n["end_ts"]))
+            source_span_ids = list(n["source_span_ids"])
+            if pending_span_ids:
+                source_span_ids = sorted(set(source_span_ids + pending_span_ids))
+                if pending_start_ts is not None:
+                    start_ts = min(start_ts, pending_start_ts)
+                pending_span_ids = []
+                pending_start_ts = None
             graph.nodes.append(
                 GraphNode(
                     id=node_id,
@@ -401,12 +582,18 @@ def build_graph_for_lecture(
                     title=n["title"],
                     summary=n["summary"],
                     explanation=n["explanation"],
-                    source_span_ids=n["source_span_ids"],
+                    source_span_ids=source_span_ids,
                     start_ts=start_ts,
                     end_ts=end_ts,
                 )
             )
+            last_valid_node = graph.nodes[-1]
             created_node_titles.append(n["title"])
+
+        if pending_span_ids and last_valid_node is not None:
+            _merge_pending_spans_into_node(last_valid_node, pending_span_ids, start_ts=pending_start_ts, end_ts=w.end_ts)
+            pending_span_ids = []
+            pending_start_ts = None
 
         valid_node_ids = {n.id for n in graph.nodes}
         for e in extracted.get("edges", []):
@@ -461,7 +648,7 @@ def build_graph_for_lecture(
             f"edges={len(graph.edges)} total_merges={len(merges)}"
         )
 
-    build_semantic_cluster_hierarchy(graph, llm, max_cluster_layers=2, max_clusters=8)
+    build_semantic_cluster_hierarchy(graph, llm)
     ensure_node_embeddings(graph, llm)
     validation = validate_graph(graph)
     print_validation_summary(validation)

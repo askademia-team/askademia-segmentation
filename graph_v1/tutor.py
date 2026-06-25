@@ -9,7 +9,7 @@ from typing import Any, Dict, List, Literal
 
 from .llm import LLMClient
 from .models import Graph, GraphEdge, GraphHyperedge, GraphNode, TutorFunctionResult, TutorSessionState
-from .retrieval import GraphRetriever, summarize_broad_components, extract_contextual_bridge, pool_and_score_spans
+from .retrieval import GraphRetriever, summarize_broad_components, extract_contextual_bridge, pool_and_score_spans, should_block_retrieval_context
 from .response_synthesizer import ResponseSynthesizer
 
 
@@ -120,7 +120,7 @@ class TutorRuntime:
             if bridge_result.ok:
                 bridge_data = bridge_result.payload.get("bridges", {})
         
-        global_summary = self.graph.metadata.get("semantic_cluster_layers", {}).get("created_layers")
+        global_summary = self.graph.metadata.get("lecture_summary") or self.graph.metadata.get("summary")
         
         result = self.synthesizer.synthesize_with_evidence(
             question=question,
@@ -254,7 +254,28 @@ class TutorRuntime:
                     if row["span_id"] not in cited_spans:
                         cited_spans.append(row["span_id"])
 
-        answer = self.llm.synthesize_tutor_answer(question, answer_nodes, evidence_rows)
+        low_confidence = should_block_retrieval_context(question, final_ranked[0] if final_ranked else None)
+        bridge_data = {}
+        if answer_node_ids:
+            bridge_result = self.get_contextual_bridge(answer_node_ids[0])
+            if bridge_result.ok:
+                bridge_data = bridge_result.payload.get("bridges", {})
+        global_summary = self.graph.metadata.get("lecture_summary") or self.graph.metadata.get("summary")
+        local_anchors = {
+            "top_node_id": answer_node_ids[0] if answer_node_ids else None,
+            "top_node_title": answer_nodes[0]["title"] if answer_nodes else "",
+            "direct_facts": [] if low_confidence else [row.get("text", "") for row in evidence_rows[:4]] + [node.get("summary", "") for node in answer_nodes[:2]],
+            "start_ts": min((row.get("timestamp") for row in evidence_rows), default=0.0),
+            "end_ts": max((row.get("timestamp") for row in evidence_rows), default=0.0) + 10.0,
+        }
+        answer = self.synthesizer.synthesize(
+            question=question,
+            local_anchors=local_anchors,
+            bridge_paths=bridge_data,
+            global_summary=global_summary,
+            strategy="scaffolded",
+            low_confidence=low_confidence,
+        )
         cited_nodes = list(dict.fromkeys((cited_nodes + answer_node_ids)))[:3]
         cited_spans = cited_spans[:6]
         if intent == "broad_recap":
@@ -283,8 +304,11 @@ class TutorRuntime:
         out: List[str] = []
         for nid in seed_ids:
             node = self.node_by_id.get(nid)
-            if node and node.parent_coarse_id and node.parent_coarse_id not in out:
-                out.append(node.parent_coarse_id)
+            while node and node.parent_node_id:
+                parent_id = node.parent_node_id
+                if parent_id not in out:
+                    out.append(parent_id)
+                node = self.node_by_id.get(parent_id)
         return out
 
     def _edge_types_for_question(

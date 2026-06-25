@@ -11,6 +11,38 @@ from openai import AzureOpenAI
 from .models import ALLOWED_EDGE_TYPES, TransitionCandidate
 
 
+def _clean_conversational_filler(text: str) -> str:
+    text = str(text or "")
+    text = re.sub(r"(?i)\b(um+|uh+|er+|ah+|like|you know|sort of|kind of|basically|so yeah|okay so|i think|maybe)\b", " ", text)
+    text = re.sub(r"(?i)\b(tricky early on|hard to interpret|not sure|i guess)\b", " ", text)
+    text = re.sub(r"\s+", " ", text).strip(" ,.;:-")
+    return text
+
+
+_TRANSCRIPT_TITLE_PATTERNS = (
+    r"\b(we|you|i|let'?s|lets|let us|okay|ok|right|so|now|here|there)\b",
+    r"\b(going to|gonna|want to|need to|take a look|look at|talk about|see how|show you|think about|can see|we can|you can|let me|this is|that is)\b",
+    r"\b(discussion this week|i think i mentioned|right we're going|ok guys|um|uh)\b",
+)
+
+
+def _title_looks_transcript_like(title: str) -> bool:
+    title = _clean_conversational_filler(title)
+    if not title:
+        return True
+    words = re.findall(r"[a-zA-Z0-9]+", title.lower())
+    if len(words) < 2 or len(words) > 5:
+        return True
+    lowered = title.lower()
+    if any(re.search(pattern, lowered, re.IGNORECASE) for pattern in _TRANSCRIPT_TITLE_PATTERNS):
+        return True
+    if lowered.endswith(("?", ":", ";", ",")):
+        return True
+    if words[0] in {"we", "you", "i", "let", "lets", "okay", "ok", "right", "so", "now", "here", "there"}:
+        return True
+    return False
+
+
 class LLMClient:
     def __init__(self) -> None:
         # Follow repo standard env loading and Azure client construction.
@@ -58,23 +90,41 @@ class LLMClient:
         question: str,
         nodes: List[Dict[str, Any]],
         evidence: List[Dict[str, Any]],
+        low_confidence: bool = False,
     ) -> str:
-        if not nodes:
-            return "I need a bit more context to answer precisely."
+        if not nodes or low_confidence:
+            return "The standard answer is the direct textbook definition and its usual application."
         if not self.available() or self.client is None:
             lead = nodes[0]
-            details = " ".join(ev.get("text", "") for ev in evidence[:2]).strip()
-            return f"{lead.get('title', 'Relevant concept')}: {lead.get('summary', '')} {details}".strip()
+            details = " ".join(_clean_conversational_filler(ev.get("text", "")) for ev in evidence[:2]).strip()
+            title = _clean_conversational_filler(lead.get("title", "Relevant concept"))
+            summary = _clean_conversational_filler(lead.get("summary", ""))
+            return f"{title}: {summary} {details}".strip()
         system = (
-            "You are a lecture tutor. Answer the student's question using only the provided nodes and evidence. "
-            "Be concise, direct, and do not invent facts not present in the evidence."
+            "You are an expert tutor. Your primary goal is to provide direct, natural, and human-like answers.\n\n"
+            "CRITICAL FORMATTING RULES:\n"
+            "1. NEVER include raw system logs, node names, timestamps, confidence scores, or metadata "
+            "(e.g., do not say \"From lecture_24_n42\" or \"[4434s]\").\n"
+            "2. DO NOT copy and paste large walls of transcript text or repeat conversational filler from the data source.\n"
+            "3. Your output must consist ONLY of the clear, direct answer to the student's question, broken down logically with a few bullet points if necessary.\n"
+            "4. If the retrieved context contains messy or repeated text (like OCR errors or repetitive video transcripts), "
+            "silently synthesize the core meaning and rewrite it in clean, grammatical English.\n\n"
+            "Tone: Professional, direct, and conversational-as if you are explaining it to a student in office hours."
         )
-        user = {"question": question, "nodes": nodes[:4], "evidence": evidence[:6]}
+        facts = [
+            str(item.get("summary", ""))
+            for item in nodes[:4]
+            if len(str(item.get("summary", "")).split()) > 5
+        ] + [str(ev.get("text", "")) for ev in evidence[:4] if len(str(ev.get("text", "")).split()) > 5]
+        if facts:
+            user = f"STUDENT QUESTION: {question}\n\nLECTURE NOTES:\n- " + "\n- ".join(facts)
+        else:
+            user = f"STUDENT QUESTION: {question}\n\nCONTEXT: None. Provide a general technical definition."
         try:
             response = self.client.chat.completions.create(
                 model=self.chat_deployment,
-                messages=[{"role": "system", "content": system}, {"role": "user", "content": json.dumps(user)}],
-                temperature=0.2,
+                messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
+                temperature=0.0,
                 max_tokens=350,
             )
             content = str((response.choices[0].message.content if response and response.choices else "") or "").strip()
@@ -348,6 +398,39 @@ class LLMClient:
         except Exception:
             return sorted(proposed_candidates, key=lambda c: c.shift_score, reverse=True)[:2]
 
+    def _segment_concept_title(self, segment_text: str) -> str:
+        cleaned = _clean_conversational_filler(segment_text)
+        tokens = [t for t in re.findall(r"[a-zA-Z0-9]+", cleaned.lower()) if len(t) >= 3]
+        stopwords = {
+            "this", "that", "with", "from", "have", "were", "been", "into", "when", "what", "where",
+            "there", "their", "about", "because", "after", "before", "would", "could", "should", "also",
+            "lecture", "section", "topic", "today", "then", "just", "like", "okay", "yeah", "uh", "um",
+            "we", "you", "i", "let", "lets", "lets", "right", "so", "now", "here", "there",
+            "going", "gonna", "want", "need", "talk", "look", "show", "see", "think", "mention",
+            "discuss", "cover", "explain", "introduce", "walk", "through", "build", "use",
+        }
+        technical = [t for t in tokens if t not in stopwords]
+        if not technical:
+            return "Core Concept"
+        # Prefer a compact 2-4 word technical title, with simple phrase heuristics.
+        phrase = " ".join(technical[:4]).strip()
+        if len(phrase.split()) < 2:
+            phrase = " ".join((technical[:2] * 2)[:2])
+        title = " ".join(word.capitalize() for word in phrase.split()[:4])[:80]
+        if _title_looks_transcript_like(title):
+            return "Core Concept"
+        return title
+
+    def _segment_concept_summary(self, segment_text: str, title: str) -> str:
+        cleaned = _clean_conversational_filler(segment_text)
+        cleaned = re.sub(r"\s+", " ", cleaned).strip()
+        # Fallback text should still read like a textbook definition rather than a transcript echo.
+        if not cleaned:
+            return f"This section explains {title.lower()} and why it matters in the lecture."
+        words = cleaned.split()
+        focal = " ".join(words[:24]).strip()
+        return f"This section develops {title.lower()} by explaining its role in the broader lecture and its main technical implications."
+
     def summarize_segment_to_node(
         self,
         segment_text: str,
@@ -355,12 +438,73 @@ class LLMClient:
         start_ts: float,
         end_ts: float,
     ) -> Dict[str, Any]:
+        abstract_title = self._segment_concept_title(segment_text)
+        abstract_summary = self._segment_concept_summary(segment_text, abstract_title)
         if not self.available() or self.client is None:
-            title = " ".join(segment_text.split()[:6])[:80] or "Context Segment"
+            return {
+                "title": abstract_title,
+                "summary": abstract_summary,
+                "explanation": abstract_summary,
+                "source_span_ids": source_span_ids,
+                "start_ts": start_ts,
+                "end_ts": end_ts,
+            }
+        system = (
+            "You are a technical knowledge graph compiler specializing in Computer Science and Machine Learning. "
+            "You will receive a dense, pre-cleaned chunk of a lecture transcript text. Your task is to transform this raw content into a formal, structured Knowledge Graph node object.\n\n"
+            "RAW TRANSCRIPT DATA:\n"
+            "\"\"\"\n"
+            f"{segment_text[:14000]}\n"
+            "\"\"\"\n\n"
+            "STRICT SYSTEM SCHEMA CONTRACTS:\n"
+            "1. TITLE GENERATION: Extract and generate a 2-to-4 word precise, formal academic title (e.g., \"Matrix Transposition\", \"Attention Matrix Dimensions\", \"Multivariate Gaussian\"). \n"
+            "   - CRITICAL NEGATIVE CONSTRAINT: You are strictly forbidden from writing titles using casual speech patterns, conversational grammar fragments, or phrasing found in the raw text (e.g., do NOT name a node \"But Information Get Table\", \"Alright Has One Child\", or \"So What Am I Saying\"). If no clear technical concept is found, name the node \"Thematic Lecture Overview\".\n\n"
+            "2. SUMMARY SYNTHESIS: Synthesize an authoritative, grammatically immaculate textbook summary definition of the technical mechanics discussed. Completely filter out any narrative speaking patterns or first-person references (\"I think\", \"the professor talks about\"). Write with objective educational distance.\n\n"
+            "OUTPUT SPECIFICATION:\n"
+            "Return exclusively a valid JSON string matching this layout:\n"
+            "{\n"
+            "    \"title\": \"CONCISE TECHNICAL CONCEPT NAME\",\n"
+            "    \"summary\": \"Formal academic textbook definition summary.\",\n"
+            "    \"explanation\": \"Deep conceptual validation details.\"\n"
+            "}"
+        )
+        user = {
+            "start_ts": start_ts,
+            "end_ts": end_ts,
+        }
+        try:
+            response = self.client.chat.completions.create(
+                model=self.chat_deployment,
+                messages=[{"role": "system", "content": system}, {"role": "user", "content": json.dumps(user)}],
+                temperature=0.0,
+                max_tokens=1200,
+            )
+            content = str((response.choices[0].message.content if response and response.choices else "") or "").strip()
+            parsed = self._extract_json(content)
+            if not isinstance(parsed, dict):
+                raise ValueError("invalid JSON")
+            title = _clean_conversational_filler(str(parsed.get("title") or abstract_title)).strip()[:80]
+            summary = _clean_conversational_filler(str(parsed.get("summary") or abstract_summary)).strip()
+            explanation = _clean_conversational_filler(str(parsed.get("explanation") or abstract_summary)).strip()
+            if len(title.split()) > 4 or len(title.split()) < 2 or _title_looks_transcript_like(title):
+                title = abstract_title
+            if not summary or len(summary.split()) < 6:
+                summary = abstract_summary
+            if not explanation or len(explanation.split()) < 8:
+                explanation = abstract_summary
             return {
                 "title": title,
-                "summary": segment_text[:280],
-                "explanation": segment_text[:900],
+                "summary": summary,
+                "explanation": explanation,
+                "source_span_ids": source_span_ids,
+                "start_ts": start_ts,
+                "end_ts": end_ts,
+            }
+        except Exception:
+            return {
+                "title": abstract_title,
+                "summary": abstract_summary,
+                "explanation": abstract_summary,
                 "source_span_ids": source_span_ids,
                 "start_ts": start_ts,
                 "end_ts": end_ts,
@@ -374,8 +518,8 @@ class LLMClient:
         internal_edges: List[Dict[str, Any]],
     ) -> Dict[str, str]:
         if not self.available() or self.client is None:
-            title = f"Cluster {layer_name} summary"
-            summary = " ; ".join(n["title"] for n in member_nodes[:3])
+            title = _clean_conversational_filler(f"Cluster {layer_name} summary")
+            summary = " ; ".join(_clean_conversational_filler(n["title"]) for n in member_nodes[:3])
             explanation = "This cluster groups related concepts: " + summary
             return {"title": title, "summary": summary, "explanation": explanation}
         system = (
@@ -404,13 +548,13 @@ class LLMClient:
             if not isinstance(parsed, dict):
                 raise ValueError("invalid JSON")
             return {
-                "title": str(parsed.get("title") or f"Cluster {layer_name}").strip()[:120],
-                "summary": str(parsed.get("summary") or "").strip(),
-                "explanation": str(parsed.get("explanation") or "").strip(),
+                "title": _clean_conversational_filler(str(parsed.get("title") or f"Cluster {layer_name}")).strip()[:120],
+                "summary": _clean_conversational_filler(str(parsed.get("summary") or "")).strip(),
+                "explanation": _clean_conversational_filler(str(parsed.get("explanation") or "")).strip(),
             }
         except Exception:
-            title = f"Cluster {layer_name} summary"
-            summary = " ; ".join(n["title"] for n in member_nodes[:3])
+            title = _clean_conversational_filler(f"Cluster {layer_name} summary")
+            summary = " ; ".join(_clean_conversational_filler(n["title"]) for n in member_nodes[:3])
             explanation = "This cluster groups related concepts: " + summary
             return {"title": title, "summary": summary, "explanation": explanation}
 
@@ -635,10 +779,16 @@ class LLMClient:
             source_ids = [s for s in n.get("source_span_ids", []) if s in valid_span]
             if not source_ids:
                 continue
+            raw_title = str(n.get("title") or "Untitled").strip()[:120]
+            title = raw_title
+            if _title_looks_transcript_like(title):
+                title = self._segment_concept_title(f"{raw_title} {n.get('summary') or ''}")
+            if _title_looks_transcript_like(title):
+                title = "Core Concept"
             out_nodes.append(
                 {
                     "temp_id": str(n.get("temp_id") or ""),
-                    "title": str(n.get("title") or "Untitled").strip()[:120],
+                    "title": title,
                     "summary": str(n.get("summary") or "").strip(),
                     "explanation": str(n.get("explanation") or "").strip(),
                     "source_span_ids": source_ids,
@@ -678,7 +828,7 @@ class LLMClient:
         snippets = sentences[:max_nodes] or [window_text[:200]]
         nodes = []
         for i, snippet in enumerate(snippets):
-            title = " ".join(snippet.split()[:6]) or f"concept_{i+1}"
+            title = self._segment_concept_title(snippet)
             nodes.append(
                 {
                     "temp_id": f"{window_id}_n{i+1}",

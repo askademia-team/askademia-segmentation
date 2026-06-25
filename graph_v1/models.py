@@ -7,6 +7,26 @@ from typing import Any, Dict, List, Literal, Optional
 ALLOWED_EDGE_TYPES = {"requires", "part_of", "related_to", "example_of", "references"}
 
 
+def coerce_layer_value(layer: Any) -> int:
+    if isinstance(layer, int):
+        return layer
+    if isinstance(layer, float) and layer.is_integer():
+        return int(layer)
+    if isinstance(layer, str):
+        stripped = layer.strip().lower()
+        if stripped.isdigit():
+            return int(stripped)
+        if stripped == "fine":
+            return 0
+        if stripped == "coarse":
+            return 1
+        if stripped.startswith("layer_"):
+            suffix = stripped.split("_", 1)[1]
+            if suffix.isdigit():
+                return int(suffix)
+    return 0
+
+
 @dataclass
 class Span:
     span_id: str
@@ -36,12 +56,20 @@ class GraphNode:
     source_span_ids: List[str]
     start_ts: float
     end_ts: float
-    layer: str = "fine"
+    layer: int = 0
+    parent_node_id: Optional[str] = None
     parent_coarse_id: Optional[str] = None
     cluster_member_ids: List[str] = field(default_factory=list)
     node_kind: Literal["lecture", "notes"] = "lecture"
     external_ref: Optional[str] = None
     embedding: Optional[List[float]] = None
+
+    def __post_init__(self) -> None:
+        self.layer = coerce_layer_value(self.layer)
+        if self.parent_node_id is None and self.parent_coarse_id is not None:
+            self.parent_node_id = self.parent_coarse_id
+        if self.parent_coarse_id is None and self.parent_node_id is not None:
+            self.parent_coarse_id = self.parent_node_id
 
 
 @dataclass
@@ -59,7 +87,7 @@ class GraphEdge:
 @dataclass
 class GraphHyperedge:
     id: str
-    layer: str
+    layer: int
     cluster_node_id: str
     member_node_ids: List[str]
     internal_edge_ids: List[str]

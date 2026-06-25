@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from dataclasses import asdict
 from typing import Any, Dict, List
 
 from .models import Graph, GraphNode
@@ -13,8 +12,8 @@ def validate_graph(
     coverage_tolerance_sec: float = 1.0,
 ) -> Dict[str, Any]:
     node_by_id = {n.id: n for n in graph.nodes}
-    fine_nodes = sorted([n for n in graph.nodes if n.layer == "fine"], key=lambda n: (n.start_ts, n.end_ts, n.id))
-    coarse_nodes = sorted([n for n in graph.nodes if n.layer == "coarse"], key=lambda n: (n.start_ts, n.end_ts, n.id))
+    fine_nodes = sorted([n for n in graph.nodes if n.layer == 0], key=lambda n: (n.start_ts, n.end_ts, n.id))
+    hierarchy_nodes = sorted([n for n in graph.nodes if n.layer > 0], key=lambda n: (n.layer, n.start_ts, n.end_ts, n.id))
     part_of_edges = [e for e in graph.edges if e.type == "part_of"]
 
     errors: List[Dict[str, Any]] = []
@@ -26,74 +25,69 @@ def validate_graph(
     def warn(code: str, **payload: Any) -> None:
         warnings.append({"code": code, **payload})
 
-    for n in graph.nodes:
-        if not n.source_span_ids:
-            err("empty_node", node_id=n.id)
-        if n.end_ts <= n.start_ts:
-            err("non_positive_duration", node_id=n.id, start_ts=n.start_ts, end_ts=n.end_ts)
-        if n.layer == "fine" and (n.end_ts - n.start_ts) < min_segment_sec - 1e-6:
-            warn("short_fine_node", node_id=n.id, duration=n.end_ts - n.start_ts)
+    for node in graph.nodes:
+        if not node.source_span_ids:
+            err("empty_node", node_id=node.id)
+        if node.end_ts <= node.start_ts:
+            err("non_positive_duration", node_id=node.id, start_ts=node.start_ts, end_ts=node.end_ts)
+        if node.layer == 0 and (node.end_ts - node.start_ts) < min_segment_sec - 1e-6:
+            warn("short_fine_node", node_id=node.id, duration=node.end_ts - node.start_ts)
 
-    part_of_by_fine: Dict[str, List[str]] = {}
-    for e in part_of_edges:
-        from_node = node_by_id.get(e.from_id)
-        to_node = node_by_id.get(e.to_id)
+    part_of_by_child: Dict[str, List[str]] = {}
+    for edge in part_of_edges:
+        from_node = node_by_id.get(edge.from_id)
+        to_node = node_by_id.get(edge.to_id)
         if not from_node or not to_node:
-            err("dangling_part_of", edge_id=e.id, from_id=e.from_id, to_id=e.to_id)
+            err("dangling_part_of", edge_id=edge.id, from_id=edge.from_id, to_id=edge.to_id)
             continue
-        if from_node.layer == to_node.layer:
-            err("invalid_part_of_layers", edge_id=e.id, from_layer=from_node.layer, to_layer=to_node.layer)
-            continue
-        if from_node.parent_coarse_id and from_node.parent_coarse_id != to_node.id:
+        if to_node.layer != from_node.layer + 1:
+            err("invalid_part_of_layers", edge_id=edge.id, from_layer=from_node.layer, to_layer=to_node.layer)
+        if from_node.parent_node_id and from_node.parent_node_id != to_node.id:
             err(
-                "parent_coarse_mismatch",
-                edge_id=e.id,
-                fine_node_id=from_node.id,
-                parent_coarse_id=from_node.parent_coarse_id,
+                "parent_node_mismatch",
+                edge_id=edge.id,
+                child_node_id=from_node.id,
+                parent_node_id=from_node.parent_node_id,
                 edge_to_id=to_node.id,
             )
         if not _contains(to_node, from_node):
-            err("coarse_does_not_contain_fine", edge_id=e.id, coarse_id=to_node.id, fine_id=from_node.id)
-        part_of_by_fine.setdefault(from_node.id, []).append(to_node.id)
+            err("parent_does_not_contain_child", edge_id=edge.id, parent_id=to_node.id, child_id=from_node.id)
+        part_of_by_child.setdefault(from_node.id, []).append(to_node.id)
 
-    for fn in fine_nodes:
-        if not coarse_nodes:
-            break
-        if not fn.parent_coarse_id:
-            err("fine_missing_parent_coarse", node_id=fn.id)
-        parents = part_of_by_fine.get(fn.id, [])
-        if len(set(parents)) != 1:
-            err("fine_part_of_count_invalid", node_id=fn.id, parent_ids=parents)
-        if fn.parent_coarse_id and fn.parent_coarse_id not in node_by_id:
-            err("fine_parent_missing", node_id=fn.id, parent_coarse_id=fn.parent_coarse_id)
+    for fine_node in fine_nodes:
+        if fine_node.parent_node_id and fine_node.parent_node_id not in node_by_id:
+            err("fine_parent_missing", node_id=fine_node.id, parent_node_id=fine_node.parent_node_id)
+        parents = part_of_by_child.get(fine_node.id, [])
+        if len(set(parents)) > 1:
+            err("fine_part_of_count_invalid", node_id=fine_node.id, parent_ids=parents)
 
-    for cn in coarse_nodes:
-        contained = [fn.id for fn in fine_nodes if _contains(cn, fn)]
+    for hierarchy_node in hierarchy_nodes:
+        contained = [child.id for child in graph.nodes if child.layer < hierarchy_node.layer and _contains(hierarchy_node, child)]
         if not contained:
-            warn("empty_coarse_container", node_id=cn.id)
+            warn("empty_hierarchy_container", node_id=hierarchy_node.id)
 
-    for e in graph.edges:
-        from_node = node_by_id.get(e.from_id)
-        to_node = node_by_id.get(e.to_id)
+    for edge in graph.edges:
+        from_node = node_by_id.get(edge.from_id)
+        to_node = node_by_id.get(edge.to_id)
         if not from_node or not to_node:
-            err("dangling_edge", edge_id=e.id, from_id=e.from_id, to_id=e.to_id)
+            err("dangling_edge", edge_id=edge.id, from_id=edge.from_id, to_id=edge.to_id)
             continue
-        if e.from_id == e.to_id:
-            err("self_edge", edge_id=e.id, node_id=e.from_id)
-        if e.type != "part_of" and from_node.layer != to_node.layer:
+        if edge.from_id == edge.to_id:
+            err("self_edge", edge_id=edge.id, node_id=edge.from_id)
+        if edge.type != "part_of" and from_node.layer != to_node.layer:
             err(
                 "cross_layer_semantic_edge",
-                edge_id=e.id,
-                edge_type=e.type,
+                edge_id=edge.id,
+                edge_type=edge.type,
                 from_layer=from_node.layer,
                 to_layer=to_node.layer,
             )
-        if e.type == "requires" and from_node.start_ts + coverage_tolerance_sec < to_node.start_ts:
+        if edge.type == "requires" and from_node.start_ts + coverage_tolerance_sec < to_node.start_ts:
             warn(
                 "requires_direction_suspicious",
-                edge_id=e.id,
-                from_id=e.from_id,
-                to_id=e.to_id,
+                edge_id=edge.id,
+                from_id=edge.from_id,
+                to_id=edge.to_id,
                 from_start_ts=from_node.start_ts,
                 to_start_ts=to_node.start_ts,
             )
@@ -112,7 +106,7 @@ def validate_graph(
             "node_count": len(graph.nodes),
             "edge_count": len(graph.edges),
             "fine_count": len(fine_nodes),
-            "coarse_count": len(coarse_nodes),
+            "coarse_count": len(hierarchy_nodes),
             "part_of_count": len(part_of_edges),
         },
     }
@@ -129,25 +123,13 @@ def validate_fine_coverage(
     if not fine_nodes or not graph.spans:
         return {"errors": errors, "warnings": warnings}
 
-    lecture_start = min(s.timestamp for s in graph.spans)
-    lecture_end = max(s.timestamp for s in graph.spans)
+    lecture_start = min(span.timestamp for span in graph.spans)
+    lecture_end = max(span.timestamp for span in graph.spans)
 
     if fine_nodes[0].start_ts > lecture_start + coverage_tolerance_sec:
-        errors.append(
-            {
-                "code": "fine_coverage_gap_at_start",
-                "gap_start": lecture_start,
-                "gap_end": fine_nodes[0].start_ts,
-            }
-        )
+        errors.append({"code": "fine_coverage_gap_at_start", "gap_start": lecture_start, "gap_end": fine_nodes[0].start_ts})
     if fine_nodes[-1].end_ts < lecture_end - coverage_tolerance_sec:
-        errors.append(
-            {
-                "code": "fine_coverage_gap_at_end",
-                "gap_start": fine_nodes[-1].end_ts,
-                "gap_end": lecture_end,
-            }
-        )
+        errors.append({"code": "fine_coverage_gap_at_end", "gap_start": fine_nodes[-1].end_ts, "gap_end": lecture_end})
 
     for prev, cur in zip(fine_nodes, fine_nodes[1:]):
         if cur.start_ts > prev.end_ts + coverage_tolerance_sec:
@@ -183,10 +165,6 @@ def print_validation_summary(report: Dict[str, Any]) -> None:
         f"nodes={report['stats']['node_count']} edges={report['stats']['edge_count']}"
     )
     for item in report["errors"][:10]:
-        print(f"  - error: {item['code']} {asdict_payload(item)}")
+        print(f"  - error: {item['code']} { {k: v for k, v in item.items() if k != 'code'} }")
     for item in report["warnings"][:10]:
-        print(f"  - warn: {item['code']} {asdict_payload(item)}")
-
-
-def asdict_payload(item: Dict[str, Any]) -> Dict[str, Any]:
-    return {k: v for k, v in item.items() if k != "code"}
+        print(f"  - warn: {item['code']} { {k: v for k, v in item.items() if k != 'code'} }")
