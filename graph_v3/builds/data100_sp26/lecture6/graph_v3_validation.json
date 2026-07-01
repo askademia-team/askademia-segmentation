@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "error_count": 0,
+  "warning_count": 0,
+  "errors": [],
+  "warnings": [],
+  "stats": {
+    "node_count": 61,
+    "edge_count": 142,
+    "fine_count": 49,
+    "coarse_count": 12,
+    "part_of_count": 49
+  }
+}
